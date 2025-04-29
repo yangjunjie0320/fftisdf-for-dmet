@@ -8,6 +8,14 @@ from pyscf.pbc import gto
 from libdmet.system.lattice import Lattice
 from libdmet.lo.make_lo import get_iao
 
+TMPDIR = os.environ.get("PYSCF_TMPDIR", None)
+assert os.path.exists(TMPDIR)
+
+MAX_MEMORY = os.environ.get("PYSCF_MAX_MEMORY", 2000)
+MAX_MEMORY = int(MAX_MEMORY)
+assert MAX_MEMORY > 0
+
+
 def dump(config : dict, path : str):
     raise NotImplementedError
 
@@ -17,9 +25,30 @@ def build_cell(config: dict):
     atom = None
     a = None
     if "diamond" in name.lower():
-        pass
+        atom = '''
+        C 0.0000 0.0000 0.0000
+        C 0.8917 0.8917 0.8917
+        '''
+        
+        a = '''
+        0.0000 1.7834 1.7834
+        1.7834 0.0000 1.7834
+        1.7834 1.7834 0.0000
+        '''
+
     elif "nio" in name.lower():
-        pass
+        atom = '''
+        Ni 0.000 0.000 0.000
+        Ni 4.170 4.170 4.170
+        O  2.085 2.085 2.085
+        O  6.255 6.255 6.255
+        '''
+
+        a = '''
+        4.170 2.085 2.085
+        2.085 4.170 2.085
+        2.085 2.085 4.170
+        '''
 
     assert atom is not None, f"Unknown cell: {name}"
     cell = gto.Cell()
@@ -28,21 +57,23 @@ def build_cell(config: dict):
     cell.pseudo = config["pseudo"]
     cell.ke_cutoff = config["ke_cutoff"]
     cell.exp_to_discard = 0.1
+    cell.max_memory = MAX_MEMORY
     cell.build(dump_input=False)
     config["cell"] = cell
 
-    kmesh = [int(i) for i in config.get("kmesh", "1-1-1").split("-")]
+    kmesh = [int(i) for i in config["kmesh"].split("-")]
     latt = Lattice(cell, kmesh)
     config["lattice"] = latt
 
 def build_density_fitting(config: dict):
-    cell: gto.Cell = config.get("cell")
-    latt: Lattice = config.get("lattice")
+    cell: gto.Cell = config["cell"]
+    latt: Lattice = config["lattice"]
     kpts: numpy.ndarray = latt.kpts
     kmesh: list[int] = latt.kmesh
 
-    method = config.get("density-fitting-method", "GDF")
-    df_to_read = config.get("df-to-read", None)
+    method = config["density_fitting_method"]
+    df_to_read = config["df_to_read"]
+    df_to_read = None if df_to_read == "None" else df_to_read
 
     df_obj = None
     if "gdf" in method.lower():
@@ -66,11 +97,12 @@ def build_density_fitting(config: dict):
         df_obj._fswap = H5TmpFile()
         df_obj.tol = 1e-8
         df_obj.wrap_around = True
+        df_obj.verbose = 5
 
         m0 = cell.cutoff_to_mesh(50.0)
         g0 = cell.gen_uniform_grids(m0)
         c0 = float(method[1])
-        inpx = df_obj.select(g0=g0, c0=c0, kpts=kpts, tol=1e-30)
+        inpx = df_obj.select_inpx(g0=g0, c0=c0, kpts=kpts, tol=1e-30)
 
         df_build = df_obj.build
         df_obj.build = lambda: df_build(inpx=inpx)
@@ -80,23 +112,31 @@ def build_density_fitting(config: dict):
 
 def get_init_guess(config: dict):
     name: str = config["name"]
+    mf: pyscf.pbc.scf.kscf.KSCF = config["mf"]
+    cell: gto.Cell = config["cell"]
+    kpts = mf.kpts
+    is_unrestricted: bool = config["is_unrestricted"]
+
     alph_label = []
     beta_label = []
+    alph_ix = []
+    beta_ix = []
 
     if "nio-afm" in name.lower():
-        alph_label = ["Ni"]
-        beta_label = ["O"]
+        alph_label = ["0 Ni 3d"]
+        beta_label = ["1 Ni 3d"]
 
-    mf: pyscf.pbc.scf.kscf.KSCF = config.get("mf")
-    is_unrestricted: bool = config.get("is_unrestricted", False)
-    is_spin_polarized = len(alph_label) > 0 or len(beta_label) > 0
+        alph_ix = cell.search_ao_label(alph_label)
+        beta_ix = cell.search_ao_label(beta_label)
 
     spin = 2 if is_unrestricted else 1
+    is_spin_polarized = len(alph_label) > 0 or len(beta_label) > 0
     nao = mf.cell.nao_nr()
+    nkpt = len(kpts)
 
-    init_guess_method = config.get("init_guess_method", "minao")
+    init_guess_method = config["init_guess_method"]
     dm0 = mf.get_init_guess(key=init_guess_method)
-    dm0 = dm0.reshape(spin, nao, nao)
+    dm0 = dm0.reshape(spin, nkpt, nao, nao)
 
     if is_spin_polarized:
         assert is_unrestricted
@@ -104,14 +144,10 @@ def get_init_guess(config: dict):
         print("Preparing initial guess for spin polarized calculation")
         print(f"Alph label: {alph_label}, Index: {alph_ix}")
         print(f"Beta label: {beta_label}, Index: {beta_ix}")
-
-        alph_ix = mf.cell.search_ao_label(alph_label)
-        beta_ix = mf.cell.search_ao_label(beta_label)
-
-        dm0[0, beta_ix, beta_ix] *= 0.0
-        dm0[1, alph_ix, alph_ix] *= 0.0
+        dm0[0, :, beta_ix, beta_ix] *= 0.0
+        dm0[1, :, alph_ix, alph_ix] *= 0.0
     
-    config["dm0"] = dm0
+    config["dm0"] = dm0[0] if spin == 1 else dm0
 
 def build_mean_field(config: dict):
     xc = config["xc"]
@@ -120,9 +156,11 @@ def build_mean_field(config: dict):
     cell: gto.Cell = config["cell"]
     latt: Lattice = config["lattice"]
     kpts: numpy.ndarray = latt.kpts
-    kmesh: list[int] = latt.kmesh
 
     mf = pyscf.pbc.scf.KRHF(cell, kpts)
+    mf.verbose = 5
+    mf.conv_tol = 1e-6
+    mf.exxdiv = None
     if is_unrestricted:
         mf = mf.to_uhf()
 
@@ -133,69 +171,12 @@ def build_mean_field(config: dict):
     config["mf"] = pbc_hp.smearing_(mf, sigma=0.01)
     get_init_guess(config)
 
-def build_dmet(config: dict):
-    latt = config["lattice"]
-    mf = config["mf"]
-    is_unrestricted = config["is_unrestricted"]
-    
-    res = get_iao(mf, minao="scf", full_return=True)
-    c_ao_lo_k = res[0]
-    idx_core, idx_vale = res[1:]
-    latt.build(idx_core=idx_core, idx_val=idx_vale)
-
-    from libdmet.dmet import cc_solver
-    beta = 1000.0
-    kwargs = {
-        "restricted": (not is_unrestricted),
-        "restart": False, "tol": 1e-6,
-        "verbose": 5, "max_cycle": 100,
-    }
-    solver = cc_solver.CCSD(**kwargs)
-    
-    from libdmet.dmet import rdmet, udmet
-    kwargs = {"solver_argss": [["C_lo_eo"]], "vcor": None}
-    emb = rdmet.RDMET(latt, mf, solver, c_ao_lo_k, **kwargs)
-    emb.mu_glob = 0.2
-    if is_unrestricted:
-        emb = udmet.UDMET(latt, mf, solver, c_ao_lo_k, **kwargs)
-        emb.mu_glob = [0.2, 0.2]
-
-    emb.dump_flags()  # Print settings information
-    emb.beta = beta
-    emb.fit_method = 'CG'
-    emb.fit_kwargs = {"test_grad": False}
-    emb.max_cycle = 1
-    config["emb"] = emb
-
 def build(config):
     # for cases it is a argparse.Namespace
     if not isinstance(config, dict):
         config = config.__dict__
     
-    config = config.copy(deep=True)
     build_cell(config)
     build_density_fitting(config)
     build_mean_field(config)
-    build_dmet(config) # doing nothing for now
-    return config
-
-import argparse
-def parse():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--name", type=str, required=True)
-    parser.add_argument("--xc", type=str, default=None)
-    parser.add_argument("--kmesh", type=str, required=True)
-    parser.add_argument("--basis", type=str, required=True)
-    parser.add_argument("--pseudo", type=str, required=True)
-    parser.add_argument("--ke-cutoff", type=float, required=True)
-    parser.add_argument("--is-unrestricted", type=bool, default=False)
-    parser.add_argument("--init-guess-method", type=str, default="minao")
-    parser.add_argument("--density-fitting-method", type=str, default="GDF")
-    parser.add_argument("--df-to-read", type=str, default=None)
-    config = parser.parse_args().__dict__
-
-    print("Running %s with Config:" % (__file__))
-    for k, v in config.items():
-        print(f"{k}: {v}")
-
     return config

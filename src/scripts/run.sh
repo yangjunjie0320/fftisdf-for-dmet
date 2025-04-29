@@ -1,6 +1,5 @@
 #!/bin/bash                      
 #SBATCH --reservation=changroup_standingres
-#SBATCH --exclude=hpc-34-07,hpc-52-18,hpc-20-15,hpc-20-22,hpc-21-23
 #SBATCH --constraint=icelake
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
