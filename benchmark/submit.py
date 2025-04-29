@@ -11,9 +11,9 @@ def loop(base_dir):
     base_dir = Path(base_dir)
     base_dir.mkdir(parents=True, exist_ok=True)
     
-    basis = ['gth-szv-molopt-sr', 'gth-dzvp-molopt-sr']
-    kmesh = ['2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
-    ke_cutoff = [50, 200]
+    basis = ['gth-dzvp-molopt-sr']
+    kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
+    ke_cutoff = [50, 200, 400]
     method = ['gdf', 'fftdf', 'fftisdf-10', 'fftisdf-40']
 
     from itertools import product
@@ -45,7 +45,7 @@ def main():
         config['init-guess-method'] = 'minao'
         config['df-to-read'] = None
 
-        time = '00:30:00'
+        time = '10:00:00'
         ntasks = 1
 
         base = Path(__file__).parent

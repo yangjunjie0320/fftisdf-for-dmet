@@ -1,0 +1,210 @@
+SLURMD_NODENAME = hpc-21-34
+Start time = Tue Apr 29 05:07:08 AM PDT 2025
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49023367/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49023367/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/nio-afm/3-4-4/gth-dzvp-molopt-sr/fftisdf-40/400/main.py with:
+name: nio-afm
+xc: None
+kmesh: 3-4-4
+basis: gth-dzvp-molopt-sr
+pseudo: gth-pbe
+ke_cutoff: 400.0
+density_fitting_method: fftisdf-40
+is_unrestricted: True
+init_guess_method: minao
+df_to_read: None
+
+
+Cholesky rank = 10210, c0 =  40.00, nao = 78, nip = 3120
+Parent grid size = 35937, selected grid size = 3120
+truncated values = 4.71e+03, estimated error = 1.26e+00
+Preparing initial guess for spin polarized calculation
+Alph label: ['0 Ni 3dz2', '0 Ni 3dx2-y2'], Index: [13]
+Beta label: ['1 Ni 3dz2', '1 Ni 3dx2-y2'], Index: [39]
+ ** Mulliken pop alpha/beta on meta-lowdin orthogonal AOs **
+ ** Mulliken pop       alpha | beta **
+pop of  0 Ni 3s        1.00993 | 1.00993   
+pop of  0 Ni 4s        0.01022 | 0.01022   
+pop of  0 Ni 5s        0.00000 | 0.00000   
+pop of  0 Ni 3px       1.00359 | 1.00359   
+pop of  0 Ni 3py       1.00359 | 1.00359   
+pop of  0 Ni 3pz       1.00359 | 1.00359   
+pop of  0 Ni 4px       0.00000 | 0.00000   
+pop of  0 Ni 4py       0.00000 | 0.00000   
+pop of  0 Ni 4pz       0.00000 | 0.00000   
+pop of  0 Ni 3dxy      0.99949 | 0.99949   
+pop of  0 Ni 3dyz      0.99949 | 0.99949   
+pop of  0 Ni 3dz^2     0.99848 | 0.99848   
+pop of  0 Ni 3dxz      0.99949 | 0.99949   
+pop of  0 Ni 3dx2-y2    0.99848 | 0.00545   
+pop of  0 Ni 4dxy      0.00000 | 0.00000   
+pop of  0 Ni 4dyz      0.00000 | 0.00000   
+pop of  0 Ni 4dz^2     0.00000 | 0.00000   
+pop of  0 Ni 4dxz      0.00000 | 0.00000   
+pop of  0 Ni 4dx2-y2    0.00000 | 0.00000   
+pop of  0 Ni 4f-3      0.00000 | 0.00000   
+pop of  0 Ni 4f-2      0.00000 | 0.00000   
+pop of  0 Ni 4f-1      0.00000 | 0.00000   
+pop of  0 Ni 4f+0      0.00000 | 0.00000   
+pop of  0 Ni 4f+1      0.00000 | 0.00000   
+pop of  0 Ni 4f+2      0.00000 | 0.00000   
+pop of  0 Ni 4f+3      0.00000 | 0.00000   
+pop of  1 Ni 3s        1.00993 | 1.00993   
+pop of  1 Ni 4s        0.01022 | 0.01022   
+pop of  1 Ni 5s        0.00000 | 0.00000   
+pop of  1 Ni 3px       1.00359 | 1.00359   
+pop of  1 Ni 3py       1.00359 | 1.00359   
+pop of  1 Ni 3pz       1.00359 | 1.00359   
+pop of  1 Ni 4px       0.00000 | 0.00000   
+pop of  1 Ni 4py       0.00000 | 0.00000   
+pop of  1 Ni 4pz       0.00000 | 0.00000   
+pop of  1 Ni 3dxy      0.99949 | 0.99949   
+pop of  1 Ni 3dyz      0.99949 | 0.99949   
+pop of  1 Ni 3dz^2     0.99848 | 0.99848   
+pop of  1 Ni 3dxz      0.99949 | 0.99949   
+pop of  1 Ni 3dx2-y2    0.00545 | 0.99848   
+pop of  1 Ni 4dxy      0.00000 | 0.00000   
+pop of  1 Ni 4dyz      0.00000 | 0.00000   
+pop of  1 Ni 4dz^2     0.00000 | 0.00000   
+pop of  1 Ni 4dxz      0.00000 | 0.00000   
+pop of  1 Ni 4dx2-y2    0.00000 | 0.00000   
+pop of  1 Ni 4f-3      0.00000 | 0.00000   
+pop of  1 Ni 4f-2      0.00000 | 0.00000   
+pop of  1 Ni 4f-1      0.00000 | 0.00000   
+pop of  1 Ni 4f+0      0.00000 | 0.00000   
+pop of  1 Ni 4f+1      0.00000 | 0.00000   
+pop of  1 Ni 4f+2      0.00000 | 0.00000   
+pop of  1 Ni 4f+3      0.00000 | 0.00000   
+pop of  2 O 2s        0.99211 | 0.99211   
+pop of  2 O 3s        0.00000 | 0.00000   
+pop of  2 O 2px       0.65898 | 0.65898   
+pop of  2 O 2py       0.65898 | 0.65898   
+pop of  2 O 2pz       0.66009 | 0.66009   
+pop of  2 O 3px       0.00000 | 0.00000   
+pop of  2 O 3py       0.00000 | 0.00000   
+pop of  2 O 3pz       0.00000 | 0.00000   
+pop of  2 O 3dxy      0.00000 | 0.00000   
+pop of  2 O 3dyz      0.00000 | 0.00000   
+pop of  2 O 3dz^2     0.00000 | 0.00000   
+pop of  2 O 3dxz      0.00000 | 0.00000   
+pop of  2 O 3dx2-y2    0.00000 | 0.00000   
+pop of  3 O 2s        0.99211 | 0.99211   
+pop of  3 O 3s        0.00000 | 0.00000   
+pop of  3 O 2px       0.65898 | 0.65898   
+pop of  3 O 2py       0.65898 | 0.65898   
+pop of  3 O 2pz       0.66009 | 0.66009   
+pop of  3 O 3px       0.00000 | 0.00000   
+pop of  3 O 3py       0.00000 | 0.00000   
+pop of  3 O 3pz       0.00000 | 0.00000   
+pop of  3 O 3dxy      0.00000 | 0.00000   
+pop of  3 O 3dyz      0.00000 | 0.00000   
+pop of  3 O 3dz^2     0.00000 | 0.00000   
+pop of  3 O 3dxz      0.00000 | 0.00000   
+pop of  3 O 3dx2-y2    0.00000 | 0.00000   
+In total            23.00000 | 23.00000  
+ ** Mulliken atomic charges   ( Nelec_alpha | Nelec_beta ) **
+charge of  0Ni =      0.94030  (     9.02636      8.03334 )
+charge of  1Ni =      0.94030  (     8.03334      9.02636 )
+charge of  2O =      0.05970  (     2.97015      2.97015 )
+charge of  3O =      0.05970  (     2.97015      2.97015 )
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [89 89 89] (704969 PWs)
+len(kpts) = 48
+tol = 1e-08
+c0 = None
+wrap_around = True
+blksize = None
+isdf_to_save = /resnick/scratch/yangjunjie/nio-afm/49023367/tmp0x2bjy73
+Overwritten attributes  build  of <class 'fft.isdf.InterpolativeSeparableDensityFitting'>
+
+WARN: ke_cutoff/mesh (400 / [89 89 89]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.58 Eh.
+Recommended ke_cutoff/mesh are 1172.14 / [151 151 151].
+
+Using pre-computed interpolating vectors, c0 is not used
+    CPU time for building inpv_kpt      1.69 sec, wall time      0.15 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 1.69e+03 GB.
+memory needed for each block:   6.54e+01 GB
+memory needed for each k-point: 3.52e+01 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[      0:  27298]    619.97 sec, wall time    141.46 sec
+    CPU time for eta_kpt[  27298:  54596]    626.03 sec, wall time    128.51 sec
+    CPU time for eta_kpt[  54596:  81894]    640.35 sec, wall time    142.44 sec
+    CPU time for eta_kpt[  81894: 109192]    638.14 sec, wall time    137.78 sec
+    CPU time for eta_kpt[ 109192: 136490]    680.39 sec, wall time    129.75 sec
+    CPU time for eta_kpt[ 136490: 163788]    687.63 sec, wall time    154.39 sec
+    CPU time for eta_kpt[ 163788: 191086]    718.31 sec, wall time    182.70 sec
+    CPU time for eta_kpt[ 191086: 218384]    696.23 sec, wall time    175.50 sec
+    CPU time for eta_kpt[ 218384: 245682]    715.31 sec, wall time    169.83 sec
+    CPU time for eta_kpt[ 245682: 272980]    664.08 sec, wall time    153.46 sec
+    CPU time for eta_kpt[ 272980: 300278]    667.11 sec, wall time    149.78 sec
+    CPU time for eta_kpt[ 300278: 327576]    741.34 sec, wall time    177.65 sec
+    CPU time for eta_kpt[ 327576: 354874]    671.94 sec, wall time    161.77 sec
+    CPU time for eta_kpt[ 354874: 382172]    680.79 sec, wall time    158.79 sec
+    CPU time for eta_kpt[ 382172: 409470]    657.02 sec, wall time    150.64 sec
+    CPU time for eta_kpt[ 409470: 436768]    655.78 sec, wall time    161.05 sec
+    CPU time for eta_kpt[ 436768: 464066]    687.00 sec, wall time    153.38 sec
+    CPU time for eta_kpt[ 464066: 491364]    649.10 sec, wall time    155.04 sec
+    CPU time for eta_kpt[ 491364: 518662]    647.92 sec, wall time    142.40 sec
+    CPU time for eta_kpt[ 518662: 545960]    664.86 sec, wall time    145.99 sec
+    CPU time for eta_kpt[ 545960: 573258]    690.65 sec, wall time    149.28 sec
+    CPU time for eta_kpt[ 573258: 600556]    653.41 sec, wall time    142.04 sec
+    CPU time for eta_kpt[ 600556: 627854]    638.98 sec, wall time    141.86 sec
+    CPU time for eta_kpt[ 627854: 655152]    649.00 sec, wall time    154.72 sec
+    CPU time for eta_kpt[ 655152: 682450]    664.64 sec, wall time    151.47 sec
+    CPU time for eta_kpt[ 682450: 704969]    600.72 sec, wall time    125.33 sec
+    CPU time for building eta_kpt  17507.20 sec, wall time   3945.48 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[  1 / 48]   8207.68 sec, wall time    388.94 sec
+    CPU time for coul_kpt[  2 / 48]   8797.87 sec, wall time    390.82 sec
+    CPU time for coul_kpt[  3 / 48]   8306.30 sec, wall time    377.42 sec
+    CPU time for coul_kpt[  4 / 48]   8349.53 sec, wall time    380.23 sec
+    CPU time for coul_kpt[  5 / 48]   8548.24 sec, wall time    402.74 sec
+    CPU time for coul_kpt[  6 / 48]   8393.34 sec, wall time    383.06 sec
+    CPU time for coul_kpt[  7 / 48]   9231.74 sec, wall time    415.24 sec
+    CPU time for coul_kpt[  8 / 48]   8469.82 sec, wall time    389.37 sec
+    CPU time for coul_kpt[  9 / 48]   8618.68 sec, wall time    406.25 sec
+    CPU time for coul_kpt[ 10 / 48]   8332.73 sec, wall time    382.54 sec
+    CPU time for coul_kpt[ 11 / 48]   8614.64 sec, wall time    407.68 sec
+    CPU time for coul_kpt[ 12 / 48]   8317.01 sec, wall time    387.79 sec
+    CPU time for coul_kpt[ 13 / 48]   8361.97 sec, wall time    397.32 sec
+    CPU time for coul_kpt[ 14 / 48]   8487.89 sec, wall time    397.37 sec
+    CPU time for coul_kpt[ 15 / 48]   9134.45 sec, wall time    440.16 sec
+    CPU time for coul_kpt[ 16 / 48]   8584.79 sec, wall time    404.70 sec
+    CPU time for coul_kpt[ 17 / 48]   8973.73 sec, wall time    415.39 sec
+    CPU time for coul_kpt[ 18 / 48]   8331.82 sec, wall time    416.74 sec
+    CPU time for coul_kpt[ 19 / 48]   8382.01 sec, wall time    418.02 sec
+    CPU time for coul_kpt[ 20 / 48]   8215.87 sec, wall time    373.94 sec
+    CPU time for coul_kpt[ 21 / 48]   8745.06 sec, wall time    433.13 sec
+    CPU time for coul_kpt[ 22 / 48]   8327.20 sec, wall time    364.15 sec
+    CPU time for coul_kpt[ 23 / 48]   8572.49 sec, wall time    398.24 sec
+    CPU time for coul_kpt[ 24 / 48]   8205.38 sec, wall time    370.75 sec
+    CPU time for coul_kpt[ 25 / 48]   8203.63 sec, wall time    365.31 sec
+    CPU time for coul_kpt[ 26 / 48]   8616.99 sec, wall time    405.39 sec
+    CPU time for coul_kpt[ 27 / 48]   9138.46 sec, wall time    414.87 sec
+    CPU time for coul_kpt[ 28 / 48]   8644.70 sec, wall time    382.85 sec
+    CPU time for coul_kpt[ 29 / 48]   8872.11 sec, wall time    412.00 sec
+    CPU time for coul_kpt[ 30 / 48]   8254.86 sec, wall time    363.81 sec
+    CPU time for coul_kpt[ 31 / 48]   8316.32 sec, wall time    360.49 sec
+    CPU time for coul_kpt[ 32 / 48]   8743.51 sec, wall time    396.54 sec
+    CPU time for coul_kpt[ 33 / 48]   8148.00 sec, wall time    379.47 sec
+    CPU time for coul_kpt[ 34 / 48]   8531.05 sec, wall time    347.81 sec
+    CPU time for coul_kpt[ 35 / 48]   8365.09 sec, wall time    349.22 sec
+    CPU time for coul_kpt[ 36 / 48]   8544.83 sec, wall time    366.02 sec
+    CPU time for coul_kpt[ 37 / 48]   8002.03 sec, wall time    375.85 sec
+    CPU time for coul_kpt[ 38 / 48]   9042.95 sec, wall time    392.92 sec
+    CPU time for coul_kpt[ 39 / 48]   8556.98 sec, wall time    359.23 sec
+    CPU time for coul_kpt[ 40 / 48]   7625.87 sec, wall time    345.97 sec
+    CPU time for coul_kpt[ 41 / 48]   7703.16 sec, wall time    334.81 sec
+    CPU time for coul_kpt[ 42 / 48]   8047.31 sec, wall time    350.30 sec

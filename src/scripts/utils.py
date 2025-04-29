@@ -123,8 +123,8 @@ def get_init_guess(config: dict):
     beta_ix = []
 
     if "nio-afm" in name.lower():
-        alph_label = ["0 Ni 3d"]
-        beta_label = ["1 Ni 3d"]
+        alph_label = ["0 Ni 3dz2", "0 Ni 3dx2-y2"]
+        beta_label = ["1 Ni 3dz2", "1 Ni 3dx2-y2"]
 
         alph_ix = cell.search_ao_label(alph_label)
         beta_ix = cell.search_ao_label(beta_label)
@@ -147,6 +147,7 @@ def get_init_guess(config: dict):
         dm0[0, :, beta_ix, beta_ix] *= 0.0
         dm0[1, :, alph_ix, alph_ix] *= 0.0
     
+    mf.mulliken_meta(cell, dm0)
     config["dm0"] = dm0[0] if spin == 1 else dm0
 
 def build_mean_field(config: dict):
