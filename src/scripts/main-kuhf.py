@@ -21,8 +21,8 @@ def main(config: dict):
 
     t0 = time.time()
     dm0 = scf_obj.make_rdm1()
-    vj, vk = scf_obj.get_jk(dm_kpts=dm0)
-    table["time_vjk"] = time.time() - t0
+    vj, vk = scf_obj.get_jk(dm_kpts=dm0, hermi=0, with_j=False, with_k=True)
+    table["time_get_vk"] = time.time() - t0
 
     latt = config["lattice"]
     is_unrestricted = config["is_unrestricted"]
@@ -52,7 +52,7 @@ def main(config: dict):
             print("error = %6.2e" % err)
             print("time_get_eri_sol = %6.2f" % table["time_get_eri_sol"])
             print("time_get_eri_ref = %6.2f" % table["time_get_eri_ref"])
-            
+
             eri_emb = eri_emb_sol
         else:
             eri_emb = get_emb_eri_old(*args, **kwargs)
