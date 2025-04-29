@@ -12,7 +12,7 @@ def loop(base_dir):
     base_dir.mkdir(parents=True, exist_ok=True)
     
     basis = ['gth-szv-molopt-sr', 'gth-dzvp-molopt-sr']
-    kmesh = ['1-1-1', '1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3']
+    kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
     ke_cutoff = [50, 200]
     method = ['gdf', 'fftdf', 'fftisdf-10', 'fftisdf-40']
 
@@ -37,21 +37,6 @@ def loop(base_dir):
 def main():
     base_dir = Path(__file__).parent
     for dir_path, cmd, name in loop(base_dir):
-        # if not "fftisdf" in name:
-        #     continue
-        # if dir_path.exists():
-        #     is_finished = False
-        #     outlog = dir_path / "out.log"
-        #     if outlog.exists():
-        #         is_finished = outlog.stat().st_size > 0
-
-        #     is_finished = is_finished or ("fftdf" in name)
-        #     if is_finished:
-        #         print(f"Directory {dir_path} already finished, skipping")
-        #         continue
-        #     else:
-        #         shutil.rmtree(dir_path)
-
         print(f"Setting up benchmark directory: {dir_path}")
         print(f"cmd: {cmd[:-1]}")
 
@@ -73,10 +58,6 @@ def main():
                        Path(__file__).parent / '../../src/libdmet2-main']
         python_path = ":".join([str(p) for p in python_path])
         run_content.append(f"export PYTHONPATH=$PYTHONPATH:{python_path}\n")
-        # run_content.append(f"export HDF5_DO_MPI_FILE_SYNC=0\n")
-        
-        # run_content.append(f"cp {base / '../src/script/build-mpi.py'} {dir_path / 'build.py'}\n")
-        # run_content.append(f"cp {base / '../src/script/main.py'} {dir_path / 'main.py'}\n")
         run_content.append(f"cp {base / '../../src/script/main-nio-afm.py'} {dir_path / 'main.py'}\n")
         run_content.append(f"{cmd}\n")
         run_content.append(f"echo \"End time = $(date)\"\n")
