@@ -27,7 +27,9 @@ def main(config: dict):
     latt = config["lattice"]
     is_unrestricted = config["is_unrestricted"]
 
-    from trans2e import build_dmet, get_emb_eri_fftisdf
+    from scripts.dmet import build_dmet
+    from scripts.dmet import get_emb_eri_fftisdf_sol
+    from scripts.dmet import get_emb_eri_fftisdf_ref
     get_emb_eri_old = libdmet.basis.trans_2e.get_emb_eri
     def get_emb_eri(*args, **kwargs):
         df_obj = args[0]
@@ -36,8 +38,22 @@ def main(config: dict):
         t0 = time.time()
         if isinstance(df_obj, fft.ISDF):
             kwargs.pop('use_mpi')
-            from trans2e import get_emb_eri_fftisdf
-            eri_emb = get_emb_eri_fftisdf(*args, **kwargs)
+            from scripts.dmet import get_emb_eri_fftisdf
+            t0 = time.time()
+            eri_emb_sol = get_emb_eri_fftisdf(*args, **kwargs)
+            table["time_get_eri_sol"] = time.time() - t0
+            t0 = time.time()
+            eri_emb_ref = get_emb_eri_fftisdf_ref(*args, **kwargs)
+            table["time_get_eri_ref"] = time.time() - t0
+
+            err = abs(eri_emb_sol - eri_emb_ref).max()
+            assert err < 1e-10
+
+            print("error = %6.2e" % err)
+            print("time_get_eri_sol = %6.2f" % table["time_get_eri_sol"])
+            print("time_get_eri_ref = %6.2f" % table["time_get_eri_ref"])
+            
+            eri_emb = eri_emb_sol
         else:
             eri_emb = get_emb_eri_old(*args, **kwargs)
         table["time_get_eri"] = time.time() - t0
