@@ -1,7 +1,7 @@
 import fft, libdmet, numpy, scipy
 from libdmet.basis.trans_2e_helper import eri_restore
 
-def get_emb_eri_fftisdf_ref(
+def get_emb_eri_fftisdf_v1(
     mydf, C_ao_lo=None, C_lo_eo=None, unit_eri=False,
     symmetry=4, t_reversal_symm=True, max_memory=None,
     kscaled_center=None, kconserv_tol=1e-12, fname=None
@@ -52,7 +52,7 @@ def get_emb_eri_fftisdf_ref(
     eri_emb = eri_restore(eri_emb, symmetry, neo)
     return eri_emb
 
-def get_emb_eri_fftisdf_sol(
+def get_emb_eri_fftisdf_v2(
     mydf, C_ao_lo=None, C_lo_eo=None, unit_eri=False,
     symmetry=4, t_reversal_symm=True, max_memory=None,
     kscaled_center=None, kconserv_tol=1e-12, fname=None
@@ -89,40 +89,45 @@ def get_emb_eri_fftisdf_sol(
     assert isinstance(mydf, fft.ISDF)
     sp = spin * (spin + 1) // 2 # spin pair
 
-    nip = mydf._inpv_kpt.shape[2]
+    nip = mydf._inpv_kpt.shape[1]
     inpv_kpts = [mydf._inpv_kpt @ c_ao_eo_k[s] for s in range(spin)]
-    inpv_kpts = numpy.asarray(inpv_kpts).reshape(spin, nkpt, nip, neo)
+    inpv_kpts = numpy.asarray(inpv_kpts).reshape(spin, nkpt, -1)
     coul_kpt = mydf._coul_kpt
 
-    inpv_spcs = [fft.isdf_ao2mo.kpt_to_spc(x_kpt, phase) for x_kpt in inpv_kpts]
+    from fft.isdf_ao2mo import kpt_to_spc, spc_to_kpt
+    inpv_spcs = [kpt_to_spc(inpv_kpts[s], phase) for s in range(spin)]
     inpv_spcs = numpy.asarray(inpv_spcs).reshape(spin, nspc, nip, neo)
 
-    rho_spcs = []
+    rho_kpts = []
     for s in range(spin):
-        rho_s = inpv_spcs[s].reshape(nspc * nip, -1, 1) * inpv_spcs[s].reshape(nspc * nip, 1, -1)
-        rho_s = rho_s.reshape(nspc, nip, -1)
-        rho_spcs.append(rho_s)
+        x_s = inpv_spcs[s]
+        rho_spc = x_s.reshape(nspc * nip, -1, 1) * x_s.reshape(nspc * nip, 1, -1)
+        rho_spc = rho_spc.reshape(nspc, nip, -1)
+        rho_kpt = spc_to_kpt(rho_spc, phase)
+        rho_kpt = rho_kpt.reshape(nkpt, nip, -1)
+        rho_kpts.append(rho_kpt)
 
-    rho_kpts = [fft.isdf_ao2mo.spc_to_kpt(rho_spc, phase) for rho_spc in rho_spcs]
     rho_kpts = numpy.asarray(rho_kpts).reshape(spin, nkpt, nip, -1)
 
     eri_emb = []
     for s1, s2 in [(0, 0), (1, 1), (0, 1)][:sp]:
-        lhs_kpt = rho_kpts[s1]
-        rhs_kpt = rho_kpts[s2]
-        n1 = lhs_kpt.shape[2]
-        n2 = rhs_kpt.shape[2]
+        rho1_kpt = rho_kpts[s1]
+        rho2_kpt = rho_kpts[s2]
+        n1 = rho1_kpt.shape[2]
+        n2 = rho2_kpt.shape[2]
         eri_emb_s1_s2 = numpy.zeros((n1, n2))
         for q in range(nkpt):
-            lhs_q = lhs_kpt[q].reshape(nip, -1)
-            rhs_q = rhs_kpt[q].reshape(nip, -1)
-            eri_emb_q = lhs_q.conj() @ coul_kpt[q] @ rhs_q
-            eri_emb_s1_s2 += eri_emb_q.real * nspc
+            rho1_q = rho1_kpt[q].reshape(nip, n1)
+            rho2_q = rho2_kpt[q].reshape(nip, n2)
+            eri_emb_q = rho1_q.T @ coul_kpt[q] @ rho2_q.conj()
+            eri_emb_s1_s2 += eri_emb_q.real / (nkpt * nkpt)
         eri_emb.append(eri_emb_s1_s2)
     eri_emb = numpy.asarray(eri_emb)
     eri_emb = eri_emb.reshape(sp, neo * neo, neo * neo)
     eri_emb = eri_restore(eri_emb, symmetry, neo)
     return eri_emb
+
+get_emb_eri_fftisdf = get_emb_eri_fftisdf_v2
 
 def build_dmet(mf, latt, is_unrestricted):
     from libdmet.lo.make_lo import get_iao

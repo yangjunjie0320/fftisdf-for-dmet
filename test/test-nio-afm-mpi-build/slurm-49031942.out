@@ -1,0 +1,12 @@
+SLURMD_NODENAME = hpc-35-03
+Start time = Tue Apr 29 12:04:18 PM PDT 2025
+OMP_NUM_THREADS = 8
+MKL_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 81920
+TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49031942/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49031942/
+srun: error: hpc-35-03: tasks 0-1: Exited with exit code 1
+srun: error: hpc-35-07: task 2: Exited with exit code 1
+srun: StepId=49031942.0 aborted before step completely launched.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 49031942 ON hpc-35-03 CANCELLED AT 2025-04-29T12:08:38 ***

@@ -79,6 +79,9 @@ def build_density_fitting(config: dict):
     if "gdf" in method.lower():
         from pyscf.pbc.df import GDF
         df_obj = GDF(cell, kpts)
+        df_obj.exclude_dd_block = False
+        df_obj.exxdiv = None
+        df_obj._prefer_ccdf = True
 
         if df_to_read is not None:
             assert os.path.exists(df_to_read)

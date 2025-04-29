@@ -41,7 +41,7 @@ def main():
 
         config['name'] = name
         config['pseudo'] = 'gth-pbe'
-        config['is-unrestricted'] = False
+        config['is-unrestricted'] = True
         config['init-guess-method'] = 'minao'
         config['df-to-read'] = None
 
@@ -58,13 +58,19 @@ def main():
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={name}\n")
 
+        # convert to absolute path
         python_path = [Path(__file__).parent / '../../src/fftisdf-main',
                        Path(__file__).parent / '../../src/libdmet2-main',
                        Path(__file__).parent / '../../src/scripts']
-        python_path = ":".join([str(p) for p in python_path])
+        python_path = ":".join([str(p.absolute()) for p in python_path])
         run_content.append(f"export PYTHONPATH=$PYTHONPATH:{python_path}\n")
-        run_content.append(f"cp {base / '../../src/scripts/main-kuhf.py'} {dir_path / 'main.py'}\n")
-        run_content.append(f"python main.py %s\n" % " ".join([f"--{k}={v}" for k, v in config.items()]))
+        run_content.append(f"cp {(base / '../../src/scripts/main-kuhf.py').absolute()} ./main.py\n")
+
+        is_unrestricted = config.pop('is-unrestricted')
+        cmd = "python main.py %s" % " ".join([f"--{k}={v}" for k, v in config.items()])
+        if is_unrestricted:
+            cmd += "--is-unrestricted"
+        run_content.append(cmd + "\n")
         run_content.append(f"echo \"End time = $(date)\"\n")
 
         with open(dir_path / 'run.sh', 'w') as f:
