@@ -1,0 +1,84 @@
+SLURMD_NODENAME = hpc-35-01
+Start time = Wed Apr 30 12:43:20 PM PDT 2025
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond/49059150/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond/49059150/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond/1-2-2/gth-dzvp-molopt-sr/fftisdf-40/400/main.py with:
+name: diamond
+xc: None
+kmesh: 1-2-2
+basis: gth-dzvp-molopt-sr
+pseudo: gth-pbe
+ke_cutoff: 400.0
+density_fitting_method: fftisdf-40
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Cholesky rank = 2330, c0 =  40.00, nao = 26, nip = 1040
+Parent grid size = 4913, selected grid size = 1040
+truncated values = 7.12e+01, estimated error = 8.74e-03
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 8.10736)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 8.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            2.00664
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76642
+pop of  0 C 2py           0.61347
+pop of  0 C 2pz           0.61347
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            2.00664
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76642
+pop of  1 C 2py           0.61347
+pop of  1 C 2pz           0.61347
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.00000
+charge of    1C =      0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [45 45 45] (91125 PWs)
+len(kpts) = 4
+tol = 1e-08
+c0 = None
+wrap_around = True
+blksize = None
+isdf_to_save = /resnick/scratch/yangjunjie/diamond/49059150/tmpvx0xdnsu
+Overwritten attributes  build  of <class 'fft.isdf.InterpolativeSeparableDensityFitting'>
+
+WARN: ke_cutoff/mesh (400 / [45 45 45]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 1.6e-05 Eh.
+Recommended ke_cutoff/mesh are 569.817 / [53 53 53].
+
+Using pre-computed interpolating vectors, c0 is not used
+    CPU time for building inpv_kpt      0.80 sec, wall time      0.03 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 6.07e+00 GB.
+memory needed for each block:   6.07e+00 GB
+memory needed for each k-point: 1.52e+00 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt

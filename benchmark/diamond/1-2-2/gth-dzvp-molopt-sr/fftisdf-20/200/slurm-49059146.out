@@ -1,0 +1,224 @@
+SLURMD_NODENAME = hpc-35-19
+Start time = Wed Apr 30 12:43:09 PM PDT 2025
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond/49059146/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond/49059146/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond/1-2-2/gth-dzvp-molopt-sr/fftisdf-20/200/main.py with:
+name: diamond
+xc: None
+kmesh: 1-2-2
+basis: gth-dzvp-molopt-sr
+pseudo: gth-pbe
+ke_cutoff: 200.0
+density_fitting_method: fftisdf-20
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Cholesky rank = 2330, c0 =  20.00, nao = 26, nip = 520
+Parent grid size = 4913, selected grid size = 520
+truncated values = 7.10e+01, estimated error = 2.14e-01
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 8.10736)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 8.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            2.00664
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76642
+pop of  0 C 2py           0.61347
+pop of  0 C 2pz           0.61347
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            2.00664
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76642
+pop of  1 C 2py           0.61347
+pop of  1 C 2pz           0.61347
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.00000
+charge of    1C =      0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [33 33 33] (35937 PWs)
+len(kpts) = 4
+tol = 1e-08
+c0 = None
+wrap_around = True
+blksize = None
+isdf_to_save = /resnick/scratch/yangjunjie/diamond/49059146/tmpv8ip3ahl
+Overwritten attributes  build  of <class 'fft.isdf.InterpolativeSeparableDensityFitting'>
+
+WARN: ke_cutoff/mesh (200 / [33 33 33]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.041 Eh.
+Recommended ke_cutoff/mesh are 569.817 / [53 53 53].
+
+Using pre-computed interpolating vectors, c0 is not used
+    CPU time for building inpv_kpt      0.84 sec, wall time      0.03 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 1.20e+00 GB.
+memory needed for each block:   1.20e+00 GB
+memory needed for each k-point: 2.99e-01 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 35937]     16.63 sec, wall time      1.77 sec
+    CPU time for building eta_kpt     21.50 sec, wall time      1.93 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[ 1 / 4]     12.45 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 2 / 4]     11.79 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 3 / 4]     11.65 sec, wall time      0.55 sec
+    CPU time for coul_kpt[ 4 / 4]     11.86 sec, wall time      0.57 sec
+    CPU time for building coul_kpt     50.62 sec, wall time      2.37 sec
+ISDF results are saved to /resnick/scratch/yangjunjie/diamond/49059146/tmpv8ip3ahl, size = 18 MB
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/diamond/49059146/tmp2gki42s2
+max_memory 327680 MB (current use 339 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 4
+kpts = [[ 0.          0.          0.        ]
+ [-0.46609264 -0.46609264  0.46609264]
+ [-0.46609264  0.46609264 -0.46609264]
+ [-0.93218529  0.          0.        ]]
+Exchange divergence treatment (exxdiv) = None
+Smearing method = fermi
+DF object = <fft.isdf.InterpolativeSeparableDensityFitting object at 0x7f55cf762350>
+Overwritten attributes  energy_tot get_occ get_grad  of <class 'pyscf.pbc.scf.khf.KRHF'>
+Set gradient conv threshold to 0.001
+    CPU time for vj and vk     12.87 sec, wall time      0.42 sec
+E1 = (4.07790245278095+1.431027815900626e-18j)  E_coul = (-0.9457262937981534+1.4059239835158755e-17j)
+init E= -9.65495298664144
+    CPU time for initialize scf     22.08 sec, wall time      0.81 sec
+HOMO = 0.768217340879  LUMO = 0.867953681082
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.33512777  0.73455241  0.73611884  0.76821734] [0.95445522 0.97775602 0.99880852 1.24826763 1.93075651 1.94350828
+ 2.47468441 2.47663164 2.48299269 2.75813922 2.75903838 2.75949266
+ 3.87519141 3.8764803  4.06556084 4.06583974 4.06833341 4.97470608
+ 4.97478701 4.97494513 7.02114907 9.37567697]
+   1 ( 0.000  0.000 -0.500)   [-0.11482471  0.08309244  0.60633962  0.64559049] [1.04322442 1.10416401 1.11949169 1.51149694 1.76747798 2.0219769
+ 2.02785417 2.04474669 2.27754353 2.28421799 3.00831958 3.16093106
+ 3.21807024 3.21966868 3.27456265 3.27499727 3.92874056 3.92925755
+ 4.81697966 4.81787609 9.21666925 9.38208401]
+   2 (-0.000 -0.500  0.000)   [-0.11482361  0.08309232  0.60633944  0.64559004] [1.04322296 1.10416634 1.11949025 1.51149892 1.76747905 2.02197771
+ 2.02785615 2.04474445 2.27754396 2.28421876 3.00832465 3.16092756
+ 3.21807082 3.21967117 3.27456177 3.27499771 3.92874402 3.92925293
+ 4.81698163 4.81787383 9.21666951 9.38208383]
+   3 ( 0.000 -0.500 -0.500)   [0.05210772 0.06541401 0.42153039 0.49508601] [0.86795368 0.92008518 1.491847   1.49475244 1.79895701 1.80246428
+ 2.23130451 2.23551256 2.59026823 2.59182354 3.02126712 3.02618
+ 3.19979112 3.20151606 3.31596887 3.31757054 3.76350933 3.76450726
+ 5.06441801 5.06465203 9.44916526 9.44969076]
+    Fermi level 0.8184227562849933  Sum mo_occ_kpts = 32.000000000000114  should equal nelec = 32
+    sigma = 0.01  Optimized mu = 0.8184227562849933  entropy = 0.0431588045086
+    CPU time for vj and vk     13.60 sec, wall time      0.44 sec
+E1 = (4.202553381195174-6.434245888417882e-19j)  E_coul = (-0.7162414495807387+1.1193002923478057e-17j)
+    Total E(T) = -9.3008172140098  Free energy = -9.30124880205489  E0 = -9.30103300803235
+cycle= 1 E= -9.3008172140098  delta_E= 0.354  |g|= 0.223  |ddm|= 6.32
+    CPU time for cycle= 1     13.84 sec, wall time      0.46 sec
+HOMO = 0.73210118241  LUMO = 0.912315043573
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.29168447  0.6804569   0.71869681  0.73210118] [0.97566673 0.98921568 1.01238578 1.36793802 1.92379988 1.92418863
+ 2.48741222 2.48956948 2.49392669 2.75856702 2.76212592 2.7625665
+ 3.88052393 3.88743423 4.06528955 4.06739207 4.0674793  4.97982878
+ 4.982542   4.98450623 7.02330222 9.37564076]
+   1 ( 0.000  0.000 -0.500)   [-0.01985576  0.12631609  0.56694205  0.60195228] [1.0985657  1.11240579 1.15534423 1.52832179 1.76960828 2.01845586
+ 2.0196727  2.06924743 2.26303518 2.26945742 3.00994441 3.17055391
+ 3.22365106 3.22743518 3.27219939 3.27328255 3.92989863 3.935473
+ 4.8228972  4.82713773 9.21599438 9.38212264]
+   2 (-0.000 -0.500  0.000)   [-0.01985465  0.12631589  0.56694109  0.60195439] [1.09856615 1.1124057  1.15534436 1.52832253 1.76960937 2.01845755
+ 2.01967434 2.06924409 2.26303603 2.2694583  3.00994582 3.17055326
+ 3.22365102 3.22743627 3.27220049 3.27328161 3.9299003  3.9354704
+ 4.8228956  4.82713767 9.21599436 9.38212227]
+   3 ( 0.000 -0.500 -0.500)   [0.12385791 0.12800277 0.4200343  0.45572629] [0.91231504 0.97063329 1.49803233 1.5030083  1.80558393 1.81617791
+ 2.203662   2.20941348 2.57987444 2.58836568 3.02550112 3.03100652
+ 3.21920363 3.21992034 3.31529677 3.32162649 3.76520274 3.77005886
+ 5.06772834 5.07200258 9.44906295 9.44929188]
+    Fermi level 0.823367407069562  Sum mo_occ_kpts = 32.0  should equal nelec = 32
+    sigma = 0.01  Optimized mu = 0.823367407069562  entropy = 0.0014023792956
+    CPU time for vj and vk     13.06 sec, wall time      0.42 sec
+E1 = (4.182938877667847-7.579498982811411e-19j)  E_coul = (-0.7082186126788409+1.1434458881958934e-17j)
+    Total E(T) = -9.31240888063523  Free energy = -9.31242290442819  E0 = -9.31241589253171
+cycle= 2 E= -9.31240888063523  delta_E= -0.0116  |g|= 0.0233  |ddm|= 0.505
+    CPU time for cycle= 2     13.51 sec, wall time      0.45 sec
+HOMO = 0.728227032413  LUMO = 0.916415906444
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.28703805  0.6810429   0.71647811  0.72822703] [0.98096171 0.99603314 1.01708271 1.38034165 1.92586442 1.92636146
+ 2.49161962 2.49287466 2.49633647 2.76119443 2.76431983 2.76465301
+ 3.88406399 3.89067328 4.06829579 4.06984518 4.07013821 4.98406574
+ 4.98623644 4.98784107 7.02855028 9.38476847]
+   1 ( 0.000  0.000 -0.500)   [-0.01400346  0.12611254  0.56852052  0.59963688] [1.10551918 1.11803974 1.15984318 1.533936   1.77159983 2.01950979
+ 2.02279176 2.07083574 2.26361806 2.27003727 3.01230432 3.17416672
+ 3.22843056 3.23107911 3.27506274 3.27662548 3.93260065 3.93799618
+ 4.82639215 4.82983487 9.22485381 9.39122629]
+   2 (-0.000 -0.500  0.000)   [-0.01400255  0.12611259  0.56851944  0.59963888] [1.10551967 1.1180395  1.15984328 1.53393678 1.77160099 2.01951132
+ 2.02279348 2.07083255 2.26361892 2.2700382  3.01230532 3.1741666
+ 3.22843036 3.23108015 3.27506365 3.27662427 3.93260199 3.93799386
+ 4.82639042 4.82983495 9.22485377 9.39122587]
+   3 ( 0.000 -0.500 -0.500)   [0.12653473 0.13174871 0.42293655 0.45316325] [0.91641591 0.97281673 1.50433913 1.50926737 1.80840465 1.82006807
+ 2.20367771 2.208503   2.58273553 2.59065698 3.02958689 3.03448823
+ 3.222264   3.22485425 3.31821188 3.32352746 3.76869625 3.77332062
+ 5.07232016 5.07435551 9.45801218 9.45841255]
+    Fermi level 0.8236738990391299  Sum mo_occ_kpts = 32.0  should equal nelec = 32
+    sigma = 0.01  Optimized mu = 0.8236738990391299  entropy = 0.000997910658322
+    CPU time for vj and vk     14.44 sec, wall time      0.47 sec
+E1 = (4.186135332276261-7.963845791783995e-19j)  E_coul = (-0.7114800722248787+1.1441673646822056e-17j)
+    Total E(T) = -9.31247388557286  Free energy = -9.31248386467944  E0 = -9.31247887512615
+cycle= 3 E= -9.31247388557286  delta_E= -6.5e-05  |g|= 0.00303  |ddm|= 0.0462
+    CPU time for cycle= 3     14.94 sec, wall time      0.50 sec
+HOMO = 0.727989193633  LUMO = 0.916344880532
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.2873841   0.68036187  0.71589033  0.72798919] [0.98065795 0.99569272 1.01668944 1.37976468 1.92548451 1.92601946
+ 2.49105054 2.49245846 2.4959866  2.76039806 2.76358954 2.76400146
+ 3.88354588 3.89012786 4.06761621 4.06908243 4.06954474 4.98342482
+ 4.98557414 4.98717892 7.02722904 9.382639  ]
+   1 ( 0.000  0.000 -0.500)   [-0.01441779  0.12588407  0.56793837  0.59923634] [1.10525927 1.11772744 1.15928965 1.53351674 1.77105999 2.01904885
+ 2.02219506 2.07060555 2.26337789 2.26971987 3.01188685 3.17359368
+ 3.22765328 3.23033948 3.27439092 3.27605585 3.93205783 3.93743184
+ 4.82578085 4.82925976 9.22276824 9.38910027]
+   2 (-0.000 -0.500  0.000)   [-0.01441686  0.12588408  0.56793729  0.59923836] [1.10525977 1.11772721 1.15928973 1.53351752 1.77106113 2.0190504
+ 2.02219676 2.07060236 2.26337872 2.26972076 3.01188787 3.17359353
+ 3.22765309 3.23034053 3.27439185 3.27605468 3.93205917 3.93742953
+ 4.8257791  4.82925985 9.2227682  9.38909985]
+   3 ( 0.000 -0.500 -0.500)   [0.12632821 0.13120674 0.42239934 0.45291289] [0.91634488 0.97252566 1.50373024 1.50881303 1.80781758 1.81920502
+ 2.20333425 2.20814616 2.58226006 2.59034656 3.02887685 3.03381022
+ 3.2218283  3.22419618 3.31753746 3.32307156 3.76810505 3.77288718
+ 5.07162211 5.07372933 9.4559107  9.45628309]
+    Fermi level 0.8234768855877821  Sum mo_occ_kpts = 32.0  should equal nelec = 32
+    sigma = 0.01  Optimized mu = 0.8234768855877821  entropy = 0.000986345555236

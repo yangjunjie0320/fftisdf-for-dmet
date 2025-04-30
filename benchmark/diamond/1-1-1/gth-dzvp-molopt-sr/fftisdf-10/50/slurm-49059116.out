@@ -1,0 +1,526 @@
+SLURMD_NODENAME = hpc-35-02
+Start time = Wed Apr 30 12:41:37 PM PDT 2025
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond/49059116/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond/49059116/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond/1-1-1/gth-dzvp-molopt-sr/fftisdf-10/50/main.py with:
+name: diamond
+xc: None
+kmesh: 1-1-1
+basis: gth-dzvp-molopt-sr
+pseudo: gth-pbe
+ke_cutoff: 50.0
+density_fitting_method: fftisdf-10
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Cholesky rank = 367, c0 =  10.00, nao = 26, nip = 260
+Parent grid size = 4913, selected grid size = 260
+truncated values = 2.48e+01, estimated error = 4.10e-02
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 8.68192)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 8.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            2.79719
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.40094
+pop of  0 C 2py           0.40094
+pop of  0 C 2pz           0.40094
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            2.79719
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.40094
+pop of  1 C 2py           0.40094
+pop of  1 C 2pz           0.40094
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =     -0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [17 17 17] (4913 PWs)
+len(kpts) = 1
+tol = 1e-08
+c0 = None
+wrap_around = True
+blksize = None
+isdf_to_save = /resnick/scratch/yangjunjie/diamond/49059116/tmprh1rupzz
+Overwritten attributes  build  of <class 'fft.isdf.InterpolativeSeparableDensityFitting'>
+
+WARN: ke_cutoff/mesh (50 / [17 17 17]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 6.3 Eh.
+Recommended ke_cutoff/mesh are 569.817 / [53 53 53].
+
+Using pre-computed interpolating vectors, c0 is not used
+    CPU time for building inpv_kpt      0.31 sec, wall time      0.01 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 2.04e-02 GB.
+memory needed for each block:   2.04e-02 GB
+memory needed for each k-point: 2.04e-02 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[    0: 4913]      4.20 sec, wall time      0.13 sec
+    CPU time for building eta_kpt      5.53 sec, wall time      0.18 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[ 1 / 1]      6.77 sec, wall time      0.23 sec
+    CPU time for building coul_kpt     10.47 sec, wall time      0.37 sec
+ISDF results are saved to /resnick/scratch/yangjunjie/diamond/49059116/tmprh1rupzz, size = 1 MB
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/diamond/49059116/tmp1q6ppv_y
+max_memory 327680 MB (current use 266 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 1
+kpts = [[0. 0. 0.]]
+Exchange divergence treatment (exxdiv) = None
+Smearing method = fermi
+DF object = <fft.isdf.InterpolativeSeparableDensityFitting object at 0x7f54fe4de350>
+Overwritten attributes  get_grad get_occ energy_tot  of <class 'pyscf.pbc.scf.khf.KRHF'>
+Set gradient conv threshold to 0.001
+    CPU time for vj and vk      9.13 sec, wall time      0.29 sec
+E1 = 3.241186762074639  E_coul = 0.16740050422983888
+init E= -9.37854187931976
+    CPU time for initialize scf     18.08 sec, wall time      0.66 sec
+HOMO = 0.821341919572  LUMO = 1.02979128973
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [0.1106194  0.82129924 0.82131738 0.82134192] [1.02979129 1.02981705 1.02985341 1.31571088 1.94756346 1.94757613
+ 2.47851953 2.47855687 2.47857766 2.75249111 2.75255042 2.75258568
+ 3.8680382  3.86807119 4.0565271  4.05657724 4.05664387 4.96298006
+ 4.96309627 4.96317755 7.0058323  9.34237263]
+    Fermi level 0.9255700399830905  Sum mo_occ_kpts = 8.0  should equal nelec = 8
+    sigma = 0.01  Optimized mu = 0.9255700399830905  entropy = 0.00406897313105
+    CPU time for vj and vk      8.48 sec, wall time      0.27 sec
+E1 = 4.73177109758976  E_coul = 0.5520522826226598
+    Total E(T) = -7.50330576541182  Free energy = -7.50334645514313  E0 = -7.50332611027748
+cycle= 1 E= -7.50330576541182  delta_E= 1.88  |g|= 0.129  |ddm|= 3.82
+    CPU time for cycle= 1      8.73 sec, wall time      0.29 sec
+HOMO = 0.953012207429  LUMO = 1.10267916945
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [0.05656525 0.9529356  0.95296809 0.95301221] [1.10267917 1.10268391 1.10273438 1.46929275 1.99421069 1.99422675
+ 2.54217322 2.54218526 2.54220666 2.81681305 2.81685991 2.81689199
+ 3.93093208 3.93097902 4.11752177 4.11759283 4.11763163 5.03751016
+ 5.037556   5.03764314 7.11845108 9.53357841]
+    Fermi level 1.0278355686575298  Sum mo_occ_kpts = 8.0  should equal nelec = 8
+    sigma = 0.01  Optimized mu = 1.0278355686575298  entropy = 0.0570677018352
+    CPU time for vj and vk      9.77 sec, wall time      0.32 sec
+E1 = 4.775758705641792  E_coul = 0.5042899823347283
+    Total E(T) = -7.50708045764772  Free energy = -7.50765113466607  E0 = -7.5073657961569
+cycle= 2 E= -7.50708045764772  delta_E= -0.00377  |g|= 0.017  |ddm|= 0.256
+    CPU time for cycle= 2     11.44 sec, wall time      0.39 sec
+HOMO = 0.947240597351  LUMO = 1.1001201028
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [0.05329273 0.94716641 0.94719748 0.9472406 ] [1.1001201  1.10012522 1.10017506 1.46377296 1.99185042 1.99186541
+ 2.53861916 2.53863272 2.53865304 2.80956606 2.8096099  2.80964355
+ 3.92648347 3.92652741 4.11053826 4.1106084  4.11065001 5.03140024
+ 5.03145012 5.03153603 7.10309894 9.50883976]
+    Fermi level 1.023670819557969  Sum mo_occ_kpts = 7.999999999999999  should equal nelec = 8
+    sigma = 0.01  Optimized mu = 1.023670819557969  entropy = 0.0495255153969
+    CPU time for vj and vk      8.95 sec, wall time      0.29 sec
+E1 = 4.76919840528777  E_coul = 0.510689601272219
+    Total E(T) = -7.50724113906425  Free energy = -7.50773639421822  E0 = -7.50748876664124
+cycle= 3 E= -7.50724113906425  delta_E= -0.000161  |g|= 0.00147  |ddm|= 0.0408
+    CPU time for cycle= 3     10.67 sec, wall time      0.36 sec
+HOMO = 0.947276748394  LUMO = 1.10023561019
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [0.05331836 0.94720292 0.94723395 0.94727675] [1.10023561 1.10024088 1.10029063 1.46396115 1.99186999 1.99188495
+ 2.53871331 2.53872701 2.53874712 2.80961114 2.80965512 2.80968879
+ 3.9265762  3.92662019 4.11058845 4.11065838 4.1107002  5.03149231
+ 5.03154198 5.03162793 7.10322882 9.50904885]
+    Fermi level 1.0237467973142418  Sum mo_occ_kpts = 8.0  should equal nelec = 8
+    sigma = 0.01  Optimized mu = 1.0237467973142418  entropy = 0.0493524585008
+    CPU time for vj and vk      9.31 sec, wall time      0.30 sec
+E1 = 4.769253066984369  E_coul = 0.5106418796008649
+    Total E(T) = -7.50723419903901  Free energy = -7.50772772362401  E0 = -7.50748096133151
+cycle= 4 E= -7.50723419903901  delta_E= 6.94e-06  |g|= 0.00556  |ddm|= 0.0118
+    CPU time for cycle= 4     11.18 sec, wall time      0.38 sec
+HOMO = 0.947278601567  LUMO = 1.10023951797
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [0.05331944 0.94720475 0.94723582 0.9472786 ] [1.10023952 1.10024474 1.1002945  1.46396793 1.99187079 1.99188574
+ 2.53871677 2.53873048 2.53875063 2.80961311 2.80965708 2.80969073
+ 3.92657958 3.92662361 4.11059048 4.11066043 4.11070224 5.0314958
+ 5.03154547 5.03163138 7.1032344  9.5090572 ]
+    Fermi level 1.0237496632203447  Sum mo_occ_kpts = 8.0  should equal nelec = 8
+    sigma = 0.01  Optimized mu = 1.0237496632203447  entropy = 0.0493480403531
+    CPU time for vj and vk      7.59 sec, wall time      0.25 sec
+E1 = 4.76925251705725  E_coul = 0.5106330777363318
+    Total E(T) = -7.50724355083066  Free energy = -7.50773703123419  E0 = -7.50749029103242
+cycle= 5 E= -7.50724355083066  delta_E= -9.35e-06  |g|= 1.16e-05  |ddm|= 0.00939
+    CPU time for cycle= 5      9.47 sec, wall time      0.32 sec
+HOMO = 0.947279162269  LUMO = 1.10023938978
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [0.05331965 0.9472053  0.94723638 0.94727916] [1.10023939 1.1002446  1.10029437 1.46396808 1.99187098 1.99188593
+ 2.53871695 2.53873066 2.53875081 2.8096137  2.80965767 2.80969132
+ 3.92657978 3.92662381 4.11059108 4.11066103 4.11070284 5.03149621
+ 5.03154588 5.03163179 7.10323581 9.50905923]
+    Fermi level 1.0237498758298234  Sum mo_occ_kpts = 8.0  should equal nelec = 8
+    sigma = 0.01  Optimized mu = 1.0237498758298234  entropy = 0.0493495364469
+    CPU time for vj and vk      8.93 sec, wall time      0.29 sec
+E1 = 4.769253084238433  E_coul = 0.5106325253899253
+    Total E(T) = -7.50724353599588  Free energy = -7.50773703136035  E0 = -7.50749028367812
+cycle= 6 E= -7.50724353599588  delta_E= 1.48e-08  |g|= 5.27e-06  |ddm|= 0.000101
+    CPU time for cycle= 6     10.77 sec, wall time      0.37 sec
+HOMO = 0.947279264168  LUMO = 1.10023937341
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [0.0533197  0.9472054  0.94723649 0.94727926] [1.10023937 1.10024458 1.10029436 1.46396812 1.99187101 1.99188597
+ 2.53871698 2.53873069 2.53875084 2.80961381 2.80965777 2.80969143
+ 3.92657983 3.92662386 4.11059119 4.11066115 4.11070295 5.03149629
+ 5.03154596 5.03163187 7.10323606 9.5090596 ]
+    Fermi level 1.0237499187196735  Sum mo_occ_kpts = 8.0  should equal nelec = 8
+    sigma = 0.01  Optimized mu = 1.0237499187196735  entropy = 0.0493497957697
+    CPU time for vj and vk      9.57 sec, wall time      0.31 sec
+E1 = 4.769253190150786  E_coul = 0.5106324220542742
+    Total E(T) = -7.50724353341918  Free energy = -7.50773703137688  E0 = -7.50749028239803
+Extra cycle  E= -7.50724353341918  delta_E= 2.58e-09  |g|= 3.78e-06  |ddm|= 5.47e-05
+    CPU time for scf_cycle     90.15 sec, wall time      3.10 sec
+    CPU time for SCF     92.57 sec, wall time      3.19 sec
+converged SCF energy = -7.50724353341918
+**** SCF Summaries ****
+Total Energy =                          -7.507243533419180
+One-electron Energy =                    4.769253190150786
+Two-electron Energy =                    0.510632422054274
+(Electronic) Entropy                     0.049349795769725
+(Electronic) Zero Point Energy          -7.507490282398028
+Free Energy =                           -7.507737031376877
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.00001
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.98198
+pop of  0 C 2py           0.98186
+pop of  0 C 2pz           0.98181
+pop of  0 C 3px           0.00318
+pop of  0 C 3py           0.00318
+pop of  0 C 3pz           0.00318
+pop of  0 C 3dxy          0.01493
+pop of  0 C 3dyz          0.01493
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.01493
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            0.99999
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.98180
+pop of  1 C 2py           0.98191
+pop of  1 C 2pz           0.98197
+pop of  1 C 3px           0.00317
+pop of  1 C 3py           0.00318
+pop of  1 C 3pz           0.00318
+pop of  1 C 3dxy          0.01493
+pop of  1 C 3dyz          0.01494
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.01494
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00001
+charge of    1C =     -0.00001
+    CPU time for vj and vk      3.14 sec, wall time      0.10 sec
+
+IAO construction with fractional occupation.
+------------------------------------------------------------------------------------------------------------------------
+IAO info   ncore                  0        nval                   8        nvirt                  18       nao  26   
+------------------------------------------------------------------------------------------------------------------------
+ element   core shell                      valence shell                   virtual shell                           
+       C                                   2s 2p                           3s 3p 3d                                
+------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+IAO valence
+0 C 2s    
+0 C 2px   
+0 C 2py   
+0 C 2pz   
+1 C 2s    
+1 C 2px   
+1 C 2py   
+1 C 2pz   
+    CPU time for vj and vk      9.21 sec, wall time      0.30 sec
+
+@---------------------------------------------------------------------------------------------------@
+|****************************************** DMET SETTINGS ******************************************|
+@---------------------------------------------------------------------------------------------------@
+
+nkpts          =               1
+nao            =              26
+nlo            =              26
+nelec per cell =               8
+smearing beta  =          1000.0
+frac occ orbs  =            None
+h0             =      -12.787129
+tol_energy     =           1e-06
+tol_rdm1       =          0.0001
+max_cycle      =              50
+number of impurity problems =     1
+
+@-------------------------------------------------------------------------------@
+|-------------------------------- Impurity     0 -------------------------------|
+@-------------------------------------------------------------------------------@
+
+DMET lattice information:
+---------------------------------------------------------------------------------
+DMET solver information:
+solver = <libdmet.solver.cc_solver.CCSolver object at 0x7f54fe4df580>
+---------------------------------------------------------------------------------
+DMET vcor information:
+<class 'libdmet.mean_field.vcor.RVcor'>
+norb = 26 
+idx_range = 0-25 length = 26
+res = True bogo = False bogo_res = False
+[[[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]
+  [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+   0. 0. 0.]]]
+*****************************************************************************************************
+    CPU time for initialize dmet kernel      0.13 sec, wall time      0.02 sec
+
+@---------------------------------------------------------------------------------------------------@
+|***************************************** ITERATION     0 *****************************************|
+@---------------------------------------------------------------------------------------------------@
+
+
+DMET: lattice mean-field problem (F + u):
+nkpts  =          1
+nlo    =         26
+nelec  =          8
+beta   =     1000.0
+nfrac  =       None
+
+e_mf =      -7.5078989
+homo =      0.94727925
+lumo =       1.1002394
+gap  =      0.15296012
+
+ ** Mulliken pop  **
+pop of  0 C 2s            1.00001
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           1.00009
+pop of  0 C 2py           0.99999
+pop of  0 C 2pz           0.99991
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            0.99999
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.99991
+pop of  1 C 2py           1.00001
+pop of  1 C 2pz           1.00009
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+In total                  8.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =     -0.00000
+
+@-------------------------------------------------------------------------------@
+|---------------------- Iteration     0     Impurity     0 ---------------------|
+@-------------------------------------------------------------------------------@
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: Zero singular value [1.27589110e-22 1.11855753e-22 9.10950314e-23 5.36459636e-23] exists, 
+          this may cause numerical instability.
+
+--------------------------------------------------------------------------------
+
+WARNING: _vec_lowdin has almost zero eigenvalues:
+[0. 0. 0. 0. 0. 0. 0. 0.]
+
+DMET: construct embedding Hamiltonian:
+Get Embedding ERI from FFT-ISDF
+Get Embedding ERI from FFT-ISDF
+
+ss = 0, error = 0.00e+00
+
+ss = 1, error = 0.00e+00
+
+ss = 2, error = 0.00e+00
+h2 memory allocated size = 0 GB
+Get h1_emb: interacting bath, dft = False
+h0           =               0
+h1_emb shape =        (34, 34)
+h2_emb shape =      (595, 595)
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: nelec_mf embedding from rdm1_mf projection               8
+      is different to the nval * 2 = 16
+
+--------------------------------------------------------------------------------
+
+    0 th embedding problem nelec = 8, spin = 0
+    CPU time for construct ham_emb 0     12.60 sec, wall time      0.41 sec
+
+****************************************************************************************************
+CC solver
+restricted = True
+ghf = False
+norb  = 34
+nelec = 8
+spin  = 0
+CC solver: mean-field
+
+
+******** <class 'libdmet.solver.scf.RHF'> ********
+method = RHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 20
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 200
+direct_scf = False
+chkfile to save SCF result = /resnick/scratch/yangjunjie/diamond/49059116/tmp1t48n6ng
+max_memory 327680 MB (current use 310 MB)
+
+WARN: Singularity detected in overlap matrix (condition number =  inf). SCF may be inaccurate and hard to converge.
+
+Overwritten attributes  get_hcore get_ovlp energy_nuc  of <class 'libdmet.solver.scf.RHF'>
+Set gradient conv threshold to 1e-05
+init E= 5.27898845335171
+Traceback (most recent call last):
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond/1-1-1/gth-dzvp-molopt-sr/fftisdf-10/50/main.py", line 108, in <module>
+    main(config)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond/1-1-1/gth-dzvp-molopt-sr/fftisdf-10/50/main.py", line 62, in main
+    emb_obj.kernel()
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/src/libdmet2-main/libdmet/dmet/rdmet.py", line 103, in kernel
+    mydmet.mu_solver(mydmet, **mydmet.mu_solver_args)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/src/libdmet2-main/libdmet/dmet/mu_fit.py", line 122, in __call__
+    C_lo_eos_old, ham_embs_old = solver_run(dmu=0.0)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/src/libdmet2-main/libdmet/dmet/mu_fit.py", line 88, in solver_run
+    mydmet.solve_ham_emb_all(mu=mu_new, C_lo_eos_given=C_lo_eos,
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/src/libdmet2-main/libdmet/dmet/rdmet.py", line 345, in solve_ham_emb_all
+    rdm1_emb_x, e_emb_x = solver_x.run(ham_emb, nelec=nelec_embs[x],
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/src/libdmet2-main/libdmet/solver/cc_solver.py", line 272, in run
+    e_hf, rdm1_hf = self.scfsolver.RHF(ham, nelec, spin,
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/src/libdmet2-main/libdmet/solver/scf.py", line 550, in RHF
+    e_tot = self._scf.kernel(dm0=dm0)
+  File "<string>", line 2, in kernel
+  File "/home/junjiey/anaconda3/envs/fftisdf-with-mpi/lib/python3.10/site-packages/pyscf/scf/hf.py", line 2016, in scf
+    kernel(self, self.conv_tol, self.conv_tol_grad,
+  File "/home/junjiey/anaconda3/envs/fftisdf-with-mpi/lib/python3.10/site-packages/pyscf/scf/hf.py", line 156, in kernel
+    _, mf_diis.Corth = mf.eig(fock, s1e)
+  File "/home/junjiey/anaconda3/envs/fftisdf-with-mpi/lib/python3.10/site-packages/pyscf/scf/hf.py", line 1822, in eig
+    return self._eigh(h, s)
+  File "/home/junjiey/anaconda3/envs/fftisdf-with-mpi/lib/python3.10/site-packages/pyscf/scf/hf.py", line 1814, in _eigh
+    return eig(h, s)
+  File "/home/junjiey/anaconda3/envs/fftisdf-with-mpi/lib/python3.10/site-packages/pyscf/scf/hf.py", line 1341, in eig
+    e, c = scipy.linalg.eigh(h, s)
+  File "/home/junjiey/anaconda3/envs/fftisdf-with-mpi/lib/python3.10/site-packages/scipy/linalg/_decomp.py", line 592, in eigh
+    raise LinAlgError(f'The leading minor of order {info-n} of B is not '
+numpy.linalg.LinAlgError: The leading minor of order 27 of B is not positive definite. The factorization of B could not be completed and no eigenvalues or eigenvectors were computed.
+End time = Wed Apr 30 12:41:47 PM PDT 2025

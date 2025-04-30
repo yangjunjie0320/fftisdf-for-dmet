@@ -150,8 +150,9 @@ def get_init_guess(config: dict):
         dm0[0, :, beta_ix, beta_ix] *= 0.0
         dm0[1, :, alph_ix, alph_ix] *= 0.0
     
+    dm0 = dm0[0] if spin == 1 else dm0
     mf.mulliken_meta(cell, dm0)
-    config["dm0"] = dm0[0] if spin == 1 else dm0
+    config["dm0"] = dm0
 
 def build_mean_field(config: dict):
     xc = config["xc"]
