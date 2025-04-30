@@ -1,12 +1,9 @@
 #!/bin/bash                      
 #SBATCH --job-name=nio-afm
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=20
 #SBATCH --mem-per-cpu=10gb
-#SBATCH --time=00:30:00
-#SBATCH --reservation=changroup_standingres
-#SBATCH --exclude=hpc-19-13
-#SBATCH --constraint=icelake
+#SBATCH --time=00:10:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
@@ -34,7 +31,5 @@ echo TMPDIR       = $TMPDIR
 echo PYSCF_TMPDIR = $PYSCF_TMPDIR
 ln -s $PYSCF_TMPDIR tmp
 export PYTHONPATH=$PYTHONPATH:/home/junjiey/work/fftisdf-with-dmet/src/fftisdf-main:/home/junjiey/work/fftisdf-with-dmet/src/libdmet2-main:/home/junjiey/work/fftisdf-with-dmet/src/scripts
-cp /home/junjiey/work/fftisdf-with-dmet/src/scripts/main-kuhf.py ./main.py
-python -c "import dmet; print(dmet.__file__)"
-python main.py --kmesh=4-4-4 --basis=gth-dzvp-molopt-sr --density-fitting-method=fftisdf-40 --ke-cutoff=50 --name=nio-afm --pseudo=gth-pbe --is-unrestricted --init-guess-method=minao --df-to-read=None
+python main.py --kmesh=4-4-4 --basis=gth-dzvp-molopt-sr --density-fitting-method=fftisdf-20 --ke-cutoff=50 --name=nio-afm --pseudo=gth-pbe --is-unrestricted --init-guess-method=minao --df-to-read=None
 echo "End time = $(date)"

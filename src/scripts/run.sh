@@ -1,5 +1,4 @@
-#!/bin/bash                      
-#SBATCH --reservation=changroup_standingres
+#!/bin/bash
 #SBATCH --constraint=icelake
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"

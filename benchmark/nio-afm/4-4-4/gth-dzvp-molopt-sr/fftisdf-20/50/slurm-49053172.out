@@ -1,0 +1,146 @@
+SLURMD_NODENAME = hpc-35-27
+Start time = Wed Apr 30 02:02:16 AM PDT 2025
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49053172/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49053172/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/nio-afm/4-4-4/gth-dzvp-molopt-sr/fftisdf-20/50/main.py with:
+name: nio-afm
+xc: None
+kmesh: 4-4-4
+basis: gth-dzvp-molopt-sr
+pseudo: gth-pbe
+ke_cutoff: 50.0
+density_fitting_method: fftisdf-20
+is_unrestricted: True
+init_guess_method: minao
+df_to_read: None
+
+
+Cholesky rank = 10045, c0 =  20.00, nao = 78, nip = 1560
+Parent grid size = 35937, selected grid size = 1560
+truncated values = 5.42e+03, estimated error = 2.37e+01
+Preparing initial guess for spin polarized calculation
+Alph label: ['0 Ni 3dz2', '0 Ni 3dx2-y2'], Index: [13]
+Beta label: ['1 Ni 3dz2', '1 Ni 3dx2-y2'], Index: [39]
+ ** Mulliken pop alpha/beta on meta-lowdin orthogonal AOs **
+ ** Mulliken pop       alpha | beta **
+pop of  0 Ni 3s        1.00993 | 1.00993   
+pop of  0 Ni 4s        0.01022 | 0.01022   
+pop of  0 Ni 5s        0.00000 | 0.00000   
+pop of  0 Ni 3px       1.00359 | 1.00359   
+pop of  0 Ni 3py       1.00359 | 1.00359   
+pop of  0 Ni 3pz       1.00359 | 1.00359   
+pop of  0 Ni 4px       0.00000 | 0.00000   
+pop of  0 Ni 4py       0.00000 | 0.00000   
+pop of  0 Ni 4pz       0.00000 | 0.00000   
+pop of  0 Ni 3dxy      0.99949 | 0.99949   
+pop of  0 Ni 3dyz      0.99949 | 0.99949   
+pop of  0 Ni 3dz^2     0.99848 | 0.99848   
+pop of  0 Ni 3dxz      0.99949 | 0.99949   
+pop of  0 Ni 3dx2-y2    0.99848 | 0.00545   
+pop of  0 Ni 4dxy      0.00000 | 0.00000   
+pop of  0 Ni 4dyz      0.00000 | 0.00000   
+pop of  0 Ni 4dz^2     0.00000 | 0.00000   
+pop of  0 Ni 4dxz      0.00000 | 0.00000   
+pop of  0 Ni 4dx2-y2    0.00000 | 0.00000   
+pop of  0 Ni 4f-3      0.00000 | 0.00000   
+pop of  0 Ni 4f-2      0.00000 | 0.00000   
+pop of  0 Ni 4f-1      0.00000 | 0.00000   
+pop of  0 Ni 4f+0      0.00000 | 0.00000   
+pop of  0 Ni 4f+1      0.00000 | 0.00000   
+pop of  0 Ni 4f+2      0.00000 | 0.00000   
+pop of  0 Ni 4f+3      0.00000 | 0.00000   
+pop of  1 Ni 3s        1.00993 | 1.00993   
+pop of  1 Ni 4s        0.01022 | 0.01022   
+pop of  1 Ni 5s        0.00000 | 0.00000   
+pop of  1 Ni 3px       1.00359 | 1.00359   
+pop of  1 Ni 3py       1.00359 | 1.00359   
+pop of  1 Ni 3pz       1.00359 | 1.00359   
+pop of  1 Ni 4px       0.00000 | 0.00000   
+pop of  1 Ni 4py       0.00000 | 0.00000   
+pop of  1 Ni 4pz       0.00000 | 0.00000   
+pop of  1 Ni 3dxy      0.99949 | 0.99949   
+pop of  1 Ni 3dyz      0.99949 | 0.99949   
+pop of  1 Ni 3dz^2     0.99848 | 0.99848   
+pop of  1 Ni 3dxz      0.99949 | 0.99949   
+pop of  1 Ni 3dx2-y2    0.00545 | 0.99848   
+pop of  1 Ni 4dxy      0.00000 | 0.00000   
+pop of  1 Ni 4dyz      0.00000 | 0.00000   
+pop of  1 Ni 4dz^2     0.00000 | 0.00000   
+pop of  1 Ni 4dxz      0.00000 | 0.00000   
+pop of  1 Ni 4dx2-y2    0.00000 | 0.00000   
+pop of  1 Ni 4f-3      0.00000 | 0.00000   
+pop of  1 Ni 4f-2      0.00000 | 0.00000   
+pop of  1 Ni 4f-1      0.00000 | 0.00000   
+pop of  1 Ni 4f+0      0.00000 | 0.00000   
+pop of  1 Ni 4f+1      0.00000 | 0.00000   
+pop of  1 Ni 4f+2      0.00000 | 0.00000   
+pop of  1 Ni 4f+3      0.00000 | 0.00000   
+pop of  2 O 2s        0.99211 | 0.99211   
+pop of  2 O 3s        0.00000 | 0.00000   
+pop of  2 O 2px       0.65898 | 0.65898   
+pop of  2 O 2py       0.65898 | 0.65898   
+pop of  2 O 2pz       0.66009 | 0.66009   
+pop of  2 O 3px       0.00000 | 0.00000   
+pop of  2 O 3py       0.00000 | 0.00000   
+pop of  2 O 3pz       0.00000 | 0.00000   
+pop of  2 O 3dxy      0.00000 | 0.00000   
+pop of  2 O 3dyz      0.00000 | 0.00000   
+pop of  2 O 3dz^2     0.00000 | 0.00000   
+pop of  2 O 3dxz      0.00000 | 0.00000   
+pop of  2 O 3dx2-y2    0.00000 | 0.00000   
+pop of  3 O 2s        0.99211 | 0.99211   
+pop of  3 O 3s        0.00000 | 0.00000   
+pop of  3 O 2px       0.65898 | 0.65898   
+pop of  3 O 2py       0.65898 | 0.65898   
+pop of  3 O 2pz       0.66009 | 0.66009   
+pop of  3 O 3px       0.00000 | 0.00000   
+pop of  3 O 3py       0.00000 | 0.00000   
+pop of  3 O 3pz       0.00000 | 0.00000   
+pop of  3 O 3dxy      0.00000 | 0.00000   
+pop of  3 O 3dyz      0.00000 | 0.00000   
+pop of  3 O 3dz^2     0.00000 | 0.00000   
+pop of  3 O 3dxz      0.00000 | 0.00000   
+pop of  3 O 3dx2-y2    0.00000 | 0.00000   
+In total            23.00000 | 23.00000  
+ ** Mulliken atomic charges   ( Nelec_alpha | Nelec_beta ) **
+charge of  0Ni =      0.94030  (     9.02636      8.03334 )
+charge of  1Ni =      0.94030  (     8.03334      9.02636 )
+charge of  2O =      0.05970  (     2.97015      2.97015 )
+charge of  3O =      0.05970  (     2.97015      2.97015 )
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [33 33 33] (35937 PWs)
+len(kpts) = 64
+tol = 1e-08
+c0 = None
+wrap_around = True
+blksize = None
+isdf_to_save = /resnick/scratch/yangjunjie/nio-afm/49053172/tmp1usrhk59
+Overwritten attributes  build  of <class 'fft.isdf.InterpolativeSeparableDensityFitting'>
+
+WARN: ke_cutoff/mesh (50 / [33 33 33]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 1.5e+02 Eh.
+Recommended ke_cutoff/mesh are 1172.14 / [151 151 151].
+
+Using pre-computed interpolating vectors, c0 is not used
+    CPU time for building inpv_kpt      1.50 sec, wall time      0.09 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 5.74e+01 GB.
+memory needed for each block:   5.74e+01 GB
+memory needed for each k-point: 8.97e-01 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 35937]    937.75 sec, wall time    127.63 sec
+    CPU time for building eta_kpt    959.02 sec, wall time    128.63 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[  1 / 64]     63.06 sec, wall time      3.11 sec
+/var/spool/slurmd/job49053172/slurm_script: line 35: 3335781 Segmentation fault      (core dumped) python main.py --kmesh=4-4-4 --basis=gth-dzvp-molopt-sr --density-fitting-method=fftisdf-20 --ke-cutoff=50 --name=nio-afm --pseudo=gth-pbe --init-guess-method=minao --df-to-read=None --is-unrestricted
+End time = Wed Apr 30 02:06:50 AM PDT 2025

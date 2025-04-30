@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=10gb
 #SBATCH --time=10:00:00
-#SBATCH --reservation=changroup_standingres
+#SBATCH --reservation=changroup_debug
 #SBATCH --constraint=icelake
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"

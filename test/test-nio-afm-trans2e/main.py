@@ -28,8 +28,8 @@ def main(config: dict):
     is_unrestricted = config["is_unrestricted"]
 
     from dmet import build_dmet
-    from dmet import get_emb_eri_fftisdf_sol
-    from dmet import get_emb_eri_fftisdf_ref
+    from dmet import get_emb_eri_fftisdf_v1 as get_emb_eri_fftisdf_ref
+    from dmet import get_emb_eri_fftisdf_v2 as get_emb_eri_fftisdf_sol
     get_emb_eri_old = libdmet.basis.trans_2e.get_emb_eri
     def get_emb_eri(*args, **kwargs):
         df_obj = args[0]

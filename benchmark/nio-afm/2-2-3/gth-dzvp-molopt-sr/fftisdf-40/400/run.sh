@@ -1,10 +1,10 @@
-#!/bin/bash                      
+#!/bin/bash
+#SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=nio-afm
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=10gb
-#SBATCH --time=10:00:00
-#SBATCH --reservation=changroup_standingres
+#SBATCH --time=04:00:00
 #SBATCH --constraint=icelake
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
@@ -30,7 +30,7 @@ mkdir -p $TMPDIR
 echo TMPDIR       = $TMPDIR
 echo PYSCF_TMPDIR = $PYSCF_TMPDIR
 ln -s $PYSCF_TMPDIR tmp
-export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/nio-afm/../../src/fftisdf-main:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/nio-afm/../../src/libdmet2-main:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/nio-afm/../../src/scripts
-cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/nio-afm/../../src/scripts/main-kuhf.py /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/nio-afm/2-2-3/gth-dzvp-molopt-sr/fftisdf-40/400/main.py
-python main.py --kmesh=2-2-3 --basis=gth-dzvp-molopt-sr --density-fitting-method=fftisdf-40 --ke-cutoff=400 --name=nio-afm --pseudo=gth-pbe --is-unrestricted=False --init-guess-method=minao --df-to-read=None
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/nio-afm/../../src/fftisdf-main:/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/nio-afm/../../src/libdmet2-main:/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/nio-afm/../../src/scripts
+cp /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/nio-afm/../../src/scripts/main-kuhf.py ./main.py
+python main.py --kmesh=2-2-3 --basis=gth-dzvp-molopt-sr --density-fitting-method=fftisdf-40 --ke-cutoff=400 --name=nio-afm --pseudo=gth-pbe --init-guess-method=minao --df-to-read=None --is-unrestricted
 echo "End time = $(date)"

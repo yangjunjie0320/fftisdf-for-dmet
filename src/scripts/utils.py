@@ -97,8 +97,8 @@ def build_density_fitting(config: dict):
         
         import fft
         df_obj = fft.ISDF(cell, kpts)
-        df_obj._fswap = H5TmpFile()
         df_obj.tol = 1e-8
+        df_obj._fswap = H5TmpFile()
         df_obj.wrap_around = True
         df_obj.verbose = 5
 
