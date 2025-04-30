@@ -1,0 +1,88 @@
+SLURMD_NODENAME = hpc-34-41
+Start time = Wed Apr 30 12:51:59 PM PDT 2025
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond/49059220/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond/49059220/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond/3-4-4/gth-dzvp-molopt-sr/fftisdf-10/50/main.py with:
+name: diamond
+xc: None
+kmesh: 3-4-4
+basis: gth-dzvp-molopt-sr
+pseudo: gth-pbe
+ke_cutoff: 50.0
+density_fitting_method: fftisdf-10
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Cholesky rank = 3208, c0 =  10.00, nao = 26, nip = 260
+Parent grid size = 4913, selected grid size = 260
+truncated values = 2.77e+02, estimated error = 1.47e+01
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.80802
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.73079
+pop of  0 C 2py           0.73060
+pop of  0 C 2pz           0.73060
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.80802
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.73079
+pop of  1 C 2py           0.73060
+pop of  1 C 2pz           0.73060
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =      0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [17 17 17] (4913 PWs)
+len(kpts) = 48
+tol = 1e-08
+c0 = None
+wrap_around = True
+blksize = None
+isdf_to_save = /resnick/scratch/yangjunjie/diamond/49059220/tmpe16s5inq
+Overwritten attributes  build  of <class 'fft.isdf.InterpolativeSeparableDensityFitting'>
+
+WARN: ke_cutoff/mesh (50 / [17 17 17]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 6.3 Eh.
+Recommended ke_cutoff/mesh are 569.817 / [53 53 53].
+
+Using pre-computed interpolating vectors, c0 is not used
+    CPU time for building inpv_kpt      0.91 sec, wall time      0.03 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 9.81e-01 GB.
+memory needed for each block:   9.81e-01 GB
+memory needed for each k-point: 2.04e-02 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[    0: 4913]     14.16 sec, wall time      1.94 sec
+    CPU time for building eta_kpt     16.81 sec, wall time      2.03 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[  1 / 48]      7.20 sec, wall time      0.24 sec
+    CPU time for coul_kpt[  2 / 48]      6.36 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  3 / 48]      6.58 sec, wall time      0.21 sec
