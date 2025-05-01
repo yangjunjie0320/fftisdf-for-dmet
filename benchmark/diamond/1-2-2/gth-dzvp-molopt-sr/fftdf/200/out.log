@@ -1,0 +1,10 @@
+method = fftdf
+basis = gth-dzvp-molopt-sr
+ke_cutoff = 200.00
+nao = 26
+nkpt = 4
+ene_krhf =  -9.31247074
+ene_dmet =  -9.52968389
+time_build_df =   0.01
+time_get_vk =   3.41
+time_get_eri =  28.88

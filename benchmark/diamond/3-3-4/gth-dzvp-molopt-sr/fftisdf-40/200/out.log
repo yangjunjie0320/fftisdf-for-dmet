@@ -1,0 +1,13 @@
+method = fftisdf-40
+basis = gth-dzvp-molopt-sr
+ke_cutoff = 200.00
+nao = 26
+naux = 1040
+nkpt = 36
+ene_krhf = -10.23158622
+ene_dmet = -10.44772234
+time_build_df =  89.43
+time_get_vk =   1.30
+time_get_eri_sol =   1.52
+time_get_eri_ref =   2.20
+time_get_eri =   2.21
