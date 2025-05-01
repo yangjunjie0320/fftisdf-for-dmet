@@ -13,8 +13,9 @@ def loop(base_dir):
     
     basis = ['gth-dzvp-molopt-sr']
     kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
-    ke_cutoff = [50, 100, 200]
-    method = ['gdf', 'fftisdf-10', 'fftisdf-20', 'fftdf']
+    ke_cutoff = [50, 100, 150, 200, 400]
+    # method = ['fftisdf-10', 'fftisdf-20', 'fftisdf-30', 'fftisdf-40'] # ['gdf', 'fftisdf-10', 'fftisdf-20', 'fftdf']
+    method = ['fftisdf-10', 'fftisdf-20', 'fftdf'] # ['gdf', 'fftisdf-10', 'fftisdf-20', 'fftdf']
 
     from itertools import product
     for k, b, m in product(kmesh, basis, method):

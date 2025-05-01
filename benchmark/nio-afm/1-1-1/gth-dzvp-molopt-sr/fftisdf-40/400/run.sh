@@ -2,9 +2,9 @@
 #SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=nio-afm
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=64
-#SBATCH --mem-per-cpu=6gb
-#SBATCH --time=00:10:00
+#SBATCH --cpus-per-task=32
+#SBATCH --mem-per-cpu=10gb
+#SBATCH --time=01:00:00
 #SBATCH --constraint=icelake
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"

@@ -67,7 +67,7 @@ def main(config: dict):
     naux = None
     from pyscf.pbc.df import GDF
     if isinstance(df_obj, GDF):
-        naux = df_obj.naux
+        naux = df_obj.get_naoaux()
     elif isinstance(df_obj, fft.ISDF):
         naux = df_obj.inpv_kpt.shape[1]
 
