@@ -5706,3 +5706,198 @@ cycle = 11  norm(lambda1,lambda2) = 1.30495e-05
     CPU time for UICCSD iter     89.61 sec, wall time      6.36 sec
 cycle = 12  norm(lambda1,lambda2) = 1.05696e-05
     CPU time for UICCSD iter     89.98 sec, wall time      6.48 sec
+cycle = 13  norm(lambda1,lambda2) = 8.40178e-06
+    CPU time for UICCSD iter    100.14 sec, wall time      7.04 sec
+CC solver: solve rdm1
+CC solver: rotate rdm1 to AO
+---------------------------------------------------------------------------------
+    CPU time for solve ham_emb 0   4722.85 sec, wall time    293.51 sec
+    CPU time for solve_ham_emb_all   4726.85 sec, wall time    294.22 sec
+mu fit: step 2:   nelec =      24.000542594870      23.999695033191
+                (target =      24.000000000000      24.000000000000)
+linear fit mu for spin densities.
+linear_fit_mu_spin: A_mat: 
+[[ 2.04136703 -0.29242377]
+ [-0.16435751  1.93102077]]
+linear_fit_mu_spin: b_vec: 
+[0.04725703 0.05101389]
+extrapolated to dmu =      -0.027266513205      -0.028738866956
+
+@-------------------------------------------------------------------------------@
+|---------------------- Iteration     0     Impurity     0 ---------------------|
+@-------------------------------------------------------------------------------@
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 4.7868159228405265e-05
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 4.1298003491786446e-05
+
+--------------------------------------------------------------------------------
+
+    0 th embedding problem nelec = 56, spin = 0
+    CPU time for construct ham_emb 0      3.67 sec, wall time      0.62 sec
+
+****************************************************************************************************
+CC solver
+restricted = False
+ghf = False
+norb  = 106
+nelec = 56
+spin  = 0
+CC solver: mean-field
+
+
+******** <class 'libdmet.solver.scf.UIHF'> ********
+method = UIHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 20
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 200
+direct_scf = False
+chkfile to save SCF result = /resnick/scratch/yangjunjie/nio-afm/49063606/tmpmrpg41pf
+max_memory 327680 MB (current use 1858 MB)
+number electrons alpha = 28  beta = 28
+Set gradient conv threshold to 1e-05
+init E= -251.97808541511
+  alpha nocc = 28  HOMO = 0.391925254898105  LUMO = 1.0559479041934
+  beta  nocc = 28  HOMO = 0.389142857977113  LUMO = 1.05950105002341
+cycle= 1 E= -251.979096308333  delta_E= -0.00101  |g|= 0.0156  |ddm|= 0.0503
+  alpha nocc = 28  HOMO = 0.385075808828307  LUMO = 1.0566283091985
+  beta  nocc = 28  HOMO = 0.382308933844776  LUMO = 1.05889878946952
+cycle= 2 E= -251.979145964335  delta_E= -4.97e-05  |g|= 0.00917  |ddm|= 0.0118
+  alpha nocc = 28  HOMO = 0.387253664624835  LUMO = 1.05659015116103
+  beta  nocc = 28  HOMO = 0.384481355116058  LUMO = 1.05906129141506
+cycle= 3 E= -251.979172313575  delta_E= -2.63e-05  |g|= 0.00078  |ddm|= 0.00489
+  alpha nocc = 28  HOMO = 0.387252481786087  LUMO = 1.0566006785271
+  beta  nocc = 28  HOMO = 0.384492779771213  LUMO = 1.05904617286409
+cycle= 4 E= -251.979172522682  delta_E= -2.09e-07  |g|= 0.000327  |ddm|= 0.000492
+  alpha nocc = 28  HOMO = 0.387178572755931  LUMO = 1.0566039972155
+  beta  nocc = 28  HOMO = 0.38442820407851  LUMO = 1.05904509244724
+cycle= 5 E= -251.979172591419  delta_E= -6.87e-08  |g|= 0.000135  |ddm|= 0.000286
+  alpha nocc = 28  HOMO = 0.387182588779763  LUMO = 1.05660334439454
+  beta  nocc = 28  HOMO = 0.384438866962435  LUMO = 1.05904533025092
+cycle= 6 E= -251.979172645746  delta_E= -5.43e-08  |g|= 0.000116  |ddm|= 0.000334
+  alpha nocc = 28  HOMO = 0.387178428896441  LUMO = 1.05660281319174
+  beta  nocc = 28  HOMO = 0.384440267517431  LUMO = 1.05904690823289
+cycle= 7 E= -251.979172759174  delta_E= -1.13e-07  |g|= 8.18e-05  |ddm|= 0.000913
+  alpha nocc = 28  HOMO = 0.387176126666339  LUMO = 1.05660253193069
+  beta  nocc = 28  HOMO = 0.384438599393637  LUMO = 1.05904692251914
+cycle= 8 E= -251.979172825198  delta_E= -6.6e-08  |g|= 4.61e-05  |ddm|= 0.000937
+  alpha nocc = 28  HOMO = 0.387179445939122  LUMO = 1.05660234827662
+  beta  nocc = 28  HOMO = 0.384437781191353  LUMO = 1.05904701601891
+cycle= 9 E= -251.979172841134  delta_E= -1.59e-08  |g|= 3.22e-05  |ddm|= 0.000447
+  alpha nocc = 28  HOMO = 0.387181455252473  LUMO = 1.05660253231004
+  beta  nocc = 28  HOMO = 0.384437067284374  LUMO = 1.05904708623414
+cycle= 10 E= -251.979172847231  delta_E= -6.1e-09  |g|= 2.38e-05  |ddm|= 0.000202
+  alpha nocc = 28  HOMO = 0.387181110251637  LUMO = 1.05660252297666
+  beta  nocc = 28  HOMO = 0.384436162017904  LUMO = 1.05904659818541
+cycle= 11 E= -251.979172852731  delta_E= -5.5e-09  |g|= 8.92e-06  |ddm|= 0.000299
+  alpha nocc = 28  HOMO = 0.387180646413226  LUMO = 1.05660255268729
+  beta  nocc = 28  HOMO = 0.38443715737974  LUMO = 1.05904631696691
+cycle= 12 E= -251.979172853297  delta_E= -5.66e-10  |g|= 3.69e-06  |ddm|= 0.000104
+  alpha nocc = 28  HOMO = 0.387180462615545  LUMO = 1.05660255161322
+  beta  nocc = 28  HOMO = 0.384437364767321  LUMO = 1.05904635105071
+cycle= 13 E= -251.979172853331  delta_E= -3.4e-11  |g|= 2.3e-06  |ddm|= 1.91e-05
+  alpha nocc = 28  HOMO = 0.387180450325162  LUMO = 1.05660255046165
+  beta  nocc = 28  HOMO = 0.384437376453383  LUMO = 1.05904634841125
+Extra cycle  E= -251.979172853343  delta_E= -1.13e-11  |g|= 2.16e-06  |ddm|= 3.89e-06
+converged SCF energy = -251.979172853343  
+adjust mf.alpha to 1.0 for CC.
+CC solver: mean-field converged: True
+CC solver: solve t amplitudes
+
+******** <class 'libdmet.solver.cc_solver.UICCSD'> ********
+CC2 = 0
+CCSD nocc = (28, 28), nmo = (106, 106)
+frozen orbitals 0
+max_cycle = 100
+direct = 0
+conv_tol = 1e-06
+conv_tol_normt = 1e-05
+diis_space = 12
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 120000 MB (current use 2717 MB)
+Init t2, MP2 energy = -0.867763804949677
+    CPU time for init mp2      0.16 sec, wall time      0.16 sec
+Init E_corr(UICCSD) = -0.867763804954863
+cycle = 1  E_corr(UICCSD) = -0.769927905343284  dE = 0.0978358996  norm(t1,t2) = 0.134291
+    CPU time for UICCSD iter    110.98 sec, wall time      7.83 sec
+cycle = 2  E_corr(UICCSD) = -0.811601943092627  dE = -0.0416740377  norm(t1,t2) = 0.043599
+    CPU time for UICCSD iter    114.50 sec, wall time      7.67 sec
+cycle = 3  E_corr(UICCSD) = -0.803600871955177  dE = 0.00800107114  norm(t1,t2) = 0.0234428
+    CPU time for UICCSD iter    111.14 sec, wall time      7.56 sec
+cycle = 4  E_corr(UICCSD) = -0.803842511999843  dE = -0.000241640045  norm(t1,t2) = 0.0063261
+    CPU time for UICCSD iter    117.41 sec, wall time      8.07 sec
+cycle = 5  E_corr(UICCSD) = -0.804398852443449  dE = -0.000556340444  norm(t1,t2) = 0.00351471
+    CPU time for UICCSD iter    120.92 sec, wall time      8.27 sec
+cycle = 6  E_corr(UICCSD) = -0.804453195168707  dE = -5.43427253e-05  norm(t1,t2) = 0.00059554
+    CPU time for UICCSD iter    115.85 sec, wall time      8.03 sec
+cycle = 7  E_corr(UICCSD) = -0.80441747838857  dE = 3.57167801e-05  norm(t1,t2) = 0.000443488
+    CPU time for UICCSD iter    115.31 sec, wall time      8.04 sec
+cycle = 8  E_corr(UICCSD) = -0.804402347071044  dE = 1.51313175e-05  norm(t1,t2) = 0.000314111
+    CPU time for UICCSD iter    112.95 sec, wall time      7.92 sec
+cycle = 9  E_corr(UICCSD) = -0.804416047800602  dE = -1.37007296e-05  norm(t1,t2) = 0.000237893
+    CPU time for UICCSD iter    111.73 sec, wall time      7.87 sec
+cycle = 10  E_corr(UICCSD) = -0.804421692855623  dE = -5.64505502e-06  norm(t1,t2) = 0.000159384
+    CPU time for UICCSD iter    113.95 sec, wall time      7.97 sec
+cycle = 11  E_corr(UICCSD) = -0.804418220326682  dE = 3.47252894e-06  norm(t1,t2) = 0.000105738
+    CPU time for UICCSD iter    117.93 sec, wall time      8.16 sec
+cycle = 12  E_corr(UICCSD) = -0.804417234125621  dE = 9.8620106e-07  norm(t1,t2) = 6.9334e-05
+    CPU time for UICCSD iter    115.03 sec, wall time      8.12 sec
+cycle = 13  E_corr(UICCSD) = -0.804417218125567  dE = 1.60000542e-08  norm(t1,t2) = 5.61923e-05
+    CPU time for UICCSD iter    121.01 sec, wall time      8.36 sec
+cycle = 14  E_corr(UICCSD) = -0.804417757881775  dE = -5.39756208e-07  norm(t1,t2) = 3.84638e-05
+    CPU time for UICCSD iter    111.22 sec, wall time      7.78 sec
+cycle = 15  E_corr(UICCSD) = -0.804417367667025  dE = 3.9021475e-07  norm(t1,t2) = 2.72656e-05
+    CPU time for UICCSD iter    110.42 sec, wall time      7.86 sec
+cycle = 16  E_corr(UICCSD) = -0.804417140991658  dE = 2.26675367e-07  norm(t1,t2) = 2.08025e-05
+    CPU time for UICCSD iter    110.34 sec, wall time      7.77 sec
+cycle = 17  E_corr(UICCSD) = -0.804418085360545  dE = -9.44368887e-07  norm(t1,t2) = 1.53771e-05
+    CPU time for UICCSD iter    111.14 sec, wall time      7.77 sec
+cycle = 18  E_corr(UICCSD) = -0.804418058191879  dE = 2.71686665e-08  norm(t1,t2) = 1.10985e-05
+    CPU time for UICCSD iter    111.05 sec, wall time      7.90 sec
+cycle = 19  E_corr(UICCSD) = -0.804417656979988  dE = 4.01211891e-07  norm(t1,t2) = 5.46954e-06
+    CPU time for UICCSD iter    111.82 sec, wall time      7.84 sec
+    CPU time for UICCSD   2164.70 sec, wall time    150.78 sec
+UICCSD converged
+E(UICCSD) = -252.7835905103225  E_corr = -0.8044176569799876
+CC solver: solve l amplitudes
+    CPU time for UICCSD lambda initialization    142.19 sec, wall time      8.82 sec
+cycle = 1  norm(lambda1,lambda2) = 0.0392424
+    CPU time for UICCSD iter     82.39 sec, wall time      5.96 sec
+cycle = 2  norm(lambda1,lambda2) = 0.0108735
+    CPU time for UICCSD iter     85.09 sec, wall time      6.16 sec
+cycle = 3  norm(lambda1,lambda2) = 0.00424875
+    CPU time for UICCSD iter     83.45 sec, wall time      6.10 sec
+cycle = 4  norm(lambda1,lambda2) = 0.000410276
+    CPU time for UICCSD iter     83.95 sec, wall time      6.15 sec
+cycle = 5  norm(lambda1,lambda2) = 0.000203712
+    CPU time for UICCSD iter     86.62 sec, wall time      6.23 sec
