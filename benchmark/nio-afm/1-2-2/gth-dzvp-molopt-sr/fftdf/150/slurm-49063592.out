@@ -1861,3 +1861,1749 @@ charge of    3O =     -1.63912  (     3.81956      3.81956 )     -0.00000
 
 
 DMET: construct embedding Hamiltonian:
+h2 memory allocated size = 0 GB
+Get h1_emb: interacting bath, dft = False
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 7.495154428540146e-06
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 7.495142713322458e-06
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.249138234724297e-07
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.249038137224784e-07
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 4.0148857921565965e-06
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 4.01489260256607e-06
+
+--------------------------------------------------------------------------------
+
+h0           =               0
+h1_emb shape =   (2, 106, 106)
+h2_emb shape = (3, 5671, 5671)
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250217897524565e-07
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250116540413343e-07
+
+--------------------------------------------------------------------------------
+
+    0 th embedding problem nelec = 56, spin = 0
+    CPU time for construct ham_emb 0 137548.97 sec, wall time   6343.83 sec
+
+****************************************************************************************************
+CC solver
+restricted = False
+ghf = False
+norb  = 106
+nelec = 56
+spin  = 0
+CC solver: mean-field
+
+
+******** <class 'libdmet.solver.scf.UIHF'> ********
+method = UIHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 20
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 200
+direct_scf = False
+chkfile to save SCF result = /resnick/scratch/yangjunjie/nio-afm/49063592/tmpyzszzu6c
+max_memory 327680 MB (current use 1500 MB)
+number electrons alpha = 28  beta = 28
+Overwritten attributes  energy_nuc get_ovlp get_hcore  of <class 'libdmet.solver.scf.UIHF'>
+Set gradient conv threshold to 1e-05
+init E= -203.902053889579
+/home/junjiey/anaconda3/envs/fftisdf-with-mpi/lib/python3.10/site-packages/pyscf/gto/mole.py:1293: UserWarning: Function mol.dumps drops attribute tot_electrons because it is not JSON-serializable
+  warnings.warn(msg)
+  alpha nocc = 28  HOMO = 0.505887437248185  LUMO = 1.04501233628614
+  beta  nocc = 28  HOMO = 0.527377215948628  LUMO = 1.04523799595873
+cycle= 1 E= -203.902053915455  delta_E= -2.59e-08  |g|= 9.71e-05  |ddm|= 0.000194
+  alpha nocc = 28  HOMO = 0.505887279419319  LUMO = 1.04501265161701
+  beta  nocc = 28  HOMO = 0.527377115961995  LUMO = 1.04523824217213
+cycle= 2 E= -203.902053937504  delta_E= -2.2e-08  |g|= 9.09e-05  |ddm|= 0.000182
+  alpha nocc = 28  HOMO = 0.505890549548642  LUMO = 1.0450095531271
+  beta  nocc = 28  HOMO = 0.527379264759732  LUMO = 1.04523473907175
+cycle= 3 E= -203.902054064234  delta_E= -1.27e-07  |g|= 5.94e-05  |ddm|= 0.00152
+  alpha nocc = 28  HOMO = 0.505889315809388  LUMO = 1.04501252506318
+  beta  nocc = 28  HOMO = 0.527378568843068  LUMO = 1.04523699157456
+cycle= 4 E= -203.902054092821  delta_E= -2.86e-08  |g|= 9.66e-06  |ddm|= 0.00108
+  alpha nocc = 28  HOMO = 0.505888576424218  LUMO = 1.04501189437032
+  beta  nocc = 28  HOMO = 0.527377865394782  LUMO = 1.04523680286218
+cycle= 5 E= -203.902054093173  delta_E= -3.52e-10  |g|= 7.59e-06  |ddm|= 3.66e-05
+  alpha nocc = 28  HOMO = 0.505888673222233  LUMO = 1.04501211902444
+  beta  nocc = 28  HOMO = 0.527378089519304  LUMO = 1.0452365860056
+cycle= 6 E= -203.90205409353  delta_E= -3.57e-10  |g|= 2.39e-06  |ddm|= 6.73e-05
+  alpha nocc = 28  HOMO = 0.505888653652611  LUMO = 1.04501223914441
+  beta  nocc = 28  HOMO = 0.527378065969527  LUMO = 1.04523695494815
+cycle= 7 E= -203.902054093557  delta_E= -2.63e-11  |g|= 1.3e-06  |ddm|= 1.76e-05
+  alpha nocc = 28  HOMO = 0.505888594696258  LUMO = 1.0450123230582
+  beta  nocc = 28  HOMO = 0.527378065618529  LUMO = 1.04523682386397
+Extra cycle  E= -203.902054093559  delta_E= -2.87e-12  |g|= 1.22e-06  |ddm|= 2.13e-06
+converged SCF energy = -203.902054093559  
+adjust mf.alpha to 1.0 for CC.
+CC solver: mean-field converged: True
+CC solver: solve t amplitudes
+
+******** <class 'libdmet.solver.cc_solver.UICCSD'> ********
+CC2 = 0
+CCSD nocc = (28, 28), nmo = (106, 106)
+frozen orbitals 0
+max_cycle = 100
+direct = 0
+conv_tol = 1e-06
+conv_tol_normt = 1e-05
+diis_space = 12
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 120000 MB (current use 2410 MB)
+Init t2, MP2 energy = -1.00797415389648
+    CPU time for init mp2      0.14 sec, wall time      0.14 sec
+Init E_corr(UICCSD) = -1.00797415389791
+cycle = 1  E_corr(UICCSD) = -0.826754776826628  dE = 0.181219377  norm(t1,t2) = 0.227773
+    CPU time for UICCSD iter    155.57 sec, wall time      9.11 sec
+cycle = 2  E_corr(UICCSD) = -0.916323573152042  dE = -0.0895687963  norm(t1,t2) = 0.112129
+    CPU time for UICCSD iter    165.99 sec, wall time     10.13 sec
+cycle = 3  E_corr(UICCSD) = -0.895125876951663  dE = 0.0211976962  norm(t1,t2) = 0.0974468
+    CPU time for UICCSD iter    162.31 sec, wall time      9.41 sec
+cycle = 4  E_corr(UICCSD) = -0.891721279778241  dE = 0.00340459717  norm(t1,t2) = 0.0164798
+    CPU time for UICCSD iter    160.15 sec, wall time      8.99 sec
+cycle = 5  E_corr(UICCSD) = -0.893185984326986  dE = -0.00146470455  norm(t1,t2) = 0.0153229
+    CPU time for UICCSD iter    164.79 sec, wall time     10.21 sec
+cycle = 6  E_corr(UICCSD) = -0.893973861521436  dE = -0.000787877194  norm(t1,t2) = 0.00383037
+    CPU time for UICCSD iter    162.09 sec, wall time      9.66 sec
+cycle = 7  E_corr(UICCSD) = -0.894101385042569  dE = -0.000127523521  norm(t1,t2) = 0.00215619
+    CPU time for UICCSD iter    159.52 sec, wall time      8.99 sec
+cycle = 8  E_corr(UICCSD) = -0.894012792466719  dE = 8.85925759e-05  norm(t1,t2) = 0.00116672
+    CPU time for UICCSD iter    161.24 sec, wall time      9.46 sec
+cycle = 9  E_corr(UICCSD) = -0.89399862841553  dE = 1.41640512e-05  norm(t1,t2) = 0.000697633
+    CPU time for UICCSD iter    159.76 sec, wall time      9.07 sec
+cycle = 10  E_corr(UICCSD) = -0.894028764891352  dE = -3.01364758e-05  norm(t1,t2) = 0.000511524
+    CPU time for UICCSD iter    162.48 sec, wall time      9.23 sec
+cycle = 11  E_corr(UICCSD) = -0.894049122199336  dE = -2.0357308e-05  norm(t1,t2) = 0.00034284
+    CPU time for UICCSD iter    181.74 sec, wall time     10.33 sec
+cycle = 12  E_corr(UICCSD) = -0.894036919884176  dE = 1.22023152e-05  norm(t1,t2) = 0.000209285
+    CPU time for UICCSD iter    163.42 sec, wall time     10.09 sec
+cycle = 13  E_corr(UICCSD) = -0.894027276831659  dE = 9.64305252e-06  norm(t1,t2) = 0.000114543
+    CPU time for UICCSD iter    163.90 sec, wall time     10.22 sec
+cycle = 14  E_corr(UICCSD) = -0.894033487276014  dE = -6.21044436e-06  norm(t1,t2) = 7.73271e-05
+    CPU time for UICCSD iter    159.89 sec, wall time      9.19 sec
+cycle = 15  E_corr(UICCSD) = -0.894032618789412  dE = 8.68486602e-07  norm(t1,t2) = 5.14097e-05
+    CPU time for UICCSD iter    167.56 sec, wall time     10.32 sec
+cycle = 16  E_corr(UICCSD) = -0.89403151227728  dE = 1.10651213e-06  norm(t1,t2) = 3.38547e-05
+    CPU time for UICCSD iter    159.47 sec, wall time      9.03 sec
+cycle = 17  E_corr(UICCSD) = -0.894033223972324  dE = -1.71169504e-06  norm(t1,t2) = 2.34502e-05
+    CPU time for UICCSD iter    162.63 sec, wall time      9.55 sec
+cycle = 18  E_corr(UICCSD) = -0.894032863334916  dE = 3.60637408e-07  norm(t1,t2) = 1.82432e-05
+    CPU time for UICCSD iter    175.29 sec, wall time     10.91 sec
+cycle = 19  E_corr(UICCSD) = -0.894032170077714  dE = 6.93257202e-07  norm(t1,t2) = 1.38887e-05
+    CPU time for UICCSD iter    189.94 sec, wall time     10.88 sec
+cycle = 20  E_corr(UICCSD) = -0.894032263123614  dE = -9.30459002e-08  norm(t1,t2) = 1.03934e-05
+    CPU time for UICCSD iter    165.98 sec, wall time     10.26 sec
+cycle = 21  E_corr(UICCSD) = -0.894032549764504  dE = -2.8664089e-07  norm(t1,t2) = 7.07101e-06
+    CPU time for UICCSD iter    173.99 sec, wall time     10.57 sec
+    CPU time for UICCSD   3477.70 sec, wall time    205.60 sec
+UICCSD converged
+E(UICCSD) = -204.7960866433239  E_corr = -0.8940325497645035
+CC solver: solve l amplitudes
+    CPU time for UICCSD lambda initialization    207.76 sec, wall time     11.66 sec
+cycle = 1  norm(lambda1,lambda2) = 0.0483406
+    CPU time for UICCSD iter    123.29 sec, wall time      7.57 sec
+cycle = 2  norm(lambda1,lambda2) = 0.0180022
+    CPU time for UICCSD iter    127.09 sec, wall time      7.83 sec
+cycle = 3  norm(lambda1,lambda2) = 0.0109923
+    CPU time for UICCSD iter    128.63 sec, wall time      8.04 sec
+cycle = 4  norm(lambda1,lambda2) = 0.00141206
+    CPU time for UICCSD iter    126.84 sec, wall time      7.48 sec
+cycle = 5  norm(lambda1,lambda2) = 0.000872698
+    CPU time for UICCSD iter    130.78 sec, wall time      8.13 sec
+cycle = 6  norm(lambda1,lambda2) = 0.000422024
+    CPU time for UICCSD iter    126.09 sec, wall time      7.69 sec
+cycle = 7  norm(lambda1,lambda2) = 0.000258629
+    CPU time for UICCSD iter    124.77 sec, wall time      7.43 sec
+cycle = 8  norm(lambda1,lambda2) = 0.00015782
+    CPU time for UICCSD iter    129.99 sec, wall time      7.99 sec
+cycle = 9  norm(lambda1,lambda2) = 0.000107451
+    CPU time for UICCSD iter    125.92 sec, wall time      7.79 sec
+cycle = 10  norm(lambda1,lambda2) = 7.12839e-05
+    CPU time for UICCSD iter    130.97 sec, wall time      8.22 sec
+cycle = 11  norm(lambda1,lambda2) = 3.96029e-05
+    CPU time for UICCSD iter    126.12 sec, wall time      7.83 sec
+cycle = 12  norm(lambda1,lambda2) = 2.45436e-05
+    CPU time for UICCSD iter    127.22 sec, wall time      7.94 sec
+cycle = 13  norm(lambda1,lambda2) = 1.36273e-05
+    CPU time for UICCSD iter    127.46 sec, wall time      7.98 sec
+cycle = 14  norm(lambda1,lambda2) = 8.91086e-06
+    CPU time for UICCSD iter    126.97 sec, wall time      8.06 sec
+CC solver: solve rdm1
+CC solver: rotate rdm1 to AO
+---------------------------------------------------------------------------------
+    CPU time for solve ham_emb 0   5590.26 sec, wall time    333.34 sec
+    CPU time for solve_ham_emb_all 143139.23 sec, wall time   6677.17 sec
+mu fit: initial mu_glob =       0.000000000000       0.000000000000
+mu fit: step 0:   nelec =      24.045921911882      24.058961341400
+                (target =      24.000000000000      24.000000000000)
+dmu predictions:
+    value      weight
+adaptive chemical potential fitting not used
+dmu predictions:
+    value      weight
+adaptive chemical potential fitting not used
+adaptive chemical potential fitting spin, dmu =      -0.020000000000      -0.020000000000
+finite diff dmu =      -0.020000000000      -0.020000000000
+
+@-------------------------------------------------------------------------------@
+|---------------------- Iteration     0     Impurity     0 ---------------------|
+@-------------------------------------------------------------------------------@
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250217897524565e-07
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250116540413343e-07
+
+--------------------------------------------------------------------------------
+
+    0 th embedding problem nelec = 56, spin = 0
+    CPU time for construct ham_emb 0      3.53 sec, wall time      0.68 sec
+
+****************************************************************************************************
+CC solver
+restricted = False
+ghf = False
+norb  = 106
+nelec = 56
+spin  = 0
+CC solver: mean-field
+
+
+******** <class 'libdmet.solver.scf.UIHF'> ********
+method = UIHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 20
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 200
+direct_scf = False
+chkfile to save SCF result = /resnick/scratch/yangjunjie/nio-afm/49063592/tmpfw3u8nh9
+max_memory 327680 MB (current use 1876 MB)
+number electrons alpha = 28  beta = 28
+Set gradient conv threshold to 1e-05
+init E= -202.942053889579
+  alpha nocc = 28  HOMO = 0.521432020509271  LUMO = 1.04914211433835
+  beta  nocc = 28  HOMO = 0.54220099992908  LUMO = 1.04809644180003
+cycle= 1 E= -202.94246375152  delta_E= -0.00041  |g|= 0.0107  |ddm|= 0.0365
+  alpha nocc = 28  HOMO = 0.517536902240189  LUMO = 1.04966760428446
+  beta  nocc = 28  HOMO = 0.538526733077933  LUMO = 1.04882634533252
+cycle= 2 E= -202.942480829596  delta_E= -1.71e-05  |g|= 0.00857  |ddm|= 0.0109
+  alpha nocc = 28  HOMO = 0.518860765504969  LUMO = 1.04965555528612
+  beta  nocc = 28  HOMO = 0.539805720276196  LUMO = 1.04880394982962
+cycle= 3 E= -202.942505285468  delta_E= -2.45e-05  |g|= 0.000311  |ddm|= 0.00473
+  alpha nocc = 28  HOMO = 0.518838973415786  LUMO = 1.04965496058781
+  beta  nocc = 28  HOMO = 0.539808394411996  LUMO = 1.04878816105534
+cycle= 4 E= -202.942505341334  delta_E= -5.59e-08  |g|= 0.000182  |ddm|= 0.000306
+  alpha nocc = 28  HOMO = 0.518819095585954  LUMO = 1.04965487052596
+  beta  nocc = 28  HOMO = 0.539794704479769  LUMO = 1.04879268523047
+cycle= 5 E= -202.94250536214  delta_E= -2.08e-08  |g|= 9.39e-05  |ddm|= 0.00016
+  alpha nocc = 28  HOMO = 0.518814266239556  LUMO = 1.04965661355083
+  beta  nocc = 28  HOMO = 0.53979578422939  LUMO = 1.04879464515072
+cycle= 6 E= -202.94250537741  delta_E= -1.53e-08  |g|= 7.23e-05  |ddm|= 0.000153
+  alpha nocc = 28  HOMO = 0.518812776862616  LUMO = 1.04965635317426
+  beta  nocc = 28  HOMO = 0.539796812230006  LUMO = 1.04879454827251
+cycle= 7 E= -202.942505396922  delta_E= -1.95e-08  |g|= 6.44e-05  |ddm|= 0.000223
+  alpha nocc = 28  HOMO = 0.5188141847179  LUMO = 1.0496561218554
+  beta  nocc = 28  HOMO = 0.539800673265975  LUMO = 1.04879404907632
+cycle= 8 E= -202.942505435838  delta_E= -3.89e-08  |g|= 4.86e-05  |ddm|= 0.000555
+  alpha nocc = 28  HOMO = 0.518814282329761  LUMO = 1.04965594522211
+  beta  nocc = 28  HOMO = 0.539799882233792  LUMO = 1.04879469533644
+cycle= 9 E= -202.942505467626  delta_E= -3.18e-08  |g|= 2.53e-05  |ddm|= 0.000757
+  alpha nocc = 28  HOMO = 0.518814846688152  LUMO = 1.04965639488833
+  beta  nocc = 28  HOMO = 0.539798437256876  LUMO = 1.04879445812756
+cycle= 10 E= -202.942505475263  delta_E= -7.64e-09  |g|= 1.05e-05  |ddm|= 0.00048
+  alpha nocc = 28  HOMO = 0.518815287383035  LUMO = 1.04965636778221
+  beta  nocc = 28  HOMO = 0.539798130961803  LUMO = 1.04879425621805
+cycle= 11 E= -202.942505475796  delta_E= -5.32e-10  |g|= 7.81e-06  |ddm|= 7.87e-05
+  alpha nocc = 28  HOMO = 0.518814919881329  LUMO = 1.04965640652647
+  beta  nocc = 28  HOMO = 0.539797943482703  LUMO = 1.04879418683655
+cycle= 12 E= -202.942505476018  delta_E= -2.22e-10  |g|= 5.98e-06  |ddm|= 3.18e-05
+  alpha nocc = 28  HOMO = 0.518814636003871  LUMO = 1.04965633746052
+  beta  nocc = 28  HOMO = 0.539797932503929  LUMO = 1.04879422778449
+cycle= 13 E= -202.942505476239  delta_E= -2.21e-10  |g|= 2.24e-06  |ddm|= 5.07e-05
+  alpha nocc = 28  HOMO = 0.518814400561524  LUMO = 1.04965636642953
+  beta  nocc = 28  HOMO = 0.539797903217969  LUMO = 1.04879421233716
+cycle= 14 E= -202.942505476266  delta_E= -2.77e-11  |g|= 6.48e-07  |ddm|= 2.13e-05
+  alpha nocc = 28  HOMO = 0.518814427002381  LUMO = 1.04965635540699
+  beta  nocc = 28  HOMO = 0.539797910842532  LUMO = 1.04879421128175
+Extra cycle  E= -202.942505476267  delta_E= -3.41e-13  |g|= 5.37e-07  |ddm|= 1.08e-06
+converged SCF energy = -202.942505476267  
+adjust mf.alpha to 1.0 for CC.
+CC solver: mean-field converged: True
+CC solver: solve t amplitudes
+
+******** <class 'libdmet.solver.cc_solver.UICCSD'> ********
+CC2 = 0
+CCSD nocc = (28, 28), nmo = (106, 106)
+frozen orbitals 0
+max_cycle = 100
+direct = 0
+conv_tol = 1e-06
+conv_tol_normt = 1e-05
+diis_space = 12
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 120000 MB (current use 2811 MB)
+Init t2, MP2 energy = -1.00655284860837
+    CPU time for init mp2      0.19 sec, wall time      0.19 sec
+Init E_corr(UICCSD) = -1.0065528486087
+cycle = 1  E_corr(UICCSD) = -0.825494681503655  dE = 0.181058167  norm(t1,t2) = 0.225357
+    CPU time for UICCSD iter    159.81 sec, wall time      9.58 sec
+cycle = 2  E_corr(UICCSD) = -0.914463454054835  dE = -0.0889687726  norm(t1,t2) = 0.112081
+    CPU time for UICCSD iter    167.01 sec, wall time     10.03 sec
+cycle = 3  E_corr(UICCSD) = -0.893211600486016  dE = 0.0212518536  norm(t1,t2) = 0.0958559
+    CPU time for UICCSD iter    163.51 sec, wall time      9.52 sec
+cycle = 4  E_corr(UICCSD) = -0.889887720108977  dE = 0.00332388038  norm(t1,t2) = 0.0156175
+    CPU time for UICCSD iter    159.50 sec, wall time      8.97 sec
+cycle = 5  E_corr(UICCSD) = -0.891254170616337  dE = -0.00136645051  norm(t1,t2) = 0.0146685
+    CPU time for UICCSD iter    161.59 sec, wall time      9.09 sec
+cycle = 6  E_corr(UICCSD) = -0.892026963812057  dE = -0.000772793196  norm(t1,t2) = 0.00366545
+    CPU time for UICCSD iter    163.94 sec, wall time      9.75 sec
+cycle = 7  E_corr(UICCSD) = -0.892145905056246  dE = -0.000118941244  norm(t1,t2) = 0.0020641
+    CPU time for UICCSD iter    164.35 sec, wall time     10.19 sec
+cycle = 8  E_corr(UICCSD) = -0.892061086171734  dE = 8.48188845e-05  norm(t1,t2) = 0.00111412
+    CPU time for UICCSD iter    195.91 sec, wall time     11.89 sec
+cycle = 9  E_corr(UICCSD) = -0.892045726213364  dE = 1.53599584e-05  norm(t1,t2) = 0.000673443
+    CPU time for UICCSD iter    161.63 sec, wall time      9.61 sec
+cycle = 10  E_corr(UICCSD) = -0.892075311910412  dE = -2.9585697e-05  norm(t1,t2) = 0.000494328
+    CPU time for UICCSD iter    159.28 sec, wall time      9.02 sec
+cycle = 11  E_corr(UICCSD) = -0.892095083045512  dE = -1.97711351e-05  norm(t1,t2) = 0.000332024
+    CPU time for UICCSD iter    161.48 sec, wall time      9.25 sec
+cycle = 12  E_corr(UICCSD) = -0.892082896906488  dE = 1.2186139e-05  norm(t1,t2) = 0.000203956
+    CPU time for UICCSD iter    163.64 sec, wall time      9.85 sec
+cycle = 13  E_corr(UICCSD) = -0.892073679097474  dE = 9.21780901e-06  norm(t1,t2) = 0.000113235
+    CPU time for UICCSD iter    161.08 sec, wall time      9.34 sec
+cycle = 14  E_corr(UICCSD) = -0.892079758338915  dE = -6.07924144e-06  norm(t1,t2) = 7.68972e-05
+    CPU time for UICCSD iter    163.30 sec, wall time      9.29 sec
+cycle = 15  E_corr(UICCSD) = -0.892078883005227  dE = 8.75333688e-07  norm(t1,t2) = 5.18386e-05
+    CPU time for UICCSD iter    182.31 sec, wall time     10.21 sec
+cycle = 16  E_corr(UICCSD) = -0.892077733864564  dE = 1.14914066e-06  norm(t1,t2) = 3.49467e-05
+    CPU time for UICCSD iter    187.26 sec, wall time     11.80 sec
+cycle = 17  E_corr(UICCSD) = -0.892079460596141  dE = -1.72673158e-06  norm(t1,t2) = 2.48222e-05
+    CPU time for UICCSD iter    166.65 sec, wall time      9.79 sec
+cycle = 18  E_corr(UICCSD) = -0.892079169702406  dE = 2.90893736e-07  norm(t1,t2) = 1.92996e-05
+    CPU time for UICCSD iter    161.54 sec, wall time      9.42 sec
+cycle = 19  E_corr(UICCSD) = -0.892078409036374  dE = 7.60666032e-07  norm(t1,t2) = 1.47711e-05
+    CPU time for UICCSD iter    159.34 sec, wall time      9.07 sec
+cycle = 20  E_corr(UICCSD) = -0.89207848810379  dE = -7.90674165e-08  norm(t1,t2) = 1.10183e-05
+    CPU time for UICCSD iter    162.69 sec, wall time      9.95 sec
+cycle = 21  E_corr(UICCSD) = -0.892078820324627  dE = -3.32220836e-07  norm(t1,t2) = 7.44879e-06
+    CPU time for UICCSD iter    158.04 sec, wall time      8.94 sec
+    CPU time for UICCSD   3483.85 sec, wall time    204.55 sec
+UICCSD converged
+E(UICCSD) = -203.8345842965913  E_corr = -0.8920788203246266
+CC solver: solve l amplitudes
+    CPU time for UICCSD lambda initialization    200.73 sec, wall time     10.65 sec
+cycle = 1  norm(lambda1,lambda2) = 0.0493786
+    CPU time for UICCSD iter    121.55 sec, wall time      7.09 sec
+cycle = 2  norm(lambda1,lambda2) = 0.0184211
+    CPU time for UICCSD iter    126.02 sec, wall time      7.44 sec
+cycle = 3  norm(lambda1,lambda2) = 0.0112117
+    CPU time for UICCSD iter    125.14 sec, wall time      7.67 sec
+cycle = 4  norm(lambda1,lambda2) = 0.00140271
+    CPU time for UICCSD iter    128.11 sec, wall time      7.86 sec
+cycle = 5  norm(lambda1,lambda2) = 0.00084588
+    CPU time for UICCSD iter    127.52 sec, wall time      7.86 sec
+cycle = 6  norm(lambda1,lambda2) = 0.000407099
+    CPU time for UICCSD iter    131.94 sec, wall time      8.23 sec
+cycle = 7  norm(lambda1,lambda2) = 0.000250883
+    CPU time for UICCSD iter    133.95 sec, wall time      8.49 sec
+cycle = 8  norm(lambda1,lambda2) = 0.000152358
+    CPU time for UICCSD iter    164.94 sec, wall time      9.59 sec
+cycle = 9  norm(lambda1,lambda2) = 0.000104398
+    CPU time for UICCSD iter    127.07 sec, wall time      7.97 sec
+cycle = 10  norm(lambda1,lambda2) = 7.03261e-05
+    CPU time for UICCSD iter    123.21 sec, wall time      7.18 sec
+cycle = 11  norm(lambda1,lambda2) = 3.88336e-05
+    CPU time for UICCSD iter    132.15 sec, wall time      8.13 sec
+cycle = 12  norm(lambda1,lambda2) = 2.41184e-05
+    CPU time for UICCSD iter    163.55 sec, wall time      9.75 sec
+cycle = 13  norm(lambda1,lambda2) = 1.36628e-05
+    CPU time for UICCSD iter    124.07 sec, wall time      7.28 sec
+cycle = 14  norm(lambda1,lambda2) = 9.05867e-06
+    CPU time for UICCSD iter    126.82 sec, wall time      7.88 sec
+CC solver: solve rdm1
+CC solver: rotate rdm1 to AO
+---------------------------------------------------------------------------------
+    CPU time for solve ham_emb 0   5724.99 sec, wall time    336.87 sec
+    CPU time for solve_ham_emb_all   5728.52 sec, wall time    337.54 sec
+mu fit: step 1:   nelec =      24.018320567444      24.025880528821
+                (target =      24.000000000000      24.000000000000)
+dmu_a =       0.000000000000 nelec_a =      24.045921911882  dmu_b =       0.000000000000 nelec_b =      24.058961341400
+dmu_a =      -0.020000000000 nelec_a =      24.018320567444  dmu_b =      -0.020000000000 nelec_b =      24.025880528821
+extrapolated to dmu =      -0.033275126858      -0.035646851938
+
+@-------------------------------------------------------------------------------@
+|---------------------- Iteration     0     Impurity     0 ---------------------|
+@-------------------------------------------------------------------------------@
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250217897524565e-07
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250116540413343e-07
+
+--------------------------------------------------------------------------------
+
+    0 th embedding problem nelec = 56, spin = 0
+    CPU time for construct ham_emb 0      3.71 sec, wall time      0.65 sec
+
+****************************************************************************************************
+CC solver
+restricted = False
+ghf = False
+norb  = 106
+nelec = 56
+spin  = 0
+CC solver: mean-field
+
+
+******** <class 'libdmet.solver.scf.UIHF'> ********
+method = UIHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 20
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 200
+direct_scf = False
+chkfile to save SCF result = /resnick/scratch/yangjunjie/nio-afm/49063592/tmp8o9g9vhr
+max_memory 327680 MB (current use 1878 MB)
+number electrons alpha = 28  beta = 28
+Set gradient conv threshold to 1e-05
+init E= -202.247926398471
+  alpha nocc = 28  HOMO = 0.532120633305024  LUMO = 1.05000928341172
+  beta  nocc = 28  HOMO = 0.554300033388204  LUMO = 1.04890483648278
+cycle= 1 E= -202.249149123347  delta_E= -0.00122  |g|= 0.0187  |ddm|= 0.0634
+  alpha nocc = 28  HOMO = 0.525070992548635  LUMO = 1.05114228650987
+  beta  nocc = 28  HOMO = 0.547649689500392  LUMO = 1.050340840551
+cycle= 2 E= -202.249200401553  delta_E= -5.13e-05  |g|= 0.015  |ddm|= 0.0192
+  alpha nocc = 28  HOMO = 0.527477896752044  LUMO = 1.05105105128281
+  beta  nocc = 28  HOMO = 0.549985295161308  LUMO = 1.05023811428935
+cycle= 3 E= -202.249276867551  delta_E= -7.65e-05  |g|= 0.000519  |ddm|= 0.00845
+  alpha nocc = 28  HOMO = 0.527420459971922  LUMO = 1.05104369690904
+  beta  nocc = 28  HOMO = 0.549991024791482  LUMO = 1.05021094434458
+cycle= 4 E= -202.249277019986  delta_E= -1.52e-07  |g|= 0.000285  |ddm|= 0.00051
+  alpha nocc = 28  HOMO = 0.527388855515425  LUMO = 1.0510436970189
+  beta  nocc = 28  HOMO = 0.549972089946337  LUMO = 1.05021851798584
+cycle= 5 E= -202.249277057836  delta_E= -3.79e-08  |g|= 0.00013  |ddm|= 0.000216
+  alpha nocc = 28  HOMO = 0.52737704048398  LUMO = 1.05104634251378
+  beta  nocc = 28  HOMO = 0.549976067173393  LUMO = 1.05022306802581
+cycle= 6 E= -202.249277076215  delta_E= -1.84e-08  |g|= 7.49e-05  |ddm|= 0.000163
+  alpha nocc = 28  HOMO = 0.527374509985399  LUMO = 1.0510458432914
+  beta  nocc = 28  HOMO = 0.549979267302804  LUMO = 1.05022295882129
+cycle= 7 E= -202.24927709187  delta_E= -1.57e-08  |g|= 6.62e-05  |ddm|= 0.000175
+  alpha nocc = 28  HOMO = 0.527374791217984  LUMO = 1.05104543849784
+  beta  nocc = 28  HOMO = 0.549983319646977  LUMO = 1.05022256404757
+cycle= 8 E= -202.249277113512  delta_E= -2.16e-08  |g|= 5.77e-05  |ddm|= 0.000277
+  alpha nocc = 28  HOMO = 0.527374618443387  LUMO = 1.05104524088568
+  beta  nocc = 28  HOMO = 0.549984060361402  LUMO = 1.05022338019281
+cycle= 9 E= -202.249277145547  delta_E= -3.2e-08  |g|= 4.19e-05  |ddm|= 0.000524
+  alpha nocc = 28  HOMO = 0.5273750891861  LUMO = 1.05104566309191
+  beta  nocc = 28  HOMO = 0.549982445797113  LUMO = 1.05022320856062
+cycle= 10 E= -202.249277173101  delta_E= -2.76e-08  |g|= 1.62e-05  |ddm|= 0.000874
+  alpha nocc = 28  HOMO = 0.527376446865922  LUMO = 1.05104577989914
+  beta  nocc = 28  HOMO = 0.549981968619017  LUMO = 1.05022288044613
+cycle= 11 E= -202.249277175216  delta_E= -2.12e-09  |g|= 1.16e-05  |ddm|= 0.000202
+  alpha nocc = 28  HOMO = 0.527376038751126  LUMO = 1.05104575665355
+  beta  nocc = 28  HOMO = 0.549981467320892  LUMO = 1.05022280655905
+cycle= 12 E= -202.249277175677  delta_E= -4.6e-10  |g|= 9.16e-06  |ddm|= 4.95e-05
+  alpha nocc = 28  HOMO = 0.527375849631277  LUMO = 1.05104570556715
+  beta  nocc = 28  HOMO = 0.549981418071994  LUMO = 1.05022282871085
+cycle= 13 E= -202.249277176249  delta_E= -5.72e-10  |g|= 4.13e-06  |ddm|= 8.16e-05
+  alpha nocc = 28  HOMO = 0.527375369359071  LUMO = 1.05104572628163
+  beta  nocc = 28  HOMO = 0.549981334295931  LUMO = 1.05022279669576
+cycle= 14 E= -202.249277176369  delta_E= -1.2e-10  |g|= 8.33e-07  |ddm|= 4.89e-05
+  alpha nocc = 28  HOMO = 0.527375312022299  LUMO = 1.05104571486364
+  beta  nocc = 28  HOMO = 0.549981373658987  LUMO = 1.05022278849897
+cycle= 15 E= -202.249277176371  delta_E= -2.27e-12  |g|= 3.79e-07  |ddm|= 5.83e-06
+  alpha nocc = 28  HOMO = 0.527375294703369  LUMO = 1.0510457125414
+  beta  nocc = 28  HOMO = 0.549981373138209  LUMO = 1.05022278911375
+Extra cycle  E= -202.249277176371  delta_E= -5.68e-14  |g|= 3.41e-07  |ddm|= 6.85e-07
+converged SCF energy = -202.249277176371  
+adjust mf.alpha to 1.0 for CC.
+CC solver: mean-field converged: True
+CC solver: solve t amplitudes
+
+******** <class 'libdmet.solver.cc_solver.UICCSD'> ********
+CC2 = 0
+CCSD nocc = (28, 28), nmo = (106, 106)
+frozen orbitals 0
+max_cycle = 100
+direct = 0
+conv_tol = 1e-06
+conv_tol_normt = 1e-05
+diis_space = 12
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 120000 MB (current use 2813 MB)
+Init t2, MP2 energy = -1.00573437538058
+    CPU time for init mp2      0.19 sec, wall time      0.19 sec
+Init E_corr(UICCSD) = -1.00573437538072
+cycle = 1  E_corr(UICCSD) = -0.824651844386402  dE = 0.181082531  norm(t1,t2) = 0.22403
+    CPU time for UICCSD iter    192.19 sec, wall time     10.59 sec
+cycle = 2  E_corr(UICCSD) = -0.91333060316165  dE = -0.0886787588  norm(t1,t2) = 0.112431
+    CPU time for UICCSD iter    164.37 sec, wall time      9.54 sec
+cycle = 3  E_corr(UICCSD) = -0.891998754497637  dE = 0.0213318487  norm(t1,t2) = 0.095169
+    CPU time for UICCSD iter    159.20 sec, wall time      9.14 sec
+cycle = 4  E_corr(UICCSD) = -0.888718458951712  dE = 0.00328029555  norm(t1,t2) = 0.0150601
+    CPU time for UICCSD iter    158.29 sec, wall time      8.81 sec
+cycle = 5  E_corr(UICCSD) = -0.890020577327316  dE = -0.00130211838  norm(t1,t2) = 0.0142185
+    CPU time for UICCSD iter    161.66 sec, wall time      9.36 sec
+cycle = 6  E_corr(UICCSD) = -0.890786484125832  dE = -0.000765906799  norm(t1,t2) = 0.00354903
+    CPU time for UICCSD iter    160.71 sec, wall time      9.20 sec
+cycle = 7  E_corr(UICCSD) = -0.890899802907497  dE = -0.000113318782  norm(t1,t2) = 0.00200126
+    CPU time for UICCSD iter    159.63 sec, wall time      8.86 sec
+cycle = 8  E_corr(UICCSD) = -0.890817563706207  dE = 8.22392013e-05  norm(t1,t2) = 0.00107769
+    CPU time for UICCSD iter    162.65 sec, wall time      9.51 sec
+cycle = 9  E_corr(UICCSD) = -0.890801136098077  dE = 1.64276081e-05  norm(t1,t2) = 0.00065742
+    CPU time for UICCSD iter    159.66 sec, wall time      9.09 sec
+cycle = 10  E_corr(UICCSD) = -0.890830342091538  dE = -2.92059935e-05  norm(t1,t2) = 0.000482974
+    CPU time for UICCSD iter    174.30 sec, wall time     10.52 sec
+cycle = 11  E_corr(UICCSD) = -0.890849802323061  dE = -1.94602315e-05  norm(t1,t2) = 0.000324655
+    CPU time for UICCSD iter    186.14 sec, wall time     11.11 sec
+cycle = 12  E_corr(UICCSD) = -0.890837692503348  dE = 1.21098197e-05  norm(t1,t2) = 0.000200605
+    CPU time for UICCSD iter    161.42 sec, wall time      9.31 sec
+cycle = 13  E_corr(UICCSD) = -0.890828759501813  dE = 8.93300154e-06  norm(t1,t2) = 0.000112656
+    CPU time for UICCSD iter    163.03 sec, wall time      9.77 sec
+cycle = 14  E_corr(UICCSD) = -0.890834716832759  dE = -5.95733095e-06  norm(t1,t2) = 7.68026e-05
+    CPU time for UICCSD iter    161.70 sec, wall time      9.21 sec
+cycle = 15  E_corr(UICCSD) = -0.890833825392745  dE = 8.91440013e-07  norm(t1,t2) = 5.22126e-05
+    CPU time for UICCSD iter    161.46 sec, wall time      9.36 sec
+cycle = 16  E_corr(UICCSD) = -0.890832662924185  dE = 1.16246856e-06  norm(t1,t2) = 3.58086e-05
+    CPU time for UICCSD iter    157.97 sec, wall time      8.94 sec
+cycle = 17  E_corr(UICCSD) = -0.890834356883473  dE = -1.69395929e-06  norm(t1,t2) = 2.58763e-05
+    CPU time for UICCSD iter    159.86 sec, wall time      8.99 sec
+cycle = 18  E_corr(UICCSD) = -0.890834190562845  dE = 1.66320628e-07  norm(t1,t2) = 2.0113e-05
+    CPU time for UICCSD iter    160.74 sec, wall time      9.53 sec
+cycle = 19  E_corr(UICCSD) = -0.890833373201423  dE = 8.17361422e-07  norm(t1,t2) = 1.56279e-05
+    CPU time for UICCSD iter    160.48 sec, wall time      9.24 sec
+cycle = 20  E_corr(UICCSD) = -0.8908333562627  dE = 1.69387235e-08  norm(t1,t2) = 1.15859e-05
+    CPU time for UICCSD iter    165.70 sec, wall time      9.57 sec
+cycle = 21  E_corr(UICCSD) = -0.890833763022342  dE = -4.06759642e-07  norm(t1,t2) = 7.85308e-06
+    CPU time for UICCSD iter    162.16 sec, wall time      9.34 sec
+    CPU time for UICCSD   3453.34 sec, wall time    199.00 sec
+UICCSD converged
+E(UICCSD) = -203.1401109393933  E_corr = -0.8908337630223419
+CC solver: solve l amplitudes
+    CPU time for UICCSD lambda initialization    206.92 sec, wall time     11.58 sec
+cycle = 1  norm(lambda1,lambda2) = 0.0501226
+    CPU time for UICCSD iter    123.89 sec, wall time      7.69 sec
+cycle = 2  norm(lambda1,lambda2) = 0.0187262
+    CPU time for UICCSD iter    126.92 sec, wall time      7.94 sec
+cycle = 3  norm(lambda1,lambda2) = 0.0113945
+    CPU time for UICCSD iter    127.43 sec, wall time      7.87 sec
+cycle = 4  norm(lambda1,lambda2) = 0.0014002
+    CPU time for UICCSD iter    128.81 sec, wall time      7.95 sec
+cycle = 5  norm(lambda1,lambda2) = 0.000830632
+    CPU time for UICCSD iter    126.90 sec, wall time      7.91 sec
+cycle = 6  norm(lambda1,lambda2) = 0.000397602
+    CPU time for UICCSD iter    125.20 sec, wall time      7.65 sec
+cycle = 7  norm(lambda1,lambda2) = 0.000245859
+    CPU time for UICCSD iter    123.52 sec, wall time      7.03 sec
+cycle = 8  norm(lambda1,lambda2) = 0.000148831
+    CPU time for UICCSD iter    128.69 sec, wall time      8.13 sec
+cycle = 9  norm(lambda1,lambda2) = 0.000102507
+    CPU time for UICCSD iter    124.55 sec, wall time      7.25 sec
+cycle = 10  norm(lambda1,lambda2) = 6.97626e-05
+    CPU time for UICCSD iter    123.57 sec, wall time      7.00 sec
+cycle = 11  norm(lambda1,lambda2) = 3.83361e-05
+    CPU time for UICCSD iter    124.14 sec, wall time      7.17 sec
+cycle = 12  norm(lambda1,lambda2) = 2.3865e-05
+    CPU time for UICCSD iter    125.31 sec, wall time      7.72 sec
+cycle = 13  norm(lambda1,lambda2) = 1.37086e-05
+    CPU time for UICCSD iter    128.31 sec, wall time      8.12 sec
+cycle = 14  norm(lambda1,lambda2) = 9.18235e-06
+    CPU time for UICCSD iter    131.33 sec, wall time      7.90 sec
+CC solver: solve rdm1
+CC solver: rotate rdm1 to AO
+---------------------------------------------------------------------------------
+    CPU time for solve ham_emb 0   5635.71 sec, wall time    327.69 sec
+    CPU time for solve_ham_emb_all   5639.43 sec, wall time    328.34 sec
+mu fit: step 2:   nelec =      24.000662949220      23.999747105388
+                (target =      24.000000000000      24.000000000000)
+linear fit mu for spin densities.
+linear_fit_mu_spin: A_mat: 
+[[ 1.65958917 -0.27952195]
+ [-0.10662897  1.7606696 ]]
+linear_fit_mu_spin: b_vec: 
+[0.04592191 0.05896134]
+extrapolated to dmu =      -0.033654267776      -0.035526177847
+
+@-------------------------------------------------------------------------------@
+|---------------------- Iteration     0     Impurity     0 ---------------------|
+@-------------------------------------------------------------------------------@
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250217897524565e-07
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250116540413343e-07
+
+--------------------------------------------------------------------------------
+
+    0 th embedding problem nelec = 56, spin = 0
+    CPU time for construct ham_emb 0      3.55 sec, wall time      0.70 sec
+
+****************************************************************************************************
+CC solver
+restricted = False
+ghf = False
+norb  = 106
+nelec = 56
+spin  = 0
+CC solver: mean-field
+
+
+******** <class 'libdmet.solver.scf.UIHF'> ********
+method = UIHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 20
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 200
+direct_scf = False
+chkfile to save SCF result = /resnick/scratch/yangjunjie/nio-afm/49063592/tmpoy1_hlub
+max_memory 327680 MB (current use 1877 MB)
+number electrons alpha = 28  beta = 28
+Set gradient conv threshold to 1e-05
+init E= -202.241723194627
+  alpha nocc = 28  HOMO = 0.532430010266284  LUMO = 1.05002789807484
+  beta  nocc = 28  HOMO = 0.554205205150698  LUMO = 1.04889967613049
+cycle= 1 E= -202.242952925903  delta_E= -0.00123  |g|= 0.0188  |ddm|= 0.0636
+  alpha nocc = 28  HOMO = 0.525356179470499  LUMO = 1.05117569694789
+  beta  nocc = 28  HOMO = 0.547526913605093  LUMO = 1.05033518184809
+cycle= 2 E= -202.243004480303  delta_E= -5.16e-05  |g|= 0.0151  |ddm|= 0.0193
+  alpha nocc = 28  HOMO = 0.527774254940153  LUMO = 1.05108291740994
+  beta  nocc = 28  HOMO = 0.549869892667022  LUMO = 1.05023201775676
+cycle= 3 E= -202.24308141179  delta_E= -7.69e-05  |g|= 0.000515  |ddm|= 0.00848
+  alpha nocc = 28  HOMO = 0.527717920773699  LUMO = 1.05107568432258
+  beta  nocc = 28  HOMO = 0.549873856438363  LUMO = 1.05020447290441
+cycle= 4 E= -202.243081560955  delta_E= -1.49e-07  |g|= 0.000282  |ddm|= 0.000506
+  alpha nocc = 28  HOMO = 0.527687083327417  LUMO = 1.05107593841281
+  beta  nocc = 28  HOMO = 0.549854538570426  LUMO = 1.05021185202384
+cycle= 5 E= -202.243081597902  delta_E= -3.69e-08  |g|= 0.000128  |ddm|= 0.000214
+  alpha nocc = 28  HOMO = 0.527675702486979  LUMO = 1.05107865460898
+  beta  nocc = 28  HOMO = 0.549857914185275  LUMO = 1.0502162632644
+cycle= 6 E= -202.243081615962  delta_E= -1.81e-08  |g|= 7.47e-05  |ddm|= 0.000161
+  alpha nocc = 28  HOMO = 0.527673301032429  LUMO = 1.05107820953306
+  beta  nocc = 28  HOMO = 0.549860802215735  LUMO = 1.05021616068213
+cycle= 7 E= -202.243081631624  delta_E= -1.57e-08  |g|= 6.62e-05  |ddm|= 0.000175
+  alpha nocc = 28  HOMO = 0.527673667604433  LUMO = 1.05107781522666
+  beta  nocc = 28  HOMO = 0.549864792229141  LUMO = 1.05021575940294
+cycle= 8 E= -202.243081653944  delta_E= -2.23e-08  |g|= 5.76e-05  |ddm|= 0.000286
+  alpha nocc = 28  HOMO = 0.527673553450877  LUMO = 1.05107762317643
+  beta  nocc = 28  HOMO = 0.549865469098595  LUMO = 1.05021657532868
+cycle= 9 E= -202.243081686387  delta_E= -3.24e-08  |g|= 4.14e-05  |ddm|= 0.000536
+  alpha nocc = 28  HOMO = 0.527674039336398  LUMO = 1.05107803499988
+  beta  nocc = 28  HOMO = 0.549863846553943  LUMO = 1.05021640567404
+cycle= 10 E= -202.243081713071  delta_E= -2.67e-08  |g|= 1.62e-05  |ddm|= 0.000859
+  alpha nocc = 28  HOMO = 0.527675331338453  LUMO = 1.05107815297144
+  beta  nocc = 28  HOMO = 0.549863396321268  LUMO = 1.0502160789659
+cycle= 11 E= -202.243081715162  delta_E= -2.09e-09  |g|= 1.16e-05  |ddm|= 0.000198
+  alpha nocc = 28  HOMO = 0.527674897246038  LUMO = 1.05107812935333
+  beta  nocc = 28  HOMO = 0.5498629127214  LUMO = 1.05021600384692
+cycle= 12 E= -202.243081715634  delta_E= -4.72e-10  |g|= 9.19e-06  |ddm|= 5.02e-05
+  alpha nocc = 28  HOMO = 0.527674683029335  LUMO = 1.05107807969152
+  beta  nocc = 28  HOMO = 0.549862890873197  LUMO = 1.05021602678372
+cycle= 13 E= -202.243081716211  delta_E= -5.77e-10  |g|= 4.11e-06  |ddm|= 8.25e-05
+  alpha nocc = 28  HOMO = 0.527674203972452  LUMO = 1.05107809927977
+  beta  nocc = 28  HOMO = 0.549862807724801  LUMO = 1.05021599609232
+cycle= 14 E= -202.243081716328  delta_E= -1.18e-10  |g|= 8.28e-07  |ddm|= 4.86e-05
+  alpha nocc = 28  HOMO = 0.527674156178365  LUMO = 1.0510780873833
+  beta  nocc = 28  HOMO = 0.549862837714826  LUMO = 1.05021598840864
+cycle= 15 E= -202.243081716331  delta_E= -2.22e-12  |g|= 3.82e-07  |ddm|= 5.76e-06
+  alpha nocc = 28  HOMO = 0.52767414129545  LUMO = 1.05107808502666
+  beta  nocc = 28  HOMO = 0.549862834625544  LUMO = 1.05021598906664
+Extra cycle  E= -202.243081716331  delta_E= -5.97e-13  |g|= 3.46e-07  |ddm|= 6.93e-07
+converged SCF energy = -202.243081716331  
+adjust mf.alpha to 1.0 for CC.
+CC solver: mean-field converged: True
+CC solver: solve t amplitudes
+
+******** <class 'libdmet.solver.cc_solver.UICCSD'> ********
+CC2 = 0
+CCSD nocc = (28, 28), nmo = (106, 106)
+frozen orbitals 0
+max_cycle = 100
+direct = 0
+conv_tol = 1e-06
+conv_tol_normt = 1e-05
+diis_space = 12
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 120000 MB (current use 2813 MB)
+Init t2, MP2 energy = -1.00572997479679
+    CPU time for init mp2      0.19 sec, wall time      0.19 sec
+Init E_corr(UICCSD) = -1.00572997479694
+cycle = 1  E_corr(UICCSD) = -0.824646323667364  dE = 0.181083651  norm(t1,t2) = 0.22402
+    CPU time for UICCSD iter    156.17 sec, wall time      8.75 sec
+cycle = 2  E_corr(UICCSD) = -0.913323510018176  dE = -0.0886771864  norm(t1,t2) = 0.112433
+    CPU time for UICCSD iter    157.67 sec, wall time      8.75 sec
+cycle = 3  E_corr(UICCSD) = -0.891990744756505  dE = 0.0213327653  norm(t1,t2) = 0.09516
+    CPU time for UICCSD iter    160.53 sec, wall time      9.31 sec
+cycle = 4  E_corr(UICCSD) = -0.888711086001654  dE = 0.00327965875  norm(t1,t2) = 0.0150558
+    CPU time for UICCSD iter    159.65 sec, wall time      9.11 sec
+cycle = 5  E_corr(UICCSD) = -0.890012676753777  dE = -0.00130159075  norm(t1,t2) = 0.0142149
+    CPU time for UICCSD iter    171.37 sec, wall time      9.91 sec
+cycle = 6  E_corr(UICCSD) = -0.89077855375857  dE = -0.000765877005  norm(t1,t2) = 0.00354822
+    CPU time for UICCSD iter    182.42 sec, wall time     10.80 sec
+cycle = 7  E_corr(UICCSD) = -0.890891829582101  dE = -0.000113275824  norm(t1,t2) = 0.00200069
+    CPU time for UICCSD iter    176.52 sec, wall time     10.77 sec
+cycle = 8  E_corr(UICCSD) = -0.890809615632895  dE = 8.22139492e-05  norm(t1,t2) = 0.00107741
+    CPU time for UICCSD iter    169.05 sec, wall time     10.19 sec
+cycle = 9  E_corr(UICCSD) = -0.890793185962383  dE = 1.64296705e-05  norm(t1,t2) = 0.000657243
+    CPU time for UICCSD iter    164.10 sec, wall time      9.78 sec
+cycle = 10  E_corr(UICCSD) = -0.89082238640249  dE = -2.92004401e-05  norm(t1,t2) = 0.00048288
+    CPU time for UICCSD iter    164.46 sec, wall time      9.75 sec
+cycle = 11  E_corr(UICCSD) = -0.890841840765058  dE = -1.94543626e-05  norm(t1,t2) = 0.000324597
+    CPU time for UICCSD iter    161.17 sec, wall time      9.65 sec
+cycle = 12  E_corr(UICCSD) = -0.890829734055044  dE = 1.210671e-05  norm(t1,t2) = 0.000200538
+    CPU time for UICCSD iter    167.17 sec, wall time     10.18 sec
+cycle = 13  E_corr(UICCSD) = -0.890820802307405  dE = 8.93174764e-06  norm(t1,t2) = 0.000112635
+    CPU time for UICCSD iter    191.57 sec, wall time     11.35 sec
+cycle = 14  E_corr(UICCSD) = -0.890826757949806  dE = -5.9556424e-06  norm(t1,t2) = 7.67932e-05
+    CPU time for UICCSD iter    162.51 sec, wall time      9.80 sec
+cycle = 15  E_corr(UICCSD) = -0.890825867037882  dE = 8.90911924e-07  norm(t1,t2) = 5.22177e-05
+    CPU time for UICCSD iter    161.94 sec, wall time      9.90 sec
+cycle = 16  E_corr(UICCSD) = -0.890824704667921  dE = 1.16236996e-06  norm(t1,t2) = 3.58154e-05
+    CPU time for UICCSD iter    163.31 sec, wall time      9.50 sec
+cycle = 17  E_corr(UICCSD) = -0.890826397100436  dE = -1.69243252e-06  norm(t1,t2) = 2.58817e-05
+    CPU time for UICCSD iter    161.00 sec, wall time      9.66 sec
+cycle = 18  E_corr(UICCSD) = -0.890826233253791  dE = 1.63846645e-07  norm(t1,t2) = 2.01202e-05
+    CPU time for UICCSD iter    161.69 sec, wall time      9.47 sec
+cycle = 19  E_corr(UICCSD) = -0.890825415593857  dE = 8.17659934e-07  norm(t1,t2) = 1.56405e-05
+    CPU time for UICCSD iter    163.78 sec, wall time      9.74 sec
+cycle = 20  E_corr(UICCSD) = -0.890825395426413  dE = 2.01674442e-08  norm(t1,t2) = 1.15929e-05
+    CPU time for UICCSD iter    165.47 sec, wall time     10.26 sec
+cycle = 21  E_corr(UICCSD) = -0.890825803972518  dE = -4.08546105e-07  norm(t1,t2) = 7.85699e-06
+    CPU time for UICCSD iter    162.47 sec, wall time      9.88 sec
+    CPU time for UICCSD   3483.99 sec, wall time    206.52 sec
+UICCSD converged
+E(UICCSD) = -203.1339075203038  E_corr = -0.8908258039725179
+CC solver: solve l amplitudes
+    CPU time for UICCSD lambda initialization    204.11 sec, wall time     11.43 sec
+cycle = 1  norm(lambda1,lambda2) = 0.0501274
+    CPU time for UICCSD iter    121.56 sec, wall time      6.98 sec
+cycle = 2  norm(lambda1,lambda2) = 0.0187282
+    CPU time for UICCSD iter    135.23 sec, wall time      8.40 sec
+cycle = 3  norm(lambda1,lambda2) = 0.0113955
+    CPU time for UICCSD iter    160.19 sec, wall time      9.24 sec
+cycle = 4  norm(lambda1,lambda2) = 0.00140013
+    CPU time for UICCSD iter    125.85 sec, wall time      7.71 sec
+cycle = 5  norm(lambda1,lambda2) = 0.000830427
+    CPU time for UICCSD iter    124.36 sec, wall time      7.54 sec
+cycle = 6  norm(lambda1,lambda2) = 0.000397499
+    CPU time for UICCSD iter    126.43 sec, wall time      7.88 sec
+cycle = 7  norm(lambda1,lambda2) = 0.000245822
+    CPU time for UICCSD iter    125.05 sec, wall time      7.35 sec
+cycle = 8  norm(lambda1,lambda2) = 0.000148799
+    CPU time for UICCSD iter    130.51 sec, wall time      8.10 sec
+cycle = 9  norm(lambda1,lambda2) = 0.000102481
+    CPU time for UICCSD iter    133.86 sec, wall time      8.70 sec
+cycle = 10  norm(lambda1,lambda2) = 6.97545e-05
+    CPU time for UICCSD iter    126.07 sec, wall time      7.89 sec
+cycle = 11  norm(lambda1,lambda2) = 3.83323e-05
+    CPU time for UICCSD iter    122.94 sec, wall time      7.18 sec
+cycle = 12  norm(lambda1,lambda2) = 2.38618e-05
+    CPU time for UICCSD iter    123.01 sec, wall time      7.25 sec
+cycle = 13  norm(lambda1,lambda2) = 1.37086e-05
+    CPU time for UICCSD iter    129.97 sec, wall time      7.93 sec
+cycle = 14  norm(lambda1,lambda2) = 9.18333e-06
+    CPU time for UICCSD iter    127.92 sec, wall time      8.06 sec
+CC solver: solve rdm1
+CC solver: rotate rdm1 to AO
+---------------------------------------------------------------------------------
+    CPU time for solve ham_emb 0   5695.84 sec, wall time    337.31 sec
+    CPU time for solve_ham_emb_all   5699.39 sec, wall time    338.01 sec
+mu fit: step 3:   nelec =      24.000037915886      24.000051722920
+                (target =      24.000000000000      24.000000000000)
+linear fit mu for spin densities.
+linear_fit_mu_spin: A_mat: 
+[[ 1.65311835 -0.27455459]
+ [-0.11545613  1.76744582]]
+linear_fit_mu_spin: b_vec: 
+[0.04589904 0.05893015]
+extrapolated to dmu =      -0.033667927987      -0.035541295778
+
+@-------------------------------------------------------------------------------@
+|---------------------- Iteration     0     Impurity     0 ---------------------|
+@-------------------------------------------------------------------------------@
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250217897524565e-07
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 8.250116540413343e-07
+
+--------------------------------------------------------------------------------
+
+    0 th embedding problem nelec = 56, spin = 0
+    CPU time for construct ham_emb 0      3.64 sec, wall time      0.67 sec
+
+****************************************************************************************************
+CC solver
+restricted = False
+ghf = False
+norb  = 106
+nelec = 56
+spin  = 0
+CC solver: mean-field
+
+
+******** <class 'libdmet.solver.scf.UIHF'> ********
+method = UIHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 20
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 200
+direct_scf = False
+chkfile to save SCF result = /resnick/scratch/yangjunjie/nio-afm/49063592/tmpxqfr4kn5
+max_memory 327680 MB (current use 1879 MB)
+number electrons alpha = 28  beta = 28
+Set gradient conv threshold to 1e-05
+init E= -202.241032519205
+  alpha nocc = 28  HOMO = 0.532441161117173  LUMO = 1.05002856410374
+  beta  nocc = 28  HOMO = 0.554217083908315  LUMO = 1.04890032318978
+cycle= 1 E= -202.242263274008  delta_E= -0.00123  |g|= 0.0188  |ddm|= 0.0636
+  alpha nocc = 28  HOMO = 0.525364072867722  LUMO = 1.051176996958
+  beta  nocc = 28  HOMO = 0.547535697640427  LUMO = 1.05033650712568
+cycle= 2 E= -202.242314871585  delta_E= -5.16e-05  |g|= 0.0151  |ddm|= 0.0193
+  alpha nocc = 28  HOMO = 0.527783284972677  LUMO = 1.05108414626186
+  beta  nocc = 28  HOMO = 0.549879778004093  LUMO = 1.05023327146436
+cycle= 3 E= -202.242391870845  delta_E= -7.7e-05  |g|= 0.000515  |ddm|= 0.00848
+  alpha nocc = 28  HOMO = 0.527726911817386  LUMO = 1.05107690597868
+  beta  nocc = 28  HOMO = 0.549883739217039  LUMO = 1.05020571350761
+cycle= 4 E= -202.24239202013  delta_E= -1.49e-07  |g|= 0.000282  |ddm|= 0.000506
+  alpha nocc = 28  HOMO = 0.527696067417901  LUMO = 1.05107716125933
+  beta  nocc = 28  HOMO = 0.549864417279861  LUMO = 1.05021309638251
+cycle= 5 E= -202.242392057095  delta_E= -3.7e-08  |g|= 0.000128  |ddm|= 0.000214
+  alpha nocc = 28  HOMO = 0.527684679337999  LUMO = 1.05107987822523
+  beta  nocc = 28  HOMO = 0.549867794215953  LUMO = 1.05021750972854
+cycle= 6 E= -202.24239207516  delta_E= -1.81e-08  |g|= 7.47e-05  |ddm|= 0.000161
+  alpha nocc = 28  HOMO = 0.527682277251304  LUMO = 1.05107943302515
+  beta  nocc = 28  HOMO = 0.549870684045261  LUMO = 1.05021740710887
+cycle= 7 E= -202.242392090821  delta_E= -1.57e-08  |g|= 6.62e-05  |ddm|= 0.000175
+  alpha nocc = 28  HOMO = 0.527682643344378  LUMO = 1.05107903857325
+  beta  nocc = 28  HOMO = 0.54987467411623  LUMO = 1.05021700583664
+cycle= 8 E= -202.242392113134  delta_E= -2.23e-08  |g|= 5.76e-05  |ddm|= 0.000285
+  alpha nocc = 28  HOMO = 0.527682529161488  LUMO = 1.0510788465876
+  beta  nocc = 28  HOMO = 0.549875351817747  LUMO = 1.05021782181514
+cycle= 9 E= -202.24239214557  delta_E= -3.24e-08  |g|= 4.14e-05  |ddm|= 0.000535
+  alpha nocc = 28  HOMO = 0.527683014462727  LUMO = 1.0510792582464
+  beta  nocc = 28  HOMO = 0.549873729523627  LUMO = 1.05021765234207
+cycle= 10 E= -202.242392172269  delta_E= -2.67e-08  |g|= 1.62e-05  |ddm|= 0.000859
+  alpha nocc = 28  HOMO = 0.527684307113755  LUMO = 1.05107937636078
+  beta  nocc = 28  HOMO = 0.549873279278444  LUMO = 1.05021732552176
+cycle= 11 E= -202.242392174362  delta_E= -2.09e-09  |g|= 1.16e-05  |ddm|= 0.000199
+  alpha nocc = 28  HOMO = 0.52768387290511  LUMO = 1.05107935268977
+  beta  nocc = 28  HOMO = 0.549872795427038  LUMO = 1.05021725042391
+cycle= 12 E= -202.242392174834  delta_E= -4.72e-10  |g|= 9.19e-06  |ddm|= 5.02e-05
+  alpha nocc = 28  HOMO = 0.527683658825804  LUMO = 1.0510793030431
+  beta  nocc = 28  HOMO = 0.54987277364242  LUMO = 1.05021727334413
+cycle= 13 E= -202.242392175412  delta_E= -5.77e-10  |g|= 4.11e-06  |ddm|= 8.25e-05
+  alpha nocc = 28  HOMO = 0.527683179546107  LUMO = 1.05107932262179
+  beta  nocc = 28  HOMO = 0.549872690405011  LUMO = 1.05021724263949
+cycle= 14 E= -202.24239217553  delta_E= -1.18e-10  |g|= 8.28e-07  |ddm|= 4.87e-05
+  alpha nocc = 28  HOMO = 0.527683131712617  LUMO = 1.0510793107229
+  beta  nocc = 28  HOMO = 0.549872720418003  LUMO = 1.0502172349501
+cycle= 15 E= -202.242392175531  delta_E= -1.79e-12  |g|= 3.82e-07  |ddm|= 5.77e-06
+  alpha nocc = 28  HOMO = 0.52768311681914  LUMO = 1.05107930836468
+  beta  nocc = 28  HOMO = 0.549872717330261  LUMO = 1.05021723560855
+Extra cycle  E= -202.242392175532  delta_E= -6.25e-13  |g|= 3.46e-07  |ddm|= 6.93e-07
+converged SCF energy = -202.242392175532  
+adjust mf.alpha to 1.0 for CC.
+CC solver: mean-field converged: True
+CC solver: solve t amplitudes
+
+******** <class 'libdmet.solver.cc_solver.UICCSD'> ********
+CC2 = 0
+CCSD nocc = (28, 28), nmo = (106, 106)
+frozen orbitals 0
+max_cycle = 100
+direct = 0
+conv_tol = 1e-06
+conv_tol_normt = 1e-05
+diis_space = 12
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 120000 MB (current use 2813 MB)
+Init t2, MP2 energy = -1.00572925708884
+    CPU time for init mp2      0.19 sec, wall time      0.19 sec
+Init E_corr(UICCSD) = -1.00572925708898
+cycle = 1  E_corr(UICCSD) = -0.824645519596999  dE = 0.181083737  norm(t1,t2) = 0.224019
+    CPU time for UICCSD iter    160.35 sec, wall time      9.59 sec
+cycle = 2  E_corr(UICCSD) = -0.91332248079322  dE = -0.0886769612  norm(t1,t2) = 0.112433
+    CPU time for UICCSD iter    162.92 sec, wall time      9.41 sec
+cycle = 3  E_corr(UICCSD) = -0.891989618400228  dE = 0.0213328624  norm(t1,t2) = 0.0951595
+    CPU time for UICCSD iter    160.71 sec, wall time      9.27 sec
+cycle = 4  E_corr(UICCSD) = -0.888709997481987  dE = 0.00327962092  norm(t1,t2) = 0.0150552
+    CPU time for UICCSD iter    159.05 sec, wall time      9.36 sec
+cycle = 5  E_corr(UICCSD) = -0.890011527166263  dE = -0.00130152968  norm(t1,t2) = 0.0142145
+    CPU time for UICCSD iter    160.51 sec, wall time      9.41 sec
+cycle = 6  E_corr(UICCSD) = -0.890777398948416  dE = -0.000765871782  norm(t1,t2) = 0.0035481
+    CPU time for UICCSD iter    162.48 sec, wall time      9.41 sec
+cycle = 7  E_corr(UICCSD) = -0.890890669457604  dE = -0.000113270509  norm(t1,t2) = 0.00200063
+    CPU time for UICCSD iter    170.71 sec, wall time     10.58 sec
+cycle = 8  E_corr(UICCSD) = -0.890808458000342  dE = 8.22114573e-05  norm(t1,t2) = 0.00107737
+    CPU time for UICCSD iter    162.63 sec, wall time      9.48 sec
+cycle = 9  E_corr(UICCSD) = -0.890792027231847  dE = 1.64307685e-05  norm(t1,t2) = 0.000657227
+    CPU time for UICCSD iter    160.51 sec, wall time      9.27 sec
+cycle = 10  E_corr(UICCSD) = -0.890821227279616  dE = -2.92000478e-05  norm(t1,t2) = 0.00048287
+    CPU time for UICCSD iter    158.63 sec, wall time      8.97 sec
+cycle = 11  E_corr(UICCSD) = -0.890840681373886  dE = -1.94540943e-05  norm(t1,t2) = 0.00032459
+    CPU time for UICCSD iter    163.68 sec, wall time     10.05 sec
+cycle = 12  E_corr(UICCSD) = -0.890828574772711  dE = 1.21066012e-05  norm(t1,t2) = 0.000200534
+    CPU time for UICCSD iter    160.67 sec, wall time      9.79 sec
+cycle = 13  E_corr(UICCSD) = -0.890819643297427  dE = 8.93147528e-06  norm(t1,t2) = 0.000112635
+    CPU time for UICCSD iter    162.85 sec, wall time      9.47 sec
+cycle = 14  E_corr(UICCSD) = -0.890825598802297  dE = -5.95550487e-06  norm(t1,t2) = 7.67932e-05
+    CPU time for UICCSD iter    162.84 sec, wall time     10.04 sec
+cycle = 15  E_corr(UICCSD) = -0.890824707875794  dE = 8.90926503e-07  norm(t1,t2) = 5.22181e-05
+    CPU time for UICCSD iter    167.10 sec, wall time     10.38 sec
+cycle = 16  E_corr(UICCSD) = -0.890823545500708  dE = 1.16237509e-06  norm(t1,t2) = 3.58163e-05
+    CPU time for UICCSD iter    164.17 sec, wall time     10.12 sec
+cycle = 17  E_corr(UICCSD) = -0.890825237866548  dE = -1.69236584e-06  norm(t1,t2) = 2.58828e-05
+    CPU time for UICCSD iter    161.30 sec, wall time      9.75 sec
+cycle = 18  E_corr(UICCSD) = -0.890825074200015  dE = 1.63666533e-07  norm(t1,t2) = 2.0121e-05
+    CPU time for UICCSD iter    160.53 sec, wall time      9.37 sec
+cycle = 19  E_corr(UICCSD) = -0.890824256491882  dE = 8.17708132e-07  norm(t1,t2) = 1.56416e-05
+    CPU time for UICCSD iter    162.50 sec, wall time      9.62 sec
+cycle = 20  E_corr(UICCSD) = -0.89082423613859  dE = 2.03532921e-08  norm(t1,t2) = 1.15936e-05
+    CPU time for UICCSD iter    163.81 sec, wall time     10.20 sec
+cycle = 21  E_corr(UICCSD) = -0.890824644800323  dE = -4.08661733e-07  norm(t1,t2) = 7.85747e-06
+    CPU time for UICCSD iter    161.74 sec, wall time      9.68 sec
+    CPU time for UICCSD   3409.68 sec, wall time    203.21 sec
+UICCSD converged
+E(UICCSD) = -203.1332168203323  E_corr = -0.8908246448003228
+CC solver: solve l amplitudes
+    CPU time for UICCSD lambda initialization    202.43 sec, wall time     11.01 sec
+cycle = 1  norm(lambda1,lambda2) = 0.0501281
+    CPU time for UICCSD iter    123.80 sec, wall time      7.09 sec
+cycle = 2  norm(lambda1,lambda2) = 0.0187285
+    CPU time for UICCSD iter    128.00 sec, wall time      7.44 sec
+cycle = 3  norm(lambda1,lambda2) = 0.0113957
+    CPU time for UICCSD iter    131.77 sec, wall time      8.20 sec
+cycle = 4  norm(lambda1,lambda2) = 0.00140013
+    CPU time for UICCSD iter    125.76 sec, wall time      7.67 sec
+cycle = 5  norm(lambda1,lambda2) = 0.000830413
+    CPU time for UICCSD iter    124.71 sec, wall time      7.32 sec
+cycle = 6  norm(lambda1,lambda2) = 0.00039749
+    CPU time for UICCSD iter    123.24 sec, wall time      7.19 sec
+cycle = 7  norm(lambda1,lambda2) = 0.000245817
+    CPU time for UICCSD iter    129.38 sec, wall time      8.00 sec
+cycle = 8  norm(lambda1,lambda2) = 0.000148796
+    CPU time for UICCSD iter    128.41 sec, wall time      8.05 sec
+cycle = 9  norm(lambda1,lambda2) = 0.000102479
+    CPU time for UICCSD iter    129.13 sec, wall time      8.10 sec
+cycle = 10  norm(lambda1,lambda2) = 6.9754e-05
+    CPU time for UICCSD iter    126.97 sec, wall time      7.94 sec
+cycle = 11  norm(lambda1,lambda2) = 3.83319e-05
+    CPU time for UICCSD iter    126.63 sec, wall time      7.95 sec
+cycle = 12  norm(lambda1,lambda2) = 2.38616e-05
+    CPU time for UICCSD iter    125.67 sec, wall time      7.62 sec
+cycle = 13  norm(lambda1,lambda2) = 1.37086e-05
+    CPU time for UICCSD iter    132.58 sec, wall time      8.27 sec
+cycle = 14  norm(lambda1,lambda2) = 9.18346e-06
+    CPU time for UICCSD iter    127.21 sec, wall time      8.09 sec
+CC solver: solve rdm1
+CC solver: rotate rdm1 to AO
+---------------------------------------------------------------------------------
+    CPU time for solve ham_emb 0   5594.71 sec, wall time    332.59 sec
+    CPU time for solve_ham_emb_all   5598.36 sec, wall time    333.27 sec
+mu fit: step 4:   nelec =      24.000019586980      24.000026727905
+                (target =      24.000000000000      24.000000000000)
+mu fit: final mu_glob        -0.0336679280        -0.0355412958
+saving chemical potential fitting history to mu_history.json
+
+DMET collect results:
+Build rdm1_glob, impurity 0, indices: 0-77, sign: 1.0
+    CPU time for vj and vk   1760.89 sec, wall time    281.13 sec
+
+DMET: get DMET energy:
+h0 =      -239.3267576998
+DMET: construct DMET Hamiltonian for impurity 0:
+imp_idx: 0-77
+env_idx: 78-105
+difference between vhf_glob and vhf_lo       0.0929585
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 7.495154428540146e-06
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 7.495142713322458e-06
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 3.679054006114065e-06
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: _trans_h1: has imag part 3.6786872393387878e-06
+
+--------------------------------------------------------------------------------
+
+CC solver Run DMET Hamiltonian.
+ao2mo for DMET Hamiltonian.
+exp_val_uccsd: start
+exp_val_uccsd: current memory: 2657.984512 MB (max_memory: 120000 MB)
+CC exp_val: E0:       0.000000000000, e1:    -293.088874438129, e2:     170.248532045973 
+(prod:     171.932833844572, cum:      -1.684301798599), e_tot:    -122.840342392156
+e_imp_0 =      -122.8403423922
+---------------------------------------------------------------------------------
+e_tot (DMET) =      -362.1671000920
+
+ ** Mulliken pop            alpha | beta         magnetism **
+pop of  0 Ni 3s           0.99706 | 0.99715       -0.00010
+pop of  0 Ni 4s           0.11047 | 0.10900        0.00147
+pop of  0 Ni 5s           0.00001 | 0.00001        0.00000
+pop of  0 Ni 3px          0.99791 | 0.99609        0.00182
+pop of  0 Ni 3py          0.99791 | 0.99611        0.00180
+pop of  0 Ni 3pz          0.99792 | 0.99612        0.00180
+pop of  0 Ni 4px          0.00338 | 0.00323        0.00015
+pop of  0 Ni 4py          0.00239 | 0.00225        0.00013
+pop of  0 Ni 4pz          0.00238 | 0.00227        0.00011
+pop of  0 Ni 3dxy         0.99140 | 0.99069        0.00071
+pop of  0 Ni 3dyz         0.99178 | 0.99103        0.00076
+pop of  0 Ni 3dz^2        0.99138 | 0.11438        0.87700
+pop of  0 Ni 3dxz         0.99156 | 0.99074        0.00082
+pop of  0 Ni 3dx2-y2      0.99131 | 0.12290        0.86841
+pop of  0 Ni 4dxy         0.00611 | 0.00621       -0.00010
+pop of  0 Ni 4dyz         0.00586 | 0.00603       -0.00017
+pop of  0 Ni 4dz^2        0.00455 | 0.00123        0.00333
+pop of  0 Ni 4dxz         0.00600 | 0.00619       -0.00019
+pop of  0 Ni 4dx2-y2      0.00470 | 0.00141        0.00329
+pop of  0 Ni 4f-3         0.00152 | 0.00087        0.00065
+pop of  0 Ni 4f-2         0.00137 | 0.00153       -0.00017
+pop of  0 Ni 4f-1         0.00145 | 0.00089        0.00057
+pop of  0 Ni 4f+0         0.00151 | 0.00070        0.00081
+pop of  0 Ni 4f+1         0.00148 | 0.00091        0.00057
+pop of  0 Ni 4f+2         0.00147 | 0.00106        0.00041
+pop of  0 Ni 4f+3         0.00150 | 0.00084        0.00067
+pop of  1 Ni 3s           0.99709 | 0.99702        0.00007
+pop of  1 Ni 4s           0.11154 | 0.11312       -0.00158
+pop of  1 Ni 5s           0.00001 | 0.00001       -0.00000
+pop of  1 Ni 3px          0.99602 | 0.99785       -0.00183
+pop of  1 Ni 3py          0.99609 | 0.99789       -0.00179
+pop of  1 Ni 3pz          0.99610 | 0.99790       -0.00179
+pop of  1 Ni 4px          0.00413 | 0.00448       -0.00036
+pop of  1 Ni 4py          0.00237 | 0.00261       -0.00024
+pop of  1 Ni 4pz          0.00236 | 0.00250       -0.00014
+pop of  1 Ni 3dxy         0.99032 | 0.99110       -0.00078
+pop of  1 Ni 3dyz         0.99107 | 0.99167       -0.00060
+pop of  1 Ni 3dz^2        0.11840 | 0.99108       -0.87268
+pop of  1 Ni 3dxz         0.99043 | 0.99120       -0.00076
+pop of  1 Ni 3dx2-y2      0.13312 | 0.99071       -0.85760
+pop of  1 Ni 4dxy         0.00645 | 0.00636        0.00009
+pop of  1 Ni 4dyz         0.00598 | 0.00592        0.00007
+pop of  1 Ni 4dz^2        0.00131 | 0.00474       -0.00343
+pop of  1 Ni 4dxz         0.00640 | 0.00631        0.00009
+pop of  1 Ni 4dx2-y2      0.00164 | 0.00512       -0.00348
+pop of  1 Ni 4f-3         0.00094 | 0.00158       -0.00064
+pop of  1 Ni 4f-2         0.00155 | 0.00139        0.00017
+pop of  1 Ni 4f-1         0.00090 | 0.00146       -0.00056
+pop of  1 Ni 4f+0         0.00074 | 0.00154       -0.00080
+pop of  1 Ni 4f+1         0.00094 | 0.00151       -0.00057
+pop of  1 Ni 4f+2         0.00111 | 0.00151       -0.00040
+pop of  1 Ni 4f+3         0.00088 | 0.00155       -0.00067
+pop of  2 O 2s            0.96214 | 0.96194        0.00020
+pop of  2 O 3s            0.00200 | 0.00189        0.00011
+pop of  2 O 2px           0.91013 | 0.90989        0.00024
+pop of  2 O 2py           0.93321 | 0.93272        0.00049
+pop of  2 O 2pz           0.93346 | 0.93294        0.00053
+pop of  2 O 3px           0.00485 | 0.00487       -0.00002
+pop of  2 O 3py           0.00441 | 0.00441        0.00000
+pop of  2 O 3pz           0.00437 | 0.00432        0.00005
+pop of  2 O 3dxy          0.00293 | 0.00294       -0.00001
+pop of  2 O 3dyz          0.00264 | 0.00266       -0.00001
+pop of  2 O 3dz^2         0.00247 | 0.00247        0.00000
+pop of  2 O 3dxz          0.00292 | 0.00293       -0.00001
+pop of  2 O 3dx2-y2       0.00269 | 0.00269        0.00001
+pop of  3 O 2s            0.96247 | 0.96256       -0.00009
+pop of  3 O 3s            0.00175 | 0.00169        0.00007
+pop of  3 O 2px           0.91225 | 0.92860       -0.01635
+pop of  3 O 2py           0.93367 | 0.93328        0.00040
+pop of  3 O 2pz           0.93389 | 0.93349        0.00040
+pop of  3 O 3px           0.00422 | 0.00442       -0.00020
+pop of  3 O 3py           0.00417 | 0.00415        0.00002
+pop of  3 O 3pz           0.00414 | 0.00409        0.00004
+pop of  3 O 3dxy          0.00275 | 0.00278       -0.00003
+pop of  3 O 3dyz          0.00261 | 0.00263       -0.00002
+pop of  3 O 3dz^2         0.00238 | 0.00241       -0.00003
+pop of  3 O 3dxz          0.00273 | 0.00277       -0.00004
+pop of  3 O 3dx2-y2       0.00248 | 0.00256       -0.00008
+In total                 24.00002 | 24.00003      -0.00001
+ ** Mulliken atomic charges    ( Nelec_alpha | Nelec_beta )    magnetism **
+charge of    0Ni =      1.55579  (     9.10438      7.33983 )      1.76455
+charge of    1Ni =      1.53400  (     7.35789      9.10812 )     -1.75023
+charge of    2O =     -1.53490  (     3.76823      3.76666 )      0.00157
+charge of    3O =     -1.55493  (     3.76952      3.78542 )     -0.01590
+    CPU time for collect_results   2014.17 sec, wall time    297.72 sec
+
+DMET: fit vcor in the lattice space:
+impurity fitting = True
+imp_idx: 0-77
+det (diagonal fitting) = False
+det_idx: 
+nelec = (24.0, 24.0)
+Using analytic gradient for finite T, beta = 1000.0
+CG used in minimizer
+  Iter           Value               Grad                 Step           Step relative
+---------------------------------------------------------------------------------------
+   0       0.032898131808       0.062119659327       0.031282449468       5.391e-02
+   1       0.021008272831       0.098255251107       0.015504272025       2.351e-01
+   2       0.014398973329       0.081400785084       0.011850770557       1.338e-01
+   3       0.012400500030       0.027505399774       0.006636762622       1.024e-01
+   4       0.010911502216       0.034171685767       0.010474059478       2.327e-01
+   5       0.010185789342       0.031727039451       0.007008205514       1.139e-01
+   6       0.009604946852       0.028585764880       0.007279618647       1.596e-01
+   7       0.009243828527       0.019303448015       0.006041088984       1.064e-01
+   8       0.008879906295       0.020171545547       0.006944441728       1.761e-01
+   9       0.008701390834       0.012223759793       0.003537997402       8.776e-02
+  10       0.008559514180       0.011345703468       0.003036308391       1.236e-01
+  11       0.008442987007       0.011741778423       0.002585405251       1.317e-01
+  12       0.008343317304       0.011935781954       0.002624850810       1.377e-01
+  13       0.008251367808       0.007805561218       0.002947797281       1.206e-01
+  14       0.008192676300       0.006900304692       0.002105753582       1.195e-01
+  15       0.008137843330       0.008941274666       0.002240882232       1.350e-01
+  16       0.008090514078       0.007596739241       0.002075887867       1.071e-01
+  17       0.008048828271       0.006701332210       0.001977903130       1.324e-01
+  18       0.007999537277       0.008283778214       0.002413201924       1.467e-01
+  19       0.007951775269       0.012408772657       0.002488391374       1.500e-01
+  20       0.007914073154       0.005342390398       0.002289382950       1.055e-01
+  21       0.007884844102       0.006412273379       0.001981995906       1.272e-01
+  22       0.007858811850       0.005834489225       0.001953951530       1.126e-01
+  23       0.007836711879       0.003979223788       0.001821090996       1.067e-01
+  24       0.007816765554       0.005212675629       0.001724886025       1.331e-01
+  25       0.007794904855       0.006511090771       0.001898950173       1.480e-01
+  26       0.007779791495       0.004963921234       0.001307058382       1.014e-01
+  27       0.007763812459       0.005313538720       0.001284147766       1.354e-01
+  28       0.007748020638       0.004642646729       0.001449446803       1.172e-01
+  29       0.007736812999       0.003916064009       0.001121313671       9.735e-02
+  30       0.007723797494       0.004473179476       0.001363873618       1.563e-01
+  31       0.007708835286       0.003379946469       0.001619008877       1.317e-01
+  32       0.007697563399       0.003685945203       0.001328997300       1.223e-01
+  33       0.007685196054       0.003767576582       0.001574251450       1.310e-01
+  34       0.007673852306       0.003837066445       0.001537028061       1.076e-01
+  35       0.007662528356       0.003941818088       0.001639671898       1.234e-01
+  36       0.007651309849       0.004931867494       0.001725761508       1.245e-01
+  37       0.007639453934       0.003371207009       0.001930338420       1.344e-01
+  38       0.007627842820       0.005226911513       0.002002993170       1.520e-01
+  39       0.007617709868       0.004334968552       0.001820890542       1.066e-01
+  40       0.007606397095       0.004201856843       0.002118446378       1.310e-01
+  41       0.007596243060       0.004134789068       0.001968751156       1.104e-01
+  42       0.007584416916       0.003728886116       0.002367854712       1.352e-01
+  43       0.007573431674       0.004571546091       0.002264025930       1.227e-01
+  44       0.007563759450       0.004384348310       0.002055505792       1.249e-01
+  45       0.007552533386       0.003436133229       0.002454602220       1.411e-01
+  46       0.007543563411       0.002773528367       0.002012312741       1.120e-01
+  47       0.007536798603       0.004041990818       0.001575483435       1.245e-01
+  48       0.007528837569       0.003786443272       0.001916421532       1.330e-01
+  49       0.007521709883       0.003496528310       0.001763409825       1.132e-01
+  50       0.007514218333       0.002902482726       0.001903902426       1.303e-01
+  51       0.007506624458       0.003055081517       0.001970886762       1.235e-01
+  52       0.007499825799       0.003320802915       0.001803162191       1.293e-01
+  53       0.007493692439       0.002990260316       0.001656906268       1.133e-01
+  54       0.007487992334       0.002930487140       0.001573029927       1.267e-01
+  55       0.007483571228       0.003286231440       0.001250025404       1.268e-01
+  56       0.007479364565       0.002246876644       0.001214704610       1.183e-01
+  57       0.007475253783       0.002480102999       0.001242356250       1.389e-01
+  58       0.007470873845       0.002588960598       0.001346641342       1.263e-01
+  59       0.007467377003       0.002374197303       0.001132824921       1.203e-01
+  60       0.007463522197       0.002540440529       0.001257143176       1.311e-01
+  61       0.007460180238       0.001884927483       0.001174575532       1.110e-01
+  62       0.007456782524       0.001725568744       0.001183842917       1.366e-01
+  63       0.007453491089       0.002026448753       0.001251704648       1.231e-01
+  64       0.007450361158       0.001653347863       0.001171201860       1.156e-01
+  65       0.007447108052       0.002796491022       0.001303884709       1.330e-01
+  66       0.007443841714       0.003088714390       0.001279737245       1.207e-01
+  67       0.007440229806       0.002295512440       0.001525184492       1.159e-01
+  68       0.007436828968       0.002182041174       0.001391187862       1.296e-01
+  69       0.007433206658       0.002237211985       0.001567500364       1.245e-01
+  70       0.007429768791       0.002211765213       0.001441680023       1.098e-01
+  71       0.007426543752       0.002582809855       0.001429309204       1.166e-01
+  72       0.007423830370       0.002800970901       0.001138592189       1.112e-01
+  73       0.007421567697       0.002704449314       0.001021921845       1.020e-01
+  74       0.007419376535       0.001601715951       0.000908818503       1.067e-01
+  75       0.007417196519       0.001764747147       0.000958984015       1.202e-01
+  76       0.007415283122       0.002076081585       0.000794923253       1.051e-01
+  77       0.007413704290       0.002937609504       0.000686780318       1.113e-01
+  78       0.007412042348       0.002394316013       0.000660076346       1.059e-01
+  79       0.007410522899       0.001495499131       0.000639386731       1.015e-01
+  80       0.007409028356       0.001257806234       0.000630726262       1.241e-01
+  81       0.007407732389       0.001768377039       0.000567734923       1.031e-01
+  82       0.007406577832       0.001950288401       0.000527451532       1.014e-01
+  83       0.007405469551       0.002002300593       0.000520160137       1.026e-01
+  84       0.007404048302       0.001374577194       0.000687542384       1.226e-01
+  85       0.007402778150       0.001656829690       0.000646575012       1.119e-01
+  86       0.007401385146       0.001833915985       0.000722786691       1.138e-01
+  87       0.007399864329       0.001821786802       0.000792735464       1.065e-01
+  88       0.007398395313       0.002325449891       0.000769148933       1.097e-01
+  89       0.007396649105       0.001986422446       0.000920526902       1.040e-01
+  90       0.007394730308       0.001588551580       0.001013338549       1.106e-01
+  91       0.007392784746       0.002376263812       0.001037668291       1.129e-01
+  92       0.007390823295       0.002733350165       0.001056377867       1.018e-01
+  93       0.007388802070       0.002997503652       0.001090969764       1.003e-01
+  94       0.007386074610       0.002251098337       0.001475051314       1.129e-01
+  95       0.007383573977       0.002251314042       0.001371683572       8.828e-02
+  96       0.007381152951       0.002834252918       0.001355698609       1.056e-01
+  97       0.007378410610       0.003723871030       0.001559008484       9.489e-02
+  98       0.007375682442       0.003124755123       0.001575765622       8.636e-02
+  99       0.007372887156       0.002837663181       0.001642876405       9.460e-02
+ 100       0.007370285190       0.002819036107       0.001551727179       9.290e-02
+ 101       0.007367720319       0.003272371558       0.001558984786       7.725e-02
+ 102       0.007364690387       0.002391597723       0.001884245786       8.734e-02
+ 103       0.007361937997       0.003806872189       0.001741028696       9.364e-02
+ 104       0.007359286351       0.002881170958       0.001695200045       6.938e-02
+ 105       0.007356773893       0.002632172970       0.001638086050       7.681e-02
+ 106       0.007353840958       0.003111742395       0.001937184859       7.803e-02
+ 107       0.007351650185       0.004623120959       0.001470146284       6.888e-02
+ 108       0.007349299866       0.003200371040       0.001587381441       6.623e-02
+ 109       0.007346759554       0.002804588121       0.001732722846       7.746e-02
+ 110       0.007344402472       0.003422805419       0.001609630331       6.635e-02
+ 111       0.007341970692       0.002943955940       0.001675459203       5.826e-02
+ 112       0.007339096554       0.003802870963       0.002012203876       7.621e-02
+ 113       0.007336533712       0.004188401342       0.001807394698       5.821e-02
+ 114       0.007333315322       0.003327641702       0.002282945256       5.991e-02
+ 115       0.007330188910       0.005483662650       0.002236216604       5.747e-02
+ 116       0.007327575904       0.004984871318       0.001891094059       4.677e-02
+ 117       0.007324152656       0.004370156659       0.002495687833       5.942e-02
+ 118       0.007320796859       0.004685095233       0.002483645001       4.972e-02
+ 119       0.007317434543       0.004947334839       0.002505681646       4.011e-02
+ 120       0.007313603296       0.004959665427       0.002958361765       4.825e-02
+ 121       0.007311041955       0.004715831483       0.001984979473       3.383e-02
+ 122       0.007306951713       0.006217305391       0.003220352048       4.456e-02
+ 123       0.007303332165       0.009062276358       0.002802875360       3.319e-02
+ 124       0.007298941022       0.004433004660       0.003498811698       3.048e-02
+ 125       0.007295685450       0.006908255359       0.002477227006       2.715e-02
+ 126       0.007292167151       0.004441307022       0.002724793922       2.066e-02
+ 127       0.007289066165       0.008602694063       0.002115511352       3.070e-02
+ 128       0.007286248693       0.004626086180       0.001947066470       1.443e-02
+ 129       0.007282899303       0.009680421210       0.002113546040       2.727e-02
+ 130       0.007280701243       0.005367977000       0.001417813868       1.170e-02
+ 131       0.007278004079       0.007573092454       0.001620681677       2.049e-02
+ 132       0.007275812119       0.006430928144       0.001338237413       1.170e-02
+ 133       0.007273739888       0.009734985227       0.001153782151       1.620e-02
+ 134       0.007270904525       0.005041130678       0.001587760157       1.261e-02
+ 135       0.007268975600       0.008698650634       0.000929484034       1.461e-02
+ 136       0.007265482077       0.008588155542       0.001697029866       1.218e-02
+ 137       0.007263318063       0.011432493477       0.000909931019       1.373e-02
+ 138       0.007259605359       0.014501635794       0.001577523573       1.083e-02
+ 139       0.007257096900       0.008112844894       0.001004215153       8.325e-03
+ 140       0.007253782915       0.022036043008       0.001331510902       1.323e-02
+ 141       0.007250417493       0.006548829501       0.001311732422       5.992e-03
+ 142       0.007247556515       0.019311886910       0.001133319196       1.380e-02
+ 143       0.007243911388       0.009718511484       0.001406171782       6.231e-03
+ 144       0.007241783406       0.013672819747       0.000845410419       6.263e-03
+ 145       0.007238560653       0.016626342255       0.001263230426       1.219e-02
+ 146       0.007234677811       0.009956203962       0.001561547935       5.091e-03
+ 147       0.007232887708       0.014034737997       0.000719277166       9.778e-03
+ 148       0.007228928803       0.016188445230       0.001610016365       6.729e-03
+ 149       0.007227039898       0.008571623152       0.000777474274       5.139e-03
+ 150       0.007225598519       0.017862668486       0.000603992208       5.075e-03
+ 151       0.007221664573       0.008374035548       0.001645797687       8.863e-03
+ 152       0.007220724235       0.009965875245       0.000425765037       3.304e-03
+ 153       0.007218045873       0.011567000593       0.001226704245       9.556e-03
+ 154       0.007216518591       0.010923045527       0.000717600211       3.898e-03
+ 155       0.007215358569       0.008905251624       0.000555897488       3.615e-03
+ 156       0.007212588577       0.019786208459       0.001340052618       1.078e-02
+ 157       0.007211376622       0.004968617985       0.000589046576       2.132e-03
+ 158       0.007210034095       0.013898124024       0.000682536340       7.924e-03
+ 159       0.007208434222       0.016245962194       0.000824215477       4.175e-03
+ 160       0.007206737434       0.005559533981       0.000888956730       3.424e-03
+ 161       0.007205892874       0.010589678543       0.000473506807       5.186e-03
+ 162       0.007203753487       0.011707361401       0.001213027833       4.962e-03
+ 163       0.007202760065       0.008250858390       0.000583649269       3.531e-03
+ 164       0.007201872379       0.011619915296       0.000531556653       2.988e-03
+ 165       0.007200059422       0.011379163676       0.001110190305       6.731e-03
+ 166       0.007199468762       0.005442134747       0.000370019842       1.806e-03
+ 167       0.007198199410       0.014510584849       0.000830666009       8.068e-03
+ 168       0.007197014133       0.015759040472       0.000781528245       3.024e-03
+ 169       0.007195854374       0.005795183532       0.000781642161       2.737e-03
+ 170       0.007195143257       0.011562166575       0.000499060762       4.674e-03
+ 171       0.007193366901       0.010523927579       0.001263330939       4.007e-03
+ 172       0.007192465335       0.009121126080       0.000660121786       2.994e-03
+ 173       0.007191826257       0.007384111076       0.000479055350       2.202e-03
+ 174       0.007190178182       0.016646082296       0.001253689040       7.527e-03
+ 175       0.007189336735       0.006432641160       0.000651006396       1.648e-03
+ 176       0.007188236588       0.012718274322       0.000870754473       4.832e-03
+ 177       0.007187181456       0.016296406847       0.000845697026       2.875e-03
+ 178       0.007185566740       0.005506248498       0.001299124489       2.955e-03
+ 179       0.007185007231       0.008043837400       0.000466822809       2.599e-03
+ 180       0.007183524641       0.015320468762       0.001241267466       4.187e-03
+ 181       0.007182092832       0.012720362796       0.001218788868       3.229e-03
+ 182       0.007181271734       0.005113061013       0.000702181443       1.556e-03
+ 183       0.007180128551       0.017481145641       0.000998555715       6.015e-03
+ 184       0.007178694060       0.015469269111       0.001252157389       2.164e-03
+ 185       0.007177203041       0.009077750019       0.001314243825       3.143e-03
+ 186       0.007176518678       0.010873192227       0.000608152848       1.841e-03
+ 187       0.007174519119       0.014421779171       0.001786207449       5.151e-03
+ 188       0.007173656328       0.010621494511       0.000772370666       1.711e-03
+ 189       0.007172608725       0.010630384189       0.000943999028       2.654e-03
+ 190       0.007171369628       0.017053893993       0.001116693952       3.950e-03
+ 191       0.007169692486       0.009871503667       0.001515956421       2.019e-03
+ 192       0.007168920104       0.010711969024       0.000701221907       2.719e-03
+ 193       0.007167964994       0.015844754670       0.000870915621       2.242e-03
+ 194       0.007165647989       0.018171733127       0.002117682249       5.071e-03
+ 195       0.007164712712       0.008875789860       0.000860174157       1.200e-03
+ 196       0.007163711367       0.011603766518       0.000929876932       3.670e-03
+ 197       0.007162698837       0.020244852557       0.000942586176       2.326e-03
+ 198       0.007160577447       0.010726263335       0.001981967286       3.091e-03
+ 199       0.007159916010       0.011308908260       0.000626596416       1.674e-03
+Warning: Maximum number of iterations has been exceeded.
+         Current function value: 0.007160
+         Iterations: 200
+         Function evaluations: 2663
+         Gradient evaluations: 201
+Minimizer converge pattern: 3 
+Current function value:      0.00715992
+Norm of gradients: 0.011308908259674394
+Norm diff of x: 1.871e-01
+vcor:
+[[[-5.68773538e-04 -9.50269523e-03  2.79239774e-03 ...  3.75456256e-04
+   -2.52880773e-04 -6.74171227e-04]
+  [-9.50269523e-03  8.11661427e-02 -5.59079654e-03 ...  4.36587075e-03
+   -1.05003372e-03 -8.01110035e-03]
+  [ 2.79239774e-03 -5.59079654e-03  9.84847898e-06 ...  4.54847317e-06
+   -7.48907199e-06 -5.84504861e-06]
+  ...
+  [ 3.75456256e-04  4.36587075e-03  4.54847317e-06 ... -3.88636544e-05
+   -3.00195186e-05 -1.27784487e-04]
+  [-2.52880773e-04 -1.05003372e-03 -7.48907199e-06 ... -3.00195186e-05
+   -2.48945328e-04  7.20611557e-05]
+  [-6.74171227e-04 -8.01110035e-03 -5.84504861e-06 ... -1.27784487e-04
+    7.20611557e-05  2.77278343e-05]]
+
+ [[-8.45708924e-04 -8.34731089e-03  2.28423252e-03 ... -2.15427460e-04
+   -8.51567202e-05  3.61217979e-04]
+  [-8.34731089e-03  8.49125787e-03 -5.20207301e-03 ...  1.62097688e-03
+   -1.65174431e-05 -2.74868658e-03]
+  [ 2.28423252e-03 -5.20207301e-03  9.55371723e-06 ... -3.66118682e-07
+   -6.22730593e-06 -3.23352836e-08]
+  ...
+  [-2.15427460e-04  1.62097688e-03 -3.66118682e-07 ...  1.61752990e-04
+    3.97261805e-05  9.73472844e-05]
+  [-8.51567202e-05 -1.65174431e-05 -6.22730593e-06 ...  3.97261805e-05
+   -2.09943317e-04  6.81087950e-05]
+  [ 3.61217979e-04 -2.74868658e-03 -3.23352836e-08 ...  9.73472844e-05
+    6.81087950e-05  8.00009992e-05]]]
+rdm1 target:
+[[[ 9.97058298e-01 -3.80180180e-02 -4.96477244e-04 ...  1.05984116e-06
+    6.53820988e-06 -2.91179310e-06]
+  [-3.80180180e-02  1.10467694e-01  7.99480787e-05 ... -1.79166657e-05
+   -1.11439118e-05  4.53319702e-05]
+  [-4.96477244e-04  7.99480787e-05  1.30013959e-05 ...  1.83496463e-06
+    2.46049792e-06 -3.23958352e-06]
+  ...
+  [ 1.05984116e-06 -1.79166657e-05  1.83496463e-06 ...  2.37976605e-03
+   -6.92691581e-06 -7.03572921e-05]
+  [ 6.53820988e-06 -1.11439118e-05  2.46049792e-06 ... -6.92691581e-06
+    2.73036098e-03 -9.06960601e-06]
+  [-2.91179310e-06  4.53319702e-05 -3.23958352e-06 ... -7.03572921e-05
+   -9.06960601e-06  2.47877045e-03]]
+
+ [[ 9.97154208e-01 -3.41171426e-02 -4.54520780e-04 ...  3.68632308e-06
+    9.10903183e-06 -7.61244022e-06]
+  [-3.41171426e-02  1.08998411e-01  8.29247890e-05 ... -2.74866074e-05
+   -2.81684511e-05  5.94646123e-05]
+  [-4.54520780e-04  8.29247890e-05  1.19968383e-05 ...  7.01577161e-07
+    2.57264285e-06 -1.79243518e-06]
+  ...
+  [ 3.68632308e-06 -2.74866074e-05  7.01577161e-07 ...  2.41208237e-03
+   -9.60370956e-06 -1.20835805e-04]
+  [ 9.10903183e-06 -2.81684511e-05  2.57264285e-06 ... -9.60370956e-06
+    2.76589822e-03 -7.23507518e-06]
+  [-7.61244022e-06  5.94646123e-05 -1.79243518e-06 ... -1.20835805e-04
+   -7.23507518e-06  2.55805310e-03]]]
+rdm1 fitted:
+[[[ 9.98135505e-01 -3.81548865e-02 -1.66608913e-04 ... -1.87187256e-05
+    2.13765665e-05  3.25087647e-05]
+  [-3.81548865e-02  1.15082739e-01  2.53029609e-05 ... -1.97583902e-04
+    1.08820111e-04  3.61803306e-04]
+  [-1.66608913e-04  2.53029609e-05  1.52941373e-07 ... -2.24934340e-07
+    1.53977284e-07  3.91606603e-07]
+  ...
+  [-1.87187256e-05 -1.97583902e-04 -2.24934340e-07 ...  1.16329188e-05
+   -1.31417714e-06 -7.31520946e-06]
+  [ 2.13765665e-05  1.08820111e-04  1.53977284e-07 ... -1.31417714e-06
+    1.55870293e-05 -3.79087954e-07]
+  [ 3.25087647e-05  3.61803306e-04  3.91606603e-07 ... -7.31520946e-06
+   -3.79087954e-07  2.09499414e-05]]
+
+ [[ 9.98477726e-01 -3.40754993e-02 -1.37558151e-04 ...  1.47244596e-05
+    1.31297231e-05 -2.86366252e-05]
+  [-3.40754993e-02  1.12504420e-01  1.00329171e-05 ...  3.23790053e-06
+   -1.63226936e-05  1.56800594e-05]
+  [-1.37558151e-04  1.00329171e-05  1.21574491e-07 ...  6.60636835e-08
+    2.46447868e-07 -6.35812259e-08]
+  ...
+  [ 1.47244596e-05  3.23790053e-06  6.60636835e-08 ...  1.12272460e-05
+   -6.53734617e-07 -8.80231710e-06]
+  [ 1.31297231e-05 -1.63226936e-05  2.46447868e-07 ... -6.53734617e-07
+    1.89441124e-05 -4.53199304e-07]
+  [-2.86366252e-05  1.56800594e-05 -6.35812259e-08 ... -8.80231710e-06
+   -4.53199304e-07  2.15528078e-05]]]
+    CPU time for fit vcor   2373.38 sec, wall time     74.72 sec
+residue (begin) =       0.082146972973
+residue (end)   =       0.007159916010
+
+
+@-------------------------------------------------------------------------------@
+|---------------------------- DMET iteration history ---------------------------|
+@-------------------------------------------------------------------------------@
+
+cycle               energy               dE   rdm1 fit error            drdm1            dvcor
+    0      -362.1671000920       -3.622e+02        7.160e-03        1.000e+00        1.871e-01
+---------------------------------------------------------------------------------
+
+    CPU time for cycle= 0 170194.87 sec, wall time   8386.85 sec
+*****************************************************************************************************
+
+--------------------------------------------------------------------------------
+
+   W    W    AA    RRRRR   N    N  II  N    N   GGGG  
+   W    W   A  A   R    R  NN   N  II  NN   N  G    G 
+   W    W  A    A  R    R  N N  N  II  N N  N  G      
+   W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG 
+   WW  WW  A    A  R   R   N   NN  II  N   NN  G    G 
+   W    W  A    A  R    R  N    N  II  N    N   GGGG  
+
+    WARN: DMET not converge after     1 cycles
+
+--------------------------------------------------------------------------------
+
+WARNING: k2R: non-zero imaginary part:   2.1188197e-07
+WARNING: k2R: non-zero imaginary part:   2.0535148e-07
+WARNING: k2R: non-zero imaginary part:   2.1188197e-07
+WARNING: k2R: non-zero imaginary part:   2.0535148e-07
+ ** Mulliken pop            alpha | beta         magnetism **
+pop of  0 Ni 3s           0.99814 | 0.99848       -0.00034    u =   -0.00057 | -0.00085  
+pop of  0 Ni 4s           0.11508 | 0.11250        0.00258    u =    0.08117 | 0.00849   
+pop of  0 Ni 5s           0.00000 | 0.00000        0.00000    u =    0.00001 | 0.00001   
+pop of  0 Ni 3px          0.99995 | 0.99997       -0.00002    u =    0.00024 | -0.00003  
+pop of  0 Ni 3py          0.99994 | 0.99995       -0.00002    u =    0.00017 | -0.00005  
+pop of  0 Ni 3pz          0.99994 | 0.99995       -0.00002    u =    0.00018 | -0.00006  
+pop of  0 Ni 4px          0.00007 | 0.00005        0.00002    u =    0.00007 | 0.00063   
+pop of  0 Ni 4py          0.00002 | 0.00002        0.00001    u =    0.00011 | 0.00039   
+pop of  0 Ni 4pz          0.00002 | 0.00002        0.00000    u =    0.00015 | 0.00042   
+pop of  0 Ni 3dxy         0.99965 | 0.99967       -0.00002    u =    0.00087 | 0.00080   
+pop of  0 Ni 3dyz         0.99968 | 0.99979       -0.00011    u =    0.00130 | 0.00002   
+pop of  0 Ni 3dz^2        0.99769 | 0.11822        0.87947    u =    0.04070 | -0.14805  
+pop of  0 Ni 3dxz         0.99967 | 0.99968       -0.00001    u =    0.00088 | 0.00078   
+pop of  0 Ni 3dx2-y2      0.99659 | 0.12610        0.87049    u =    0.05460 | -0.10899  
+pop of  0 Ni 4dxy         0.00025 | 0.00017        0.00008    u =   -0.00012 | -0.00014  
+pop of  0 Ni 4dyz         0.00021 | 0.00015        0.00006    u =   -0.00012 | -0.00009  
+pop of  0 Ni 4dz^2        0.00016 | 0.00018       -0.00002    u =   -0.00014 | 0.00097   
+pop of  0 Ni 4dxz         0.00022 | 0.00017        0.00005    u =   -0.00012 | -0.00015  
+pop of  0 Ni 4dx2-y2      0.00019 | 0.00018        0.00000    u =   -0.00028 | 0.00067   
+pop of  0 Ni 4f-3         0.00000 | 0.00001       -0.00000    u =    0.00000 | 0.00002   
+pop of  0 Ni 4f-2         0.00000 | 0.00000       -0.00000    u =   -0.00000 | -0.00000  
+pop of  0 Ni 4f-1         0.00000 | 0.00000       -0.00000    u =   -0.00000 | 0.00001   
+pop of  0 Ni 4f+0         0.00000 | 0.00001       -0.00001    u =   -0.00000 | 0.00003   
+pop of  0 Ni 4f+1         0.00000 | 0.00001       -0.00001    u =   -0.00002 | -0.00002  
+pop of  0 Ni 4f+2         0.00000 | 0.00000       -0.00000    u =    0.00000 | 0.00000   
+pop of  0 Ni 4f+3         0.00000 | 0.00001       -0.00001    u =   -0.00002 | -0.00001  
+pop of  1 Ni 3s           0.99842 | 0.99813        0.00029    u =   -0.00222 | -0.00090  
+pop of  1 Ni 4s           0.11072 | 0.11374       -0.00301    u =   -0.12226 | 0.03467   
+pop of  1 Ni 5s           0.00000 | 0.00000       -0.00000    u =    0.00001 | 0.00001   
+pop of  1 Ni 3px          0.99996 | 0.99993        0.00003    u =    0.00033 | 0.00040   
+pop of  1 Ni 3py          0.99995 | 0.99994        0.00002    u =   -0.00026 | -0.00007  
+pop of  1 Ni 3pz          0.99995 | 0.99994        0.00002    u =   -0.00025 | -0.00007  
+pop of  1 Ni 4px          0.00006 | 0.00006        0.00000    u =    0.00040 | 0.00086   
+pop of  1 Ni 4py          0.00002 | 0.00003       -0.00001    u =   -0.00009 | 0.00039   
+pop of  1 Ni 4pz          0.00002 | 0.00003       -0.00001    u =   -0.00006 | 0.00036   
+pop of  1 Ni 3dxy         0.99951 | 0.99962       -0.00011    u =    0.00438 | 0.00039   
+pop of  1 Ni 3dyz         0.99970 | 0.99975       -0.00005    u =    0.00278 | 0.00050   
+pop of  1 Ni 3dz^2        0.11805 | 0.99822       -0.88016    u =   -0.17372 | 0.01793   
+pop of  1 Ni 3dxz         0.99952 | 0.99963       -0.00010    u =    0.00421 | 0.00032   
+pop of  1 Ni 3dx2-y2      0.13239 | 0.99808       -0.86569    u =   -0.16989 | 0.00997   
+pop of  1 Ni 4dxy         0.00020 | 0.00030       -0.00010    u =   -0.00019 | -0.00035  
+pop of  1 Ni 4dyz         0.00013 | 0.00022       -0.00009    u =   -0.00014 | -0.00012  
+pop of  1 Ni 4dz^2        0.00022 | 0.00021        0.00001    u =    0.00057 | -0.00019  
+pop of  1 Ni 4dxz         0.00019 | 0.00029       -0.00009    u =   -0.00020 | -0.00034  
+pop of  1 Ni 4dx2-y2      0.00019 | 0.00029       -0.00010    u =    0.00055 | -0.00040  
+pop of  1 Ni 4f-3         0.00001 | 0.00000        0.00000    u =    0.00002 | 0.00001   
+pop of  1 Ni 4f-2         0.00000 | 0.00000        0.00000    u =   -0.00000 | -0.00000  
+pop of  1 Ni 4f-1         0.00000 | 0.00000        0.00000    u =    0.00001 | 0.00001   
+pop of  1 Ni 4f+0         0.00001 | 0.00000        0.00001    u =    0.00003 | 0.00001   
+pop of  1 Ni 4f+1         0.00000 | 0.00000        0.00000    u =   -0.00000 | -0.00001  
+pop of  1 Ni 4f+2         0.00000 | 0.00000        0.00000    u =   -0.00000 | 0.00000   
+pop of  1 Ni 4f+3         0.00001 | 0.00000        0.00000    u =    0.00001 | -0.00001  
+pop of  2 O 2s            0.96730 | 0.96614        0.00116    u =    0.02400 | 0.05112   
+pop of  2 O 3s            0.00005 | 0.00007       -0.00002    u =    0.00010 | -0.00018  
+pop of  2 O 2px           0.92124 | 0.92448       -0.00324    u =    0.06825 | 0.03229   
+pop of  2 O 2py           0.93963 | 0.93692        0.00271    u =   -0.00688 | 0.00461   
+pop of  2 O 2pz           0.94006 | 0.93711        0.00295    u =   -0.01013 | 0.00050   
+pop of  2 O 3px           0.00011 | 0.00062       -0.00051    u =   -0.00003 | -0.00462  
+pop of  2 O 3py           0.00008 | 0.00008        0.00001    u =   -0.00027 | -0.00019  
+pop of  2 O 3pz           0.00008 | 0.00008        0.00000    u =   -0.00026 | -0.00018  
+pop of  2 O 3dxy          0.00003 | 0.00003       -0.00000    u =   -0.00017 | -0.00013  
+pop of  2 O 3dyz          0.00001 | 0.00001       -0.00000    u =   -0.00025 | -0.00026  
+pop of  2 O 3dz^2         0.00001 | 0.00002       -0.00001    u =    0.00007 | 0.00015   
+pop of  2 O 3dxz          0.00003 | 0.00003       -0.00000    u =   -0.00017 | -0.00012  
+pop of  2 O 3dx2-y2       0.00003 | 0.00004       -0.00001    u =    0.00010 | 0.00011   
+pop of  3 O 2s            0.96882 | 0.96537        0.00345    u =   -0.01668 | 0.06715   
+pop of  3 O 3s            0.00003 | 0.00005       -0.00002    u =    0.00039 | 0.00000   
+pop of  3 O 2px           0.92087 | 0.92962       -0.00875    u =    0.18713 | 0.01428   
+pop of  3 O 2py           0.93713 | 0.93762       -0.00048    u =    0.01853 | 0.01138   
+pop of  3 O 2pz           0.93749 | 0.93757       -0.00008    u =    0.01482 | 0.00842   
+pop of  3 O 3px           0.00006 | 0.00026       -0.00020    u =    0.00018 | -0.00179  
+pop of  3 O 3py           0.00007 | 0.00006        0.00002    u =   -0.00053 | -0.00015  
+pop of  3 O 3pz           0.00007 | 0.00006        0.00001    u =   -0.00049 | -0.00014  
+pop of  3 O 3dxy          0.00002 | 0.00002       -0.00000    u =   -0.00029 | -0.00022  
+pop of  3 O 3dyz          0.00001 | 0.00001       -0.00000    u =   -0.00024 | -0.00023  
+pop of  3 O 3dz^2         0.00001 | 0.00001        0.00000    u =   -0.00004 | 0.00016   
+pop of  3 O 3dxz          0.00002 | 0.00002       -0.00000    u =   -0.00025 | -0.00021  
+pop of  3 O 3dx2-y2       0.00002 | 0.00002       -0.00000    u =    0.00003 | 0.00008   
+In total                 24.00000 | 24.00000      -0.00000
+ ** Mulliken atomic charges    ( Nelec_alpha | Nelec_beta )    magnetism **
+charge of    0Ni =      1.53725  (     9.10746      7.35529 )      1.75218
+charge of    1Ni =      1.53235  (     7.35925      9.10840 )     -1.74915
+charge of    2O =     -1.53430  (     3.76867      3.76563 )      0.00304
+charge of    3O =     -1.53530  (     3.76462      3.77069 )     -0.00607
+
+    CPU time for dmet kernel 170196.77 sec, wall time   8386.92 sec
+End time = Wed Apr 30 11:26:08 PM PDT 2025

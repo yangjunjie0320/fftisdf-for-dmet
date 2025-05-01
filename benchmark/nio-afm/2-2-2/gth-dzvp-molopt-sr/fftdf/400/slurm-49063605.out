@@ -149,3 +149,4 @@ DF object = <pyscf.pbc.df.fft.FFTDF object at 0x7f5e9a80f040>
 number of electrons per cell  alpha = 192 beta = 192
 Overwritten attributes  energy_tot get_occ get_grad  of <class 'pyscf.pbc.scf.kuhf.KUHF'>
 Set gradient conv threshold to 0.001
+slurmstepd: error: *** JOB 49063605 ON hpc-52-10 CANCELLED AT 2025-05-01T01:41:29 DUE TO TIME LIMIT ***
