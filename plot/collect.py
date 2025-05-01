@@ -58,4 +58,5 @@ if __name__ == '__main__':
     with open(args.output, 'w') as f:
         json.dump(results, f)
     
-    # python collect.py --root_dir=../benchmark/nio-afm/ --filename=out.log --output=./data/nio-afm.json
+    # python collect.py --root_dir=../benchmark/nio-afm/ --filename=out.log --output=./data/nio-afm-dzvp.json
+    # python collect.py --root_dir=../benchmark/diamond/ --filename=out.log --output=./data/diamond-dzvp.json
