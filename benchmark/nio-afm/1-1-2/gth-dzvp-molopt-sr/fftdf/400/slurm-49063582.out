@@ -1034,3 +1034,103 @@ beta HOMO = 0.595063263656  LUMO = 0.959353236197
   4.15828721  4.20518459  5.01124867  5.04827221 14.2151842  14.24626024]
     Fermi level 0.7813619764583183  Sum mo_occ_kpts = 96.0  should equal nelec = 96
     sigma = 0.01  Optimized mu = 0.7813619764583183  entropy = 7.23588156284e-07
+    CPU time for vj and vk  12380.23 sec, wall time    750.30 sec
+E1 = (-209.96842996384146+4.710773925649563e-17j)  E_coul = (88.89488760216179+7.50816746591242e-18j)
+    Total E(T) = -360.400300061529  Free energy = -360.400300068765  E0 = -360.400300065147
+Extra cycle  E= -360.400300061529  delta_E= -1.11e-08  |g|= 9.85e-05  |ddm|= 0.000204
+    CPU time for scf_cycle 198696.15 sec, wall time  12099.94 sec
+    CPU time for SCF 198698.78 sec, wall time  12100.04 sec
+converged SCF energy = -360.400300061529
+**** SCF Summaries ****
+Total Energy =                        -360.400300061528640
+One-electron Energy =                 -209.968429963841459
+Two-electron Energy =                   88.894887602161788
+(Electronic) Entropy                     0.000000723588156
+(Electronic) Zero Point Energy        -360.400300065146553
+Free Energy =                         -360.400300068764523
+ ** Mulliken pop alpha/beta on meta-lowdin orthogonal AOs **
+ ** Mulliken pop       alpha | beta **
+pop of  0 Ni 3s        0.99999 | 1.00000   
+pop of  0 Ni 4s        0.07319 | 0.07130   
+pop of  0 Ni 5s        0.00058 | 0.00046   
+pop of  0 Ni 3px       0.99989 | 0.99980   
+pop of  0 Ni 3py       0.99989 | 0.99980   
+pop of  0 Ni 3pz       0.99989 | 0.99979   
+pop of  0 Ni 4px       0.00508 | 0.00567   
+pop of  0 Ni 4py       0.00508 | 0.00567   
+pop of  0 Ni 4pz       0.00848 | 0.00919   
+pop of  0 Ni 3dxy      0.99972 | 0.99740   
+pop of  0 Ni 3dyz      0.99919 | 0.99978   
+pop of  0 Ni 3dz^2     0.99591 | 0.08175   
+pop of  0 Ni 3dxz      0.99919 | 0.99978   
+pop of  0 Ni 3dx2-y2    0.99668 | 0.06490   
+pop of  0 Ni 4dxy      0.00100 | 0.00117   
+pop of  0 Ni 4dyz      0.00143 | 0.00072   
+pop of  0 Ni 4dz^2     0.00385 | 0.00369   
+pop of  0 Ni 4dxz      0.00143 | 0.00072   
+pop of  0 Ni 4dx2-y2    0.00283 | 0.00283   
+pop of  0 Ni 4f-3      0.00052 | 0.00069   
+pop of  0 Ni 4f-2      0.00001 | 0.00001   
+pop of  0 Ni 4f-1      0.00024 | 0.00034   
+pop of  0 Ni 4f+0      0.00066 | 0.00089   
+pop of  0 Ni 4f+1      0.00024 | 0.00034   
+pop of  0 Ni 4f+2      0.00000 | 0.00000   
+pop of  0 Ni 4f+3      0.00052 | 0.00069   
+pop of  1 Ni 3s        1.00000 | 0.99999   
+pop of  1 Ni 4s        0.07130 | 0.07319   
+pop of  1 Ni 5s        0.00046 | 0.00058   
+pop of  1 Ni 3px       0.99980 | 0.99989   
+pop of  1 Ni 3py       0.99980 | 0.99989   
+pop of  1 Ni 3pz       0.99979 | 0.99989   
+pop of  1 Ni 4px       0.00567 | 0.00508   
+pop of  1 Ni 4py       0.00567 | 0.00508   
+pop of  1 Ni 4pz       0.00919 | 0.00848   
+pop of  1 Ni 3dxy      0.99740 | 0.99972   
+pop of  1 Ni 3dyz      0.99978 | 0.99919   
+pop of  1 Ni 3dz^2     0.08175 | 0.99591   
+pop of  1 Ni 3dxz      0.99978 | 0.99919   
+pop of  1 Ni 3dx2-y2    0.06490 | 0.99668   
+pop of  1 Ni 4dxy      0.00117 | 0.00100   
+pop of  1 Ni 4dyz      0.00072 | 0.00143   
+pop of  1 Ni 4dz^2     0.00369 | 0.00385   
+pop of  1 Ni 4dxz      0.00072 | 0.00143   
+pop of  1 Ni 4dx2-y2    0.00283 | 0.00283   
+pop of  1 Ni 4f-3      0.00069 | 0.00052   
+pop of  1 Ni 4f-2      0.00001 | 0.00001   
+pop of  1 Ni 4f-1      0.00034 | 0.00024   
+pop of  1 Ni 4f+0      0.00089 | 0.00066   
+pop of  1 Ni 4f+1      0.00034 | 0.00024   
+pop of  1 Ni 4f+2      0.00000 | 0.00000   
+pop of  1 Ni 4f+3      0.00069 | 0.00052   
+pop of  2 O 2s        0.97191 | 0.97191   
+pop of  2 O 3s        0.00348 | 0.00348   
+pop of  2 O 2px       0.93818 | 0.93818   
+pop of  2 O 2py       0.93818 | 0.93818   
+pop of  2 O 2pz       0.93412 | 0.93412   
+pop of  2 O 3px       0.01176 | 0.01176   
+pop of  2 O 3py       0.01176 | 0.01176   
+pop of  2 O 3pz       0.01796 | 0.01796   
+pop of  2 O 3dxy      0.00035 | 0.00035   
+pop of  2 O 3dyz      0.00026 | 0.00026   
+pop of  2 O 3dz^2     0.00015 | 0.00015   
+pop of  2 O 3dxz      0.00026 | 0.00026   
+pop of  2 O 3dx2-y2    0.00017 | 0.00017   
+pop of  3 O 2s        0.97191 | 0.97191   
+pop of  3 O 3s        0.00348 | 0.00348   
+pop of  3 O 2px       0.93818 | 0.93818   
+pop of  3 O 2py       0.93818 | 0.93818   
+pop of  3 O 2pz       0.93412 | 0.93412   
+pop of  3 O 3px       0.01176 | 0.01176   
+pop of  3 O 3py       0.01176 | 0.01176   
+pop of  3 O 3pz       0.01796 | 0.01796   
+pop of  3 O 3dxy      0.00035 | 0.00035   
+pop of  3 O 3dyz      0.00026 | 0.00026   
+pop of  3 O 3dz^2     0.00015 | 0.00015   
+pop of  3 O 3dxz      0.00026 | 0.00026   
+pop of  3 O 3dx2-y2    0.00017 | 0.00017   
+In total            24.00000 | 24.00000  
+ ** Mulliken atomic charges   ( Nelec_alpha | Nelec_beta ) **
+charge of  0Ni =      1.65713  (     9.09551      7.24736 )
+charge of  1Ni =      1.65713  (     7.24736      9.09551 )
+charge of  2O =     -1.65713  (     3.82856      3.82856 )
+charge of  3O =     -1.65713  (     3.82856      3.82856 )
