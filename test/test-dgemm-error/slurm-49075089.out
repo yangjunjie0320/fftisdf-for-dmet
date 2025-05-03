@@ -1,0 +1,295 @@
+SLURMD_NODENAME = hpc-52-39
+Start time = Thu May  1 01:10:43 PM PDT 2025
+/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib/python3.10/site-packages/numpy/__config__.py:155: UserWarning: Install `pyyaml` for better output
+  warnings.warn("Install `pyyaml` for better output", stacklevel=1)
+{
+  "Compilers": {
+    "c": {
+      "name": "gcc",
+      "linker": "ld.bfd",
+      "version": "11.2.0",
+      "commands": "/croot/numpy_and_numpy_base_1742570410886/_build_env/bin/x86_64-conda-linux-gnu-cc",
+      "args": "-march=nocona, -mtune=haswell, -ftree-vectorize, -fPIC, -fstack-protector-strong, -fno-plt, -O2, -ffunction-sections, -pipe, -isystem, /home/junjiey/anaconda3/envs/fftisdf-with-mkl/include, -fdebug-prefix-map=/croot/numpy_and_numpy_base_1742570410886/work=/usr/local/src/conda/numpy-base-2.2.4, -fdebug-prefix-map=/home/junjiey/anaconda3/envs/fftisdf-with-mkl=/usr/local/src/conda-prefix, -DNDEBUG, -D_FORTIFY_SOURCE=2, -O2, -isystem, /home/junjiey/anaconda3/envs/fftisdf-with-mkl/include",
+      "linker args": "-Wl,-O2, -Wl,--sort-common, -Wl,--as-needed, -Wl,-z,relro, -Wl,-z,now, -Wl,--disable-new-dtags, -Wl,--gc-sections, -Wl,-rpath,/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib, -Wl,-rpath-link,/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib, -L/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib, -march=nocona, -mtune=haswell, -ftree-vectorize, -fPIC, -fstack-protector-strong, -fno-plt, -O2, -ffunction-sections, -pipe, -isystem, /home/junjiey/anaconda3/envs/fftisdf-with-mkl/include, -fdebug-prefix-map=/croot/numpy_and_numpy_base_1742570410886/work=/usr/local/src/conda/numpy-base-2.2.4, -fdebug-prefix-map=/home/junjiey/anaconda3/envs/fftisdf-with-mkl=/usr/local/src/conda-prefix, -DNDEBUG, -D_FORTIFY_SOURCE=2, -O2, -isystem, /home/junjiey/anaconda3/envs/fftisdf-with-mkl/include"
+    },
+    "cython": {
+      "name": "cython",
+      "linker": "cython",
+      "version": "3.0.11",
+      "commands": "cython"
+    },
+    "c++": {
+      "name": "gcc",
+      "linker": "ld.bfd",
+      "version": "11.2.0",
+      "commands": "/croot/numpy_and_numpy_base_1742570410886/_build_env/bin/x86_64-conda-linux-gnu-c++",
+      "args": "-fvisibility-inlines-hidden, -std=c++17, -fmessage-length=0, -march=nocona, -mtune=haswell, -ftree-vectorize, -fPIC, -fstack-protector-strong, -fno-plt, -O2, -ffunction-sections, -pipe, -isystem, /home/junjiey/anaconda3/envs/fftisdf-with-mkl/include, -fdebug-prefix-map=/croot/numpy_and_numpy_base_1742570410886/work=/usr/local/src/conda/numpy-base-2.2.4, -fdebug-prefix-map=/home/junjiey/anaconda3/envs/fftisdf-with-mkl=/usr/local/src/conda-prefix, -DNDEBUG, -D_FORTIFY_SOURCE=2, -O2, -isystem, /home/junjiey/anaconda3/envs/fftisdf-with-mkl/include",
+      "linker args": "-Wl,-O2, -Wl,--sort-common, -Wl,--as-needed, -Wl,-z,relro, -Wl,-z,now, -Wl,--disable-new-dtags, -Wl,--gc-sections, -Wl,-rpath,/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib, -Wl,-rpath-link,/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib, -L/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib, -fvisibility-inlines-hidden, -std=c++17, -fmessage-length=0, -march=nocona, -mtune=haswell, -ftree-vectorize, -fPIC, -fstack-protector-strong, -fno-plt, -O2, -ffunction-sections, -pipe, -isystem, /home/junjiey/anaconda3/envs/fftisdf-with-mkl/include, -fdebug-prefix-map=/croot/numpy_and_numpy_base_1742570410886/work=/usr/local/src/conda/numpy-base-2.2.4, -fdebug-prefix-map=/home/junjiey/anaconda3/envs/fftisdf-with-mkl=/usr/local/src/conda-prefix, -DNDEBUG, -D_FORTIFY_SOURCE=2, -O2, -isystem, /home/junjiey/anaconda3/envs/fftisdf-with-mkl/include"
+    }
+  },
+  "Machine Information": {
+    "host": {
+      "cpu": "x86_64",
+      "family": "x86_64",
+      "endian": "little",
+      "system": "linux"
+    },
+    "build": {
+      "cpu": "x86_64",
+      "family": "x86_64",
+      "endian": "little",
+      "system": "linux"
+    }
+  },
+  "Build Dependencies": {
+    "blas": {
+      "name": "mkl-sdl",
+      "found": true,
+      "version": "2023.1",
+      "detection method": "pkgconfig",
+      "include directory": "/home/junjiey/anaconda3/envs/fftisdf-with-mkl/include",
+      "lib directory": "/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib",
+      "openblas configuration": "unknown",
+      "pc file directory": "/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib/pkgconfig"
+    },
+    "lapack": {
+      "name": "mkl-sdl",
+      "found": true,
+      "version": "2023.1",
+      "detection method": "pkgconfig",
+      "include directory": "/home/junjiey/anaconda3/envs/fftisdf-with-mkl/include",
+      "lib directory": "/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib",
+      "openblas configuration": "unknown",
+      "pc file directory": "/home/junjiey/anaconda3/envs/fftisdf-with-mkl/lib/pkgconfig"
+    }
+  },
+  "Python Information": {
+    "path": "/home/junjiey/anaconda3/envs/fftisdf-with-mkl/bin/python",
+    "version": "3.10"
+  },
+  "SIMD Extensions": {
+    "baseline": [
+      "SSE",
+      "SSE2",
+      "SSE3"
+    ],
+    "found": [
+      "SSSE3",
+      "SSE41",
+      "POPCNT",
+      "SSE42",
+      "AVX",
+      "F16C",
+      "FMA3",
+      "AVX2",
+      "AVX512F",
+      "AVX512CD",
+      "AVX512_SKX",
+      "AVX512_CLX",
+      "AVX512_CNL",
+      "AVX512_ICL"
+    ],
+    "not found": [
+      "AVX512_KNL",
+      "AVX512_KNM"
+    ]
+  }
+}
+None
+OMP_NUM_THREADS = 64
+MKL_NUM_THREADS = 64
+PYSCF_MAX_MEMORY = 393216
+TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49075089/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49075089/
+Core: Prescott
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/test/test-dgemm-error/main.py with:
+name: nio-afm
+xc: None
+kmesh: 4-4-4
+basis: gth-dzvp-molopt-sr
+pseudo: gth-pbe
+ke_cutoff: 400.0
+density_fitting_method: fftisdf-20
+is_unrestricted: True
+init_guess_method: minao
+df_to_read: None
+
+
+Cholesky rank = 10153, c0 =  20.00, nao = 78, nip = 1560
+Parent grid size = 35937, selected grid size = 1560
+truncated values = 5.42e+03, estimated error = 2.37e+01
+Preparing initial guess for spin polarized calculation
+Alph label: ['0 Ni 3dz2', '0 Ni 3dx2-y2'], Index: [13]
+Beta label: ['1 Ni 3dz2', '1 Ni 3dx2-y2'], Index: [39]
+ ** Mulliken pop alpha/beta on meta-lowdin orthogonal AOs **
+ ** Mulliken pop       alpha | beta **
+pop of  0 Ni 3s        1.00993 | 1.00993   
+pop of  0 Ni 4s        0.01022 | 0.01022   
+pop of  0 Ni 5s        0.00000 | 0.00000   
+pop of  0 Ni 3px       1.00359 | 1.00359   
+pop of  0 Ni 3py       1.00359 | 1.00359   
+pop of  0 Ni 3pz       1.00359 | 1.00359   
+pop of  0 Ni 4px       0.00000 | 0.00000   
+pop of  0 Ni 4py       0.00000 | 0.00000   
+pop of  0 Ni 4pz       0.00000 | 0.00000   
+pop of  0 Ni 3dxy      0.99949 | 0.99949   
+pop of  0 Ni 3dyz      0.99949 | 0.99949   
+pop of  0 Ni 3dz^2     0.99848 | 0.99848   
+pop of  0 Ni 3dxz      0.99949 | 0.99949   
+pop of  0 Ni 3dx2-y2    0.99848 | 0.00545   
+pop of  0 Ni 4dxy      0.00000 | 0.00000   
+pop of  0 Ni 4dyz      0.00000 | 0.00000   
+pop of  0 Ni 4dz^2     0.00000 | 0.00000   
+pop of  0 Ni 4dxz      0.00000 | 0.00000   
+pop of  0 Ni 4dx2-y2    0.00000 | 0.00000   
+pop of  0 Ni 4f-3      0.00000 | 0.00000   
+pop of  0 Ni 4f-2      0.00000 | 0.00000   
+pop of  0 Ni 4f-1      0.00000 | 0.00000   
+pop of  0 Ni 4f+0      0.00000 | 0.00000   
+pop of  0 Ni 4f+1      0.00000 | 0.00000   
+pop of  0 Ni 4f+2      0.00000 | 0.00000   
+pop of  0 Ni 4f+3      0.00000 | 0.00000   
+pop of  1 Ni 3s        1.00993 | 1.00993   
+pop of  1 Ni 4s        0.01022 | 0.01022   
+pop of  1 Ni 5s        0.00000 | 0.00000   
+pop of  1 Ni 3px       1.00359 | 1.00359   
+pop of  1 Ni 3py       1.00359 | 1.00359   
+pop of  1 Ni 3pz       1.00359 | 1.00359   
+pop of  1 Ni 4px       0.00000 | 0.00000   
+pop of  1 Ni 4py       0.00000 | 0.00000   
+pop of  1 Ni 4pz       0.00000 | 0.00000   
+pop of  1 Ni 3dxy      0.99949 | 0.99949   
+pop of  1 Ni 3dyz      0.99949 | 0.99949   
+pop of  1 Ni 3dz^2     0.99848 | 0.99848   
+pop of  1 Ni 3dxz      0.99949 | 0.99949   
+pop of  1 Ni 3dx2-y2    0.00545 | 0.99848   
+pop of  1 Ni 4dxy      0.00000 | 0.00000   
+pop of  1 Ni 4dyz      0.00000 | 0.00000   
+pop of  1 Ni 4dz^2     0.00000 | 0.00000   
+pop of  1 Ni 4dxz      0.00000 | 0.00000   
+pop of  1 Ni 4dx2-y2    0.00000 | 0.00000   
+pop of  1 Ni 4f-3      0.00000 | 0.00000   
+pop of  1 Ni 4f-2      0.00000 | 0.00000   
+pop of  1 Ni 4f-1      0.00000 | 0.00000   
+pop of  1 Ni 4f+0      0.00000 | 0.00000   
+pop of  1 Ni 4f+1      0.00000 | 0.00000   
+pop of  1 Ni 4f+2      0.00000 | 0.00000   
+pop of  1 Ni 4f+3      0.00000 | 0.00000   
+pop of  2 O 2s        0.99211 | 0.99211   
+pop of  2 O 3s        0.00000 | 0.00000   
+pop of  2 O 2px       0.65898 | 0.65898   
+pop of  2 O 2py       0.65898 | 0.65898   
+pop of  2 O 2pz       0.66009 | 0.66009   
+pop of  2 O 3px       0.00000 | 0.00000   
+pop of  2 O 3py       0.00000 | 0.00000   
+pop of  2 O 3pz       0.00000 | 0.00000   
+pop of  2 O 3dxy      0.00000 | 0.00000   
+pop of  2 O 3dyz      0.00000 | 0.00000   
+pop of  2 O 3dz^2     0.00000 | 0.00000   
+pop of  2 O 3dxz      0.00000 | 0.00000   
+pop of  2 O 3dx2-y2    0.00000 | 0.00000   
+pop of  3 O 2s        0.99211 | 0.99211   
+pop of  3 O 3s        0.00000 | 0.00000   
+pop of  3 O 2px       0.65898 | 0.65898   
+pop of  3 O 2py       0.65898 | 0.65898   
+pop of  3 O 2pz       0.66009 | 0.66009   
+pop of  3 O 3px       0.00000 | 0.00000   
+pop of  3 O 3py       0.00000 | 0.00000   
+pop of  3 O 3pz       0.00000 | 0.00000   
+pop of  3 O 3dxy      0.00000 | 0.00000   
+pop of  3 O 3dyz      0.00000 | 0.00000   
+pop of  3 O 3dz^2     0.00000 | 0.00000   
+pop of  3 O 3dxz      0.00000 | 0.00000   
+pop of  3 O 3dx2-y2    0.00000 | 0.00000   
+In total            23.00000 | 23.00000  
+ ** Mulliken atomic charges   ( Nelec_alpha | Nelec_beta ) **
+charge of  0Ni =      0.94030  (     9.02636      8.03334 )
+charge of  1Ni =      0.94030  (     8.03334      9.02636 )
+charge of  2O =      0.05970  (     2.97015      2.97015 )
+charge of  3O =      0.05970  (     2.97015      2.97015 )
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [89 89 89] (704969 PWs)
+len(kpts) = 64
+tol = 1e-08
+c0 = None
+wrap_around = True
+blksize = 20000
+isdf_to_save = /resnick/scratch/yangjunjie/nio-afm/49075089/tmp7kalso8a
+Overwritten attributes  build  of <class 'fft.isdf.InterpolativeSeparableDensityFitting'>
+
+WARN: ke_cutoff/mesh (400 / [89 89 89]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.58 Eh.
+Recommended ke_cutoff/mesh are 1172.14 / [151 151 151].
+
+Using pre-computed interpolating vectors, c0 is not used
+    CPU time for building inpv_kpt      4.27 sec, wall time      0.07 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 1.13e+03 GB.
+memory needed for each block:   3.19e+01 GB
+memory needed for each k-point: 1.76e+01 GB
+max_memory: 3.92e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[      0:  20000]    248.20 sec, wall time     41.51 sec
+    CPU time for eta_kpt[  20000:  40000]    254.06 sec, wall time     52.47 sec
+    CPU time for eta_kpt[  40000:  60000]    251.98 sec, wall time     47.42 sec
+    CPU time for eta_kpt[  60000:  80000]    219.51 sec, wall time     40.53 sec
+    CPU time for eta_kpt[  80000: 100000]    221.14 sec, wall time     46.28 sec
+    CPU time for eta_kpt[ 100000: 120000]    253.46 sec, wall time     62.33 sec
+    CPU time for eta_kpt[ 120000: 140000]    313.41 sec, wall time     88.93 sec
+    CPU time for eta_kpt[ 140000: 160000]    290.36 sec, wall time     55.24 sec
+    CPU time for eta_kpt[ 160000: 180000]    257.28 sec, wall time     49.33 sec
+    CPU time for eta_kpt[ 180000: 200000]    260.41 sec, wall time     46.34 sec
+    CPU time for eta_kpt[ 200000: 220000]    258.08 sec, wall time     47.16 sec
+    CPU time for eta_kpt[ 220000: 240000]    265.80 sec, wall time     58.02 sec
+    CPU time for eta_kpt[ 240000: 260000]    314.46 sec, wall time    106.52 sec
+    CPU time for eta_kpt[ 260000: 280000]    263.23 sec, wall time     54.44 sec
+    CPU time for eta_kpt[ 280000: 300000]    268.08 sec, wall time     58.80 sec
+    CPU time for eta_kpt[ 300000: 320000]    266.56 sec, wall time     57.86 sec
+    CPU time for eta_kpt[ 320000: 340000]    255.40 sec, wall time     50.88 sec
+    CPU time for eta_kpt[ 340000: 360000]    282.58 sec, wall time     71.79 sec
+    CPU time for eta_kpt[ 360000: 380000]    254.81 sec, wall time     51.91 sec
+    CPU time for eta_kpt[ 380000: 400000]    244.21 sec, wall time     48.61 sec
+    CPU time for eta_kpt[ 400000: 420000]    235.51 sec, wall time     51.62 sec
+    CPU time for eta_kpt[ 420000: 440000]    245.35 sec, wall time     65.56 sec
+    CPU time for eta_kpt[ 440000: 460000]    243.94 sec, wall time     67.70 sec
+    CPU time for eta_kpt[ 460000: 480000]    328.62 sec, wall time     76.60 sec
+    CPU time for eta_kpt[ 480000: 500000]    273.44 sec, wall time     54.72 sec
+    CPU time for eta_kpt[ 500000: 520000]    228.51 sec, wall time     50.78 sec
+    CPU time for eta_kpt[ 520000: 540000]    233.39 sec, wall time     61.10 sec
+    CPU time for eta_kpt[ 540000: 560000]    269.81 sec, wall time     53.78 sec
+    CPU time for eta_kpt[ 560000: 580000]    230.98 sec, wall time     53.37 sec
+    CPU time for eta_kpt[ 580000: 600000]    226.99 sec, wall time     49.15 sec
+    CPU time for eta_kpt[ 600000: 620000]    228.06 sec, wall time     42.18 sec
+    CPU time for eta_kpt[ 620000: 640000]    231.32 sec, wall time     49.35 sec
+    CPU time for eta_kpt[ 640000: 660000]    233.27 sec, wall time     58.24 sec
+    CPU time for eta_kpt[ 660000: 680000]    219.01 sec, wall time     43.21 sec
+    CPU time for eta_kpt[ 680000: 700000]    254.02 sec, wall time     51.73 sec
+    CPU time for eta_kpt[ 700000: 704969]     86.67 sec, wall time     12.67 sec
+    CPU time for building eta_kpt   9706.33 sec, wall time   1990.16 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[  1 / 64]   1215.28 sec, wall time     54.54 sec
+    CPU time for coul_kpt[  2 / 64]   1304.59 sec, wall time     52.34 sec
+    CPU time for coul_kpt[  3 / 64]   2078.07 sec, wall time     64.31 sec
+    CPU time for coul_kpt[  4 / 64]   1327.92 sec, wall time     52.82 sec
+    CPU time for coul_kpt[  5 / 64]   1536.45 sec, wall time     58.69 sec
+    CPU time for coul_kpt[  6 / 64]   1442.03 sec, wall time     57.61 sec
+    CPU time for coul_kpt[  7 / 64]   1446.27 sec, wall time     70.39 sec
+    CPU time for coul_kpt[  8 / 64]   1450.36 sec, wall time     76.55 sec
+    CPU time for coul_kpt[  9 / 64]   1499.31 sec, wall time     81.29 sec
+    CPU time for coul_kpt[ 10 / 64]   1522.33 sec, wall time     82.04 sec
+    CPU time for coul_kpt[ 11 / 64]   1289.96 sec, wall time     65.25 sec
+    CPU time for coul_kpt[ 12 / 64]   1314.52 sec, wall time     70.03 sec
+    CPU time for coul_kpt[ 13 / 64]   1638.17 sec, wall time     96.95 sec
+    CPU time for coul_kpt[ 14 / 64]   1497.92 sec, wall time    102.10 sec
+    CPU time for coul_kpt[ 15 / 64]   1484.52 sec, wall time    105.20 sec
+    CPU time for coul_kpt[ 16 / 64]   1395.86 sec, wall time     95.16 sec
+    CPU time for coul_kpt[ 17 / 64]   2900.65 sec, wall time    110.63 sec
+    CPU time for coul_kpt[ 18 / 64]   1346.48 sec, wall time     78.71 sec
+    CPU time for coul_kpt[ 19 / 64]   1337.05 sec, wall time     67.49 sec
+slurmstepd: error: *** JOB 49075089 ON hpc-52-39 CANCELLED AT 2025-05-01T14:10:45 DUE TO TIME LIMIT ***

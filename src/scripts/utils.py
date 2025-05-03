@@ -77,9 +77,11 @@ def build_density_fitting(config: dict):
 
     df_obj = None
     if "gdf" in method.lower():
+        method = method.lower().split("-")
+        beta = 0.2 if len(method) == 1 else method[1]
+
         from pyscf.pbc.df import GDF
         df_obj = GDF(cell, kpts)
-        df_obj.exclude_dd_block = False
         df_obj.exxdiv = None
         df_obj._prefer_ccdf = True
 
@@ -87,7 +89,15 @@ def build_density_fitting(config: dict):
             assert os.path.exists(df_to_read)
             df_obj._cderi = df_to_read
 
-    if "fftdf" in method.lower():
+        if beta == "auto":
+            from pyscf.df import autoaux
+            df_obj.auxbasis = autoaux(cell)
+        else:
+            from pyscf.df import aug_etb
+            beta = float(beta)
+            df_obj.auxbasis = aug_etb(cell, beta=beta)
+
+    elif "fftdf" in method.lower():
         from pyscf.pbc.df import FFTDF
         df_obj = FFTDF(cell, kpts)
 

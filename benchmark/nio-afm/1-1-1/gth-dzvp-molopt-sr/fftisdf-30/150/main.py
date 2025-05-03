@@ -10,6 +10,7 @@ def main(config: dict):
     table = {}
     df_obj = config["df"]
     t0 = time.time()
+    df_obj.blksize = 20000
     df_obj.build()
     table["time_build_df"] = time.time() - t0
 
@@ -59,8 +60,12 @@ def main(config: dict):
 
     t0 = time.time()
     emb_obj = build_dmet(scf_obj, latt, is_unrestricted)
-    emb_obj.kernel()
-    ene_dmet = emb_obj.e_tot
+    try:
+        emb_obj.kernel()
+        ene_dmet = emb_obj.e_tot
+    except Exception as e:
+        ene_dmet = numpy.nan
+        print(e)
     nao = scf_obj.cell.nao_nr()
     nkpt = len(scf_obj.kpts)
 

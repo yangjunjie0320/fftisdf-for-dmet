@@ -1,0 +1,12 @@
+name: fftisdf-with-mkl
+dependencies:
+  - python=3.10
+  - blas=*=mkl       
+  - mkl 
+  - numpy
+  - scipy
+  - conda-forge::h5py
+  - conda-forge::hdf5
+  - pip
+  - pip:
+    - pyscf

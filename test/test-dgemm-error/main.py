@@ -10,6 +10,7 @@ def main(config: dict):
     table = {}
     df_obj = config["df"]
     t0 = time.time()
+    df_obj.blksize = 20000
     df_obj.build()
     table["time_build_df"] = time.time() - t0
 
@@ -28,8 +29,8 @@ def main(config: dict):
     is_unrestricted = config["is_unrestricted"]
 
     from dmet import build_dmet
-    from dmet import get_emb_eri_fftisdf_sol
-    from dmet import get_emb_eri_fftisdf_ref
+    from dmet import get_emb_eri_fftisdf_v1 as get_emb_eri_fftisdf_ref
+    from dmet import get_emb_eri_fftisdf_v2 as get_emb_eri_fftisdf_sol
     get_emb_eri_old = libdmet.basis.trans_2e.get_emb_eri
     def get_emb_eri(*args, **kwargs):
         df_obj = args[0]
@@ -65,8 +66,9 @@ def main(config: dict):
     nkpt = len(scf_obj.kpts)
 
     naux = None
-    if isinstance(df_obj, fft.GDF):
-        naux = df_obj.naux
+    from pyscf.pbc.df import GDF
+    if isinstance(df_obj, GDF):
+        naux = df_obj.get_naoaux()
     elif isinstance(df_obj, fft.ISDF):
         naux = df_obj.inpv_kpt.shape[1]
 

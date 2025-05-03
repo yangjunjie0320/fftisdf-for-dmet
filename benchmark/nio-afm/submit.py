@@ -12,15 +12,18 @@ def loop(base_dir):
     base_dir.mkdir(parents=True, exist_ok=True)
     
     basis = ['gth-dzvp-molopt-sr']
-    kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
-    ke_cutoff = [50, 100, 150, 200, 400]
-    # method = ['fftisdf-10', 'fftisdf-20', 'fftisdf-30', 'fftisdf-40'] # ['gdf', 'fftisdf-10', 'fftisdf-20', 'fftdf']
-    method = ['fftisdf-10', 'fftisdf-20', 'fftdf'] # ['gdf', 'fftisdf-10', 'fftisdf-20', 'fftdf']
+    kmesh = ['1-1-1'] 
+    # ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
+    ke_cutoff = [100, 150, 200, 250, 300] # , 400]
+    method = ['fftisdf-10', 'fftisdf-15', 'fftisdf-20', 'fftisdf-25', 'fftisdf-30']
+    # , 'fftisdf-40'] # ['gdf', 'fftisdf-10', 'fftisdf-20', 'fftdf']
+    # method = ['fftisdf-10', 'fftisdf-20', 'fftdf'] # ['gdf', 'fftisdf-10', 'fftisdf-20', 'fftdf']
+    method += ['gdf-auto', 'gdf-1.2', 'gdf-1.4', 'gdf-1.6', 'gdf-1.8', 'gdf-2.0']
 
     from itertools import product
     for k, b, m in product(kmesh, basis, method):
         config = {'kmesh': k, 'basis': b, 'density-fitting-method': m}
-        if m == 'gdf':
+        if 'gdf' in m.lower():
             config['ke-cutoff'] = 0.0
             dir_name = f"{k}/{b}/{m}/"
             dir_path = base_dir / dir_name
@@ -55,7 +58,7 @@ def main():
         config['init-guess-method'] = 'minao'
         config['df-to-read'] = None
 
-        time = '04:00:00'
+        time = '00:10:00'
         ntasks = 1
 
         base = Path(__file__).parent
@@ -67,15 +70,17 @@ def main():
             run_content.insert(1, f"#SBATCH --cpus-per-task=32\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={name}\n")
+            # run_content.insert(1, f"#SBATCH --reservation=changroup_debug\n")
             run_content.insert(1, f"#SBATCH --reservation=changroup_standingres\n")
 
         # convert to absolute path
         python_path = [Path(__file__).parent / '../../src/fftisdf-main',
                        Path(__file__).parent / '../../src/libdmet2-main',
                        Path(__file__).parent / '../../src/scripts']
-        python_path = ":".join([str(p.absolute()) for p in python_path])
+
+        python_path = ":".join([str(p.resolve()) for p in python_path])
         run_content.append(f"export PYTHONPATH=$PYTHONPATH:{python_path}\n")
-        run_content.append(f"cp {(base / '../../src/scripts/main-kuhf.py').absolute()} ./main.py\n")
+        run_content.append(f"cp {(base / '../../src/scripts/main-kuhf.py').resolve()} ./main.py\n")
 
         is_unrestricted = config.pop('is-unrestricted')
         cmd = "python main.py %s" % " ".join([f"--{k}={v}" for k, v in config.items()])

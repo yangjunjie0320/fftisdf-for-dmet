@@ -108,6 +108,7 @@ def get_emb_eri_fftisdf_v2(
         rho_kpts.append(rho_kpt)
 
     rho_kpts = numpy.asarray(rho_kpts).reshape(spin, nkpt, nip, -1)
+    print(rho_kpts.shape, "the size of rho_kpts is ", rho_kpts.nbytes / 1e9, "GB")
 
     eri_emb = []
     for s1, s2 in [(0, 0), (1, 1), (0, 1)][:sp]:
