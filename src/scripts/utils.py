@@ -108,11 +108,10 @@ def build_density_fitting(config: dict):
         import fft
         df_obj = fft.ISDF(cell, kpts)
         df_obj.tol = 1e-8
-        df_obj._fswap = H5TmpFile()
         df_obj.wrap_around = True
         df_obj.verbose = 5
 
-        m0 = cell.cutoff_to_mesh(50.0)
+        m0 = cell.cutoff_to_mesh(40.0)
         g0 = cell.gen_uniform_grids(m0)
         c0 = float(method[1])
         inpx = df_obj.select_inpx(g0=g0, c0=c0, kpts=kpts, tol=1e-30)
@@ -120,7 +119,6 @@ def build_density_fitting(config: dict):
         df_build = df_obj.build
         df_obj.build = lambda: df_build(inpx=inpx)
 
-    assert df_obj is not None, f"Unknown density fitting method: {method}"
     config["df"] = df_obj
 
 def get_init_guess(config: dict):

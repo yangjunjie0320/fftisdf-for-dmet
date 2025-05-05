@@ -15,11 +15,11 @@ echo "Start time = $(date)"
 # conda activate fftisdf-with-mkl
 # source /home/junjiey/anaconda3/bin/activate fftisdf
 readlink -f $HOME/anaconda3/bin/activate
-source $HOME/anaconda3/bin/activate fftisdf-with-mkl
+source $HOME/anaconda3/bin/activate fftisdf
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK;
-export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK;
-export OPENBLAS_NUM_THREADS=$SLURM_CPUS_PER_TASK;
+export MKL_NUM_THREADS=1;
+export OPENBLAS_NUM_THREADS=1;
 export PYSCF_MAX_MEMORY=$((SLURM_MEM_PER_CPU * SLURM_CPUS_PER_TASK))
 
 echo OMP_NUM_THREADS = $OMP_NUM_THREADS
