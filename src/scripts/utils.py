@@ -58,6 +58,7 @@ def build_cell(config: dict):
     cell.ke_cutoff = config["ke_cutoff"]
     cell.exp_to_discard = 0.1
     cell.max_memory = MAX_MEMORY
+    cell.unit = 'A'
     cell.build(dump_input=False)
     config["cell"] = cell
 

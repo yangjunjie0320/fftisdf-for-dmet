@@ -4,3 +4,7 @@
 [submodule "src/fftisdf-main"]
 	path = src/fftisdf-main
 	url = git@github.com:yangjunjie0320/fftisdf.git
+[submodule "src/lno-klno"]
+	path = src/lno-klno
+	url = git@github.com:hongzhouye/lno.git
+	branch = klno
