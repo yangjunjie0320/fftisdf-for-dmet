@@ -40,6 +40,7 @@ def setup_kmf_with_rsdf():
     lno_obj = KLNOCCSD(kmf, thresh=1e-4)
     eris_obj = lno_obj.ao2mo()
     lno_obj.no_type = 'edmet'
+    lno_obj.lo_type = 'iao' 
     lno_obj.kernel(eris=eris_obj)
     return kmf, lno_obj
 
@@ -63,6 +64,7 @@ def setup_kmf_with_isdf():
     lno_obj = klno.KLNOCCSD(kmf, thresh=1e-4)
     eris_obj = lno_obj.ao2mo()
     lno_obj.no_type = 'edmet'
+    lno_obj.lo_type = 'iao' 
     lno_obj.kernel(eris=eris_obj)
     return kmf, lno_obj
 
