@@ -15,11 +15,10 @@ cell.a = '''
 '''
 cell.unit = 'A'
 cell.ke_cutoff = 200.0
-cell.verbose = 0
+cell.verbose = 5
 cell.basis = 'gth-dzvp'
 cell.pseudo = 'gth-pbe'
 cell.exp_to_discard = 0.1
-cell.max_memory = 1000
 cell.build(dump_input=False)
 
 kmesh = [1, 1, 3]
@@ -44,12 +43,14 @@ def setup_kmf_with_rsdf():
     lno_obj = KLNOCCSD(kmf, thresh=1e-4)
     lno_obj.no_type = 'edmet'
     lno_obj.lo_type = 'iao' 
+    lno_obj.verbose = 4
     lno_obj.kernel()
     return kmf, lno_obj
 
 def setup_kmf_with_isdf():
     kmf = khf.KRHF(cell, kpts, exxdiv=None).rs_density_fit()
 
+    import fft
     from fft import isdf_ao2mo
     kmf.with_df = fft.ISDF(cell, kpts)
     kmf.with_df.verbose = 5
@@ -57,23 +58,22 @@ def setup_kmf_with_isdf():
     kmf.with_df.build()
 
     kmf.conv_tol = tol
-    kmf.verbose = 4
+    kmf.verbose = 5
     kmf.chkfile = 'kmf-scf.chk'
-    # kmf.init_guess = 'chkfile'
+    kmf.init_guess = 'chkfile'
     kmf.kernel()
 
     import klno
     lno_obj = klno.KLNOCCSD(kmf, thresh=1e-4)
     lno_obj.no_type = 'edmet'
     lno_obj.lo_type = 'iao'
-    lno_obj.verbose = 5
-    lno_obj.force_outcore_ao2mo = False
+    lno_obj.verbose = 4
     lno_obj.kernel()
     return kmf, lno_obj
 
 if __name__ == '__main__':
-    kmf_sol, lno_obj_sol = setup_kmf_with_isdf()
     kmf_ref, lno_obj_ref = setup_kmf_with_rsdf()
+    kmf_sol, lno_obj_sol = setup_kmf_with_isdf()
     
     ene_hf_ref = kmf_ref.e_tot
     ene_hf_sol = kmf_sol.e_tot

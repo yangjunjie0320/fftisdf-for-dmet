@@ -1,0 +1,1103 @@
+SLURMD_NODENAME = hpc-21-34
+Start time = Tue May 13 04:28:48 PM PDT 2025
+OMP_NUM_THREADS = 20
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 122880
+TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49489740/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//nio-afm/49489740/
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-08
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = kmf-scf.chk
+max_memory 122880 MB (current use 91 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 3
+Exchange divergence treatment (exxdiv) = None
+DF object = <pyscf.pbc.df.rsdf.RSGDF object at 0x7f371729ee90>
+Set gradient conv threshold to 0.0001
+kmesh for bvk-cell = [1 1 3]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [9 9 9] (729 PWs)
+ke_cutoff = 13.903510505928674
+omega = 0.4704259063888871
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 1.05678e-13
+rs_cell.nbas 10 nao 42
+No. smooth_bas in rs_cell 4
+sup-mol nbas = 1950 cGTO = 8328 pGTO = 6558
+sup-mol-ft nbas = 3156 cGTO = 13398 pGTO = 12804
+    CPU time for int3c kernel initialization      0.21 sec, wall time      0.01 sec
+Set ft_ao cutoff to 3.27827e-11
+kmesh for bvk-cell = [1 1 3]
+sup-mol nbas = 1046 cGTO = 4294 pGTO = 8278
+    CPU time for int3c kernel initialization      0.02 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.02 sec, wall time      0.00 sec
+    CPU time for get_pp      6.79 sec, wall time      0.35 sec
+ETB for C: l = 0, exps = 0.2375755314 * 2^n , n = 0..5
+ETB for C: l = 1, exps = 0.2375755314 * 2^n , n = 0..5
+ETB for C: l = 2, exps = 0.2375755314 * 2^n , n = 0..5
+ETB for C: l = 3, exps = 0.51120747699931 * 2^n , n = 0..2
+ETB for C: l = 4, exps = 1.1 * 2^n , n = 0..0
+
+WARN: Even tempered Gaussians are generated as DF auxbasis for  C
+
+  ETB auxbasis for C  [[0, [np.float64(7.6024170048), 1]], [0, [np.float64(3.8012085024), 1]], [0, [np.float64(1.9006042512), 1]], [0, [np.float64(0.9503021256), 1]], [0, [np.float64(0.4751510628), 1]], [0, [np.float64(0.2375755314), 1]], [1, [np.float64(7.6024170048), 1]], [1, [np.float64(3.8012085024), 1]], [1, [np.float64(1.9006042512), 1]], [1, [np.float64(0.9503021256), 1]], [1, [np.float64(0.4751510628), 1]], [1, [np.float64(0.2375755314), 1]], [2, [np.float64(7.6024170048), 1]], [2, [np.float64(3.8012085024), 1]], [2, [np.float64(1.9006042512), 1]], [2, [np.float64(0.9503021256), 1]], [2, [np.float64(0.4751510628), 1]], [2, [np.float64(0.2375755314), 1]], [3, [np.float64(2.04482990799724), 1]], [3, [np.float64(1.02241495399862), 1]], [3, [np.float64(0.51120747699931), 1]], [4, [np.float64(1.1), 1]]]
+num shells = 44, num cGTOs = 168
+Drop primitive fitting functions with exponent < 0.1
+num shells = 44, num cGTOs = 168
+
+
+******** <class 'pyscf.pbc.df.rsdf.RSGDF'> ********
+cell num shells = 6, num cGTOs = 26, num pGTOs = 42
+use_bvk = True
+precision_R = 1e-10
+precision_G = 1e-08
+j2c_eig_always = False
+omega = 0.35468750000000004
+ke_cutoff = 7.500950546376295
+mesh_compact = [7 7 7] (343 PWs)
+auxbasis = {'C': [[0, [np.float64(7.6024170048), 1]], [0, [np.float64(3.8012085024), 1]], [0, [np.float64(1.9006042512), 1]], [0, [np.float64(0.9503021256), 1]], [0, [np.float64(0.4751510628), 1]], [0, [np.float64(0.2375755314), 1]], [1, [np.float64(7.6024170048), 1]], [1, [np.float64(3.8012085024), 1]], [1, [np.float64(1.9006042512), 1]], [1, [np.float64(0.9503021256), 1]], [1, [np.float64(0.4751510628), 1]], [1, [np.float64(0.2375755314), 1]], [2, [np.float64(7.6024170048), 1]], [2, [np.float64(3.8012085024), 1]], [2, [np.float64(1.9006042512), 1]], [2, [np.float64(0.9503021256), 1]], [2, [np.float64(0.4751510628), 1]], [2, [np.float64(0.2375755314), 1]], [3, [np.float64(2.04482990799724), 1]], [3, [np.float64(1.02241495399862), 1]], [3, [np.float64(0.51120747699931), 1]], [4, [np.float64(1.1), 1]]]}
+auxcell precision= 1e-14
+auxcell rcut = 20.176615713860556
+omega_j2c = 0.4
+mesh_j2c = [9 9 9] (729 PWs)
+auxcell num shells = 44, num cGTOs = 168, num pGTOs = 168
+exp_to_discard = 0.1
+_cderi_to_save = /resnick/scratch/yangjunjie/nio-afm/49489740/tmp46_3eyme
+len(kpts) = 3
+kmesh for bvk-cell = [1 1 3]
+rs_cell.nbas 6 nao 26
+No. smooth_bas in rs_cell 0
+sup-mol-ft nbas = 2070 cGTO = 8748 pGTO = 15336
+j3c prescreening: cell rcut 26.51 Bohr  keep 1163 imgs
+Using PBCsr3c_bvk_kks2 to evaluate SR integrals
+Set ft_ao cutoff to 3.27827e-11
+Num uniq kpts 3
+    CPU time for int2c2e      2.86 sec, wall time      0.14 sec
+    CPU time for get_k_kpts      2.59 sec, wall time      0.13 sec
+    CPU time for get_j      1.14 sec, wall time      0.06 sec
+Ewald components = 1.03801047765584, -14.3374600154978, 0.51232039221771
+init E= -12.5529600286026
+HOMO = 0.67522850183  LUMO = 0.856031303377
+    CPU time for get_k_kpts      1.64 sec, wall time      0.08 sec
+    CPU time for get_j      1.51 sec, wall time      0.08 sec
+cycle= 1 E= -9.4797400016975  delta_E= 3.07  |g|= 0.492  |ddm|= 12.7
+HOMO = 0.725803350891  LUMO = 0.93444072834
+    CPU time for get_k_kpts      1.47 sec, wall time      0.07 sec
+    CPU time for get_j      1.48 sec, wall time      0.07 sec
+cycle= 2 E= -9.5076084318864  delta_E= -0.0279  |g|= 0.0796  |ddm|= 11.3
+HOMO = 0.69265065919  LUMO = 0.953006540588
+    CPU time for get_k_kpts      1.41 sec, wall time      0.07 sec
+    CPU time for get_j      1.12 sec, wall time      0.06 sec
+cycle= 3 E= -9.5083177670472  delta_E= -0.000709  |g|= 0.0152  |ddm|= 1.12
+HOMO = 0.690496109288  LUMO = 0.955006390016
+    CPU time for get_k_kpts      1.35 sec, wall time      0.07 sec
+    CPU time for get_j      1.08 sec, wall time      0.05 sec
+cycle= 4 E= -9.50835308924915  delta_E= -3.53e-05  |g|= 0.00151  |ddm|= 0.215
+HOMO = 0.690540932716  LUMO = 0.955107147203
+    CPU time for get_k_kpts      1.36 sec, wall time      0.07 sec
+    CPU time for get_j      1.09 sec, wall time      0.05 sec
+cycle= 5 E= -9.50835340200979  delta_E= -3.13e-07  |g|= 0.000118  |ddm|= 0.0235
+HOMO = 0.690531261257  LUMO = 0.955110732817
+    CPU time for get_k_kpts      1.36 sec, wall time      0.07 sec
+    CPU time for get_j      1.15 sec, wall time      0.06 sec
+cycle= 6 E= -9.50835340359898  delta_E= -1.59e-09  |g|= 1.41e-05  |ddm|= 0.00253
+HOMO = 0.690533367548  LUMO = 0.955108194154
+    CPU time for get_k_kpts      1.43 sec, wall time      0.07 sec
+    CPU time for get_j      1.34 sec, wall time      0.07 sec
+Extra cycle  E= -9.50835340361821  delta_E= -1.92e-11  |g|= 2.29e-06  |ddm|= 0.000333
+converged SCF energy = -9.50835340361821
+K2Gamma: found kmesh= [1, 1, 3]
+K2Gamma: F_g.imag= 2.7e-12
+  HOMO = 0.690533367547636  LUMO = 0.955108194153871
+  mo_energy =
+[-0.39620064 -0.25501793 -0.25501793  0.21597318  0.21597318  0.46537421
+  0.46537421  0.46537422  0.46537422  0.5752951   0.5752951   0.69053337
+  0.95510819  1.01497851  1.01497851  1.12969773  1.12969773  1.15774183
+  1.15774183  1.15774183  1.15774183  1.3556742   1.41139248  1.41139248
+  1.72282218  1.72282218  1.72282221  1.72282221  1.72657873  1.72657873
+  1.81390715  1.81390715  1.87836334  1.89862744  1.89862744  2.12498201
+  2.13476728  2.13476728  2.3646675   2.3646675   2.3646675   2.3646675
+  2.71841276  2.71841276  2.72278817  2.73868235  2.73868235  2.73868235
+  2.73868235  2.86513465  2.86513465  3.43905771  3.43905771  3.4411718
+  3.4411718   3.4411718   3.4411718   3.56371451  3.57083707  3.57083708
+  3.70826332  3.70826332  3.791191    3.791191    3.791191    3.791191
+  3.84620101  3.84620101  3.84620104  3.84620104  3.94742075  3.94742075
+  4.22211156  4.77531281  4.78091992  4.78091994  9.66977553  9.66977553]
+
+WARN: ECP/PP is used. MINAO is not a good reference AO basis in IAO.
+
+
+******** <class 'lno.cc.kccsd.KLNOCCSD'> ********
+nocc = 12, nmo = 78
+max_memory 122880 MB (current use 269 MB)
+thresh_occ = 1.000000e-04
+thresh_vir = 1.000000e-04
+force_outcore_ao2mo = False
+_Lov = None
+_Lov_to_save = None
+nkpts = 3
+kpts = [[ 0.          0.          0.        ]
+ [ 0.31072843  0.31072843 -0.31072843]
+ [ 0.62145686  0.62145686 -0.62145686]]
+no_type = rr
+Using user input LOs
+LOs span occupied space plus some virtual space.
+Using user input LO-fragment assignment
+nfrag = 10  nlo = 30
+frag_atmlist = None
+frag_lolist = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
+frag_wghtlist = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+frag_nonvlist = None
+    CPU time for LO and fragment        0.45 sec, wall time      0.03 sec
+ao2mo est mem= 6.09 MB  avail mem= 122610.39 MB
+kmesh for bvk-cell = [1 1 3]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [9 9 9] (729 PWs)
+ke_cutoff = 13.903510505928674
+omega = 0.4704259063888871
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 1.05678e-13
+rs_cell.nbas 10 nao 42
+No. smooth_bas in rs_cell 4
+sup-mol nbas = 1950 cGTO = 8328 pGTO = 6558
+sup-mol-ft nbas = 3156 cGTO = 13398 pGTO = 12804
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 3.27827e-11
+kmesh for bvk-cell = [1 1 3]
+sup-mol nbas = 1046 cGTO = 4294 pGTO = 8278
+    CPU time for int3c kernel initialization      0.02 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.02 sec, wall time      0.00 sec
+    CPU time for get_pp      6.57 sec, wall time      0.33 sec
+
+WARN: Input vhf is not found. Building vhf from SCF MO.
+
+    CPU time for transforming DF-MP2 integrals      0.75 sec, wall time      0.04 sec
+    CPU time for Integral xform         7.98 sec, wall time      0.41 sec
+    CPU time for make pno               0.24 sec, wall time      0.01 sec
+    impsol:  1 LOs  6/78 MOs  1 occ  5 vir
+Ewald components = 7.20355447829644, -46.0123983557245, 0.447456440555397
+E1 = 13.215991771976368  E_coul = -3.3796655898849095
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Building PBC AO integrals incore
+ETB for C: l = 0, exps = 0.2375755314 * 2^n , n = 0..5
+ETB for C: l = 1, exps = 0.2375755314 * 2^n , n = 0..5
+ETB for C: l = 2, exps = 0.2375755314 * 2^n , n = 0..5
+ETB for C: l = 3, exps = 0.51120747699931 * 2^n , n = 0..2
+ETB for C: l = 4, exps = 1.1 * 2^n , n = 0..0
+
+WARN: Even tempered Gaussians are generated as DF auxbasis for  C
+
+  ETB auxbasis for C  [[0, [np.float64(7.6024170048), 1]], [0, [np.float64(3.8012085024), 1]], [0, [np.float64(1.9006042512), 1]], [0, [np.float64(0.9503021256), 1]], [0, [np.float64(0.4751510628), 1]], [0, [np.float64(0.2375755314), 1]], [1, [np.float64(7.6024170048), 1]], [1, [np.float64(3.8012085024), 1]], [1, [np.float64(1.9006042512), 1]], [1, [np.float64(0.9503021256), 1]], [1, [np.float64(0.4751510628), 1]], [1, [np.float64(0.2375755314), 1]], [2, [np.float64(7.6024170048), 1]], [2, [np.float64(3.8012085024), 1]], [2, [np.float64(1.9006042512), 1]], [2, [np.float64(0.9503021256), 1]], [2, [np.float64(0.4751510628), 1]], [2, [np.float64(0.2375755314), 1]], [3, [np.float64(2.04482990799724), 1]], [3, [np.float64(1.02241495399862), 1]], [3, [np.float64(0.51120747699931), 1]], [4, [np.float64(1.1), 1]]]
+num shells = 132, num cGTOs = 504
+Drop primitive fitting functions with exponent < 0.1
+num shells = 132, num cGTOs = 504
+
+
+******** <class 'pyscf.pbc.df.rsdf.RSGDF'> ********
+cell num shells = 18, num cGTOs = 78, num pGTOs = 126
+use_bvk = True
+precision_R = 1e-10
+precision_G = 1e-08
+j2c_eig_always = False
+omega = 0.3
+ke_cutoff = 5.90252636011693
+mesh_compact = [ 7  7 17] (833 PWs)
+auxbasis = {'C': [[0, [np.float64(7.6024170048), 1]], [0, [np.float64(3.8012085024), 1]], [0, [np.float64(1.9006042512), 1]], [0, [np.float64(0.9503021256), 1]], [0, [np.float64(0.4751510628), 1]], [0, [np.float64(0.2375755314), 1]], [1, [np.float64(7.6024170048), 1]], [1, [np.float64(3.8012085024), 1]], [1, [np.float64(1.9006042512), 1]], [1, [np.float64(0.9503021256), 1]], [1, [np.float64(0.4751510628), 1]], [1, [np.float64(0.2375755314), 1]], [2, [np.float64(7.6024170048), 1]], [2, [np.float64(3.8012085024), 1]], [2, [np.float64(1.9006042512), 1]], [2, [np.float64(0.9503021256), 1]], [2, [np.float64(0.4751510628), 1]], [2, [np.float64(0.2375755314), 1]], [3, [np.float64(2.04482990799724), 1]], [3, [np.float64(1.02241495399862), 1]], [3, [np.float64(0.51120747699931), 1]], [4, [np.float64(1.1), 1]]]}
+auxcell precision= 1e-14
+auxcell rcut = 20.176615713860556
+omega_j2c = 0.4
+mesh_j2c = [ 9  9 23] (1863 PWs)
+auxcell num shells = 132, num cGTOs = 504, num pGTOs = 504
+exp_to_discard = 0.1
+_cderi_to_save = /resnick/scratch/yangjunjie/nio-afm/49489740/tmp6hxtytfl
+len(kpts) = 1
+kmesh for bvk-cell = [1 1 1]
+rs_cell.nbas 18 nao 78
+No. smooth_bas in rs_cell 0
+sup-mol-ft nbas = 2678 cGTO = 11512 pGTO = 20084
+j3c prescreening: cell rcut 28.39 Bohr  keep 697 imgs
+Using PBCsr3c_gs2 to evaluate SR integrals
+Set ft_ao cutoff to 9.8348e-11
+    CPU time for int2c2e      2.89 sec, wall time      0.15 sec
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk    608.52 sec, wall time     36.78 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.16 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.05 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.04 sec, wall time      0.00 sec
+    CPU time for get_pp     20.17 sec, wall time      1.02 sec
+E1 = 13.215991734619047  E_coul = -6.530673461630366
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.34 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.18 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.10 sec, wall time      1.01 sec
+E1 = 13.215991734619047  E_coul = -6.530673461630364
+    CPU time for imp sol              653.49 sec, wall time     39.05 sec
+    CPU time for Fragment 1           653.74 sec, wall time     39.06 sec
+Fragment 1  E_corr(MP2) = -6.30758109535578e-05  E_corr(CCSD) = -8.20051923425063e-05  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.09 sec, wall time      0.00 sec
+    impsol:  1 LOs  9/78 MOs  4 occ  5 vir
+E1 = 13.215991771976359  E_coul = -3.37966558988491
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.28 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.12 sec, wall time      1.01 sec
+E1 = 13.215991734619047  E_coul = -6.530673461630356
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.28 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.45 sec, wall time      1.03 sec
+E1 = 13.215991734619047  E_coul = -6.530673461630355
+    CPU time for imp sol               45.19 sec, wall time      2.29 sec
+    CPU time for Fragment 2            45.29 sec, wall time      2.29 sec
+Fragment 2  E_corr(MP2) = -0.00642804052879793  E_corr(CCSD) = -0.00937750348365891  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.09 sec, wall time      0.00 sec
+    impsol:  1 LOs  13/78 MOs  5 occ  8 vir
+E1 = 13.21599177197637  E_coul = -3.3796655898849113
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.28 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.10 sec, wall time      1.01 sec
+E1 = 13.215991734619053  E_coul = -6.530673461630341
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.28 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.11 sec, wall time      1.01 sec
+E1 = 13.215991734619053  E_coul = -6.530673461630342
+    CPU time for imp sol               48.56 sec, wall time      2.46 sec
+    CPU time for Fragment 3            48.65 sec, wall time      2.47 sec
+Fragment 3  E_corr(MP2) = -0.0168895056133675  E_corr(CCSD) = -0.0221493081221661  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.07 sec, wall time      0.00 sec
+    impsol:  1 LOs  13/78 MOs  5 occ  8 vir
+E1 = 13.215991771976357  E_coul = -3.3796655898849077
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.29 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.29 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.21 sec, wall time      1.02 sec
+E1 = 13.215991734619038  E_coul = -6.5306734616303475
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.29 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.14 sec, wall time      1.01 sec
+E1 = 13.215991734619038  E_coul = -6.53067346163035
+    CPU time for imp sol               45.39 sec, wall time      2.30 sec
+    CPU time for Fragment 4            45.46 sec, wall time      2.30 sec
+Fragment 4  E_corr(MP2) = -0.0168895056141356  E_corr(CCSD) = -0.0221493081229336  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.09 sec, wall time      0.00 sec
+    impsol:  1 LOs  13/78 MOs  5 occ  8 vir
+E1 = 13.215991771976352  E_coul = -3.3796655898849064
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.35 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.05 sec, wall time      1.01 sec
+E1 = 13.215991734619035  E_coul = -6.530673461630339
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.29 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.13 sec, wall time      1.01 sec
+E1 = 13.215991734619031  E_coul = -6.530673461630338
+    CPU time for imp sol               45.31 sec, wall time      2.29 sec
+    CPU time for Fragment 5            45.41 sec, wall time      2.30 sec
+Fragment 5  E_corr(MP2) = -0.0168895053109434  E_corr(CCSD) = -0.0221493079005469  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.08 sec, wall time      0.00 sec
+    impsol:  1 LOs  6/78 MOs  1 occ  5 vir
+E1 = 13.21599177197635  E_coul = -3.3796655898849086
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.27 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.07 sec, wall time      1.01 sec
+E1 = 13.215991734619031  E_coul = -6.530673461630338
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.27 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.14 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.08 sec, wall time      1.01 sec
+E1 = 13.21599173461903  E_coul = -6.530673461630339
+    CPU time for imp sol               44.09 sec, wall time      2.23 sec
+    CPU time for Fragment 6            44.17 sec, wall time      2.24 sec
+Fragment 6  E_corr(MP2) = -6.30758109620597e-05  E_corr(CCSD) = -8.20051923527497e-05  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.08 sec, wall time      0.00 sec
+    impsol:  1 LOs  9/78 MOs  4 occ  5 vir
+E1 = 13.215991771976359  E_coul = -3.379665589884909
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.26 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.07 sec, wall time      1.01 sec
+E1 = 13.215991734619044  E_coul = -6.530673461630335
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.27 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.05 sec, wall time      1.01 sec
+E1 = 13.215991734619044  E_coul = -6.530673461630335
+    CPU time for imp sol               45.50 sec, wall time      2.30 sec
+    CPU time for Fragment 7            45.58 sec, wall time      2.31 sec
+Fragment 7  E_corr(MP2) = -0.0064280405296417  E_corr(CCSD) = -0.00937750348464873  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.08 sec, wall time      0.00 sec
+    impsol:  1 LOs  13/78 MOs  5 occ  8 vir
+E1 = 13.215991771976352  E_coul = -3.3796655898849077
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.29 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.08 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.04 sec, wall time      0.00 sec
+    CPU time for get_pp     20.23 sec, wall time      1.02 sec
+E1 = 13.215991734619031  E_coul = -6.530673461630338
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.36 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.21 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.15 sec, wall time      1.01 sec
+E1 = 13.215991734619031  E_coul = -6.5306734616303395
+    CPU time for imp sol               45.49 sec, wall time      2.30 sec
+    CPU time for Fragment 8            45.57 sec, wall time      2.31 sec
+Fragment 8  E_corr(MP2) = -0.016889505614615  E_corr(CCSD) = -0.0221493081238014  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.10 sec, wall time      0.00 sec
+    impsol:  1 LOs  13/78 MOs  5 occ  8 vir
+E1 = 13.215991771976356  E_coul = -3.3796655898849077
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.29 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.18 sec, wall time      1.02 sec
+E1 = 13.215991734619035  E_coul = -6.530673461630349
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.29 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.08 sec, wall time      1.01 sec
+E1 = 13.215991734619037  E_coul = -6.530673461630349
+    CPU time for imp sol               45.26 sec, wall time      2.29 sec
+    CPU time for Fragment 9            45.36 sec, wall time      2.29 sec
+Fragment 9  E_corr(MP2) = -0.0168895056151898  E_corr(CCSD) = -0.0221493081243  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.08 sec, wall time      0.00 sec
+    impsol:  1 LOs  13/78 MOs  5 occ  8 vir
+E1 = 13.215991771976352  E_coul = -3.3796655898849064
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.28 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.14 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.07 sec, wall time      1.01 sec
+E1 = 13.215991734619028  E_coul = -6.530673461630321
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+    CPU time for vj and vk      0.29 sec, wall time      0.02 sec
+kmesh for bvk-cell = [1 1 1]
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [ 9  9 23] (1863 PWs)
+ke_cutoff = 11.682810911231739
+omega = 0.43242317977914413
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+Set _RSNucBuilder.direct_scf_tol to 3.17033e-13
+rs_cell.nbas 24 nao 90
+No. smooth_bas in rs_cell 6
+sup-mol nbas = 2716 cGTO = 10584 pGTO = 15760
+sup-mol-ft nbas = 4822 cGTO = 17864 pGTO = 25744
+    CPU time for int3c kernel initialization      0.15 sec, wall time      0.01 sec
+Set ft_ao cutoff to 9.8348e-11
+kmesh for bvk-cell = [1 1 1]
+sup-mol nbas = 1516 cGTO = 6254 pGTO = 11938
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for int3c kernel initialization      0.03 sec, wall time      0.00 sec
+    CPU time for get_pp     20.08 sec, wall time      1.01 sec
+E1 = 13.215991734619028  E_coul = -6.530673461630318
+    CPU time for imp sol               47.36 sec, wall time      2.40 sec
+    CPU time for Fragment 10           47.44 sec, wall time      2.41 sec
+Fragment 10  E_corr(MP2) = -0.0168895053127263  E_corr(CCSD) = -0.0221493079023628  E_corr(CCSD(T)) = 0
+    CPU time for KLNOCCSD            1074.64 sec, wall time     60.38 sec
+E(LNOMP2) = -9.62267266937954  E_corr = -0.114319265761333
+E(LNOCCSD) = -9.66016826926732  E_corr = -0.151814865649114
+Summary by spin components
+LNOMP2   Ess = -0.0144805799824902  Eos = -0.0998386857788427  Escs = -0.12462845606878
+LNOCCSD  Ess = -0.0144630526686014  Eos = -0.137351812980512  Escs = -0.169638372115259
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [33 33 33] (35937 PWs)
+len(kpts) = 3
+tol = 1e-08
+c0 = 20.0
+wrap_around = False
+
+WARN: ke_cutoff/mesh (200 / [33 33 33]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.0027 Eh.
+Recommended ke_cutoff/mesh are 422.908 / [47 47 47].
+
+Cholesky rank = 1441, c0 =  20.00, nao = 26, nip = 520
+Parent grid size = 35937, selected grid size = 520
+truncated values = 5.01e+01, estimated error = 3.04e-02
+Number of interpolating points is 520.
+    CPU time for building inpv_kpt     68.22 sec, wall time     63.21 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 8.97e-01 GB.
+blksize = 35937, ngrid = 35937
+memory needed for each block:   8.97e-01 GB
+memory needed for each k-point: 2.99e-01 GB
+max_memory: 1.22e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 35937]     12.65 sec, wall time      1.37 sec
+    CPU time for building eta_kpt     15.34 sec, wall time      1.50 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[ 1 / 3]      6.08 sec, wall time      1.66 sec
+    CPU time for coul_kpt[ 2 / 3]      2.74 sec, wall time      1.65 sec
+    CPU time for coul_kpt[ 3 / 3]      2.80 sec, wall time      1.65 sec
+    CPU time for building coul_kpt     11.88 sec, wall time      4.97 sec
+Successfully removed swap file /resnick/scratch/yangjunjie/nio-afm/49489740/1g6vhm8g
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = chkfile
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-08
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = kmf-scf.chk
+max_memory 122880 MB (current use 479 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 3
+kpts = [[ 0.          0.          0.        ]
+ [ 0.31072843  0.31072843 -0.31072843]
+ [ 0.62145686  0.62145686 -0.62145686]]
+Exchange divergence treatment (exxdiv) = None
+DF object = <fft.isdf.InterpolativeSeparableDensityFitting object at 0x7f36fb9a3d30>
+Set gradient conv threshold to 0.0001
+    CPU time for vj and vk      4.69 sec, wall time      0.24 sec
+E1 = (4.405330591438487-4.9511899210171365e-17j)  E_coul = (-1.1265565018431025-3.618163349946209e-16j)
+init E= -9.50835505602886
+    CPU time for initialize scf      8.68 sec, wall time      0.44 sec
+HOMO = 0.690533762791  LUMO = 0.955096171808
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.39620136  0.57529408  0.57529503  0.69053376] [0.95509617 1.01497349 1.01497513 1.35568041 1.81385175 1.813852
+ 1.87835254 2.12498944 2.13472039 2.13473273 2.71838677 2.71838939
+ 2.72273662 3.56358694 3.57073518 3.57077688 3.707646   3.70764636
+ 4.22207722 4.77489797 4.78046134 4.78052117]
+   1 ( 0.000  0.000  0.333)   [-0.25501886  0.21597239  0.46537426  0.46537463] [1.12968677 1.15772953 1.15773066 1.4113981  1.72277813 1.72278208
+ 1.72657142 1.89862049 2.36460887 2.36461389 2.7385857  2.73859859
+ 2.86508623 3.43897642 3.44102843 3.44103778 3.7908745  3.79088176
+ 3.84588315 3.84596589 3.94732284 9.66972933]
+   2 ( 0.000  0.000  0.667)   [-0.25501886  0.21597239  0.46537426  0.46537463] [1.12968677 1.15772953 1.15773066 1.4113981  1.72277813 1.72278208
+ 1.72657142 1.89862049 2.36460887 2.36461389 2.7385857  2.73859859
+ 2.86508623 3.43897642 3.44102843 3.44103778 3.7908745  3.79088176
+ 3.84588315 3.84596589 3.94732284 9.66972933]
+    CPU time for vj and vk      4.56 sec, wall time      0.23 sec
+E1 = (4.405323730185308-1.4889709835467592e-17j)  E_coul = (-1.126549644428927+1.1474472992138254e-16j)
+cycle= 1 E= -9.50835505986786  delta_E= -3.84e-09  |g|= 1.76e-05  |ddm|= 0.0117
+    CPU time for cycle= 1      4.89 sec, wall time      0.25 sec
+HOMO = 0.69053481824  LUMO = 0.955096581694
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.39620074  0.57529512  0.57529634  0.69053482] [0.95509658 1.01497427 1.01497604 1.35568151 1.8138521  1.81385242
+ 1.87835224 2.12498985 2.13472072 2.13473295 2.71838774 2.71839057
+ 2.7227376  3.56358718 3.57073539 3.57077713 3.70764665 3.70764703
+ 4.22207736 4.77489856 4.7804619  4.78052175]
+   1 ( 0.000  0.000  0.333)   [-0.25501821  0.2159733   0.46537502  0.46537545] [1.12968695 1.15773014 1.15773164 1.41139834 1.7227788  1.72278247
+ 1.7265719  1.89862073 2.36460949 2.36461452 2.73858615 2.73859923
+ 2.86508706 3.43897694 3.4410293  3.44103874 3.79087506 3.79088224
+ 3.84588368 3.84596651 3.94732339 9.66973238]
+   2 ( 0.000  0.000  0.667)   [-0.25501821  0.2159733   0.46537502  0.46537545] [1.12968695 1.15773014 1.15773164 1.41139834 1.7227788  1.72278247
+ 1.7265719  1.89862073 2.36460949 2.36461452 2.73858615 2.73859923
+ 2.86508706 3.43897694 3.4410293  3.44103874 3.79087506 3.79088224
+ 3.84588368 3.84596651 3.94732339 9.66973238]
+    CPU time for vj and vk      4.57 sec, wall time      0.23 sec
+E1 = (4.405324228054816-1.1955135955273494e-16j)  E_coul = (-1.1265501423303164+2.6243113585011635e-16j)
+Extra cycle  E= -9.50835505989974  delta_E= -3.19e-11  |g|= 3.67e-06  |ddm|= 0.000644
+    CPU time for scf_cycle     18.50 sec, wall time      0.94 sec
+    CPU time for SCF     18.67 sec, wall time      0.95 sec
+converged SCF energy = -9.50835505989974
+K2Gamma: found kmesh= [1, 1, 3]
+K2Gamma: F_g.imag= 4.7e-13
+  HOMO = 0.361370512397376  LUMO = 0.451319648599606
+  mo_energy =
+[-1.95697137e-03 -1.37322293e-03 -1.37319867e-03  3.44181937e-02
+  3.44182065e-02  3.15574099e-01  3.15574344e-01  3.23295958e-01
+  3.23296119e-01  3.23297075e-01  3.23297225e-01  3.61370512e-01
+  4.51319649e-01  4.51319749e-01  4.51321265e-01  4.51321378e-01
+  5.75739739e-01  5.75739803e-01  6.09303115e-01  6.49949138e-01
+  6.49949156e-01  6.52644226e-01  6.52645288e-01  1.24767774e+00
+  1.24767779e+00  1.24767809e+00  1.24767816e+00  9.91311719e+00
+  9.91311721e+00  1.13154910e+01  1.13154911e+01  1.13154918e+01
+  1.13154918e+01  1.72705580e+01  1.72706096e+01  1.80626409e+01
+  5.53288850e+01  5.57788414e+01  5.57788414e+01  5.66089697e+01
+  5.66089697e+01  5.66090417e+01  5.66090417e+01  8.52021314e+01
+  8.52021315e+01  9.13016813e+01  9.13016863e+01  1.72494922e+02
+  1.72494980e+02  1.73197352e+02  1.86959039e+02  1.86959039e+02
+  1.86959118e+02  1.86959118e+02  3.54219911e+02  4.81196083e+02
+  4.81196083e+02  1.01209836e+04  1.01209836e+04  9.37189566e+05
+  9.37189566e+05  9.37193602e+05  9.37193602e+05  7.55278524e+06
+  7.57879087e+06  7.57891895e+06  9.25760116e+07  9.25760116e+07
+  9.25787751e+07  9.25787751e+07  1.00431835e+08  1.00545791e+08
+  1.00547112e+08  2.02055946e+08  7.09788682e+08  7.09788682e+08
+  1.45515787e+09  1.45515787e+09]
+
+WARN: occupied orbitals do not span the same space, determinant = -2.1798e-50
+
+
+
+WARN: ECP/PP is used. MINAO is not a good reference AO basis in IAO.
+
+
+******** <class 'klno.KLNOCCSD'> ********
+nocc = 12, nmo = 78
+max_memory 122880 MB (current use 490 MB)
+thresh_occ = 1.000000e-04
+thresh_vir = 1.000000e-04
+force_outcore_ao2mo = False
+_Lov = None
+_Lov_to_save = None
+nkpts = 3
+kpts = [[ 0.          0.          0.        ]
+ [ 0.31072843  0.31072843 -0.31072843]
+ [ 0.62145686  0.62145686 -0.62145686]]
+no_type = rr
+Using user input LOs
+LOs span occupied space plus some virtual space.
+Using user input LO-fragment assignment
+nfrag = 10  nlo = 30
+frag_atmlist = None
+frag_lolist = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
+frag_wghtlist = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+frag_nonvlist = None
+    CPU time for LO and fragment        0.01 sec, wall time      0.00 sec
+
+WARN: Input vhf is not found. Building vhf from SCF MO.
+
+    CPU time for make pno               0.39 sec, wall time      0.02 sec
+    impsol:  1 LOs  8/78 MOs  1 occ  7 vir
+Ewald components = 7.20355447829644, -46.0123983557245, 0.447456440555397
+E1 = 20.422696373738418  E_coul = -3.7057501391643606
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.422696373738418  E_coul = -7.86150990113169
+E1 = 20.422696373738418  E_coul = -7.86150990113169
+    CPU time for imp sol                1.45 sec, wall time      0.07 sec
+    CPU time for Fragment 1             1.83 sec, wall time      0.09 sec
+Fragment 1  E_corr(MP2) = -3.67571635056127e-05  E_corr(CCSD) = -4.47878055100918e-05  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.32 sec, wall time      0.02 sec
+    impsol:  1 LOs  7/78 MOs  1 occ  6 vir
+E1 = 20.422696373738397  E_coul = -3.7057501391643584
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.422696373738393  E_coul = -7.86150990113033
+E1 = 20.422696373738393  E_coul = -7.86150990113033
+    CPU time for imp sol                2.01 sec, wall time      0.10 sec
+    CPU time for Fragment 2             2.33 sec, wall time      0.12 sec
+Fragment 2  E_corr(MP2) = -0.00183033230815375  E_corr(CCSD) = -0.00229313540213146  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.34 sec, wall time      0.02 sec
+    impsol:  1 LOs  19/78 MOs  4 occ  15 vir
+E1 = 20.422696373738393  E_coul = -3.7057501391643584
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.422696373738393  E_coul = -7.86150990113154
+E1 = 20.422696373738393  E_coul = -7.86150990113154
+    CPU time for imp sol               30.90 sec, wall time      1.55 sec
+    CPU time for Fragment 3            31.24 sec, wall time      1.57 sec
+Fragment 3  E_corr(MP2) = -0.0101392703440758  E_corr(CCSD) = -0.0123525264261941  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.64 sec, wall time      0.03 sec
+    impsol:  1 LOs  19/78 MOs  4 occ  15 vir
+E1 = 20.422696373738408  E_coul = -3.7057501391643606
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.422696373738408  E_coul = -7.861509901131527
+E1 = 20.422696373738408  E_coul = -7.861509901131527
+    CPU time for imp sol               27.95 sec, wall time      1.40 sec
+    CPU time for Fragment 4            28.59 sec, wall time      1.44 sec
+Fragment 4  E_corr(MP2) = -0.0101393598386383  E_corr(CCSD) = -0.0123525725057914  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.49 sec, wall time      0.02 sec
+    impsol:  1 LOs  19/78 MOs  4 occ  15 vir
+E1 = 20.422696373738408  E_coul = -3.7057501391643597
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.422696373738408  E_coul = -7.861509901130835
+E1 = 20.422696373738408  E_coul = -7.861509901130835
+    CPU time for imp sol               26.54 sec, wall time      1.33 sec
+    CPU time for Fragment 5            27.04 sec, wall time      1.36 sec
+Fragment 5  E_corr(MP2) = -0.0101394183710091  E_corr(CCSD) = -0.012352656106951  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.50 sec, wall time      0.03 sec
+    impsol:  1 LOs  8/78 MOs  1 occ  7 vir
+E1 = 20.422696373738393  E_coul = -3.7057501391643584
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.42269637373839  E_coul = -7.861509901130539
+E1 = 20.42269637373839  E_coul = -7.861509901130539
+    CPU time for imp sol                3.47 sec, wall time      0.18 sec
+    CPU time for Fragment 6             3.97 sec, wall time      0.20 sec
+Fragment 6  E_corr(MP2) = -3.67571055282114e-05  E_corr(CCSD) = -4.47876432614352e-05  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.33 sec, wall time      0.02 sec
+    impsol:  1 LOs  7/78 MOs  1 occ  6 vir
+E1 = 20.422696373738404  E_coul = -3.7057501391643597
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.422696373738404  E_coul = -7.861509901130644
+E1 = 20.422696373738404  E_coul = -7.861509901130644
+    CPU time for imp sol                1.29 sec, wall time      0.07 sec
+    CPU time for Fragment 7             1.62 sec, wall time      0.08 sec
+Fragment 7  E_corr(MP2) = -0.00183033814440304  E_corr(CCSD) = -0.00229314563624508  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.33 sec, wall time      0.02 sec
+    impsol:  1 LOs  19/78 MOs  4 occ  15 vir
+E1 = 20.42269637373839  E_coul = -3.7057501391643592
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.42269637373839  E_coul = -7.861509901131113
+E1 = 20.42269637373839  E_coul = -7.861509901131113
+    CPU time for imp sol               21.13 sec, wall time      1.06 sec
+    CPU time for Fragment 8            21.46 sec, wall time      1.08 sec
+Fragment 8  E_corr(MP2) = -0.0101393837050754  E_corr(CCSD) = -0.0123526717269665  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.47 sec, wall time      0.02 sec
+    impsol:  1 LOs  19/78 MOs  4 occ  15 vir
+E1 = 20.422696373738397  E_coul = -3.70575013916436
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.422696373738397  E_coul = -7.861509901130953
+E1 = 20.422696373738397  E_coul = -7.861509901130953
+    CPU time for imp sol               20.53 sec, wall time      1.03 sec
+    CPU time for Fragment 9            21.00 sec, wall time      1.06 sec
+Fragment 9  E_corr(MP2) = -0.0101394347450847  E_corr(CCSD) = -0.0123526456774916  E_corr(CCSD(T)) = 0
+    CPU time for make pno               0.49 sec, wall time      0.02 sec
+    impsol:  1 LOs  19/78 MOs  4 occ  15 vir
+E1 = 20.422696373738408  E_coul = -3.705750139164361
+Ewald components = 0.00406407505843149, -0.269871492114755, 0.134515380055161
+E1 = 20.42269637373841  E_coul = -7.861509901131558
+E1 = 20.42269637373841  E_coul = -7.861509901131558
+    CPU time for imp sol               21.05 sec, wall time      1.06 sec
+    CPU time for Fragment 10           21.54 sec, wall time      1.08 sec
+Fragment 10  E_corr(MP2) = -0.0101393320634354  E_corr(CCSD) = -0.0123525747053674  E_corr(CCSD(T)) = 0
+    CPU time for KLNOCCSD             164.41 sec, wall time      8.27 sec
+E(LNOMP2) = -9.57292544368865  E_corr = -0.0645703837889093
+E(LNOCCSD) = -9.58714656353565  E_corr = -0.0787915036359101
+Summary by spin components
+LNOMP2   Ess = -0.01297173313546  Eos = -0.0515986506534493  Escs = -0.0662379679182473
+LNOCCSD  Ess = -0.015210331834451  Eos = -0.063581171801459  Escs = -0.081362446662623
+ene_hf_ref =  -9.50835340, ene_hf_sol =  -9.50835506, err = 1.6563e-06
+ene_cc_ref =  -9.66016827, ene_cc_sol =  -9.58714656, err = 7.3022e-02
+End time = Tue May 13 04:31:55 PM PDT 2025
