@@ -107,9 +107,26 @@ def k2gamma(kmf, tol_fock_imag=1e-4):
             raise RuntimeError('K2Gamma: kernel shall not be called')
 
     mf_g = K2Gamma(scell)
-    e_mo_g, c_mo_g = mf_g.eig(fock_g, ovlp_g)
+    import sys
+    stdout = sys.stdout
+    print("fock_g = ", fock_g.shape)
+    numpy.savetxt(stdout, fock_g[:10, :10], delimiter=", ", fmt="% 8.6f")
+
+    print("ovlp_g = ", ovlp_g.shape)
+    numpy.savetxt(stdout, ovlp_g[:10, :10], delimiter=", ", fmt="% 8.6f")
+    
+    # why shall we use this? instead of mf_g.eig?
+    import scipy.linalg
+    e_mo_g, c_mo_g = scipy.linalg.eigh(fock_g, ovlp_g, type=2)
     mf_g.mo_energy = e_mo_g
     mf_g.mo_coeff = c_mo_g
+
+    print("c_mo_g = ", c_mo_g.shape)
+    numpy.savetxt(stdout, c_mo_g[:10, :10], delimiter=", ", fmt="% 8.6f")
+
+    print("e_mo_g = ", e_mo_g.shape)
+    numpy.savetxt(stdout, e_mo_g[:10], delimiter=", ", fmt="% 8.6f")
+
     mf_g.mo_occ = mf_g.get_occ()
     
     mask = mf_g.mo_occ > 0
