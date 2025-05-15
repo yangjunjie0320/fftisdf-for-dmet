@@ -98,9 +98,10 @@ def k2gamma(kmf, tol_fock_imag=1e-4):
             return hcore_g
         
         def get_veff(self, *args, **kwargs):
-            rdm1_g_inp = args[1]
-            rdm1_g_ref = self._rdm1_g_ref
-            assert numpy.allclose(rdm1_g_inp, rdm1_g_ref)
+            if len(args) >= 2:
+                rdm1_g_inp = args[1]
+                rdm1_g_ref = self._rdm1_g_ref
+                assert numpy.allclose(rdm1_g_inp, rdm1_g_ref)
             return veff_g
 
         def kernel(self, *args, **kwargs):
@@ -116,6 +117,7 @@ def k2gamma(kmf, tol_fock_imag=1e-4):
     numpy.savetxt(stdout, ovlp_g[:10, :10], delimiter=", ", fmt="% 8.6f")
     
     # why shall we use this? instead of mf_g.eig?
+    # e_mo_g, c_mo_g = mf_g.eig(fock_g, ovlp_g)
     import scipy.linalg
     e_mo_g, c_mo_g = scipy.linalg.eigh(fock_g, ovlp_g, type=2)
     mf_g.mo_energy = e_mo_g

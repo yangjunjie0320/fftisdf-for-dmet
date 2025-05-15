@@ -104,6 +104,27 @@ eris_sol = klno_sol.ao2mo()
 coeff_sol = klno_sol._scf.mo_coeff
 coeff_ref = klno_ref._scf.mo_coeff
 
+h1e_sol = klno_sol._scf.get_hcore()
+h1e_ref = klno_ref._scf.get_hcore()
+err_h1e = abs(h1e_sol - h1e_ref).max()
+print(f"{err_h1e = :6.4e}")
+
+ovlp_sol = klno_sol._scf.get_ovlp()
+ovlp_ref = klno_ref._scf.get_ovlp()
+err_ovlp = abs(ovlp_sol - ovlp_ref).max()
+print(f"{err_ovlp = :6.4e}")
+
+dm0 = klno_sol._scf.make_rdm1()
+vhf_sol = klno_sol._scf.get_veff()
+vhf_ref = klno_ref._scf.get_veff()
+err_vhf = abs(vhf_sol - vhf_ref).max()
+
+f1e_sol = klno_sol._scf.get_fock()
+f1e_ref = klno_ref._scf.get_fock()
+err_f1e = abs(f1e_sol - f1e_ref).max()
+print(f"{err_f1e = :6.4e}")
+assert 1 == 2
+
 for f in range(nfrag):
     frag_lo_f = frag_lo_list[f]
     coeff_lo_f = coeff_lo[:, frag_lo_f]
@@ -126,7 +147,21 @@ for f in range(nfrag):
         thresh_pno, frozen_mask, None, None,
     )
 
-    from lno.tools.k2gamma import k2gamma_aoint
+    res = klno_ref.impurity_solve(
+        klno_ref._scf, coeff_f_ref, coeff_lo_f, eris_ref,
+        frozen=frozen_frag_ref, log=log,
+    )
+
+    print(f"{res = }")
+
+    res = klno_sol.impurity_solve(
+        klno_sol._scf, coeff_f_sol, coeff_lo_f, eris_sol,
+        frozen=frozen_frag_sol, log=log,
+    )
+
+    print(f"{res = }")
+
+    assert 1 == 2
 
 assert 1 == 2
 klno_sol.kernel()
