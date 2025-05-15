@@ -1,0 +1,14 @@
+slurmstepd: error: couldn't chdir to `/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/1-2-2/gth-dzvp/fftisdf-10/100': Too many levels of symbolic links: going to /tmp instead
+SLURMD_NODENAME = hpc-20-17
+Start time = Wed May 14 11:30:21 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+mkdir: cannot create directory ‘/resnick/scratch’: Too many levels of symbolic links
+TMPDIR = /resnick/scratch/yangjunjie//diamond/49506433/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond/49506433/
+cp: cannot stat '/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/../../src/scripts/main-krhf-lno.py': Too many levels of symbolic links
+python: can't open file '/tmp/main.py': [Errno 2] No such file or directory
+End time = Wed May 14 11:30:21 PM PDT 2025

@@ -61,8 +61,8 @@ def k2gamma(kmf, tol_fock_imag=1e-4):
     e_mo_g = numpy.hstack(e_mo_k)
     c_mo_g = numpy.einsum('kw,kum->wukm', phase.conj(), c_mo_k)
     c_mo_g = c_mo_g.reshape(nao * nimg, nmo * nimg)
-
     n_mo_g = numpy.hstack(kmf.mo_occ)
+
     assert n_mo_g.shape == (nmo * nimg,)
     mask = n_mo_g > 0
     c_occ_ref = c_mo_g[:, mask].real
@@ -108,13 +108,6 @@ def k2gamma(kmf, tol_fock_imag=1e-4):
             raise RuntimeError('K2Gamma: kernel shall not be called')
 
     mf_g = K2Gamma(scell)
-    import sys
-    stdout = sys.stdout
-    print("fock_g = ", fock_g.shape)
-    numpy.savetxt(stdout, fock_g[:10, :10], delimiter=", ", fmt="% 8.6f")
-
-    print("ovlp_g = ", ovlp_g.shape)
-    numpy.savetxt(stdout, ovlp_g[:10, :10], delimiter=", ", fmt="% 8.6f")
     
     # why shall we use this? instead of mf_g.eig?
     # e_mo_g, c_mo_g = mf_g.eig(fock_g, ovlp_g)
@@ -122,13 +115,6 @@ def k2gamma(kmf, tol_fock_imag=1e-4):
     e_mo_g, c_mo_g = scipy.linalg.eigh(fock_g, ovlp_g, type=2)
     mf_g.mo_energy = e_mo_g
     mf_g.mo_coeff = c_mo_g
-
-    print("c_mo_g = ", c_mo_g.shape)
-    numpy.savetxt(stdout, c_mo_g[:10, :10], delimiter=", ", fmt="% 8.6f")
-
-    print("e_mo_g = ", e_mo_g.shape)
-    numpy.savetxt(stdout, e_mo_g[:10], delimiter=", ", fmt="% 8.6f")
-
     mf_g.mo_occ = mf_g.get_occ()
     
     mask = mf_g.mo_occ > 0
@@ -146,7 +132,6 @@ def k2gamma(kmf, tol_fock_imag=1e-4):
 
     mf_g._rdm1_g_ref = mf_g.make_rdm1()
     return mf_g
-
 
 def _make_isdf_eris_outcore(cc, mo_coeff=None):
     phase = cc.Ukw

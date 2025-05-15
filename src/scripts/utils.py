@@ -97,6 +97,14 @@ def build_density_fitting(config: dict):
             from pyscf.df import aug_etb
             beta = float(beta)
             df_obj.auxbasis = aug_etb(cell, beta=beta)
+    
+    elif "rsdf" in method.lower():
+        method = method.lower().split("-")
+        assert len(method) == 1
+
+        from pyscf.pbc.df import RSDF
+        df_obj = RSDF(cell, kpts)
+        df_obj.exxdiv = None
 
     elif "fftdf" in method.lower():
         from pyscf.pbc.df import FFTDF
@@ -182,7 +190,8 @@ def build_mean_field(config: dict):
         raise NotImplementedError
     
     from libdmet.mean_field import pbc_helper as pbc_hp
-    config["mf"] = pbc_hp.smearing_(mf, sigma=0.01)
+    # config["mf"] = pbc_hp.smearing_(mf, sigma=0.01)
+    config["mf"] = mf
     get_init_guess(config)
 
 def build(config):

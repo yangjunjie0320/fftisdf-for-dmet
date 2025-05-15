@@ -1,0 +1,336 @@
+./1-1-2/gth-dzvp/fftisdf-10/100/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 260
+nkpt = 2
+ene_krhf =  -8.70287082
+ene_klno_mp2 =  -8.81666082
+ene_klno_ccsd =  -8.86083339
+time_build_df =   0.89
+time_get_vk =   0.01
+time_klno =   4.66
+
+./1-1-2/gth-dzvp/fftisdf-10/200/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 260
+nkpt = 2
+ene_krhf =  -8.70287081
+ene_klno_mp2 =  -8.81666082
+ene_klno_ccsd =  -8.86083339
+time_build_df =   2.21
+time_get_vk =   0.01
+time_klno =   5.69
+
+./1-1-2/gth-dzvp/fftisdf-20/100/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 520
+nkpt = 2
+ene_krhf =  -8.70283895
+ene_klno_mp2 =  -8.81661661
+ene_klno_ccsd =  -8.86078642
+time_build_df =   2.25
+time_get_vk =   0.02
+time_klno =   6.55
+
+./1-1-2/gth-dzvp/fftisdf-20/200/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 520
+nkpt = 2
+ene_krhf =  -8.70283887
+ene_klno_mp2 =  -8.81661671
+ene_klno_ccsd =  -8.86078663
+time_build_df =   4.87
+time_get_vk =   0.02
+time_klno =   4.39
+
+./1-1-2/gth-dzvp/rsdf/out.log
+method = rsdf
+basis = gth-dzvp
+ke_cutoff =   0.00
+nao = 26
+naux = 168
+nkpt = 2
+ene_krhf =  -8.70283694
+ene_klno_mp2 =  -8.81661043
+ene_klno_ccsd =  -8.86078173
+time_build_df =  27.10
+time_get_vk =   0.04
+time_klno =  34.61
+
+./1-2-2/gth-dzvp/fftisdf-10/200/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 260
+nkpt = 4
+ene_krhf =  -9.30153283
+ene_klno_mp2 =  -9.38864099
+ene_klno_ccsd =  -9.42045429
+time_build_df =   3.48
+time_get_vk =   0.01
+time_klno =   6.37
+
+./1-2-2/gth-dzvp/fftisdf-20/200/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 520
+nkpt = 4
+ene_krhf =  -9.30149755
+ene_klno_mp2 =  -9.38860913
+ene_klno_ccsd =  -9.42043246
+time_build_df =   9.53
+time_get_vk =   0.04
+time_klno =   4.34
+
+./1-2-2/gth-dzvp/rsdf/out.log
+method = rsdf
+basis = gth-dzvp
+ke_cutoff =   0.00
+nao = 26
+naux = 168
+nkpt = 4
+ene_krhf =  -9.30149574
+ene_klno_mp2 =  -9.38860295
+ene_klno_ccsd =  -9.42042726
+time_build_df =  34.66
+time_get_vk =   0.17
+time_klno =  51.58
+
+./2-2-2/gth-dzvp/fftisdf-10/200/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 260
+nkpt = 8
+ene_krhf =  -9.60227256
+ene_klno_mp2 =  -9.67424158
+ene_klno_ccsd =  -9.69938406
+time_build_df =   7.53
+time_get_vk =   0.01
+time_klno =   2.31
+
+./2-2-2/gth-dzvp/fftisdf-20/100/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 520
+nkpt = 8
+ene_krhf =  -9.60220088
+ene_klno_mp2 =  -9.67416517
+ene_klno_ccsd =  -9.69931101
+time_build_df =   7.87
+time_get_vk =   0.08
+time_klno =   3.08
+
+./2-2-2/gth-dzvp/fftisdf-20/200/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 520
+nkpt = 8
+ene_krhf =  -9.60220089
+ene_klno_mp2 =  -9.67416517
+ene_klno_ccsd =  -9.69931101
+time_build_df =  19.78
+time_get_vk =   0.10
+time_klno =   4.16
+
+./2-2-3/gth-dzvp/fftisdf-10/100/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 260
+nkpt = 12
+ene_krhf =  -9.85841410
+ene_klno_mp2 =  -9.92856676
+ene_klno_ccsd =  -9.95086698
+time_build_df =   5.40
+time_get_vk =   0.03
+time_klno =   3.00
+
+./2-2-3/gth-dzvp/fftisdf-10/200/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 260
+nkpt = 12
+ene_krhf =  -9.85841410
+ene_klno_mp2 =  -9.92856676
+ene_klno_ccsd =  -9.95086698
+time_build_df =  11.42
+time_get_vk =   0.03
+time_klno =   4.41
+
+./2-2-3/gth-dzvp/fftisdf-20/100/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 520
+nkpt = 12
+ene_krhf =  -9.85826235
+ene_klno_mp2 =  -9.92838679
+ene_klno_ccsd =  -9.95068826
+time_build_df =  12.87
+time_get_vk =   0.13
+time_klno =   5.98
+
+./2-2-3/gth-dzvp/fftisdf-20/200/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 520
+nkpt = 12
+ene_krhf =  -9.85826235
+ene_klno_mp2 =  -9.92838679
+ene_klno_ccsd =  -9.95068826
+time_build_df =  26.55
+time_get_vk =   0.11
+time_klno =   5.94
+
+./2-3-3/gth-dzvp/fftisdf-10/100/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 260
+nkpt = 18
+ene_krhf = -10.01926277
+ene_klno_mp2 = -10.08713033
+ene_klno_ccsd = -10.10773582
+time_build_df =   5.75
+time_get_vk =   0.04
+time_klno =   6.18
+
+./2-3-3/gth-dzvp/fftisdf-10/200/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 260
+nkpt = 18
+ene_krhf = -10.01926276
+ene_klno_mp2 = -10.08713033
+ene_klno_ccsd = -10.10773582
+time_build_df =  15.70
+time_get_vk =   0.04
+time_klno =   5.76
+
+./2-3-3/gth-dzvp/fftisdf-20/100/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 520
+nkpt = 18
+ene_krhf = -10.01915209
+ene_klno_mp2 = -10.08699300
+ene_klno_ccsd = -10.10759953
+time_build_df =  15.41
+time_get_vk =   0.18
+time_klno =  12.13
+
+./3-3-3/gth-dzvp/fftisdf-10/200/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 260
+nkpt = 27
+ene_krhf = -10.12117896
+ene_klno_mp2 = -10.19222903
+ene_klno_ccsd = -10.21319039
+time_build_df =  21.73
+time_get_vk =   0.06
+time_klno =  11.60
+
+./3-3-3/gth-dzvp/fftisdf-20/100/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 520
+nkpt = 27
+ene_krhf = -10.12109429
+ene_klno_mp2 = -10.19216507
+ene_klno_ccsd = -10.21314652
+time_build_df =  25.01
+time_get_vk =   0.25
+time_klno =  20.73
+
+./3-3-3/gth-dzvp/fftisdf-20/200/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 520
+nkpt = 27
+ene_krhf = -10.12109428
+ene_klno_mp2 = -10.19216507
+ene_klno_ccsd = -10.21314651
+time_build_df =  58.84
+time_get_vk =   0.25
+time_klno =  21.85
+
+./3-3-4/gth-dzvp/fftisdf-10/100/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 260
+nkpt = 36
+ene_krhf = -10.22298876
+ene_klno_mp2 = -10.28671106
+ene_klno_ccsd = -10.30502703
+time_build_df =  11.41
+time_get_vk =   0.10
+time_klno =  22.09
+
+./3-4-4/gth-dzvp/fftisdf-10/100/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 260
+nkpt = 48
+ene_krhf = -10.29746921
+ene_klno_mp2 = -10.36078935
+ene_klno_ccsd = -10.37862400
+time_build_df =  14.88
+time_get_vk =   0.12
+time_klno =  36.90
+
+./3-4-4/gth-dzvp/fftisdf-10/200/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 260
+nkpt = 48
+ene_krhf = -10.29746921
+ene_klno_mp2 = -10.36078935
+ene_klno_ccsd = -10.37862400
+time_build_df =  36.49
+time_get_vk =   0.12
+time_klno =  38.44
+
