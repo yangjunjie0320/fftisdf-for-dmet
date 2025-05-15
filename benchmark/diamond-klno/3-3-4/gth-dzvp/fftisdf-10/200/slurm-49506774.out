@@ -1,0 +1,33 @@
+SLURMD_NODENAME = hpc-35-03
+Start time = Thu May 15 12:15:52 AM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+mkdir: cannot create directory ‘/resnick/scratch’: Too many levels of symbolic links
+TMPDIR = /resnick/scratch/yangjunjie//diamond/49506774/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond/49506774/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/3-3-4/gth-dzvp/fftisdf-10/200/main.py with:
+name: diamond
+xc: None
+kmesh: 3-3-4
+basis: gth-dzvp
+pseudo: gth-pbe
+ke_cutoff: 200.0
+density_fitting_method: fftisdf-10
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Traceback (most recent call last):
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/3-3-4/gth-dzvp/fftisdf-10/200/main.py", line 90, in <module>
+    main(config)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/3-3-4/gth-dzvp/fftisdf-10/200/main.py", line 7, in main
+    from utils import build
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/src/scripts/utils.py", line 12, in <module>
+    assert os.path.exists(TMPDIR)
+AssertionError
+End time = Thu May 15 12:15:53 AM PDT 2025

@@ -975,3 +975,65 @@ ao2mo est mem= 10524.94 MB  avail mem= 326986.27 MB
 
 WARN: Input vhf is not found. Building vhf from SCF MO.
 
+    CPU time for transforming DF-MP2 integrals   3483.77 sec, wall time    110.82 sec
+    CPU time for Integral xform      3511.70 sec, wall time    112.13 sec
+    CPU time for make pno              14.45 sec, wall time      2.20 sec
+    impsol:  1 LOs  8/936 MOs  1 occ  7 vir
+
+WARN: Even tempered Gaussians are generated as DF auxbasis for  C
+
+    CPU time for imp sol            12567.64 sec, wall time    733.79 sec
+    CPU time for Fragment 1         12582.09 sec, wall time    735.99 sec
+Fragment 1  E_corr(MP2) = -7.7880906835864e-05  E_corr(CCSD) = -9.63005862787648e-05  E_corr(CCSD(T)) = 0
+    CPU time for make pno              21.45 sec, wall time      2.21 sec
+    impsol:  1 LOs  8/936 MOs  1 occ  7 vir
+    CPU time for imp sol             3695.24 sec, wall time    191.71 sec
+    CPU time for Fragment 2          3716.89 sec, wall time    193.92 sec
+Fragment 2  E_corr(MP2) = -0.0025038941152221  E_corr(CCSD) = -0.00309256456066886  E_corr(CCSD(T)) = 0
+    CPU time for make pno              21.20 sec, wall time      2.20 sec
+    impsol:  1 LOs  11/936 MOs  5 occ  6 vir
+    CPU time for imp sol             3709.13 sec, wall time    187.75 sec
+    CPU time for Fragment 3          3730.52 sec, wall time    189.96 sec
+Fragment 3  E_corr(MP2) = -0.00976362377885819  E_corr(CCSD) = -0.0126169156388089  E_corr(CCSD(T)) = 0
+    CPU time for make pno              22.89 sec, wall time      3.75 sec
+    impsol:  1 LOs  11/936 MOs  5 occ  6 vir
+    CPU time for imp sol             3678.02 sec, wall time    186.18 sec
+    CPU time for Fragment 4          3701.11 sec, wall time    189.94 sec
+Fragment 4  E_corr(MP2) = -0.00976362377945466  E_corr(CCSD) = -0.012616915638416  E_corr(CCSD(T)) = 0
+    CPU time for make pno              21.17 sec, wall time      2.19 sec
+    impsol:  1 LOs  11/936 MOs  5 occ  6 vir
+    CPU time for imp sol             3680.44 sec, wall time    188.29 sec
+    CPU time for Fragment 5          3701.79 sec, wall time    190.48 sec
+Fragment 5  E_corr(MP2) = -0.00974780148540783  E_corr(CCSD) = -0.0125976407448005  E_corr(CCSD(T)) = 0
+    CPU time for make pno              21.22 sec, wall time      2.22 sec
+    impsol:  1 LOs  8/936 MOs  1 occ  7 vir
+    CPU time for imp sol             3706.91 sec, wall time    189.32 sec
+    CPU time for Fragment 6          3728.33 sec, wall time    191.54 sec
+Fragment 6  E_corr(MP2) = -7.7880906753703e-05  E_corr(CCSD) = -9.63005861826853e-05  E_corr(CCSD(T)) = 0
+    CPU time for make pno              21.15 sec, wall time      2.20 sec
+    impsol:  1 LOs  8/936 MOs  1 occ  7 vir
+    CPU time for imp sol             3701.13 sec, wall time    189.16 sec
+    CPU time for Fragment 7          3722.49 sec, wall time    191.37 sec
+Fragment 7  E_corr(MP2) = -0.00250389411521613  E_corr(CCSD) = -0.00309256456085014  E_corr(CCSD(T)) = 0
+    CPU time for make pno              21.10 sec, wall time      2.19 sec
+    impsol:  1 LOs  11/936 MOs  5 occ  6 vir
+    CPU time for imp sol             3688.20 sec, wall time    185.47 sec
+    CPU time for Fragment 8          3709.48 sec, wall time    187.66 sec
+Fragment 8  E_corr(MP2) = -0.00976362378077488  E_corr(CCSD) = -0.0126169156410961  E_corr(CCSD(T)) = 0
+    CPU time for make pno              21.08 sec, wall time      2.20 sec
+    impsol:  1 LOs  11/936 MOs  5 occ  6 vir
+    CPU time for imp sol             3692.40 sec, wall time    186.88 sec
+    CPU time for Fragment 9          3713.68 sec, wall time    189.08 sec
+Fragment 9  E_corr(MP2) = -0.00976362378035069  E_corr(CCSD) = -0.0126169156394982  E_corr(CCSD(T)) = 0
+    CPU time for make pno              21.23 sec, wall time      2.22 sec
+    impsol:  1 LOs  11/936 MOs  5 occ  6 vir
+    CPU time for imp sol             3699.36 sec, wall time    186.02 sec
+    CPU time for Fragment 10         3720.78 sec, wall time    188.24 sec
+Fragment 10  E_corr(MP2) = -0.00974780148537955  E_corr(CCSD) = -0.0125976407447655  E_corr(CCSD(T)) = 0
+    CPU time for KLNOCCSD           49538.85 sec, wall time   2560.31 sec
+E(LNOMP2) = -10.2865239124318  E_corr = -0.0637136481342536
+E(LNOCCSD) = -10.3048509386389  E_corr = -0.0820406743413656
+Summary by spin components
+LNOMP2   Ess = -0.00820148855585502  Eos = -0.0555121595783986  Escs = -0.069345687183178
+LNOCCSD  Ess = -0.00931207540584969  Eos = -0.072728598935516  Escs = -0.0903752398327671
+End time = Thu May 15 12:15:03 AM PDT 2025

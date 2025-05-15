@@ -1,3 +1,4 @@
+
 ./1-1-2/gth-dzvp/fftisdf-10/100/out.log
 method = fftisdf-10
 basis = gth-dzvp
@@ -250,6 +251,20 @@ time_build_df =  15.41
 time_get_vk =   0.18
 time_klno =  12.13
 
+./2-3-3/gth-dzvp/rsdf/out.log
+method = rsdf
+basis = gth-dzvp
+ke_cutoff =   0.00
+nao = 26
+naux = 168
+nkpt = 18
+ene_krhf = -10.01914916
+ene_klno_mp2 = -10.08698879
+ene_klno_ccsd = -10.10759624
+time_build_df =  39.26
+time_get_vk =   2.86
+time_klno =  552.43
+
 ./3-3-3/gth-dzvp/fftisdf-10/200/out.log
 method = fftisdf-10
 basis = gth-dzvp
@@ -333,4 +348,60 @@ ene_klno_ccsd = -10.37862400
 time_build_df =  36.49
 time_get_vk =   0.12
 time_klno =  38.44
+
+./3-4-4/gth-dzvp/fftisdf-20/100/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 520
+nkpt = 48
+ene_krhf = -10.29741792
+ene_klno_mp2 = -10.36071579
+ene_klno_ccsd = -10.37855194
+time_build_df =  43.02
+time_get_vk =   0.46
+time_klno =  72.40
+
+./3-4-4/gth-dzvp/fftisdf-20/200/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 200.00
+nao = 26
+naux = 520
+nkpt = 48
+ene_krhf = -10.29741791
+ene_klno_mp2 = -10.36071578
+ene_klno_ccsd = -10.37855193
+time_build_df =  99.81
+time_get_vk =   0.43
+time_klno =  78.01
+
+./4-4-4/gth-dzvp/fftisdf-10/100/out.log
+method = fftisdf-10
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 260
+nkpt = 64
+ene_krhf = -10.35432694
+ene_klno_mp2 = -10.41692196
+ene_klno_ccsd = -10.43419864
+time_build_df =  21.58
+time_get_vk =   0.16
+time_klno =  99.62
+
+./4-4-4/gth-dzvp/fftisdf-20/100/out.log
+method = fftisdf-20
+basis = gth-dzvp
+ke_cutoff = 100.00
+nao = 26
+naux = 520
+nkpt = 64
+ene_krhf = -10.35422814
+ene_klno_mp2 = -10.41683807
+ene_klno_ccsd = -10.43413640
+time_build_df =  68.03
+time_get_vk =   0.68
+time_klno =  177.42
 
