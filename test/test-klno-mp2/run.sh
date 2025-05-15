@@ -1,4 +1,4 @@
-source /Users/yangjunjie/anaconda3/bin/activate fftisdf
+source $HOME/anaconda3/bin/activate fftisdf
 
 export PYTHONPATH=$PWD/../../src/libdmet2-main/:$PYTHONPATH
 export PYTHONPATH=$PWD/../../src/fftisdf-main/:$PYTHONPATH

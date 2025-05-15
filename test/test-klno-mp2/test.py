@@ -16,12 +16,12 @@ cell.a = '''
 1.7834 1.7834 0.0000
 '''
 cell.unit = 'A'
-cell.ke_cutoff = 120.0
-cell.verbose = 0
+cell.ke_cutoff = 200.0
+cell.verbose = 4
 cell.basis = 'gth-dzvp'
 cell.pseudo = 'gth-pbe'
 cell.exp_to_discard = 0.1
-cell.max_memory = 1000
+cell.max_memory = 4000
 cell.build(dump_input=False)
 
 kmesh = [1, 1, 3]
@@ -34,12 +34,12 @@ log = logger.new_logger(cell.stdout, 5)
 
 kmf_sol = khf.KRHF(cell, kpts, exxdiv=None)
 kmf_sol.chkfile = 'kmf-scf.chk'
-kmf_sol.init_guess = 'chkfile'
+# kmf_sol.init_guess = 'chkfile'
 kmf_sol.conv_tol = tol
 
 kmf_sol.with_df = fft.ISDF(cell, kpts)
-kmf_sol.with_df.verbose = 0
-kmf_sol.with_df._isdf = 'kmf-isdf.chk'
+kmf_sol.with_df.verbose = 5
+# kmf_sol.with_df._isdf = 'kmf-isdf.chk'
 kmf_sol.with_df._isdf_to_save = 'kmf-isdf.chk'
 kmf_sol.with_df.c0 = 20.0
 kmf_sol.with_df.build()
