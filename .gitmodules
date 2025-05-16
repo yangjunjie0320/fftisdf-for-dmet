@@ -8,3 +8,9 @@
 	path = src/lno-klno
 	url = git@github.com:hongzhouye/lno.git
 	branch = klno
+[submodule "src/pyscf-forge"]
+	path = src/pyscf-forge
+	url = git@github.com:hongzhouye/pyscf-forge.git
+	branch = lnocc
+
+
