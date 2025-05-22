@@ -23,9 +23,11 @@ def get_coeff_lo(kmf):
 
     # Localize occ mo in supercell (Unfortunately pyscf does not have a k-point PM)
     sorbocc = mf.mo_coeff[:,mf.mo_occ>1e-6][:,frozen:]
+    s1e = k2s_aoint(cell, kpts, kmf.get_ovlp())
+
+    from pyscf import lo
     mlo = lo.pipek.PipekMezey(scell, sorbocc)
     lo_coeff = mlo.kernel()
-
     while True: # Important: using jacobi sweep-based stability check to escape from local minimum
         lo_coeff1 = mlo.stability_jacobi()[1]
         if lo_coeff1 is lo_coeff:
@@ -34,7 +36,6 @@ def get_coeff_lo(kmf):
         mlo.init_guess = None
         lo_coeff = mlo.kernel()
 
-    s1e = k2s_aoint(cell, kpts, kmf.get_ovlp())
     lo_coeff_sorted = sort_orb_by_cell(scell, lo_coeff, nkpts, s=s1e)
     return lo_coeff_sorted
 
@@ -71,7 +72,7 @@ kmf_sol.init_guess = 'chkfile'
 kmf_sol.conv_tol = tol
 
 kmf_sol.with_df = fft.ISDF(cell, kpts)
-kmf_sol.with_df.verbose = 5
+kmf_sol.with_df.verbose = 0
 kmf_sol.with_df._isdf = 'kmf-isdf.chk'
 kmf_sol.with_df._isdf_to_save = 'kmf-isdf.chk'
 kmf_sol.with_df.c0 = 10.0
@@ -92,28 +93,67 @@ assert err_ene_krhf < 1e-4
 print(f"{ene_krhf_sol = :12.8f}, {ene_krhf_ref = :12.8f}, {err_ene_krhf = :6.4e}")
 
 smf = k2s_scf(kmf_ref)
-frozen_per_cell = chemcore(cell)
-frozen = frozen_per_cell * nimg
+orb_occ_k = []
+for k in range(nkpt):
+    coeff_k = kmf_ref.mo_coeff[k]
+    nocc_k = numpy.count_nonzero(kmf_ref.mo_occ[k])
+    orb_occ_k.append(coeff_k[:, 0:nocc_k])
 
-coeff_lo_s = get_coeff_lo(kmf_ref)
+from pyscf.pbc.lno.tools import k2s_iao
+coeff_lo_s = k2s_iao(cell, orb_occ_k, kpts, orth=True)
+
 nlo_per_img = coeff_lo_s.shape[1] // nimg
 frag_lo_list = [[f] for f in range(nlo_per_img)]
 
-from pyscf.pbc import lno
-klno_ref = lno.KLNOCCSD(kmf_ref, coeff_lo_s, frag_lo_list, frozen=frozen, mf=smf)
-klno_ref.lno_type = ['1h', '1h']
-klno_ref.verbose = 5
+from klno import KLNOCCSD
+klno_ref = KLNOCCSD(kmf_ref, coeff_lo_s, frag_lo_list, frozen=0, mf=smf)
+klno_ref.lno_type = ['2p', '2h']
+klno_ref.verbose = 10
+klno_ref.lo_proj_thresh_active = 1e-4
 eris_ref = klno_ref.ao2mo()
-# klno_ref.kernel()
+# res = klno_ref.kernel()
 
-klno_sol = lno.KLNOCCSD(kmf_sol, coeff_lo_s, frag_lo_list, frozen=frozen, mf=smf)
-klno_sol.lno_type = ['1h', '1h']
-klno_sol.verbose = 5
+klno_sol = KLNOCCSD(kmf_sol, coeff_lo_s, frag_lo_list, frozen=0, mf=smf)
+klno_sol.lno_type = ['2p', '2h']
+klno_sol.verbose = 10
+klno_sol.lo_proj_thresh_active = 1e-3
+eris_sol = klno_sol.ao2mo()
 
-# eris_sol = klno_sol.ao2mo()
-klno_sol.kernel(eris=eris_ref)
+nfrag = len(frag_lo_list)
+lno_type = klno_sol.lno_type
+lno_thresh  = klno_sol.lno_thresh
 
-assert 1 == 2
+for f, lo_ix_f in enumerate(frag_lo_list):
+    coeff_lo_f = coeff_lo_s[:, lo_ix_f]
+    param = [{"thresh": lno_thresh[x], "pct_occ": None, "norb": None} for x in range(2)]
+
+    res = klno_ref.make_las(eris_ref, coeff
+
+    res = klno_sol.make_las(eris_sol, coeff_lo_f, lno_type, param)
+    coeff_sol = res[0]
+    frozen_sol = res[1]
+    uocc_loc_sol = res[2]
+
+    res = klno_sol.impurity_solve(
+        klno_sol._scf, coeff_sol, 
+        uocc_loc_sol, eris_sol,
+        frozen=frozen_sol, log=log,
+    )
+    print(f"{res = }")
+    assert False
+
+    res = klno_ref.make_las(eris_ref, coeff_lo_f, lno_type, param)
+    coeff_ref = res[0]
+    frozen_ref = res[1]
+    uocc_loc_ref = res[2]
+
+    print(f"{frozen_sol=}")
+    print(f"{frozen_ref=}")
+
+    print(f"{coeff_sol=}")
+    print(f"{coeff_ref=}")
+    assert False
+
 
 # smf = klno_sol._scf
 # kmf = klno_sol._kscf
