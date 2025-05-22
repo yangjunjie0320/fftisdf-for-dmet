@@ -70,44 +70,176 @@ def make_lo_rdm1_vir_2h(eris, moeocc, moevir, u):
     e_ov = e_occ_lo[:, None] - e_vir
     assert e_ov.shape == (nocc_lo, nvir)
     
-    dm_oo = numpy.zeros((nocc, nocc), dtype=numpy.float64)
+    dm_vv = numpy.zeros((nvir, nvir), dtype=numpy.float64)
     t2_oovv = ovov.transpose(0, 2, 1, 3)
     t2_oovv = t2_oovv / lib.direct_sum('Ia+Jb->IJab', e_ov, e_ov)
-    dm_oo += 4 * lib.einsum('IJac,IJbc->ab', t2_oovv, t2_oovv.conj())
-    dm_oo -= 2 * lib.einsum('IJac,IJcb->ab', t2_oovv, t2_oovv.conj())
-    return dm_oo
+    dm_vv += 4 * lib.einsum('IJac,IJbc->ab', t2_oovv, t2_oovv.conj())
+    dm_vv -= 2 * lib.einsum('IJac,IJcb->ab', t2_oovv, t2_oovv.conj())
+    return dm_vv
 
-def make_lo_rdm1_occ_2p(eris, moeocc, moevir, u):
+def make_lo_rdm1_vir_1h(eris, e_occ, e_vir, u_occ):
     log = lib.logger.new_logger(eris)
-    assert u.dtype == numpy.float64
+    assert u_occ.dtype == numpy.float64
+    
+    df_obj = eris.with_df
+    assert isinstance(df_obj, fft.ISDF)
+    assert isinstance(eris, _KLNODFINCOREERIS)
+
+    nocc, nvir = eris.nocc, eris.nvir
+    nocc_lo = u_occ.shape[1]
+    assert u_occ.shape == (nocc, nocc_lo)
+
+    from pyscf.lno.make_lno_rdm1 import subspace_eigh
+    f_occ = numpy.diag(e_occ)
+    e_occ_lo, u_occ_lo = subspace_eigh(f_occ, u_occ)
+    assert u_occ_lo.shape == (nocc, nocc_lo)
+
+    ovov = eris.get_eris_gen(u_occ_lo, 'Ovov')
+    assert ovov.shape == (nocc_lo, nvir, nocc, nvir)
+
+    e_ov_1 = e_occ_lo[:, None] - e_vir
+    e_ov_2 = e_occ[:, None] - e_vir
+    assert e_ov_1.shape == (nocc_lo, nvir)
+    assert e_ov_2.shape == (nocc, nvir)
+    
+    dm_vv = numpy.zeros((nvir, nvir), dtype=numpy.float64)
+    t2_oovv = ovov.transpose(0, 2, 1, 3)
+    t2_oovv = t2_oovv / lib.direct_sum('Ia+jb->Ijab', e_ov_1, e_ov_2)
+    dm_vv += 2 * lib.einsum('Ijac,Ijbc->ab', t2_oovv, t2_oovv.conj())
+    dm_vv += 2 * lib.einsum('Ijca,Ijcb->ab', t2_oovv, t2_oovv.conj())
+    dm_vv -= lib.einsum('Ijac,Ijcb->ab', t2_oovv, t2_oovv.conj())
+    dm_vv -= lib.einsum('Ijca,Ijbc->ab', t2_oovv, t2_oovv.conj())
+    return dm_vv
+
+def make_lo_rdm1_vir_1p(eris, e_occ, e_vir, u_vir):
+    log = lib.logger.new_logger(eris)
+    assert u_vir.dtype == numpy.float64
+    
+    df_obj = eris.with_df
+    assert isinstance(df_obj, fft.ISDF)
+    assert isinstance(eris, _KLNODFINCOREERIS)
+
+    nocc, nvir = eris.nocc, eris.nvir
+    nvir_lo = u_vir.shape[1]
+    assert u_vir.shape == (nvir, nvir_lo)
+
+    from pyscf.lno.make_lno_rdm1 import subspace_eigh
+    f_vir = numpy.diag(e_vir)
+    e_vir_lo, u_vir_lo = subspace_eigh(f_vir, u_vir)
+    assert u_vir_lo.shape == (nvir, nvir_lo)
+
+    ovov = eris.get_eris_gen(u_vir_lo, 'oVov')
+    assert ovov.shape == (nocc, nvir_lo, nocc, nvir)
+
+    e_ov_1 = e_occ[:, None] - e_vir_lo
+    e_ov_2 = e_occ[:, None] - e_vir
+    assert e_ov_1.shape == (nocc, nvir_lo)
+    assert e_ov_2.shape == (nocc, nvir)
+
+    dm_vv = numpy.zeros((nvir, nvir), dtype=numpy.float64)
+    t2_oovv = ovov.transpose(0, 2, 1, 3)
+    t2_oovv = t2_oovv / lib.direct_sum('iA+jb->ijAb', e_ov_1, e_ov_2)
+    dm_vv += 4 * lib.einsum('ijAa,ijAb->ab', t2_oovv.conj(), t2_oovv)
+    dm_vv -= 2 * lib.einsum('ijAa,jiAb->ab', t2_oovv.conj(), t2_oovv)
+    return dm_vv
+
+def make_lo_rdm1_occ_2p(eris, e_occ, e_vir, u_vir):
+    log = lib.logger.new_logger(eris)
+    assert u_vir.dtype == numpy.float64
     
     df_obj = eris.with_df
     assert isinstance(df_obj, fft.ISDF)
     assert isinstance(eris, _KLNODFINCOREERIS)
     
     nocc, nvir = eris.nocc, eris.nvir
-    nvir_lo = u.shape[1]
+    nvir_lo = u_vir.shape[1]
+    assert u_vir.shape == (nvir, nvir_lo)
 
     from pyscf.lno.make_lno_rdm1 import subspace_eigh
-    e_occ = moeocc
-    e_vir = moevir
-
-    f = numpy.diag(e_vir)
-    e_vir_lo, u_vir_lo = subspace_eigh(f, u)
+    f_vir = numpy.diag(e_vir)
+    e_vir_lo, u_vir_lo = subspace_eigh(f_vir, u_vir)
     assert u_vir_lo.shape == (nvir, nvir_lo)
-    
+
     ovov = eris.get_eris_gen(u_vir_lo, 'oVoV')
     assert ovov.shape == (nocc, nvir_lo, nocc, nvir_lo)
 
-    e_ov = e_occ[:, None] - e_vir_lo
-    assert e_ov.shape == (nocc, nvir_lo)
+    e_ov_1 = e_ov_2 = e_occ[:, None] - e_vir_lo
+    assert e_ov_1.shape == (nocc, nvir_lo)
+    assert e_ov_2.shape == (nocc, nvir_lo)
 
-    dm_vv = numpy.zeros((nvir, nvir), dtype=numpy.float64)
+    dm_oo = numpy.zeros((nocc, nocc), dtype=numpy.float64)
     t2_oovv = ovov.transpose(0, 2, 1, 3)
-    t2_oovv = t2_oovv / lib.direct_sum('iA+jB->ijAB', e_ov, e_ov)
-    dm_vv -= 4 * lib.einsum('ikAB,jkAB->ij', t2_oovv.conj(), t2_oovv)
-    dm_vv += 2 * lib.einsum('ikAB,jkAB->ij', t2_oovv.conj(), t2_oovv)
-    return dm_vv
+    t2_oovv = t2_oovv / lib.direct_sum('iA+jB->ijAB', e_ov_1, e_ov_2)
+    dm_oo -= 4 * lib.einsum('ikAB,jkAB->ij', t2_oovv.conj(), t2_oovv)
+    dm_oo += 2 * lib.einsum('ikAB,jkAB->ij', t2_oovv.conj(), t2_oovv)
+    return dm_oo
+
+def make_lo_rdm1_occ_1h(eris, e_occ, e_vir, u_occ):
+    log = lib.logger.new_logger(eris)
+    assert u_occ.dtype == numpy.float64
+    
+    df_obj = eris.with_df
+    assert isinstance(df_obj, fft.ISDF)
+    assert isinstance(eris, _KLNODFINCOREERIS)
+
+    nocc, nvir = eris.nocc, eris.nvir
+    nocc_lo = u_occ.shape[1]
+    assert u_occ.shape == (nocc, nocc_lo)
+
+    from pyscf.lno.make_lno_rdm1 import subspace_eigh
+    f_occ = numpy.diag(e_occ)
+    e_occ_lo, u_occ_lo = subspace_eigh(f_occ, u_occ)
+    assert u_occ_lo.shape == (nocc, nocc_lo)
+    
+    ovov = eris.get_eris_gen(u_occ_lo, 'ovOv')
+    assert ovov.shape == (nocc, nvir, nocc_lo, nvir)
+
+    e_ov_1 = e_occ[:, None] - e_vir
+    e_ov_2 = e_occ_lo[:, None] - e_vir
+    assert e_ov_1.shape == (nocc, nvir)
+    assert e_ov_2.shape == (nocc_lo, nvir)
+    
+    dm_oo = numpy.zeros((nocc, nocc), dtype=numpy.float64)
+    t2_oovv = ovov.transpose(0, 2, 1, 3)
+    t2_oovv = t2_oovv / lib.direct_sum('ia+Jb->iJab', e_ov_1, e_ov_2)
+    dm_oo -= 4 * lib.einsum('iKab,jKab->ij', t2_oovv.conj(), t2_oovv)
+    dm_oo += 2 * lib.einsum('iKab,jKba->ij', t2_oovv.conj(), t2_oovv)
+    return dm_oo
+
+def make_lo_rdm1_occ_1p(eris, e_occ, e_vir, u_vir):
+    log = lib.logger.new_logger(eris)
+    assert u_vir.dtype == numpy.float64
+    
+    df_obj = eris.with_df
+    assert isinstance(df_obj, fft.ISDF)
+    assert isinstance(eris, _KLNODFINCOREERIS)
+
+    nocc, nvir = eris.nocc, eris.nvir
+    nvir_lo = u_vir.shape[1]
+    assert u_vir.shape == (nvir, nvir_lo)
+
+    from pyscf.lno.make_lno_rdm1 import subspace_eigh
+    f_vir = numpy.diag(e_vir)
+    e_vir_lo, u_vir_lo = subspace_eigh(f_vir, u_vir)
+    assert u_vir_lo.shape == (nvir, nvir_lo)
+
+    ovov = eris.get_eris_gen(u_vir_lo, 'oVov')
+    assert ovov.shape == (nocc, nvir_lo, nocc, nvir)
+
+    e_ov_1 = e_occ[:, None] - e_vir_lo
+    e_ov_2 = e_occ[:, None] - e_vir
+    assert e_ov_1.shape == (nocc, nvir_lo)
+    assert e_ov_2.shape == (nocc, nvir)
+
+    dm_oo = numpy.zeros((nocc, nocc), dtype=numpy.float64)
+    t2_oovv = ovov.transpose(0, 2, 1, 3)
+    t2_oovv = t2_oovv / lib.direct_sum('iA+jb->ijAb', e_ov_1, e_ov_2)
+    dm_oo -= 2 * lib.einsum('ikAb,jkAb->ij', t2_oovv.conj(), t2_oovv)
+    dm_oo -= 2 * lib.einsum('kiAb,kjAb->ij', t2_oovv.conj(), t2_oovv)
+    dm_oo += lib.einsum('ikAb,kjAb->ij', t2_oovv.conj(), t2_oovv)
+    dm_oo += lib.einsum('kiAb,jkAb->ij', t2_oovv.conj(), t2_oovv)
+    
+    return dm_oo
 
 class WithFFTISDF(pyscf.pbc.lno.klnoccsd.KLNOCCSD):
     def ao2mo(self):
@@ -123,19 +255,37 @@ class WithFFTISDF(pyscf.pbc.lno.klnoccsd.KLNOCCSD):
         eris.build()
         return eris
     
-    def make_lo_rdm1_occ(self, eris, moeocc, moevir, uocc_loc, uvir_loc, occ_lno_type):
-        assert occ_lno_type in ['1h', '1p', '2p']
-        if occ_lno_type == '2p':
-            return make_lo_rdm1_occ_2p(eris, moeocc, moevir, uvir_loc)
-        else:
-            raise NotImplementedError
+    def make_lo_rdm1_occ(self, eris, eo, ev, uo, uv, lno_type):
+        assert lno_type in ['1h', '1p', '2p']
+
+        dm_oo = None
+        if lno_type == '1h':
+            dm_oo = make_lo_rdm1_occ_1h(eris, eo, ev, uo)
+        elif lno_type == '1p':
+            dm_oo = make_lo_rdm1_occ_1p(eris, eo, ev, uv)
+        elif lno_type == '2p':
+            dm_oo = make_lo_rdm1_occ_2p(eris, eo, ev, uv)
+
+        from pyscf.pbc.lno.make_lno_rdm1 import _check_dm_imag
+        assert dm_oo is not None, "Unknown LNO type: %s" % lno_type
+        dm_oo = _check_dm_imag(eris, dm_oo)
+        return dm_oo
     
-    def make_lo_rdm1_vir(self, eris, moeocc, moevir, uocc_loc, uvir_loc, vir_lno_type):
-        assert vir_lno_type in ['1h', '1p', '2h']
-        if vir_lno_type == '2h':
-            return make_lo_rdm1_vir_2h(eris, moeocc, moevir, uocc_loc)
-        else:
-            raise NotImplementedError
+    def make_lo_rdm1_vir(self, eris, eo, ev, uo, uv, lno_type):
+        assert lno_type in ['1h', '1p', '2h']
+
+        dm_vv = None
+        if lno_type == '1h':
+            dm_vv = make_lo_rdm1_vir_1h(eris, eo, ev, uo)
+        elif lno_type == '1p':
+            dm_vv = make_lo_rdm1_vir_1p(eris, eo, ev, uv)
+        elif lno_type == '2h':
+            dm_vv = make_lo_rdm1_vir_2h(eris, eo, ev, uo)
+
+        from pyscf.pbc.lno.make_lno_rdm1 import _check_dm_imag
+        assert dm_vv is not None, "Unknown LNO type: %s" % lno_type
+        dm_vv = _check_dm_imag(eris, dm_vv)
+        return dm_vv
 
 import pyscf.pbc.lno.klno
 def KLNOCCSD(kmf, lo_coeff, frag_lolist, lno_type=None, lno_thresh=None, frozen=None, mf=None):

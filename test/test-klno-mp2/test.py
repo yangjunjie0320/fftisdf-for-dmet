@@ -126,138 +126,56 @@ lno_thresh  = klno_sol.lno_thresh
 for f, lo_ix_f in enumerate(frag_lo_list):
     coeff_lo_f = coeff_lo_s[:, lo_ix_f]
     param = [{"thresh": lno_thresh[x], "pct_occ": None, "norb": None} for x in range(2)]
-
-    res = klno_ref.make_las(eris_ref, coeff
-
-    res = klno_sol.make_las(eris_sol, coeff_lo_f, lno_type, param)
-    coeff_sol = res[0]
-    frozen_sol = res[1]
-    uocc_loc_sol = res[2]
-
-    res = klno_sol.impurity_solve(
-        klno_sol._scf, coeff_sol, 
-        uocc_loc_sol, eris_sol,
-        frozen=frozen_sol, log=log,
-    )
-    print(f"{res = }")
-    assert False
-
-    res = klno_ref.make_las(eris_ref, coeff_lo_f, lno_type, param)
-    coeff_ref = res[0]
-    frozen_ref = res[1]
-    uocc_loc_ref = res[2]
-
-    print(f"{frozen_sol=}")
-    print(f"{frozen_ref=}")
-
-    print(f"{coeff_sol=}")
-    print(f"{coeff_ref=}")
-    assert False
-
-
-# smf = klno_sol._scf
-# kmf = klno_sol._kscf
-# mo_occ_s = smf.mo_occ
-
-# lo_type = klno_sol.lo_type
-# no_type = "rr" if klno_sol.no_type == "edmet" else None
-# assert lo_type == "iao"
-# assert no_type == "rr"
-
-# nocc = numpy.count_nonzero(mo_occ_s > 0)
-# frozen = klno_sol.frozen
-# if frozen is None:
-#     frozen = 0
-# coeff_occ = smf.mo_coeff[:, frozen:nocc]
-
-# from lno.base.lno import get_iao
-# coeff_lo = get_iao(smf.cell, coeff_occ, minao="minao", orth=True)
-# nlo = coeff_lo.shape[1]
-# nlo_per_img = nlo // nimg
-
-# frag_lo_list = [[f] for f in range(nlo_per_img)]
-# nfrag = len(frag_lo_list)
-
-# frag_aotm_list = None
-# frag_wght_list = numpy.ones(nfrag)
-# frag_nonv_list = [[None, None]] * nfrag
-
-# eris_ref = klno_ref.ao2mo()
-# eris_sol = klno_sol.ao2mo()
-
-# coeff_sol = klno_sol._scf.mo_coeff
-# coeff_ref = klno_ref._scf.mo_coeff
-
-# h1e_sol = klno_sol._scf.get_hcore()
-# h1e_ref = klno_ref._scf.get_hcore()
-# err_h1e = abs(h1e_sol - h1e_ref).max()
-# print(f"{err_h1e = :6.4e}")
-
-# ovlp_sol = klno_sol._scf.get_ovlp()
-# ovlp_ref = klno_ref._scf.get_ovlp()
-# err_ovlp = abs(ovlp_sol - ovlp_ref).max()
-# print(f"{err_ovlp = :6.4e}")
-
-# dm0 = klno_sol._scf.make_rdm1()
-# vhf_sol = klno_sol._scf.get_veff()
-# vhf_ref = klno_ref._scf.get_veff()
-# err_vhf = abs(vhf_sol - vhf_ref).max()
-
-# f1e_sol = klno_sol._scf.get_fock()
-# f1e_ref = klno_ref._scf.get_fock()
-# err_f1e = abs(f1e_sol - f1e_ref).max()
-# print(f"{err_f1e = :6.4e}")
-# assert 1 == 2
-
-# for f in range(nfrag):
-#     frag_lo_f = frag_lo_list[f]
-#     coeff_lo_f = coeff_lo[:, frag_lo_f]
-#     frag_target_nocc, frag_target_nvir = frag_nonv_list[f]
-#     assert frag_target_nocc is None
-#     assert frag_target_nvir is None
-
-#     frozen_mask = klno_sol.get_frozen_mask()
-#     thresh_pno = [klno_sol.thresh_occ, klno_sol.thresh_vir]
+    thresh_active = klno_ref.lo_proj_thresh_active
     
-#     print("\nRef")
-#     frozen_frag_ref, coeff_f_ref = klno_ref.make_fpno1(
-#         eris_ref, coeff_lo_f, no_type, THRESH_INTERNAL,
-#         thresh_pno, frozen_mask, None, None,
-#     )
+    s1e = klno_ref.s1e
+    res = klno_ref.split_mo_coeff()
+    orb_occ_frz_core = res[0]
+    orb_occ = res[1]
+    orb_vir = res[2]
+    orb_vir_frz_core = res[3]
+    e_occ, e_vir = klno_ref.split_mo_energy()[1:3]
+    
+    from functools import reduce
+    from pyscf.lno.lno import projection_construction
+    u_occ_loc = reduce(numpy.dot, (coeff_lo_f.T.conj(), s1e, orb_occ))
+    u_occ_loc, u_occ_std, u_occ_orth = projection_construction(u_occ_loc, klno_ref.lo_proj_thresh, thresh_active)
 
-#     print("\nSol")
-#     frozen_frag_sol, coeff_f_sol = klno_sol.make_fpno1(
-#         eris_sol, coeff_lo_f, no_type, THRESH_INTERNAL,
-#         thresh_pno, frozen_mask, None, None,
-#     )
+    u_vir_loc = reduce(numpy.dot, (coeff_lo_f.T.conj(), s1e, orb_vir))
+    u_vir_loc, u_vir_std, u_vir_orth = projection_construction(u_vir_loc, klno_ref.lo_proj_thresh, thresh_active)
 
-#     res = klno_ref.impurity_solve(
-#         klno_ref._scf, coeff_f_ref, coeff_lo_f, eris_ref,
-#         frozen=frozen_frag_ref, log=log,
-#     )
+    for lno_type in ['1h', '1p', '2p']:
+        print(f"\n{lno_type = }")
+        dm_oo_ref = klno_ref.make_lo_rdm1_occ(eris_ref, e_occ, e_vir, u_occ_loc, u_vir_loc, lno_type)
+        dm_oo_ref = reduce(numpy.dot, (u_occ_orth.T.conj(), dm_oo_ref, u_occ_orth))
 
-#     print(f"{res = }")
+        dm_oo_sol = klno_sol.make_lo_rdm1_occ(eris_sol, e_occ, e_vir, u_occ_loc, u_vir_loc, lno_type)
+        dm_oo_sol = reduce(numpy.dot, (u_occ_orth.T.conj(), dm_oo_sol, u_occ_orth))
 
-#     res = klno_sol.impurity_solve(
-#         klno_sol._scf, coeff_f_sol, coeff_lo_f, eris_sol,
-#         frozen=frozen_frag_sol, log=log,
-#     )
+        err = abs(dm_oo_ref - dm_oo_sol).max()
+        print(f"{err = :6.4e}")
 
-#     print(f"{res = }")
+        print(f"{dm_oo_ref.shape = }")
+        numpy.savetxt(cell.stdout, dm_oo_ref, fmt='% 6.4e', delimiter=', ')
 
-#     assert 1 == 2
+        print(f"{dm_oo_sol.shape = }")
+        numpy.savetxt(cell.stdout, dm_oo_sol, fmt='% 6.4e', delimiter=', ')
+        assert err < 1e-4
 
-# assert 1 == 2
-# klno_sol.kernel()
-# klno_ref.kernel()
+    for lno_type in ['1h', '1p', '2h']:
+        print(f"\n{lno_type = }")
+        dm_vv_ref = klno_ref.make_lo_rdm1_vir(eris_ref, e_occ, e_vir, u_occ_loc, u_vir_loc, lno_type)
+        dm_vv_ref = reduce(numpy.dot, (u_vir_orth.T.conj(), dm_vv_ref, u_vir_orth))
 
-# ene_krhf_sol = kmf_sol.e_tot
-# ene_krhf_ref = kmf_ref.e_tot
-# err_ene_krhf = abs(ene_krhf_sol - ene_krhf_ref)
+        dm_vv_sol = klno_sol.make_lo_rdm1_vir(eris_sol, e_occ, e_vir, u_occ_loc, u_vir_loc, lno_type)
+        dm_vv_sol = reduce(numpy.dot, (u_vir_orth.T.conj(), dm_vv_sol, u_vir_orth))
 
-# ene_klno_sol = klno_sol.e_tot
-# ene_klno_ref = klno_ref.e_tot
-# err_ene_klno = abs(ene_klno_sol - ene_klno_ref)
+        err = abs(dm_vv_ref - dm_vv_sol).max()
+        print(f"{err = :6.4e}")
 
-# print("ene_krhf_sol = %12.8f, ene_krhf_ref = %12.8f, err_ene_krhf = %12.8f" % (ene_krhf_sol, ene_krhf_ref, err_ene_krhf))
-# print("ene_klno_sol = %12.8f, ene_klno_ref = %12.8f, err_ene_klno = %12.8f" % (ene_klno_sol, ene_klno_ref, err_ene_klno))
+        print(f"{dm_vv_ref.shape = }")
+        numpy.savetxt(cell.stdout, dm_vv_ref[:10, :10], fmt='% 6.4e', delimiter=', ')
+
+        print(f"{dm_vv_sol.shape = }")
+        numpy.savetxt(cell.stdout, dm_vv_sol[:10, :10], fmt='% 6.4e', delimiter=', ')
+        assert err < 1e-4
