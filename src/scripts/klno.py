@@ -51,7 +51,26 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
         assert isinstance(with_df, fft.ISDF)
     
     def ao2mo(self, mo_coeff=None):
-        raise NotImplementedError
+        from pyscf.lno.lnoccsd import _ChemistsERIs
+
+        eris = _ChemistsERIs()
+        eris._common_init_(self, mo_coeff)
+        
+        mo_coeff = eris.mo_coeff
+        nocc = eris.nocc
+        nmo = mo_coeff.shape[1]
+        nvir = nmo - nocc
+        nvir_pair = nvir * (nvir + 1) // 2
+
+        df_obj = self.with_df
+        assert isinstance(df_obj, fft.ISDF)
+
+        k2sdf = K2SDF(df_obj)
+        Naux = k2sdf.Naux_ibz
+        naux = k2sdf.naux
+        naux_by_q = k2sdf.naux_by_q
+        
+        
 
 def make_lo_rdm1_vir_2h(eris, moeocc, moevir, u):    
     log = lib.logger.new_logger(eris)
