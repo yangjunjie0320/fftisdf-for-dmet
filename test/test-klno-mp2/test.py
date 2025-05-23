@@ -131,12 +131,6 @@ for f, lo_ix_f in enumerate(frag_lo_list):
     res = klno_ref.make_las(eris_ref, coeff_lo_f, lno_type, param)
     res_f, msg_f = klno_ref.impurity_solve(klno_ref._scf, res[0], res[2], eris_ref, frozen=res[1])
 
-    from pyscf.pbc.lno.tools import K2SDF
-    df_obj = K2SDF(kmf_ref.with_df)
-    print(f"{len(df_obj.ibz2bz) = }")
-    print(f"{len(df_obj.qpts_ibz) = }")
-    assert 1 == 2
-
     res = klno_sol.make_las(eris_sol, coeff_lo_f, lno_type, param)
     res_f, msg_f = klno_sol.impurity_solve(klno_sol._scf, res[0], res[2], eris_sol, frozen=res[1])
     print(f"{msg_f = }")

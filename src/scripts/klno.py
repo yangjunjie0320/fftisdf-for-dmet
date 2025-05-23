@@ -64,11 +64,10 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
 
         df_obj = self.with_df
         assert isinstance(df_obj, fft.ISDF)
-
+        
+        from pyscf.pbc.lno.tools import K2SDF
         k2sdf = K2SDF(df_obj)
-        Naux = k2sdf.Naux_ibz
-        naux = k2sdf.naux
-        naux_by_q = k2sdf.naux_by_q
+        assert 1 == 2
         
         
 
@@ -331,9 +330,23 @@ class WithFFTISDF(pyscf.pbc.lno.klnoccsd.KLNOCCSD):
 
         mcc = MODIFIED_K2SCCSD(mf, with_df, frozen, mo_coeff, mo_occ)
         mcc.verbose = self.verbose_imp
+
+        s1e = mcc._scf.get_ovlp()
+        h1e = mcc._scf.get_hcore()
+        vhf = mcc._scf.get_veff()
+
+        mcc._s1e = s1e
+        mcc._h1e = h1e
+        mcc._vhf = vhf
+        
         mcc._s1e = self._s1e
         mcc._h1e = self._h1e
         mcc._vhf = self._vhf
+
+        print(f"{mcc._h1e = }")
+        print(f"{mcc._s1e = }")
+        print(f"{mcc._vhf = }")
+        assert 1 == 2
 
         if self.kwargs_imp is not None:
             mcc = mcc.set(**self.kwargs_imp)
