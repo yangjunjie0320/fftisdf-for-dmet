@@ -42,6 +42,16 @@ class _KLNODFINCOREERIS(pyscf.pbc.lno.klno._KLNODFINCOREERIS_REAL):
         eris_ovov = df_obj.ao2mo_spc(ovov, kpts=kpts)
         eris_ovov = eris_ovov.reshape(shape)
         return eris_ovov / nkpt
+    
+from pyscf.lno.lnoccsd import MODIFIED_CCSD
+class MODIFIED_K2SCCSD(MODIFIED_CCSD):
+    def __init__(self, mf, with_df, frozen, mo_coeff, mo_occ):
+        MODIFIED_CCSD.__init__(self, mf, frozen, mo_coeff, mo_occ)
+        self.with_df = with_df
+        assert isinstance(with_df, fft.ISDF)
+    
+    def ao2mo(self, mo_coeff=None):
+        raise NotImplementedError
 
 def make_lo_rdm1_vir_2h(eris, moeocc, moevir, u):    
     log = lib.logger.new_logger(eris)
@@ -286,6 +296,36 @@ class WithFFTISDF(pyscf.pbc.lno.klnoccsd.KLNOCCSD):
         assert dm_vv is not None, "Unknown LNO type: %s" % lno_type
         dm_vv = _check_dm_imag(eris, dm_vv)
         return dm_vv
+    
+    def impurity_solve(self, mf, mo_coeff, uocc_loc, eris, frozen=None, log=None):
+        from pyscf.lno.lnoccsd import impurity_solve
+        from pyscf.lno.lnoccsd import get_maskact
+        from pyscf.pbc.lib.kpts_helper import gamma_point
+
+        if log is None: log = lib.logger.new_logger(self)
+        mo_occ = self.mo_occ
+        frozen, maskact = get_maskact(frozen, mo_occ.size)
+
+        with_df = self.with_df
+        assert isinstance(with_df, fft.ISDF)
+        assert gamma_point(with_df.kpts[0]) and numpy.isrealobj(mo_coeff)
+
+        mcc = MODIFIED_K2SCCSD(mf, with_df, frozen, mo_coeff, mo_occ)
+        mcc.verbose = self.verbose_imp
+        mcc._s1e = self._s1e
+        mcc._h1e = self._h1e
+        mcc._vhf = self._vhf
+
+        if self.kwargs_imp is not None:
+            mcc = mcc.set(**self.kwargs_imp)
+
+        res = impurity_solve(
+            mcc, mo_coeff, uocc_loc, mo_occ, maskact, eris, log=log,
+            ccsd_t=self.ccsd_t, verbose_imp=self.verbose_imp,
+            max_las_size_ccsd=self._max_las_size_ccsd,
+            max_las_size_ccsd_t=self._max_las_size_ccsd_t
+        )
+        return res
 
 import pyscf.pbc.lno.klno
 def KLNOCCSD(kmf, lo_coeff, frag_lolist, lno_type=None, lno_thresh=None, frozen=None, mf=None):

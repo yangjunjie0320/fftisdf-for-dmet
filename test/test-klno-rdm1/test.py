@@ -107,14 +107,14 @@ frag_lo_list = [[f] for f in range(nlo_per_img)]
 
 from klno import KLNOCCSD
 klno_ref = KLNOCCSD(kmf_ref, coeff_lo_s, frag_lo_list, frozen=0, mf=smf)
-klno_ref.lno_type = ['1h', '1h']
+klno_ref.lno_type = ['2p', '2h']
 klno_ref.verbose = 10
 klno_ref.lo_proj_thresh_active = 1e-4
 eris_ref = klno_ref.ao2mo()
 # res = klno_ref.kernel()
 
 klno_sol = KLNOCCSD(kmf_sol, coeff_lo_s, frag_lo_list, frozen=0, mf=smf)
-klno_sol.lno_type = ['1h', '1h']
+klno_sol.lno_type = ['2p', '2h']
 klno_sol.verbose = 10
 klno_sol.lo_proj_thresh_active = 1e-4
 eris_sol = klno_sol.ao2mo()
@@ -128,9 +128,54 @@ for f, lo_ix_f in enumerate(frag_lo_list):
     param = [{"thresh": lno_thresh[x], "pct_occ": None, "norb": None} for x in range(2)]
     thresh_active = klno_ref.lo_proj_thresh_active
     
-    res = klno_ref.make_las(eris_ref, coeff_lo_f, lno_type, param)
-    res_f, msg_f = klno_ref.impurity_solve(klno_ref._scf, res[0], res[2], eris_ref, frozen=res[1])
+    s1e = klno_ref.s1e
+    res = klno_ref.split_mo_coeff()
+    orb_occ_frz_core = res[0]
+    orb_occ = res[1]
+    orb_vir = res[2]
+    orb_vir_frz_core = res[3]
+    e_occ, e_vir = klno_ref.split_mo_energy()[1:3]
+    
+    from functools import reduce
+    from pyscf.lno.lno import projection_construction
+    u_occ_loc = reduce(numpy.dot, (coeff_lo_f.T.conj(), s1e, orb_occ))
+    u_occ_loc, u_occ_std, u_occ_orth = projection_construction(u_occ_loc, klno_ref.lo_proj_thresh, thresh_active)
 
-    res = klno_sol.make_las(eris_sol, coeff_lo_f, lno_type, param)
-    res_f, msg_f = klno_sol.impurity_solve(klno_sol._scf, res[0], res[2], eris_sol, frozen=res[1])
-    print(f"{msg_f = }")
+    u_vir_loc = reduce(numpy.dot, (coeff_lo_f.T.conj(), s1e, orb_vir))
+    u_vir_loc, u_vir_std, u_vir_orth = projection_construction(u_vir_loc, klno_ref.lo_proj_thresh, thresh_active)
+
+    for lno_type in ['1h', '1p', '2p']:
+        print(f"\n{lno_type = }")
+        dm_oo_ref = klno_ref.make_lo_rdm1_occ(eris_ref, e_occ, e_vir, u_occ_loc, u_vir_loc, lno_type)
+        dm_oo_ref = reduce(numpy.dot, (u_occ_orth.T.conj(), dm_oo_ref, u_occ_orth))
+
+        dm_oo_sol = klno_sol.make_lo_rdm1_occ(eris_sol, e_occ, e_vir, u_occ_loc, u_vir_loc, lno_type)
+        dm_oo_sol = reduce(numpy.dot, (u_occ_orth.T.conj(), dm_oo_sol, u_occ_orth))
+
+        err = abs(dm_oo_ref - dm_oo_sol).max()
+        print(f"{err = :6.4e}")
+
+        print(f"{dm_oo_ref.shape = }")
+        numpy.savetxt(cell.stdout, dm_oo_ref, fmt='% 6.4e', delimiter=', ')
+
+        print(f"{dm_oo_sol.shape = }")
+        numpy.savetxt(cell.stdout, dm_oo_sol, fmt='% 6.4e', delimiter=', ')
+        assert err < 1e-4
+
+    for lno_type in ['1h', '1p', '2h']:
+        print(f"\n{lno_type = }")
+        dm_vv_ref = klno_ref.make_lo_rdm1_vir(eris_ref, e_occ, e_vir, u_occ_loc, u_vir_loc, lno_type)
+        dm_vv_ref = reduce(numpy.dot, (u_vir_orth.T.conj(), dm_vv_ref, u_vir_orth))
+
+        dm_vv_sol = klno_sol.make_lo_rdm1_vir(eris_sol, e_occ, e_vir, u_occ_loc, u_vir_loc, lno_type)
+        dm_vv_sol = reduce(numpy.dot, (u_vir_orth.T.conj(), dm_vv_sol, u_vir_orth))
+
+        err = abs(dm_vv_ref - dm_vv_sol).max()
+        print(f"{err = :6.4e}")
+
+        print(f"{dm_vv_ref.shape = }")
+        numpy.savetxt(cell.stdout, dm_vv_ref[:10, :10], fmt='% 6.4e', delimiter=', ')
+
+        print(f"{dm_vv_sol.shape = }")
+        numpy.savetxt(cell.stdout, dm_vv_sol[:10, :10], fmt='% 6.4e', delimiter=', ')
+        assert err < 1e-4
