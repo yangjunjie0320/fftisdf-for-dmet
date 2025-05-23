@@ -1,7 +1,9 @@
 import numpy, scipy
 import pyscf, fft
 from pyscf import lib
+
 import pyscf.lno, pyscf.pbc.lno
+from pyscf.pbc.lno.tools import K2SDF
 
 import fft.isdf_ao2mo
 
@@ -48,6 +50,7 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
     def __init__(self, mf, with_df, frozen, mo_coeff, mo_occ):
         MODIFIED_CCSD.__init__(self, mf, frozen, mo_coeff, mo_occ)
         self.with_df = with_df
+        self._k2sdf = K2SDF(with_df)
         assert isinstance(with_df, fft.ISDF)
     
     def ao2mo(self, mo_coeff=None):
@@ -64,11 +67,63 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
 
         df_obj = self.with_df
         assert isinstance(df_obj, fft.ISDF)
+
+        cell = df_obj.cell
+        nao_per_img = cell.nao_nr()
         
-        from pyscf.pbc.lno.tools import K2SDF
-        k2sdf = K2SDF(df_obj)
-        assert 1 == 2
+        kpts = df_obj.kpts
+        nkpt = nimg = len(kpts)
+        phase = self._k2sdf.phase
+        coeff_mo_spc = eris.mo_coeff.reshape(nimg, nao_per_img, nmo)
+        coeff_mo_kpt = numpy.einsum('kw,wmp->kmp', phase.conj(), coeff_mo_spc)
+
+        eri = df_obj.ao2mo_spc([coeff_mo_kpt] * 4, kpts=kpts)
+        eri = eri.reshape([nmo, ] * 4) / nkpt
+
+        from pyscf import lib
+        eris.feri = lib.H5TmpFile()
+        shape = (nocc, nocc, nocc, nocc)
+        eris.oooo = eris.feri.create_dataset('oooo', shape, 'f8')
+        eris.oooo = eri[:nocc, :nocc, :nocc, :nocc]
         
+        shape = (nocc, nvir, nocc, nocc)
+        chunks = (nocc, 1, nocc, nocc)
+        eris.ovoo = eris.feri.create_dataset('ovoo', shape, 'f8', chunks=chunks)
+        eris.ovoo = eri[:nocc, nocc:, :nocc, :nocc]
+
+        shape = (nocc, nvir, nocc, nvir)
+        chunks = (nocc, 1, nocc, nvir)
+        eris.ovov = eris.feri.create_dataset('ovov', shape, 'f8', chunks=chunks)
+        eris.ovov = eri[:nocc, nocc:, :nocc, nocc:]
+
+        shape = (nocc, nvir, nvir, nocc)
+        chunks = (nocc, 1, nvir, nocc)
+        eris.ovvo = eris.feri.create_dataset('ovvo', shape, 'f8', chunks=chunks)
+        eris.ovvo = eri[:nocc, nocc:, nocc:, :nocc]
+
+        shape = (nocc, nocc, nvir, nvir)
+        chunks = (nocc, nocc, 1, nvir)
+        eris.oovv = eris.feri.create_dataset('oovv', shape, 'f8', chunks=chunks)
+        eris.oovv = eri[:nocc, :nocc, nocc:, nocc:]
+
+        shape = (nocc, nvir, nvir_pair)
+        eris.ovvv = eris.feri.create_dataset('ovvv', shape, 'f8')
+        eris_ovvv = eri[:nocc, nocc:, nocc:, nocc:].reshape(-1, nvir, nvir)
+        eris_ovvv = lib.pack_tril(eris_ovvv)
+        eris.ovvv = eris_ovvv.reshape(nocc, nvir, nvir_pair)
+        eris_ovvv = None
+
+        shape = (nvir_pair, nvir_pair)
+        eris.vvvv = eris.feri.create_dataset('vvvv', shape, 'f8')
+        eris_vvvv = eri[nocc:, nocc:, nocc:, nocc:].reshape(-1, nvir, nvir)
+        eris_vvvv = lib.pack_tril(eris_vvvv).T
+        eris_vvvv = eris_vvvv.reshape(nvir_pair, nvir, nvir)
+        eris_vvvv = lib.pack_tril(eris_vvvv)
+        eris.vvvv = eris_vvvv.reshape(nvir_pair, nvir_pair)
+        eris_vvvv = None
+        eri = None
+
+        return eris
         
 
 def make_lo_rdm1_vir_2h(eris, moeocc, moevir, u):    
@@ -330,23 +385,9 @@ class WithFFTISDF(pyscf.pbc.lno.klnoccsd.KLNOCCSD):
 
         mcc = MODIFIED_K2SCCSD(mf, with_df, frozen, mo_coeff, mo_occ)
         mcc.verbose = self.verbose_imp
-
-        s1e = mcc._scf.get_ovlp()
-        h1e = mcc._scf.get_hcore()
-        vhf = mcc._scf.get_veff()
-
-        mcc._s1e = s1e
-        mcc._h1e = h1e
-        mcc._vhf = vhf
-        
         mcc._s1e = self._s1e
         mcc._h1e = self._h1e
         mcc._vhf = self._vhf
-
-        print(f"{mcc._h1e = }")
-        print(f"{mcc._s1e = }")
-        print(f"{mcc._vhf = }")
-        assert 1 == 2
 
         if self.kwargs_imp is not None:
             mcc = mcc.set(**self.kwargs_imp)
