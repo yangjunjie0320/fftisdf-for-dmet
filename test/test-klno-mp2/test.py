@@ -127,12 +127,23 @@ for f, lo_ix_f in enumerate(frag_lo_list):
     coeff_lo_f = coeff_lo_s[:, lo_ix_f]
     param = [{"thresh": lno_thresh[x], "pct_occ": None, "norb": None} for x in range(2)]
     thresh_active = klno_ref.lo_proj_thresh_active
+
+    klno_ref.verbose = 0
+    klno_sol.verbose = 0
     
+    from pyscf.lib import logger
+    t0 = (logger.process_clock(), logger.perf_counter())
     res = klno_ref.make_las(eris_ref, coeff_lo_f, lno_type, param)
     res_f, msg_f = klno_ref.impurity_solve(klno_ref._scf, res[0], res[2], eris_ref, frozen=res[1])
+    ene_mp2_ref = res_f[0]
+    ene_ccsd_ref = res_f[1]
+    t1 = logger.process_clock()
 
     res = klno_sol.make_las(eris_sol, coeff_lo_f, lno_type, param)
     res_f, msg_f = klno_sol.impurity_solve(klno_sol._scf, res[0], res[2], eris_sol, frozen=res[1])
-    print(f"{msg_f = }")
-
-    assert 1 == 2
+    ene_mp2_sol = res_f[0]
+    ene_ccsd_sol = res_f[1]
+    
+    print(f"{ene_mp2_ref = :12.8f},  {ene_mp2_sol = :12.8f},  err = {abs(ene_mp2_ref - ene_mp2_sol): 6.4e}")
+    print(f"{ene_ccsd_ref = :12.8f}, {ene_ccsd_sol = :12.8f}, err = {abs(ene_ccsd_ref - ene_ccsd_sol): 6.4e}")
+    # assert 1 == 2
