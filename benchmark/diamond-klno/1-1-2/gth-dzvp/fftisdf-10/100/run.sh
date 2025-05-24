@@ -35,7 +35,10 @@ mkdir -p $TMPDIR
 echo TMPDIR       = $TMPDIR
 echo PYSCF_TMPDIR = $PYSCF_TMPDIR
 ln -s $PYSCF_TMPDIR tmp
-export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/../../src/fftisdf-main:/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/../../src/libdmet2-main:/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/../../src/lno-klno:/resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/../../src/scripts
-cp /resnick/groups/changroup/members/junjiey/fftisdf-with-dmet/benchmark/diamond-klno/../../src/scripts/main-krhf-lno.py ./main.py
+export PYTHONPATH=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fftisdf-main
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/main-krhf-lno.py ./main.py
 python main.py --kmesh=1-1-2 --basis=gth-dzvp --density-fitting-method=fftisdf-10 --ke-cutoff=100 --name=diamond --pseudo=gth-pbe --init-guess-method=minao --df-to-read=None
 echo "End time = $(date)"

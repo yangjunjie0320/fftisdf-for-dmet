@@ -47,10 +47,11 @@ class _KLNODFINCOREERIS(pyscf.pbc.lno.klno._KLNODFINCOREERIS_REAL):
     
 from pyscf.lno.lnoccsd import MODIFIED_CCSD
 class MODIFIED_K2SCCSD(MODIFIED_CCSD):
+    _keys = {'with_df', 'k2sdf'}
     def __init__(self, mf, with_df, frozen, mo_coeff, mo_occ):
         MODIFIED_CCSD.__init__(self, mf, frozen, mo_coeff, mo_occ)
         self.with_df = with_df
-        self._k2sdf = K2SDF(with_df)
+        self.k2sdf = K2SDF(with_df)
         assert isinstance(with_df, fft.ISDF)
     
     def ao2mo(self, mo_coeff=None):
@@ -73,7 +74,7 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
         
         kpts = df_obj.kpts
         nkpt = nimg = len(kpts)
-        phase = self._k2sdf.phase
+        phase = self.k2sdf.phase
         coeff_mo_spc = eris.mo_coeff.reshape(nimg, nao_per_img, nmo)
         coeff_mo_kpt = numpy.einsum('kw,wmp->kmp', phase.conj(), coeff_mo_spc)
 

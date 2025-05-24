@@ -51,7 +51,12 @@ def main():
 
         base = Path(__file__).parent
         run_content = None
-        with open(base / '../../src/scripts/run.sh', 'r') as f:
+
+        src_path = base / '../../src/'
+        src_path = src_path.resolve()
+        src_path = src_path.absolute()
+
+        with open(src_path / 'scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
             run_content.insert(1, f"#SBATCH --mem-per-cpu=10gb\n")
@@ -61,13 +66,13 @@ def main():
             run_content.insert(1, f"#SBATCH --reservation=changroup_standingres\n")
 
         # convert to absolute path
-        python_path = [Path(__file__).parent / '../../src/fftisdf-main',
-                       Path(__file__).parent / '../../src/libdmet2-main',
-                       Path(__file__).parent / '../../src/lno-klno',
-                       Path(__file__).parent / '../../src/scripts']
-        python_path = ":".join([str(p.absolute()) for p in python_path])
-        run_content.append(f"export PYTHONPATH=$PYTHONPATH:{python_path}\n")
-        run_content.append(f"cp {(base / '../../src/scripts/main-krhf-lno.py').absolute()} ./main.py\n")
+        python_path  = [src_path / 'fftisdf-main', src_path / 'libdmet2-main']
+        python_path += [src_path / 'pyscf-forge-lnocc', src_path / 'scripts']
+
+        run_content.append(f"export PYTHONPATH={python_path[0]}\n")
+        for p in python_path[1:]:
+            run_content.append(f"export PYTHONPATH=$PYTHONPATH:{p}\n")
+        run_content.append(f"cp {(src_path / 'scripts/main-krhf-lno.py')} ./main.py\n")
 
         is_unrestricted = config.pop('is-unrestricted')
         cmd = "python main.py %s" % " ".join([f"--{k}={v}" for k, v in config.items()])
