@@ -832,3 +832,8 @@ LO vir proj: 1 active | 0 standby | 593 orthogonal
     CPU time for Fragment 2 make las    157.13 sec, wall time     76.43 sec
 Fragment 2/270  LAS: 12/108 Occ | 52/594 Vir | 64/702 MOs
     impsol:  1 LOs  64/702 MOs  12 occ  52 vir
+    CPU time for Fragment 2 imp sol     104.39 sec, wall time     15.74 sec
+Fragment 2/270  Sol: E_corr(MP2) = -0.0177840968843392  E_corr(CCSD) = -0.021050077342625  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 2           261.52 sec, wall time     92.17 sec
+LO occ proj: 1 active | 0 standby | 107 orthogonal
+LO vir proj: 1 active | 0 standby | 593 orthogonal

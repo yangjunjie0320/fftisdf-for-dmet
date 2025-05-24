@@ -535,3 +535,11 @@ LO vir proj: 1 active | 0 standby | 175 orthogonal
     CPU time for Fragment 17 make las     26.72 sec, wall time      2.53 sec
 Fragment 17/80  LAS: 12/32 Occ | 54/176 Vir | 66/208 MOs
     impsol:  1 LOs  66/208 MOs  12 occ  54 vir
+    CPU time for Fragment 17 imp sol     173.29 sec, wall time     13.08 sec
+Fragment 17/80  Sol: E_corr(MP2) = -0.018398404009217  E_corr(CCSD) = -0.0232374401799949  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 17          200.01 sec, wall time     15.62 sec
+LO occ proj: 1 active | 0 standby | 31 orthogonal
+LO vir proj: 1 active | 0 standby | 175 orthogonal
+    CPU time for Fragment 18 make las     26.20 sec, wall time      2.52 sec
+Fragment 18/80  LAS: 17/32 Occ | 63/176 Vir | 80/208 MOs
+    impsol:  1 LOs  80/208 MOs  17 occ  63 vir
