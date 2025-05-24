@@ -26,16 +26,24 @@ def main(config: dict):
     table["time_get_vk"] = time.time() - t0
 
     t0 = time.time()
-    klno_obj = None
-    if isinstance(df_obj, fft.ISDF):
-        from klno import KLNOCCSD
-        klno_obj = KLNOCCSD(scf_obj, thresh=1e-4)
-    else:
-        from lno.cc import KLNOCCSD
-        klno_obj = KLNOCCSD(scf_obj, thresh=1e-4)
 
-    klno_obj.no_type = "edmet"
-    klno_obj.lo_type = "iao"
+    from pyscf.pbc.lno.tools import k2s_scf
+    mf_s = k2s_scf(scf_obj)
+    orb_occ_k = []
+    for k in range(scf_obj.nkpt):
+        coeff_k = scf_obj.mo_coeff[k]
+        nocc_k = numpy.count_nonzero(scf_obj.mo_occ[k])
+        orb_occ_k.append(coeff_k[:, 0:nocc_k])
+
+    from pyscf.pbc.lno.tools import k2s_iao
+    coeff_lo_s = k2s_iao(scf_obj.cell, orb_occ_k, scf_obj.kpts, orth=True)
+    frag_lo_list = [[f] for f in range(coeff_lo_s.shape[1])]
+
+    from klno import KLNOCCSD
+    klno_obj = KLNOCCSD(scf_obj, coeff_lo_s, frag_lo_list, frozen=0, mf=mf_s)
+    klno_obj.lno_type = ["1h", "1h"]
+    klno_obj.lo_proj_thresh_active = 1e-4
+    klno_obj.lno_thresh = [5e-4, 5e-5]
     klno_obj.verbose = 5
     klno_obj.kernel()
     table["time_klno"] = time.time() - t0
