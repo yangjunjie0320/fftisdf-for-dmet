@@ -134,10 +134,41 @@ for f, lo_ix_f in enumerate(frag_lo_list):
     from pyscf.lib import logger
     t0 = (logger.process_clock(), logger.perf_counter())
     res = klno_ref.make_las(eris_ref, coeff_lo_f, lno_type, param)
-    res_f, msg_f = klno_ref.impurity_solve(klno_ref._scf, res[0], res[2], eris_ref, frozen=res[1])
+    coeff_f = res[0]
+    frozn_f = res[1]
+    u_occ_f = res[2]
+    nmo = coeff_f.shape[1]
+    res_f, msg_f = klno_ref.impurity_solve(klno_ref._scf, coeff_f, u_occ_f, eris_ref, frozen=frozn_f)
     ene_mp2_ref = res_f[0]
     ene_ccsd_ref = res_f[1]
-    t1 = logger.process_clock()
+    
+    from pyscf.pbc.lno.klnoccsd import get_maskact, K2SCCSD
+    f, m = get_maskact(frozn_f, nmo)
+    cc_ref = K2SCCSD(klno_ref._scf, klno_ref.with_df, f, mo_coeff=coeff_f, mo_occ=klno_ref.mo_occ)
+    cc_ref._s1e = klno_ref._s1e
+    cc_ref._h1e = klno_ref._h1e
+    cc_ref._vhf = klno_ref._vhf
+
+    eris_imp = cc_ref.ao2mo()
+    ovov = eris_imp.ovov[()]
+    no, nv = ovov.shape[:2]
+    oovv = ovov.transpose(0, 2, 1, 3)
+    t1, t2 = cc_ref.init_amps(eris=eris_imp)[1:]
+
+    from pyscf.lno.lnoccsd import get_fragment_energy
+    ene_mp2 = get_fragment_energy(oovv, t2, u_occ_f)
+    ene_mp2_sol = res_f[0]
+    err_ene_mp2 = abs(ene_mp2_ref - ene_mp2)
+
+    t1, t2 = cc_ref.kernel(eris=eris_imp, t1=t1, t2=t2)[1:]
+    t2 += einsum('ia,jb->ijab', t1, t1)
+    ene_ccsd_sol = get_fragment_energy(oovv, t2, u_occ_f)
+    ene_ccsd_sol = ene_ccsd_sol.real
+    err_ene_ccsd = abs(ene_ccsd_ref - ene_ccsd_sol)
+
+    print(f"{ene_mp2_ref = :12.8f}, {ene_mp2_sol = :12.8f}, {err_ene_mp2 = :6.4e}")
+    print(f"{ene_ccsd_ref = :12.8f}, {ene_ccsd_sol = :12.8f}, {err_ene_ccsd = :6.4e}")
+    assert 1 == 2
 
     res = klno_sol.make_las(eris_sol, coeff_lo_f, lno_type, param)
     res_f, msg_f = klno_sol.impurity_solve(klno_sol._scf, res[0], res[2], eris_sol, frozen=res[1])

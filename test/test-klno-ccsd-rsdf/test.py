@@ -4,6 +4,8 @@ from pyscf.pbc import gto
 from pyscf.pbc.scf import khf
 
 from pyscf.pbc.lno.tools import k2s_scf, k2s_iao
+from pyscf.data.elements import chemcore
+
 
 def get_coeff_lo(kmf):
     cell = kmf.cell
@@ -11,7 +13,6 @@ def get_coeff_lo(kmf):
     scell = smf.cell
     nkpt = nimg = len(kmf.kpts)
 
-    from pyscf.data.elements import chemcore
     frozen_per_img = chemcore(cell)
     frozen = frozen_per_img * nimg
 
@@ -65,23 +66,28 @@ kpts = cell.make_kpts(kmesh)
 nkpt = nimg = len(kpts)
 tol = 1e-8
 
-kmf_ref = khf.KRHF(cell, kpts, exxdiv=None).rs_density_fit()
-kmf_ref.chkfile = 'kmf-scf.chk'
-kmf_ref.with_df._cderi_to_save = 'kmf-rsdf.chk'
+kmf_obj = khf.KRHF(cell, kpts, exxdiv=None).rs_density_fit()
+kmf_obj.chkfile = 'kmf-scf.chk'
+kmf_obj.with_df._cderi_to_save = 'kmf-rsdf.chk'
+
 if os.path.exists('kmf-scf.chk'):
-    kmf_ref.init_guess = 'chkfile'
+    kmf_obj.init_guess = 'chkfile'
 
-if
-    kmf_ref.with_df._cderi = 'kmf-rsdf.chk'
-kmf_ref.kernel()
+if os.path.exists('kmf-rsdf.chk'):
+    kmf_obj.with_df._cderi = 'kmf-rsdf.chk'
 
-coeff_lo_s = get_coeff_lo(kmf_ref)
+kmf_obj.kernel()
+
+coeff_lo_s = get_coeff_lo(kmf_obj)
 nlo_per_img = coeff_lo_s.shape[1] // nimg
 frag_lo_list = [[f] for f in range(nlo_per_img)]
 
-from pyscf.pbc.lno.lnoccsd import KLNOCCSD
-klno_ref = KLNOCCSD(kmf_ref, coeff_lo_s, frag_lo_list, frozen=0, mf=None)
+frozen_per_img = chemcore(cell)
+frozen = frozen_per_img * nimg
+
+from pyscf.pbc.lno.klnoccsd import KLNOCCSD
+klno_ref = KLNOCCSD(kmf_obj, coeff_lo_s, frag_lo_list, frozen=0, mf=None)
 klno_ref.lno_type = ['1h', '1h']
 klno_ref.verbose = 10
-klno_ref.kwargs_imp = {'max_cycle': 200, "verbose": 5}
+klno_ref.kwargs_imp = {'max_cycle': 100, "verbose": 5}
 res = klno_ref.kernel()

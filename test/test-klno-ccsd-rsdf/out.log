@@ -1,0 +1,1327 @@
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = chkfile
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-07
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = kmf-scf.chk
+max_memory 1000 MB (current use 0 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 3
+Exchange divergence treatment (exxdiv) = None
+DF object = <pyscf.pbc.df.rsdf.RSGDF object at 0x1021c9930>
+Set gradient conv threshold to 0.000316228
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [9 9 9] (729 PWs)
+ke_cutoff = 13.903510505928674
+omega = 0.4704259063888871
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+init E= -9.50835340361711
+HOMO = 0.690533307794  LUMO = 0.955108189576
+cycle= 1 E= -9.50835340361789  delta_E= -7.8e-13  |g|= 3.54e-06  |ddm|= 3.05e-05
+HOMO = 0.690533307791  LUMO = 0.955108189578
+Extra cycle  E= -9.50835340361821  delta_E= -3.25e-13  |g|= 3.29e-06  |ddm|= 3.13e-05
+converged SCF energy = -9.50835340361821
+  HOMO = 0.690533307791481  LUMO = 0.955108189577862
+
+
+******** <class 'pyscf.lo.pipek.PipekMezey'> ********
+conv_tol = 1e-06
+conv_tol_grad = None
+max_cycle = 100
+max_stepsize = 0.05
+max_iters = 20
+kf_interval = 5
+kf_trust_region = 5
+ah_start_tol = 1000000000.0
+ah_start_cycle = 1
+ah_level_shift = 0
+ah_conv_tol = 1e-12
+ah_lindep = 1e-14
+ah_max_cycle = 40
+ah_trust_region = 3
+init_guess = atomic
+pop_method = meta_lowdin
+Set conv_tol_grad to 0.000316228
+macro= 1  f(x)= 5.6231938729836  delta_f= 5.62319  |g|= 1.06511  3 KF 16 Hx
+macro= 2  f(x)= 5.8450057646895  delta_f= 0.221812  |g|= 0.87228  2 KF 5 Hx
+macro= 3  f(x)= 5.8464542975737  delta_f= 0.00144853  |g|= 0.00401433  2 KF 6 Hx
+macro= 4  f(x)= 5.8464551614722  delta_f= 8.63898e-07  |g|= 0.000392727  3 KF 13 Hx
+macro= 5  f(x)= 5.8464553902809  delta_f= 2.28809e-07  |g|= 0.000368417  1 KF 4 Hx
+macro= 6  f(x)= 5.8464554291003  delta_f= 3.88193e-08  |g|= 1.54669e-05  1 KF 2 Hx
+macro X = 6  f(x)= 5.8464554291003  |g|= 1.54669e-05  12 intor 12 KF 46 Hx
+Jacobi sweep for 3 mo pairs: [(np.int64(11), np.int64(9)), (np.int64(8), np.int64(4)), (np.int64(7), np.int64(0))]
+
+
+******** <class 'pyscf.lo.pipek.PipekMezey'> ********
+conv_tol = 1e-06
+conv_tol_grad = None
+max_cycle = 100
+max_stepsize = 0.05
+max_iters = 20
+kf_interval = 5
+kf_trust_region = 5
+ah_start_tol = 1000000000.0
+ah_start_cycle = 1
+ah_level_shift = 0
+ah_conv_tol = 1e-12
+ah_lindep = 1e-14
+ah_max_cycle = 40
+ah_trust_region = 3
+init_guess = None
+pop_method = meta_lowdin
+Set conv_tol_grad to 0.000316228
+macro= 1  f(x)= 5.8464589803057  delta_f= 5.84646  |g|= 0.000143861  1 KF 1 Hx
+macro= 2  f(x)= 5.8464589803058  delta_f= 5.32907e-15  |g|= 3.59731e-05  1 KF 1 Hx
+macro X = 2  f(x)= 5.8464589803058  |g|= 3.59731e-05  4 intor 2 KF 2 Hx
+  HOMO = 0.690533307791481  LUMO = 0.955108189577862
+
+******** <class 'pyscf.pbc.lno.klnoccsd.KLNOCCSD'> ********
+nocc = 12, nmo = 78
+frozen orbitals 0
+max_memory 1000 MB (current use 0 MB)
+nfrag = 5  nlo = 15
+frag_lolist = [[0], [1], [2], [3], [4]]
+frag_wghtlist = None
+lno_type = ['1h', '1h']
+lno_thresh = [1e-05, 1e-06]
+lno_pct_occ = None
+lno_norb = None
+lo_proj_thresh = 1e-10
+lo_proj_thresh_active = 0.1
+verbose_imp = 2
+_ovL = None
+_ovL_to_save = None
+force_outcore_ao2mo = False
+_match_oldcode = False
+_max_las_size_ccsd = 1000
+_max_las_size_ccsd_t = 1000
+Regularized frag_wghtlist = [1. 1. 1. 1. 1.]
+    CPU time for LO and fragment        0.00 sec, wall time      0.00 sec
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [9 9 9] (729 PWs)
+ke_cutoff = 13.903510505928674
+omega = 0.4704259063888871
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+
+WARN: Input vhf is not found. Building vhf from SCF MO.
+
+ao2mo est mem= 4.06 MB  avail mem= 1000.00 MB
+aux blksize for incore ao2mo: 168/168
+    CPU time for ao2mo for qidx 1/2      0.07 sec, wall time      0.01 sec
+    CPU time for ao2mo for qidx 2/2      0.08 sec, wall time      0.01 sec
+    CPU time for Integral xform         0.17 sec, wall time      0.02 sec
+LO occ proj: 1 active | 0 standby | 11 orthogonal
+LO vir proj: 0 active | 0 standby | 66 orthogonal
+make_lo_rdm1_occ_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_occ      0.04 sec, wall time      0.00 sec
+make_lo_rdm1_vir_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_vir      0.04 sec, wall time      0.00 sec
+    CPU time for Fragment 1 make las      0.08 sec, wall time      0.01 sec
+Fragment 1/5  LAS: 12/12 Occ | 59/66 Vir | 71/78 MOs
+    impsol:  1 LOs  71/78 MOs  12 occ  59 vir
+    CPU time for CCSD integral transformation      1.02 sec, wall time      0.14 sec
+    CPU time for imp sol - eri          1.02 sec, wall time      0.14 sec
+Init t2, MP2 energy = -29.4354895610165  E_corr(MP2) -0.910429350161887
+    CPU time for init mp2      0.03 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 amp      0.03 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 ene      0.03 sec, wall time      0.00 sec
+<class 'pyscf.pbc.lno.klnoccsd.MODIFIED_K2SCCSD'> does not have attributes  k2sdf
+
+******** <class 'pyscf.pbc.lno.klnoccsd.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 12, nmo = 71
+frozen orbitals [71 72 73 74 75 76 77]
+max_cycle = 100
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 1000 MB (current use 0 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.910429350033555
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.85223717314885  dE = 0.0581921769  norm(t1,t2) = 0.220703
+    CPU time for MODIFIED_K2SCCSD iter      1.03 sec, wall time      0.18 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.990550097304643  dE = -0.138312924  norm(t1,t2) = 0.167421
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.13 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.965890059841505  dE = 0.0246600375  norm(t1,t2) = 0.144773
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.13 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.989065975621076  dE = -0.0231759158  norm(t1,t2) = 0.0594596
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.12 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -1.02416750021633  dE = -0.0351015246  norm(t1,t2) = 0.0459343
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.12 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -1.04298437710773  dE = -0.0188168769  norm(t1,t2) = 0.0348412
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.12 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -1.05374474589806  dE = -0.0107603688  norm(t1,t2) = 0.0290375
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -1.06126341628631  dE = -0.00751867039  norm(t1,t2) = 0.0261435
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -1.06774141659784  dE = -0.00647800031  norm(t1,t2) = 0.0258358
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -1.05736062267402  dE = 0.0103807939  norm(t1,t2) = 0.0261067
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 11  E_corr(MODIFIED_K2SCCSD) = -1.05155734030884  dE = 0.00580328237  norm(t1,t2) = 0.0260763
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.12 sec
+cycle = 12  E_corr(MODIFIED_K2SCCSD) = -1.07369232115162  dE = -0.0221349808  norm(t1,t2) = 0.0263413
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.12 sec
+cycle = 13  E_corr(MODIFIED_K2SCCSD) = -1.04847173221431  dE = 0.0252205889  norm(t1,t2) = 0.0279824
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 14  E_corr(MODIFIED_K2SCCSD) = -0.918993375627395  dE = 0.129478357  norm(t1,t2) = 0.0262199
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 15  E_corr(MODIFIED_K2SCCSD) = -0.993579985232115  dE = -0.0745866096  norm(t1,t2) = 0.224275
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 16  E_corr(MODIFIED_K2SCCSD) = -0.977609265899692  dE = 0.0159707193  norm(t1,t2) = 0.0647271
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 17  E_corr(MODIFIED_K2SCCSD) = -1.01309631564759  dE = -0.0354870497  norm(t1,t2) = 0.0859523
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 18  E_corr(MODIFIED_K2SCCSD) = -1.02018649212113  dE = -0.00709017647  norm(t1,t2) = 0.0433337
+    CPU time for MODIFIED_K2SCCSD iter      0.28 sec, wall time      0.14 sec
+cycle = 19  E_corr(MODIFIED_K2SCCSD) = -1.04020197033156  dE = -0.0200154782  norm(t1,t2) = 0.0391812
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 20  E_corr(MODIFIED_K2SCCSD) = -1.03028988687431  dE = 0.00991208346  norm(t1,t2) = 0.0336397
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 21  E_corr(MODIFIED_K2SCCSD) = -1.04214889653955  dE = -0.0118590097  norm(t1,t2) = 0.0351967
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 22  E_corr(MODIFIED_K2SCCSD) = -1.04991811523728  dE = -0.0077692187  norm(t1,t2) = 0.0349163
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 23  E_corr(MODIFIED_K2SCCSD) = -1.0906326162876  dE = -0.0407145011  norm(t1,t2) = 0.0357861
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 24  E_corr(MODIFIED_K2SCCSD) = -1.05486257595502  dE = 0.0357700403  norm(t1,t2) = 0.0621974
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 25  E_corr(MODIFIED_K2SCCSD) = -1.06133602152657  dE = -0.00647344557  norm(t1,t2) = 0.0361215
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 26  E_corr(MODIFIED_K2SCCSD) = -0.99850665677953  dE = 0.0628293647  norm(t1,t2) = 0.0393391
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 27  E_corr(MODIFIED_K2SCCSD) = -1.05893121037083  dE = -0.0604245536  norm(t1,t2) = 0.0539344
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 28  E_corr(MODIFIED_K2SCCSD) = -1.10093342323961  dE = -0.0420022129  norm(t1,t2) = 0.0387915
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 29  E_corr(MODIFIED_K2SCCSD) = -1.06465763171231  dE = 0.0362757915  norm(t1,t2) = 0.0789882
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 30  E_corr(MODIFIED_K2SCCSD) = -1.04007001782905  dE = 0.0245876139  norm(t1,t2) = 0.0411773
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 31  E_corr(MODIFIED_K2SCCSD) = -1.02263698077101  dE = 0.0174330371  norm(t1,t2) = 0.0335332
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 32  E_corr(MODIFIED_K2SCCSD) = -1.02112812918838  dE = 0.00150885158  norm(t1,t2) = 0.0369113
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 33  E_corr(MODIFIED_K2SCCSD) = -1.02622853705338  dE = -0.00510040786  norm(t1,t2) = 0.037536
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 34  E_corr(MODIFIED_K2SCCSD) = -1.06085430041265  dE = -0.0346257634  norm(t1,t2) = 0.0356748
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 35  E_corr(MODIFIED_K2SCCSD) = -1.09448148461901  dE = -0.0336271842  norm(t1,t2) = 0.039205
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 36  E_corr(MODIFIED_K2SCCSD) = -1.07859366906438  dE = 0.0158878156  norm(t1,t2) = 0.0701082
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 37  E_corr(MODIFIED_K2SCCSD) = -1.0707273342164  dE = 0.00786633485  norm(t1,t2) = 0.0525432
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 38  E_corr(MODIFIED_K2SCCSD) = -1.06962519673023  dE = 0.00110213749  norm(t1,t2) = 0.0459789
+    CPU time for MODIFIED_K2SCCSD iter      0.30 sec, wall time      0.15 sec
+cycle = 39  E_corr(MODIFIED_K2SCCSD) = -1.0509405289663  dE = 0.0186846678  norm(t1,t2) = 0.0451295
+    CPU time for MODIFIED_K2SCCSD iter      0.28 sec, wall time      0.14 sec
+cycle = 40  E_corr(MODIFIED_K2SCCSD) = -1.01714030772761  dE = 0.0338002212  norm(t1,t2) = 0.03563
+    CPU time for MODIFIED_K2SCCSD iter      0.28 sec, wall time      0.14 sec
+cycle = 41  E_corr(MODIFIED_K2SCCSD) = -1.00225191682509  dE = 0.0148883909  norm(t1,t2) = 0.0395651
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 42  E_corr(MODIFIED_K2SCCSD) = -1.02950478245466  dE = -0.0272528656  norm(t1,t2) = 0.0499324
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 43  E_corr(MODIFIED_K2SCCSD) = -1.05938658189537  dE = -0.0298817994  norm(t1,t2) = 0.0347175
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 44  E_corr(MODIFIED_K2SCCSD) = -1.03268931702214  dE = 0.0266972649  norm(t1,t2) = 0.0379249
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 45  E_corr(MODIFIED_K2SCCSD) = -0.991565318910771  dE = 0.0411239981  norm(t1,t2) = 0.0341596
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 46  E_corr(MODIFIED_K2SCCSD) = -0.950703261447225  dE = 0.0408620575  norm(t1,t2) = 0.0602186
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 47  E_corr(MODIFIED_K2SCCSD) = -1.01128510227539  dE = -0.0605818408  norm(t1,t2) = 0.124729
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 48  E_corr(MODIFIED_K2SCCSD) = -1.02414893620209  dE = -0.0128638339  norm(t1,t2) = 0.0432076
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.12 sec
+cycle = 49  E_corr(MODIFIED_K2SCCSD) = -1.03535414400199  dE = -0.0112052078  norm(t1,t2) = 0.0367289
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 50  E_corr(MODIFIED_K2SCCSD) = -1.05893203596837  dE = -0.023577892  norm(t1,t2) = 0.0344092
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 51  E_corr(MODIFIED_K2SCCSD) = -1.0433030616917  dE = 0.0156289743  norm(t1,t2) = 0.0389144
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 52  E_corr(MODIFIED_K2SCCSD) = -1.02600817146422  dE = 0.0172948902  norm(t1,t2) = 0.0344688
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 53  E_corr(MODIFIED_K2SCCSD) = -1.10781098775867  dE = -0.0818028163  norm(t1,t2) = 0.0361888
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.12 sec
+cycle = 54  E_corr(MODIFIED_K2SCCSD) = -1.0082251887702  dE = 0.099585799  norm(t1,t2) = 0.0891567
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 55  E_corr(MODIFIED_K2SCCSD) = -1.01050837824767  dE = -0.00228318948  norm(t1,t2) = 0.0450673
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 56  E_corr(MODIFIED_K2SCCSD) = -0.929187364600747  dE = 0.0813210136  norm(t1,t2) = 0.0434939
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 57  E_corr(MODIFIED_K2SCCSD) = -1.04104605863081  dE = -0.111858694  norm(t1,t2) = 0.173469
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 58  E_corr(MODIFIED_K2SCCSD) = -1.07535240624466  dE = -0.0343063476  norm(t1,t2) = 0.0343107
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 59  E_corr(MODIFIED_K2SCCSD) = -1.09341887322433  dE = -0.018066467  norm(t1,t2) = 0.0496447
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 60  E_corr(MODIFIED_K2SCCSD) = -1.09964482831981  dE = -0.0062259551  norm(t1,t2) = 0.0686394
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 61  E_corr(MODIFIED_K2SCCSD) = -1.06950121524315  dE = 0.0301436131  norm(t1,t2) = 0.07697
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 62  E_corr(MODIFIED_K2SCCSD) = -1.05696956096142  dE = 0.0125316543  norm(t1,t2) = 0.0450983
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.14 sec
+cycle = 63  E_corr(MODIFIED_K2SCCSD) = -1.02773291545364  dE = 0.0292366455  norm(t1,t2) = 0.0380284
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.14 sec
+cycle = 64  E_corr(MODIFIED_K2SCCSD) = -1.0207351905683  dE = 0.00699772489  norm(t1,t2) = 0.035664
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.14 sec
+cycle = 65  E_corr(MODIFIED_K2SCCSD) = -1.02913575434893  dE = -0.00840056378  norm(t1,t2) = 0.038036
+    CPU time for MODIFIED_K2SCCSD iter      0.28 sec, wall time      0.15 sec
+cycle = 66  E_corr(MODIFIED_K2SCCSD) = -1.04794151046729  dE = -0.0188057561  norm(t1,t2) = 0.03533
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.14 sec
+cycle = 67  E_corr(MODIFIED_K2SCCSD) = -1.06506743723537  dE = -0.0171259268  norm(t1,t2) = 0.0351783
+    CPU time for MODIFIED_K2SCCSD iter      0.28 sec, wall time      0.14 sec
+cycle = 68  E_corr(MODIFIED_K2SCCSD) = -1.06670180299984  dE = -0.00163436576  norm(t1,t2) = 0.0421123
+    CPU time for MODIFIED_K2SCCSD iter      0.29 sec, wall time      0.14 sec
+cycle = 69  E_corr(MODIFIED_K2SCCSD) = -1.09822326559805  dE = -0.0315214626  norm(t1,t2) = 0.0432009
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 70  E_corr(MODIFIED_K2SCCSD) = -1.04258507201941  dE = 0.0556381936  norm(t1,t2) = 0.0750303
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 71  E_corr(MODIFIED_K2SCCSD) = -1.0176394820944  dE = 0.0249455899  norm(t1,t2) = 0.0344277
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 72  E_corr(MODIFIED_K2SCCSD) = -1.01970210665698  dE = -0.00206262456  norm(t1,t2) = 0.0394604
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 73  E_corr(MODIFIED_K2SCCSD) = -0.9878640192741  dE = 0.0318380874  norm(t1,t2) = 0.0384922
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 74  E_corr(MODIFIED_K2SCCSD) = -1.00811205213712  dE = -0.0202480329  norm(t1,t2) = 0.0642968
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 75  E_corr(MODIFIED_K2SCCSD) = -1.02925222993136  dE = -0.0211401778  norm(t1,t2) = 0.0451675
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 76  E_corr(MODIFIED_K2SCCSD) = -1.05839001560056  dE = -0.0291377857  norm(t1,t2) = 0.035345
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 77  E_corr(MODIFIED_K2SCCSD) = -1.01606365053266  dE = 0.0423263651  norm(t1,t2) = 0.0387133
+    CPU time for MODIFIED_K2SCCSD iter      0.28 sec, wall time      0.13 sec
+cycle = 78  E_corr(MODIFIED_K2SCCSD) = -0.991508571808003  dE = 0.0245550787  norm(t1,t2) = 0.0402797
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 79  E_corr(MODIFIED_K2SCCSD) = -0.969082313217127  dE = 0.0224262586  norm(t1,t2) = 0.0601677
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 80  E_corr(MODIFIED_K2SCCSD) = -1.02422630644626  dE = -0.0551439932  norm(t1,t2) = 0.0905188
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 81  E_corr(MODIFIED_K2SCCSD) = -1.04272205929586  dE = -0.0184957528  norm(t1,t2) = 0.0367544
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 82  E_corr(MODIFIED_K2SCCSD) = -1.07287580834877  dE = -0.0301537491  norm(t1,t2) = 0.0344562
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 83  E_corr(MODIFIED_K2SCCSD) = -1.08047106609403  dE = -0.00759525775  norm(t1,t2) = 0.0476573
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 84  E_corr(MODIFIED_K2SCCSD) = -1.06607720609482  dE = 0.01439386  norm(t1,t2) = 0.0542985
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 85  E_corr(MODIFIED_K2SCCSD) = -1.05180604063017  dE = 0.0142711655  norm(t1,t2) = 0.0428396
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 86  E_corr(MODIFIED_K2SCCSD) = -1.00655781747919  dE = 0.0452482232  norm(t1,t2) = 0.0362106
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 87  E_corr(MODIFIED_K2SCCSD) = -1.03705824591679  dE = -0.0305004284  norm(t1,t2) = 0.0463263
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.12 sec
+cycle = 88  E_corr(MODIFIED_K2SCCSD) = -1.06353783834852  dE = -0.0264795924  norm(t1,t2) = 0.0343045
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 89  E_corr(MODIFIED_K2SCCSD) = -1.04985490763367  dE = 0.0136829307  norm(t1,t2) = 0.0412869
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 90  E_corr(MODIFIED_K2SCCSD) = -1.05182795721417  dE = -0.00197304958  norm(t1,t2) = 0.0356631
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 91  E_corr(MODIFIED_K2SCCSD) = -1.05142007382864  dE = 0.000407883386  norm(t1,t2) = 0.0362241
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 92  E_corr(MODIFIED_K2SCCSD) = -1.0541728936847  dE = -0.00275281986  norm(t1,t2) = 0.0361178
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 93  E_corr(MODIFIED_K2SCCSD) = -0.960149832043639  dE = 0.0940230616  norm(t1,t2) = 0.0370049
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 94  E_corr(MODIFIED_K2SCCSD) = -1.04421248270784  dE = -0.0840626507  norm(t1,t2) = 0.105828
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 95  E_corr(MODIFIED_K2SCCSD) = -1.09442885668677  dE = -0.050216374  norm(t1,t2) = 0.0346105
+    CPU time for MODIFIED_K2SCCSD iter      0.29 sec, wall time      0.14 sec
+cycle = 96  E_corr(MODIFIED_K2SCCSD) = -1.0902021188402  dE = 0.00422673785  norm(t1,t2) = 0.0699453
+    CPU time for MODIFIED_K2SCCSD iter      0.28 sec, wall time      0.14 sec
+cycle = 97  E_corr(MODIFIED_K2SCCSD) = -1.087254100219  dE = 0.00294801862  norm(t1,t2) = 0.0647298
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 98  E_corr(MODIFIED_K2SCCSD) = -1.09107123437338  dE = -0.00381713415  norm(t1,t2) = 0.0613344
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 99  E_corr(MODIFIED_K2SCCSD) = -1.0918675616668  dE = -0.000796327293  norm(t1,t2) = 0.0657701
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 100  E_corr(MODIFIED_K2SCCSD) = -1.0222447071302  dE = 0.0696228545  norm(t1,t2) = 0.0667371
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+    CPU time for MODIFIED_K2SCCSD     26.42 sec, wall time     12.94 sec
+MODIFIED_K2SCCSD not converged
+E(MODIFIED_K2SCCSD) = -29.54730491798484  E_corr = -1.022244707130205
+    CPU time for imp sol - cc  amp     26.42 sec, wall time     12.94 sec
+    CPU time for imp sol - cc  ene      0.01 sec, wall time      0.01 sec
+    CPU time for Fragment 1 imp sol      27.54 sec, wall time     13.10 sec
+Fragment 1/5  Sol: E_corr(MP2) = -0.0585291130536542  E_corr(CCSD) = -0.0678064218282383  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 1            27.62 sec, wall time     13.11 sec
+LO occ proj: 1 active | 0 standby | 11 orthogonal
+LO vir proj: 0 active | 0 standby | 66 orthogonal
+make_lo_rdm1_occ_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_occ      0.01 sec, wall time      0.00 sec
+make_lo_rdm1_vir_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_vir      0.01 sec, wall time      0.00 sec
+    CPU time for Fragment 2 make las      0.02 sec, wall time      0.01 sec
+Fragment 2/5  LAS: 12/12 Occ | 57/66 Vir | 69/78 MOs
+    impsol:  1 LOs  69/78 MOs  12 occ  57 vir
+    CPU time for CCSD integral transformation      0.88 sec, wall time      0.12 sec
+    CPU time for imp sol - eri          0.89 sec, wall time      0.12 sec
+Init t2, MP2 energy = -29.4287848835746  E_corr(MP2) -0.903724672719983
+    CPU time for init mp2      0.01 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 amp      0.02 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 ene      0.03 sec, wall time      0.00 sec
+
+******** <class 'pyscf.pbc.lno.klnoccsd.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 12, nmo = 69
+frozen orbitals [69 70 71 72 73 74 75 76 77]
+max_cycle = 100
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 1000 MB (current use 0 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.903724672651424
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.845053582012147  dE = 0.0586710906  norm(t1,t2) = 0.21796
+    CPU time for MODIFIED_K2SCCSD iter      1.02 sec, wall time      0.16 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.980242942615237  dE = -0.135189361  norm(t1,t2) = 0.164048
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.13 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.955963434703732  dE = 0.0242795079  norm(t1,t2) = 0.142037
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.12 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.977880675152117  dE = -0.0219172404  norm(t1,t2) = 0.0575013
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.12 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -1.01131173073376  dE = -0.0334310556  norm(t1,t2) = 0.044345
+    CPU time for MODIFIED_K2SCCSD iter      0.12 sec, wall time      0.12 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -1.02882950075309  dE = -0.01751777  norm(t1,t2) = 0.033047
+    CPU time for MODIFIED_K2SCCSD iter      0.12 sec, wall time      0.12 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -1.03825483606629  dE = -0.00942533531  norm(t1,t2) = 0.0272297
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -1.04575582329185  dE = -0.00750098723  norm(t1,t2) = 0.0237988
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.12 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -1.05459451154452  dE = -0.00883868825  norm(t1,t2) = 0.0230069
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -1.05286326025624  dE = 0.00173125129  norm(t1,t2) = 0.0232327
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 11  E_corr(MODIFIED_K2SCCSD) = -1.04333658260499  dE = 0.00952667765  norm(t1,t2) = 0.02311
+    CPU time for MODIFIED_K2SCCSD iter      0.22 sec, wall time      0.11 sec
+cycle = 12  E_corr(MODIFIED_K2SCCSD) = -1.05201487630137  dE = -0.0086782937  norm(t1,t2) = 0.0238596
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 13  E_corr(MODIFIED_K2SCCSD) = -1.07865275877206  dE = -0.0266378825  norm(t1,t2) = 0.0240093
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 14  E_corr(MODIFIED_K2SCCSD) = -1.06100569300505  dE = 0.0176470658  norm(t1,t2) = 0.0365991
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 15  E_corr(MODIFIED_K2SCCSD) = -1.04964900350002  dE = 0.0113566895  norm(t1,t2) = 0.0276298
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 16  E_corr(MODIFIED_K2SCCSD) = -1.05245183938967  dE = -0.00280283589  norm(t1,t2) = 0.0254308
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 17  E_corr(MODIFIED_K2SCCSD) = -1.02410617837964  dE = 0.028345661  norm(t1,t2) = 0.0250415
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 18  E_corr(MODIFIED_K2SCCSD) = -1.02037256648549  dE = 0.00373361189  norm(t1,t2) = 0.0299618
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 19  E_corr(MODIFIED_K2SCCSD) = -1.06814913905239  dE = -0.0477765726  norm(t1,t2) = 0.0318259
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 20  E_corr(MODIFIED_K2SCCSD) = -1.13136058106887  dE = -0.063211442  norm(t1,t2) = 0.0332868
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 21  E_corr(MODIFIED_K2SCCSD) = -1.0938215167455  dE = 0.0375390643  norm(t1,t2) = 0.132977
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 22  E_corr(MODIFIED_K2SCCSD) = -1.06402371978541  dE = 0.029797797  norm(t1,t2) = 0.0602723
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 23  E_corr(MODIFIED_K2SCCSD) = -1.07664705838579  dE = -0.0126233386  norm(t1,t2) = 0.035583
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 24  E_corr(MODIFIED_K2SCCSD) = -1.06108008406701  dE = 0.0155669743  norm(t1,t2) = 0.0442328
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 25  E_corr(MODIFIED_K2SCCSD) = -1.01949116094504  dE = 0.0415889231  norm(t1,t2) = 0.0358739
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 26  E_corr(MODIFIED_K2SCCSD) = -0.993167901858275  dE = 0.0263232591  norm(t1,t2) = 0.0326793
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 27  E_corr(MODIFIED_K2SCCSD) = -1.00027781871835  dE = -0.00710991686  norm(t1,t2) = 0.0486111
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 28  E_corr(MODIFIED_K2SCCSD) = -1.06348191421342  dE = -0.0632040955  norm(t1,t2) = 0.0428666
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 29  E_corr(MODIFIED_K2SCCSD) = -1.03728714889683  dE = 0.0261947653  norm(t1,t2) = 0.0437497
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 30  E_corr(MODIFIED_K2SCCSD) = -1.05055219144869  dE = -0.0132650426  norm(t1,t2) = 0.0340765
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 31  E_corr(MODIFIED_K2SCCSD) = -1.05627557312528  dE = -0.00572338168  norm(t1,t2) = 0.0374627
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.14 sec
+cycle = 32  E_corr(MODIFIED_K2SCCSD) = -1.071608222584  dE = -0.0153326495  norm(t1,t2) = 0.0391278
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 33  E_corr(MODIFIED_K2SCCSD) = -1.06745728386993  dE = 0.00415093871  norm(t1,t2) = 0.057722
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 34  E_corr(MODIFIED_K2SCCSD) = -1.00740471237894  dE = 0.0600525715  norm(t1,t2) = 0.0478806
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 35  E_corr(MODIFIED_K2SCCSD) = -1.00489946513666  dE = 0.00250524724  norm(t1,t2) = 0.0373239
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 36  E_corr(MODIFIED_K2SCCSD) = -1.049277956979  dE = -0.0443784918  norm(t1,t2) = 0.0390621
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 37  E_corr(MODIFIED_K2SCCSD) = -1.06433798832868  dE = -0.0150600313  norm(t1,t2) = 0.0329801
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 38  E_corr(MODIFIED_K2SCCSD) = -1.0782478566982  dE = -0.0139098684  norm(t1,t2) = 0.0355645
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 39  E_corr(MODIFIED_K2SCCSD) = -0.976253547061136  dE = 0.10199431  norm(t1,t2) = 0.0498323
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 40  E_corr(MODIFIED_K2SCCSD) = -1.14581913126919  dE = -0.169565584  norm(t1,t2) = 0.0682421
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 41  E_corr(MODIFIED_K2SCCSD) = -0.965191987503559  dE = 0.180627144  norm(t1,t2) = 0.169393
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 42  E_corr(MODIFIED_K2SCCSD) = -0.964384474469799  dE = 0.000807513034  norm(t1,t2) = 0.0820681
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 43  E_corr(MODIFIED_K2SCCSD) = -0.950186931045881  dE = 0.0141975434  norm(t1,t2) = 0.0829357
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 44  E_corr(MODIFIED_K2SCCSD) = -0.921141309350877  dE = 0.0290456217  norm(t1,t2) = 0.108496
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 45  E_corr(MODIFIED_K2SCCSD) = -1.00268148422461  dE = -0.0815401749  norm(t1,t2) = 0.172353
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 46  E_corr(MODIFIED_K2SCCSD) = -1.01139552965537  dE = -0.00871404543  norm(t1,t2) = 0.0401146
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 47  E_corr(MODIFIED_K2SCCSD) = -1.03071037570149  dE = -0.019314846  norm(t1,t2) = 0.0351235
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.12 sec
+cycle = 48  E_corr(MODIFIED_K2SCCSD) = -1.04217354691207  dE = -0.0114631712  norm(t1,t2) = 0.0308976
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 49  E_corr(MODIFIED_K2SCCSD) = -1.040051878557  dE = 0.00212166836  norm(t1,t2) = 0.0328204
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 50  E_corr(MODIFIED_K2SCCSD) = -1.04235072422739  dE = -0.00229884567  norm(t1,t2) = 0.0321301
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 51  E_corr(MODIFIED_K2SCCSD) = -0.987247639826561  dE = 0.0551030844  norm(t1,t2) = 0.0325922
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 52  E_corr(MODIFIED_K2SCCSD) = -0.932373204462918  dE = 0.0548744354  norm(t1,t2) = 0.0514205
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 53  E_corr(MODIFIED_K2SCCSD) = -1.04959866206444  dE = -0.117225458  norm(t1,t2) = 0.140113
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 54  E_corr(MODIFIED_K2SCCSD) = -1.0688828064666  dE = -0.0192841444  norm(t1,t2) = 0.0351579
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 55  E_corr(MODIFIED_K2SCCSD) = -1.05208108062913  dE = 0.0168017258  norm(t1,t2) = 0.0480727
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 56  E_corr(MODIFIED_K2SCCSD) = -1.03429175019114  dE = 0.0177893304  norm(t1,t2) = 0.0364275
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 57  E_corr(MODIFIED_K2SCCSD) = -1.02993396194934  dE = 0.00435778824  norm(t1,t2) = 0.031026
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 58  E_corr(MODIFIED_K2SCCSD) = -0.996197459859283  dE = 0.0337365021  norm(t1,t2) = 0.030825
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.13 sec
+cycle = 59  E_corr(MODIFIED_K2SCCSD) = -1.00572804300966  dE = -0.00953058315  norm(t1,t2) = 0.0436248
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 60  E_corr(MODIFIED_K2SCCSD) = -1.02309558486881  dE = -0.0173675419  norm(t1,t2) = 0.0373768
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 61  E_corr(MODIFIED_K2SCCSD) = -1.05112694823482  dE = -0.0280313634  norm(t1,t2) = 0.0312889
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 62  E_corr(MODIFIED_K2SCCSD) = -1.0803339848432  dE = -0.0292070366  norm(t1,t2) = 0.0357182
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 63  E_corr(MODIFIED_K2SCCSD) = -0.971146962355474  dE = 0.109187022  norm(t1,t2) = 0.058886
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 64  E_corr(MODIFIED_K2SCCSD) = -0.975317442285213  dE = -0.00417047993  norm(t1,t2) = 0.0695239
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 65  E_corr(MODIFIED_K2SCCSD) = -0.955244684836377  dE = 0.0200727574  norm(t1,t2) = 0.0642963
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.12 sec
+cycle = 66  E_corr(MODIFIED_K2SCCSD) = -0.958002594574896  dE = -0.00275790974  norm(t1,t2) = 0.093126
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 67  E_corr(MODIFIED_K2SCCSD) = -1.00885948122134  dE = -0.0508568866  norm(t1,t2) = 0.0886485
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 68  E_corr(MODIFIED_K2SCCSD) = -1.0620081791921  dE = -0.053148698  norm(t1,t2) = 0.035894
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 69  E_corr(MODIFIED_K2SCCSD) = -1.08128108945725  dE = -0.0192729103  norm(t1,t2) = 0.0422805
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 70  E_corr(MODIFIED_K2SCCSD) = -1.06953933704006  dE = 0.0117417524  norm(t1,t2) = 0.0601967
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 71  E_corr(MODIFIED_K2SCCSD) = -1.06353854918988  dE = 0.00600078785  norm(t1,t2) = 0.0481202
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 72  E_corr(MODIFIED_K2SCCSD) = -1.05182499520705  dE = 0.011713554  norm(t1,t2) = 0.0432247
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 73  E_corr(MODIFIED_K2SCCSD) = -0.932402727515155  dE = 0.119422268  norm(t1,t2) = 0.0361565
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 74  E_corr(MODIFIED_K2SCCSD) = -1.14188948188949  dE = -0.209486754  norm(t1,t2) = 0.137025
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 75  E_corr(MODIFIED_K2SCCSD) = -1.02750590976473  dE = 0.114383572  norm(t1,t2) = 0.170219
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 76  E_corr(MODIFIED_K2SCCSD) = -0.978166180894773  dE = 0.0493397289  norm(t1,t2) = 0.0309474
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.12 sec
+cycle = 77  E_corr(MODIFIED_K2SCCSD) = -0.985276685854203  dE = -0.00711050496  norm(t1,t2) = 0.060798
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 78  E_corr(MODIFIED_K2SCCSD) = -0.96732134304712  dE = 0.0179553428  norm(t1,t2) = 0.0531574
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 79  E_corr(MODIFIED_K2SCCSD) = -0.96387825741222  dE = 0.00344308563  norm(t1,t2) = 0.0745849
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 80  E_corr(MODIFIED_K2SCCSD) = -0.944130041521588  dE = 0.0197482159  norm(t1,t2) = 0.0795118
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 81  E_corr(MODIFIED_K2SCCSD) = -0.997464310939463  dE = -0.0533342694  norm(t1,t2) = 0.112938
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 82  E_corr(MODIFIED_K2SCCSD) = -1.02248344009592  dE = -0.0250191292  norm(t1,t2) = 0.0426748
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 83  E_corr(MODIFIED_K2SCCSD) = -1.04486942074915  dE = -0.0223859807  norm(t1,t2) = 0.0315636
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 84  E_corr(MODIFIED_K2SCCSD) = -1.05761397748967  dE = -0.0127445567  norm(t1,t2) = 0.0334421
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 85  E_corr(MODIFIED_K2SCCSD) = -1.02376511657402  dE = 0.0338488609  norm(t1,t2) = 0.0395074
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 86  E_corr(MODIFIED_K2SCCSD) = -1.01066244026836  dE = 0.0131026763  norm(t1,t2) = 0.0313618
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 87  E_corr(MODIFIED_K2SCCSD) = -0.957865828045816  dE = 0.0527966122  norm(t1,t2) = 0.035063
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 88  E_corr(MODIFIED_K2SCCSD) = -1.00571385874394  dE = -0.0478480307  norm(t1,t2) = 0.0887211
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.13 sec
+cycle = 89  E_corr(MODIFIED_K2SCCSD) = -1.01093598452192  dE = -0.00522212578  norm(t1,t2) = 0.03746
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 90  E_corr(MODIFIED_K2SCCSD) = -1.00208173897614  dE = 0.00885424555  norm(t1,t2) = 0.0349512
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 91  E_corr(MODIFIED_K2SCCSD) = -1.03763683286016  dE = -0.0355550939  norm(t1,t2) = 0.0395663
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 92  E_corr(MODIFIED_K2SCCSD) = -1.0388021633476  dE = -0.00116533049  norm(t1,t2) = 0.0316172
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 93  E_corr(MODIFIED_K2SCCSD) = -1.0685085735522  dE = -0.0297064102  norm(t1,t2) = 0.0318312
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 94  E_corr(MODIFIED_K2SCCSD) = -1.13853520569887  dE = -0.0700266321  norm(t1,t2) = 0.047579
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 95  E_corr(MODIFIED_K2SCCSD) = -1.04520384370886  dE = 0.093331362  norm(t1,t2) = 0.16267
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 96  E_corr(MODIFIED_K2SCCSD) = -1.03932361056012  dE = 0.00588023315  norm(t1,t2) = 0.0335558
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 97  E_corr(MODIFIED_K2SCCSD) = -1.02283032692052  dE = 0.0164932836  norm(t1,t2) = 0.0319263
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 98  E_corr(MODIFIED_K2SCCSD) = -0.995869720481077  dE = 0.0269606064  norm(t1,t2) = 0.031487
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 99  E_corr(MODIFIED_K2SCCSD) = -0.93348964129332  dE = 0.0623800792  norm(t1,t2) = 0.0438041
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 100  E_corr(MODIFIED_K2SCCSD) = -0.942553641550625  dE = -0.00906400026  norm(t1,t2) = 0.134433
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+    CPU time for MODIFIED_K2SCCSD     24.34 sec, wall time     11.89 sec
+MODIFIED_K2SCCSD not converged
+E(MODIFIED_K2SCCSD) = -29.46761385240526  E_corr = -0.9425536415506252
+    CPU time for imp sol - cc  amp     24.35 sec, wall time     11.89 sec
+    CPU time for imp sol - cc  ene      0.01 sec, wall time      0.00 sec
+    CPU time for Fragment 2 imp sol      25.41 sec, wall time     12.05 sec
+Fragment 2/5  Sol: E_corr(MP2) = -0.0904186253582905  E_corr(CCSD) = -0.0950090119645588  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 2            25.43 sec, wall time     12.05 sec
+LO occ proj: 1 active | 0 standby | 11 orthogonal
+LO vir proj: 0 active | 0 standby | 66 orthogonal
+make_lo_rdm1_occ_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_occ      0.01 sec, wall time      0.00 sec
+make_lo_rdm1_vir_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_vir      0.02 sec, wall time      0.00 sec
+    CPU time for Fragment 3 make las      0.03 sec, wall time      0.01 sec
+Fragment 3/5  LAS: 12/12 Occ | 58/66 Vir | 70/78 MOs
+    impsol:  1 LOs  70/78 MOs  12 occ  58 vir
+    CPU time for CCSD integral transformation      0.81 sec, wall time      0.11 sec
+    CPU time for imp sol - eri          0.81 sec, wall time      0.11 sec
+Init t2, MP2 energy = -29.4355654212007  E_corr(MP2) -0.910505210346041
+    CPU time for init mp2      0.01 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 amp      0.01 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 ene      0.04 sec, wall time      0.00 sec
+
+******** <class 'pyscf.pbc.lno.klnoccsd.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 12, nmo = 70
+frozen orbitals [70 71 72 73 74 75 76 77]
+max_cycle = 100
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 1000 MB (current use 0 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.910505210293367
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.849901137189076  dE = 0.0606040731  norm(t1,t2) = 0.217032
+    CPU time for MODIFIED_K2SCCSD iter      1.14 sec, wall time      0.18 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.984670160258529  dE = -0.134769023  norm(t1,t2) = 0.163692
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.12 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.959915920833546  dE = 0.0247542394  norm(t1,t2) = 0.141465
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.13 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.980786144676603  dE = -0.0208702238  norm(t1,t2) = 0.0563631
+    CPU time for MODIFIED_K2SCCSD iter      0.12 sec, wall time      0.12 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -1.01350795375396  dE = -0.0327218091  norm(t1,t2) = 0.043211
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.14 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -1.03055793743818  dE = -0.0170499837  norm(t1,t2) = 0.0318666
+    CPU time for MODIFIED_K2SCCSD iter      0.13 sec, wall time      0.12 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -1.03933477421978  dE = -0.00877683678  norm(t1,t2) = 0.0258045
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -1.04640677381128  dE = -0.00707199959  norm(t1,t2) = 0.0219706
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -1.05615236853412  dE = -0.00974559472  norm(t1,t2) = 0.0208177
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -1.06058297256983  dE = -0.00443060404  norm(t1,t2) = 0.0207969
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 11  E_corr(MODIFIED_K2SCCSD) = -1.04619807816879  dE = 0.0143848944  norm(t1,t2) = 0.0210002
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 12  E_corr(MODIFIED_K2SCCSD) = -1.03015767647065  dE = 0.0160404017  norm(t1,t2) = 0.0212622
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 13  E_corr(MODIFIED_K2SCCSD) = -1.05516773798684  dE = -0.0250100615  norm(t1,t2) = 0.0247869
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.12 sec
+cycle = 14  E_corr(MODIFIED_K2SCCSD) = -1.08525466388919  dE = -0.0300869259  norm(t1,t2) = 0.0240102
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 15  E_corr(MODIFIED_K2SCCSD) = -1.04848322160068  dE = 0.0367714423  norm(t1,t2) = 0.0391138
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 16  E_corr(MODIFIED_K2SCCSD) = -1.00856071362441  dE = 0.039922508  norm(t1,t2) = 0.0237024
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.13 sec
+cycle = 17  E_corr(MODIFIED_K2SCCSD) = -0.980890887747942  dE = 0.0276698259  norm(t1,t2) = 0.0378492
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 18  E_corr(MODIFIED_K2SCCSD) = -0.985287388004306  dE = -0.00439650026  norm(t1,t2) = 0.0656281
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 19  E_corr(MODIFIED_K2SCCSD) = -1.02537886894702  dE = -0.0400914809  norm(t1,t2) = 0.0600084
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 20  E_corr(MODIFIED_K2SCCSD) = -1.0158366423436  dE = 0.0095422266  norm(t1,t2) = 0.028126
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 21  E_corr(MODIFIED_K2SCCSD) = -1.05472324306851  dE = -0.0388866007  norm(t1,t2) = 0.0328009
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 22  E_corr(MODIFIED_K2SCCSD) = -1.08938150849729  dE = -0.0346582654  norm(t1,t2) = 0.0267218
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 23  E_corr(MODIFIED_K2SCCSD) = -0.974166011951808  dE = 0.115215497  norm(t1,t2) = 0.0490998
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 24  E_corr(MODIFIED_K2SCCSD) = -0.91706042848765  dE = 0.0571055835  norm(t1,t2) = 0.0741486
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 25  E_corr(MODIFIED_K2SCCSD) = -0.974357282311622  dE = -0.0572968538  norm(t1,t2) = 0.19029
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 26  E_corr(MODIFIED_K2SCCSD) = -0.963486128997343  dE = 0.0108711533  norm(t1,t2) = 0.0727559
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 27  E_corr(MODIFIED_K2SCCSD) = -0.988024344494272  dE = -0.0245382155  norm(t1,t2) = 0.0892653
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 28  E_corr(MODIFIED_K2SCCSD) = -1.02203172337136  dE = -0.0340073789  norm(t1,t2) = 0.0544841
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 29  E_corr(MODIFIED_K2SCCSD) = -1.03642097745714  dE = -0.0143892541  norm(t1,t2) = 0.0299116
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 30  E_corr(MODIFIED_K2SCCSD) = -1.04544400321679  dE = -0.00902302576  norm(t1,t2) = 0.0273931
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 31  E_corr(MODIFIED_K2SCCSD) = -1.07220563405482  dE = -0.0267616308  norm(t1,t2) = 0.0283313
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 32  E_corr(MODIFIED_K2SCCSD) = -1.05413964858371  dE = 0.0180659855  norm(t1,t2) = 0.0415649
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 33  E_corr(MODIFIED_K2SCCSD) = -1.05693756749173  dE = -0.00279791891  norm(t1,t2) = 0.0305793
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.12 sec
+cycle = 34  E_corr(MODIFIED_K2SCCSD) = -1.04274340031422  dE = 0.0141941672  norm(t1,t2) = 0.0317413
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 35  E_corr(MODIFIED_K2SCCSD) = -0.990710792766986  dE = 0.0520326075  norm(t1,t2) = 0.0275936
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 36  E_corr(MODIFIED_K2SCCSD) = -1.06930764890958  dE = -0.0785968561  norm(t1,t2) = 0.051305
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 37  E_corr(MODIFIED_K2SCCSD) = -1.08037955942426  dE = -0.0110719105  norm(t1,t2) = 0.0389581
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 38  E_corr(MODIFIED_K2SCCSD) = -1.04437218851789  dE = 0.0360073709  norm(t1,t2) = 0.0480504
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 39  E_corr(MODIFIED_K2SCCSD) = -1.03928668099491  dE = 0.00508550752  norm(t1,t2) = 0.0283955
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 40  E_corr(MODIFIED_K2SCCSD) = -1.03545387706979  dE = 0.00383280393  norm(t1,t2) = 0.0279164
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 41  E_corr(MODIFIED_K2SCCSD) = -1.03660240975875  dE = -0.00114853269  norm(t1,t2) = 0.0279483
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 42  E_corr(MODIFIED_K2SCCSD) = -1.01317048691008  dE = 0.0234319228  norm(t1,t2) = 0.0279798
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 43  E_corr(MODIFIED_K2SCCSD) = -1.04957153769382  dE = -0.0364010508  norm(t1,t2) = 0.0336589
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 44  E_corr(MODIFIED_K2SCCSD) = -1.06352473492873  dE = -0.0139531972  norm(t1,t2) = 0.0308523
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 45  E_corr(MODIFIED_K2SCCSD) = -1.06998791592247  dE = -0.00646318099  norm(t1,t2) = 0.0358022
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.12 sec
+cycle = 46  E_corr(MODIFIED_K2SCCSD) = -1.06818988313893  dE = 0.00179803278  norm(t1,t2) = 0.0402942
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 47  E_corr(MODIFIED_K2SCCSD) = -1.06667202791312  dE = 0.00151785523  norm(t1,t2) = 0.0387929
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 48  E_corr(MODIFIED_K2SCCSD) = -1.04623437567594  dE = 0.0204376522  norm(t1,t2) = 0.0394885
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 49  E_corr(MODIFIED_K2SCCSD) = -0.999077410682992  dE = 0.047156965  norm(t1,t2) = 0.0301361
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 50  E_corr(MODIFIED_K2SCCSD) = -1.02649809295525  dE = -0.0274206823  norm(t1,t2) = 0.0424358
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 51  E_corr(MODIFIED_K2SCCSD) = -1.07753506751625  dE = -0.0510369746  norm(t1,t2) = 0.0293458
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 52  E_corr(MODIFIED_K2SCCSD) = -1.1410650031996  dE = -0.0635299357  norm(t1,t2) = 0.0467948
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 53  E_corr(MODIFIED_K2SCCSD) = -1.06356950474216  dE = 0.0774954985  norm(t1,t2) = 0.146504
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 54  E_corr(MODIFIED_K2SCCSD) = -1.04389184159698  dE = 0.0196776631  norm(t1,t2) = 0.0361309
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 55  E_corr(MODIFIED_K2SCCSD) = -1.02744505254622  dE = 0.0164467891  norm(t1,t2) = 0.028645
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 56  E_corr(MODIFIED_K2SCCSD) = -1.0035463182457  dE = 0.0238987343  norm(t1,t2) = 0.0286256
+    CPU time for MODIFIED_K2SCCSD iter      0.23 sec, wall time      0.11 sec
+cycle = 57  E_corr(MODIFIED_K2SCCSD) = -0.995025827410981  dE = 0.00852049083  norm(t1,t2) = 0.0390975
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 58  E_corr(MODIFIED_K2SCCSD) = -1.01389861525323  dE = -0.0188727878  norm(t1,t2) = 0.0457846
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 59  E_corr(MODIFIED_K2SCCSD) = -1.06997992078101  dE = -0.0560813055  norm(t1,t2) = 0.0330415
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 60  E_corr(MODIFIED_K2SCCSD) = -1.05331228797729  dE = 0.0166676328  norm(t1,t2) = 0.0400276
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 61  E_corr(MODIFIED_K2SCCSD) = -1.04377813536996  dE = 0.00953415261  norm(t1,t2) = 0.0309667
+    CPU time for MODIFIED_K2SCCSD iter      0.28 sec, wall time      0.15 sec
+cycle = 62  E_corr(MODIFIED_K2SCCSD) = -1.04138829856575  dE = 0.0023898368  norm(t1,t2) = 0.0284796
+    CPU time for MODIFIED_K2SCCSD iter      0.27 sec, wall time      0.14 sec
+cycle = 63  E_corr(MODIFIED_K2SCCSD) = -1.01694603410148  dE = 0.0244422645  norm(t1,t2) = 0.0284515
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 64  E_corr(MODIFIED_K2SCCSD) = -0.963364180634093  dE = 0.0535818535  norm(t1,t2) = 0.0318653
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 65  E_corr(MODIFIED_K2SCCSD) = -0.976601941406583  dE = -0.0132377608  norm(t1,t2) = 0.0838958
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 66  E_corr(MODIFIED_K2SCCSD) = -1.01499028560422  dE = -0.0383883442  norm(t1,t2) = 0.0653745
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 67  E_corr(MODIFIED_K2SCCSD) = -1.02680507210755  dE = -0.0118147865  norm(t1,t2) = 0.0327763
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 68  E_corr(MODIFIED_K2SCCSD) = -1.04239240341218  dE = -0.0155873313  norm(t1,t2) = 0.0290406
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 69  E_corr(MODIFIED_K2SCCSD) = -1.0574157810371  dE = -0.0150233776  norm(t1,t2) = 0.0286843
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 70  E_corr(MODIFIED_K2SCCSD) = -1.04031317720231  dE = 0.0171026038  norm(t1,t2) = 0.0332124
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 71  E_corr(MODIFIED_K2SCCSD) = -1.03481017748027  dE = 0.00550299972  norm(t1,t2) = 0.0284107
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 72  E_corr(MODIFIED_K2SCCSD) = -1.03072428513634  dE = 0.00408589234  norm(t1,t2) = 0.0281869
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 73  E_corr(MODIFIED_K2SCCSD) = -0.996242824131591  dE = 0.034481461  norm(t1,t2) = 0.0284632
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.12 sec
+cycle = 74  E_corr(MODIFIED_K2SCCSD) = -1.03119339742601  dE = -0.0349505733  norm(t1,t2) = 0.0447946
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 75  E_corr(MODIFIED_K2SCCSD) = -1.06369582196153  dE = -0.0325024245  norm(t1,t2) = 0.0283765
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 76  E_corr(MODIFIED_K2SCCSD) = -1.05597792694692  dE = 0.00771789501  norm(t1,t2) = 0.0365173
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 77  E_corr(MODIFIED_K2SCCSD) = -1.05368071734013  dE = 0.00229720961  norm(t1,t2) = 0.0325488
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 78  E_corr(MODIFIED_K2SCCSD) = -1.10065214006041  dE = -0.0469714227  norm(t1,t2) = 0.0316322
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 79  E_corr(MODIFIED_K2SCCSD) = -1.05649308887261  dE = 0.0441590512  norm(t1,t2) = 0.0732015
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 80  E_corr(MODIFIED_K2SCCSD) = -1.01898215954132  dE = 0.0375109293  norm(t1,t2) = 0.0327546
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 81  E_corr(MODIFIED_K2SCCSD) = -0.998481338333293  dE = 0.0205008212  norm(t1,t2) = 0.0311177
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 82  E_corr(MODIFIED_K2SCCSD) = -1.02465658681833  dE = -0.0261752485  norm(t1,t2) = 0.042894
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 83  E_corr(MODIFIED_K2SCCSD) = -1.04270443285417  dE = -0.018047846  norm(t1,t2) = 0.029441
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 84  E_corr(MODIFIED_K2SCCSD) = -1.06004061370482  dE = -0.0173361809  norm(t1,t2) = 0.0286696
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.14 sec
+cycle = 85  E_corr(MODIFIED_K2SCCSD) = -1.05465669127093  dE = 0.00538392243  norm(t1,t2) = 0.0344606
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 86  E_corr(MODIFIED_K2SCCSD) = -1.05846286874039  dE = -0.00380617747  norm(t1,t2) = 0.0319863
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 87  E_corr(MODIFIED_K2SCCSD) = -1.0822155307948  dE = -0.0237526621  norm(t1,t2) = 0.0336783
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 88  E_corr(MODIFIED_K2SCCSD) = -1.03572679118225  dE = 0.0464887396  norm(t1,t2) = 0.0512215
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 89  E_corr(MODIFIED_K2SCCSD) = -0.989430210175297  dE = 0.046296581  norm(t1,t2) = 0.028148
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 90  E_corr(MODIFIED_K2SCCSD) = -0.942433944649473  dE = 0.0469962655  norm(t1,t2) = 0.0509509
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 91  E_corr(MODIFIED_K2SCCSD) = -0.969338225992674  dE = -0.0269042813  norm(t1,t2) = 0.120795
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 92  E_corr(MODIFIED_K2SCCSD) = -1.004810213228  dE = -0.0354719872  norm(t1,t2) = 0.0750567
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 93  E_corr(MODIFIED_K2SCCSD) = -0.983641709234616  dE = 0.021168504  norm(t1,t2) = 0.0383201
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 94  E_corr(MODIFIED_K2SCCSD) = -1.02728128051553  dE = -0.0436395713  norm(t1,t2) = 0.0570234
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+cycle = 95  E_corr(MODIFIED_K2SCCSD) = -1.04031505313201  dE = -0.0130337726  norm(t1,t2) = 0.0289232
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 96  E_corr(MODIFIED_K2SCCSD) = -1.07246369988025  dE = -0.0321486467  norm(t1,t2) = 0.0283969
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 97  E_corr(MODIFIED_K2SCCSD) = -1.05919252910333  dE = 0.0132711708  norm(t1,t2) = 0.0425732
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.11 sec
+cycle = 98  E_corr(MODIFIED_K2SCCSD) = -1.08436452308489  dE = -0.025171994  norm(t1,t2) = 0.0340517
+    CPU time for MODIFIED_K2SCCSD iter      0.24 sec, wall time      0.12 sec
+cycle = 99  E_corr(MODIFIED_K2SCCSD) = -1.06782449533713  dE = 0.0165400277  norm(t1,t2) = 0.0534161
+    CPU time for MODIFIED_K2SCCSD iter      0.25 sec, wall time      0.12 sec
+cycle = 100  E_corr(MODIFIED_K2SCCSD) = -1.02331668502415  dE = 0.0445078103  norm(t1,t2) = 0.0391728
+    CPU time for MODIFIED_K2SCCSD iter      0.26 sec, wall time      0.13 sec
+    CPU time for MODIFIED_K2SCCSD     24.80 sec, wall time     12.10 sec
+MODIFIED_K2SCCSD not converged
+E(MODIFIED_K2SCCSD) = -29.54837689587878  E_corr = -1.023316685024146
+    CPU time for imp sol - cc  amp     24.81 sec, wall time     12.10 sec
+    CPU time for imp sol - cc  ene      0.01 sec, wall time      0.00 sec
+    CPU time for Fragment 3 imp sol      25.75 sec, wall time     12.23 sec
+Fragment 3/5  Sol: E_corr(MP2) = -0.0904263010373625  E_corr(CCSD) = -0.104744287217394  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 3            25.77 sec, wall time     12.24 sec
+LO occ proj: 1 active | 0 standby | 11 orthogonal
+LO vir proj: 0 active | 0 standby | 66 orthogonal
+make_lo_rdm1_occ_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_occ      0.01 sec, wall time      0.00 sec
+make_lo_rdm1_vir_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_vir      0.02 sec, wall time      0.00 sec
+    CPU time for Fragment 4 make las      0.03 sec, wall time      0.01 sec
+Fragment 4/5  LAS: 12/12 Occ | 64/66 Vir | 76/78 MOs
+    impsol:  1 LOs  76/78 MOs  12 occ  64 vir
+    CPU time for CCSD integral transformation      1.04 sec, wall time      0.14 sec
+    CPU time for imp sol - eri          1.06 sec, wall time      0.14 sec
+Init t2, MP2 energy = -29.4739854584855  E_corr(MP2) -0.948925247630861
+    CPU time for init mp2      0.02 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 amp      0.02 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 ene      0.04 sec, wall time      0.01 sec
+
+******** <class 'pyscf.pbc.lno.klnoccsd.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 12, nmo = 76
+frozen orbitals [76 77]
+max_cycle = 100
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 1000 MB (current use 0 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.94892524756011
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.886386482467853  dE = 0.0625387651  norm(t1,t2) = 0.221067
+    CPU time for MODIFIED_K2SCCSD iter      0.97 sec, wall time      0.20 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -1.02722562957329  dE = -0.140839147  norm(t1,t2) = 0.169828
+    CPU time for MODIFIED_K2SCCSD iter      0.17 sec, wall time      0.16 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -1.00153473006468  dE = 0.0256908995  norm(t1,t2) = 0.148902
+    CPU time for MODIFIED_K2SCCSD iter      0.18 sec, wall time      0.18 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -1.02327524797502  dE = -0.0217405179  norm(t1,t2) = 0.0587984
+    CPU time for MODIFIED_K2SCCSD iter      0.17 sec, wall time      0.16 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -1.0582992276292  dE = -0.0350239797  norm(t1,t2) = 0.0454991
+    CPU time for MODIFIED_K2SCCSD iter      0.17 sec, wall time      0.17 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -1.07628532581218  dE = -0.0179860982  norm(t1,t2) = 0.0342613
+    CPU time for MODIFIED_K2SCCSD iter      0.17 sec, wall time      0.17 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -1.08617308926167  dE = -0.00988776345  norm(t1,t2) = 0.0284692
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.18 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -1.09389811920133  dE = -0.00772502994  norm(t1,t2) = 0.025266
+    CPU time for MODIFIED_K2SCCSD iter      0.36 sec, wall time      0.18 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -1.10126109181938  dE = -0.00736297262  norm(t1,t2) = 0.024829
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -1.09275165241978  dE = 0.0085094394  norm(t1,t2) = 0.0251119
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 11  E_corr(MODIFIED_K2SCCSD) = -1.0836132086093  dE = 0.00913844381  norm(t1,t2) = 0.0249887
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 12  E_corr(MODIFIED_K2SCCSD) = -1.12414671394662  dE = -0.0405335053  norm(t1,t2) = 0.0258621
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 13  E_corr(MODIFIED_K2SCCSD) = -1.05655067834028  dE = 0.0675960356  norm(t1,t2) = 0.0360567
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 14  E_corr(MODIFIED_K2SCCSD) = -1.09895995568971  dE = -0.0424092773  norm(t1,t2) = 0.039234
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 15  E_corr(MODIFIED_K2SCCSD) = -1.12178660953124  dE = -0.0228266538  norm(t1,t2) = 0.0283023
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 16  E_corr(MODIFIED_K2SCCSD) = -1.06290074011345  dE = 0.0588858694  norm(t1,t2) = 0.0375196
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 17  E_corr(MODIFIED_K2SCCSD) = -0.973163082947391  dE = 0.0897376572  norm(t1,t2) = 0.0352168
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 18  E_corr(MODIFIED_K2SCCSD) = -1.02556520398711  dE = -0.052402121  norm(t1,t2) = 0.168395
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 19  E_corr(MODIFIED_K2SCCSD) = -0.990717136314852  dE = 0.0348480677  norm(t1,t2) = 0.0681358
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 20  E_corr(MODIFIED_K2SCCSD) = -1.01546509167289  dE = -0.0247479554  norm(t1,t2) = 0.124193
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.17 sec
+cycle = 21  E_corr(MODIFIED_K2SCCSD) = -1.03450342892121  dE = -0.0190383372  norm(t1,t2) = 0.0785454
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 22  E_corr(MODIFIED_K2SCCSD) = -1.05508720155621  dE = -0.0205837726  norm(t1,t2) = 0.0531611
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 23  E_corr(MODIFIED_K2SCCSD) = -1.04755394083793  dE = 0.00753326072  norm(t1,t2) = 0.037625
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 24  E_corr(MODIFIED_K2SCCSD) = -1.09222239391881  dE = -0.0446684531  norm(t1,t2) = 0.0421228
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 25  E_corr(MODIFIED_K2SCCSD) = -1.0270307632562  dE = 0.0651916307  norm(t1,t2) = 0.035077
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 26  E_corr(MODIFIED_K2SCCSD) = -0.987345389541902  dE = 0.0396853737  norm(t1,t2) = 0.0613022
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 27  E_corr(MODIFIED_K2SCCSD) = -1.05769969157757  dE = -0.070354302  norm(t1,t2) = 0.127615
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 28  E_corr(MODIFIED_K2SCCSD) = -1.07274755640875  dE = -0.0150478648  norm(t1,t2) = 0.0366253
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 29  E_corr(MODIFIED_K2SCCSD) = -1.08258330086006  dE = -0.00983574445  norm(t1,t2) = 0.0333243
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 30  E_corr(MODIFIED_K2SCCSD) = -1.08288981548729  dE = -0.000306514627  norm(t1,t2) = 0.0341418
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 31  E_corr(MODIFIED_K2SCCSD) = -1.09116357637394  dE = -0.00827376089  norm(t1,t2) = 0.0342
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 32  E_corr(MODIFIED_K2SCCSD) = -1.07834406403791  dE = 0.0128195123  norm(t1,t2) = 0.0363882
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 33  E_corr(MODIFIED_K2SCCSD) = -1.03218954510435  dE = 0.0461545189  norm(t1,t2) = 0.0334132
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 34  E_corr(MODIFIED_K2SCCSD) = -1.11017589746719  dE = -0.0779863524  norm(t1,t2) = 0.0546546
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 35  E_corr(MODIFIED_K2SCCSD) = -1.16611795961526  dE = -0.0559420621  norm(t1,t2) = 0.0494624
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 36  E_corr(MODIFIED_K2SCCSD) = -1.04616294225448  dE = 0.119955017  norm(t1,t2) = 0.131438
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 37  E_corr(MODIFIED_K2SCCSD) = -1.03760352906068  dE = 0.00855941319  norm(t1,t2) = 0.0423349
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 38  E_corr(MODIFIED_K2SCCSD) = -1.03701340777212  dE = 0.000590121289  norm(t1,t2) = 0.0487105
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 39  E_corr(MODIFIED_K2SCCSD) = -1.04988353007778  dE = -0.0128701223  norm(t1,t2) = 0.0493096
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 40  E_corr(MODIFIED_K2SCCSD) = -1.04699936420512  dE = 0.00288416587  norm(t1,t2) = 0.0401452
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 41  E_corr(MODIFIED_K2SCCSD) = -1.0650238801532  dE = -0.0180245159  norm(t1,t2) = 0.0418542
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 42  E_corr(MODIFIED_K2SCCSD) = -1.13014578679762  dE = -0.0651219066  norm(t1,t2) = 0.0342849
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 43  E_corr(MODIFIED_K2SCCSD) = -1.08642309188727  dE = 0.0437226949  norm(t1,t2) = 0.0698948
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 44  E_corr(MODIFIED_K2SCCSD) = -1.07051963851537  dE = 0.0159034534  norm(t1,t2) = 0.0351448
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 45  E_corr(MODIFIED_K2SCCSD) = -1.03797698235438  dE = 0.0325426562  norm(t1,t2) = 0.0335175
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 46  E_corr(MODIFIED_K2SCCSD) = -1.06078569846888  dE = -0.0228087161  norm(t1,t2) = 0.0488027
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 47  E_corr(MODIFIED_K2SCCSD) = -1.10338282156193  dE = -0.0425971231  norm(t1,t2) = 0.0354942
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 48  E_corr(MODIFIED_K2SCCSD) = -1.09456122990106  dE = 0.00882159166  norm(t1,t2) = 0.0431698
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 49  E_corr(MODIFIED_K2SCCSD) = -1.13537979516894  dE = -0.0408185653  norm(t1,t2) = 0.0380606
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 50  E_corr(MODIFIED_K2SCCSD) = -1.10127726975628  dE = 0.0341025254  norm(t1,t2) = 0.0767635
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 51  E_corr(MODIFIED_K2SCCSD) = -1.0921330185467  dE = 0.00914425121  norm(t1,t2) = 0.0416813
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 52  E_corr(MODIFIED_K2SCCSD) = -1.07529482663214  dE = 0.0168381919  norm(t1,t2) = 0.0369349
+    CPU time for MODIFIED_K2SCCSD iter      0.38 sec, wall time      0.18 sec
+cycle = 53  E_corr(MODIFIED_K2SCCSD) = -1.04544505764256  dE = 0.029849769  norm(t1,t2) = 0.0332461
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 54  E_corr(MODIFIED_K2SCCSD) = -1.08307832575448  dE = -0.0376332681  norm(t1,t2) = 0.0431679
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 55  E_corr(MODIFIED_K2SCCSD) = -1.08356588526313  dE = -0.000487559509  norm(t1,t2) = 0.03406
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 56  E_corr(MODIFIED_K2SCCSD) = -1.10701162383552  dE = -0.0234457386  norm(t1,t2) = 0.0341628
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 57  E_corr(MODIFIED_K2SCCSD) = -1.12237540277226  dE = -0.0153637789  norm(t1,t2) = 0.045481
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 58  E_corr(MODIFIED_K2SCCSD) = -1.13714252572594  dE = -0.014767123  norm(t1,t2) = 0.0599836
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 59  E_corr(MODIFIED_K2SCCSD) = -1.10702498627532  dE = 0.0301175395  norm(t1,t2) = 0.0791109
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 60  E_corr(MODIFIED_K2SCCSD) = -1.06910767799421  dE = 0.0379173083  norm(t1,t2) = 0.0455472
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 61  E_corr(MODIFIED_K2SCCSD) = -1.05452710950598  dE = 0.0145805685  norm(t1,t2) = 0.033544
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 62  E_corr(MODIFIED_K2SCCSD) = -1.02713964066338  dE = 0.0273874688  norm(t1,t2) = 0.0378667
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 63  E_corr(MODIFIED_K2SCCSD) = -1.0178420072117  dE = 0.00929763345  norm(t1,t2) = 0.0595516
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 64  E_corr(MODIFIED_K2SCCSD) = -1.06583553605985  dE = -0.0479935288  norm(t1,t2) = 0.0709105
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 65  E_corr(MODIFIED_K2SCCSD) = -1.0913731492421  dE = -0.0255376132  norm(t1,t2) = 0.0340392
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 66  E_corr(MODIFIED_K2SCCSD) = -1.10933101965055  dE = -0.0179578704  norm(t1,t2) = 0.0364419
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 67  E_corr(MODIFIED_K2SCCSD) = -1.09724817349722  dE = 0.0120828462  norm(t1,t2) = 0.0472899
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 68  E_corr(MODIFIED_K2SCCSD) = -1.09972476900654  dE = -0.00247659551  norm(t1,t2) = 0.0391602
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 69  E_corr(MODIFIED_K2SCCSD) = -1.07918645118328  dE = 0.0205383178  norm(t1,t2) = 0.0405549
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 70  E_corr(MODIFIED_K2SCCSD) = -1.03734272891371  dE = 0.0418437223  norm(t1,t2) = 0.0333946
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 71  E_corr(MODIFIED_K2SCCSD) = -1.11418058846104  dE = -0.0768378595  norm(t1,t2) = 0.0494071
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 72  E_corr(MODIFIED_K2SCCSD) = -1.15513355233103  dE = -0.0409529639  norm(t1,t2) = 0.0515226
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 73  E_corr(MODIFIED_K2SCCSD) = -1.12713417140983  dE = 0.0279993809  norm(t1,t2) = 0.109235
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 74  E_corr(MODIFIED_K2SCCSD) = -1.12201657828766  dE = 0.00511759312  norm(t1,t2) = 0.0655157
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 75  E_corr(MODIFIED_K2SCCSD) = -1.12946855064757  dE = -0.00745197236  norm(t1,t2) = 0.0594935
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.18 sec
+cycle = 76  E_corr(MODIFIED_K2SCCSD) = -1.13973040239352  dE = -0.0102618517  norm(t1,t2) = 0.0684246
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 77  E_corr(MODIFIED_K2SCCSD) = -1.08256715986483  dE = 0.0571632425  norm(t1,t2) = 0.0828704
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 78  E_corr(MODIFIED_K2SCCSD) = -1.05418868727171  dE = 0.0283784726  norm(t1,t2) = 0.0338563
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 79  E_corr(MODIFIED_K2SCCSD) = -1.04668443454049  dE = 0.00750425273  norm(t1,t2) = 0.0380071
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 80  E_corr(MODIFIED_K2SCCSD) = -1.06385735591182  dE = -0.0171729214  norm(t1,t2) = 0.0422624
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 81  E_corr(MODIFIED_K2SCCSD) = -1.08305700740085  dE = -0.0191996515  norm(t1,t2) = 0.034472
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 82  E_corr(MODIFIED_K2SCCSD) = -1.0877966660866  dE = -0.00473965869  norm(t1,t2) = 0.0339521
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.17 sec
+cycle = 83  E_corr(MODIFIED_K2SCCSD) = -1.12285759132186  dE = -0.0350609252  norm(t1,t2) = 0.0351511
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 84  E_corr(MODIFIED_K2SCCSD) = -1.06837075625434  dE = 0.0544868351  norm(t1,t2) = 0.0604196
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 85  E_corr(MODIFIED_K2SCCSD) = -1.05950435115311  dE = 0.0088664051  norm(t1,t2) = 0.0335679
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 86  E_corr(MODIFIED_K2SCCSD) = -1.05501859030648  dE = 0.00448576085  norm(t1,t2) = 0.0357883
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 87  E_corr(MODIFIED_K2SCCSD) = -1.0377575331088  dE = 0.0172610572  norm(t1,t2) = 0.0376143
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 88  E_corr(MODIFIED_K2SCCSD) = -1.04771888777719  dE = -0.00996135467  norm(t1,t2) = 0.0490452
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 89  E_corr(MODIFIED_K2SCCSD) = -1.06689917768429  dE = -0.0191802899  norm(t1,t2) = 0.0415964
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 90  E_corr(MODIFIED_K2SCCSD) = -1.16340978142283  dE = -0.0965106037  norm(t1,t2) = 0.0338095
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 91  E_corr(MODIFIED_K2SCCSD) = -1.05683435482959  dE = 0.106575427  norm(t1,t2) = 0.125644
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 92  E_corr(MODIFIED_K2SCCSD) = -1.03643636781991  dE = 0.020397987  norm(t1,t2) = 0.0368159
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 93  E_corr(MODIFIED_K2SCCSD) = -1.04096805126336  dE = -0.00453168344  norm(t1,t2) = 0.0502094
+    CPU time for MODIFIED_K2SCCSD iter      0.39 sec, wall time      0.19 sec
+cycle = 94  E_corr(MODIFIED_K2SCCSD) = -1.03018232957422  dE = 0.0107857217  norm(t1,t2) = 0.0463901
+    CPU time for MODIFIED_K2SCCSD iter      0.36 sec, wall time      0.18 sec
+cycle = 95  E_corr(MODIFIED_K2SCCSD) = -1.04047263971113  dE = -0.0102903101  norm(t1,t2) = 0.0562706
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 96  E_corr(MODIFIED_K2SCCSD) = -1.02360921161294  dE = 0.0168634281  norm(t1,t2) = 0.0467868
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 97  E_corr(MODIFIED_K2SCCSD) = -1.10597406390074  dE = -0.0823648523  norm(t1,t2) = 0.0636365
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 98  E_corr(MODIFIED_K2SCCSD) = -1.14894829775242  dE = -0.0429742339  norm(t1,t2) = 0.0446519
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 99  E_corr(MODIFIED_K2SCCSD) = -1.08811106577132  dE = 0.060837232  norm(t1,t2) = 0.0979618
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 100  E_corr(MODIFIED_K2SCCSD) = -1.04944973511369  dE = 0.0386613307  norm(t1,t2) = 0.0352468
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+    CPU time for MODIFIED_K2SCCSD     33.66 sec, wall time     16.62 sec
+MODIFIED_K2SCCSD not converged
+E(MODIFIED_K2SCCSD) = -29.57450994596833  E_corr = -1.049449735113695
+    CPU time for imp sol - cc  amp     33.66 sec, wall time     16.62 sec
+    CPU time for imp sol - cc  ene      0.02 sec, wall time      0.01 sec
+    CPU time for Fragment 4 imp sol      34.86 sec, wall time     16.79 sec
+Fragment 4/5  Sol: E_corr(MP2) = -0.0770180515518319  E_corr(CCSD) = -0.0778662623851025  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 4            34.89 sec, wall time     16.80 sec
+LO occ proj: 1 active | 0 standby | 11 orthogonal
+LO vir proj: 0 active | 0 standby | 66 orthogonal
+make_lo_rdm1_occ_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_occ      0.03 sec, wall time      0.00 sec
+make_lo_rdm1_vir_1h :  nocc = 12  nvir = 66  nOcc = 1  naux = 336  occblksize = 12  peak mem = 23.57 MB
+    CPU time for make_lo_rdm1_vir      0.02 sec, wall time      0.00 sec
+    CPU time for Fragment 5 make las      0.05 sec, wall time      0.01 sec
+Fragment 5/5  LAS: 12/12 Occ | 64/66 Vir | 76/78 MOs
+    impsol:  1 LOs  76/78 MOs  12 occ  64 vir
+    CPU time for CCSD integral transformation      1.12 sec, wall time      0.16 sec
+    CPU time for imp sol - eri          1.13 sec, wall time      0.16 sec
+Init t2, MP2 energy = -29.4739854584855  E_corr(MP2) -0.948925247630868
+    CPU time for init mp2      0.03 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 amp      0.03 sec, wall time      0.00 sec
+    CPU time for imp sol - mp2 ene      0.02 sec, wall time      0.01 sec
+
+******** <class 'pyscf.pbc.lno.klnoccsd.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 12, nmo = 76
+frozen orbitals [76 77]
+max_cycle = 100
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 1000 MB (current use 0 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.948925247560107
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.886386482467869  dE = 0.0625387651  norm(t1,t2) = 0.221105
+    CPU time for MODIFIED_K2SCCSD iter      0.84 sec, wall time      0.20 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -1.02722562957329  dE = -0.140839147  norm(t1,t2) = 0.169839
+    CPU time for MODIFIED_K2SCCSD iter      0.17 sec, wall time      0.17 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -1.00154097536806  dE = 0.0256846542  norm(t1,t2) = 0.148984
+    CPU time for MODIFIED_K2SCCSD iter      0.17 sec, wall time      0.16 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -1.02331277911668  dE = -0.0217718037  norm(t1,t2) = 0.0588367
+    CPU time for MODIFIED_K2SCCSD iter      0.18 sec, wall time      0.17 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -1.05835549638591  dE = -0.0350427173  norm(t1,t2) = 0.0455861
+    CPU time for MODIFIED_K2SCCSD iter      0.18 sec, wall time      0.17 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -1.07639168310478  dE = -0.0180361867  norm(t1,t2) = 0.0342586
+    CPU time for MODIFIED_K2SCCSD iter      0.17 sec, wall time      0.16 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -1.08626442221783  dE = -0.00987273911  norm(t1,t2) = 0.0284945
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -1.09398805404837  dE = -0.00772363183  norm(t1,t2) = 0.0252922
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -1.10132738622592  dE = -0.00733933218  norm(t1,t2) = 0.0248588
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -1.09274389768118  dE = 0.00858348854  norm(t1,t2) = 0.0251474
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 11  E_corr(MODIFIED_K2SCCSD) = -1.0833680637342  dE = 0.00937583395  norm(t1,t2) = 0.0250209
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 12  E_corr(MODIFIED_K2SCCSD) = -1.12445054423014  dE = -0.0410824805  norm(t1,t2) = 0.0259433
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 13  E_corr(MODIFIED_K2SCCSD) = -1.05633237707956  dE = 0.0681181672  norm(t1,t2) = 0.0363898
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 14  E_corr(MODIFIED_K2SCCSD) = -1.09784147970629  dE = -0.0415091026  norm(t1,t2) = 0.0394402
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 15  E_corr(MODIFIED_K2SCCSD) = -1.12025572725665  dE = -0.0224142476  norm(t1,t2) = 0.0282062
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 16  E_corr(MODIFIED_K2SCCSD) = -1.072037015725  dE = 0.0482187115  norm(t1,t2) = 0.0365784
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 17  E_corr(MODIFIED_K2SCCSD) = -0.97840574671791  dE = 0.093631269  norm(t1,t2) = 0.0313142
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 18  E_corr(MODIFIED_K2SCCSD) = -1.01398822289998  dE = -0.0355824762  norm(t1,t2) = 0.155249
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 19  E_corr(MODIFIED_K2SCCSD) = -0.982052922513195  dE = 0.0319353004  norm(t1,t2) = 0.0852239
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 20  E_corr(MODIFIED_K2SCCSD) = -0.997167011639458  dE = -0.0151140891  norm(t1,t2) = 0.144034
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 21  E_corr(MODIFIED_K2SCCSD) = -1.02548157694653  dE = -0.0283145653  norm(t1,t2) = 0.109422
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.17 sec
+cycle = 22  E_corr(MODIFIED_K2SCCSD) = -1.05734300227188  dE = -0.0318614253  norm(t1,t2) = 0.0643583
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 23  E_corr(MODIFIED_K2SCCSD) = -1.04968754789778  dE = 0.00765545437  norm(t1,t2) = 0.0365391
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 24  E_corr(MODIFIED_K2SCCSD) = -1.07443543925838  dE = -0.0247478914  norm(t1,t2) = 0.0410997
+    CPU time for MODIFIED_K2SCCSD iter      0.36 sec, wall time      0.17 sec
+cycle = 25  E_corr(MODIFIED_K2SCCSD) = -1.08815445366084  dE = -0.0137190144  norm(t1,t2) = 0.0310315
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 26  E_corr(MODIFIED_K2SCCSD) = -1.02833126900021  dE = 0.0598231847  norm(t1,t2) = 0.0316769
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 27  E_corr(MODIFIED_K2SCCSD) = -1.01168084002453  dE = 0.016650429  norm(t1,t2) = 0.0606859
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 28  E_corr(MODIFIED_K2SCCSD) = -1.04334080905138  dE = -0.031659969  norm(t1,t2) = 0.0849641
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 29  E_corr(MODIFIED_K2SCCSD) = -1.0546669100863  dE = -0.011326101  norm(t1,t2) = 0.0450655
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 30  E_corr(MODIFIED_K2SCCSD) = -1.07051010536049  dE = -0.0158431953  norm(t1,t2) = 0.0378129
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 31  E_corr(MODIFIED_K2SCCSD) = -1.06606480587715  dE = 0.00444529948  norm(t1,t2) = 0.0332255
+    CPU time for MODIFIED_K2SCCSD iter      0.36 sec, wall time      0.17 sec
+cycle = 32  E_corr(MODIFIED_K2SCCSD) = -1.07839175241346  dE = -0.0123269465  norm(t1,t2) = 0.0340129
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 33  E_corr(MODIFIED_K2SCCSD) = -1.08675143154636  dE = -0.00835967913  norm(t1,t2) = 0.0332541
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 34  E_corr(MODIFIED_K2SCCSD) = -1.14523984651611  dE = -0.058488415  norm(t1,t2) = 0.0355442
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 35  E_corr(MODIFIED_K2SCCSD) = -1.04922163265957  dE = 0.0960182139  norm(t1,t2) = 0.0941351
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 36  E_corr(MODIFIED_K2SCCSD) = -1.02765556940228  dE = 0.0215660633  norm(t1,t2) = 0.0406268
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 37  E_corr(MODIFIED_K2SCCSD) = -1.02361021672168  dE = 0.00404535268  norm(t1,t2) = 0.0591967
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 38  E_corr(MODIFIED_K2SCCSD) = -1.02643024503512  dE = -0.00282002831  norm(t1,t2) = 0.0638793
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 39  E_corr(MODIFIED_K2SCCSD) = -1.03107896076921  dE = -0.00464871573  norm(t1,t2) = 0.0603744
+    CPU time for MODIFIED_K2SCCSD iter      0.45 sec, wall time      0.37 sec
+cycle = 40  E_corr(MODIFIED_K2SCCSD) = -1.02998097304834  dE = 0.00109798772  norm(t1,t2) = 0.0553615
+    CPU time for MODIFIED_K2SCCSD iter      0.36 sec, wall time      0.18 sec
+cycle = 41  E_corr(MODIFIED_K2SCCSD) = -1.07882761678659  dE = -0.0488466437  norm(t1,t2) = 0.0569013
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 42  E_corr(MODIFIED_K2SCCSD) = -1.09981237234879  dE = -0.0209847556  norm(t1,t2) = 0.0328879
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 43  E_corr(MODIFIED_K2SCCSD) = -1.07260503968682  dE = 0.0272073327  norm(t1,t2) = 0.0402357
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 44  E_corr(MODIFIED_K2SCCSD) = -1.07192563625056  dE = 0.000679403436  norm(t1,t2) = 0.0329944
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 45  E_corr(MODIFIED_K2SCCSD) = -1.0682082110049  dE = 0.00371742525  norm(t1,t2) = 0.0326303
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 46  E_corr(MODIFIED_K2SCCSD) = -1.0714769373991  dE = -0.00326872639  norm(t1,t2) = 0.0331826
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 47  E_corr(MODIFIED_K2SCCSD) = -0.959485304416742  dE = 0.111991633  norm(t1,t2) = 0.0324942
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 48  E_corr(MODIFIED_K2SCCSD) = -1.10002602603408  dE = -0.140540722  norm(t1,t2) = 0.191879
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 49  E_corr(MODIFIED_K2SCCSD) = -1.11855039026623  dE = -0.0185243642  norm(t1,t2) = 0.0401923
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 50  E_corr(MODIFIED_K2SCCSD) = -1.11469365146791  dE = 0.0038567388  norm(t1,t2) = 0.0554016
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 51  E_corr(MODIFIED_K2SCCSD) = -1.07515413502789  dE = 0.0395395164  norm(t1,t2) = 0.0517371
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 52  E_corr(MODIFIED_K2SCCSD) = -1.03595583444089  dE = 0.0391983006  norm(t1,t2) = 0.0328618
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 53  E_corr(MODIFIED_K2SCCSD) = -1.02203636034937  dE = 0.0139194741  norm(t1,t2) = 0.0505251
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 54  E_corr(MODIFIED_K2SCCSD) = -0.990036285388704  dE = 0.032000075  norm(t1,t2) = 0.0651937
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 55  E_corr(MODIFIED_K2SCCSD) = -1.01956852029627  dE = -0.0295322349  norm(t1,t2) = 0.116815
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 56  E_corr(MODIFIED_K2SCCSD) = -1.03900884980202  dE = -0.0194403295  norm(t1,t2) = 0.0683164
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 57  E_corr(MODIFIED_K2SCCSD) = -1.11607924346672  dE = -0.0770703937  norm(t1,t2) = 0.0478791
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 58  E_corr(MODIFIED_K2SCCSD) = -1.12206256266907  dE = -0.0059833192  norm(t1,t2) = 0.0533149
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 59  E_corr(MODIFIED_K2SCCSD) = -1.09088323656157  dE = 0.0311793261  norm(t1,t2) = 0.0598136
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 60  E_corr(MODIFIED_K2SCCSD) = -1.06557573990074  dE = 0.0253074967  norm(t1,t2) = 0.0363649
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 61  E_corr(MODIFIED_K2SCCSD) = -1.02821696956994  dE = 0.0373587703  norm(t1,t2) = 0.0340801
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 62  E_corr(MODIFIED_K2SCCSD) = -1.07782824753338  dE = -0.049611278  norm(t1,t2) = 0.0583719
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 63  E_corr(MODIFIED_K2SCCSD) = -1.06568813426164  dE = 0.0121401133  norm(t1,t2) = 0.0332235
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 64  E_corr(MODIFIED_K2SCCSD) = -1.14367454972527  dE = -0.0779864155  norm(t1,t2) = 0.0340242
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 65  E_corr(MODIFIED_K2SCCSD) = -1.07950132552305  dE = 0.0641732242  norm(t1,t2) = 0.0891499
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 66  E_corr(MODIFIED_K2SCCSD) = -1.02197844812602  dE = 0.0575228774  norm(t1,t2) = 0.0333725
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 67  E_corr(MODIFIED_K2SCCSD) = -0.89454448990244  dE = 0.127433958  norm(t1,t2) = 0.0656487
+    CPU time for MODIFIED_K2SCCSD iter      0.36 sec, wall time      0.18 sec
+cycle = 68  E_corr(MODIFIED_K2SCCSD) = -0.895841995636607  dE = -0.00129750573  norm(t1,t2) = 0.414012
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 69  E_corr(MODIFIED_K2SCCSD) = -0.960143976870629  dE = -0.0643019812  norm(t1,t2) = 0.408574
+    CPU time for MODIFIED_K2SCCSD iter      0.38 sec, wall time      0.19 sec
+cycle = 70  E_corr(MODIFIED_K2SCCSD) = -0.94865864819224  dE = 0.0114853287  norm(t1,t2) = 0.187026
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 71  E_corr(MODIFIED_K2SCCSD) = -1.03739185981162  dE = -0.0887332116  norm(t1,t2) = 0.219467
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 72  E_corr(MODIFIED_K2SCCSD) = -1.03318547729252  dE = 0.00420638252  norm(t1,t2) = 0.0494052
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 73  E_corr(MODIFIED_K2SCCSD) = -1.02445810417239  dE = 0.00872737312  norm(t1,t2) = 0.0532898
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 74  E_corr(MODIFIED_K2SCCSD) = -1.01720338426096  dE = 0.00725471991  norm(t1,t2) = 0.0626719
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 75  E_corr(MODIFIED_K2SCCSD) = -1.03136744710997  dE = -0.0141640628  norm(t1,t2) = 0.0718443
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 76  E_corr(MODIFIED_K2SCCSD) = -1.06868662014815  dE = -0.037319173  norm(t1,t2) = 0.0551265
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 77  E_corr(MODIFIED_K2SCCSD) = -1.09869248471737  dE = -0.0300058646  norm(t1,t2) = 0.0335935
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 78  E_corr(MODIFIED_K2SCCSD) = -1.09623698727481  dE = 0.00245549744  norm(t1,t2) = 0.0399819
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 79  E_corr(MODIFIED_K2SCCSD) = -1.11024357467277  dE = -0.0140065874  norm(t1,t2) = 0.0386796
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 80  E_corr(MODIFIED_K2SCCSD) = -1.11833689745194  dE = -0.00809332278  norm(t1,t2) = 0.0481152
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 81  E_corr(MODIFIED_K2SCCSD) = -1.04400869653631  dE = 0.0743282009  norm(t1,t2) = 0.055673
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 82  E_corr(MODIFIED_K2SCCSD) = -1.03958944738205  dE = 0.00441924915  norm(t1,t2) = 0.0441236
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 83  E_corr(MODIFIED_K2SCCSD) = -1.08769775307738  dE = -0.0481083057  norm(t1,t2) = 0.0475267
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 84  E_corr(MODIFIED_K2SCCSD) = -1.11578567762461  dE = -0.0280879245  norm(t1,t2) = 0.0351264
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 85  E_corr(MODIFIED_K2SCCSD) = -1.06322271425839  dE = 0.0525629634  norm(t1,t2) = 0.0530239
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 86  E_corr(MODIFIED_K2SCCSD) = -1.04692976282943  dE = 0.0162929514  norm(t1,t2) = 0.0346809
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 87  E_corr(MODIFIED_K2SCCSD) = -1.02203963126386  dE = 0.0248901316  norm(t1,t2) = 0.0421547
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 88  E_corr(MODIFIED_K2SCCSD) = -1.07088665265946  dE = -0.0488470214  norm(t1,t2) = 0.0656033
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.17 sec
+cycle = 89  E_corr(MODIFIED_K2SCCSD) = -1.10499524553624  dE = -0.0341085929  norm(t1,t2) = 0.033329
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 90  E_corr(MODIFIED_K2SCCSD) = -1.16687013624122  dE = -0.0618748907  norm(t1,t2) = 0.0440203
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 91  E_corr(MODIFIED_K2SCCSD) = -1.14909529581513  dE = 0.0177748404  norm(t1,t2) = 0.133196
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 92  E_corr(MODIFIED_K2SCCSD) = -1.14847606792062  dE = 0.000619227895  norm(t1,t2) = 0.0983572
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 93  E_corr(MODIFIED_K2SCCSD) = -1.13032583906816  dE = 0.0181502289  norm(t1,t2) = 0.097278
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 94  E_corr(MODIFIED_K2SCCSD) = -1.03157197769521  dE = 0.0987538614  norm(t1,t2) = 0.069638
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 95  E_corr(MODIFIED_K2SCCSD) = -1.05532713464974  dE = -0.023755157  norm(t1,t2) = 0.0548815
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+cycle = 96  E_corr(MODIFIED_K2SCCSD) = -1.09238036669483  dE = -0.037053232  norm(t1,t2) = 0.0374919
+    CPU time for MODIFIED_K2SCCSD iter      0.36 sec, wall time      0.17 sec
+cycle = 97  E_corr(MODIFIED_K2SCCSD) = -1.11719495906047  dE = -0.0248145924  norm(t1,t2) = 0.0368399
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 98  E_corr(MODIFIED_K2SCCSD) = -1.09425931156056  dE = 0.0229356475  norm(t1,t2) = 0.054437
+    CPU time for MODIFIED_K2SCCSD iter      0.33 sec, wall time      0.16 sec
+cycle = 99  E_corr(MODIFIED_K2SCCSD) = -1.18546311333922  dE = -0.0912038018  norm(t1,t2) = 0.0376504
+    CPU time for MODIFIED_K2SCCSD iter      0.34 sec, wall time      0.16 sec
+cycle = 100  E_corr(MODIFIED_K2SCCSD) = -1.09108850619059  dE = 0.0943746071  norm(t1,t2) = 0.177515
+    CPU time for MODIFIED_K2SCCSD iter      0.35 sec, wall time      0.17 sec
+    CPU time for MODIFIED_K2SCCSD     33.75 sec, wall time     16.81 sec
+MODIFIED_K2SCCSD not converged
+E(MODIFIED_K2SCCSD) = -29.61614871704523  E_corr = -1.091088506190594
+    CPU time for imp sol - cc  amp     33.75 sec, wall time     16.81 sec
+    CPU time for imp sol - cc  ene      0.02 sec, wall time      0.01 sec
+    CPU time for Fragment 5 imp sol      35.01 sec, wall time     17.00 sec
+Fragment 5/5  Sol: E_corr(MP2) = -0.0770180515517306  E_corr(CCSD) = -0.0807004457887146  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 5            35.07 sec, wall time     17.01 sec
+    CPU time for KLNOCCSD             148.94 sec, wall time     71.23 sec
+E(LNOMP2) = -28.9184703534075  E_corr = -0.39341014255287
+E(LNOCCSD) = -28.9511866400386  E_corr = -0.426126429184009
+Summary by spin components
+LNOMP2   Ess = -0.102865933661081  Eos = -0.290544208891788  Escs = -0.382907406579286
+LNOCCSD  Ess = -0.0724312310298776  Eos = -0.353695198154131  Escs = -0.448553837717907
