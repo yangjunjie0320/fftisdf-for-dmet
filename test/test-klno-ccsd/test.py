@@ -1,45 +1,9 @@
-import numpy, scipy, os
-import pyscf
+import numpy, scipy
+import pyscf, fft
 from pyscf.pbc import gto
 from pyscf.pbc.scf import khf
 
 from pyscf.pbc.lno.tools import k2s_scf, k2s_iao
-
-def get_coeff_lo(kmf):
-    cell = kmf.cell
-    smf = k2s_scf(kmf)
-    scell = smf.cell
-    nkpt = nimg = len(kmf.kpts)
-
-    from pyscf.data.elements import chemcore
-    frozen_per_img = chemcore(cell)
-    frozen = frozen_per_img * nimg
-
-    mo_coeff_s = smf.mo_coeff
-    mo_occ_s  = smf.mo_occ
-    orb_occ_s = mo_coeff_s[:, mo_occ_s>1e-6]
-    orb_occ_s = orb_occ_s[:, frozen:]
-
-    from pyscf import lo
-    lo_obj = lo.pipek.PipekMezey(scell, orb_occ_s)
-    coeff_lo_prev = lo_obj.kernel()
-    coeff_lo_next = None
-
-    while True:
-        coeff_lo_next = lo_obj.stability_jacobi()[1]
-        if coeff_lo_next is coeff_lo_prev:
-            break
-        lo_obj = lo.PipekMezey(scell, coeff_lo_next).set(verbose=4)
-        lo_obj.init_guess = None
-        coeff_lo_prev = lo_obj.kernel()
-
-    assert coeff_lo_next is not None
-    
-    from pyscf.pbc.lno.tools import sort_orb_by_cell
-    from pyscf.pbc.lno.tools import k2s_aoint
-    s1e = k2s_aoint(cell, kmf.kpts, kmf.get_ovlp())
-    coeff_lo_s = sort_orb_by_cell(scell, coeff_lo_next, nimg, s=s1e)
-    return coeff_lo_s
 
 cell = gto.Cell()
 cell.atom = '''
@@ -65,23 +29,61 @@ kpts = cell.make_kpts(kmesh)
 nkpt = nimg = len(kpts)
 tol = 1e-8
 
+from pyscf.lib import logger
+log = logger.new_logger(cell.stdout, 5)
+
+kmf_sol = khf.KRHF(cell, kpts, exxdiv=None)
+kmf_sol.chkfile = 'kmf-scf.chk'
+kmf_sol.init_guess = 'chkfile'
+kmf_sol.conv_tol = tol
+
+kmf_sol.with_df = fft.ISDF(cell, kpts)
+kmf_sol.with_df.verbose = 0
+kmf_sol.with_df._isdf = 'kmf-isdf.chk'
+kmf_sol.with_df._isdf_to_save = 'kmf-isdf.chk'
+kmf_sol.with_df.c0 = 10.0
+kmf_sol.with_df.build()
+kmf_sol.kernel()
+
 kmf_ref = khf.KRHF(cell, kpts, exxdiv=None).rs_density_fit()
 kmf_ref.chkfile = 'kmf-scf.chk'
+kmf_ref.init_guess = 'chkfile'
+kmf_ref.with_df._cderi = 'kmf-rsdf.chk'
 kmf_ref.with_df._cderi_to_save = 'kmf-rsdf.chk'
-if os.path.exists('kmf-scf.chk'):
-    kmf_ref.init_guess = 'chkfile'
-
-if
-    kmf_ref.with_df._cderi = 'kmf-rsdf.chk'
 kmf_ref.kernel()
 
-coeff_lo_s = get_coeff_lo(kmf_ref)
+ene_krhf_sol = kmf_sol.e_tot
+ene_krhf_ref = kmf_ref.e_tot
+err_ene_krhf = abs(ene_krhf_sol - ene_krhf_ref)
+assert err_ene_krhf < 1e-4
+print(f"{ene_krhf_sol = :12.8f}, {ene_krhf_ref = :12.8f}, {err_ene_krhf = :6.4e}")
+
+smf = k2s_scf(kmf_ref)
+orb_occ_k = []
+for k in range(nkpt):
+    coeff_k = kmf_ref.mo_coeff[k]
+    nocc_k = numpy.count_nonzero(kmf_ref.mo_occ[k])
+    orb_occ_k.append(coeff_k[:, 0:nocc_k])
+
+from pyscf.pbc.lno.tools import k2s_iao
+coeff_lo_s = k2s_iao(cell, orb_occ_k, kpts, orth=True)
+
 nlo_per_img = coeff_lo_s.shape[1] // nimg
 frag_lo_list = [[f] for f in range(nlo_per_img)]
 
-from pyscf.pbc.lno.lnoccsd import KLNOCCSD
-klno_ref = KLNOCCSD(kmf_ref, coeff_lo_s, frag_lo_list, frozen=0, mf=None)
+from klno import KLNOCCSD
+klno_ref = KLNOCCSD(kmf_ref, coeff_lo_s, frag_lo_list, frozen=0, mf=smf)
 klno_ref.lno_type = ['1h', '1h']
+klno_ref.lno_thresh = [1e-4, 1e-5]
 klno_ref.verbose = 10
-klno_ref.kwargs_imp = {'max_cycle': 200, "verbose": 5}
+klno_ref.kwargs_imp = {'max_cycle': 100, "verbose": 5}
+klno_ref.lo_proj_thresh_active = 1e-4
 res = klno_ref.kernel()
+
+klno_sol = KLNOCCSD(kmf_sol, coeff_lo_s, frag_lo_list, frozen=0, mf=smf)
+klno_sol.lno_type = ['1h', '1h']
+klno_sol.lno_thresh = [1e-4, 1e-5]
+klno_sol.verbose = 10
+klno_sol.kwargs_imp = {'max_cycle': 100, "verbose": 5}
+klno_sol.lo_proj_thresh_active = 1e-4
+res = klno_sol.kernel()

@@ -88,6 +88,7 @@ frozen = frozen_per_img * nimg
 from pyscf.pbc.lno.klnoccsd import KLNOCCSD
 klno_ref = KLNOCCSD(kmf_obj, coeff_lo_s, frag_lo_list, frozen=0, mf=None)
 klno_ref.lno_type = ['1h', '1h']
+klno_ref.lno_thresh = [1e-4, 1e-5]
 klno_ref.verbose = 10
 klno_ref.kwargs_imp = {'max_cycle': 100, "verbose": 5}
 res = klno_ref.kernel()
