@@ -10,15 +10,18 @@ def main(config: dict):
     table = {}
     df_obj = config["df"]
     t0 = time.time()
-    df_obj.blksize = 20000
     df_obj.build()
     table["time_build_df"] = time.time() - t0
 
     scf_obj = config["mf"]
     dm0 = config["dm0"]
+    scf_obj.exxdiv = "ewald"
     scf_obj.with_df = df_obj
     ene_kscf = scf_obj.kernel(dm0)
     scf_obj.analyze()
+
+    kpts = scf_obj.kpts
+    nkpt = nimg = len(kpts)
 
     t0 = time.time()
     dm0 = scf_obj.make_rdm1()
@@ -30,7 +33,7 @@ def main(config: dict):
     from pyscf.pbc.lno.tools import k2s_scf
     mf_s = k2s_scf(scf_obj)
     orb_occ_k = []
-    for k in range(scf_obj.nkpt):
+    for k in range(nkpt):
         coeff_k = scf_obj.mo_coeff[k]
         nocc_k = numpy.count_nonzero(scf_obj.mo_occ[k])
         orb_occ_k.append(coeff_k[:, 0:nocc_k])
@@ -52,7 +55,6 @@ def main(config: dict):
     ene_klno_ccsd = klno_obj.e_tot
 
     nao = scf_obj.cell.nao_nr()
-    nkpt = len(scf_obj.kpts)
     naux = None
     if isinstance(df_obj, fft.ISDF):
         naux = df_obj.inpv_kpt.shape[1]

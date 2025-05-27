@@ -15,6 +15,7 @@ def main(config: dict):
 
     scf_obj = config["mf"]
     dm0 = config["dm0"]
+    scf_obj.exxdiv = "ewald"
     scf_obj.with_df = df_obj
     ene_kscf = scf_obj.kernel(dm0)
     scf_obj.analyze()
