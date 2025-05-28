@@ -18,6 +18,7 @@ def main(config: dict):
     scf_obj.exxdiv = "ewald"
     scf_obj.with_df = df_obj
     ene_kscf = scf_obj.kernel(dm0)
+    nao = scf_obj.cell.nao_nr()
     scf_obj.analyze()
 
     kpts = scf_obj.kpts
@@ -29,7 +30,6 @@ def main(config: dict):
     table["time_get_vk"] = time.time() - t0
 
     t0 = time.time()
-
     from pyscf.pbc.lno.tools import k2s_scf
     mf_s = k2s_scf(scf_obj)
     orb_occ_k = []
@@ -40,11 +40,15 @@ def main(config: dict):
 
     from pyscf.pbc.lno.tools import k2s_iao
     coeff_lo_s = k2s_iao(scf_obj.cell, orb_occ_k, scf_obj.kpts, orth=True)
-    frag_lo_list = [[f] for f in range(coeff_lo_s.shape[1])]
+    coeff_lo_s = coeff_lo_s.real
+    nlo = coeff_lo_s.shape[1] // nimg
+    nlo_s = nlo * nimg
+    assert coeff_lo_s.shape[1] == nlo_s
+    frag_lo_list = [[f] for f in range(nlo)]
 
     from klno import KLNOCCSD
     klno_obj = KLNOCCSD(scf_obj, coeff_lo_s, frag_lo_list, frozen=0, mf=mf_s)
-    klno_obj.lno_type = ["1h", "1h"]
+    klno_obj.lno_type = ["2p", "2h"]
     klno_obj.lo_proj_thresh_active = 1e-4
     klno_obj.lno_thresh = [5e-4, 5e-5]
     klno_obj.verbose = 5
@@ -53,14 +57,12 @@ def main(config: dict):
 
     ene_klno_mp2 = klno_obj.e_tot_pt2
     ene_klno_ccsd = klno_obj.e_tot
-
-    nao = scf_obj.cell.nao_nr()
+    
     naux = None
     if isinstance(df_obj, fft.ISDF):
         naux = df_obj.inpv_kpt.shape[1]
     else:
         naux = df_obj.get_naoaux()
-    assert naux is not None
 
     with open("out.log", "w") as f:
         f.write("method = %s\n" % config["density_fitting_method"])

@@ -20,24 +20,23 @@ def dump(config : dict, path : str):
     raise NotImplementedError
 
 def build_cell(config: dict):
-    name: str = config["name"]
+    name: str = config["name"].lower()
 
-    atom = None
-    a = None
-    if "diamond" in name.lower():
-        atom = '''
+    cell = gto.Cell()
+    if "diamond" in name:
+        cell.atom = '''
         C 0.0000 0.0000 0.0000
         C 0.8917 0.8917 0.8917
         '''
         
-        a = '''
+        cell.a = '''
         0.0000 1.7834 1.7834
         1.7834 0.0000 1.7834
         1.7834 1.7834 0.0000
         '''
 
-    elif "nio" in name.lower():
-        atom = '''
+    elif "nio" in name:
+        cell.atom = '''
         Ni 0.000 0.000 0.000
         Ni 4.170 4.170 4.170
         O  2.085 2.085 2.085
@@ -49,13 +48,13 @@ def build_cell(config: dict):
         2.085 4.170 2.085
         2.085 2.085 4.170
         '''
+    
+    else:
+        raise RuntimeError(f"Unknown cell: {name}")
 
-    assert atom is not None, f"Unknown cell: {name}"
-    cell = gto.Cell()
-    cell.atom, cell.a = atom, a
     cell.basis = config["basis"]
     cell.pseudo = config["pseudo"]
-    cell.ke_cutoff = config["ke_cutoff"]
+    cell.ke_cutoff = None
     cell.exp_to_discard = 0.1
     cell.max_memory = MAX_MEMORY
     cell.unit = 'A'
@@ -72,61 +71,90 @@ def build_density_fitting(config: dict):
     kpts: numpy.ndarray = latt.kpts
     kmesh: list[int] = latt.kmesh
 
-    method = config["density_fitting_method"]
+    method = config["density_fitting_method"].lower()
     df_to_read = config["df_to_read"]
     df_to_read = None if df_to_read == "None" else df_to_read
 
     df_obj = None
-    if "gdf" in method.lower():
-        method = method.lower().split("-")
-        beta = 0.2 if len(method) == 1 else method[1]
+    if "gdf" in method:
+        print("Using GDF, method = %s" % method)
+        method = method.split("-")
 
         from pyscf.pbc.df import GDF
         df_obj = GDF(cell, kpts)
         df_obj.exxdiv = None
-        df_obj._prefer_ccdf = True
 
         if df_to_read is not None:
             assert os.path.exists(df_to_read)
             df_obj._cderi = df_to_read
-
-        if beta == "auto":
-            from pyscf.df import autoaux
-            df_obj.auxbasis = autoaux(cell)
-        else:
+        
+        if len(method) == 2:
+            beta = float(method[1])
+            print(f"Using beta = {beta}")
             from pyscf.df import aug_etb
-            beta = float(beta)
             df_obj.auxbasis = aug_etb(cell, beta=beta)
+        else:
+            print("Using default settings for GDF")
     
-    elif "rsdf" in method.lower():
-        method = method.lower().split("-")
-        assert len(method) == 1
+    elif "rsdf" in method:
+        print("Using RSDF, method = %s" % method)
+        method = method.split("-")
 
         from pyscf.pbc.df import RSDF
         df_obj = RSDF(cell, kpts)
         df_obj.exxdiv = None
 
-    elif "fftdf" in method.lower():
-        from pyscf.pbc.df import FFTDF
-        df_obj = FFTDF(cell, kpts)
+        if df_to_read is not None:
+            assert os.path.exists(df_to_read)
+            df_obj._cderi = df_to_read
+        
+        if len(method) == 2:
+            beta = float(method[1])
+            print(f"Using beta = {beta}")
+            from pyscf.df import aug_etb
+            df_obj.auxbasis = aug_etb(cell, beta=beta)
+        else:
+            print("Using default settings for GDF")
 
-    elif "fftisdf" in method.lower():
-        method = method.lower().split("-")
+    elif "fftdf" in method:
+        print("Using FFTDF, method = %s" % method)
+        method = method.split("-")
         assert len(method) == 2, f"Invalid method: {method}"
+
+        from pyscf.pbc.df import FFTDF
+        cell.ke_cutoff = float(method[1])
+        cell.build(dump_input=False)
+
+        df_obj = FFTDF(cell, kpts)
+        df_obj.exxdiv = None
+        print(f"ke_cutoff = {cell.ke_cutoff}, mesh = {df_obj.mesh}")
+
+        if df_to_read is not None:
+            print(f"FFTDF is not using df_to_read = {df_to_read}")
+
+    elif "fftisdf" in method:
+        print("Using FFTISDF, method = %s" % method)
+        method = method.split("-")
+        assert len(method) == 3, f"Invalid method: {method}"
         
         import fft
+        cell.ke_cutoff = float(method[1])
+        cell.build(dump_input=False)
+
         df_obj = fft.ISDF(cell, kpts)
+        df_obj.exxdiv = None
+        print(f"ke_cutoff = {cell.ke_cutoff}, mesh = {df_obj.mesh}")
+
         df_obj.tol = 1e-8
         df_obj.wrap_around = True
         df_obj.verbose = 5
+        df_obj.c0 = float(method[2])
 
-        m0 = cell.cutoff_to_mesh(40.0)
-        g0 = cell.gen_uniform_grids(m0)
-        c0 = float(method[1])
-        inpx = df_obj.select_inpx(g0=g0, c0=c0, kpts=kpts, tol=1e-30)
-
-        df_build = df_obj.build
-        df_obj.build = lambda: df_build(inpx=inpx)
+        if df_to_read is not None:
+            print(f"Reading FFTISDF from {df_to_read}")
+            df_obj._isdf = df_to_read
+        
+        print(f"Using ke_cutoff = {cell.ke_cutoff}, c0 = {df_obj.c0}")
 
     config["df"] = df_obj
 

@@ -1,6 +1,7 @@
-import numpy, scipy
+import numpy, scipy, os
 import pyscf, fft
 from pyscf import lib
+from pyscf.lib import logger
 
 import pyscf.lno, pyscf.pbc.lno
 from pyscf.pbc.lno.tools import K2SDF
@@ -56,6 +57,7 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
     
     def ao2mo(self, mo_coeff=None):
         from pyscf.lno.lnoccsd import _ChemistsERIs
+        log = logger.new_logger(self.with_df)
 
         eris = _ChemistsERIs()
         eris._common_init_(self, mo_coeff)
@@ -80,6 +82,9 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
 
         eri = df_obj.ao2mo_spc([coeff_mo_kpt] * 4, kpts=kpts)
         eri = eri.reshape([nmo, ] * 4) / nkpt
+
+        log.debug('eri.shape = %s', eri.shape)
+        log.debug('nocc = %s, nmo = %s, nvir = %s', nocc, nmo, nvir)
 
         from pyscf import lib
         eris.feri = lib.H5TmpFile()
@@ -124,6 +129,8 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
         eris_vvvv = None
         eri = None
 
+        log.debug('eris is saved to %s', eris.feri.filename)
+        log.debug('file size = %s', os.path.getsize(eris.feri.filename))
         return eris
         
 
