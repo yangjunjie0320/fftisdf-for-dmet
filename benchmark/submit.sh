@@ -1,5 +1,5 @@
 cell="diamond"
-method="krhf"
+method="klno"
 
 scancel -u $USER
 if [ -d $cell/$method ]; then
