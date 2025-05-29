@@ -2,11 +2,9 @@ import os
 import time, h5py
 import numpy, scipy
 
-import pyscf, libdmet
+import pyscf
 from pyscf.lib import H5TmpFile
 from pyscf.pbc import gto
-from libdmet.system.lattice import Lattice
-from libdmet.lo.make_lo import get_iao
 
 TMPDIR = os.environ.get("PYSCF_TMPDIR", None)
 assert os.path.exists(TMPDIR)
@@ -14,7 +12,6 @@ assert os.path.exists(TMPDIR)
 MAX_MEMORY = os.environ.get("PYSCF_MAX_MEMORY", 2000)
 MAX_MEMORY = int(MAX_MEMORY)
 assert MAX_MEMORY > 0
-
 
 def dump(config : dict, path : str):
     raise NotImplementedError
@@ -61,15 +58,19 @@ def build_cell(config: dict):
     cell.build(dump_input=False)
     config["cell"] = cell
 
+    # kmesh = [int(i) for i in config["kmesh"].split("-")]
+    # latt = Lattice(cell, kmesh)
+    # config["lattice"] = latt
+
     kmesh = [int(i) for i in config["kmesh"].split("-")]
-    latt = Lattice(cell, kmesh)
-    config["lattice"] = latt
+    config["kmesh"] = kmesh
+    config["kpts"] = cell.make_kpts(kmesh)
 
 def build_density_fitting(config: dict):
     cell: gto.Cell = config["cell"]
-    latt: Lattice = config["lattice"]
-    kpts: numpy.ndarray = latt.kpts
-    kmesh: list[int] = latt.kmesh
+    # latt: Lattice = config["lattice"]
+    # kpts: numpy.ndarray = latt.kpts
+    kpts: numpy.ndarray = config["kpts"]
 
     method = config["density_fitting_method"].lower()
     df_to_read = config["df_to_read"]
@@ -204,8 +205,7 @@ def build_mean_field(config: dict):
     is_unrestricted = config["is_unrestricted"]
 
     cell: gto.Cell = config["cell"]
-    latt: Lattice = config["lattice"]
-    kpts: numpy.ndarray = latt.kpts
+    kpts: numpy.ndarray = config["kpts"]
 
     mf = pyscf.pbc.scf.KRHF(cell, kpts)
     mf.verbose = 5
@@ -217,8 +217,6 @@ def build_mean_field(config: dict):
     if xc is not None:
         raise NotImplementedError
     
-    from libdmet.mean_field import pbc_helper as pbc_hp
-    # config["mf"] = pbc_hp.smearing_(mf, sigma=0.01)
     config["mf"] = mf
     get_init_guess(config)
 
