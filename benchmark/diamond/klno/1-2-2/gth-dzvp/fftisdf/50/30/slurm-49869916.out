@@ -1,0 +1,464 @@
+SLURMD_NODENAME = hpc-35-01
+Start time = Wed May 28 10:53:37 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/klno/1-2-2/gth-dzvp/fftisdf/50/30/main.py with:
+name: diamond
+xc: None
+kmesh: 1-2-2
+basis: gth-dzvp
+pseudo: gth-pbe
+density_fitting_method: fftisdf-50-30
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using FFTISDF, method = fftisdf-50-30
+ke_cutoff = 50.0, mesh = [17 17 17]
+Using ke_cutoff = 50.0, c0 = 30.0
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 8.52161)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 8.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            2.12325
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.75946
+pop of  0 C 2py           0.55865
+pop of  0 C 2pz           0.55865
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            2.12325
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.75946
+pop of  1 C 2py           0.55865
+pop of  1 C 2pz           0.55865
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =      0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [17 17 17] (4913 PWs)
+len(kpts) = 4
+tol = 1e-08
+c0 = 30.0
+wrap_around = True
+
+WARN: ke_cutoff/mesh (50 / [17 17 17]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 7.7 Eh.
+Recommended ke_cutoff/mesh are 422.908 / [47 47 47].
+
+Cholesky rank = 2114, c0 =  30.00, nao = 26, nip = 780
+Parent grid size = 4913, selected grid size = 780
+truncated values = 6.72e+01, estimated error = 3.69e-02
+Number of interpolating points is 780.
+    CPU time for building inpv_kpt      8.26 sec, wall time      1.65 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 2.45e-01 GB.
+blksize = 4913, ngrid = 4913
+memory needed for each block:   2.45e-01 GB
+memory needed for each k-point: 6.13e-02 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[    0: 4913]     10.30 sec, wall time      0.39 sec
+    CPU time for building eta_kpt     11.21 sec, wall time      0.42 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[ 1 / 4]      9.81 sec, wall time      0.94 sec
+    CPU time for coul_kpt[ 2 / 4]      8.82 sec, wall time      0.93 sec
+    CPU time for coul_kpt[ 3 / 4]      8.80 sec, wall time      0.93 sec
+    CPU time for coul_kpt[ 4 / 4]      8.83 sec, wall time      0.93 sec
+    CPU time for building coul_kpt     37.36 sec, wall time      3.77 sec
+Successfully removed swap file /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/fqa9h27o
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/tmp4vpjkicc
+max_memory 327680 MB (current use 399 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 4
+kpts = [[ 0.          0.          0.        ]
+ [-0.46609264 -0.46609264  0.46609264]
+ [-0.46609264  0.46609264 -0.46609264]
+ [-0.93218529  0.          0.        ]]
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.38332141474093495
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -1.53328565896
+DF object = <fft.isdf.InterpolativeSeparableDensityFitting object at 0x7efe2d772230>
+Set gradient conv threshold to 0.001
+    CPU time for vj and vk      3.27 sec, wall time      0.11 sec
+E1 = (3.604512065330103+1.8152825510627218e-18j)  E_coul = (-4.238151017309691+2.1887260386434515e-17j)
+init E= -13.4207680976038
+    CPU time for initialize scf      5.00 sec, wall time      0.17 sec
+HOMO = 0.642142557407  LUMO = 0.776528723701
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-1.97422289  0.60527246  0.60922792  0.64214256] [0.85981217 0.88582321 0.91019583 1.12520791 1.7910034  1.80523333
+ 1.86207076 2.08341803 2.08748051 2.09923907 2.64579586 2.64765126
+ 2.64892992 3.55319411 3.55392144 3.55480503 3.65950814 3.66029215
+ 4.21017566 4.73495288 4.73541908 4.7359657 ]
+   1 ( 0.000  0.000 -0.500)   [-0.7801505  -0.50848256  0.46132922  0.50284459] [0.94786239 1.02143014 1.04032069 1.35354445 1.62942489 1.75601271
+ 1.81456573 1.82407381 2.11260144 2.11925328 2.95658628 3.0675425
+ 3.06860585 3.10242995 3.10320159 3.30379733 3.6492748  3.65340534
+ 3.7672418  3.76775313 5.13924777 9.65011825]
+   2 (-0.000 -0.500  0.000)   [-0.78015046 -0.50848257  0.46132924  0.50284458] [0.94786254 1.0214302  1.04032067 1.35354364 1.62942478 1.75601333
+ 1.81456554 1.82407347 2.11260137 2.11925314 2.95658699 3.06754253
+ 3.06860535 3.10243011 3.10320104 3.30379696 3.64927264 3.65340431
+ 3.7672414  3.76775204 5.13924564 9.6501184 ]
+   3 ( 0.000 -0.500 -0.500)   [-0.41689243 -0.40450047  0.22475858  0.31063159] [0.77652872 0.84136877 1.40153346 1.40348256 1.67779455 1.68165507
+ 2.07043201 2.07585876 2.3122562  2.31465188 2.79346755 2.80078503
+ 2.87065871 2.87949553 2.95490268 2.95598372 3.67413338 3.67560877
+ 5.04760863 5.04821909 6.80918618 6.81464437]
+    CPU time for vj and vk      3.35 sec, wall time      0.11 sec
+E1 = (4.19800746419056+2.9731870261864202e-18j)  E_coul = (-2.2326044686036157+1.3497978653025814e-17j)
+cycle= 1 E= -10.8217261500373  delta_E=  2.6  |g|= 0.446  |ddm|= 14.8
+    CPU time for cycle= 1      3.83 sec, wall time      0.12 sec
+HOMO = 0.352247024657  LUMO = 0.89827227844
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.67169337  0.30155908  0.34067714  0.35224702] [0.97853092 0.99133328 1.01471717 1.33232476 1.80554189 1.80602145
+ 1.88406347 2.11998717 2.12202443 2.12538809 2.70805685 2.71165812
+ 2.71194251 3.56352881 3.5654102  3.56997716 3.69759044 3.70486858
+ 4.2216528  4.77132293 4.77264815 4.77472682]
+   1 ( 0.000  0.000 -0.500)   [-0.39621619 -0.25657557  0.18712389  0.22273233] [1.09293489 1.10500068 1.15031162 1.39709811 1.68429998 1.81150028
+ 1.84708777 1.85165185 2.11920445 2.12573889 3.00549538 3.12357335
+ 3.12502169 3.1381149  3.1409893  3.32109632 3.668041   3.66810217
+ 3.79985649 3.80638356 5.18621185 9.83367426]
+   2 (-0.000 -0.500  0.000)   [-0.3962162  -0.25657554  0.18712387  0.22273234] [1.09293489 1.10500095 1.15031174 1.39709717 1.6842999  1.81150143
+ 1.84708655 1.85165004 2.11920441 2.12573869 3.00549584 3.12357306
+ 3.12502006 3.13811458 3.14098854 3.32109599 3.66803891 3.6681023
+ 3.79985571 3.80638225 5.18620977 9.83367737]
+   3 ( 0.000 -0.500 -0.500)   [-0.25545531 -0.25122948  0.03956191  0.0750917 ] [0.89827228 0.95900202 1.50273035 1.50995619 1.74943954 1.76463973
+ 2.07049173 2.07210178 2.32316402 2.33068261 2.84347604 2.85141753
+ 2.88508081 2.88514466 2.98374232 2.98719541 3.73224368 3.73350603
+ 5.07640838 5.079932   6.89798258 6.89909941]
+    CPU time for vj and vk      3.32 sec, wall time      0.11 sec
+E1 = (4.194199708543382+1.895000731500861e-18j)  E_coul = (-2.2412694650222806+1.3772577749276254e-17j)
+cycle= 2 E= -10.8341989021031  delta_E= -0.0125  |g|= 0.0895  |ddm|= 4.05
+    CPU time for cycle= 2      3.90 sec, wall time      0.13 sec
+HOMO = 0.346104432404  LUMO = 0.903474737783
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66976053  0.3000818   0.33519335  0.34610443] [0.98176894 0.99581235 1.01711216 1.33875199 1.80541287 1.80618403
+ 1.88487401 2.12064987 2.12313354 2.12642323 2.7074354  2.71029096
+ 2.71096144 3.56370003 3.56581936 3.56959322 3.6989222  3.70582104
+ 4.21953742 4.77236165 4.77325643 4.77522867]
+   1 ( 0.000  0.000 -0.500)   [-0.39588022 -0.25760943  0.18696873  0.21794528] [1.09766679 1.10849556 1.15152499 1.39893984 1.68507842 1.81195327
+ 1.84609081 1.85178604 2.11922505 2.12552703 3.00621419 3.12425437
+ 3.12523691 3.13885609 3.14124539 3.32162809 3.66769309 3.66834717
+ 3.80025648 3.80639161 5.18509385 9.82853712]
+   2 (-0.000 -0.500  0.000)   [-0.39588022 -0.25760942  0.1869687   0.21794532] [1.09766679 1.10849583 1.15152509 1.398939   1.68507838 1.81195435
+ 1.84608958 1.85178433 2.11922501 2.12552681 3.00621458 3.12425401
+ 3.12523538 3.13885587 3.1412446  3.32162781 3.66769267 3.66834559
+ 3.8002556  3.80639033 5.18509148 9.82854123]
+   3 ( 0.000 -0.500 -0.500)   [-0.25627594 -0.25205205  0.04011607  0.07063   ] [0.90347474 0.95976876 1.50636936 1.51278457 1.75053112 1.7646063
+ 2.07003507 2.07148017 2.32338748 2.33115227 2.8434939  2.85176167
+ 2.88518074 2.8852695  2.98353746 2.98724391 3.73376575 3.73460457
+ 5.07649135 5.07919616 6.89483109 6.89651193]
+    CPU time for vj and vk      3.40 sec, wall time      0.11 sec
+E1 = (4.19343476658068+1.8382066657393348e-18j)  E_coul = (-2.2410984693893896+1.3843098657583247e-17j)
+cycle= 3 E= -10.834792848433  delta_E= -0.000594  |g|= 0.00536  |ddm|= 0.838
+    CPU time for cycle= 3      3.99 sec, wall time      0.13 sec
+HOMO = 0.346445988096  LUMO = 0.903779073741
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66926028  0.30045579  0.33534753  0.34644599] [0.98225005 0.99639176 1.01755871 1.33932582 1.80561606 1.8063612
+ 1.88474266 2.12079899 2.12322898 2.12657253 2.70782607 2.71063913
+ 2.71139805 3.56380476 3.56596087 3.56962933 3.69923699 3.70609241
+ 4.21959096 4.77263779 4.77350331 4.77546197]
+   1 ( 0.000  0.000 -0.500)   [-0.39527633 -0.25726867  0.18743289  0.21819159] [1.09808208 1.1089571  1.15171628 1.39901188 1.68521885 1.81232637
+ 1.84630747 1.85202217 2.11943246 2.12560208 3.00655892 3.124494
+ 3.12538517 3.13936188 3.14170364 3.32174417 3.66777827 3.66848616
+ 3.80048409 3.80659897 5.18540753 9.8297854 ]
+   2 (-0.000 -0.500  0.000)   [-0.39527634 -0.25726865  0.18743285  0.21819163] [1.09808208 1.10895736 1.15171639 1.39901104 1.68521881 1.81232746
+ 1.84630623 1.85202048 2.11943242 2.12560187 3.00655932 3.12449364
+ 3.12538364 3.13936165 3.14170288 3.32174389 3.66777784 3.6684846
+ 3.80048322 3.80659772 5.18540517 9.82978962]
+   3 ( 0.000 -0.500 -0.500)   [-0.25578265 -0.25164313  0.04053651  0.07090442] [0.90377907 0.95976276 1.50714675 1.51356331 1.75081801 1.76487759
+ 2.07012013 2.07149082 2.32349641 2.33138713 2.84383966 2.85205273
+ 2.88519204 2.88541453 2.98373739 2.98746977 3.73407796 3.73506544
+ 5.07673432 5.07937837 6.89535368 6.8972051 ]
+    CPU time for vj and vk      3.33 sec, wall time      0.11 sec
+E1 = (4.193463895964655+1.8620962105165374e-18j)  E_coul = (-2.2411302855699047+1.3848998652549252e-17j)
+cycle= 4 E= -10.8347955352295  delta_E= -2.69e-06  |g|= 0.000614  |ddm|= 0.0987
+    CPU time for cycle= 4      3.91 sec, wall time      0.13 sec
+HOMO = 0.34640204699  LUMO = 0.903765866144
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66931343  0.30039843  0.33527124  0.34640205] [0.9822263  0.99635813 1.01752279 1.33927063 1.80560379 1.80633829
+ 1.88475636 2.12078926 2.1232077  2.12655968 2.70776994 2.71058109
+ 2.71135081 3.56379266 3.56595    3.56961122 3.69920787 3.70606225
+ 4.21957416 4.77261336 4.77347455 4.77543277]
+   1 ( 0.000  0.000 -0.500)   [-0.39529729 -0.25733739  0.18738425  0.21812624] [1.09804008 1.1089281  1.15169209 1.39901733 1.68518969 1.81228615
+ 1.84626388 1.85198517 2.11942531 2.12557753 3.00652732 3.12448206
+ 3.12536787 3.13931012 3.14164869 3.32173635 3.66775892 3.66847699
+ 3.8004513  3.80656585 5.18536922 9.82961013]
+   2 (-0.000 -0.500  0.000)   [-0.3952973  -0.25733737  0.18738421  0.21812628] [1.09804007 1.10892836 1.1516922  1.39901648 1.68518965 1.81228724
+ 1.84626264 1.85198348 2.11942527 2.12557732 3.00652772 3.1244817
+ 3.12536635 3.1393099  3.14164793 3.32173606 3.66775849 3.66847544
+ 3.80045043 3.8065646  5.18536686 9.82961435]
+   3 ( 0.000 -0.500 -0.500)   [-0.25584094 -0.25169916  0.04048492  0.07086688] [0.90376587 0.95975428 1.50709518 1.51353121 1.75075112 1.76481663
+ 2.07010418 2.07147892 2.3234734  2.33136411 2.84379872 2.85200879
+ 2.88518273 2.88541115 2.98370569 2.98745087 3.73403582 3.73502771
+ 5.07671097 5.07934948 6.89526164 6.89712788]
+    CPU time for vj and vk      3.37 sec, wall time      0.11 sec
+E1 = (4.193485399064385+1.8601994853719533e-18j)  E_coul = (-2.2411518348273525+1.3849166389267842e-17j)
+cycle= 5 E= -10.8347955813872  delta_E= -4.62e-08  |g|= 8.44e-05  |ddm|= 0.00953
+    CPU time for cycle= 5      4.20 sec, wall time      0.13 sec
+HOMO = 0.346409035899  LUMO = 0.9037670234
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66931066  0.30039934  0.33527176  0.34640904] [0.98222773 0.99635964 1.01752356 1.33927229 1.80560444 1.806339
+ 1.88475531 2.12078891 2.12320702 2.1265604  2.70777113 2.71058262
+ 2.71135408 3.56379319 3.56595064 3.56961115 3.69920868 3.70606295
+ 4.21957518 4.77261425 4.77347522 4.77543348]
+   1 ( 0.000  0.000 -0.500)   [-0.39529198 -0.25733458  0.18738531  0.21812723] [1.09804087 1.10892956 1.15169154 1.39901651 1.68519086 1.8122884
+ 1.84626456 1.85198644 2.11942814 2.12557782 3.00652948 3.12448308
+ 3.12536803 3.13931168 3.14164979 3.32173631 3.66775882 3.66847798
+ 3.80045134 3.8065663  5.18537103 9.82961791]
+   2 (-0.000 -0.500  0.000)   [-0.39529199 -0.25733456  0.18738527  0.21812726] [1.09804086 1.10892982 1.15169164 1.39901567 1.68519082 1.81228948
+ 1.84626332 1.85198475 2.1194281  2.12557761 3.00652988 3.12448272
+ 3.12536651 3.13931146 3.14164903 3.32173602 3.66775839 3.66847643
+ 3.80045046 3.80656505 5.18536867 9.82962212]
+   3 ( 0.000 -0.500 -0.500)   [-0.25583736 -0.25169803  0.04048633  0.07087108] [0.90376702 0.95975385 1.50709677 1.51353592 1.75075147 1.76481553
+ 2.07010508 2.07147916 2.32347307 2.33136559 2.84380002 2.8520095
+ 2.88518178 2.88541253 2.98370627 2.98745245 3.73403555 3.7350301
+ 5.07671224 5.07935051 6.89526399 6.89713318]
+    CPU time for vj and vk      3.39 sec, wall time      0.11 sec
+E1 = (4.193485976060995+1.859086100267457e-18j)  E_coul = (-2.2411524127035287+1.3854471899867363e-17j)
+Extra cycle  E= -10.8347955822668  delta_E= -8.8e-10  |g|= 2.68e-05  |ddm|= 0.00139
+    CPU time for scf_cycle     28.78 sec, wall time      0.93 sec
+    CPU time for SCF     30.57 sec, wall time      0.99 sec
+converged SCF energy = -10.8347955822668
+**** SCF Summaries ****
+Total Energy =                         -10.834795582266775
+Nuclear Repulsion Energy =             -12.787129145624240
+One-electron Energy =                    4.193485976060995
+Two-electron Energy =                   -2.241152412703529
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            0.89509
+pop of  0 C 3s            0.00355
+pop of  0 C 2px           1.05199
+pop of  0 C 2py           1.01164
+pop of  0 C 2pz           1.01164
+pop of  0 C 3px           0.00285
+pop of  0 C 3py           0.00220
+pop of  0 C 3pz           0.00220
+pop of  0 C 3dxy          0.00650
+pop of  0 C 3dyz          0.00556
+pop of  0 C 3dz^2         0.00010
+pop of  0 C 3dxz          0.00650
+pop of  0 C 3dx2-y2       0.00015
+pop of  1 C 2s            0.89509
+pop of  1 C 3s            0.00355
+pop of  1 C 2px           1.05199
+pop of  1 C 2py           1.01165
+pop of  1 C 2pz           1.01165
+pop of  1 C 3px           0.00285
+pop of  1 C 3py           0.00220
+pop of  1 C 3pz           0.00220
+pop of  1 C 3dxy          0.00650
+pop of  1 C 3dyz          0.00556
+pop of  1 C 3dz^2         0.00010
+pop of  1 C 3dxz          0.00650
+pop of  1 C 3dx2-y2       0.00015
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =     -0.00000
+    CPU time for vj and vk      2.42 sec, wall time      0.08 sec
+
+WARN: ECP/PP is used. MINAO is not a good reference AO basis in IAO.
+
+
+WARN: Discard large imag part in k2s_iao: 2.49e-05.
+
+nlo = 10, nlo_s = 40
+coeff_lo_s.shape = (104, 40)
+frag_lo_list = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
+
+******** <class 'klno.WithFFTISDF'> ********
+nocc = 16, nmo = 104
+frozen orbitals 0
+max_memory 327680 MB (current use 457 MB)
+nfrag = 10  nlo = 40
+frag_lolist = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
+frag_wghtlist = None
+lno_type = ['2p', '2h']
+lno_thresh = [0.0005, 5e-05]
+lno_pct_occ = None
+lno_norb = None
+lo_proj_thresh = 1e-10
+lo_proj_thresh_active = 0.0001
+verbose_imp = 2
+_ovL = None
+_ovL_to_save = None
+force_outcore_ao2mo = False
+_match_oldcode = False
+_max_las_size_ccsd = 1000
+_max_las_size_ccsd_t = 1000
+Regularized frag_wghtlist = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    CPU time for LO and fragment        0.01 sec, wall time      0.00 sec
+
+WARN: Input vhf is not found. Building vhf from SCF MO.
+
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 1 make las      1.55 sec, wall time      0.05 sec
+Fragment 1/10  LAS: 1/16 Occ | 12/88 Vir | 13/104 MOs
+    impsol:  1 LOs  13/104 MOs  1 occ  12 vir
+eri.shape = (13, 13, 13, 13)
+nocc = 1, nmo = 13, nvir = 12
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/o7g1jbg8
+file size = 96
+    CPU time for Fragment 1 imp sol       3.95 sec, wall time      0.12 sec
+Fragment 1/10  Sol: E_corr(MP2) = -7.47301615321258e-05  E_corr(CCSD) = -9.25762634807636e-05  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 1             5.50 sec, wall time      0.17 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 2 make las      1.56 sec, wall time      0.05 sec
+Fragment 2/10  LAS: 1/16 Occ | 12/88 Vir | 13/104 MOs
+    impsol:  1 LOs  13/104 MOs  1 occ  12 vir
+eri.shape = (13, 13, 13, 13)
+nocc = 1, nmo = 13, nvir = 12
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/j8cu2dj7
+file size = 96
+    CPU time for Fragment 2 imp sol       3.75 sec, wall time      0.12 sec
+Fragment 2/10  Sol: E_corr(MP2) = -0.00303294052379452  E_corr(CCSD) = -0.00374865837881151  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 2             5.32 sec, wall time      0.17 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 3 make las      1.55 sec, wall time      0.05 sec
+Fragment 3/10  LAS: 3/16 Occ | 13/88 Vir | 16/104 MOs
+    impsol:  1 LOs  16/104 MOs  3 occ  13 vir
+eri.shape = (16, 16, 16, 16)
+nocc = 3, nmo = 16, nvir = 13
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/82a79qtt
+file size = 96
+    CPU time for Fragment 3 imp sol       6.35 sec, wall time      0.20 sec
+Fragment 3/10  Sol: E_corr(MP2) = -0.0125051251439325  E_corr(CCSD) = -0.016861875727213  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 3             7.91 sec, wall time      0.25 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 4 make las      1.67 sec, wall time      0.05 sec
+Fragment 4/10  LAS: 2/16 Occ | 12/88 Vir | 14/104 MOs
+    impsol:  1 LOs  14/104 MOs  2 occ  12 vir
+eri.shape = (14, 14, 14, 14)
+nocc = 2, nmo = 14, nvir = 12
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/40qh1023
+file size = 96
+    CPU time for Fragment 4 imp sol       5.23 sec, wall time      0.17 sec
+Fragment 4/10  Sol: E_corr(MP2) = -0.00994749514661323  E_corr(CCSD) = -0.013369367713462  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 4             6.89 sec, wall time      0.22 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 5 make las      1.56 sec, wall time      0.05 sec
+Fragment 5/10  LAS: 2/16 Occ | 12/88 Vir | 14/104 MOs
+    impsol:  1 LOs  14/104 MOs  2 occ  12 vir
+eri.shape = (14, 14, 14, 14)
+nocc = 2, nmo = 14, nvir = 12
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/t4tbnqxo
+file size = 96
+    CPU time for Fragment 5 imp sol       5.13 sec, wall time      0.16 sec
+Fragment 5/10  Sol: E_corr(MP2) = -0.00994750439274639  E_corr(CCSD) = -0.0133693760165811  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 5             6.69 sec, wall time      0.21 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 6 make las      1.54 sec, wall time      0.05 sec
+Fragment 6/10  LAS: 1/16 Occ | 12/88 Vir | 13/104 MOs
+    impsol:  1 LOs  13/104 MOs  1 occ  12 vir
+eri.shape = (13, 13, 13, 13)
+nocc = 1, nmo = 13, nvir = 12
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/llh2lnxx
+file size = 96
+    CPU time for Fragment 6 imp sol       3.86 sec, wall time      0.12 sec
+Fragment 6/10  Sol: E_corr(MP2) = -7.47299232600178e-05  E_corr(CCSD) = -9.25759750243206e-05  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 6             5.40 sec, wall time      0.17 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 7 make las      1.59 sec, wall time      0.05 sec
+Fragment 7/10  LAS: 1/16 Occ | 12/88 Vir | 13/104 MOs
+    impsol:  1 LOs  13/104 MOs  1 occ  12 vir
+eri.shape = (13, 13, 13, 13)
+nocc = 1, nmo = 13, nvir = 12
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/cdbf8074
+file size = 96
+    CPU time for Fragment 7 imp sol       3.78 sec, wall time      0.12 sec
+Fragment 7/10  Sol: E_corr(MP2) = -0.00303292448419926  E_corr(CCSD) = -0.00374863868076451  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 7             5.36 sec, wall time      0.17 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 8 make las      1.55 sec, wall time      0.05 sec
+Fragment 8/10  LAS: 3/16 Occ | 13/88 Vir | 16/104 MOs
+    impsol:  1 LOs  16/104 MOs  3 occ  13 vir
+eri.shape = (16, 16, 16, 16)
+nocc = 3, nmo = 16, nvir = 13
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/29o69ei7
+file size = 96
+    CPU time for Fragment 8 imp sol       6.14 sec, wall time      0.19 sec
+Fragment 8/10  Sol: E_corr(MP2) = -0.012505195998898  E_corr(CCSD) = -0.016861963707217  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 8             7.70 sec, wall time      0.24 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 9 make las      1.63 sec, wall time      0.05 sec
+Fragment 9/10  LAS: 2/16 Occ | 12/88 Vir | 14/104 MOs
+    impsol:  1 LOs  14/104 MOs  2 occ  12 vir
+eri.shape = (14, 14, 14, 14)
+nocc = 2, nmo = 14, nvir = 12
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/vnn01kwx
+file size = 96
+    CPU time for Fragment 9 imp sol       5.11 sec, wall time      0.16 sec
+Fragment 9/10  Sol: E_corr(MP2) = -0.00994757080651675  E_corr(CCSD) = -0.0133694657153946  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 9             6.75 sec, wall time      0.21 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 10 make las      1.52 sec, wall time      0.05 sec
+Fragment 10/10  LAS: 2/16 Occ | 12/88 Vir | 14/104 MOs
+    impsol:  1 LOs  14/104 MOs  2 occ  12 vir
+eri.shape = (14, 14, 14, 14)
+nocc = 2, nmo = 14, nvir = 12
+eris is saved to /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-50-30/49869916/37c0x4wl
+file size = 96
+    CPU time for Fragment 10 imp sol       5.16 sec, wall time      0.16 sec
+Fragment 10/10  Sol: E_corr(MP2) = -0.00994757299672155  E_corr(CCSD) = -0.0133694704520177  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 10            6.68 sec, wall time      0.21 sec
+    CPU time for WithFFTISDF           64.25 sec, wall time      2.03 sec
+E(LNOMP2) = -43.4101981186453  E_corr = -0.0710157895782144
+E(LNOCCSD) = -43.4340662976971  E_corr = -0.0948839686299664
+Summary by spin components
+LNOMP2   Ess = -0.00558268129061586  Eos = -0.0654331082875985  Escs = -0.0803787628148933
+LNOCCSD  Ess = -0.00633256292849431  Eos = -0.0885514057014722  Escs = -0.108370430296955
+End time = Wed May 28 10:53:47 PM PDT 2025
