@@ -147,7 +147,7 @@ def build_density_fitting(config: dict):
         print(f"ke_cutoff = {cell.ke_cutoff}, mesh = {df_obj.mesh}")
 
         df_obj.tol = 1e-8
-        df_obj.wrap_around = True
+        df_obj.wrap_around = False
         df_obj.verbose = 5
         df_obj.c0 = float(method[2])
 
