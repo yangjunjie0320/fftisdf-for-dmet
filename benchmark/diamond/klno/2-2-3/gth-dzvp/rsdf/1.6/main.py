@@ -53,13 +53,15 @@ def main(config: dict):
     klno_obj = KLNOCCSD(scf_obj, coeff_lo_s, frag_lo_list, frozen=0, mf=mf_s)
     klno_obj.lno_type = ["2p", "2h"]
     klno_obj.lo_proj_thresh_active = 1e-4
-    klno_obj.lno_thresh = [5e-4, 5e-5]
+    lno_thresh = config["lno_thresh"]
+    klno_obj.lno_thresh = [10 * lno_thresh, lno_thresh]
     klno_obj.verbose = 5
+    klno_obj.verbose_imp = 5
     klno_obj.kernel()
     table["time_klno"] = time.time() - t0
 
-    ene_klno_mp2 = klno_obj.e_tot_pt2
-    ene_klno_ccsd = klno_obj.e_tot
+    ene_klno_mp2 = klno_obj.e_tot_pt2 / nimg
+    ene_klno_ccsd = klno_obj.e_tot / nimg
     
     naux = None
     if isinstance(df_obj, fft.ISDF):
@@ -71,6 +73,7 @@ def main(config: dict):
         f.write("method = %s\n" % config["density_fitting_method"])
         f.write("basis = %s\n" % config["basis"])
         f.write("nao = %d\n" % nao)
+        f.write("natm = %d\n" % scf_obj.cell.natm)
         if naux is not None:
             f.write("naux = %d\n" % naux)
         f.write("nkpt = %d\n" % nkpt)
@@ -90,6 +93,7 @@ if __name__ == "__main__":
     parser.add_argument("--kmesh", type=str, required=True)
     parser.add_argument("--basis", type=str, required=True)
     parser.add_argument("--pseudo", type=str, required=True)
+    parser.add_argument("--lno-thresh", type=float, default=3e-5)
     parser.add_argument("--density-fitting-method", type=str, required=True)
     parser.add_argument("--is-unrestricted", action="store_true")
     parser.add_argument("--init-guess-method", type=str, default="minao")
