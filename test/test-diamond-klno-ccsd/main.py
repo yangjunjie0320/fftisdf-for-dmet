@@ -62,8 +62,6 @@ def main(config: dict):
 
     ene_klno_mp2 = klno_obj.e_tot_pt2 / nimg
     ene_klno_ccsd = klno_obj.e_tot / nimg
-    ene_corr_klno_mp2 = klno_obj.e_corr_pt2 / nimg
-    ene_corr_klno_ccsd = klno_obj.e_corr / nimg
     
     naux = None
     if isinstance(df_obj, fft.ISDF):
@@ -83,8 +81,6 @@ def main(config: dict):
         f.write("ene_krhf = % 12.8f\n" % ene_kscf)
         f.write("ene_klno_mp2 = % 12.8f\n" % ene_klno_mp2)
         f.write("ene_klno_ccsd = % 12.8f\n" % ene_klno_ccsd)
-        f.write("ene_corr_klno_mp2 = % 12.8f\n" % ene_corr_klno_mp2)
-        f.write("ene_corr_klno_ccsd = % 12.8f\n" % ene_corr_klno_ccsd)
 
         for k, v in table.items():
             f.write("%s = % 6.2f\n" % (k, max(v, 0.01)))

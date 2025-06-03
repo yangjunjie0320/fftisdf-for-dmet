@@ -58,6 +58,7 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
     def ao2mo(self, mo_coeff=None):
         from pyscf.lno.lnoccsd import _ChemistsERIs
         log = logger.new_logger(self.with_df)
+        t0 = (logger.process_clock(), logger.perf_counter())
 
         eris = _ChemistsERIs()
         eris._common_init_(self, mo_coeff)
@@ -129,8 +130,8 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
         eris_vvvv = None
         eri = None
 
-        log.debug('eris is saved to %s', eris.feri.filename)
         log.debug('file size = %s', os.path.getsize(eris.feri.filename))
+        log.timer('CCSD integral transformation', *t0)
         return eris
         
 

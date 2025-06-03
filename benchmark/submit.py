@@ -13,7 +13,7 @@ def loop(base_dir):
     
     basis = ['gth-dzvp']
     kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
-    method = ['rsdf', 'fftisdf']
+    method = ['rsdf', 'gdf', 'fftisdf']
 
     from itertools import product
     for k, b, m in product(kmesh, basis, method):

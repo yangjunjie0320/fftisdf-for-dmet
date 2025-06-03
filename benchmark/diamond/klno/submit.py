@@ -12,24 +12,28 @@ def loop(base_dir):
     base_dir.mkdir(parents=True, exist_ok=True)
     
     basis = ['gth-dzvp']
-    kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
+    kmesh = ['2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
+    kmesh += ['4-4-6', '4-6-6', '6-6-6']
+    kmesh += ['6-6-8', '6-8-8', '8-8-8']
+    kmesh += ['8-8-10', '8-10-10', '10-10-10']
+    zeta = [1e-4, 3e-5, 1e-5, 3e-6, 1e-6]
     method = ['rsdf', 'fftisdf']
 
     from itertools import product
-    for k, b, m in product(kmesh, basis, method):
+    for k, b, m, z in product(kmesh, basis, method, zeta):
         config = {'kmesh': k, 'basis': b}
 
         if m in ['rsdf', 'gdf']:
             for beta in [1.1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2]:
                 config['density-fitting-method'] = "%s-%s" % (m, beta)
-                dir_name = f"{k}/{b}/{m}/{beta}"
+                dir_name = f"{k}/{b}/{m}/{beta}/{z}"
                 dir_path = base_dir / dir_name
                 yield dir_path, config
 
         elif m == 'fftdf':
             for ke_cutoff in [50, 100, 150, 200]:
                 config['density-fitting-method'] = "%s-%s" % (m, ke_cutoff)
-                dir_name = f"{k}/{b}/{m}/{ke_cutoff}"
+                dir_name = f"{k}/{b}/{m}/{ke_cutoff}/{z}"
                 dir_path = base_dir / dir_name
                 yield dir_path, config
 
@@ -38,7 +42,7 @@ def loop(base_dir):
             for ke_cutoff in [50, 100, 150, 200]:
                 for c in [5, 10, 15, 20, 25, 30]:
                     config['density-fitting-method'] = "%s-%s-%s" % (m, ke_cutoff, c)
-                    dir_name = f"{k}/{b}/{m}/{ke_cutoff}/{c}"
+                    dir_name = f"{k}/{b}/{m}/{ke_cutoff}/{c}/{z}"
                     dir_path = base_dir / dir_name
                     yield dir_path, config
 
