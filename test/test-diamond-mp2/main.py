@@ -29,11 +29,24 @@ def main(config: dict):
     vj, vk = scf_obj.get_jk(dm_kpts=dm0, hermi=1, with_j=False, with_k=True)
     table["time_get_vk"] = time.time() - t0
 
+    import line_profiler
+    import pyscf.pbc.mp
+    prof = line_profiler.LineProfiler()
+    prof.add_function(pyscf.pbc.mp.kmp2.KMP2.kernel)
+    prof.add_function(pyscf.pbc.mp.kmp2.kernel)
+    prof.add_function(scf_obj.with_df.ao2mo)
+    prof.enable_by_count()
+
     t0 = time.time()
     from pyscf.pbc.mp import KMP2
     mp_obj = KMP2(scf_obj)
+    mp_obj.with_df_ints = False
+    mp_obj.verbose = 10
     mp_obj.kernel()
     table["time_kmp2"] = time.time() - t0
+    
+    # show results, in seconds
+    prof.print_stats(output_unit=1.0)
 
     ene_kmp2 = mp_obj.e_tot
     ene_corr_kmp2 = mp_obj.e_corr

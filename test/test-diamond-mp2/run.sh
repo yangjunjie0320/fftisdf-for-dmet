@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --reservation=changroup_standingres
-#SBATCH --job-name=diamond-klno-4-4-4-gth-dzvp-fftisdf-200-10
+#SBATCH --job-name=debug
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=10gb
-#SBATCH --time=04:00:00
+#SBATCH --time=20:00:00
 #SBATCH --constraint=icelake
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
@@ -39,9 +39,11 @@ export PYTHONPATH=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts
-cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/main-kmp2.py ./main.py
-python main.py --kmesh=2-2-2 --basis=gth-dzvp --density-fitting-method=fftisdf-100-10 --name=diamond --pseudo=gth-pbe --init-guess-method=minao
-python main.py --kmesh=2-2-2 --basis=gth-dzvp --density-fitting-method=gdf-2.0 --name=diamond --pseudo=gth-pbe --init-guess-method=minao
-python main.py --kmesh=2-2-2 --basis=gth-dzvp --density-fitting-method=rsdf-2.0 --name=diamond --pseudo=gth-pbe --init-guess-method=minao
-python main.py --kmesh=2-2-2 --basis=gth-dzvp --density-fitting-method=fftdf-100 --name=diamond --pseudo=gth-pbe --init-guess-method=minao
+# cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/main-kmp2.py ./main.py
+
+for kmesh in 2-2-2 3-3-3; do
+    python main.py --kmesh=$kmesh --basis=gth-dzvp --density-fitting-method=fftisdf-100-10 --name=diamond --pseudo=gth-pbe --init-guess-method=minao
+    python main.py --kmesh=$kmesh --basis=gth-dzvp --density-fitting-method=gdf-2.0 --name=diamond --pseudo=gth-pbe --init-guess-method=minao
+done
+
 echo "End time = $(date)"
