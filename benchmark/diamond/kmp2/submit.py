@@ -12,7 +12,8 @@ def loop(base_dir):
     base_dir.mkdir(parents=True, exist_ok=True)
     
     basis = ['gth-dzvp']
-    kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
+    # kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
+    kmesh = ['4-4-6', '4-6-6', '6-6-6', '6-6-8', '6-8-8', '8-8-8']
     method = ['rsdf', 'gdf', 'fftisdf', 'fftdf']
 
     from itertools import product

@@ -1,0 +1,113 @@
+SLURMD_NODENAME = hpc-20-37
+Start time = Wed Jun  4 02:53:27 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-kmp2-4-4-6-gth-dzvp-fftisdf-100-10/50005649/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-kmp2-4-4-6-gth-dzvp-fftisdf-100-10/50005649/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/kmp2/4-4-6/gth-dzvp/fftisdf/100/10/main.py with:
+name: diamond
+xc: None
+kmesh: 4-4-6
+basis: gth-dzvp
+pseudo: gth-pbe
+lno_thresh: 3e-05
+density_fitting_method: fftisdf-100-10
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using FFTISDF, method = fftisdf-100-10
+ke_cutoff = 100.0, mesh = [23 23 23]
+Using ke_cutoff = 100.0, c0 = 10.0
+
+WARN: Weak orthogonality for localized orbitals 2.050756173004678e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.70080
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76640
+pop of  0 C 2py           0.76640
+pop of  0 C 2pz           0.76640
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.70080
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76640
+pop of  1 C 2py           0.76640
+pop of  1 C 2pz           0.76640
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =      0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [23 23 23] (12167 PWs)
+len(kpts) = 96
+tol = 1e-08
+c0 = 10.0
+wrap_around = False
+
+WARN: ke_cutoff/mesh (100 / [23 23 23]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.61 Eh.
+Recommended ke_cutoff/mesh are 422.908 / [47 47 47].
+
+Cholesky rank = 3437, c0 =  10.00, nao = 26, nip = 260
+Parent grid size = 12167, selected grid size = 260
+truncated values = 3.77e+02, estimated error = 3.17e+01
+Number of interpolating points is 260.
+    CPU time for building inpv_kpt     58.42 sec, wall time     49.55 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 4.86e+00 GB.
+blksize = 12167, ngrid = 12167
+memory needed for each block:   4.86e+00 GB
+memory needed for each k-point: 5.06e-02 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 12167]     42.37 sec, wall time      8.16 sec
+    CPU time for building eta_kpt     45.38 sec, wall time      8.26 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[  1 / 96]      8.18 sec, wall time      0.26 sec
+    CPU time for coul_kpt[  2 / 96]      7.40 sec, wall time      0.25 sec
+    CPU time for coul_kpt[  3 / 96]      7.50 sec, wall time      0.25 sec
+    CPU time for coul_kpt[  4 / 96]      7.46 sec, wall time      0.25 sec
+    CPU time for coul_kpt[  5 / 96]      7.45 sec, wall time      0.24 sec
+    CPU time for coul_kpt[  6 / 96]      7.45 sec, wall time      0.24 sec
+    CPU time for coul_kpt[  7 / 96]      7.33 sec, wall time      0.24 sec
+    CPU time for coul_kpt[  8 / 96]      7.19 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  9 / 96]      7.20 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 10 / 96]      7.05 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 11 / 96]      7.01 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 12 / 96]      7.42 sec, wall time      0.25 sec
+    CPU time for coul_kpt[ 13 / 96]      7.50 sec, wall time      0.25 sec
+    CPU time for coul_kpt[ 14 / 96]      6.85 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 15 / 96]      6.81 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 16 / 96]      6.75 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 17 / 96]      6.75 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 18 / 96]      6.73 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 19 / 96]      6.70 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 20 / 96]      6.69 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 21 / 96]      6.65 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 22 / 96]      6.68 sec, wall time      0.22 sec
