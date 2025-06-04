@@ -1,6 +1,6 @@
 scancel -u $USER
 
-for method in "krhf" "kmp2"; do
+for method in "klno"; do
     cell="diamond"
     if [ -d $cell/$method ]; then
         rm -rf $cell/$method

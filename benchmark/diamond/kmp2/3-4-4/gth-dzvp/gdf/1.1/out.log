@@ -1,0 +1,13 @@
+method = gdf-1.1
+basis = gth-dzvp
+nao = 26
+natm = 2
+naux = 376
+nkpt = 48
+kmesh = [3, 4, 4]
+ene_krhf = -11.03589503
+ene_kmp2 = -11.10078126
+ene_corr_kmp2 =  -0.06488623
+time_build_df =  186.21
+time_get_vk =  34.57
+time_kmp2 =  111.95
