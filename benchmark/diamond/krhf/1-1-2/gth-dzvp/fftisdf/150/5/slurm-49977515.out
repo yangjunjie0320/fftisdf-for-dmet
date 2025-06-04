@@ -1,0 +1,251 @@
+SLURMD_NODENAME = hpc-52-41
+Start time = Tue Jun  3 12:26:19 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-krhf-1-1-2-gth-dzvp-fftisdf-150-5/49977515/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-krhf-1-1-2-gth-dzvp-fftisdf-150-5/49977515/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/krhf/1-1-2/gth-dzvp/fftisdf/150/5/main.py with:
+name: diamond
+xc: None
+kmesh: 1-1-2
+basis: gth-dzvp
+pseudo: gth-pbe
+density_fitting_method: fftisdf-150-5
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using FFTISDF, method = fftisdf-150-5
+ke_cutoff = 150.0, mesh = [29 29 29]
+Using ke_cutoff = 150.0, c0 = 5.0
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 9.70107)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 8.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            2.60121
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.46626
+pop of  0 C 2py           0.46626
+pop of  0 C 2pz           0.46626
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            2.60121
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.46626
+pop of  1 C 2py           0.46626
+pop of  1 C 2pz           0.46626
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =      0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [29 29 29] (24389 PWs)
+len(kpts) = 2
+tol = 1e-08
+c0 = 5.0
+wrap_around = False
+
+WARN: ke_cutoff/mesh (150 / [29 29 29]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.042 Eh.
+Recommended ke_cutoff/mesh are 422.908 / [47 47 47].
+
+Cholesky rank = 1205, c0 =   5.00, nao = 26, nip = 130
+Parent grid size = 24389, selected grid size = 130
+truncated values = 3.62e+01, estimated error = 3.78e+00
+Number of interpolating points is 130.
+    CPU time for building inpv_kpt     33.43 sec, wall time     25.87 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 1.01e-01 GB.
+blksize = 24389, ngrid = 24389
+memory needed for each block:   1.01e-01 GB
+memory needed for each k-point: 5.07e-02 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 24389]      5.37 sec, wall time      0.17 sec
+    CPU time for building eta_kpt      8.46 sec, wall time      0.27 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[ 1 / 2]      4.80 sec, wall time      0.15 sec
+    CPU time for coul_kpt[ 2 / 2]      4.74 sec, wall time      0.15 sec
+    CPU time for building coul_kpt      9.60 sec, wall time      0.30 sec
+Successfully removed swap file /resnick/scratch/yangjunjie/diamond-krhf-1-1-2-gth-dzvp-fftisdf-150-5/49977515/4ekusaim
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/diamond-krhf-1-1-2-gth-dzvp-fftisdf-150-5/49977515/tmpvfq5lk4q
+max_memory 327680 MB (current use 323 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 2
+kpts = [[ 0.          0.          0.        ]
+ [ 0.46609264  0.46609264 -0.46609264]]
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.4697454136653238
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -1.87898165466
+DF object = <fft.isdf.InterpolativeSeparableDensityFitting object at 0x7fcda30f2020>
+Set gradient conv threshold to 0.001
+    CPU time for vj and vk      3.75 sec, wall time      0.12 sec
+E1 = (3.1148715002717724+2.3918696649255342e-18j)  E_coul = (-5.35513507495719-4.679126276816286e-17j)
+init E= -15.0273927203097
+    CPU time for initialize scf      7.86 sec, wall time      0.26 sec
+HOMO = 0.635535491615  LUMO = 0.83600956229
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-1.95326698  0.58587937  0.63395881  0.63553549] [0.83600956 0.90410804 0.90552811 1.12485551 1.79940098 1.80032743
+ 1.86965062 2.07494374 2.08887496 2.09362768 2.63121771 2.6341148
+ 2.63723041 3.54712581 3.54901036 3.5515697  3.64938434 3.65034799
+ 4.20439872 4.72167724 4.72336217 4.72744684]
+   1 ( 0.000  0.000  0.500)   [-0.84330508 -0.56949097  0.50053641  0.50212266] [0.96484245 1.03350037 1.03504785 1.35892609 1.62208193 1.77455063
+ 1.81789201 1.81932015 2.11505619 2.11643068 2.9443265  3.0491849
+ 3.05141513 3.09603145 3.09921481 3.29522817 3.64863729 3.65123499
+ 3.75290575 3.75511791 5.11640511 9.56280956]
+    CPU time for vj and vk      3.73 sec, wall time      0.12 sec
+E1 = (4.41288471930286-1.1657810062661783e-18j)  E_coul = (-2.1969516956995427-5.65090374306898e-17j)
+cycle= 1 E= -10.5711961220209  delta_E= 4.46  |g|= 0.331  |ddm|= 9.29
+    CPU time for cycle= 1      4.18 sec, wall time      0.13 sec
+HOMO = 0.36511309823  LUMO = 1.01677933699
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.65183513  0.28508938  0.28876371  0.3651131 ] [1.01677934 1.03520363 1.03761487 1.37067291 1.82425504 1.82554306
+ 1.88880424 2.12557185 2.13140632 2.13389889 2.71962532 2.7229126
+ 2.7321953  3.5589984  3.56784435 3.56909311 3.70761539 3.7101849
+ 4.22571408 4.77453539 4.77841375 4.78127585]
+   1 ( 0.000  0.000  0.500)   [-0.36646876 -0.25536703  0.16968362  0.17333262] [1.15622034 1.16734473 1.16962172 1.40757026 1.71178822 1.82625691
+ 1.85036492 1.85230218 2.13080158 2.13196525 3.01171382 3.1286467
+ 3.13243673 3.15377242 3.15615923 3.32003513 3.67007838 3.67061119
+ 3.80462114 3.80632374 5.18625534 9.85042212]
+    CPU time for vj and vk      3.64 sec, wall time      0.12 sec
+E1 = (4.434498627647831+6.992873807284522e-18j)  E_coul = (-2.2313250294096143-5.685293599894908e-17j)
+cycle= 2 E= -10.583955547386  delta_E= -0.0128  |g|= 0.0645  |ddm|= 6.13
+    CPU time for cycle= 2      4.11 sec, wall time      0.13 sec
+HOMO = 0.351213111246  LUMO = 1.01797784025
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.65345332  0.27915612  0.28307016  0.35121311] [1.01797784 1.03452925 1.03714681 1.36915936 1.82273022 1.82395317
+ 1.88966241 2.125624   2.13097323 2.1336448  2.71441997 2.71757629
+ 2.72501644 3.55852563 3.56683493 3.56802168 3.70568656 3.70835511
+ 4.22254281 4.77283273 4.77643245 4.77937132]
+   1 ( 0.000  0.000  0.500)   [-0.37114289 -0.26044522  0.16590572  0.16981609] [1.15495285 1.16657679 1.16917359 1.410329   1.7074627  1.82124813
+ 1.84607664 1.84826939 2.12845079 2.12975752 3.00789998 3.127652
+ 3.13112853 3.14941296 3.15177006 3.31982701 3.66853297 3.66930308
+ 3.80255624 3.80439368 5.17978789 9.83044556]
+    CPU time for vj and vk      3.63 sec, wall time      0.12 sec
+E1 = (4.4367938714961594+7.72707910786423e-18j)  E_coul = (-2.234265841373034-5.726466436196866e-17j)
+cycle= 3 E= -10.5846011155011  delta_E= -0.000646  |g|= 0.0073  |ddm|= 1.11
+    CPU time for cycle= 3      4.24 sec, wall time      0.14 sec
+HOMO = 0.351353672828  LUMO = 1.01879907101
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.65283769  0.2796753   0.28360697  0.35135367] [1.01879907 1.03550026 1.03809554 1.36995922 1.82304257 1.82427131
+ 1.88961781 2.12588886 2.13120819 2.1338696  2.71505387 2.71818097
+ 2.72563394 3.55883054 3.56690986 3.56811051 3.70625819 3.70893183
+ 4.222378   4.77336534 4.77692051 4.7798436 ]
+   1 ( 0.000  0.000  0.500)   [-0.37073377 -0.25995725  0.16670593  0.17060641] [1.15533701 1.16711416 1.16972459 1.41049196 1.70794734 1.82194665
+ 1.84645583 1.84864663 2.12874222 2.13005485 3.00852238 3.12793607
+ 3.13137843 3.15024658 3.15260121 3.31986793 3.66865359 3.66939108
+ 3.80298823 3.80477786 5.1801876  9.83216715]
+    CPU time for vj and vk      3.48 sec, wall time      0.11 sec
+E1 = (4.43673367917176+7.64074408571561e-18j)  E_coul = (-2.2342157870033623-5.733124022432215e-17j)
+cycle= 4 E= -10.5846112534558  delta_E= -1.01e-05  |g|= 0.00109  |ddm|= 0.144
+    CPU time for cycle= 4      4.00 sec, wall time      0.13 sec
+HOMO = 0.35132919928  LUMO = 1.01879424539
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.65284983  0.27965546  0.28358081  0.3513292 ] [1.01879425 1.03551345 1.03811047 1.36992175 1.8230429  1.82427096
+ 1.88962671 2.12590873 2.13121186 2.13387421 2.71504454 2.71816933
+ 2.72562272 3.55883914 3.5669059  3.56810475 3.70626057 3.708937
+ 4.22235881 4.77337144 4.77692024 4.77984215]
+   1 ( 0.000  0.000  0.500)   [-0.37073864 -0.25996887  0.16670229  0.17059697] [1.15531058 1.16712148 1.16973206 1.41049935 1.70793634 1.82193165
+ 1.84643747 1.84863076 2.1287406  2.13005154 3.00853472 3.1279312
+ 3.13137551 3.15024587 3.15259614 3.31987421 3.66865012 3.66938525
+ 3.8029871  3.80478338 5.180162   9.83210767]
+    CPU time for vj and vk      3.32 sec, wall time      0.11 sec
+E1 = (4.436725953487437+7.627525753476065e-18j)  E_coul = (-2.2342084787467873-5.735073617163149e-17j)
+cycle= 5 E= -10.5846116708836  delta_E= -4.17e-07  |g|= 0.000564  |ddm|= 0.0243
+    CPU time for cycle= 5      3.83 sec, wall time      0.12 sec
+HOMO = 0.35133102727  LUMO = 1.01879548003
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.65285045  0.27965268  0.28357976  0.35133103] [1.01879548 1.03551449 1.03811247 1.36991483 1.82304246 1.82427103
+ 1.88962765 2.12590879 2.13121211 2.13387546 2.71504525 2.71817015
+ 2.72562354 3.55883992 3.56690666 3.56810499 3.70626041 3.70893734
+ 4.22235667 4.77337146 4.77692019 4.77984053]
+   1 ( 0.000  0.000  0.500)   [-0.37073835 -0.25996457  0.16670145  0.17059737] [1.15530527 1.16712002 1.1697322  1.41049598 1.70793792 1.82192916
+ 1.84643598 1.84863048 2.12874348 2.13005374 3.00853983 3.12793135
+ 3.13137294 3.15024596 3.15259815 3.31987231 3.66864721 3.66938209
+ 3.80299015 3.80478516 5.18015894 9.83210919]
+    CPU time for vj and vk      3.19 sec, wall time      0.10 sec
+E1 = (4.436724339891623+7.624490149150332e-18j)  E_coul = (-2.234206981931347-5.734670269775301e-17j)
+Extra cycle  E= -10.584611787664  delta_E= -1.17e-07  |g|= 0.000338  |ddm|= 0.00564
+    CPU time for scf_cycle     31.90 sec, wall time      1.03 sec
+    CPU time for SCF     34.28 sec, wall time      1.11 sec
+converged SCF energy = -10.584611787664
+**** SCF Summaries ****
+Total Energy =                         -10.584611787663963
+Nuclear Repulsion Energy =             -12.787129145624240
+One-electron Energy =                    4.436724339891623
+Two-electron Energy =                   -2.234206981931347
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            0.92845
+pop of  0 C 3s            0.00425
+pop of  0 C 2px           1.01141
+pop of  0 C 2py           1.00835
+pop of  0 C 2pz           1.01076
+pop of  0 C 3px           0.00157
+pop of  0 C 3py           0.00159
+pop of  0 C 3pz           0.00160
+pop of  0 C 3dxy          0.00991
+pop of  0 C 3dyz          0.00978
+pop of  0 C 3dz^2         0.00003
+pop of  0 C 3dxz          0.00991
+pop of  0 C 3dx2-y2       0.00003
+pop of  1 C 2s            0.93588
+pop of  1 C 3s            0.00400
+pop of  1 C 2px           1.00921
+pop of  1 C 2py           1.01036
+pop of  1 C 2pz           1.00907
+pop of  1 C 3px           0.00158
+pop of  1 C 3py           0.00159
+pop of  1 C 3pz           0.00157
+pop of  1 C 3dxy          0.00986
+pop of  1 C 3dyz          0.00951
+pop of  1 C 3dz^2         0.00003
+pop of  1 C 3dxz          0.00969
+pop of  1 C 3dx2-y2       0.00002
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00236
+charge of    1C =     -0.00236
+    CPU time for vj and vk      0.27 sec, wall time      0.01 sec
+End time = Tue Jun  3 12:26:48 PM PDT 2025

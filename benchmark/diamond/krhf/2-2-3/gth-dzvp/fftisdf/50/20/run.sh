@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=10gb
-#SBATCH --time=20:00:00
+#SBATCH --time=04:00:00
 #SBATCH --constraint=icelake
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"

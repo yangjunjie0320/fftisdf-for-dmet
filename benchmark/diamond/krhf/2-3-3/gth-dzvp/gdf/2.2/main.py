@@ -35,20 +35,15 @@ def main(config: dict):
     else:
         naux = df_obj.get_naoaux()
     assert naux is not None
-    ke_cutoff = getattr(df_obj, "ke_cutoff", None)
-    c = getattr(df_obj, "c", None)
 
     with open("out.log", "w") as f:
         f.write("method = %s\n" % config["density_fitting_method"])
         f.write("basis = %s\n" % config["basis"])
         f.write("nao = %d\n" % nao)
-        if ke_cutoff is not None:
-            f.write("ke_cutoff = %6.2f\n" % ke_cutoff)
-        if c is not None:
-            f.write("c = %6.2f\n" % c)
         if naux is not None:
             f.write("naux = %d\n" % naux)
         f.write("nkpt = %d\n" % nkpt)
+        f.write("kmesh = %s\n" % config["kmesh"])
         f.write("ene_krhf = % 12.8f\n" % ene_kscf)
 
         for k, v in table.items():

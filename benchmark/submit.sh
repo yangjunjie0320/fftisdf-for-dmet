@@ -1,6 +1,6 @@
 scancel -u $USER
 
-for method in "klno" "kmp2"; do
+for method in "krhf" "kmp2"; do
     cell="diamond"
     if [ -d $cell/$method ]; then
         rm -rf $cell/$method
@@ -10,4 +10,7 @@ for method in "klno" "kmp2"; do
 
     cp ../../submit.py .
     python submit.py --cell $cell --method $method --ntasks 1 --time 04:00:00
+
+    cd ../..
 done
+

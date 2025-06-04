@@ -1,9 +1,9 @@
 method = rsdf-2.0
 basis = gth-dzvp
 nao = 26
-ke_cutoff =   7.39
 naux = 168
 nkpt = 2
+kmesh = [1, 1, 2]
 ene_krhf = -10.58181859
-time_build_df =  26.77
-time_get_vk =   0.10
+time_build_df =  26.82
+time_get_vk =   0.06

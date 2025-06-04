@@ -138,7 +138,7 @@ def build_density_fitting(config: dict):
         method = method.split("-")
         assert len(method) == 3, f"Invalid method: {method}"
         
-        import fft
+        import fft, fft.isdf_ao2mo
         cell.ke_cutoff = float(method[1])
         cell.build(dump_input=False)
 
