@@ -16244,3 +16244,6 @@ WARN: Input vhf is not found. Building vhf from SCF MO.
 
 LO occ proj: 1 active | 0 standby | 2559 orthogonal
 LO vir proj: 1 active | 0 standby | 14079 orthogonal
+/var/spool/slurmd/job50014061/slurm_script: line 43: 2012641 Killed                  python main.py --kmesh=8-8-10 --basis=gth-dzvp --lno-thresh=1e-4 --density-fitting-method=fftisdf-50-20 --name=diamond --pseudo=gth-pbe --init-guess-method=minao
+End time = Thu Jun  5 02:27:33 PM PDT 2025
+slurmstepd: error: Detected 1 oom_kill event in StepId=50014061.batch. Some of the step tasks have been OOM Killed.

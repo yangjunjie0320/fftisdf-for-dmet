@@ -16176,3 +16176,74 @@ Total Energy =                         -11.031811530825008
 Nuclear Repulsion Energy =             -12.787129145624240
 One-electron Energy =                    4.013112044435025
 Two-electron Energy =                   -2.257794429635793
+
+WARN: Weak orthogonality for localized orbitals 5.052284872994052e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            0.92683
+pop of  0 C 3s            0.00286
+pop of  0 C 2px           1.01729
+pop of  0 C 2py           1.01729
+pop of  0 C 2pz           1.01728
+pop of  0 C 3px           0.00275
+pop of  0 C 3py           0.00275
+pop of  0 C 3pz           0.00275
+pop of  0 C 3dxy          0.00322
+pop of  0 C 3dyz          0.00322
+pop of  0 C 3dz^2         0.00027
+pop of  0 C 3dxz          0.00322
+pop of  0 C 3dx2-y2       0.00027
+pop of  1 C 2s            0.92683
+pop of  1 C 3s            0.00286
+pop of  1 C 2px           1.01729
+pop of  1 C 2py           1.01728
+pop of  1 C 2pz           1.01729
+pop of  1 C 3px           0.00275
+pop of  1 C 3py           0.00275
+pop of  1 C 3pz           0.00275
+pop of  1 C 3dxy          0.00322
+pop of  1 C 3dyz          0.00322
+pop of  1 C 3dz^2         0.00027
+pop of  1 C 3dxz          0.00322
+pop of  1 C 3dx2-y2       0.00027
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00001
+charge of    1C =     -0.00001
+    CPU time for vj and vk     71.67 sec, wall time      6.88 sec
+
+WARN: ECP/PP is used. MINAO is not a good reference AO basis in IAO.
+
+
+WARN: Discard large imag part in k2s_iao: 2.14e-10.
+
+nlo = 10, nlo_s = 6400
+coeff_lo_s.shape = (16640, 6400)
+frag_lo_list = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
+
+******** <class 'klno.WithFFTISDF'> ********
+nocc = 2560, nmo = 16640
+frozen orbitals 0
+max_memory 327680 MB (current use 14612 MB)
+nfrag = 10  nlo = 6400
+frag_lolist = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
+frag_wghtlist = None
+lno_type = ['2p', '2h']
+lno_thresh = [0.001, 0.0001]
+lno_pct_occ = None
+lno_norb = None
+lo_proj_thresh = 1e-10
+lo_proj_thresh_active = 1e-06
+verbose_imp = 5
+_ovL = None
+_ovL_to_save = None
+force_outcore_ao2mo = False
+_match_oldcode = False
+_max_las_size_ccsd = 1000
+_max_las_size_ccsd_t = 1000
+Regularized frag_wghtlist = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    CPU time for LO and fragment        0.00 sec, wall time      0.00 sec
+
+WARN: Input vhf is not found. Building vhf from SCF MO.
+
+LO occ proj: 1 active | 0 standby | 2559 orthogonal
