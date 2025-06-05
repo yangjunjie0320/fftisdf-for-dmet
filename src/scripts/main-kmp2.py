@@ -38,7 +38,18 @@ def main(config: dict):
 
     ene_kmp2 = mp_obj.e_tot
     ene_corr_kmp2 = mp_obj.e_corr
-    
+
+    ene_kccsd = None
+    ene_kccsd_corr = None
+    try:
+        from pyscf.pbc.cc import KCCSD
+        cc_obj = KCCSD(scf_obj)
+        cc_obj.kernel()
+        ene_kccsd = cc_obj.e_tot
+        ene_kccsd_corr = cc_obj.e_corr
+    except:
+        pass
+
     naux = None
     if isinstance(df_obj, fft.ISDF):
         naux = df_obj.inpv_kpt.shape[1]
@@ -52,6 +63,9 @@ def main(config: dict):
         f.write("natm = %d\n" % scf_obj.cell.natm)
         if naux is not None:
             f.write("naux = %d\n" % naux)
+        if ene_kccsd is not None:
+            f.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
+            f.write("ene_kccsd_corr = % 12.8f\n" % ene_kccsd_corr)
         f.write("nkpt = %d\n" % nkpt)
         f.write("kmesh = %s\n" % config["kmesh"])
         f.write("ene_krhf = % 12.8f\n" % ene_kscf)

@@ -60,3 +60,4 @@ if __name__ == '__main__':
     
     # python collect.py --root_dir=../benchmark/nio-afm/ --filename=out.log --output=./data/nio-afm-dzvp.json
     # python collect.py --root_dir=../benchmark/diamond/ --filename=out.log --output=./data/diamond-dzvp.json
+    # for m in kmp2 klno; do echo $m; python collect.py --root_dir=../benchmark/diamond/$m/ --filename=out.log --output=./data/diamond-dzvp-$m.json; done
