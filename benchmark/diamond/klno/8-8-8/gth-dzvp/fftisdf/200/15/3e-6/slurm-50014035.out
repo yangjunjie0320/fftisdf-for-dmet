@@ -13177,3 +13177,4 @@ E(MODIFIED_K2SCCSD) = -5648.527061444057  E_corr = -0.1529410967354475
 Fragment 3/10  Sol: E_corr(MP2) = -0.0187447389803679  E_corr(CCSD) = -0.0218410818536804  E_corr(CCSD(T)) = 0
     CPU time for Fragment 3          4357.91 sec, wall time   3521.54 sec
 LO occ proj: 1 active | 0 standby | 2047 orthogonal
+LO vir proj: 1 active | 0 standby | 11263 orthogonal
