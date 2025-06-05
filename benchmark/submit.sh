@@ -1,4 +1,4 @@
-scancel -u $USER
+# scancel -u $USER
 
 for method in "klno"; do
     cell="diamond"
