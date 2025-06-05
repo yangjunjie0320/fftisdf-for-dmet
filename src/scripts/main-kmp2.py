@@ -44,6 +44,7 @@ def main(config: dict):
     try:
         from pyscf.pbc.cc import KCCSD
         cc_obj = KCCSD(scf_obj)
+        cc_obj.verbose = 10
         cc_obj.kernel()
         ene_kccsd = cc_obj.e_tot
         ene_kccsd_corr = cc_obj.e_corr
