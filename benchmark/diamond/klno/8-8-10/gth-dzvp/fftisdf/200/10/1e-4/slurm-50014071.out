@@ -1,0 +1,665 @@
+SLURMD_NODENAME = hpc-34-30
+Start time = Thu Jun  5 11:10:01 AM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-8-8-10-gth-dzvp-fftisdf-200-10-1e-4/50014071/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-8-8-10-gth-dzvp-fftisdf-200-10-1e-4/50014071/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/klno/8-8-10/gth-dzvp/fftisdf/200/10/1e-4/main.py with:
+name: diamond
+xc: None
+kmesh: 8-8-10
+basis: gth-dzvp
+pseudo: gth-pbe
+lno_thresh: 0.0001
+density_fitting_method: fftisdf-200-10
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using FFTISDF, method = fftisdf-200-10
+ke_cutoff = 200.0, mesh = [33 33 33]
+Using ke_cutoff = 200.0, c0 = 10.0
+
+WARN: Weak orthogonality for localized orbitals 5.052284872994052e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.70050
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76650
+pop of  0 C 2py           0.76650
+pop of  0 C 2pz           0.76650
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.70050
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76650
+pop of  1 C 2py           0.76650
+pop of  1 C 2pz           0.76650
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.00000
+charge of    1C =     -0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [33 33 33] (35937 PWs)
+len(kpts) = 640
+tol = 1e-08
+c0 = 10.0
+wrap_around = False
+
+WARN: ke_cutoff/mesh (200 / [33 33 33]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.0027 Eh.
+Recommended ke_cutoff/mesh are 422.908 / [47 47 47].
+
+Cholesky rank = 3670, c0 =  10.00, nao = 26, nip = 260
+Parent grid size = 35937, selected grid size = 260
+truncated values = 9.99e+02, estimated error = 8.92e+01
+Number of interpolating points is 260.
+    CPU time for building inpv_kpt   1813.37 sec, wall time   1774.00 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 9.57e+01 GB.
+blksize = 11980, ngrid = 35937
+memory needed for each block:   3.19e+01 GB
+memory needed for each k-point: 1.49e-01 GB
+max_memory: 3.24e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 11980]    342.32 sec, wall time     55.29 sec
+    CPU time for eta_kpt[ 11980: 23960]    339.19 sec, wall time     54.29 sec
+    CPU time for eta_kpt[ 23960: 35937]    339.92 sec, wall time     56.46 sec
+    CPU time for building eta_kpt   1059.85 sec, wall time    167.34 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[   1 / 640]      1.86 sec, wall time      0.81 sec
+    CPU time for coul_kpt[   2 / 640]      1.85 sec, wall time      0.63 sec
+    CPU time for coul_kpt[   3 / 640]      1.85 sec, wall time      0.63 sec
+    CPU time for coul_kpt[   4 / 640]      1.81 sec, wall time      0.62 sec
+    CPU time for coul_kpt[   5 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[   6 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[   7 / 640]      1.78 sec, wall time      0.61 sec
+    CPU time for coul_kpt[   8 / 640]      1.83 sec, wall time      0.62 sec
+    CPU time for coul_kpt[   9 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  10 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  11 / 640]      1.82 sec, wall time      0.62 sec
+    CPU time for coul_kpt[  12 / 640]      1.83 sec, wall time      0.62 sec
+    CPU time for coul_kpt[  13 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  14 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  15 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  16 / 640]      1.83 sec, wall time      0.62 sec
+    CPU time for coul_kpt[  17 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  18 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  19 / 640]      1.84 sec, wall time      0.62 sec
+    CPU time for coul_kpt[  20 / 640]      1.86 sec, wall time      0.62 sec
+    CPU time for coul_kpt[  21 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  22 / 640]      1.80 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  23 / 640]      1.76 sec, wall time      0.67 sec
+    CPU time for coul_kpt[  24 / 640]      1.65 sec, wall time      0.67 sec
+    CPU time for coul_kpt[  25 / 640]      1.59 sec, wall time      0.69 sec
+    CPU time for coul_kpt[  26 / 640]      1.64 sec, wall time      0.68 sec
+    CPU time for coul_kpt[  27 / 640]      1.57 sec, wall time      0.66 sec
+    CPU time for coul_kpt[  28 / 640]      1.50 sec, wall time      0.67 sec
+    CPU time for coul_kpt[  29 / 640]      1.48 sec, wall time      0.67 sec
+    CPU time for coul_kpt[  30 / 640]      1.46 sec, wall time      0.66 sec
+    CPU time for coul_kpt[  31 / 640]      1.53 sec, wall time      0.67 sec
+    CPU time for coul_kpt[  32 / 640]      1.56 sec, wall time      0.68 sec
+    CPU time for coul_kpt[  33 / 640]      1.53 sec, wall time      0.68 sec
+    CPU time for coul_kpt[  34 / 640]      1.45 sec, wall time      0.68 sec
+    CPU time for coul_kpt[  35 / 640]      1.69 sec, wall time      0.65 sec
+    CPU time for coul_kpt[  36 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  37 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  38 / 640]      1.76 sec, wall time      0.63 sec
+    CPU time for coul_kpt[  39 / 640]      1.78 sec, wall time      0.63 sec
+    CPU time for coul_kpt[  40 / 640]      1.80 sec, wall time      0.63 sec
+    CPU time for coul_kpt[  41 / 640]      1.81 sec, wall time      0.63 sec
+    CPU time for coul_kpt[  42 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  43 / 640]      1.75 sec, wall time      0.66 sec
+    CPU time for coul_kpt[  44 / 640]      1.67 sec, wall time      0.67 sec
+    CPU time for coul_kpt[  45 / 640]      1.49 sec, wall time      0.68 sec
+    CPU time for coul_kpt[  46 / 640]      1.51 sec, wall time      0.70 sec
+    CPU time for coul_kpt[  47 / 640]      1.64 sec, wall time      0.70 sec
+    CPU time for coul_kpt[  48 / 640]      1.74 sec, wall time      0.62 sec
+    CPU time for coul_kpt[  49 / 640]      1.80 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  50 / 640]      1.80 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  51 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  52 / 640]      1.80 sec, wall time      0.63 sec
+    CPU time for coul_kpt[  53 / 640]      1.76 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  54 / 640]      1.80 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  55 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  56 / 640]      1.80 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  57 / 640]      1.82 sec, wall time      0.63 sec
+    CPU time for coul_kpt[  58 / 640]      1.84 sec, wall time      0.62 sec
+    CPU time for coul_kpt[  59 / 640]      1.80 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  60 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  61 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  62 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  63 / 640]      1.80 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  64 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  65 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  66 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  67 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  68 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  69 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  70 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  71 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  72 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  73 / 640]      1.78 sec, wall time      0.62 sec
+    CPU time for coul_kpt[  74 / 640]      1.85 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  75 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  76 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  77 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  78 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  79 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  80 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  81 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  82 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  83 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  84 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  85 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  86 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  87 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  88 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  89 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  90 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  91 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  92 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  93 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  94 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[  95 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  96 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[  97 / 640]      1.77 sec, wall time      0.59 sec
+    CPU time for coul_kpt[  98 / 640]      1.73 sec, wall time      0.58 sec
+    CPU time for coul_kpt[  99 / 640]      1.73 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 100 / 640]      1.73 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 101 / 640]      1.74 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 102 / 640]      1.72 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 103 / 640]      1.69 sec, wall time      0.56 sec
+    CPU time for coul_kpt[ 104 / 640]      1.61 sec, wall time      0.46 sec
+    CPU time for coul_kpt[ 105 / 640]      1.74 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 106 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 107 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 108 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 109 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 110 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 111 / 640]      1.85 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 112 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 113 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 114 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 115 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 116 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 117 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 118 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 119 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 120 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 121 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 122 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 123 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 124 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 125 / 640]      1.71 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 126 / 640]      1.71 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 127 / 640]      1.72 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 128 / 640]      1.72 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 129 / 640]      1.72 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 130 / 640]      1.61 sec, wall time      0.46 sec
+    CPU time for coul_kpt[ 131 / 640]      1.61 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 132 / 640]      1.63 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 133 / 640]      1.57 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 134 / 640]      1.60 sec, wall time      0.44 sec
+    CPU time for coul_kpt[ 135 / 640]      1.55 sec, wall time      0.44 sec
+    CPU time for coul_kpt[ 136 / 640]      1.61 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 137 / 640]      1.60 sec, wall time      0.44 sec
+    CPU time for coul_kpt[ 138 / 640]      1.57 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 139 / 640]      1.75 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 140 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 141 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 142 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 143 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 144 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 145 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 146 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 147 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 148 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 149 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 150 / 640]      1.79 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 151 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 152 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 153 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 154 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 155 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 156 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 157 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 158 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 159 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 160 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 161 / 640]      1.83 sec, wall time      0.63 sec
+    CPU time for coul_kpt[ 162 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 163 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 164 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 165 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 166 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 167 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 168 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 169 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 170 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 171 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 172 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 173 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 174 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 175 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 176 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 177 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 178 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 179 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 180 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 181 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 182 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 183 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 184 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 185 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 186 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 187 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 188 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 189 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 190 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 191 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 192 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 193 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 194 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 195 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 196 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 197 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 198 / 640]      1.79 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 199 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 200 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 201 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 202 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 203 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 204 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 205 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 206 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 207 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 208 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 209 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 210 / 640]      1.79 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 211 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 212 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 213 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 214 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 215 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 216 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 217 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 218 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 219 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 220 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 221 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 222 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 223 / 640]      1.85 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 224 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 225 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 226 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 227 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 228 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 229 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 230 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 231 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 232 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 233 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 234 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 235 / 640]      1.85 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 236 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 237 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 238 / 640]      1.85 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 239 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 240 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 241 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 242 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 243 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 244 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 245 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 246 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 247 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 248 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 249 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 250 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 251 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 252 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 253 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 254 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 255 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 256 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 257 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 258 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 259 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 260 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 261 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 262 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 263 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 264 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 265 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 266 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 267 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 268 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 269 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 270 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 271 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 272 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 273 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 274 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 275 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 276 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 277 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 278 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 279 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 280 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 281 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 282 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 283 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 284 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 285 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 286 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 287 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 288 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 289 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 290 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 291 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 292 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 293 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 294 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 295 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 296 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 297 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 298 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 299 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 300 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 301 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 302 / 640]      1.78 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 303 / 640]      1.72 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 304 / 640]      1.72 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 305 / 640]      1.75 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 306 / 640]      1.71 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 307 / 640]      1.71 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 308 / 640]      1.62 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 309 / 640]      1.58 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 310 / 640]      1.59 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 311 / 640]      1.63 sec, wall time      0.46 sec
+    CPU time for coul_kpt[ 312 / 640]      1.63 sec, wall time      0.46 sec
+    CPU time for coul_kpt[ 313 / 640]      1.73 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 314 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 315 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 316 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 317 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 318 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 319 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 320 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 321 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 322 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 323 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 324 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 325 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 326 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 327 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 328 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 329 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 330 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 331 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 332 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 333 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 334 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 335 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 336 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 337 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 338 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 339 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 340 / 640]      1.81 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 341 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 342 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 343 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 344 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 345 / 640]      1.81 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 346 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 347 / 640]      1.74 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 348 / 640]      1.72 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 349 / 640]      1.71 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 350 / 640]      1.72 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 351 / 640]      1.72 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 352 / 640]      1.71 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 353 / 640]      1.56 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 354 / 640]      1.58 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 355 / 640]      1.59 sec, wall time      0.44 sec
+    CPU time for coul_kpt[ 356 / 640]      1.60 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 357 / 640]      1.56 sec, wall time      0.44 sec
+    CPU time for coul_kpt[ 358 / 640]      1.60 sec, wall time      0.45 sec
+    CPU time for coul_kpt[ 359 / 640]      1.59 sec, wall time      0.44 sec
+    CPU time for coul_kpt[ 360 / 640]      1.78 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 361 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 362 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 363 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 364 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 365 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 366 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 367 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 368 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 369 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 370 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 371 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 372 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 373 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 374 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 375 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 376 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 377 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 378 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 379 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 380 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 381 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 382 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 383 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 384 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 385 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 386 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 387 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 388 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 389 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 390 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 391 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 392 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 393 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 394 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 395 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 396 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 397 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 398 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 399 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 400 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 401 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 402 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 403 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 404 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 405 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 406 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 407 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 408 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 409 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 410 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 411 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 412 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 413 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 414 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 415 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 416 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 417 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 418 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 419 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 420 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 421 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 422 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 423 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 424 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 425 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 426 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 427 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 428 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 429 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 430 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 431 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 432 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 433 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 434 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 435 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 436 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 437 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 438 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 439 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 440 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 441 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 442 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 443 / 640]      1.83 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 444 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 445 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 446 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 447 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 448 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 449 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 450 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 451 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 452 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 453 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 454 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 455 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 456 / 640]      1.79 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 457 / 640]      1.70 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 458 / 640]      1.74 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 459 / 640]      1.71 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 460 / 640]      1.72 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 461 / 640]      1.74 sec, wall time      0.58 sec
+    CPU time for coul_kpt[ 462 / 640]      1.65 sec, wall time      0.52 sec
+    CPU time for coul_kpt[ 463 / 640]      1.71 sec, wall time      0.57 sec
+    CPU time for coul_kpt[ 464 / 640]      1.64 sec, wall time      0.49 sec
+    CPU time for coul_kpt[ 465 / 640]      1.66 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 466 / 640]      1.66 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 467 / 640]      1.65 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 468 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 469 / 640]      1.68 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 470 / 640]      1.65 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 471 / 640]      1.68 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 472 / 640]      1.67 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 473 / 640]      1.67 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 474 / 640]      1.64 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 475 / 640]      1.68 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 476 / 640]      1.68 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 477 / 640]      1.70 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 478 / 640]      1.72 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 479 / 640]      1.68 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 480 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 481 / 640]      1.71 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 482 / 640]      1.71 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 483 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 484 / 640]      1.69 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 485 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 486 / 640]      1.69 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 487 / 640]      1.69 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 488 / 640]      1.71 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 489 / 640]      1.70 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 490 / 640]      1.70 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 491 / 640]      1.68 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 492 / 640]      1.71 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 493 / 640]      1.69 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 494 / 640]      1.67 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 495 / 640]      1.71 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 496 / 640]      1.71 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 497 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 498 / 640]      1.72 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 499 / 640]      1.67 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 500 / 640]      1.72 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 501 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 502 / 640]      1.69 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 503 / 640]      1.71 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 504 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 505 / 640]      1.69 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 506 / 640]      1.69 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 507 / 640]      1.69 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 508 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 509 / 640]      1.67 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 510 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 511 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 512 / 640]      1.67 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 513 / 640]      1.71 sec, wall time      0.49 sec
+    CPU time for coul_kpt[ 514 / 640]      1.69 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 515 / 640]      1.69 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 516 / 640]      1.70 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 517 / 640]      1.68 sec, wall time      0.48 sec
+    CPU time for coul_kpt[ 518 / 640]      1.68 sec, wall time      0.47 sec
+    CPU time for coul_kpt[ 519 / 640]      1.81 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 520 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 521 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 522 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 523 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 524 / 640]      1.82 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 525 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 526 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 527 / 640]      1.84 sec, wall time      0.61 sec
+    CPU time for coul_kpt[ 528 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 529 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 530 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 531 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 532 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 533 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 534 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 535 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 536 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 537 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 538 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 539 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 540 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 541 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 542 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 543 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 544 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 545 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 546 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 547 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 548 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 549 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 550 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 551 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 552 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 553 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 554 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 555 / 640]      1.80 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 556 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 557 / 640]      1.80 sec, wall time      0.59 sec
+    CPU time for coul_kpt[ 558 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 559 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 560 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 561 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 562 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 563 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 564 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 565 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 566 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 567 / 640]      1.81 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 568 / 640]      1.84 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 569 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 570 / 640]      1.83 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 571 / 640]      1.82 sec, wall time      0.60 sec
+    CPU time for coul_kpt[ 572 / 640]      1.83 sec, wall time      0.60 sec

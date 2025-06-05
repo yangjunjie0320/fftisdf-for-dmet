@@ -1,0 +1,15 @@
+method = fftisdf-150-5
+basis = gth-dzvp
+nao = 26
+natm = 2
+naux = 130
+nkpt = 288
+kmesh = [6, 6, 8]
+ene_krhf = -11.04639140
+ene_klno_mp2 = -11.04690841
+ene_klno_ccsd = -11.04698555
+ene_corr_klno_mp2 =  -0.00051701
+ene_corr_klno_ccsd =  -0.00059415
+time_build_df =  462.15
+time_get_vk =   0.24
+time_klno =  3407.11

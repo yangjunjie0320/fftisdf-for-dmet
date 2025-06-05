@@ -1,0 +1,883 @@
+SLURMD_NODENAME = hpc-53-08
+Start time = Wed Jun  4 09:55:01 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-1-2-2-gth-dzvp-fftisdf-100-5-1e-6/50012910/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-1-2-2-gth-dzvp-fftisdf-100-5-1e-6/50012910/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/klno/1-2-2/gth-dzvp/fftisdf/100/5/1e-6/main.py with:
+name: diamond
+xc: None
+kmesh: 1-2-2
+basis: gth-dzvp
+pseudo: gth-pbe
+lno_thresh: 1e-06
+density_fitting_method: fftisdf-100-5
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using FFTISDF, method = fftisdf-100-5
+ke_cutoff = 100.0, mesh = [23 23 23]
+Using ke_cutoff = 100.0, c0 = 5.0
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 8.52161)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 8.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            2.12325
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.75946
+pop of  0 C 2py           0.55865
+pop of  0 C 2pz           0.55865
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            2.12325
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.75946
+pop of  1 C 2py           0.55865
+pop of  1 C 2pz           0.55865
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =      0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [23 23 23] (12167 PWs)
+len(kpts) = 4
+tol = 1e-08
+c0 = 5.0
+wrap_around = False
+
+WARN: ke_cutoff/mesh (100 / [23 23 23]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.61 Eh.
+Recommended ke_cutoff/mesh are 422.908 / [47 47 47].
+
+Cholesky rank = 2235, c0 =   5.00, nao = 26, nip = 130
+Parent grid size = 12167, selected grid size = 130
+truncated values = 5.71e+01, estimated error = 1.17e+01
+Number of interpolating points is 130.
+    CPU time for building inpv_kpt     17.44 sec, wall time     10.57 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 1.01e-01 GB.
+blksize = 12167, ngrid = 12167
+memory needed for each block:   1.01e-01 GB
+memory needed for each k-point: 2.53e-02 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 12167]      5.60 sec, wall time      0.19 sec
+    CPU time for building eta_kpt      7.44 sec, wall time      0.25 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[ 1 / 4]      2.49 sec, wall time      0.08 sec
+    CPU time for coul_kpt[ 2 / 4]      2.47 sec, wall time      0.08 sec
+    CPU time for coul_kpt[ 3 / 4]      2.46 sec, wall time      0.08 sec
+    CPU time for coul_kpt[ 4 / 4]      2.43 sec, wall time      0.08 sec
+    CPU time for building coul_kpt      9.93 sec, wall time      0.31 sec
+Successfully removed swap file /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-100-5-1e-6/50012910/en2t4dn1
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/diamond-klno-1-2-2-gth-dzvp-fftisdf-100-5-1e-6/50012910/tmpjccx717c
+max_memory 327680 MB (current use 408 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 4
+kpts = [[ 0.          0.          0.        ]
+ [ 0.46609264  0.46609264 -0.46609264]
+ [ 0.46609264 -0.46609264  0.46609264]
+ [ 0.93218529  0.          0.        ]]
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.38332141474093495
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -1.53328565896
+DF object = <fft.isdf.InterpolativeSeparableDensityFitting object at 0x7f649227b010>
+Set gradient conv threshold to 0.001
+    CPU time for vj and vk      2.35 sec, wall time      0.08 sec
+E1 = (3.604511952661073+2.2691031824884872e-18j)  E_coul = (-4.2274498565747445-7.661627404880957e-17j)
+init E= -13.4100670495379
+    CPU time for initialize scf      5.43 sec, wall time      0.18 sec
+HOMO = 0.641759352964  LUMO = 0.778661385807
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-1.97115539  0.60403185  0.60986687  0.64175935] [0.85994922 0.88707885 0.90864903 1.13323122 1.78927209 1.8038701
+ 1.87255223 2.08695231 2.08888835 2.09614296 2.64136503 2.64286314
+ 2.64989544 3.54456897 3.55007781 3.55195448 3.65574313 3.65669399
+ 4.20011149 4.72601051 4.73145269 4.73408338]
+   1 (-0.000 -0.000  0.500)   [-0.77328046 -0.50899312  0.46043474  0.5028876 ] [0.95579129 1.023307   1.03842804 1.35657082 1.63159972 1.75805545
+ 1.81728085 1.82086782 2.11181519 2.11578859 2.95636333 3.06497831
+ 3.06756809 3.09775342 3.10032014 3.30319114 3.64060978 3.65152565
+ 3.75941498 3.76249485 5.13205607 9.59527071]
+   2 ( 0.000  0.500 -0.000)   [-0.77690723 -0.50476026  0.46168615  0.50244004] [0.95082297 1.02545525 1.03873811 1.35685754 1.62955741 1.76023031
+ 1.81800297 1.82083639 2.11190361 2.11795236 2.95556311 3.06244057
+ 3.06728149 3.09816566 3.09986633 3.30277821 3.64219982 3.64801552
+ 3.75758155 3.76091744 5.13142021 9.58923461]
+   3 ( 0.000  0.500  0.500)   [-0.41341789 -0.398923    0.22458502  0.31027551] [0.77866139 0.84993163 1.40122768 1.40231881 1.67884261 1.68766657
+ 2.07077037 2.07214852 2.30821677 2.31505458 2.79461102 2.79936159
+ 2.86221945 2.87788612 2.94873994 2.94961245 3.66838808 3.67436328
+ 5.04066816 5.0477835  6.77898234 6.79801836]
+    CPU time for vj and vk      2.41 sec, wall time      0.08 sec
+E1 = (4.199428492591755-1.0086310545325054e-17j)  E_coul = (-2.234186158854621-7.955328678564573e-17j)
+cycle= 1 E= -10.8218868118871  delta_E= 2.59  |g|= 0.484  |ddm|= 41.4
+    CPU time for cycle= 1      2.94 sec, wall time      0.10 sec
+HOMO = 0.350334166281  LUMO = 0.899237401712
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66837665  0.29893069  0.33925769  0.35033417] [0.97759293 0.98251439 1.01436341 1.33750412 1.80131984 1.80362142
+ 1.89557753 2.12014074 2.12151142 2.12365927 2.69356931 2.70618445
+ 2.70972543 3.55476221 3.5597808  3.5617957  3.69330845 3.70154816
+ 4.20804223 4.76034303 4.7678386  4.77437396]
+   1 (-0.000 -0.000  0.500)   [-0.39023713 -0.25862409  0.18465509  0.21943007] [1.09550815 1.09752114 1.15168341 1.3992794  1.68459166 1.80914029
+ 1.84462855 1.84570257 2.11697144 2.12071673 3.00504982 3.11680733
+ 3.11967233 3.13529536 3.13757844 3.31862593 3.65502446 3.66524797
+ 3.79179908 3.79795632 5.17853776 9.77086988]
+   2 ( 0.000  0.500 -0.000)   [-0.39370284 -0.25593192  0.18416399  0.22311933] [1.09293648 1.09804595 1.15301914 1.39837063 1.68066725 1.81234577
+ 1.84437356 1.84699855 2.11755896 2.12377684 3.00258178 3.1163662
+ 3.11818896 3.1346857  3.13783722 3.31808451 3.65661283 3.6617408
+ 3.79197978 3.79485187 5.18253297 9.76120133]
+   3 ( 0.000  0.500  0.500)   [-0.25328705 -0.2492525   0.03589769  0.07307439] [0.8992374  0.96357005 1.49516061 1.50862763 1.74764339 1.76444236
+ 2.06724225 2.06870234 2.32069495 2.32891259 2.84435434 2.84932445
+ 2.87066054 2.88323272 2.97180355 2.98164138 3.7271087  3.73217211
+ 5.06670891 5.0764187  6.86912108 6.87350323]
+    CPU time for vj and vk      2.45 sec, wall time      0.08 sec
+E1 = (4.197596981775601-8.233024645673644e-18j)  E_coul = (-2.245911996440889-8.056602722924457e-17j)
+cycle= 2 E= -10.8354441602895  delta_E= -0.0136  |g|= 0.0943  |ddm|= 42.4
+    CPU time for cycle= 2      3.09 sec, wall time      0.10 sec
+HOMO = 0.343489320807  LUMO = 0.904500387928
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66637273  0.29703301  0.33278849  0.34348932] [0.9805554  0.98673564 1.01654876 1.34365226 1.801083   1.8034226
+ 1.89689923 2.12094251 2.12232387 2.12449083 2.6929563  2.70447445
+ 2.70782116 3.55525528 3.55969891 3.5620169  3.69410822 3.70220606
+ 4.20631081 4.76106747 4.76874669 4.7751444 ]
+   1 (-0.000 -0.000  0.500)   [-0.38996861 -0.26018252  0.18422194  0.21387733] [1.0995618  1.1012529  1.15271692 1.40087008 1.68501947 1.80924262
+ 1.84366186 1.84489177 2.1168465  2.12047081 3.00555958 3.11727732
+ 3.11999874 3.13575849 3.13750797 3.31875087 3.65495266 3.6654828
+ 3.79168585 3.79769345 5.17809876 9.7669366 ]
+   2 ( 0.000  0.500 -0.000)   [-0.39350031 -0.25737847  0.18368108  0.217445  ] [1.09736827 1.10147576 1.15406246 1.39994235 1.68111548 1.8122021
+ 1.84420675 1.84571967 2.11757003 2.12349693 3.00322552 3.11640548
+ 3.11794452 3.13525113 3.13782232 3.31840372 3.65672661 3.66200233
+ 3.79204847 3.79511905 5.18249993 9.75695503]
+   3 ( 0.000  0.500  0.500)   [-0.25478723 -0.24998839  0.0358741   0.06804836] [0.90450039 0.96445062 1.49869223 1.51070752 1.74893549 1.76306856
+ 2.06670782 2.06826717 2.32015324 2.32978374 2.84412448 2.84920098
+ 2.87075469 2.88257101 2.97172724 2.98145283 3.72756559 3.73388909
+ 5.06653727 5.07607705 6.86287693 6.87582583]
+    CPU time for vj and vk      2.41 sec, wall time      0.08 sec
+E1 = (4.19691012542859-8.183174556768528e-18j)  E_coul = (-2.2458638021980635-8.047166097217522e-17j)
+cycle= 3 E= -10.8360828223937  delta_E= -0.000639  |g|= 0.011  |ddm|= 9.67
+    CPU time for cycle= 3      3.07 sec, wall time      0.10 sec
+HOMO = 0.343698395466  LUMO = 0.904871626788
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66588762  0.29743714  0.33285694  0.3436984 ] [0.98106719 0.98735991 1.01700223 1.34434523 1.80124249 1.80356753
+ 1.89678334 2.12106902 2.12244963 2.12461652 2.69333433 2.70479312
+ 2.70814169 3.55531105 3.55971441 3.56211547 3.69444462 3.70247183
+ 4.2062577  4.76130425 4.76909688 4.77542262]
+   1 (-0.000 -0.000  0.500)   [-0.38939186 -0.25989572  0.18470142  0.21401703] [1.10006379 1.10173104 1.15294338 1.40092737 1.68517502 1.80956802
+ 1.84386192 1.84512247 2.11700899 2.12050933 3.00589209 3.11746404
+ 3.12027491 3.13609007 3.13799025 3.31890308 3.65499389 3.66561141
+ 3.79194481 3.79788131 5.17831473 9.76805301]
+   2 ( 0.000  0.500 -0.000)   [-0.39292694 -0.25709372  0.18414757  0.21760272] [1.09786462 1.101962   1.15428684 1.39999094 1.68128198 1.81252779
+ 1.84444451 1.84590557 2.11773222 2.12355197 3.00355647 3.11678401
+ 3.1182406  3.13553302 3.13819558 3.31851197 3.65680254 3.66212096
+ 3.7923225  3.79520934 5.18282623 9.75803989]
+   3 ( 0.000  0.500  0.500)   [-0.25415762 -0.24980379  0.03631663  0.06820945] [0.90487163 0.96446822 1.49953909 1.51147035 1.74883138 1.76376015
+ 2.06672802 2.0683186  2.320685   2.32954635 2.84450209 2.84951638
+ 2.8704104  2.88301513 2.97188619 2.9816309  3.72845385 3.73380449
+ 5.06674994 5.07627405 6.86581781 6.87386655]
+    CPU time for vj and vk      2.42 sec, wall time      0.08 sec
+E1 = (4.196939849057782-8.235238645335297e-18j)  E_coul = (-2.2459023992924574-8.064761802416758e-17j)
+cycle= 4 E= -10.8360916958589  delta_E= -8.87e-06  |g|= 0.00366  |ddm|= 0.271
+    CPU time for cycle= 4      3.14 sec, wall time      0.10 sec
+HOMO = 0.343728892941  LUMO = 0.904923171685
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66582409  0.29748283  0.33284342  0.34372889] [0.98114497 0.98745952 1.01706397 1.34443833 1.80126747 1.8035888
+ 1.89676072 2.12107884 2.12246351 2.12463086 2.69337883 2.70483926
+ 2.70818103 3.55532757 3.55971859 3.56212561 3.69449193 3.70250905
+ 4.20625731 4.76133693 4.76913588 4.7754619 ]
+   1 (-0.000 -0.000  0.500)   [-0.38928612 -0.25987279  0.18476566  0.21402359] [1.10013271 1.10179222 1.15297099 1.40093686 1.68519412 1.80962016
+ 1.84387583 1.84514353 2.11704381 2.12051124 3.00593593 3.11748437
+ 3.12030043 3.13618615 3.13803738 3.31890377 3.65501014 3.6656379
+ 3.79195637 3.79790156 5.17835846 9.76821946]
+   2 ( 0.000  0.500 -0.000)   [-0.39282127 -0.25707213  0.18420854  0.21760443] [1.09793454 1.10203758 1.15431795 1.39999555 1.68129696 1.81257696
+ 1.84446987 1.84591272 2.11776465 2.12354974 3.00359637 3.11677962
+ 3.11822937 3.13563853 3.13827634 3.31852875 3.65681985 3.66214375
+ 3.79234041 3.7952548  5.1828587  9.7581947 ]
+   3 ( 0.000  0.500  0.500)   [-0.25415899 -0.24969738  0.03636885  0.06823193] [0.90492317 0.96447342 1.49967275 1.51160652 1.74898474 1.76364401
+ 2.06672429 2.06832347 2.32060128 2.32967243 2.84453387 2.8495405
+ 2.87048861 2.88294721 2.97191599 2.98166687 3.72839218 3.73397462
+ 5.06678763 5.07629958 6.86521885 6.87460359]
+    CPU time for vj and vk      2.43 sec, wall time      0.08 sec
+E1 = (4.196981921106108-8.258234406302674e-18j)  E_coul = (-2.245945633015771-8.063283252551982e-17j)
+cycle= 5 E= -10.8360928575339  delta_E= -1.16e-06  |g|= 0.00102  |ddm|= 0.257
+    CPU time for cycle= 5      3.11 sec, wall time      0.10 sec
+HOMO = 0.343708825901  LUMO = 0.90491528066
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.66585122  0.29744707  0.3327997   0.34370883] [0.98112717 0.98743744 1.01704001 1.34440779 1.80125634 1.80357301
+ 1.89676499 2.12106663 2.12245068 2.12461999 2.69334555 2.70481103
+ 2.70814954 3.55531919 3.55970882 3.56211886 3.69447322 3.70248941
+ 4.20625495 4.76131736 4.7691192  4.77544785]
+   1 (-0.000 -0.000  0.500)   [-0.38929217 -0.25990884  0.18473447  0.21398714] [1.10011138 1.10176896 1.15295534 1.40093701 1.6851742  1.80959845
+ 1.84385308 1.84512208 2.11704044 2.12049326 3.00590938 3.11747564
+ 3.12029231 3.13615168 3.13800533 3.3188931  3.65499858 3.66563365
+ 3.79193399 3.7978822  5.17833502 9.76813545]
+   2 ( 0.000  0.500 -0.000)   [-0.39282934 -0.25710744  0.18417688  0.2175659 ] [1.0979114  1.10201646 1.15430029 1.39999392 1.68127977 1.8125567
+ 1.84444897 1.84588791 2.11776098 2.12353324 3.00357325 3.11676941
+ 3.11821675 3.13560457 3.1382431  3.31851974 3.65680591 3.66213738
+ 3.79231836 3.7952353  5.18282718 9.75810121]
+   3 ( 0.000  0.500  0.500)   [-0.25418983 -0.24972708  0.03633543  0.06821246] [0.90491528 0.9644729  1.49964182 1.51158683 1.74893736 1.76361111
+ 2.06671494 2.0683187  2.32059038 2.32965191 2.8445035  2.84951235
+ 2.87047766 2.88294218 2.97189999 2.98165625 3.72837672 3.73393815
+ 5.06677011 5.07628572 6.86516673 6.87455628]
+    CPU time for vj and vk      2.43 sec, wall time      0.08 sec
+E1 = (4.197003923854525-8.272277894484508e-18j)  E_coul = (-2.2459679602911784-8.065167346397889e-17j)
+cycle= 6 E= -10.8360931820609  delta_E= -3.25e-07  |g|= 0.000492  |ddm|= 0.032
+    CPU time for cycle= 6      3.11 sec, wall time      0.10 sec
+HOMO = 0.343715404833  LUMO = 0.904916318356
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.6658466   0.29745143  0.33280533  0.3437154 ] [0.98112956 0.9874403  1.01704241 1.34441289 1.80125731 1.80357458
+ 1.89676265 2.12106762 2.12245206 2.1246215  2.69334953 2.70481695
+ 2.70815484 3.55531932 3.55970964 3.56211974 3.69447566 3.70249158
+ 4.20625566 4.76131848 4.76912065 4.77545118]
+   1 (-0.000 -0.000  0.500)   [-0.38928878 -0.2599029   0.18473795  0.21399214] [1.10011363 1.10177217 1.15295764 1.40093646 1.68517765 1.80960335
+ 1.84385735 1.84512642 2.11704233 2.1204946  3.00591075 3.11747613
+ 3.1202939  3.13615646 3.13801051 3.3188921  3.65499838 3.66563528
+ 3.79193565 3.79788464 5.17833793 9.76814978]
+   2 ( 0.000  0.500 -0.000)   [-0.39282612 -0.25710162  0.18418009  0.21757063] [1.09791448 1.10201906 1.15430201 1.39999351 1.68128392 1.81256171
+ 1.84445286 1.84589144 2.11776241 2.12353481 3.00357524 3.11677071
+ 3.1182174  3.13560928 3.13824887 3.31851933 3.65680516 3.66213873
+ 3.79232005 3.79523691 5.18282728 9.75811159]
+   3 ( 0.000  0.500  0.500)   [-0.2541852  -0.24972214  0.03633906  0.06821727] [0.90491632 0.96447384 1.49964586 1.51159186 1.7489425  1.76361678
+ 2.0667157  2.06832104 2.320592   2.32965346 2.84450592 2.84951637
+ 2.87047838 2.88294131 2.97190199 2.98165869 3.7283813  3.73393958
+ 5.06677114 5.07628855 6.86516591 6.8745669 ]
+    CPU time for vj and vk      2.43 sec, wall time      0.08 sec
+E1 = (4.197004669490144-8.273208249127015e-18j)  E_coul = (-2.2459687639514763-8.065708833304357e-17j)
+Extra cycle  E= -10.8360932400856  delta_E= -5.8e-08  |g|= 0.000329  |ddm|= 0.00874
+    CPU time for scf_cycle     26.97 sec, wall time      0.87 sec
+    CPU time for SCF     30.24 sec, wall time      0.98 sec
+converged SCF energy = -10.8360932400856
+**** SCF Summaries ****
+Total Energy =                         -10.836093240085573
+Nuclear Repulsion Energy =             -12.787129145624240
+One-electron Energy =                    4.197004669490144
+Two-electron Energy =                   -2.245968763951476
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            0.89815
+pop of  0 C 3s            0.00383
+pop of  0 C 2px           1.05600
+pop of  0 C 2py           1.01846
+pop of  0 C 2pz           1.01727
+pop of  0 C 3px           0.00278
+pop of  0 C 3py           0.00210
+pop of  0 C 3pz           0.00216
+pop of  0 C 3dxy          0.00633
+pop of  0 C 3dyz          0.00578
+pop of  0 C 3dz^2         0.00009
+pop of  0 C 3dxz          0.00620
+pop of  0 C 3dx2-y2       0.00016
+pop of  1 C 2s            0.88476
+pop of  1 C 3s            0.00307
+pop of  1 C 2px           1.05216
+pop of  1 C 2py           1.00746
+pop of  1 C 2pz           1.00660
+pop of  1 C 3px           0.00321
+pop of  1 C 3py           0.00222
+pop of  1 C 3pz           0.00218
+pop of  1 C 3dxy          0.00665
+pop of  1 C 3dyz          0.00556
+pop of  1 C 3dz^2         0.00012
+pop of  1 C 3dxz          0.00653
+pop of  1 C 3dx2-y2       0.00016
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.01932
+charge of    1C =      0.01932
+    CPU time for vj and vk      0.43 sec, wall time      0.02 sec
+
+WARN: ECP/PP is used. MINAO is not a good reference AO basis in IAO.
+
+
+WARN: Discard large imag part in k2s_iao: 7.31e-10.
+
+nlo = 10, nlo_s = 40
+coeff_lo_s.shape = (104, 40)
+frag_lo_list = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
+
+******** <class 'klno.WithFFTISDF'> ********
+nocc = 16, nmo = 104
+frozen orbitals 0
+max_memory 327680 MB (current use 452 MB)
+nfrag = 10  nlo = 40
+frag_lolist = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
+frag_wghtlist = None
+lno_type = ['2p', '2h']
+lno_thresh = [9.999999999999999e-06, 1e-06]
+lno_pct_occ = None
+lno_norb = None
+lo_proj_thresh = 1e-10
+lo_proj_thresh_active = 1e-06
+verbose_imp = 5
+_ovL = None
+_ovL_to_save = None
+force_outcore_ao2mo = False
+_match_oldcode = False
+_max_las_size_ccsd = 1000
+_max_las_size_ccsd_t = 1000
+Regularized frag_wghtlist = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    CPU time for LO and fragment        0.01 sec, wall time      0.00 sec
+
+WARN: Input vhf is not found. Building vhf from SCF MO.
+
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 1 make las      0.30 sec, wall time      0.01 sec
+Fragment 1/10  LAS: 2/16 Occ | 34/88 Vir | 36/104 MOs
+    impsol:  1 LOs  36/104 MOs  2 occ  34 vir
+eri.shape = (36, 36, 36, 36)
+nocc = 2, nmo = 36, nvir = 34
+file size = 96
+    CPU time for CCSD integral transformation      6.62 sec, wall time      0.22 sec
+Init t2, MP2 energy = -43.384662014383  E_corr(MP2) -0.0402890540406895
+    CPU time for init mp2      0.01 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 2, nmo = 36
+frozen orbitals [  0   1   2   3   4   5   6   7   8   9  10  11  12  13  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 438 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.0402890540406897
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.0485123467527981  dE = -0.00822329271  norm(t1,t2) = 0.0272443
+    CPU time for MODIFIED_K2SCCSD iter      2.94 sec, wall time      0.09 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.0508488762799287  dE = -0.00233652953  norm(t1,t2) = 0.010832
+    CPU time for MODIFIED_K2SCCSD iter      2.47 sec, wall time      0.08 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.0522499826069352  dE = -0.00140110633  norm(t1,t2) = 0.00475721
+    CPU time for MODIFIED_K2SCCSD iter      1.88 sec, wall time      0.06 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.0521961263254678  dE = 5.38562815e-05  norm(t1,t2) = 0.000469504
+    CPU time for MODIFIED_K2SCCSD iter      1.87 sec, wall time      0.06 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.0521994299354431  dE = -3.30360998e-06  norm(t1,t2) = 6.86889e-05
+    CPU time for MODIFIED_K2SCCSD iter      1.87 sec, wall time      0.06 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.0521992553795426  dE = 1.74555901e-07  norm(t1,t2) = 1.43024e-05
+    CPU time for MODIFIED_K2SCCSD iter      1.90 sec, wall time      0.06 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.0521992956336561  dE = -4.02541136e-08  norm(t1,t2) = 3.86205e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.18 sec, wall time      0.07 sec
+    CPU time for MODIFIED_K2SCCSD     15.10 sec, wall time      0.48 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.39657225597595  E_corr = -0.05219929563365613
+    CPU time for Fragment 1 imp sol      21.96 sec, wall time      0.70 sec
+Fragment 1/10  Sol: E_corr(MP2) = -0.000168465764832141  E_corr(CCSD) = -0.000203574281438755  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 1            22.26 sec, wall time      0.71 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 2 make las      0.31 sec, wall time      0.01 sec
+Fragment 2/10  LAS: 6/16 Occ | 32/88 Vir | 38/104 MOs
+    impsol:  1 LOs  38/104 MOs  6 occ  32 vir
+eri.shape = (38, 38, 38, 38)
+nocc = 6, nmo = 38, nvir = 32
+file size = 96
+    CPU time for CCSD integral transformation      6.84 sec, wall time      0.29 sec
+Init t2, MP2 energy = -43.5385367164008  E_corr(MP2) -0.194163756058523
+    CPU time for init mp2      0.02 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 6, nmo = 38
+frozen orbitals [  0   1   2   3   4   5   6   7   8   9  48  49  50  51  52  53  54  55
+  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73
+  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91
+  92  93  94  95  96  97  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 440 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.194163756058524
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.215720177170245  dE = -0.0215564211  norm(t1,t2) = 0.0424541
+    CPU time for MODIFIED_K2SCCSD iter      3.79 sec, wall time      0.12 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.22262745595781  dE = -0.00690727879  norm(t1,t2) = 0.0165246
+    CPU time for MODIFIED_K2SCCSD iter      2.51 sec, wall time      0.08 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.226599049667879  dE = -0.00397159371  norm(t1,t2) = 0.00760238
+    CPU time for MODIFIED_K2SCCSD iter      1.93 sec, wall time      0.06 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.226652361358179  dE = -5.33116903e-05  norm(t1,t2) = 0.00136347
+    CPU time for MODIFIED_K2SCCSD iter      2.08 sec, wall time      0.07 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.226620153824299  dE = 3.22075339e-05  norm(t1,t2) = 0.000363206
+    CPU time for MODIFIED_K2SCCSD iter      2.16 sec, wall time      0.07 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.226636877216741  dE = -1.67233924e-05  norm(t1,t2) = 0.000101384
+    CPU time for MODIFIED_K2SCCSD iter      1.87 sec, wall time      0.06 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.226636994422441  dE = -1.172057e-07  norm(t1,t2) = 1.72783e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.24 sec, wall time      0.07 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -0.226636972177158  dE = 2.22452826e-08  norm(t1,t2) = 3.58971e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.06 sec, wall time      0.06 sec
+    CPU time for MODIFIED_K2SCCSD     18.65 sec, wall time      0.59 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.57100993251945  E_corr = -0.2266369721771581
+    CPU time for Fragment 2 imp sol      25.77 sec, wall time      0.89 sec
+Fragment 2/10  Sol: E_corr(MP2) = -0.0137475296202122  E_corr(CCSD) = -0.0165652408199679  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 2            26.08 sec, wall time      0.90 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 3 make las      0.44 sec, wall time      0.01 sec
+Fragment 3/10  LAS: 8/16 Occ | 36/88 Vir | 44/104 MOs
+    impsol:  1 LOs  44/104 MOs  8 occ  36 vir
+eri.shape = (44, 44, 44, 44)
+nocc = 8, nmo = 44, nvir = 36
+file size = 96
+    CPU time for CCSD integral transformation      7.25 sec, wall time      0.42 sec
+Init t2, MP2 energy = -43.5939824570936  E_corr(MP2) -0.249609496751274
+    CPU time for init mp2      0.03 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 8, nmo = 44
+frozen orbitals [  0   1   2   3   4   5   6   7  52  53  54  55  56  57  58  59  60  61
+  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79
+  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97
+  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 463 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.249609496751274
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.273116870756232  dE = -0.023507374  norm(t1,t2) = 0.0441274
+    CPU time for MODIFIED_K2SCCSD iter      4.24 sec, wall time      0.13 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.281239413016595  dE = -0.00812254226  norm(t1,t2) = 0.0164951
+    CPU time for MODIFIED_K2SCCSD iter      2.90 sec, wall time      0.09 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.285400169414381  dE = -0.0041607564  norm(t1,t2) = 0.00742503
+    CPU time for MODIFIED_K2SCCSD iter      2.94 sec, wall time      0.09 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.285518749934556  dE = -0.00011858052  norm(t1,t2) = 0.00146795
+    CPU time for MODIFIED_K2SCCSD iter      2.97 sec, wall time      0.09 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.285453381605143  dE = 6.53683294e-05  norm(t1,t2) = 0.000428335
+    CPU time for MODIFIED_K2SCCSD iter      2.84 sec, wall time      0.09 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.285470961043562  dE = -1.75794384e-05  norm(t1,t2) = 0.000116158
+    CPU time for MODIFIED_K2SCCSD iter      2.73 sec, wall time      0.09 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.28547281175403  dE = -1.85071047e-06  norm(t1,t2) = 2.28905e-05
+    CPU time for MODIFIED_K2SCCSD iter      3.12 sec, wall time      0.10 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -0.285472287699723  dE = 5.24054308e-07  norm(t1,t2) = 6.07517e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.49 sec, wall time      0.08 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -0.285472449909178  dE = -1.62209455e-07  norm(t1,t2) = 1.58606e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.53 sec, wall time      0.08 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -0.285472430341239  dE = 1.95679392e-08  norm(t1,t2) = 5.46485e-07
+    CPU time for MODIFIED_K2SCCSD iter      2.58 sec, wall time      0.08 sec
+    CPU time for MODIFIED_K2SCCSD     29.34 sec, wall time      0.92 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.62984539068353  E_corr = -0.2854724303412388
+    CPU time for Fragment 3 imp sol      36.88 sec, wall time      1.36 sec
+Fragment 3/10  Sol: E_corr(MP2) = -0.0264945601294365  E_corr(CCSD) = -0.0302253251542082  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 3            37.32 sec, wall time      1.37 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 4 make las      0.41 sec, wall time      0.01 sec
+Fragment 4/10  LAS: 7/16 Occ | 36/88 Vir | 43/104 MOs
+    impsol:  1 LOs  43/104 MOs  7 occ  36 vir
+eri.shape = (43, 43, 43, 43)
+nocc = 7, nmo = 43, nvir = 36
+file size = 96
+    CPU time for CCSD integral transformation      7.07 sec, wall time      0.40 sec
+Init t2, MP2 energy = -43.5829884934414  E_corr(MP2) -0.238615533099077
+    CPU time for init mp2      0.03 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 7, nmo = 43
+frozen orbitals [  0   1   2   3   4   5   6   7   8  52  53  54  55  56  57  58  59  60
+  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78
+  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96
+  97  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 462 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.238615533099077
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.261984933427746  dE = -0.0233694003  norm(t1,t2) = 0.0446261
+    CPU time for MODIFIED_K2SCCSD iter      5.15 sec, wall time      0.16 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.270194350810499  dE = -0.00820941738  norm(t1,t2) = 0.0167787
+    CPU time for MODIFIED_K2SCCSD iter      2.71 sec, wall time      0.09 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.274636942885933  dE = -0.00444259208  norm(t1,t2) = 0.00765511
+    CPU time for MODIFIED_K2SCCSD iter      2.39 sec, wall time      0.08 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.274769060725177  dE = -0.000132117839  norm(t1,t2) = 0.00150844
+    CPU time for MODIFIED_K2SCCSD iter      2.57 sec, wall time      0.08 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.274716732711289  dE = 5.23280139e-05  norm(t1,t2) = 0.000424235
+    CPU time for MODIFIED_K2SCCSD iter      2.93 sec, wall time      0.09 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.274734712322617  dE = -1.79796113e-05  norm(t1,t2) = 0.000116494
+    CPU time for MODIFIED_K2SCCSD iter      2.56 sec, wall time      0.08 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.27473561465036  dE = -9.02327743e-07  norm(t1,t2) = 2.02845e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.33 sec, wall time      0.07 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -0.2747352875435  dE = 3.2710686e-07  norm(t1,t2) = 5.19381e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.22 sec, wall time      0.07 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -0.274735388423771  dE = -1.00880271e-07  norm(t1,t2) = 1.35169e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.31 sec, wall time      0.07 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -0.274735362656009  dE = 2.57677614e-08  norm(t1,t2) = 4.52359e-07
+    CPU time for MODIFIED_K2SCCSD iter      2.67 sec, wall time      0.08 sec
+    CPU time for MODIFIED_K2SCCSD     27.85 sec, wall time      0.88 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.6191083229983  E_corr = -0.2747353626560095
+    CPU time for Fragment 4 imp sol      35.47 sec, wall time      1.30 sec
+Fragment 4/10  Sol: E_corr(MP2) = -0.026161850624821  E_corr(CCSD) = -0.0298497901476119  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 4            35.87 sec, wall time      1.31 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 5 make las      0.36 sec, wall time      0.01 sec
+Fragment 5/10  LAS: 8/16 Occ | 36/88 Vir | 44/104 MOs
+    impsol:  1 LOs  44/104 MOs  8 occ  36 vir
+eri.shape = (44, 44, 44, 44)
+nocc = 8, nmo = 44, nvir = 36
+file size = 96
+    CPU time for CCSD integral transformation      6.94 sec, wall time      0.40 sec
+Init t2, MP2 energy = -43.6077452380598  E_corr(MP2) -0.263372277717532
+    CPU time for init mp2      0.04 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 8, nmo = 44
+frozen orbitals [  0   1   2   3   4   5   6   7  52  53  54  55  56  57  58  59  60  61
+  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79
+  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97
+  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 463 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.263372277717533
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.287267121243823  dE = -0.0238948435  norm(t1,t2) = 0.0452088
+    CPU time for MODIFIED_K2SCCSD iter      5.57 sec, wall time      0.18 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.295912146455731  dE = -0.00864502521  norm(t1,t2) = 0.0165307
+    CPU time for MODIFIED_K2SCCSD iter      2.76 sec, wall time      0.09 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.300331017191838  dE = -0.00441887074  norm(t1,t2) = 0.00747629
+    CPU time for MODIFIED_K2SCCSD iter      2.77 sec, wall time      0.09 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.300520731944303  dE = -0.000189714752  norm(t1,t2) = 0.00156609
+    CPU time for MODIFIED_K2SCCSD iter      2.62 sec, wall time      0.08 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.30045851141303  dE = 6.22205313e-05  norm(t1,t2) = 0.000478292
+    CPU time for MODIFIED_K2SCCSD iter      2.91 sec, wall time      0.09 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.300475663632872  dE = -1.71522198e-05  norm(t1,t2) = 0.000119836
+    CPU time for MODIFIED_K2SCCSD iter      2.86 sec, wall time      0.09 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.300476784230365  dE = -1.12059749e-06  norm(t1,t2) = 2.21471e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.50 sec, wall time      0.08 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -0.300476284471587  dE = 4.99758778e-07  norm(t1,t2) = 6.38805e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.86 sec, wall time      0.09 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -0.300476391214725  dE = -1.06743137e-07  norm(t1,t2) = 1.83386e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.82 sec, wall time      0.09 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -0.300476352658344  dE = 3.85563806e-08  norm(t1,t2) = 6.3616e-07
+    CPU time for MODIFIED_K2SCCSD iter      2.60 sec, wall time      0.08 sec
+    CPU time for MODIFIED_K2SCCSD     30.27 sec, wall time      0.95 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.64484931300063  E_corr = -0.3004763526583442
+    CPU time for Fragment 5 imp sol      37.49 sec, wall time      1.36 sec
+Fragment 5/10  Sol: E_corr(MP2) = -0.0272396693604381  E_corr(CCSD) = -0.0307831871324587  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 5            37.85 sec, wall time      1.37 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 6 make las      0.41 sec, wall time      0.01 sec
+Fragment 6/10  LAS: 1/16 Occ | 36/88 Vir | 37/104 MOs
+    impsol:  1 LOs  37/104 MOs  1 occ  36 vir
+eri.shape = (37, 37, 37, 37)
+nocc = 1, nmo = 37, nvir = 36
+file size = 96
+    CPU time for CCSD integral transformation      6.85 sec, wall time      0.26 sec
+Init t2, MP2 energy = -43.3515302005078  E_corr(MP2) -0.00715724016553649
+    CPU time for init mp2      0.01 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 1, nmo = 37
+frozen orbitals [  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  52  53  54
+  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72
+  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90
+  91  92  93  94  95  96  97  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 447 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.0071572401655365
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.00826704886870098  dE = -0.0011098087  norm(t1,t2) = 0.00783309
+    CPU time for MODIFIED_K2SCCSD iter      0.77 sec, wall time      0.03 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.00850085586361853  dE = -0.000233806995  norm(t1,t2) = 0.00203478
+    CPU time for MODIFIED_K2SCCSD iter      1.39 sec, wall time      0.05 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.00857962153898832  dE = -7.87656754e-05  norm(t1,t2) = 0.000576612
+    CPU time for MODIFIED_K2SCCSD iter      0.97 sec, wall time      0.03 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.00857839717829509  dE = 1.22436069e-06  norm(t1,t2) = 2.88243e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.17 sec, wall time      0.07 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.00857841511988203  dE = -1.79415869e-08  norm(t1,t2) = 2.1773e-06
+    CPU time for MODIFIED_K2SCCSD iter      1.62 sec, wall time      0.05 sec
+    CPU time for MODIFIED_K2SCCSD      6.92 sec, wall time      0.22 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.35295137546218  E_corr = -0.008578415119882034
+    CPU time for Fragment 6 imp sol      14.07 sec, wall time      0.49 sec
+Fragment 6/10  Sol: E_corr(MP2) = -7.91145461997972e-05  E_corr(CCSD) = -9.48238991044211e-05  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 6            14.48 sec, wall time      0.51 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 7 make las      0.62 sec, wall time      0.02 sec
+Fragment 7/10  LAS: 6/16 Occ | 33/88 Vir | 39/104 MOs
+    impsol:  1 LOs  39/104 MOs  6 occ  33 vir
+eri.shape = (39, 39, 39, 39)
+nocc = 6, nmo = 39, nvir = 33
+file size = 96
+    CPU time for CCSD integral transformation      6.82 sec, wall time      0.30 sec
+Init t2, MP2 energy = -43.5368824095296  E_corr(MP2) -0.192509449187266
+    CPU time for init mp2      0.04 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 6, nmo = 39
+frozen orbitals [  0   1   2   3   4   5   6   7   8   9  49  50  51  52  53  54  55  56
+  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74
+  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92
+  93  94  95  96  97  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 443 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.192509449187267
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.214449015269373  dE = -0.0219395661  norm(t1,t2) = 0.0422309
+    CPU time for MODIFIED_K2SCCSD iter      5.85 sec, wall time      0.19 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.221295745087714  dE = -0.00684672982  norm(t1,t2) = 0.016356
+    CPU time for MODIFIED_K2SCCSD iter      2.15 sec, wall time      0.07 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.225255358542808  dE = -0.00395961346  norm(t1,t2) = 0.00747987
+    CPU time for MODIFIED_K2SCCSD iter      2.45 sec, wall time      0.08 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.225275413422387  dE = -2.00548796e-05  norm(t1,t2) = 0.00130755
+    CPU time for MODIFIED_K2SCCSD iter      2.00 sec, wall time      0.06 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.225256263389732  dE = 1.91500327e-05  norm(t1,t2) = 0.0003078
+    CPU time for MODIFIED_K2SCCSD iter      2.13 sec, wall time      0.07 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.225271654522134  dE = -1.53911324e-05  norm(t1,t2) = 8.94346e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.09 sec, wall time      0.07 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.225271731510184  dE = -7.69880499e-08  norm(t1,t2) = 1.62018e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.29 sec, wall time      0.07 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -0.225271749784453  dE = -1.82742685e-08  norm(t1,t2) = 3.17061e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.45 sec, wall time      0.08 sec
+    CPU time for MODIFIED_K2SCCSD     21.41 sec, wall time      0.67 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.56964471012675  E_corr = -0.2252717497844527
+    CPU time for Fragment 7 imp sol      28.62 sec, wall time      0.99 sec
+Fragment 7/10  Sol: E_corr(MP2) = -0.0131130439976984  E_corr(CCSD) = -0.0158308095280833  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 7            29.24 sec, wall time      1.01 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 8 make las      0.32 sec, wall time      0.01 sec
+Fragment 8/10  LAS: 8/16 Occ | 36/88 Vir | 44/104 MOs
+    impsol:  1 LOs  44/104 MOs  8 occ  36 vir
+eri.shape = (44, 44, 44, 44)
+nocc = 8, nmo = 44, nvir = 36
+file size = 96
+    CPU time for CCSD integral transformation      7.30 sec, wall time      0.43 sec
+Init t2, MP2 energy = -43.5955292381257  E_corr(MP2) -0.251156277783394
+    CPU time for init mp2      0.04 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 8, nmo = 44
+frozen orbitals [  0   1   2   3   4   5   6   7  52  53  54  55  56  57  58  59  60  61
+  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79
+  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97
+  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 462 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.251156277783396
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.275064148986151  dE = -0.0239078712  norm(t1,t2) = 0.0440277
+    CPU time for MODIFIED_K2SCCSD iter      6.32 sec, wall time      0.20 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.283216749079357  dE = -0.00815260009  norm(t1,t2) = 0.0163678
+    CPU time for MODIFIED_K2SCCSD iter      3.02 sec, wall time      0.09 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.287415014795296  dE = -0.00419826572  norm(t1,t2) = 0.00735259
+    CPU time for MODIFIED_K2SCCSD iter      3.10 sec, wall time      0.10 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.287508946646658  dE = -9.39318514e-05  norm(t1,t2) = 0.00146128
+    CPU time for MODIFIED_K2SCCSD iter      2.72 sec, wall time      0.09 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.28745103634995  dE = 5.79102967e-05  norm(t1,t2) = 0.000380556
+    CPU time for MODIFIED_K2SCCSD iter      2.73 sec, wall time      0.09 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.287469251220856  dE = -1.82148709e-05  norm(t1,t2) = 0.00011054
+    CPU time for MODIFIED_K2SCCSD iter      2.75 sec, wall time      0.09 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.287470148104661  dE = -8.96883806e-07  norm(t1,t2) = 2.1317e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.73 sec, wall time      0.09 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -0.287469831628353  dE = 3.16476308e-07  norm(t1,t2) = 5.44e-06
+    CPU time for MODIFIED_K2SCCSD iter      3.01 sec, wall time      0.09 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -0.287469962235193  dE = -1.3060684e-07  norm(t1,t2) = 1.43748e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.64 sec, wall time      0.08 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -0.287469949840433  dE = 1.23947599e-08  norm(t1,t2) = 4.69671e-07
+    CPU time for MODIFIED_K2SCCSD iter      2.67 sec, wall time      0.08 sec
+    CPU time for MODIFIED_K2SCCSD     31.70 sec, wall time      1.00 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.63184291018273  E_corr = -0.2874699498404334
+    CPU time for Fragment 8 imp sol      39.32 sec, wall time      1.43 sec
+Fragment 8/10  Sol: E_corr(MP2) = -0.0263402958870955  E_corr(CCSD) = -0.0301409509231035  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 8            39.64 sec, wall time      1.44 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 9 make las      0.36 sec, wall time      0.01 sec
+Fragment 9/10  LAS: 8/16 Occ | 36/88 Vir | 44/104 MOs
+    impsol:  1 LOs  44/104 MOs  8 occ  36 vir
+eri.shape = (44, 44, 44, 44)
+nocc = 8, nmo = 44, nvir = 36
+file size = 96
+    CPU time for CCSD integral transformation      7.00 sec, wall time      0.42 sec
+Init t2, MP2 energy = -43.6105872412089  E_corr(MP2) -0.266214280866576
+    CPU time for init mp2      0.03 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 8, nmo = 44
+frozen orbitals [  0   1   2   3   4   5   6   7  52  53  54  55  56  57  58  59  60  61
+  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79
+  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97
+  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 462 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.266214280866576
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.29030263085779  dE = -0.02408835  norm(t1,t2) = 0.0451446
+    CPU time for MODIFIED_K2SCCSD iter      9.84 sec, wall time      0.32 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.298931775884  dE = -0.00862914503  norm(t1,t2) = 0.0166423
+    CPU time for MODIFIED_K2SCCSD iter      3.48 sec, wall time      0.11 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.303403850326186  dE = -0.00447207444  norm(t1,t2) = 0.00755455
+    CPU time for MODIFIED_K2SCCSD iter      2.58 sec, wall time      0.08 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.303556794406633  dE = -0.00015294408  norm(t1,t2) = 0.00156095
+    CPU time for MODIFIED_K2SCCSD iter      2.62 sec, wall time      0.08 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.30349421578016  dE = 6.25786265e-05  norm(t1,t2) = 0.000421479
+    CPU time for MODIFIED_K2SCCSD iter      2.97 sec, wall time      0.09 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.30351148207231  dE = -1.72662922e-05  norm(t1,t2) = 0.000111632
+    CPU time for MODIFIED_K2SCCSD iter      2.68 sec, wall time      0.08 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.303511919922033  dE = -4.37849723e-07  norm(t1,t2) = 1.98856e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.40 sec, wall time      0.08 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -0.303511600660619  dE = 3.19261414e-07  norm(t1,t2) = 5.20551e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.56 sec, wall time      0.08 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -0.303511705760831  dE = -1.05100212e-07  norm(t1,t2) = 1.53388e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.61 sec, wall time      0.08 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -0.303511679643309  dE = 2.61175224e-08  norm(t1,t2) = 5.33134e-07
+    CPU time for MODIFIED_K2SCCSD iter      2.57 sec, wall time      0.08 sec
+    CPU time for MODIFIED_K2SCCSD     34.33 sec, wall time      1.09 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.6478846399856  E_corr = -0.3035116796433087
+    CPU time for Fragment 9 imp sol      41.61 sec, wall time      1.52 sec
+Fragment 9/10  Sol: E_corr(MP2) = -0.0268758339561731  E_corr(CCSD) = -0.0304140688937829  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 9            41.97 sec, wall time      1.53 sec
+LO occ proj: 1 active | 0 standby | 15 orthogonal
+LO vir proj: 1 active | 0 standby | 87 orthogonal
+    CPU time for Fragment 10 make las      0.35 sec, wall time      0.01 sec
+Fragment 10/10  LAS: 8/16 Occ | 36/88 Vir | 44/104 MOs
+    impsol:  1 LOs  44/104 MOs  8 occ  36 vir
+eri.shape = (44, 44, 44, 44)
+nocc = 8, nmo = 44, nvir = 36
+file size = 96
+    CPU time for CCSD integral transformation      7.03 sec, wall time      0.42 sec
+Init t2, MP2 energy = -43.6110316515164  E_corr(MP2) -0.26665869117413
+    CPU time for init mp2      0.04 sec, wall time      0.00 sec
+
+******** <class 'klno.MODIFIED_K2SCCSD'> ********
+CC2 = 0
+CCSD nocc = 8, nmo = 44
+frozen orbitals [  0   1   2   3   4   5   6   7  52  53  54  55  56  57  58  59  60  61
+  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79
+  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97
+  98  99 100 101 102 103]
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 464 MB)
+Init E_corr(MODIFIED_K2SCCSD) = -0.26665869117413
+cycle = 1  E_corr(MODIFIED_K2SCCSD) = -0.291313174238693  dE = -0.0246544831  norm(t1,t2) = 0.0452882
+    CPU time for MODIFIED_K2SCCSD iter      6.80 sec, wall time      0.21 sec
+cycle = 2  E_corr(MODIFIED_K2SCCSD) = -0.300117607657294  dE = -0.00880443342  norm(t1,t2) = 0.0166338
+    CPU time for MODIFIED_K2SCCSD iter      2.71 sec, wall time      0.09 sec
+cycle = 3  E_corr(MODIFIED_K2SCCSD) = -0.304681111455597  dE = -0.0045635038  norm(t1,t2) = 0.00752307
+    CPU time for MODIFIED_K2SCCSD iter      2.71 sec, wall time      0.09 sec
+cycle = 4  E_corr(MODIFIED_K2SCCSD) = -0.304845790102768  dE = -0.000164678647  norm(t1,t2) = 0.00155819
+    CPU time for MODIFIED_K2SCCSD iter      2.67 sec, wall time      0.08 sec
+cycle = 5  E_corr(MODIFIED_K2SCCSD) = -0.304786140631467  dE = 5.96494713e-05  norm(t1,t2) = 0.000434076
+    CPU time for MODIFIED_K2SCCSD iter      3.06 sec, wall time      0.10 sec
+cycle = 6  E_corr(MODIFIED_K2SCCSD) = -0.304804224955442  dE = -1.8084324e-05  norm(t1,t2) = 0.000115029
+    CPU time for MODIFIED_K2SCCSD iter      2.68 sec, wall time      0.08 sec
+cycle = 7  E_corr(MODIFIED_K2SCCSD) = -0.30480458706169  dE = -3.62106248e-07  norm(t1,t2) = 2.07523e-05
+    CPU time for MODIFIED_K2SCCSD iter      2.74 sec, wall time      0.09 sec
+cycle = 8  E_corr(MODIFIED_K2SCCSD) = -0.304804231888511  dE = 3.55173179e-07  norm(t1,t2) = 5.61204e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.66 sec, wall time      0.08 sec
+cycle = 9  E_corr(MODIFIED_K2SCCSD) = -0.304804337960381  dE = -1.0607187e-07  norm(t1,t2) = 1.80074e-06
+    CPU time for MODIFIED_K2SCCSD iter      2.64 sec, wall time      0.08 sec
+cycle = 10  E_corr(MODIFIED_K2SCCSD) = -0.304804306406158  dE = 3.15542237e-08  norm(t1,t2) = 7.01168e-07
+    CPU time for MODIFIED_K2SCCSD iter      2.70 sec, wall time      0.08 sec
+    CPU time for MODIFIED_K2SCCSD     31.37 sec, wall time      0.99 sec
+MODIFIED_K2SCCSD converged
+E(MODIFIED_K2SCCSD) = -43.64917726674845  E_corr = -0.3048043064061575
+    CPU time for Fragment 10 imp sol      38.67 sec, wall time      1.42 sec
+Fragment 10/10  Sol: E_corr(MP2) = -0.026735525692968  E_corr(CCSD) = -0.0302707912406176  E_corr(CCSD(T)) = 0
+    CPU time for Fragment 10           39.01 sec, wall time      1.43 sec
+    CPU time for WithFFTISDF          323.80 sec, wall time     11.58 sec
+E(LNOMP2) = -43.5313288499222  E_corr = -0.186955889579875
+E(LNOCCSD) = -43.5587515223627  E_corr = -0.214378562020377
+Summary by spin components
+LNOMP2   Ess = -0.0400098574195422  Eos = -0.146946032160333  Escs = -0.189658521113107
+LNOCCSD  Ess = -0.0376004084449834  Eos = -0.176778153575394  Escs = -0.224654720302652
+End time = Wed Jun  4 09:55:26 PM PDT 2025
