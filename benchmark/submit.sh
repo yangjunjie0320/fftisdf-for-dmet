@@ -9,7 +9,7 @@ for method in "klno"; do
     cd $cell/$method
 
     cp ../../submit.py .
-    python submit.py --cell $cell --method $method --ntasks 1 --time 04:00:00
+    python submit.py --cell $cell --method $method --ntasks 1 --time 20:00:00
 
     cd ../..
 done
