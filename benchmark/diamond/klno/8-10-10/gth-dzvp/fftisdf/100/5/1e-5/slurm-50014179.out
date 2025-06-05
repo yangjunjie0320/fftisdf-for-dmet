@@ -1,0 +1,9 @@
+SLURMD_NODENAME = hpc-20-28
+Start time = Thu Jun  5 03:35:27 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-8-10-10-gth-dzvp-fftisdf-100-5-1e-5/50014179/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-8-10-10-gth-dzvp-fftisdf-100-5-1e-5/50014179/
