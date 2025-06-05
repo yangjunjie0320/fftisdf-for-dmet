@@ -1778,3 +1778,9 @@ nocc = 4
 nmo = 26
 with_df_ints = False
 max_memory 327680 MB (current use 588 MB)
+    CPU time for KMP2 1809101.37 sec, wall time  57216.43 sec
+E(KMP2) = -11.2980110540827  E_corr = -0.26358346886016
+E(SCS-KMP2) = -11.2816076863651  E_corr = -0.247180101142622
+E_corr(same-spin) = -0.079753917103349
+E_corr(oppo-spin) = -0.183829551756811
+End time = Wed Jun  4 05:58:16 PM PDT 2025

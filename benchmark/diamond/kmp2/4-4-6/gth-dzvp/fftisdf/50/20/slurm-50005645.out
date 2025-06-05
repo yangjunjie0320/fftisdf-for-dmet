@@ -2650,3 +2650,62 @@ HOMO = 0.385048746269  LUMO = 0.872138779132
  1.78787517 2.10391277 2.41818034 2.49288768 2.49879511 2.59139718
  2.70322465 2.99348575 3.37001934 3.61039701 3.69787718 3.81143857
  3.91808893 4.53032583 6.48220263 8.98709108]
+    CPU time for vj and vk     28.68 sec, wall time      1.30 sec
+E1 = (4.013595216657013-5.364541999277235e-19j)  E_coul = (-2.2605399160028217+1.4272293402998147e-16j)
+Extra cycle  E= -11.03407384497  delta_E= -1.01e-09  |g|= 0.000132  |ddm|= 0.0154
+    CPU time for scf_cycle    246.99 sec, wall time     10.53 sec
+    CPU time for SCF    253.81 sec, wall time     11.41 sec
+converged SCF energy = -11.03407384497
+**** SCF Summaries ****
+Total Energy =                         -11.034073844970049
+Nuclear Repulsion Energy =             -12.787129145624240
+One-electron Energy =                    4.013595216657013
+Two-electron Energy =                   -2.260539916002822
+
+WARN: Weak orthogonality for localized orbitals 2.050756173004678e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            0.92453
+pop of  0 C 3s            0.00285
+pop of  0 C 2px           1.01815
+pop of  0 C 2py           1.01815
+pop of  0 C 2pz           1.01793
+pop of  0 C 3px           0.00274
+pop of  0 C 3py           0.00274
+pop of  0 C 3pz           0.00274
+pop of  0 C 3dxy          0.00322
+pop of  0 C 3dyz          0.00322
+pop of  0 C 3dz^2         0.00026
+pop of  0 C 3dxz          0.00322
+pop of  0 C 3dx2-y2       0.00026
+pop of  1 C 2s            0.92452
+pop of  1 C 3s            0.00285
+pop of  1 C 2px           1.01814
+pop of  1 C 2py           1.01815
+pop of  1 C 2pz           1.01793
+pop of  1 C 3px           0.00274
+pop of  1 C 3py           0.00274
+pop of  1 C 3pz           0.00274
+pop of  1 C 3dxy          0.00322
+pop of  1 C 3dyz          0.00322
+pop of  1 C 3dz^2         0.00026
+pop of  1 C 3dxz          0.00322
+pop of  1 C 3dx2-y2       0.00026
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.00001
+charge of    1C =      0.00001
+    CPU time for vj and vk     20.90 sec, wall time      0.88 sec
+
+******** <class 'pyscf.pbc.mp.kmp2.KMP2'> ********
+nkpts = 96
+nocc = 4
+nmo = 26
+with_df_ints = False
+max_memory 327680 MB (current use 1235 MB)
+    CPU time for KMP2  43573.42 sec, wall time   1365.58 sec
+E(KMP2) = -11.3001533169858  E_corr = -0.266079472015781
+E(SCS-KMP2) = -11.2831966193024  E_corr = -0.249122774332382
+E_corr(same-spin) = -0.0809683754844861
+E_corr(oppo-spin) = -0.185111096531295
+End time = Wed Jun  4 03:17:52 PM PDT 2025

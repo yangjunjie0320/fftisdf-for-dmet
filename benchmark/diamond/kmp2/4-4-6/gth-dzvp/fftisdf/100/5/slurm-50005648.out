@@ -3051,3 +3051,51 @@ Total Energy =                         -11.046088511675402
 Nuclear Repulsion Energy =             -12.787129145624240
 One-electron Energy =                    4.017063165577490
 Two-electron Energy =                   -2.276022531628652
+
+WARN: Weak orthogonality for localized orbitals 2.050756173004678e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            0.93501
+pop of  0 C 3s            0.00360
+pop of  0 C 2px           1.02148
+pop of  0 C 2py           1.02185
+pop of  0 C 2pz           1.02258
+pop of  0 C 3px           0.00281
+pop of  0 C 3py           0.00278
+pop of  0 C 3pz           0.00280
+pop of  0 C 3dxy          0.00292
+pop of  0 C 3dyz          0.00294
+pop of  0 C 3dz^2         0.00024
+pop of  0 C 3dxz          0.00293
+pop of  0 C 3dx2-y2       0.00025
+pop of  1 C 2s            0.91349
+pop of  1 C 3s            0.00238
+pop of  1 C 2px           1.01256
+pop of  1 C 2py           1.01531
+pop of  1 C 2pz           1.01485
+pop of  1 C 3px           0.00293
+pop of  1 C 3py           0.00290
+pop of  1 C 3pz           0.00296
+pop of  1 C 3dxy          0.00331
+pop of  1 C 3dyz          0.00327
+pop of  1 C 3dz^2         0.00028
+pop of  1 C 3dxz          0.00328
+pop of  1 C 3dx2-y2       0.00028
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.02220
+charge of    1C =      0.02220
+    CPU time for vj and vk      2.83 sec, wall time      0.09 sec
+
+******** <class 'pyscf.pbc.mp.kmp2.KMP2'> ********
+nkpts = 96
+nocc = 4
+nmo = 26
+with_df_ints = False
+max_memory 327680 MB (current use 851 MB)
+    CPU time for KMP2  20018.99 sec, wall time    627.51 sec
+E(KMP2) = -11.3253714569568  E_corr = -0.279282945281377
+E(SCS-KMP2) = -11.3064381204453  E_corr = -0.260349608769922
+E_corr(same-spin) = -0.0862960679627651
+E_corr(oppo-spin) = -0.192986877318612
+End time = Wed Jun  4 03:05:32 PM PDT 2025
