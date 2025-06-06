@@ -7,3 +7,35 @@ OPENBLAS_NUM_THREADS = 1
 PYSCF_MAX_MEMORY = 327680
 TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-8-10-10-gth-dzvp-fftisdf-100-10-1e-4/50014148/
 PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-8-10-10-gth-dzvp-fftisdf-100-10-1e-4/50014148/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/klno/8-10-10/gth-dzvp/fftisdf/100/10/1e-4/main.py with:
+name: diamond
+xc: None
+kmesh: 8-10-10
+basis: gth-dzvp
+pseudo: gth-pbe
+lno_thresh: 0.0001
+density_fitting_method: fftisdf-100-10
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using FFTISDF, method = fftisdf-100-10
+Traceback (most recent call last):
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/klno/8-10-10/gth-dzvp/fftisdf/100/10/1e-4/main.py", line 112, in <module>
+    main(config)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/klno/8-10-10/gth-dzvp/fftisdf/100/10/1e-4/main.py", line 8, in main
+    build(config)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/utils.py", line 229, in build
+    build_density_fitting(config)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/utils.py", line 145, in build_density_fitting
+    df_obj = fft.ISDF(cell, kpts)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fftisdf-main/fft/isdf.py", line 123, in __init__
+    self._fswap = lib.H5TmpFile()
+  File "/home/junjiey/anaconda3/envs/fftisdf/lib/python3.10/site-packages/pyscf/lib/misc.py", line 1212, in __init__
+    filename = H5TmpFile._gen_unique_name(dir, pre=prefix, suf=suffix)
+  File "/home/junjiey/anaconda3/envs/fftisdf/lib/python3.10/site-packages/pyscf/lib/misc.py", line 1234, in _gen_unique_name
+    f = open(filename, 'x')
+FileNotFoundError: [Errno 2] No such file or directory: '/resnick/scratch/yangjunjie/diamond-klno-8-10-10-gth-dzvp-fftisdf-100-10-1e-4/50014148/mldpu9rc'
+End time = Thu Jun  5 08:55:17 PM PDT 2025

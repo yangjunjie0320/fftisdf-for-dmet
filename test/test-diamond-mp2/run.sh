@@ -42,12 +42,14 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/main-kmp2.py ./main.py
 python main.py --kmesh="2-2-2" --basis=gth-dzvp --density-fitting-method=rsdf --name=diamond --pseudo=gth-pbe --init-guess-method=minao
-tail out.log
+mv out.log out.log.full
 
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/main-klno.py ./main.py
-for thresh_lno in 1e-4 1e-6 1e-8 1e-10; do
+for thresh_lno in 1e-4 1e-5 1e-6 1e-7 1e-8 1e-9 1e-10; do
     python main.py --kmesh="2-2-2" --basis=gth-dzvp --density-fitting-method=rsdf --name=diamond --pseudo=gth-pbe --init-guess-method=minao --lno-thresh=$thresh_lno
-    tail out.log
+
+    mv out.log out.log.$thresh_lno
 done
+tail out.log.* > out.log
 
 echo "End time = $(date)"

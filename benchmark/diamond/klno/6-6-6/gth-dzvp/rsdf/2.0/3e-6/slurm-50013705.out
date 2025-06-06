@@ -5610,3 +5610,6 @@ aux blksize for outcore ao2mo: 168/168
     CPU time for ao2mo for qidx 4/112   6894.85 sec, wall time   8602.55 sec
     CPU time for ao2mo for qidx 5/112   7226.71 sec, wall time   8650.50 sec
     CPU time for ao2mo for qidx 6/112   7227.13 sec, wall time   8431.53 sec
+    CPU time for ao2mo for qidx 7/112   7263.74 sec, wall time   8201.94 sec
+    CPU time for ao2mo for qidx 8/112   7294.25 sec, wall time   8594.82 sec
+slurmstepd: error: *** JOB 50013705 ON hpc-20-33 CANCELLED AT 2025-06-05T20:08:45 DUE TO TIME LIMIT ***

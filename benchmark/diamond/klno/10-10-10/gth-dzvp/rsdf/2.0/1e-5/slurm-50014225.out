@@ -1,0 +1,61 @@
+SLURMD_NODENAME = hpc-54-16
+Start time = Thu Jun  5 05:19:17 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-10-10-10-gth-dzvp-rsdf-2.0-1e-5/50014225/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-10-10-10-gth-dzvp-rsdf-2.0-1e-5/50014225/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/klno/10-10-10/gth-dzvp/rsdf/2.0/1e-5/main.py with:
+name: diamond
+xc: None
+kmesh: 10-10-10
+basis: gth-dzvp
+pseudo: gth-pbe
+lno_thresh: 1e-05
+density_fitting_method: rsdf-2.0
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using RSDF, method = rsdf-2.0
+Using beta = 2.0
+
+WARN: Weak orthogonality for localized orbitals 6.744164225334266e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.70050
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76650
+pop of  0 C 2py           0.76650
+pop of  0 C 2pz           0.76650
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.70050
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76650
+pop of  1 C 2py           0.76650
+pop of  1 C 2pz           0.76650
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =      0.00000
+/var/spool/slurmd/job50014225/slurm_script: line 43: 2077785 Segmentation fault      (core dumped) python main.py --kmesh=10-10-10 --basis=gth-dzvp --lno-thresh=1e-5 --density-fitting-method=rsdf-2.0 --name=diamond --pseudo=gth-pbe --init-guess-method=minao
+End time = Thu Jun  5 07:43:47 PM PDT 2025

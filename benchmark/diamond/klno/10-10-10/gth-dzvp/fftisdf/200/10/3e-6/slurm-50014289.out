@@ -1,0 +1,10 @@
+SLURMD_NODENAME = hpc-34-05
+Start time = Thu Jun  5 08:49:37 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-10-10-10-gth-dzvp-fftisdf-200-10-3e-6/50014289/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-10-10-10-gth-dzvp-fftisdf-200-10-3e-6/50014289/
+slurmstepd: error: *** JOB 50014289 ON hpc-34-05 CANCELLED AT 2025-06-05T20:58:11 ***

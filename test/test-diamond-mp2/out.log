@@ -1,8 +1,4 @@
-method = rsdf
-basis = gth-dzvp
-nao = 26
-natm = 2
-naux = 168
+==> out.log.1e-10 <==
 nkpt = 8
 kmesh = [2, 2, 2]
 ene_krhf = -10.96263774
@@ -10,6 +6,90 @@ ene_klno_mp2 = -10.99147454
 ene_klno_ccsd = -10.99329508
 ene_corr_klno_mp2 =  -0.02883681
 ene_corr_klno_ccsd =  -0.03065734
-time_build_df =  30.04
-time_get_vk =   0.53
-time_klno =  939.56
+time_build_df =  29.97
+time_get_vk =   0.51
+time_klno =  941.42
+
+==> out.log.1e-4 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -10.96722982
+ene_klno_ccsd = -10.96850614
+ene_corr_klno_mp2 =  -0.00459208
+ene_corr_klno_ccsd =  -0.00586841
+time_build_df =  29.93
+time_get_vk =   0.45
+time_klno =   7.87
+
+==> out.log.1e-5 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -10.97849165
+ene_klno_ccsd = -10.98220216
+ene_corr_klno_mp2 =  -0.01585391
+ene_corr_klno_ccsd =  -0.01956442
+time_build_df =  30.21
+time_get_vk =   0.50
+time_klno =  10.46
+
+==> out.log.1e-6 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -10.98171283
+ene_klno_ccsd = -10.98512729
+ene_corr_klno_mp2 =  -0.01907509
+ene_corr_klno_ccsd =  -0.02248955
+time_build_df =  29.89
+time_get_vk =   0.60
+time_klno =  11.95
+
+==> out.log.1e-7 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -10.98865481
+ene_klno_ccsd = -10.99135178
+ene_corr_klno_mp2 =  -0.02601707
+ene_corr_klno_ccsd =  -0.02871404
+time_build_df =  29.80
+time_get_vk =   0.50
+time_klno =  43.04
+
+==> out.log.1e-8 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -10.98955848
+ene_klno_ccsd = -10.99205788
+ene_corr_klno_mp2 =  -0.02692074
+ene_corr_klno_ccsd =  -0.02942015
+time_build_df =  30.00
+time_get_vk =   0.62
+time_klno =  88.57
+
+==> out.log.1e-9 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -10.99045620
+ene_klno_ccsd = -10.99266796
+ene_corr_klno_mp2 =  -0.02781847
+ene_corr_klno_ccsd =  -0.03003022
+time_build_df =  29.86
+time_get_vk =   0.65
+time_klno =  268.55
+
+==> out.log.full <==
+ene_kccsd = -11.21001144
+ene_kccsd_corr =  -0.24737370
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_kmp2 = -11.19779320
+ene_corr_kmp2 =  -0.23515546
+time_build_df =  30.83
+time_get_vk =   0.62
+time_kmp2 =   0.35
