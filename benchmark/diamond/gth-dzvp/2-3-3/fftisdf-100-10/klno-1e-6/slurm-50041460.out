@@ -1,0 +1,99 @@
+SLURMD_NODENAME = hpc-52-30
+Start time = Fri Jun  6 03:19:25 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-gth-dzvp-2-3-3-fftisdf-100-10-klno-1e-6/50041460/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-gth-dzvp-2-3-3-fftisdf-100-10-klno-1e-6/50041460/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/gth-dzvp/2-3-3/fftisdf-100-10/klno-1e-6/main.py with:
+name: diamond
+xc: None
+kmesh: 2-3-3
+basis: gth-dzvp
+pseudo: gth-hf
+lno_thresh: 1e-06
+density_fitting_method: fftisdf-100-10
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using FFTISDF, method = fftisdf-100-10
+ke_cutoff = 100.0, mesh = [23 23 23]
+Using ke_cutoff = 100.0, c0 = 10.0
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 7.98767)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 8.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.73088
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76623
+pop of  0 C 2py           0.75145
+pop of  0 C 2pz           0.75145
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.73088
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76623
+pop of  1 C 2py           0.75145
+pop of  1 C 2pz           0.75145
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.00000
+charge of    1C =     -0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [23 23 23] (12167 PWs)
+len(kpts) = 18
+tol = 1e-08
+c0 = 10.0
+wrap_around = False
+
+WARN: ke_cutoff/mesh (100 / [23 23 23]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.61 Eh.
+Recommended ke_cutoff/mesh are 422.908 / [47 47 47].
+
+Cholesky rank = 3391, c0 =  10.00, nao = 26, nip = 260
+Parent grid size = 12167, selected grid size = 260
+truncated values = 1.63e+02, estimated error = 1.37e+01
+Number of interpolating points is 260.
+    CPU time for building inpv_kpt     24.22 sec, wall time     17.16 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 9.11e-01 GB.
+blksize = 12167, ngrid = 12167
+memory needed for each block:   9.11e-01 GB
+memory needed for each k-point: 5.06e-02 GB
+max_memory: 3.27e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 12167]     20.26 sec, wall time      1.59 sec
+    CPU time for building eta_kpt     22.19 sec, wall time      1.65 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[  1 / 18]      7.09 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  2 / 18]      6.98 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  3 / 18]      7.24 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  4 / 18]      7.43 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  5 / 18]      7.71 sec, wall time      0.24 sec
+    CPU time for coul_kpt[  6 / 18]      7.68 sec, wall time      0.24 sec
+    CPU time for coul_kpt[  7 / 18]      7.76 sec, wall time      0.24 sec
+slurmstepd: error: *** JOB 50041460 ON hpc-52-30 CANCELLED AT 2025-06-06T15:19:47 ***

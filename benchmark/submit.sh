@@ -1,16 +1,13 @@
 # scancel -u $USER
 
-for method in "klno"; do
-    cell="diamond"
-    if [ -d $cell/$method ]; then
-        rm -rf $cell/$method
-    fi
-    mkdir -p $cell/$method
-    cd $cell/$method
+cell="diamond"
+mkdir -p $cell
 
-    cp ../../submit.py .
+cd $cell; cp ../submit.py .
+
+for method in "kmp2" "klno"; do
     python submit.py --cell $cell --method $method --ntasks 1 --time 20:00:00
-
-    cd ../..
 done
+
+cd ../..
 

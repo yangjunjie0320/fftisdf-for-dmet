@@ -1,0 +1,409 @@
+SLURMD_NODENAME = hpc-35-10
+Start time = Fri Jun  6 03:17:15 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-gth-dzvp-4-6-6-fftisdf-100-10-kmp2/50041402/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-gth-dzvp-4-6-6-fftisdf-100-10-kmp2/50041402/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/gth-dzvp/4-6-6/fftisdf-100-10/kmp2/main.py with:
+name: diamond
+xc: None
+kmesh: 4-6-6
+basis: gth-dzvp
+pseudo: gth-hf
+lno_thresh: 3e-05
+density_fitting_method: fftisdf-100-10
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using FFTISDF, method = fftisdf-100-10
+ke_cutoff = 100.0, mesh = [23 23 23]
+Using ke_cutoff = 100.0, c0 = 10.0
+
+WARN: Weak orthogonality for localized orbitals 2.130399678320348e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.70060
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76651
+pop of  0 C 2py           0.76644
+pop of  0 C 2pz           0.76644
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.70060
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76651
+pop of  1 C 2py           0.76644
+pop of  1 C 2pz           0.76644
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =      0.00000
+
+
+******** <class 'fft.isdf.InterpolativeSeparableDensityFitting'> ********
+mesh = [23 23 23] (12167 PWs)
+len(kpts) = 144
+tol = 1e-08
+c0 = 10.0
+wrap_around = False
+
+WARN: ke_cutoff/mesh (100 / [23 23 23]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.61 Eh.
+Recommended ke_cutoff/mesh are 422.908 / [47 47 47].
+
+Cholesky rank = 3439, c0 =  10.00, nao = 26, nip = 260
+Parent grid size = 12167, selected grid size = 260
+truncated values = 4.61e+02, estimated error = 3.89e+01
+Number of interpolating points is 260.
+    CPU time for building inpv_kpt     64.33 sec, wall time     54.62 sec
+
+Out-core version is used for eta_kpt.
+disk space required: 7.29e+00 GB.
+blksize = 12167, ngrid = 12167
+memory needed for each block:   7.29e+00 GB
+memory needed for each k-point: 5.06e-02 GB
+max_memory: 3.26e+02 GB
+
+Computing eta_kpt
+    CPU time for eta_kpt[     0: 12167]     54.35 sec, wall time     12.06 sec
+    CPU time for building eta_kpt     58.68 sec, wall time     12.20 sec
+
+Computing coul_kpt
+    CPU time for coul_kpt[   1 / 144]      7.29 sec, wall time      0.24 sec
+    CPU time for coul_kpt[   2 / 144]      6.82 sec, wall time      0.21 sec
+    CPU time for coul_kpt[   3 / 144]      6.81 sec, wall time      0.21 sec
+    CPU time for coul_kpt[   4 / 144]      6.74 sec, wall time      0.21 sec
+    CPU time for coul_kpt[   5 / 144]      7.25 sec, wall time      0.23 sec
+    CPU time for coul_kpt[   6 / 144]      6.85 sec, wall time      0.21 sec
+    CPU time for coul_kpt[   7 / 144]      6.72 sec, wall time      0.21 sec
+    CPU time for coul_kpt[   8 / 144]      7.18 sec, wall time      0.23 sec
+    CPU time for coul_kpt[   9 / 144]      7.33 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  10 / 144]      6.91 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  11 / 144]      7.43 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  12 / 144]      6.53 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  13 / 144]      7.22 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  14 / 144]      6.83 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  15 / 144]      6.83 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  16 / 144]      6.99 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  17 / 144]      7.23 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  18 / 144]      6.93 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  19 / 144]      6.62 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  20 / 144]      7.13 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  21 / 144]      6.86 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  22 / 144]      6.68 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  23 / 144]      7.31 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  24 / 144]      6.95 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  25 / 144]      6.67 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  26 / 144]      6.93 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  27 / 144]      6.86 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  28 / 144]      6.71 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  29 / 144]      7.33 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  30 / 144]      7.09 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  31 / 144]      6.89 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  32 / 144]      6.70 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  33 / 144]      7.19 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  34 / 144]      7.10 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  35 / 144]      7.03 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  36 / 144]      6.82 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  37 / 144]      7.41 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  38 / 144]      7.01 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  39 / 144]      6.93 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  40 / 144]      6.74 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  41 / 144]      7.25 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  42 / 144]      7.21 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  43 / 144]      6.88 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  44 / 144]      6.89 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  45 / 144]      7.01 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  46 / 144]      7.25 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  47 / 144]      6.92 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  48 / 144]      6.86 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  49 / 144]      6.63 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  50 / 144]      8.35 sec, wall time      0.26 sec
+    CPU time for coul_kpt[  51 / 144]      6.87 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  52 / 144]      6.99 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  53 / 144]      7.37 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  54 / 144]      6.81 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  55 / 144]      6.74 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  56 / 144]      7.30 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  57 / 144]      7.40 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  58 / 144]      6.86 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  59 / 144]      6.75 sec, wall time      0.21 sec
+    CPU time for coul_kpt[  60 / 144]      7.42 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  61 / 144]      7.18 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  62 / 144]      7.02 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  63 / 144]      6.90 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  64 / 144]      7.11 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  65 / 144]      7.46 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  66 / 144]      7.05 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  67 / 144]      6.96 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  68 / 144]      7.05 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  69 / 144]      7.50 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  70 / 144]      7.08 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  71 / 144]      7.05 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  72 / 144]      7.01 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  73 / 144]      7.33 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  74 / 144]      7.21 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  75 / 144]      7.08 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  76 / 144]      6.89 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  77 / 144]      7.47 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  78 / 144]      7.36 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  79 / 144]      7.03 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  80 / 144]      7.05 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  81 / 144]      6.94 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  82 / 144]      7.55 sec, wall time      0.24 sec
+    CPU time for coul_kpt[  83 / 144]      7.33 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  84 / 144]      7.04 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  85 / 144]      7.10 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  86 / 144]      6.96 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  87 / 144]      7.44 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  88 / 144]      7.40 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  89 / 144]      7.04 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  90 / 144]      6.94 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  91 / 144]      7.38 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  92 / 144]      7.39 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  93 / 144]      7.11 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  94 / 144]      7.12 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  95 / 144]      7.00 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  96 / 144]      7.40 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  97 / 144]      7.38 sec, wall time      0.23 sec
+    CPU time for coul_kpt[  98 / 144]      7.01 sec, wall time      0.22 sec
+    CPU time for coul_kpt[  99 / 144]      6.98 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 100 / 144]      7.58 sec, wall time      0.24 sec
+    CPU time for coul_kpt[ 101 / 144]      7.35 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 102 / 144]      7.01 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 103 / 144]      7.02 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 104 / 144]      6.98 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 105 / 144]      7.52 sec, wall time      0.24 sec
+    CPU time for coul_kpt[ 106 / 144]      7.06 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 107 / 144]      6.95 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 108 / 144]      7.28 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 109 / 144]      7.45 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 110 / 144]      7.07 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 111 / 144]      7.04 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 112 / 144]      6.96 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 113 / 144]      7.37 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 114 / 144]      7.06 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 115 / 144]      7.11 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 116 / 144]      6.90 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 117 / 144]      7.51 sec, wall time      0.24 sec
+    CPU time for coul_kpt[ 118 / 144]      6.97 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 119 / 144]      6.87 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 120 / 144]      7.08 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 121 / 144]      7.07 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 122 / 144]      6.93 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 123 / 144]      7.35 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 124 / 144]      7.51 sec, wall time      0.24 sec
+    CPU time for coul_kpt[ 125 / 144]      7.20 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 126 / 144]      6.92 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 127 / 144]      7.05 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 128 / 144]      7.49 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 129 / 144]      7.37 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 130 / 144]      7.01 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 131 / 144]      7.09 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 132 / 144]      7.07 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 133 / 144]      7.46 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 134 / 144]      7.23 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 135 / 144]      7.05 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 136 / 144]      6.97 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 137 / 144]      7.07 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 138 / 144]      7.48 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 139 / 144]      7.18 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 140 / 144]      7.08 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 141 / 144]      7.07 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 142 / 144]      7.06 sec, wall time      0.22 sec
+    CPU time for coul_kpt[ 143 / 144]      7.41 sec, wall time      0.23 sec
+    CPU time for coul_kpt[ 144 / 144]      7.33 sec, wall time      0.23 sec
+    CPU time for building coul_kpt   1028.74 sec, wall time     32.34 sec
+Successfully removed swap file /resnick/scratch/yangjunjie/diamond-gth-dzvp-4-6-6-fftisdf-100-10-kmp2/50041402/ifg0c6k6
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/diamond-gth-dzvp-4-6-6-fftisdf-100-10-kmp2/50041402/tmprhh_cote
+max_memory 327680 MB (current use 1644 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 144
+kpts = [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00]
+ [ 1.55364214e-01  1.55364214e-01 -1.55364214e-01]
+ [ 3.10728429e-01  3.10728429e-01 -3.10728429e-01]
+ [ 4.66092643e-01  4.66092643e-01 -4.66092643e-01]
+ [ 6.21456857e-01  6.21456857e-01 -6.21456857e-01]
+ [ 7.76821071e-01  7.76821071e-01 -7.76821071e-01]
+ [ 1.55364214e-01 -1.55364214e-01  1.55364214e-01]
+ [ 3.10728429e-01  9.87927068e-18 -9.87927068e-18]
+ [ 4.66092643e-01  1.55364214e-01 -1.55364214e-01]
+ [ 6.21456857e-01  3.10728429e-01 -3.10728429e-01]
+ [ 7.76821071e-01  4.66092643e-01 -4.66092643e-01]
+ [ 9.32185286e-01  6.21456857e-01 -6.21456857e-01]
+ [ 3.10728429e-01 -3.10728429e-01  3.10728429e-01]
+ [ 4.66092643e-01 -1.55364214e-01  1.55364214e-01]
+ [ 6.21456857e-01  1.97585414e-17 -1.97585414e-17]
+ [ 7.76821071e-01  1.55364214e-01 -1.55364214e-01]
+ [ 9.32185286e-01  3.10728429e-01 -3.10728429e-01]
+ [ 1.08754950e+00  4.66092643e-01 -4.66092643e-01]
+ [ 4.66092643e-01 -4.66092643e-01  4.66092643e-01]
+ [ 6.21456857e-01 -3.10728429e-01  3.10728429e-01]
+ [ 7.76821071e-01 -1.55364214e-01  1.55364214e-01]
+ [ 9.32185286e-01  0.00000000e+00  0.00000000e+00]
+ [ 1.08754950e+00  1.55364214e-01 -1.55364214e-01]
+ [ 1.24291371e+00  3.10728429e-01 -3.10728429e-01]
+ [ 6.21456857e-01 -6.21456857e-01  6.21456857e-01]
+ [ 7.76821071e-01 -4.66092643e-01  4.66092643e-01]
+ [ 9.32185286e-01 -3.10728429e-01  3.10728429e-01]
+ [ 1.08754950e+00 -1.55364214e-01  1.55364214e-01]
+ [ 1.24291371e+00  3.95170827e-17 -3.95170827e-17]
+ [ 1.39827793e+00  1.55364214e-01 -1.55364214e-01]
+ [ 7.76821071e-01 -7.76821071e-01  7.76821071e-01]
+ [ 9.32185286e-01 -6.21456857e-01  6.21456857e-01]
+ [ 1.08754950e+00 -4.66092643e-01  4.66092643e-01]
+ [ 1.24291371e+00 -3.10728429e-01  3.10728429e-01]
+ [ 1.39827793e+00 -1.55364214e-01  1.55364214e-01]
+ [ 1.55364214e+00 -3.95170827e-17  3.95170827e-17]
+ [-2.33046321e-01  2.33046321e-01  2.33046321e-01]
+ [-7.76821071e-02  3.88410536e-01  7.76821071e-02]
+ [ 7.76821071e-02  5.43774750e-01 -7.76821071e-02]
+ [ 2.33046321e-01  6.99138964e-01 -2.33046321e-01]
+ [ 3.88410536e-01  8.54503178e-01 -3.88410536e-01]
+ [ 5.43774750e-01  1.00986739e+00 -5.43774750e-01]
+ [-7.76821071e-02  7.76821071e-02  3.88410536e-01]
+ [ 7.76821071e-02  2.33046321e-01  2.33046321e-01]
+ [ 2.33046321e-01  3.88410536e-01  7.76821071e-02]
+ [ 3.88410536e-01  5.43774750e-01 -7.76821071e-02]
+ [ 5.43774750e-01  6.99138964e-01 -2.33046321e-01]
+ [ 6.99138964e-01  8.54503178e-01 -3.88410536e-01]
+ [ 7.76821071e-02 -7.76821071e-02  5.43774750e-01]
+ [ 2.33046321e-01  7.76821071e-02  3.88410536e-01]
+ [ 3.88410536e-01  2.33046321e-01  2.33046321e-01]
+ [ 5.43774750e-01  3.88410536e-01  7.76821071e-02]
+ [ 6.99138964e-01  5.43774750e-01 -7.76821071e-02]
+ [ 8.54503178e-01  6.99138964e-01 -2.33046321e-01]
+ [ 2.33046321e-01 -2.33046321e-01  6.99138964e-01]
+ [ 3.88410536e-01 -7.76821071e-02  5.43774750e-01]
+ [ 5.43774750e-01  7.76821071e-02  3.88410536e-01]
+ [ 6.99138964e-01  2.33046321e-01  2.33046321e-01]
+ [ 8.54503178e-01  3.88410536e-01  7.76821071e-02]
+ [ 1.00986739e+00  5.43774750e-01 -7.76821071e-02]
+ [ 3.88410536e-01 -3.88410536e-01  8.54503178e-01]
+ [ 5.43774750e-01 -2.33046321e-01  6.99138964e-01]
+ [ 6.99138964e-01 -7.76821071e-02  5.43774750e-01]
+ [ 8.54503178e-01  7.76821071e-02  3.88410536e-01]
+ [ 1.00986739e+00  2.33046321e-01  2.33046321e-01]
+ [ 1.16523161e+00  3.88410536e-01  7.76821071e-02]
+ [ 5.43774750e-01 -5.43774750e-01  1.00986739e+00]
+ [ 6.99138964e-01 -3.88410536e-01  8.54503178e-01]
+ [ 8.54503178e-01 -2.33046321e-01  6.99138964e-01]
+ [ 1.00986739e+00 -7.76821071e-02  5.43774750e-01]
+ [ 1.16523161e+00  7.76821071e-02  3.88410536e-01]
+ [ 1.32059582e+00  2.33046321e-01  2.33046321e-01]
+ [-4.66092643e-01  4.66092643e-01  4.66092643e-01]
+ [-3.10728429e-01  6.21456857e-01  3.10728429e-01]
+ [-1.55364214e-01  7.76821071e-01  1.55364214e-01]
+ [ 0.00000000e+00  9.32185286e-01  0.00000000e+00]
+ [ 1.55364214e-01  1.08754950e+00 -1.55364214e-01]
+ [ 3.10728429e-01  1.24291371e+00 -3.10728429e-01]
+ [-3.10728429e-01  3.10728429e-01  6.21456857e-01]
+ [-1.55364214e-01  4.66092643e-01  4.66092643e-01]
+ [-3.57526099e-17  6.21456857e-01  3.10728429e-01]
+ [ 1.55364214e-01  7.76821071e-01  1.55364214e-01]
+ [ 3.10728429e-01  9.32185286e-01  7.15052197e-17]
+ [ 4.66092643e-01  1.08754950e+00 -1.55364214e-01]
+ [-1.55364214e-01  1.55364214e-01  7.76821071e-01]
+ [-1.78763049e-17  3.10728429e-01  6.21456857e-01]
+ [ 1.55364214e-01  4.66092643e-01  4.66092643e-01]
+ [ 3.10728429e-01  6.21456857e-01  3.10728429e-01]
+ [ 4.66092643e-01  7.76821071e-01  1.55364214e-01]
+ [ 6.21456857e-01  9.32185286e-01 -7.15052197e-17]
+ [ 0.00000000e+00  0.00000000e+00  9.32185286e-01]
+ [ 1.55364214e-01  1.55364214e-01  7.76821071e-01]
+ [ 3.10728429e-01  3.10728429e-01  6.21456857e-01]
+ [ 4.66092643e-01  4.66092643e-01  4.66092643e-01]
+ [ 6.21456857e-01  6.21456857e-01  3.10728429e-01]
+ [ 7.76821071e-01  7.76821071e-01  1.55364214e-01]
+ [ 1.55364214e-01 -1.55364214e-01  1.08754950e+00]
+ [ 3.10728429e-01  3.76348463e-17  9.32185286e-01]
+ [ 4.66092643e-01  1.55364214e-01  7.76821071e-01]
+ [ 6.21456857e-01  3.10728429e-01  6.21456857e-01]
+ [ 7.76821071e-01  4.66092643e-01  4.66092643e-01]
+ [ 9.32185286e-01  6.21456857e-01  3.10728429e-01]
+ [ 3.10728429e-01 -3.10728429e-01  1.24291371e+00]
+ [ 4.66092643e-01 -1.55364214e-01  1.08754950e+00]
+ [ 6.21456857e-01 -3.57526099e-17  9.32185286e-01]
+ [ 7.76821071e-01  1.55364214e-01  7.76821071e-01]
+ [ 9.32185286e-01  3.10728429e-01  6.21456857e-01]
+ [ 1.08754950e+00  4.66092643e-01  4.66092643e-01]
+ [-6.99138964e-01  6.99138964e-01  6.99138964e-01]
+ [-5.43774750e-01  8.54503178e-01  5.43774750e-01]
+ [-3.88410536e-01  1.00986739e+00  3.88410536e-01]
+ [-2.33046321e-01  1.16523161e+00  2.33046321e-01]
+ [-7.76821071e-02  1.32059582e+00  7.76821071e-02]
+ [ 7.76821071e-02  1.47596004e+00 -7.76821071e-02]
+ [-5.43774750e-01  5.43774750e-01  8.54503178e-01]
+ [-3.88410536e-01  6.99138964e-01  6.99138964e-01]
+ [-2.33046321e-01  8.54503178e-01  5.43774750e-01]
+ [-7.76821071e-02  1.00986739e+00  3.88410536e-01]
+ [ 7.76821071e-02  1.16523161e+00  2.33046321e-01]
+ [ 2.33046321e-01  1.32059582e+00  7.76821071e-02]
+ [-3.88410536e-01  3.88410536e-01  1.00986739e+00]
+ [-2.33046321e-01  5.43774750e-01  8.54503178e-01]
+ [-7.76821071e-02  6.99138964e-01  6.99138964e-01]
+ [ 7.76821071e-02  8.54503178e-01  5.43774750e-01]
+ [ 2.33046321e-01  1.00986739e+00  3.88410536e-01]
+ [ 3.88410536e-01  1.16523161e+00  2.33046321e-01]
+ [-2.33046321e-01  2.33046321e-01  1.16523161e+00]
+ [-7.76821071e-02  3.88410536e-01  1.00986739e+00]
+ [ 7.76821071e-02  5.43774750e-01  8.54503178e-01]
+ [ 2.33046321e-01  6.99138964e-01  6.99138964e-01]
+ [ 3.88410536e-01  8.54503178e-01  5.43774750e-01]
+ [ 5.43774750e-01  1.00986739e+00  3.88410536e-01]
+ [-7.76821071e-02  7.76821071e-02  1.32059582e+00]
+ [ 7.76821071e-02  2.33046321e-01  1.16523161e+00]
+ [ 2.33046321e-01  3.88410536e-01  1.00986739e+00]
+ [ 3.88410536e-01  5.43774750e-01  8.54503178e-01]
+ [ 5.43774750e-01  6.99138964e-01  6.99138964e-01]
+ [ 6.99138964e-01  8.54503178e-01  5.43774750e-01]
+ [ 7.76821071e-02 -7.76821071e-02  1.47596004e+00]
+ [ 2.33046321e-01  7.76821071e-02  1.32059582e+00]
+ [ 3.88410536e-01  2.33046321e-01  1.16523161e+00]
+ [ 5.43774750e-01  3.88410536e-01  1.00986739e+00]
+ [ 6.99138964e-01  5.43774750e-01  8.54503178e-01]
+ [ 8.54503178e-01  6.99138964e-01  6.99138964e-01]]
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.12600347760281652
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -0.504013910411
+DF object = <fft.isdf.InterpolativeSeparableDensityFitting object at 0x7fa193ccef80>
+Set gradient conv threshold to 0.001
+slurmstepd: error: *** JOB 50041402 ON hpc-35-10 CANCELLED AT 2025-06-06T15:19:47 ***
