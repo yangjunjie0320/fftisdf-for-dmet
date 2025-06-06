@@ -1434,3 +1434,11 @@ cycle = 3  E_corr(RCCSD) = -0.25867217128119  dE = 0.00150944386  norm(t1,t2) = 
     CPU time for t1   6284.13 sec, wall time    198.70 sec
     CPU time for t2 oooo  13100.64 sec, wall time   2973.63 sec
     CPU time for t2 vvvv 138678.92 sec, wall time   4352.47 sec
+    CPU time for t2 voov 170638.81 sec, wall time   5727.16 sec
+    CPU time for update t1 t2 334787.58 sec, wall time  13461.28 sec
+diis-c [-1.10160152e-04-1.23259516e-32j -1.49656060e-01+3.72579098e-15j
+ -2.29794790e-01+3.75118975e-15j  1.37945085e+00-7.47698073e-15j]
+DIIS for step 3
+cycle = 4  E_corr(RCCSD) = -0.25929666285906  dE = -0.000624491578  norm(t1,t2) = 0.017136
+    CPU time for RCCSD iter 334935.91 sec, wall time  13660.31 sec
+    CPU time for intermediates   5955.65 sec, wall time    194.59 sec

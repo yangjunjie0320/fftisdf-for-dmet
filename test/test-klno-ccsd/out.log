@@ -1,0 +1,35 @@
+==> out.log.1e-4 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -10.99937436
+ene_klno_ccsd = -11.00958499
+ene_corr_klno_mp2 =  -0.03673662
+ene_corr_klno_ccsd =  -0.04694726
+time_build_df =  30.65
+time_get_vk =   0.73
+time_klno =   7.59
+
+==> out.log.1e-6 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -11.11523844
+ene_klno_ccsd = -11.14255414
+ene_corr_klno_mp2 =  -0.15260070
+ene_corr_klno_ccsd =  -0.17991640
+time_build_df =  29.99
+time_get_vk =   0.59
+time_klno =  13.00
+
+==> out.log.1e-8 <==
+nkpt = 8
+kmesh = [2, 2, 2]
+ene_krhf = -10.96263774
+ene_klno_mp2 = -11.17800366
+ene_klno_ccsd = -11.19799891
+ene_corr_klno_mp2 =  -0.21536592
+ene_corr_klno_ccsd =  -0.23536117
+time_build_df =  29.97
+time_get_vk =   0.53
+time_klno =  89.46

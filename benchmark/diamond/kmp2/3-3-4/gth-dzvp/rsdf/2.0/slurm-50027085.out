@@ -1215,3 +1215,16 @@ cycle = 10  E_corr(RCCSD) = -0.258233775989062  dE = -1.13407039e-09  norm(t1,t2
     CPU time for t1   1704.96 sec, wall time     55.11 sec
     CPU time for t2 oooo   4957.85 sec, wall time    973.95 sec
     CPU time for t2 vvvv  50094.17 sec, wall time   1624.97 sec
+    CPU time for t2 voov  64529.84 sec, wall time   2183.94 sec
+    CPU time for update t1 t2 123949.68 sec, wall time   4933.26 sec
+diis-c [-1.58613056e-11+0.00000000e+00j  2.52822460e-02+2.62141697e-13j
+ -1.64032264e-01-1.25351338e-12j -2.26778868e-02-3.19437913e-12j
+  1.15488202e+00+4.21254131e-12j -1.30582329e-03-2.09098986e-14j
+  7.85170945e-03-5.88059319e-15j]
+DIIS for step 10
+cycle = 11  E_corr(RCCSD) = -0.258233772895113  dE = 3.09394821e-09  norm(t1,t2) = 5.58924e-06
+    CPU time for RCCSD iter 124029.51 sec, wall time   5013.57 sec
+    CPU time for RCCSD 1397730.64 sec, wall time  56294.79 sec
+RCCSD converged
+E(RCCSD) = -11.29195682025651  E_corr = -0.2582337728951133
+End time = Fri Jun  6 01:50:40 PM PDT 2025

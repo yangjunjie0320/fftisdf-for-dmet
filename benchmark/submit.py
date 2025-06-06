@@ -33,8 +33,8 @@ def loop(base_dir):
         yield dir_path, config
 
         m = 'fftisdf'
-        ke_cutoff = 200
-        c = 20
+        ke_cutoff = 100
+        c = 10
         config['density-fitting-method'] = "%s-%s-%s" % (m, ke_cutoff, c)
         dir_name = f"{k}/{b}/{m}/{ke_cutoff}/{c}/{t}"
         dir_path = base_dir / dir_name
