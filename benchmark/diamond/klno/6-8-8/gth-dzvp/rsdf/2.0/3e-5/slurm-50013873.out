@@ -91,3 +91,4 @@ Exchange divergence treatment (exxdiv) = ewald
     Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -0.36924940508
 DF object = <pyscf.pbc.df.rsdf.RSGDF object at 0x7f16a234f040>
 Set gradient conv threshold to 0.001
+slurmstepd: error: *** JOB 50013873 ON hpc-35-08 CANCELLED AT 2025-06-05T20:58:11 ***

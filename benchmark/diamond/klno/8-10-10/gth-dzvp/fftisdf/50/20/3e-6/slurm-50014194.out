@@ -7,3 +7,4 @@ OPENBLAS_NUM_THREADS = 1
 PYSCF_MAX_MEMORY = 327680
 TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-8-10-10-gth-dzvp-fftisdf-50-20-3e-6/50014194/
 PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-klno-8-10-10-gth-dzvp-fftisdf-50-20-3e-6/50014194/
+slurmstepd: error: *** JOB 50014194 ON hpc-53-11 CANCELLED AT 2025-06-05T20:58:11 ***

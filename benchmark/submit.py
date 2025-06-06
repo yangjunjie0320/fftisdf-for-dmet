@@ -12,37 +12,29 @@ def loop(base_dir):
     base_dir.mkdir(parents=True, exist_ok=True)
     
     basis = ['gth-dzvp']
-    kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
-    kmesh += ['4-4-6', '4-6-6', '6-6-6', '6-6-8', '6-8-8', '8-8-8', '8-8-10', '8-10-10', '10-10-10']
+    kmesh  = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4', '4-4-6']
+    kmesh += ['4-6-6', '6-6-6', '6-6-8', '6-8-8', '8-8-8', '8-8-10', '8-10-10', '10-10-10']
     method = ['rsdf', 'fftisdf']
-    thresh = ["1e-4", "3e-5", "1e-5", "3e-6", "1e-6"]
+    thresh = ["1e-4", "1e-6", "1e-8", "1e-9", "1e-10"]
 
     from itertools import product
     for k, b, m, t in product(kmesh, basis, method, thresh):
         config = {'kmesh': k, 'basis': b, 'lno-thresh': t}
 
-        if m in ['rsdf', 'gdf']:
-            for beta in [2.0]:
-                config['density-fitting-method'] = "%s-%s" % (m, beta)
-                dir_name = f"{k}/{b}/{m}/{beta}/{t}"
-                dir_path = base_dir / dir_name
-                yield dir_path, config
+        m = "rsdf"
+        beta = 2.0
+        config['density-fitting-method'] = "%s-%s" % (m, beta)
+        dir_name = f"{k}/{b}/{m}/{beta}/{t}"
+        dir_path = base_dir / dir_name
+        yield dir_path, config
 
-        elif m == 'fftdf':
-            for ke_cutoff in [50, 100, 150, 200]:
-                config['density-fitting-method'] = "%s-%s" % (m, ke_cutoff)
-                dir_name = f"{k}/{b}/{m}/{ke_cutoff}/{t}"
-                dir_path = base_dir / dir_name
-                yield dir_path, config
-
-        else:
-            assert m == 'fftisdf'
-            for ke_cutoff in [50, 100, 150, 200]:
-                for c in [5, 10, 15, 20]:
-                    config['density-fitting-method'] = "%s-%s-%s" % (m, ke_cutoff, c)
-                    dir_name = f"{k}/{b}/{m}/{ke_cutoff}/{c}/{t}"
-                    dir_path = base_dir / dir_name
-                    yield dir_path, config
+        m = 'fftisdf'
+        ke_cutoff = 200
+        c = 20
+        config['density-fitting-method'] = "%s-%s-%s" % (m, ke_cutoff, c)
+        dir_name = f"{k}/{b}/{m}/{ke_cutoff}/{c}/{t}"
+        dir_path = base_dir / dir_name
+        yield dir_path, config
 
 def main(cell='diamond', method='krhf', ntasks=1, time='20:00:00'):
     base_dir = Path(__file__).parent

@@ -40,14 +40,15 @@ def main(config: dict):
     ene_corr_kmp2 = mp_obj.e_corr
 
     ene_kccsd = None
-    ene_kccsd_corr = None
+    ene_corr_kccsd = None
     try:
         from pyscf.pbc.cc import KCCSD
         cc_obj = KCCSD(scf_obj)
         cc_obj.verbose = 10
-        cc_obj.kernel()
+        eris = cc_obj.ao2mo()
+        cc_obj.kernel(eris=eris)
         ene_kccsd = cc_obj.e_tot
-        ene_kccsd_corr = cc_obj.e_corr
+        ene_corr_kccsd = cc_obj.e_corr
     except:
         pass
 
@@ -64,14 +65,16 @@ def main(config: dict):
         f.write("natm = %d\n" % scf_obj.cell.natm)
         if naux is not None:
             f.write("naux = %d\n" % naux)
-        if ene_kccsd is not None:
-            f.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
-            f.write("ene_kccsd_corr = % 12.8f\n" % ene_kccsd_corr)
+
         f.write("nkpt = %d\n" % nkpt)
         f.write("kmesh = %s\n" % config["kmesh"])
         f.write("ene_krhf = % 12.8f\n" % ene_kscf)
         f.write("ene_kmp2 = % 12.8f\n" % ene_kmp2)
         f.write("ene_corr_kmp2 = % 12.8f\n" % ene_corr_kmp2)
+
+        if ene_kccsd is not None:
+            f.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
+            f.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
 
         for k, v in table.items():
             f.write("%s = % 6.2f\n" % (k, max(v, 0.01)))
