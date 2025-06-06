@@ -18,7 +18,11 @@ def loop(base_dir):
     thresh = ["1e-4", "1e-6", "1e-8", "1e-9", "1e-10"]
 
     from itertools import product
+    # for k, b in product(kmesh, basis):
+    #     config = {'kmesh': k, 'basis': b}
+
     for k, b, m, t in product(kmesh, basis, method, thresh):
+        print(k, b, m, t)
         config = {'kmesh': k, 'basis': b, 'lno-thresh': t}
 
         m = "rsdf"

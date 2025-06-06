@@ -1,0 +1,15 @@
+method = rsdf-2.0
+basis = gth-dzvp
+nao = 26
+natm = 2
+naux = 168
+nkpt = 36
+kmesh = [3, 3, 4]
+ene_krhf = -11.03372305
+ene_klno_mp2 = -11.26002756
+ene_klno_ccsd = -11.27202292
+ene_corr_klno_mp2 =  -0.22630451
+ene_corr_klno_ccsd =  -0.23829988
+time_build_df =  49.27
+time_get_vk =  13.11
+time_klno =  1534.95

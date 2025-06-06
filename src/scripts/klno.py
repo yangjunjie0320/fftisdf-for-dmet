@@ -81,11 +81,14 @@ class MODIFIED_K2SCCSD(MODIFIED_CCSD):
         coeff_mo_spc = eris.mo_coeff.reshape(nimg, nao_per_img, nmo)
         coeff_mo_kpt = numpy.einsum('kw,wmp->kmp', phase.conj(), coeff_mo_spc)
 
+        eri_size = nmo ** 4
+        eri_size_in_gb = eri_size * 8 / 1024 ** 3
+        log.debug('eri_size = %s, eri_size_in_gb = %s', eri_size, eri_size_in_gb)
+        log.debug('nocc = %s, nmo = %s, nvir = %s', nocc, nmo, nvir)
+        log.debug('nkpt = %s, nimg = %s', nkpt, nimg)
+
         eri = df_obj.ao2mo_spc([coeff_mo_kpt] * 4, kpts=kpts)
         eri = eri.reshape([nmo, ] * 4) / nkpt
-
-        log.debug('eri.shape = %s', eri.shape)
-        log.debug('nocc = %s, nmo = %s, nvir = %s', nocc, nmo, nvir)
 
         from pyscf import lib
         eris.feri = lib.H5TmpFile()

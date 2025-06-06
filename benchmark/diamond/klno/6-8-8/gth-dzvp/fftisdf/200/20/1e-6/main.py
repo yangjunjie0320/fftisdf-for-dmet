@@ -60,10 +60,12 @@ def main(config: dict):
     klno_obj.kernel()
     table["time_klno"] = time.time() - t0
 
-    ene_klno_mp2 = klno_obj.e_tot_pt2 / nimg
-    ene_klno_ccsd = klno_obj.e_tot / nimg
-    ene_corr_klno_mp2 = klno_obj.e_corr_pt2 / nimg
-    ene_corr_klno_ccsd = klno_obj.e_corr / nimg
+    # ene_klno_mp2 = klno_obj.e_tot_pt2 / nimg
+    # ene_klno_ccsd = klno_obj.e_tot / nimg
+    ene_corr_klno_mp2 = klno_obj.e_corr_pt2
+    ene_corr_klno_ccsd = klno_obj.e_corr
+    ene_klno_mp2 = ene_corr_klno_mp2 + ene_kscf
+    ene_klno_ccsd = ene_corr_klno_ccsd + ene_kscf
     
     naux = None
     if isinstance(df_obj, fft.ISDF):

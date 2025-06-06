@@ -52,7 +52,11 @@ def main(config: dict):
     from klno import KLNOCCSD
     klno_obj = KLNOCCSD(scf_obj, coeff_lo_s, frag_lo_list, frozen=0, mf=mf_s)
     klno_obj.lno_type = ["2p", "2h"]
-    klno_obj.lo_proj_thresh_active = 1e-6
+
+    # local orbital 
+    klno_obj.lo_proj_thresh_active = 1e-2
+
+    # lno_thresh in [1e-4, 1e-6, 1e-8, 1e-9, 1e-10]
     lno_thresh = config["lno_thresh"]
     klno_obj.lno_thresh = [10 * lno_thresh, lno_thresh]
     klno_obj.verbose = 5
