@@ -412,3 +412,264 @@ HOMO = 0.376361887844  LUMO = 0.893230972919
  1.8641935  2.08648994 2.15971454 2.46313907 2.63949399 2.88156286
  3.01609816 3.08917873 3.11412312 3.19284337 3.56421612 3.69513461
  3.76922671 3.83441603 7.000985   9.76813393]
+    CPU time for vj and vk      4.01 sec, wall time      0.13 sec
+E1 = (4.0882273852701925+2.339437237680597e-16j)  E_coul = (-2.2733469031786857+1.6534083130403943e-16j)
+cycle= 5 E= -10.9722486635327  delta_E= -2.04e-07  |g|= 0.000246  |ddm|= 0.0749
+    CPU time for cycle= 5      4.98 sec, wall time      0.16 sec
+HOMO = 0.376362083973  LUMO = 0.893227201644
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.68393219  0.34581027  0.34742415  0.37636208] [0.96923792 0.97021552 0.97359922 1.31788045 1.78925799 1.7895893
+ 1.88062734 2.122201   2.1224044  2.12267398 2.71655092 2.71676231
+ 2.71886545 3.56290869 3.56376904 3.56407919 3.69363177 3.69410743
+ 4.21604967 4.76544747 4.76626224 4.76669245]
+   1 ( 0.000  0.000  0.333)   [-0.53928252 -0.07097087  0.24086214  0.24097798] [1.08748347 1.0906937  1.09105531 1.40119773 1.71418533 1.72204592
+ 1.72296695 1.90582775 2.35456898 2.3548906  2.7275997  2.72781722
+ 2.86308153 3.42894504 3.43197184 3.43214093 3.78342416 3.78358785
+ 3.83779239 3.83816136 3.94015663 9.62795415]
+   2 ( 0.000  0.000  0.667)   [-0.53928252 -0.07097087  0.24086214  0.24097798] [1.08748347 1.0906937  1.09105531 1.40119773 1.71418533 1.72204592
+ 1.72296695 1.90582775 2.35456898 2.3548906  2.7275997  2.72781722
+ 2.86308153 3.42894504 3.43197184 3.43214093 3.78342416 3.78358785
+ 3.83779239 3.83816136 3.94015663 9.62795415]
+   3 ( 0.000  0.500 -0.000)   [-0.41346292 -0.26292975  0.22813433  0.24513225] [1.07936472 1.08279735 1.0987558  1.39728322 1.68301094 1.81805315
+ 1.85162124 1.85563453 2.11197499 2.11586076 3.00286075 3.12370882
+ 3.12381458 3.14045984 3.14081765 3.31883593 3.66521297 3.66551583
+ 3.80108567 3.80213696 5.1697147  9.82021214]
+   4 (-0.000  0.500  0.333)   [-0.36529943 -0.13265139  0.02561097  0.09462136] [0.93299263 1.05226459 1.39791405 1.41469344 1.65618413 1.76138562
+ 1.93904976 2.19581889 2.23680128 2.47148399 2.64523429 2.77422134
+ 2.83492372 2.93903662 3.06218683 3.19583898 3.21539046 3.72642505
+ 3.85328376 4.27444092 7.20029129 9.32753199]
+   5 (-0.000  0.500  0.667)   [-0.36529943 -0.13265139  0.02561097  0.09462136] [0.93299263 1.05226459 1.39791405 1.41469344 1.65618413 1.76138562
+ 1.93904976 2.19581889 2.23680128 2.47148399 2.64523429 2.77422134
+ 2.83492372 2.93903662 3.06218683 3.19583898 3.21539046 3.72642505
+ 3.85328376 4.27444092 7.20029129 9.32753198]
+   6 ( 0.500  0.000  0.000)   [-0.41345966 -0.26292462  0.22815093  0.24513243] [1.07938468 1.08281554 1.09867241 1.39720606 1.68282317 1.8177565
+ 1.85172107 1.85564677 2.11200759 2.11589873 3.00290023 3.12380786
+ 3.12403984 3.14061795 3.14093272 3.31885601 3.66513679 3.66551302
+ 3.80113604 3.80224632 5.16982914 9.82019251]
+   7 ( 0.500 -0.000  0.333)   [-0.36526276 -0.13262916  0.02554777  0.09461995] [0.93291571 1.05225675 1.39801402 1.41470355 1.65602266 1.76122525
+ 1.9391712  2.19579217 2.23682503 2.47133954 2.64539951 2.77421525
+ 2.83492488 2.93900632 3.06211956 3.19588273 3.21544728 3.72661474
+ 3.85326723 4.27443217 7.20030886 9.32755302]
+   8 ( 0.500 -0.000  0.667)   [-0.36526276 -0.13262916  0.02554777  0.09461995] [0.93291571 1.05225675 1.39801402 1.41470355 1.65602266 1.76122525
+ 1.9391712  2.19579217 2.23682503 2.47133954 2.64539951 2.77421525
+ 2.83492488 2.93900632 3.06211956 3.19588273 3.21544728 3.72661474
+ 3.85326723 4.27443217 7.20030886 9.32755302]
+   9 ( 0.500  0.500  0.000)   [-0.2610385  -0.260614    0.06006049  0.08092615] [0.8932272  0.90857691 1.50652045 1.50911907 1.76110072 1.76127932
+ 2.07132651 2.07262545 2.31521756 2.31685425 2.84868378 2.84907036
+ 2.88223098 2.88242131 2.98558157 2.98669083 3.72502614 3.72621159
+ 5.07452739 5.07607245 6.88135811 6.88194155]
+  10 ( 0.500  0.500  0.333)   [-0.41028904 -0.20063233  0.14338781  0.17660452] [1.02229014 1.18690777 1.19842023 1.34615314 1.60386487 1.7806034
+ 1.86419272 2.08649062 2.1597121  2.46313882 2.63949395 2.88156207
+ 3.016096   3.0891778  3.11412316 3.1928427  3.56421552 3.69513337
+ 3.76922653 3.83441641 7.00098382 9.76813232]
+  11 ( 0.500  0.500  0.667)   [-0.41028904 -0.20063233  0.14338781  0.17660452] [1.02229014 1.18690777 1.19842023 1.34615314 1.60386487 1.7806034
+ 1.86419272 2.08649062 2.1597121  2.46313882 2.63949395 2.88156207
+ 3.016096   3.0891778  3.11412316 3.1928427  3.56421552 3.69513337
+ 3.76922653 3.83441641 7.00098382 9.76813232]
+    CPU time for vj and vk      4.03 sec, wall time      0.13 sec
+E1 = (4.088226559555062-1.833205173310907e-16j)  E_coul = (-2.2733460797044023-2.503739041902671e-16j)
+Extra cycle  E= -10.9722486657736  delta_E= -2.24e-09  |g|= 8.07e-05  |ddm|= 0.00658
+    CPU time for scf_cycle     41.90 sec, wall time      1.34 sec
+    CPU time for SCF     45.84 sec, wall time      1.47 sec
+converged SCF energy = -10.9722486657736
+**** SCF Summaries ****
+Total Energy =                         -10.972248665773581
+Nuclear Repulsion Energy =             -12.787129145624240
+One-electron Energy =                    4.088226559555062
+Two-electron Energy =                   -2.273346079704402
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            0.90796
+pop of  0 C 3s            0.00297
+pop of  0 C 2px           1.02470
+pop of  0 C 2py           1.02472
+pop of  0 C 2pz           1.01881
+pop of  0 C 3px           0.00269
+pop of  0 C 3py           0.00269
+pop of  0 C 3pz           0.00274
+pop of  0 C 3dxy          0.00398
+pop of  0 C 3dyz          0.00408
+pop of  0 C 3dz^2         0.00026
+pop of  0 C 3dxz          0.00408
+pop of  0 C 3dx2-y2       0.00025
+pop of  1 C 2s            0.90813
+pop of  1 C 3s            0.00298
+pop of  1 C 2px           1.02457
+pop of  1 C 2py           1.02469
+pop of  1 C 2pz           1.01898
+pop of  1 C 3px           0.00268
+pop of  1 C 3py           0.00268
+pop of  1 C 3pz           0.00274
+pop of  1 C 3dxy          0.00397
+pop of  1 C 3dyz          0.00407
+pop of  1 C 3dz^2         0.00026
+pop of  1 C 3dxz          0.00406
+pop of  1 C 3dx2-y2       0.00025
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00008
+charge of    1C =     -0.00008
+    CPU time for vj and vk      1.14 sec, wall time      0.04 sec
+
+******** <class 'pyscf.pbc.mp.kmp2.KMP2'> ********
+nkpts = 12
+nocc = 4
+nmo = 26
+with_df_ints = False
+max_memory 327680 MB (current use 505 MB)
+    CPU time for KMP2     50.35 sec, wall time      1.60 sec
+E(KMP2) = -11.2168594444061  E_corr = -0.244610778632491
+E(SCS-KMP2) = -11.2048866179791  E_corr = -0.232637952205559
+E_corr(same-spin) = -0.0702634409462644
+E_corr(oppo-spin) = -0.174347337686226
+    CPU time for vj and vk      3.80 sec, wall time      0.12 sec
+using incore ERI storage
+    CPU time for CCSD integral transformation    233.28 sec, wall time      7.32 sec
+
+******** <class 'pyscf.pbc.cc.kccsd_rhf.RCCSD'> ********
+CC2 = 0
+CCSD nocc = 4, nmo = 26
+max_cycle = 50
+direct = 1
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 327680 MB (current use 9090 MB)
+Init t2, MP2 energy (with fock eigenvalue shift) = -0.244610809224075
+    CPU time for init mp2      5.96 sec, wall time      0.28 sec
+Init E_corr(RCCSD) = -0.244610809224076
+    CPU time for intermediates     43.17 sec, wall time      1.35 sec
+    CPU time for t1     29.76 sec, wall time      0.93 sec
+    CPU time for t2 oooo     48.74 sec, wall time     11.37 sec
+    CPU time for t2 vvvv    113.00 sec, wall time     15.89 sec
+    CPU time for t2 voov    629.85 sec, wall time     24.25 sec
+    CPU time for update t1 t2    870.56 sec, wall time     53.98 sec
+DIIS for step 0
+cycle = 1  E_corr(RCCSD) = -0.241723365858344  dE = 0.00288744337  norm(t1,t2) = 0.160753
+    CPU time for RCCSD iter    871.19 sec, wall time     54.62 sec
+    CPU time for intermediates     47.00 sec, wall time      1.48 sec
+    CPU time for t1     30.65 sec, wall time      0.96 sec
+    CPU time for t2 oooo     48.89 sec, wall time     11.39 sec
+    CPU time for t2 vvvv    113.23 sec, wall time     16.04 sec
+    CPU time for t2 voov    650.59 sec, wall time     25.08 sec
+    CPU time for update t1 t2    896.29 sec, wall time     55.15 sec
+diis-c [-0.00277017+0.j  1.        +0.j]
+DIIS for step 1
+cycle = 2  E_corr(RCCSD) = -0.249355732060995  dE = -0.0076323662  norm(t1,t2) = 0.0526324
+    CPU time for RCCSD iter    897.41 sec, wall time     56.27 sec
+    CPU time for intermediates     43.36 sec, wall time      1.36 sec
+    CPU time for t1     29.90 sec, wall time      0.94 sec
+    CPU time for t2 oooo     48.54 sec, wall time     11.38 sec
+    CPU time for t2 vvvv    115.18 sec, wall time     16.10 sec
+    CPU time for t2 voov    635.23 sec, wall time     24.39 sec
+    CPU time for update t1 t2    878.24 sec, wall time     54.37 sec
+diis-c [-4.18774687e-04+0.00000000e+00j  1.40309911e-02-1.49878786e-11j
+  9.85969009e-01+1.49878786e-11j]
+DIIS for step 2
+cycle = 3  E_corr(RCCSD) = -0.249361582040633  dE = -5.84997964e-06  norm(t1,t2) = 0.0204756
+    CPU time for RCCSD iter    879.58 sec, wall time     55.71 sec
+    CPU time for intermediates     43.94 sec, wall time      1.38 sec
+    CPU time for t1     30.12 sec, wall time      0.94 sec
+    CPU time for t2 oooo     53.18 sec, wall time     11.53 sec
+    CPU time for t2 vvvv    168.99 sec, wall time     17.87 sec
+    CPU time for t2 voov    642.55 sec, wall time     24.76 sec
+    CPU time for update t1 t2    944.83 sec, wall time     56.67 sec
+diis-c [-1.73367693e-05-4.73316543e-30j -1.70128675e-01-1.99481812e-12j
+ -8.80481288e-02+1.35295556e-11j  1.25817680e+00-1.15347375e-11j]
+DIIS for step 3
+cycle = 4  E_corr(RCCSD) = -0.250206829800051  dE = -0.000845247759  norm(t1,t2) = 0.00875226
+    CPU time for RCCSD iter    946.39 sec, wall time     58.24 sec
+    CPU time for intermediates     44.02 sec, wall time      1.38 sec
+    CPU time for t1     31.78 sec, wall time      1.00 sec
+    CPU time for t2 oooo     47.95 sec, wall time     11.34 sec
+    CPU time for t2 vvvv    117.99 sec, wall time     16.10 sec
+    CPU time for t2 voov    631.12 sec, wall time     24.27 sec
+    CPU time for update t1 t2    878.90 sec, wall time     54.29 sec
+diis-c [-2.26552501e-06-7.09974815e-30j  1.31036593e-02+5.65890434e-13j
+ -4.05833115e-02+2.76832895e-12j -1.18227497e-01-7.23642822e-12j
+  1.14570715e+00+3.90220884e-12j]
+DIIS for step 4
+cycle = 5  E_corr(RCCSD) = -0.250273496861049  dE = -6.6667061e-05  norm(t1,t2) = 0.00182662
+    CPU time for RCCSD iter    880.69 sec, wall time     56.08 sec
+    CPU time for intermediates     43.66 sec, wall time      1.38 sec
+    CPU time for t1     31.16 sec, wall time      0.98 sec
+    CPU time for t2 oooo     47.84 sec, wall time     11.34 sec
+    CPU time for t2 vvvv    113.18 sec, wall time     15.94 sec
+    CPU time for t2 voov    624.89 sec, wall time     24.07 sec
+    CPU time for update t1 t2    866.77 sec, wall time     53.91 sec
+diis-c [-9.90608188e-08+4.14151975e-30j  2.27515504e-02+3.74600772e-13j
+  1.12696565e-02-1.45783812e-13j -1.56376315e-01-3.08490727e-12j
+ -2.12149440e-02-1.96898263e-12j  1.14357005e+00+4.82507295e-12j]
+DIIS for step 5
+cycle = 6  E_corr(RCCSD) = -0.250240491667568  dE = 3.30051935e-05  norm(t1,t2) = 0.00056401
+    CPU time for RCCSD iter    868.78 sec, wall time     55.93 sec
+    CPU time for intermediates     44.65 sec, wall time      1.40 sec
+    CPU time for t1     29.62 sec, wall time      0.93 sec
+    CPU time for t2 oooo     48.74 sec, wall time     11.37 sec
+    CPU time for t2 vvvv    114.30 sec, wall time     16.89 sec
+    CPU time for t2 voov    632.25 sec, wall time     24.29 sec
+    CPU time for update t1 t2    875.61 sec, wall time     55.08 sec
+diis-c [-1.31546852e-08+2.81031697e-30j -3.92260517e-03-4.86237232e-14j
+  1.01571209e-04+3.45229355e-15j  3.08386444e-02-1.06756790e-13j
+ -5.71867217e-02+4.69427498e-12j -1.63235856e-01-9.33846721e-12j
+  1.19340497e+00+4.79612045e-12j]
+DIIS for step 6
+cycle = 7  E_corr(RCCSD) = -0.25023888749466  dE = 1.60417291e-06  norm(t1,t2) = 0.00013976
+    CPU time for RCCSD iter    877.85 sec, wall time     57.33 sec
+    CPU time for intermediates     45.64 sec, wall time      1.49 sec
+    CPU time for t1     30.16 sec, wall time      0.94 sec
+    CPU time for t2 oooo     48.41 sec, wall time     11.36 sec
+    CPU time for t2 vvvv    117.90 sec, wall time     16.15 sec
+    CPU time for t2 voov    631.53 sec, wall time     24.30 sec
+    CPU time for update t1 t2    879.69 sec, wall time     54.44 sec
+diis-c [-1.36461736e-09+1.20370622e-35j  1.19167898e+00-1.26498188e-11j
+ -5.50352035e-04-2.43717148e-14j -2.96056178e-05+9.04554447e-14j
+  8.04724744e-03+1.00783844e-12j -2.25857902e-02-4.55939026e-12j
+ -1.76560482e-01+1.61352869e-11j]
+DIIS for step 7
+cycle = 8  E_corr(RCCSD) = -0.250241136466949  dE = -2.24897229e-06  norm(t1,t2) = 4.30579e-05
+    CPU time for RCCSD iter    881.89 sec, wall time     56.65 sec
+    CPU time for intermediates     43.61 sec, wall time      1.37 sec
+    CPU time for t1     30.29 sec, wall time      0.95 sec
+    CPU time for t2 oooo     47.88 sec, wall time     11.40 sec
+    CPU time for t2 vvvv    115.22 sec, wall time     16.03 sec
+    CPU time for t2 voov    631.49 sec, wall time     24.27 sec
+    CPU time for update t1 t2    874.46 sec, wall time     54.22 sec
+diis-c [-1.05791399e-10-1.20370622e-35j  3.12802123e-02-2.56553441e-11j
+  1.08576362e+00+2.30585686e-11j -1.82874521e-04-3.09312648e-14j
+  2.67453220e-03+1.51568034e-13j  5.67262488e-03-7.98111411e-13j
+ -1.25208111e-01+3.27425020e-12j]
+DIIS for step 8
+cycle = 9  E_corr(RCCSD) = -0.250240632898285  dE = 5.03568664e-07  norm(t1,t2) = 1.6482e-05
+    CPU time for RCCSD iter    876.69 sec, wall time     56.46 sec
+    CPU time for intermediates     44.99 sec, wall time      1.46 sec
+    CPU time for t1     29.74 sec, wall time      0.95 sec
+    CPU time for t2 oooo     49.59 sec, wall time     11.37 sec
+    CPU time for t2 vvvv    124.30 sec, wall time     17.29 sec
+    CPU time for t2 voov    627.00 sec, wall time     24.16 sec
+    CPU time for update t1 t2    881.66 sec, wall time     55.42 sec
+diis-c [-8.05605858e-12+1.52344068e-35j -7.80909192e-02-8.83498492e-13j
+ -2.62431281e-01+7.94329245e-11j  1.30364689e+00-7.39082131e-11j
+ -1.39281034e-03+2.33257703e-13j  2.45553855e-03+9.61210993e-14j
+  3.58125787e-02-4.97059171e-12j]
+DIIS for step 9
+cycle = 10  E_corr(RCCSD) = -0.25024073979069  dE = -1.06892406e-07  norm(t1,t2) = 4.18401e-06
+    CPU time for RCCSD iter    883.85 sec, wall time     57.62 sec
+    CPU time for intermediates     44.08 sec, wall time      1.46 sec
+    CPU time for t1     30.66 sec, wall time      0.96 sec
+    CPU time for t2 oooo     47.66 sec, wall time     11.31 sec
+    CPU time for t2 vvvv    119.14 sec, wall time     16.14 sec
+    CPU time for t2 voov    621.48 sec, wall time     23.93 sec
+    CPU time for update t1 t2    869.05 sec, wall time     53.99 sec
+diis-c [-1.27556721e-12-3.76158192e-36j  2.70638489e-03+1.85117913e-12j
+ -6.05211690e-02+3.14873064e-11j -3.82701873e-02-2.03112464e-10j
+  1.09235938e+00+1.72220706e-10j -2.87688285e-04-1.79308037e-13j
+  4.01327870e-03-2.26741870e-12j]
+DIIS for step 10
+cycle = 11  E_corr(RCCSD) = -0.250240705083907  dE = 3.47067834e-08  norm(t1,t2) = 1.30895e-06
+    CPU time for RCCSD iter    871.25 sec, wall time     56.19 sec
+    CPU time for RCCSD   9735.57 sec, wall time    621.11 sec
+RCCSD converged
+E(RCCSD) = -11.22248937085749  E_corr = -0.2502407050839069
+End time = Fri Jun  6 05:27:24 PM PDT 2025

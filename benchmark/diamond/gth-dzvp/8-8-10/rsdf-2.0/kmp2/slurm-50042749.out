@@ -7,3 +7,56 @@ OPENBLAS_NUM_THREADS = 1
 PYSCF_MAX_MEMORY = 327680
 TMPDIR = /resnick/scratch/yangjunjie//diamond-gth-dzvp-8-8-10-rsdf-2.0-kmp2/50042749/
 PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-gth-dzvp-8-8-10-rsdf-2.0-kmp2/50042749/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/gth-dzvp/8-8-10/rsdf-2.0/kmp2/main.py with:
+name: diamond
+xc: None
+kmesh: 8-8-10
+basis: gth-dzvp
+pseudo: gth-hf
+lno_thresh: 3e-05
+density_fitting_method: rsdf-2.0
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using RSDF, method = rsdf-2.0
+Using beta = 2.0
+
+WARN: Weak orthogonality for localized orbitals 5.052284872994052e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.70050
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76650
+pop of  0 C 2py           0.76650
+pop of  0 C 2pz           0.76650
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.70050
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76650
+pop of  1 C 2py           0.76650
+pop of  1 C 2pz           0.76650
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.00000
+charge of    1C =     -0.00000
+/var/spool/slurmd/job50042749/slurm_script: line 43: 2509480 Killed                  python main.py --basis=gth-dzvp --kmesh=8-8-10 --density-fitting-method=rsdf-2.0 --name=diamond --pseudo=gth-hf --init-guess-method=minao
+End time = Fri Jun  6 05:51:00 PM PDT 2025
+slurmstepd: error: Detected 1 oom_kill event in StepId=50042749.batch. Some of the step tasks have been OOM Killed.
