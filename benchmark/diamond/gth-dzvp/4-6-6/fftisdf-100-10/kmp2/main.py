@@ -49,7 +49,8 @@ def main(config: dict):
         cc_obj.kernel(eris=eris)
         ene_kccsd = cc_obj.e_tot
         ene_corr_kccsd = cc_obj.e_corr
-    except:
+    except Exception as e:
+        print(e)
         pass
 
     naux = None

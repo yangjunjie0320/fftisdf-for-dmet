@@ -58,7 +58,7 @@ def main(config: dict):
 
     # lno_thresh in [1e-4, 1e-6, 1e-8, 1e-9, 1e-10]
     lno_thresh = config["lno_thresh"]
-    klno_obj.lno_thresh = [10 * lno_thresh, lno_thresh]
+    klno_obj.lno_thresh = [5 * lno_thresh, lno_thresh]
     klno_obj.verbose = 5
     klno_obj.verbose_imp = 5
     klno_obj.kernel()
@@ -84,6 +84,7 @@ def main(config: dict):
         f.write("natm = %d\n" % scf_obj.cell.natm)
         if naux is not None:
             f.write("naux = %d\n" % naux)
+        f.write("lno_thresh = %6.2e\n" % config["lno_thresh"])
         f.write("nkpt = %d\n" % nkpt)
         f.write("kmesh = %s\n" % config["kmesh"])
         f.write("ene_krhf = % 12.8f\n" % ene_kscf)
