@@ -64,7 +64,8 @@ def main(config: dict):
     log.write("ene_kmp2 = % 12.8f\n" % mp_obj.e_tot)
     log.write("ene_corr_kmp2 = % 12.8f\n" % mp_obj.e_corr)
     log.flush()
-
+        
+    t0 = time.time()
     from pyscf.pbc.cc import KCCSD
     cc_obj = KCCSD(scf_obj)
     cc_obj.verbose = 10
@@ -72,6 +73,7 @@ def main(config: dict):
     cc_obj.kernel(eris=eris)
     ene_kccsd = cc_obj.e_tot
     ene_corr_kccsd = cc_obj.e_corr
+    log.write("time_kccsd = % 6.2f\n" % (time.time() - t0))
     log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
     log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
     log.flush()

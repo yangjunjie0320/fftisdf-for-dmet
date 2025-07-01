@@ -40,7 +40,7 @@ def build_cell(config: dict):
         O  6.255 6.255 6.255
         '''
 
-        a = '''
+        cell.a = '''
         4.170 2.085 2.085
         2.085 4.170 2.085
         2.085 2.085 4.170
@@ -63,13 +63,19 @@ def build_cell(config: dict):
     # config["lattice"] = latt
 
     kmesh = [int(i) for i in config["kmesh"].split("-")]
+    kpts = cell.make_kpts(kmesh)
     config["kmesh"] = kmesh
-    config["kpts"] = cell.make_kpts(kmesh)
+    config["kpts"] = kpts
+    
+    from pyscf.pbc.tools.k2gamma import get_phase
+    scell, phase = get_phase(cell, kpts)
+    config["scell"] = scell
+
 
 def build_density_fitting(config: dict):
     cell: gto.Cell = config["cell"]
+    scell: gto.Cell = config["scell"]
     # latt: Lattice = config["lattice"]
-    # kpts: numpy.ndarray = latt.kpts
     kpts: numpy.ndarray = config["kpts"]
 
     method = config["density_fitting_method"].lower()

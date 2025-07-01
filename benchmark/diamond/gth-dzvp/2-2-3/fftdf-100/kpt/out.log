@@ -1,0 +1,17 @@
+method = fftdf-100
+basis = gth-dzvp
+natm = 2
+nkpt = 12
+nao = 12
+time_build_df =   0.00
+naux = 24334
+time_krks =   1.62
+ene_krks = -11.28044804
+time_krhf =  51.26
+ene_krhf = -10.97225499
+time_kmp2 =  89.35
+ene_kmp2 = -11.21698544
+ene_corr_kmp2 =  -0.24473044
+time_kccsd =  997.12
+ene_kccsd = -11.22260433
+ene_corr_kccsd =  -0.25034934

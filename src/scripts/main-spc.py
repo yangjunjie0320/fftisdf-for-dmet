@@ -8,24 +8,50 @@ def main(config: dict):
     build(config)
 
     cell = config["cell"]
-    df_obj = config["df"]
-    kpts = config["kpts"]
-    nkpt = nimg = len(kpts)
+    kmesh = config["kmesh"]
+    from pyscf.pbc.tools.k2gamma import get_phase
+    scell, phase = get_phase(cell, kmesh)
+    cell = scell
 
-    dm0 = config["dm0"]
-    nao = dm0.shape[0]
     natm = cell.natm
+    nkpt, nimg = phase.shape
 
     log = open("out.log", "w")
     log.write("method = %s\n" % config["density_fitting_method"])
     log.write("basis = %s\n" % config["basis"])
     log.write("natm = %d\n" % natm)
-    log.write("nkpt = %d\n" % nkpt)
-    log.write("nao = %d\n" % nao)
+    log.write("nimg = %d\n" % nimg)
     log.flush()
 
     t0 = time.time()
-    df_obj.build()
+    if 'gdf' in config["density_fitting_method"]:
+        print("Using GDF")
+        method = config["density_fitting_method"].split("-")
+
+        df_obj = pyscf.pbc.df.GDF(cell)
+        df_obj.exxdiv = None
+
+        if len(method) == 2:
+            beta = float(method[1])
+            print(f"Using beta = {beta}")
+            from pyscf.df import aug_etb
+            df_obj.auxbasis = aug_etb(cell, beta=beta)
+        else:
+            print("Using default settings for GDF")
+
+    else:
+        print("Using FFTDF")
+        method = config["density_fitting_method"].split("-")
+        assert len(method) == 2, f"Invalid method: {method}"
+
+        from pyscf.pbc.df import FFTDF
+        cell.ke_cutoff = float(method[1])
+        cell.build(dump_input=False)
+
+        df_obj = FFTDF(cell)
+        df_obj.exxdiv = None
+        print(f"ke_cutoff = {cell.ke_cutoff}, mesh = {df_obj.mesh}")
+
     log.write("time_build_df = % 6.2f\n" % (time.time() - t0))
 
     naux = None
@@ -37,43 +63,22 @@ def main(config: dict):
         log.write("naux = %d\n" % naux)
 
     t0 = time.time()
-    scf_obj = pyscf.pbc.dft.KRKS(cell, kpts)
+    scf_obj = pyscf.pbc.dft.RKS(cell)
     scf_obj.xc = "pbe"
     scf_obj.exxdiv = "ewald"
     scf_obj.with_df = df_obj
-    ene_krks = scf_obj.kernel(dm0)
+    ene_krks = scf_obj.kernel()
     log.write("time_krks = % 6.2f\n" % (time.time() - t0))
     log.write("ene_krks = % 12.8f\n" % ene_krks)
     log.flush()
 
     t0 = time.time()
-    scf_obj = config["mf"]
+    scf_obj = pyscf.pbc.scf.RHF(cell)
     scf_obj.exxdiv = "ewald"
     scf_obj.with_df = df_obj
-    ene_krhf = scf_obj.kernel(dm0)
+    ene_krhf = scf_obj.kernel()
     log.write("time_krhf = % 6.2f\n" % (time.time() - t0))
     log.write("ene_krhf = % 12.8f\n" % ene_krhf)
-    log.flush()
-
-    t0 = time.time()
-    from pyscf.pbc.mp import KMP2
-    mp_obj = KMP2(scf_obj)
-    mp_obj.verbose = 10
-    mp_obj.kernel()
-    log.write("time_kmp2 = % 6.2f\n" % (time.time() - t0))
-    log.write("ene_kmp2 = % 12.8f\n" % mp_obj.e_tot)
-    log.write("ene_corr_kmp2 = % 12.8f\n" % mp_obj.e_corr)
-    log.flush()
-
-    from pyscf.pbc.cc import KCCSD
-    cc_obj = KCCSD(scf_obj)
-    cc_obj.verbose = 10
-    eris = cc_obj.ao2mo()
-    cc_obj.kernel(eris=eris)
-    ene_kccsd = cc_obj.e_tot
-    ene_corr_kccsd = cc_obj.e_corr
-    log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
-    log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
     log.flush()
 
 if __name__ == "__main__":

@@ -1,0 +1,65 @@
+SLURMD_NODENAME = hpc-52-31
+Start time = Tue Jul  1 12:30:32 AM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 327680
+TMPDIR = /resnick/scratch/yangjunjie//diamond-gth-dzvp-10-10-10-gdf-2.0-kpt/50967554/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//diamond-gth-dzvp-10-10-10-gdf-2.0-kpt/50967554/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/diamond/gth-dzvp/10-10-10/gdf-2.0/kpt/main.py with:
+name: diamond
+xc: None
+kmesh: 10-10-10
+basis: gth-dzvp
+pseudo: gth-hf
+lno_thresh: 3e-05
+density_fitting_method: gdf-2.0
+is_unrestricted: False
+init_guess_method: minao
+df_to_read: None
+
+
+Using GDF, method = gdf-2.0
+Using beta = 2.0
+
+WARN: Weak orthogonality for localized orbitals 6.744164225334266e-09
+
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.70050
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.76650
+pop of  0 C 2py           0.76650
+pop of  0 C 2pz           0.76650
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.70050
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.76650
+pop of  1 C 2py           0.76650
+pop of  1 C 2pz           0.76650
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =      0.00000
+charge of    1C =      0.00000
+
+WARN: memory usage of outcore_auxe2 may be 0.10 times over max_memory
+
+/var/spool/slurmd/job50967554/slurm_script: line 43: 1824748 Killed                  python main.py --basis=gth-dzvp --kmesh=10-10-10 --density-fitting-method=gdf-2.0 --name=diamond --pseudo=gth-hf --init-guess-method=minao
+End time = Tue Jul  1 10:25:48 AM PDT 2025
+slurmstepd: error: Detected 1 oom_kill event in StepId=50967554.batch. Some of the step tasks have been OOM Killed.
