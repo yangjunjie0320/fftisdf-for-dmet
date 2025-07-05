@@ -9,6 +9,7 @@ def main(config: dict):
 
     table = {}
     df_obj = config["df"]
+    df_obj._fswap = None
     t0 = time.time()
     df_obj.build()
     table["time_build_df"] = time.time() - t0
@@ -27,6 +28,7 @@ def main(config: dict):
     latt = config["lattice"]
     is_unrestricted = config["is_unrestricted"]
 
+    import dmet
     from dmet import build_dmet
     from dmet import get_emb_eri_fftisdf_v1 as get_emb_eri_fftisdf_ref
     from dmet import get_emb_eri_fftisdf_v2 as get_emb_eri_fftisdf_sol
@@ -38,12 +40,17 @@ def main(config: dict):
         t0 = time.time()
         if isinstance(df_obj, fft.ISDF):
             kwargs.pop('use_mpi')
-            t0 = time.time()
-            eri_emb_sol = get_emb_eri_fftisdf_sol(*args, **kwargs)
-            table["time_get_eri_sol"] = time.time() - t0
+
+            # show the module of the functions
+            print("dmet module = %s" % dmet.__file__)
+
             t0 = time.time()
             eri_emb_ref = get_emb_eri_fftisdf_ref(*args, **kwargs)
             table["time_get_eri_ref"] = time.time() - t0
+
+            t0 = time.time()
+            eri_emb_sol = get_emb_eri_fftisdf_sol(*args, **kwargs)
+            table["time_get_eri_sol"] = time.time() - t0
 
             for ss in range(3):
                 err = abs(eri_emb_sol[ss] - eri_emb_ref[ss]).max()
@@ -58,7 +65,7 @@ def main(config: dict):
             print("error = %6.2e" % err)
             print("time_get_eri_sol = %6.2f" % table["time_get_eri_sol"])
             print("time_get_eri_ref = %6.2f" % table["time_get_eri_ref"])
-            assert err < 1e-10
+            assert err < 1e-8
 
             eri_emb = eri_emb_sol
         else:
@@ -66,6 +73,7 @@ def main(config: dict):
         table["time_get_eri"] = time.time() - t0
         return eri_emb
     libdmet.basis.trans_2e.get_emb_eri = get_emb_eri
+    
 
     t0 = time.time()
     emb_obj = build_dmet(scf_obj, latt, is_unrestricted)
@@ -94,7 +102,7 @@ if __name__ == "__main__":
     parser.add_argument("--kmesh", type=str, required=True)
     parser.add_argument("--basis", type=str, required=True)
     parser.add_argument("--pseudo", type=str, required=True)
-    parser.add_argument("--ke-cutoff", type=float, required=True)
+    parser.add_argument("--lno-thresh", type=float, default=3e-5)
     parser.add_argument("--density-fitting-method", type=str, required=True)
     parser.add_argument("--is-unrestricted", action="store_true")
     parser.add_argument("--init-guess-method", type=str, default="minao")

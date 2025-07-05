@@ -30,6 +30,9 @@ mkdir -p $TMPDIR
 echo TMPDIR       = $TMPDIR
 echo PYSCF_TMPDIR = $PYSCF_TMPDIR
 ln -s $PYSCF_TMPDIR tmp
-export PYTHONPATH=$PYTHONPATH:/home/junjiey/work/fftisdf-with-dmet/src/fftisdf-main:/home/junjiey/work/fftisdf-with-dmet/src/libdmet2-main:/home/junjiey/work/fftisdf-with-dmet/src/scripts
-python main.py --kmesh=4-4-4 --basis=gth-dzvp-molopt-sr --density-fitting-method=fftisdf-20 --ke-cutoff=50 --name=nio-afm --pseudo=gth-pbe --is-unrestricted --init-guess-method=minao --df-to-read=None
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fftisdf-main/
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/
+python main.py --kmesh=2-2-2 --basis=gth-szv-molopt-sr --density-fitting-method=fftisdf-100-10 \
+               --name=nio-afm --pseudo=gth-pbe --is-unrestricted --init-guess-method=minao --df-to-read=./isdf.chk
 echo "End time = $(date)"

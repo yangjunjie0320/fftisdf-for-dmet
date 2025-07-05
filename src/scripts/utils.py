@@ -58,19 +58,23 @@ def build_cell(config: dict):
     cell.build(dump_input=False)
     config["cell"] = cell
 
-    # kmesh = [int(i) for i in config["kmesh"].split("-")]
-    # latt = Lattice(cell, kmesh)
-    # config["lattice"] = latt
+    kmesh = [int(i) for i in config["kmesh"].split("-")]
+
+    import libdmet
+    from libdmet.system.lattice import Lattice
+    latt = Lattice(cell, kmesh)
+    config["lattice"] = latt
 
     kmesh = [int(i) for i in config["kmesh"].split("-")]
-    kpts = cell.make_kpts(kmesh)
+    kpts = cell.make_kpts(kmesh, wrap_around=True)
+    assert numpy.allclose(kpts, latt.kpts)
+
     config["kmesh"] = kmesh
     config["kpts"] = kpts
     
     from pyscf.pbc.tools.k2gamma import get_phase
     scell, phase = get_phase(cell, kpts)
     config["scell"] = scell
-
 
 def build_density_fitting(config: dict):
     cell: gto.Cell = config["cell"]
@@ -155,13 +159,17 @@ def build_density_fitting(config: dict):
         df_obj.tol = 1e-8
         df_obj.wrap_around = False
         df_obj.verbose = 5
-        df_obj.c0 = float(method[2])
+        df_obj._isdf_to_save = os.path.join(TMPDIR, "isdf.h5")
 
         if df_to_read is not None:
             print(f"Reading FFTISDF from {df_to_read}")
             df_obj._isdf = df_to_read
         
-        print(f"Using ke_cutoff = {cell.ke_cutoff}, c0 = {df_obj.c0}")
+        cisdf = float(method[2])
+        build_isdf_obj = df_obj.build
+        df_obj.build = lambda *args, **kwargs: build_isdf_obj(cisdf=cisdf)
+        
+        print(f"Using ke_cutoff = {cell.ke_cutoff}, cisdf = {cisdf}")
 
     config["df"] = df_obj
 

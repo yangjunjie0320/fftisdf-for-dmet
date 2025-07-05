@@ -1,4 +1,8 @@
 import fft, libdmet, numpy, scipy
+import pyscf
+from pyscf import lib
+from pyscf.lib.logger import process_clock, perf_counter
+
 from libdmet.basis.trans_2e_helper import eri_restore
 
 def get_emb_eri_fftisdf_v1(
@@ -34,6 +38,9 @@ def get_emb_eri_fftisdf_v1(
     c_ao_eo_k = multiply_basis(c_ao_lo_k, c_lo_eo_k) / (nkpt ** 0.75)
     assert c_ao_eo_k.shape == (spin, nkpt, nao, neo)
 
+    log = lib.logger.new_logger(mydf, 5)
+    t0 = (process_clock(), perf_counter())
+
     import fft, fft.isdf_ao2mo
     assert isinstance(mydf, fft.ISDF)
     sp = spin * (spin + 1) // 2 # spin pair
@@ -50,6 +57,7 @@ def get_emb_eri_fftisdf_v1(
     eri_emb = numpy.asarray(eri_emb)
     eri_emb = eri_emb.reshape(sp, neo * neo, neo * neo)
     eri_emb = eri_restore(eri_emb, symmetry, neo)
+    log.timer("Get Embedding ERI from FFT-ISDF V1", *t0)
     return eri_emb
 
 def get_emb_eri_fftisdf_v2(
@@ -57,7 +65,8 @@ def get_emb_eri_fftisdf_v2(
     symmetry=4, t_reversal_symm=True, max_memory=None,
     kscaled_center=None, kconserv_tol=1e-12, fname=None
     ):
-    print("Get Embedding ERI from FFT-ISDF")
+    print("Get Embedding ERI from FFT-ISDF, symmetry = %d" % symmetry)
+    assert symmetry == 4
 
     assert t_reversal_symm
 
@@ -85,30 +94,44 @@ def get_emb_eri_fftisdf_v2(
     c_ao_eo_k = multiply_basis(c_ao_lo_k, c_lo_eo_k) / (nkpt ** 0.75)
     assert c_ao_eo_k.shape == (spin, nkpt, nao, neo)
 
+    log = lib.logger.new_logger(mydf, 5)
+    t0 = (process_clock(), perf_counter())
+
     import fft, fft.isdf_ao2mo
     assert isinstance(mydf, fft.ISDF)
     sp = spin * (spin + 1) // 2 # spin pair
 
-    nip = mydf._inpv_kpt.shape[1]
-    inpv_kpts = [mydf._inpv_kpt @ c_ao_eo_k[s] for s in range(spin)]
+    coul_kpt = mydf.coul_kpt
+    nip = coul_kpt.shape[1]
+    inpv_kpts = []
+    for s in range(spin):
+        xs = [lib.dot(xk, ck) for xk, ck in zip(mydf.inpv_kpt, c_ao_eo_k[s])]
+        inpv_kpts.append(numpy.asarray(xs))
     inpv_kpts = numpy.asarray(inpv_kpts).reshape(spin, nkpt, -1)
-    coul_kpt = mydf._coul_kpt
-
+    
     from fft.isdf_ao2mo import kpt_to_spc, spc_to_kpt
     inpv_spcs = [kpt_to_spc(inpv_kpts[s], phase) for s in range(spin)]
     inpv_spcs = numpy.asarray(inpv_spcs).reshape(spin, nspc, nip, neo)
 
     rho_kpts = []
     for s in range(spin):
-        x_s = inpv_spcs[s]
-        rho_spc = x_s.reshape(nspc * nip, -1, 1) * x_s.reshape(nspc * nip, 1, -1)
-        rho_spc = rho_spc.reshape(nspc, nip, -1)
-        rho_kpt = spc_to_kpt(rho_spc, phase)
+        x1_spc = inpv_spcs[s].reshape(nspc * nip, -1, 1)
+        x2_spc = inpv_spcs[s].reshape(nspc * nip, 1, -1)
+        rho_spc = x1_spc * x2_spc
+        rho_spc = rho_spc.reshape(nspc * nip, neo, neo)
+
+        from pyscf.lib.numpy_helper import pack_tril
+        rho_spc_tril = pack_tril(rho_spc)
+        rho_spc_tril = rho_spc_tril.reshape(nspc, nip, -1)
+
+        rho_kpt = spc_to_kpt(rho_spc_tril, phase)
         rho_kpt = rho_kpt.reshape(nkpt, nip, -1)
         rho_kpts.append(rho_kpt)
 
     rho_kpts = numpy.asarray(rho_kpts).reshape(spin, nkpt, nip, -1)
+    neo2 = rho_kpts.shape[-1]
     print(rho_kpts.shape, "the size of rho_kpts is ", rho_kpts.nbytes / 1e9, "GB")
+    t1 = log.timer("prepare rho_kpts", *t0)
 
     eri_emb = []
     for s1, s2 in [(0, 0), (1, 1), (0, 1)][:sp]:
@@ -120,12 +143,14 @@ def get_emb_eri_fftisdf_v2(
         for q in range(nkpt):
             rho1_q = rho1_kpt[q].reshape(nip, n1)
             rho2_q = rho2_kpt[q].reshape(nip, n2)
-            eri_emb_q = rho1_q.T @ coul_kpt[q] @ rho2_q.conj()
+            vq = lib.dot(rho1_q.T, coul_kpt[q])
+            eri_emb_q = lib.dot(vq, rho2_q.conj())
             eri_emb_s1_s2 += eri_emb_q.real / (nkpt * nkpt)
         eri_emb.append(eri_emb_s1_s2)
     eri_emb = numpy.asarray(eri_emb)
-    eri_emb = eri_emb.reshape(sp, neo * neo, neo * neo)
+    eri_emb = eri_emb.reshape(sp, neo2, neo2)
     eri_emb = eri_restore(eri_emb, symmetry, neo)
+    log.timer("prepare eri_emb", *t1)
     return eri_emb
 
 get_emb_eri_fftisdf = get_emb_eri_fftisdf_v2
