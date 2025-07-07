@@ -1,7 +1,7 @@
 #!/bin/bash                      
 #SBATCH --job-name=nio-afm
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=20
+#SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=10gb
 #SBATCH --time=00:10:00
 

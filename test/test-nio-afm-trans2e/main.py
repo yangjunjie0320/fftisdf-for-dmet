@@ -17,6 +17,14 @@ def main(config: dict):
     scf_obj = config["mf"]
     dm0 = config["dm0"]
     scf_obj.with_df = df_obj
+    scf_obj.with_df.verbose = 10
+    scf_obj.chkfile = "nio-afm.chk"
+    scf_obj.verbose = 4
+    scf_obj.conv_tol = 1e-6
+    if os.path.exists(scf_obj.chkfile):
+        dm0 = scf_obj.init_guess_by_chkfile()
+        print("successfully load dm0 from chkfile", dm0.shape)
+
     ene_kscf = scf_obj.kernel(dm0)
     scf_obj.analyze()
 
@@ -71,6 +79,7 @@ def main(config: dict):
         else:
             eri_emb = get_emb_eri_old(*args, **kwargs)
         table["time_get_eri"] = time.time() - t0
+        assert 1 == 2
         return eri_emb
     libdmet.basis.trans_2e.get_emb_eri = get_emb_eri
     
