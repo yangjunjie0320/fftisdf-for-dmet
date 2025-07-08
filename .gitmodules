@@ -8,3 +8,6 @@
 	path = src/pyscf-forge-lnocc
 	url = git@github.com:yangjunjie0320/pyscf-forge.git
 	branch = lnocc
+[submodule "src/ccgto-main"]
+	path = src/ccgto-main
+	url = git@github.com:hongzhouye/ccgto.git
