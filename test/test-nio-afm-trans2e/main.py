@@ -9,7 +9,7 @@ def main(config: dict):
 
     table = {}
     df_obj = config["df"]
-    df_obj._fswap = None
+    # df_obj._fswap = None
     t0 = time.time()
     df_obj.build()
     table["time_build_df"] = time.time() - t0

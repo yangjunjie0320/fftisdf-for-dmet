@@ -132,6 +132,7 @@ def get_emb_eri_fftisdf_v2(
     
     from pyscf.lib import current_memory
     max_memory = max(2000, mydf.max_memory - current_memory()[0])
+    log.debug("max_memory: %d GB" % (max_memory / 1e3))
     max_memory = max_memory * 1e6 * 0.5
 
     from pyscf.lib import H5TmpFile
@@ -139,13 +140,12 @@ def get_emb_eri_fftisdf_v2(
     rho_spc = fswp.create_dataset("rho_spc", (spin, nspc * nip, neo2), dtype='float64')
     rho_kpt = fswp.create_dataset("rho_kpt", (spin, nkpt * nip, neo2), dtype='complex128')
     for s in range(spin):
-        blksize = max_memory // (8 * neo * neo)
+        blksize = int(max_memory) // (8 * neo * neo)
         blksize = max(blksize, 1000)
+        blksize = min(blksize, nspc * nip)
 
         log.debug("\nblksize = %d, nspc * nip = %d" % (blksize, nspc * nip))
-        log.debug("nspc = %d, nip = %d, neo = %d" % (nspc, nip, neo))
         log.debug("memory required for each block: %d GB" % (8 * neo * neo * blksize / 1e9))
-        log.debug("max_memory: %d GB" % (max_memory / 1e9))
 
         for i0, i1 in lib.prange(0, nspc * nip, blksize):
             x_spc_i0i1 = inpv_spc[s, i0:i1, :].reshape(-1, neo)
@@ -155,19 +155,24 @@ def get_emb_eri_fftisdf_v2(
             from pyscf.lib.numpy_helper import pack_tril
             rho_spc[s, i0:i1] = pack_tril(rho_spc_i0i1)
             x_spc_i0i1 = rho_spc_i0i1 = None
+
+            log.debug("s = %d, i0 = %d, i1 = %d", s, i0, i1)
         
-        blksize = max_memory // (16 * nkpt * nip)
+        blksize = int(max_memory) // (16 * nkpt * nip)
         blksize = max(blksize, 1000)
-        log.debug("\nblksize = %d, nkpt * nip = %d" % (blksize, nkpt * nip))
+        blksize = min(blksize, neo2)
+        log.debug("\nblksize = %d, neo2 = %d" % (blksize, neo2))
         log.debug("memory required for each block: %d GB" % (16 * nkpt * nip * blksize / 1e9))
-        log.debug("max_memory: %d GB" % (max_memory / 1e9))
 
         for n0, n1 in lib.prange(0, neo2, blksize):
             rho_spc_n0n1 = rho_spc[s, :, n0:n1]
             rho_spc_n0n1 = rho_spc_n0n1.reshape(nspc, -1)
             rho_kpt_n0n1 = spc_to_kpt(rho_spc_n0n1, phase)
-            rho_kpt[s, :, n0:n1] = rho_kpt_n0n1.reshape(-1, n1 - n0)
+            
+            rho_kpt[s, :, n0:n1] = rho_kpt_n0n1.reshape(nkpt * nip, n1 - n0)
             rho_spc_n0n1 = rho_kpt_n0n1 = None
+
+            log.debug("s = %d, n0 = %d, n1 = %d", s, n0, n1)
 
     t1 = log.timer("prepare rho_kpts", *t0)
 

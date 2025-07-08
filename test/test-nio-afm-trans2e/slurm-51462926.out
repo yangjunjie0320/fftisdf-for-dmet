@@ -1,0 +1,427 @@
+SLURMD_NODENAME = hpc-34-09
+Start time = Sun Jul  6 11:49:15 PM PDT 2025
+OMP_NUM_THREADS = 8
+MKL_NUM_THREADS = 4
+OPENBLAS_NUM_THREADS = 4
+PYSCF_MAX_MEMORY = 81920
+TMPDIR = /resnick/scratch/yangjunjie//nio-afm/51462926/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//nio-afm/51462926/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-nio-afm-trans2e/main.py with:
+name: nio-afm
+xc: None
+kmesh: 2-2-2
+basis: gth-szv-molopt-sr
+pseudo: gth-pbe
+lno_thresh: 3e-05
+density_fitting_method: fftisdf-100-10
+is_unrestricted: True
+init_guess_method: minao
+df_to_read: ./isdf.chk
+
+
+Using FFTISDF, method = fftisdf-100-10
+ke_cutoff = 100.0, mesh = [45 45 45]
+Reading FFTISDF from ./isdf.chk
+Using ke_cutoff = 100.0, cisdf = 10.0
+Preparing initial guess for spin polarized calculation
+Alph label: ['0 Ni 3dz2', '0 Ni 3dx2-y2'], Index: [9]
+Beta label: ['1 Ni 3dz2', '1 Ni 3dx2-y2'], Index: [19]
+ ** Mulliken pop alpha/beta on meta-lowdin orthogonal AOs **
+ ** Mulliken pop       alpha | beta **
+pop of  0 Ni 3s        1.00993 | 1.00993   
+pop of  0 Ni 4s        0.01016 | 0.01016   
+pop of  0 Ni 3px       1.00358 | 1.00358   
+pop of  0 Ni 3py       1.00358 | 1.00358   
+pop of  0 Ni 3pz       1.00357 | 1.00358   
+pop of  0 Ni 3dxy      0.99950 | 0.99950   
+pop of  0 Ni 3dyz      0.99949 | 0.99948   
+pop of  0 Ni 3dz^2     0.99847 | 0.99847   
+pop of  0 Ni 3dxz      0.99949 | 0.99948   
+pop of  0 Ni 3dx2-y2    0.99847 | 0.00548   
+pop of  1 Ni 3s        1.00993 | 1.00993   
+pop of  1 Ni 4s        0.01016 | 0.01016   
+pop of  1 Ni 3px       1.00358 | 1.00358   
+pop of  1 Ni 3py       1.00358 | 1.00358   
+pop of  1 Ni 3pz       1.00358 | 1.00357   
+pop of  1 Ni 3dxy      0.99950 | 0.99950   
+pop of  1 Ni 3dyz      0.99948 | 0.99949   
+pop of  1 Ni 3dz^2     0.99847 | 0.99847   
+pop of  1 Ni 3dxz      0.99948 | 0.99949   
+pop of  1 Ni 3dx2-y2    0.00548 | 0.99847   
+pop of  2 O 2s        0.99226 | 0.99226   
+pop of  2 O 2px       0.65891 | 0.65891   
+pop of  2 O 2py       0.65891 | 0.65891   
+pop of  2 O 2pz       0.66003 | 0.66003   
+pop of  3 O 2s        0.99226 | 0.99226   
+pop of  3 O 2px       0.65891 | 0.65891   
+pop of  3 O 2py       0.65891 | 0.65891   
+pop of  3 O 2pz       0.66003 | 0.66003   
+In total            22.99968 | 22.99968  
+ ** Mulliken atomic charges   ( Nelec_alpha | Nelec_beta ) **
+charge of  0Ni =      0.94053  (     9.02624      8.03323 )
+charge of  1Ni =      0.94053  (     8.03323      9.02624 )
+charge of  2O =      0.05980  (     2.97010      2.97010 )
+charge of  3O =      0.05980  (     2.97010      2.97010 )
+Loading ISDF results from ./isdf.chk, skipping build
+successfully load dm0 from chkfile (2, 8, 28, 28)
+
+
+******** <class 'pyscf.pbc.scf.kuhf.KUHF'> ********
+method = KUHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = nio-afm.chk
+max_memory 81920 MB (current use 187 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 8
+Exchange divergence treatment (exxdiv) = None
+DF object = <fft.isdf.InterpolativeSeparableDensityFitting object at 0x7f6beb807610>
+number of electrons per cell  alpha = 192 beta = 192
+Set gradient conv threshold to 0.001
+init E= -362.601953333443
+alpha HOMO = 0.710954201735  LUMO = 0.990324128711
+beta HOMO = 0.712908870903  LUMO = 0.961540914068
+cycle= 1 E= -362.601953334642  delta_E= -1.2e-09  |g|= 3.56e-05  |ddm|= 8.9e-05
+alpha HOMO = 0.710954205489  LUMO = 0.990324152389
+beta HOMO = 0.71290881908  LUMO = 0.96154101537
+Extra cycle  E= -362.601953334678  delta_E= -3.62e-11  |g|= 3.23e-05  |ddm|= 8.07e-05
+converged SCF energy = -362.601953334678
+**** SCF Summaries ****
+Total Energy =                        -362.601953334678171
+Nuclear Repulsion Energy =            -239.326757699849082
+One-electron Energy =                 -211.637270347926631
+Two-electron Energy =                   88.362074713097542
+ ** Mulliken pop alpha/beta on meta-lowdin orthogonal AOs **
+ ** Mulliken pop       alpha | beta **
+pop of  0 Ni 3s        0.99970 | 0.99969   
+pop of  0 Ni 4s        0.02632 | 0.02674   
+pop of  0 Ni 3px       0.99998 | 0.99999   
+pop of  0 Ni 3py       0.99998 | 1.00000   
+pop of  0 Ni 3pz       0.99997 | 0.99998   
+pop of  0 Ni 3dxy      0.99995 | 0.99795   
+pop of  0 Ni 3dyz      0.99990 | 0.99958   
+pop of  0 Ni 3dz^2     0.99880 | 0.19746   
+pop of  0 Ni 3dxz      0.99997 | 0.99699   
+pop of  0 Ni 3dx2-y2    0.99859 | 0.19616   
+pop of  1 Ni 3s        1.00000 | 1.00000   
+pop of  1 Ni 4s        0.03566 | 0.03535   
+pop of  1 Ni 3px       1.00000 | 1.00000   
+pop of  1 Ni 3py       1.00000 | 1.00000   
+pop of  1 Ni 3pz       1.00000 | 1.00000   
+pop of  1 Ni 3dxy      0.99985 | 0.99996   
+pop of  1 Ni 3dyz      0.99983 | 0.99995   
+pop of  1 Ni 3dz^2     0.20166 | 0.99848   
+pop of  1 Ni 3dxz      0.99983 | 0.99994   
+pop of  1 Ni 3dx2-y2    0.20434 | 0.99847   
+pop of  2 O 2s        0.98450 | 0.98617   
+pop of  2 O 2px       0.93026 | 0.91394   
+pop of  2 O 2py       0.93110 | 0.94065   
+pop of  2 O 2pz       0.93136 | 0.91872   
+pop of  3 O 2s        0.98391 | 0.98662   
+pop of  3 O 2px       0.92475 | 0.93177   
+pop of  3 O 2py       0.92476 | 0.93842   
+pop of  3 O 2pz       0.92507 | 0.93702   
+In total            24.00000 | 24.00000  
+ ** Mulliken atomic charges   ( Nelec_alpha | Nelec_beta ) **
+charge of  0Ni =      1.56230  (     9.02315      7.41454 )
+charge of  1Ni =      1.52671  (     7.44115      9.03214 )
+charge of  2O =     -1.53670  (     3.77722      3.75948 )
+charge of  3O =     -1.55232  (     3.75848      3.79383 )
+
+------------------------------------------------------------------------------------------------------------------------
+IAO info   ncore                  0        nval                   28       nvirt                  0        nao  28   
+------------------------------------------------------------------------------------------------------------------------
+ element   core shell                      valence shell                   virtual shell                           
+      Ni                                   3s 4s 3p 3d                                                             
+       O                                   2s 2p                                                                   
+------------------------------------------------------------------------------------------------------------------------
+
+@---------------------------------------------------------------------------------------------------@
+|****************************************** DMET SETTINGS ******************************************|
+@---------------------------------------------------------------------------------------------------@
+
+nkpts          =               8
+nao            =              28
+nlo            =              28
+nelec per cell =    (24.0, 24.0)
+smearing beta  =          1000.0
+frac occ orbs  =            None
+h0             =      -239.32676
+tol_energy     =           1e-06
+tol_rdm1       =          0.0001
+max_cycle      =              50
+number of impurity problems =     1
+
+@-------------------------------------------------------------------------------@
+|-------------------------------- Impurity     0 -------------------------------|
+@-------------------------------------------------------------------------------@
+
+DMET lattice information:
+---------------------------------------------------------------------------------
+DMET solver information:
+solver = <libdmet.solver.cc_solver.CCSolver object at 0x7f6befddc640>
+---------------------------------------------------------------------------------
+DMET vcor information:
+<class 'libdmet.mean_field.vcor.UVcor'>
+norb = 28 
+idx_range = 0-27 length = 28
+res = False bogo = False bogo_res = False
+[[[0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  ...
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]]
+
+ [[0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  ...
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]]]
+*****************************************************************************************************
+
+@---------------------------------------------------------------------------------------------------@
+|***************************************** ITERATION     0 *****************************************|
+@---------------------------------------------------------------------------------------------------@
+
+
+DMET: lattice mean-field problem (F + u):
+WARNING: k2R: non-zero imaginary part:    1.292457e-05
+WARNING: k2R: non-zero imaginary part:   1.3347927e-05
+WARNING: k2R: non-zero imaginary part:    1.292457e-05
+WARNING: k2R: non-zero imaginary part:   1.3347927e-05
+
+e_mf =      -362.60195
+                 alpha            beta
+homo =      0.71095424      0.71290880
+lumo =      0.99032416      0.96154110
+gap  =      0.27936993      0.24863230
+
+ ** Mulliken pop            alpha | beta         magnetism **
+pop of  0 Ni 3s           0.99896 | 0.99892        0.00004
+pop of  0 Ni 4s           0.05733 | 0.05802       -0.00069
+pop of  0 Ni 3px          0.99996 | 0.99998       -0.00002
+pop of  0 Ni 3py          0.99999 | 0.99999       -0.00001
+pop of  0 Ni 3pz          0.99996 | 0.99997       -0.00002
+pop of  0 Ni 3dxy         0.99994 | 0.99794        0.00200
+pop of  0 Ni 3dyz         0.99988 | 0.99956        0.00032
+pop of  0 Ni 3dz^2        0.99879 | 0.19745        0.80134
+pop of  0 Ni 3dxz         0.99995 | 0.99697        0.00298
+pop of  0 Ni 3dx2-y2      0.99857 | 0.19615        0.80242
+pop of  1 Ni 3s           0.99755 | 0.99747        0.00008
+pop of  1 Ni 4s           0.07190 | 0.07152        0.00038
+pop of  1 Ni 3px          0.99999 | 0.99994        0.00005
+pop of  1 Ni 3py          0.99999 | 0.99995        0.00004
+pop of  1 Ni 3pz          0.99999 | 0.99994        0.00005
+pop of  1 Ni 3dxy         0.99985 | 0.99996       -0.00011
+pop of  1 Ni 3dyz         0.99983 | 0.99995       -0.00012
+pop of  1 Ni 3dz^2        0.20162 | 0.99846       -0.79684
+pop of  1 Ni 3dxz         0.99983 | 0.99994       -0.00011
+pop of  1 Ni 3dx2-y2      0.20430 | 0.99845       -0.79415
+pop of  2 O 2s            0.97847 | 0.98009       -0.00162
+pop of  2 O 2px           0.92175 | 0.90559        0.01617
+pop of  2 O 2py           0.92245 | 0.93177       -0.00932
+pop of  2 O 2pz           0.92287 | 0.91030        0.01257
+pop of  3 O 2s            0.97775 | 0.98044       -0.00269
+pop of  3 O 2px           0.91606 | 0.92324       -0.00718
+pop of  3 O 2py           0.91609 | 0.92958       -0.01349
+pop of  3 O 2pz           0.91639 | 0.92845       -0.01206
+In total                 24.00000 | 24.00000       0.00000
+ ** Mulliken atomic charges    ( Nelec_alpha | Nelec_beta )    magnetism **
+charge of    0Ni =      1.50172  (     9.05333      7.44496 )      1.60837
+charge of    1Ni =      1.45957  (     7.47484      9.06558 )     -1.59074
+charge of    2O =     -1.47329  (     3.74554      3.72775 )      0.01780
+charge of    3O =     -1.48800  (     3.72629      3.76171 )     -0.03542
+
+@-------------------------------------------------------------------------------@
+|---------------------- Iteration     0     Impurity     0 ---------------------|
+@-------------------------------------------------------------------------------@
+
+
+DMET: construct embedding Hamiltonian:
+dmet module = /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/dmet.py
+Get Embedding ERI from FFT-ISDF
+    CPU time for prepare rho12      0.63 sec, wall time      0.08 sec
+    CPU time for prepare rho34      0.54 sec, wall time      0.07 sec
+    CPU time for compute eri_spc      6.74 sec, wall time      0.85 sec
+    CPU time for prepare rho12      0.62 sec, wall time      0.08 sec
+    CPU time for prepare rho34      0.63 sec, wall time      0.08 sec
+    CPU time for compute eri_spc      6.81 sec, wall time      0.86 sec
+    CPU time for prepare rho12      0.57 sec, wall time      0.07 sec
+    CPU time for prepare rho34      0.59 sec, wall time      0.07 sec
+    CPU time for compute eri_spc      6.65 sec, wall time      0.84 sec
+    CPU time for Get Embedding ERI from FFT-ISDF V1     24.55 sec, wall time      3.12 sec
+Get Embedding ERI from FFT-ISDF
+symmetry = 4
+t_reversal_symm = True
+unit_eri = False
+kscaled_center = None
+kconserv_tol = 1e-12
+fname = None
+time reversal symm used, weights of kpts:
+[1 1 1 1 1 1 1 1]
+max_memory: 81 GB
+
+blksize = 2240, nspc * nip = 2240
+memory required for each block: 0 GB
+s = 0, i0 = 0, i1 = 2240
+
+blksize = 1596, neo2 = 1596
+memory required for each block: 0 GB
+s = 0, n0 = 0, n1 = 1596
+
+blksize = 2240, nspc * nip = 2240
+memory required for each block: 0 GB
+s = 1, i0 = 0, i1 = 2240
+
+blksize = 1596, neo2 = 1596
+memory required for each block: 0 GB
+s = 1, n0 = 0, n1 = 1596
+    CPU time for prepare rho_kpts      1.63 sec, wall time      0.21 sec
+    CPU time for s1: 0, s2: 0, w[q]:   1.00, q:   1 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 0, w[q]:   1.00, q:   2 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 0, w[q]:   1.00, q:   3 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 0, w[q]:   1.00, q:   4 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 0, w[q]:   1.00, q:   5 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 0, w[q]:   1.00, q:   6 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 0, w[q]:   1.00, q:   7 /   8      0.25 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 0, w[q]:   1.00, q:   8 /   8      0.25 sec, wall time      0.03 sec
+    CPU time for s1: 1, s2: 1, w[q]:   1.00, q:   1 /   8      0.27 sec, wall time      0.03 sec
+    CPU time for s1: 1, s2: 1, w[q]:   1.00, q:   2 /   8      0.25 sec, wall time      0.03 sec
+    CPU time for s1: 1, s2: 1, w[q]:   1.00, q:   3 /   8      0.25 sec, wall time      0.03 sec
+    CPU time for s1: 1, s2: 1, w[q]:   1.00, q:   4 /   8      0.25 sec, wall time      0.03 sec
+    CPU time for s1: 1, s2: 1, w[q]:   1.00, q:   5 /   8      0.25 sec, wall time      0.03 sec
+    CPU time for s1: 1, s2: 1, w[q]:   1.00, q:   6 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 1, s2: 1, w[q]:   1.00, q:   7 /   8      0.28 sec, wall time      0.04 sec
+    CPU time for s1: 1, s2: 1, w[q]:   1.00, q:   8 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 1, w[q]:   1.00, q:   1 /   8      0.28 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 1, w[q]:   1.00, q:   2 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 1, w[q]:   1.00, q:   3 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 1, w[q]:   1.00, q:   4 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 1, w[q]:   1.00, q:   5 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 1, w[q]:   1.00, q:   6 /   8      0.26 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 1, w[q]:   1.00, q:   7 /   8      0.25 sec, wall time      0.03 sec
+    CPU time for s1: 0, s2: 1, w[q]:   1.00, q:   8 /   8      0.25 sec, wall time      0.03 sec
+    CPU time for prepare eri_emb      6.38 sec, wall time      0.80 sec
+
+ss = 0, error = 2.40e-10
+
+eri_emb_sol =
+  1.0635,  -0.1123,   0.6293,   0.0080,   0.0067,   0.9910,   0.0012,   0.0014,  -0.0001,   0.9782
+ -0.1123,   0.0527,  -0.0653,   0.0028,   0.0003,  -0.1129,  -0.0003,  -0.0001,   0.0001,  -0.1104
+  0.6293,  -0.0653,   0.5088,   0.0030,   0.0041,   0.5917,  -0.0002,   0.0008,  -0.0003,   0.5815
+  0.0080,   0.0028,   0.0030,   0.2800,  -0.0342,   0.0009,   0.0002,  -0.0001,   0.0001,   0.0035
+  0.0067,   0.0003,   0.0041,  -0.0342,   0.0294,   0.0058,  -0.0001,  -0.0000,   0.0000,   0.0054
+  0.9910,  -0.1129,   0.5917,   0.0009,   0.0058,   1.0238,   0.0014,   0.0014,  -0.0005,   0.8658
+  0.0012,  -0.0003,  -0.0002,   0.0002,  -0.0001,   0.0014,   0.2829,  -0.0319,  -0.0006,   0.0015
+  0.0014,  -0.0001,   0.0008,  -0.0001,  -0.0000,   0.0014,  -0.0319,   0.0300,  -0.0002,   0.0014
+ -0.0001,   0.0001,  -0.0003,   0.0001,   0.0000,  -0.0005,  -0.0006,  -0.0002,   0.0702,  -0.0001
+  0.9782,  -0.1104,   0.5815,   0.0035,   0.0054,   0.8658,   0.0015,   0.0014,  -0.0001,   0.9917
+
+eri_emb_ref =
+  1.0635,  -0.1123,   0.6293,   0.0080,   0.0067,   0.9910,   0.0012,   0.0014,  -0.0001,   0.9782
+ -0.1123,   0.0527,  -0.0653,   0.0028,   0.0003,  -0.1129,  -0.0003,  -0.0001,   0.0001,  -0.1104
+  0.6293,  -0.0653,   0.5088,   0.0030,   0.0041,   0.5917,  -0.0002,   0.0008,  -0.0003,   0.5815
+  0.0080,   0.0028,   0.0030,   0.2800,  -0.0342,   0.0009,   0.0002,  -0.0001,   0.0001,   0.0035
+  0.0067,   0.0003,   0.0041,  -0.0342,   0.0294,   0.0058,  -0.0001,  -0.0000,   0.0000,   0.0054
+  0.9910,  -0.1129,   0.5917,   0.0009,   0.0058,   1.0238,   0.0014,   0.0014,  -0.0005,   0.8658
+  0.0012,  -0.0003,  -0.0002,   0.0002,  -0.0001,   0.0014,   0.2829,  -0.0319,  -0.0006,   0.0015
+  0.0014,  -0.0001,   0.0008,  -0.0001,  -0.0000,   0.0014,  -0.0319,   0.0300,  -0.0002,   0.0014
+ -0.0001,   0.0001,  -0.0003,   0.0001,   0.0000,  -0.0005,  -0.0006,  -0.0002,   0.0702,  -0.0001
+  0.9782,  -0.1104,   0.5815,   0.0035,   0.0054,   0.8658,   0.0015,   0.0014,  -0.0001,   0.9917
+
+ss = 1, error = 1.11e-10
+
+eri_emb_sol =
+  1.0635,  -0.1123,   0.6293,   0.0080,   0.0067,   0.9910,   0.0012,   0.0014,  -0.0001,   0.9782
+ -0.1123,   0.0527,  -0.0653,   0.0028,   0.0003,  -0.1129,  -0.0003,  -0.0001,   0.0001,  -0.1104
+  0.6293,  -0.0653,   0.5088,   0.0030,   0.0041,   0.5917,  -0.0002,   0.0008,  -0.0003,   0.5815
+  0.0080,   0.0028,   0.0030,   0.2800,  -0.0342,   0.0009,   0.0002,  -0.0001,   0.0001,   0.0035
+  0.0067,   0.0003,   0.0041,  -0.0342,   0.0294,   0.0058,  -0.0001,  -0.0000,   0.0000,   0.0054
+  0.9910,  -0.1129,   0.5917,   0.0009,   0.0058,   1.0238,   0.0014,   0.0014,  -0.0005,   0.8658
+  0.0012,  -0.0003,  -0.0002,   0.0002,  -0.0001,   0.0014,   0.2829,  -0.0319,  -0.0006,   0.0015
+  0.0014,  -0.0001,   0.0008,  -0.0001,  -0.0000,   0.0014,  -0.0319,   0.0300,  -0.0002,   0.0014
+ -0.0001,   0.0001,  -0.0003,   0.0001,   0.0000,  -0.0005,  -0.0006,  -0.0002,   0.0702,  -0.0001
+  0.9782,  -0.1104,   0.5815,   0.0035,   0.0054,   0.8658,   0.0015,   0.0014,  -0.0001,   0.9917
+
+eri_emb_ref =
+  1.0635,  -0.1123,   0.6293,   0.0080,   0.0067,   0.9910,   0.0012,   0.0014,  -0.0001,   0.9782
+ -0.1123,   0.0527,  -0.0653,   0.0028,   0.0003,  -0.1129,  -0.0003,  -0.0001,   0.0001,  -0.1104
+  0.6293,  -0.0653,   0.5088,   0.0030,   0.0041,   0.5917,  -0.0002,   0.0008,  -0.0003,   0.5815
+  0.0080,   0.0028,   0.0030,   0.2800,  -0.0342,   0.0009,   0.0002,  -0.0001,   0.0001,   0.0035
+  0.0067,   0.0003,   0.0041,  -0.0342,   0.0294,   0.0058,  -0.0001,  -0.0000,   0.0000,   0.0054
+  0.9910,  -0.1129,   0.5917,   0.0009,   0.0058,   1.0238,   0.0014,   0.0014,  -0.0005,   0.8658
+  0.0012,  -0.0003,  -0.0002,   0.0002,  -0.0001,   0.0014,   0.2829,  -0.0319,  -0.0006,   0.0015
+  0.0014,  -0.0001,   0.0008,  -0.0001,  -0.0000,   0.0014,  -0.0319,   0.0300,  -0.0002,   0.0014
+ -0.0001,   0.0001,  -0.0003,   0.0001,   0.0000,  -0.0005,  -0.0006,  -0.0002,   0.0702,  -0.0001
+  0.9782,  -0.1104,   0.5815,   0.0035,   0.0054,   0.8658,   0.0015,   0.0014,  -0.0001,   0.9917
+
+ss = 2, error = 2.03e-10
+
+eri_emb_sol =
+  1.0635,  -0.1123,   0.6293,   0.0080,   0.0067,   0.9910,   0.0012,   0.0014,  -0.0001,   0.9782
+ -0.1123,   0.0527,  -0.0653,   0.0028,   0.0003,  -0.1129,  -0.0003,  -0.0001,   0.0001,  -0.1104
+  0.6293,  -0.0653,   0.5088,   0.0030,   0.0041,   0.5917,  -0.0002,   0.0008,  -0.0003,   0.5815
+  0.0080,   0.0028,   0.0030,   0.2800,  -0.0342,   0.0009,   0.0002,  -0.0001,   0.0001,   0.0035
+  0.0067,   0.0003,   0.0041,  -0.0342,   0.0294,   0.0058,  -0.0001,  -0.0000,   0.0000,   0.0054
+  0.9910,  -0.1129,   0.5917,   0.0009,   0.0058,   1.0238,   0.0014,   0.0014,  -0.0005,   0.8658
+  0.0012,  -0.0003,  -0.0002,   0.0002,  -0.0001,   0.0014,   0.2829,  -0.0319,  -0.0006,   0.0015
+  0.0014,  -0.0001,   0.0008,  -0.0001,  -0.0000,   0.0014,  -0.0319,   0.0300,  -0.0002,   0.0014
+ -0.0001,   0.0001,  -0.0003,   0.0001,   0.0000,  -0.0005,  -0.0006,  -0.0002,   0.0702,  -0.0001
+  0.9782,  -0.1104,   0.5815,   0.0035,   0.0054,   0.8658,   0.0015,   0.0014,  -0.0001,   0.9917
+
+eri_emb_ref =
+  1.0635,  -0.1123,   0.6293,   0.0080,   0.0067,   0.9910,   0.0012,   0.0014,  -0.0001,   0.9782
+ -0.1123,   0.0527,  -0.0653,   0.0028,   0.0003,  -0.1129,  -0.0003,  -0.0001,   0.0001,  -0.1104
+  0.6293,  -0.0653,   0.5088,   0.0030,   0.0041,   0.5917,  -0.0002,   0.0008,  -0.0003,   0.5815
+  0.0080,   0.0028,   0.0030,   0.2800,  -0.0342,   0.0009,   0.0002,  -0.0001,   0.0001,   0.0035
+  0.0067,   0.0003,   0.0041,  -0.0342,   0.0294,   0.0058,  -0.0001,  -0.0000,   0.0000,   0.0054
+  0.9910,  -0.1129,   0.5917,   0.0009,   0.0058,   1.0238,   0.0014,   0.0014,  -0.0005,   0.8658
+  0.0012,  -0.0003,  -0.0002,   0.0002,  -0.0001,   0.0014,   0.2829,  -0.0319,  -0.0006,   0.0015
+  0.0014,  -0.0001,   0.0008,  -0.0001,  -0.0000,   0.0014,  -0.0319,   0.0300,  -0.0002,   0.0014
+ -0.0001,   0.0001,  -0.0003,   0.0001,   0.0000,  -0.0005,  -0.0006,  -0.0002,   0.0702,  -0.0001
+  0.9782,  -0.1104,   0.5815,   0.0035,   0.0054,   0.8658,   0.0015,   0.0014,  -0.0001,   0.9917
+error = 2.40e-10
+time_get_eri_sol =   1.17
+time_get_eri_ref =   3.13
+Traceback (most recent call last):
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-nio-afm-trans2e/main.py", line 126, in <module>
+    main(config)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-nio-afm-trans2e/main.py", line 89, in main
+    emb_obj.kernel()
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/libdmet/dmet/rdmet.py", line 103, in kernel
+    mydmet.mu_solver(mydmet, **mydmet.mu_solver_args)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/libdmet/dmet/mu_fit.py", line 72, in __call__
+    return self.kernel_fit_spin(mydmet, nelec_target=nelec_target,
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/libdmet/dmet/mu_fit.py", line 280, in kernel_fit_spin
+    C_lo_eos_old, ham_embs_old = solver_run(dmu=np.zeros(2))
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/libdmet/dmet/mu_fit.py", line 240, in solver_run
+    mydmet.solve_ham_emb_all(mu=mu_new, C_lo_eos_given=C_lo_eos,
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/libdmet/dmet/rdmet.py", line 274, in solve_ham_emb_all
+    ham_emb = mydmet.get_ham_emb(C_lo_eo=C_lo_eo)
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/libdmet/dmet/udmet.py", line 324, in get_ham_emb
+    ham = udmet_hp.get_ham_emb(self, C_lo_eo, vcor, int_bath=int_bath,
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/libdmet/dmet/rdmet_helper.py", line 305, in get_ham_emb
+    h2_emb = mydmet.get_h2_emb(C_lo_eo, int_bath=int_bath, fname=fname,
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/libdmet/dmet/rdmet_helper.py", line 402, in get_h2_emb
+    h2_emb = trans_2e.get_emb_eri(mydf, C_ao_lo=C_ao_lo, C_lo_eo=C_lo_eo,
+  File "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-nio-afm-trans2e/main.py", line 82, in get_emb_eri
+    assert 1 == 2
+AssertionError
+End time = Sun Jul  6 11:49:59 PM PDT 2025

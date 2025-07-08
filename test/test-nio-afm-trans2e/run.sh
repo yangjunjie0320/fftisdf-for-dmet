@@ -1,9 +1,9 @@
 #!/bin/bash                      
 #SBATCH --job-name=nio-afm
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=10gb
-#SBATCH --time=00:10:00
+#SBATCH --time=00:30:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
@@ -33,6 +33,6 @@ ln -s $PYSCF_TMPDIR tmp
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fftisdf-main/
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main/
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/scripts/
-python main.py --kmesh=2-2-2 --basis=gth-szv-molopt-sr --density-fitting-method=fftisdf-100-10 \
-               --name=nio-afm --pseudo=gth-pbe --is-unrestricted --init-guess-method=minao --df-to-read=./isdf.chk
+python main.py --kmesh=4-4-4 --basis=gth-dzvp-molopt-sr --density-fitting-method=fftisdf-100-10 \
+               --name=nio-afm --pseudo=gth-pbe --is-unrestricted --init-guess-method=minao --df-to-read=None
 echo "End time = $(date)"
