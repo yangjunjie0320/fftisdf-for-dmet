@@ -1,6 +1,7 @@
-import os
+import os, pathlib
 import time, h5py
 import numpy, scipy
+from typing import Optional
 
 import pyscf
 from pyscf.lib import H5TmpFile
@@ -13,48 +14,48 @@ MAX_MEMORY = os.environ.get("PYSCF_MAX_MEMORY", 2000)
 MAX_MEMORY = int(MAX_MEMORY)
 assert MAX_MEMORY > 0
 
-def dump(config : dict, path : str):
-    raise NotImplementedError
+def parse_basis(cell: gto.Cell, basis_name: Optional[str] = None):
+    if basis_name is None:
+        basis_name = "cc-pvdz"
+    
+    pwd = pathlib.Path(__file__).parent
+    ccgto_path = pwd / "../ccgto-main"
+    assert ccgto_path.exists(), f"Path {ccgto_path} not found"
+
+    fbasis = ccgto_path / "basis/gth-hf-rev" / ("%s-lc.dat" % basis_name)
+    assert fbasis.exists(), f"Path {fbasis} not found"
+    
+    uniq_atoms = {a[0] for a in cell._atom}
+    basis = {}
+    for atom_symbol in uniq_atoms:
+        from pyscf.gto.basis.parse_nwchem import load
+        from pyscf.lib.exceptions import BasisNotFoundError
+
+        try:
+            basis[atom_symbol] = load(fbasis, atom_symbol)
+        except BasisNotFoundError:
+            print(f"Basis not found for {atom_symbol}, using default basis")
+            basis[atom_symbol] = load(fbasis, "H")
+    
+    return basis
 
 def build_cell(config: dict):
     name: str = config["name"].lower()
 
-    cell = gto.Cell()
-    if "diamond" in name:
-        cell.atom = '''
-        C 0.0000 0.0000 0.0000
-        C 0.8917 0.8917 0.8917
-        '''
-        
-        cell.a = '''
-        0.0000 1.7834 1.7834
-        1.7834 0.0000 1.7834
-        1.7834 1.7834 0.0000
-        '''
+    pwd = pathlib.Path(__file__).parent
+    poscar_path = pwd / f"../../data/vasp/{name}.vasp"
+    assert poscar_path.exists(), f"Path {poscar_path} not found"
 
-    elif "nio" in name:
-        cell.atom = '''
-        Ni 0.000 0.000 0.000
-        Ni 4.170 4.170 4.170
-        O  2.085 2.085 2.085
-        O  6.255 6.255 6.255
-        '''
+    from libdmet.utils.iotools import read_poscar
+    cell = read_poscar(poscar_path)
+    cell.exp_to_discard = 0.1
+    cell.build(dump_input=False)
 
-        cell.a = '''
-        4.170 2.085 2.085
-        2.085 4.170 2.085
-        2.085 2.085 4.170
-        '''
-    
-    else:
-        raise RuntimeError(f"Unknown cell: {name}")
-
-    cell.basis = config["basis"]
-    cell.pseudo = config["pseudo"]
+    cell.basis = parse_basis(cell, config["basis"])
+    cell.pseudo = "gth-hf-rev"
     cell.ke_cutoff = None
     cell.exp_to_discard = 0.1
     cell.max_memory = MAX_MEMORY
-    cell.unit = 'A'
     cell.build(dump_input=False)
     config["cell"] = cell
 
@@ -79,7 +80,7 @@ def build_cell(config: dict):
 def build_density_fitting(config: dict):
     cell: gto.Cell = config["cell"]
     scell: gto.Cell = config["scell"]
-    # latt: Lattice = config["lattice"]
+    latt: Lattice = config["lattice"]
     kpts: numpy.ndarray = config["kpts"]
 
     method = config["density_fitting_method"].lower()
@@ -243,3 +244,57 @@ def build(config):
     build_density_fitting(config)
     build_mean_field(config)
     return config
+
+if __name__ == "__main__":
+    import sys
+    libdmet_path = pathlib.Path(__file__).parent / "../libdmet2-main"
+    assert libdmet_path.exists(), f"Path {libdmet_path} not found"
+    sys.path.append(str(libdmet_path))
+
+    config = {
+        "name": "diamond",
+        "kmesh": "1-1-1",
+        "basis": "cc-pvdz",
+        "density_fitting_method": "gdf-2.0",
+        "init_guess_method": "minao",
+        "df_to_read": None,
+        "xc": None, "is_unrestricted": False,
+    }
+    build(config)
+
+    config = {
+        "name": "silicon",
+        "kmesh": "1-1-1",
+        "basis": "cc-pvdz",
+        "density_fitting_method": "gdf-2.0",
+        "init_guess_method": "minao",
+        "df_to_read": None,
+        "xc": None,
+        "is_unrestricted": False,
+    }
+    build(config)
+
+    config = {
+        "name": "co2",
+        "kmesh": "1-1-1",
+        "basis": "cc-pvdz",
+        "density_fitting_method": "gdf-2.0",
+        "init_guess_method": "minao",
+        "df_to_read": None,
+        "xc": None,
+        "is_unrestricted": False,
+    }
+
+    build(config)
+
+    config = {
+        "name": "nh3",
+        "kmesh": "1-1-1",
+        "basis": "cc-pvdz",
+        "density_fitting_method": "gdf-2.0",
+        "init_guess_method": "minao",
+        "df_to_read": None,
+        "xc": None,
+        "is_unrestricted": False,
+    }
+    build(config)
