@@ -44,7 +44,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00'):
             run_content.insert(1, f"#SBATCH --cpus-per-task=4\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")
-            run_content.insert(1, f"#SBATCH --qos=debug\n")
+            # run_content.insert(1, f"#SBATCH --qos=debug\n")
             # run_content.insert(1, f"#SBATCH --constraint=icelake\n")
             # run_content.insert(1, f"#SBATCH --reservation=changroup_standingres\n")
 
@@ -84,6 +84,7 @@ if __name__ == "__main__":
     parser.add_argument("--method", type=str, default="krhf")
     parser.add_argument("--ntasks", type=int, default=1)
     parser.add_argument("--time", type=str, default="20:00:00")
+    parser.add_argument("--cpus-per-task", type=int, default=4)
     args = parser.parse_args()
     kwargs = args.__dict__
     for k, v in kwargs.items():

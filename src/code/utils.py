@@ -19,24 +19,19 @@ def parse_basis(cell: gto.Cell, basis_name: Optional[str] = None):
         basis_name = "cc-pvdz"
     
     pwd = pathlib.Path(__file__).parent
-    ccgto_path = pwd / "../ccgto-main"
-    assert ccgto_path.exists(), f"Path {ccgto_path} not found"
+    basis_path = pwd / "../../data/basis"
+    assert basis_path.exists(), f"Path {basis_path} not found"
 
-    fbasis = ccgto_path / "basis/gth-hf-rev" / ("%s-lc.dat" % basis_name)
-    assert fbasis.exists(), f"Path {fbasis} not found"
+    basis_file = basis_path / ("%s.dat" % basis_name)
+    assert basis_file.exists(), f"Path {basis_file} not found"
     
     uniq_atoms = {a[0] for a in cell._atom}
     basis = {}
     for atom_symbol in uniq_atoms:
         from pyscf.gto.basis.parse_nwchem import load
-        from pyscf.lib.exceptions import BasisNotFoundError
+        print(f"Loading basis for {atom_symbol} from {basis_file}")
+        basis[atom_symbol] = load(basis_file, atom_symbol)
 
-        try:
-            basis[atom_symbol] = load(fbasis, atom_symbol)
-        except BasisNotFoundError:
-            print(f"Basis not found for {atom_symbol}, using default basis")
-            basis[atom_symbol] = load(fbasis, "H")
-    
     return basis
 
 def build_cell(config: dict):
@@ -48,9 +43,6 @@ def build_cell(config: dict):
 
     from libdmet.utils.iotools import read_poscar
     cell = read_poscar(poscar_path)
-    cell.exp_to_discard = 0.1
-    cell.build(dump_input=False)
-
     cell.basis = parse_basis(cell, config["basis"])
     cell.pseudo = "gth-hf-rev"
     cell.ke_cutoff = None
