@@ -1,4 +1,10 @@
 #!/bin/bash
+#SBATCH --qos=debug
+#SBATCH --job-name=nh3-gdf-2.8
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=20gb
+#SBATCH --time=00:30:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
@@ -28,3 +34,10 @@ mkdir -p $TMPDIR
 echo TMPDIR       = $TMPDIR
 echo PYSCF_TMPDIR = $PYSCF_TMPDIR
 ln -s $PYSCF_TMPDIR tmp
+export PYTHONPATH=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fftisdf-main
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
+export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-gamma.py main.py
+python main.py --basis=cc-pvdz --density-fitting-method=gdf-2.8 --name=nh3 --init-guess-method=minao
+echo "End time = $(date)"

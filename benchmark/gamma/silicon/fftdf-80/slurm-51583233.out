@@ -1,0 +1,135 @@
+SLURMD_NODENAME = hpc-34-30
+Start time = Tue Jul  8 10:33:20 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 4
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 81920
+TMPDIR = /resnick/scratch/yangjunjie//silicon-fftdf-80/51583233/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//silicon-fftdf-80/51583233/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/gamma/silicon/fftdf-80/main.py with:
+name: silicon
+basis: cc-pvdz
+density_fitting_method: fftdf-80
+is_unrestricted: False
+init_guess_method: minao
+xc: None
+df_to_read: None
+kmesh: 1-1-1
+
+
+Using FFTDF, method = fftdf-80
+ke_cutoff = 80.0, mesh = [31 31 31]
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 7.78646)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 8.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 Si 3s           2.41114
+pop of  0 Si 3px          0.52962
+pop of  0 Si 3py          0.52962
+pop of  0 Si 3pz          0.52962
+pop of  0 Si 3dxy         0.00000
+pop of  0 Si 3dyz         0.00000
+pop of  0 Si 3dz^2        0.00000
+pop of  0 Si 3dxz         0.00000
+pop of  0 Si 3dx2-y2      0.00000
+pop of  1 Si 3s           2.41114
+pop of  1 Si 3px          0.52962
+pop of  1 Si 3py          0.52962
+pop of  1 Si 3pz          0.52962
+pop of  1 Si 3dxy         0.00000
+pop of  1 Si 3dyz         0.00000
+pop of  1 Si 3dz^2        0.00000
+pop of  1 Si 3dxz         0.00000
+pop of  1 Si 3dx2-y2      0.00000
+ ** Mulliken atomic charges  **
+charge of    0Si =     -0.00000
+charge of    1Si =      0.00000
+
+WARN: ke_cutoff/mesh (80 / [31 31 31]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 0.0001 Eh.
+Recommended ke_cutoff/mesh are 141.067 / [41 41 41].
+
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/silicon-fftdf-80/51583233/tmparap959k
+max_memory 81920 MB (current use 122 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 1
+kpts = [[0. 0. 0.]]
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.44365061214096385
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -1.77460244856
+DF object = <pyscf.pbc.df.fft.FFTDF object at 0x7f759b1a97b0>
+Set gradient conv threshold to 0.001
+    CPU time for vj and vk      1.34 sec, wall time      0.33 sec
+E1 = 2.2476182932219326  E_coul = -2.0837144324212686
+init E= -8.17608529876488
+    CPU time for initialize scf      1.66 sec, wall time      0.42 sec
+HOMO = 0.331023267837  LUMO = 0.449331734019
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.86010226  0.33102327  0.33102327  0.33102327] [0.44933173 0.4723224  0.4723224  0.4723224  0.79065492 0.79065492
+ 1.13568923 1.13568923 1.13568923 1.52159697 1.52159697 1.63457341
+ 1.63457341 1.63457341]
+    CPU time for vj and vk      0.71 sec, wall time      0.18 sec
+E1 = 2.776775643054026  E_coul = -1.5864261330474743
+cycle= 1 E= -7.14963964955899  delta_E= 1.03  |g|= 0.123  |ddm|= 3.21
+    CPU time for cycle= 1      0.75 sec, wall time      0.19 sec
+HOMO = 0.0719817712934  LUMO = 0.587198623328
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.41743026  0.07198177  0.07198177  0.07198177] [0.58719862 0.58719862 0.58719862 0.66691879 0.80715358 0.80715358
+ 1.16251258 1.16251258 1.16251258 1.53956631 1.53956631 1.66451121
+ 1.66451121 1.66451121]
+    CPU time for vj and vk      0.72 sec, wall time      0.18 sec
+E1 = 2.7702136376099586  E_coul = -1.5894091941938417
+cycle= 2 E= -7.15918471614943  delta_E= -0.00955  |g|= 0.0471  |ddm|= 0.216
+    CPU time for cycle= 2      0.76 sec, wall time      0.19 sec
+HOMO = 0.0699341774346  LUMO = 0.589635856975
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.41719598  0.06993418  0.06993418  0.06993418] [0.58963586 0.58963586 0.58963586 0.67062326 0.80729848 0.80729848
+ 1.1649213  1.1649213  1.1649213  1.54109567 1.54109567 1.66479896
+ 1.66479896 1.66479896]
+    CPU time for vj and vk      0.73 sec, wall time      0.18 sec
+E1 = 2.770450291471425  E_coul = -1.5912856643518747
+cycle= 3 E= -7.16082453244599  delta_E= -0.00164  |g|= 0.000128  |ddm|= 0.132
+    CPU time for cycle= 3      0.78 sec, wall time      0.20 sec
+Linear dependence found in DIIS error vectors.
+HOMO = 0.0702607371784  LUMO = 0.589598700997
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.41716884  0.07026074  0.07026074  0.07026074] [0.5895987  0.5895987  0.5895987  0.67055619 0.807303   0.807303
+ 1.16455141 1.16455141 1.16455141 1.54106885 1.54106885 1.66474867
+ 1.66474867 1.66474867]
+    CPU time for vj and vk      0.73 sec, wall time      0.18 sec
+E1 = 2.770446436933933  E_coul = -1.5912818212277102
+cycle= 4 E= -7.16082454385932  delta_E= -1.14e-08  |g|= 3.16e-05  |ddm|= 0.000269
+    CPU time for cycle= 4      0.77 sec, wall time      0.20 sec
+HOMO = 0.0703670953445  LUMO = 0.58958715476
+     k-point                  mo_energy
+   0 ( 0.000  0.000  0.000)   [-0.41715989  0.0703671   0.0703671   0.0703671 ] [0.58958715 0.58958715 0.58958715 0.67053517 0.80730452 0.80730452
+ 1.16443095 1.16443095 1.16443095 1.54106046 1.54106046 1.66473226
+ 1.66473226 1.66473226]
+    CPU time for vj and vk      0.72 sec, wall time      0.18 sec
+E1 = 2.770445658828139  E_coul = -1.5912810437519203
+Extra cycle  E= -7.16082454448932  delta_E= -6.3e-10  |g|= 1.2e-05  |ddm|= 5.44e-05
+    CPU time for scf_cycle      5.48 sec, wall time      1.39 sec
+    CPU time for SCF      5.67 sec, wall time      1.43 sec
+converged SCF energy = -7.16082454448932
+End time = Tue Jul  8 10:33:22 PM PDT 2025

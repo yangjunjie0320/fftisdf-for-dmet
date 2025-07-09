@@ -7,8 +7,8 @@ from pathlib import Path
 
 def loop():
     basis = 'cc-pvdz'
-    # df_method = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0']
-    df_method = ['fftdf-120', 'fftdf-140', 'fftdf-160']
+    df_method = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0']
+    df_method += ['fftdf-20', 'fftdf-40', 'fftdf-60', 'fftdf-80', 'fftdf-100']
 
     configs = [{'basis': basis, 'density-fitting-method': d} for d in df_method]
     for config in configs:
