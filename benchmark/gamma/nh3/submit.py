@@ -7,15 +7,14 @@ from pathlib import Path
 
 def loop():
     basis = 'cc-pvdz'
-    # df_method = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0']
-    # df_method += ['fftdf-20', 'fftdf-40', 'fftdf-60', 'fftdf-80', 'fftdf-100']
-    df_method = ['fftdf-120', 'fftdf-140', 'fftdf-160']
+    df_method  = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0', 'gdf-1.8', 'gdf-1.6', 'gdf-1.4', 'gdf-1.2']
+    df_method += ['fftdf-20', 'fftdf-40', 'fftdf-60', 'fftdf-80', 'fftdf-100', 'fftdf-120', 'fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
 
     configs = [{'basis': basis, 'density-fitting-method': d} for d in df_method]
     for config in configs:
         yield config
 
-def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00'):
+def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task=4):
     base_dir = Path(__file__).parent
 
     for config in loop():
@@ -41,13 +40,13 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00'):
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=20gb\n")
-            run_content.insert(1, f"#SBATCH --cpus-per-task=4\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=8gb\n")
+            run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")
-            run_content.insert(1, f"#SBATCH --qos=debug\n")
+            # run_content.insert(1, f"#SBATCH --qos=debug\n")
             # run_content.insert(1, f"#SBATCH --constraint=icelake\n")
-            # run_content.insert(1, f"#SBATCH --reservation=changroup_standingres\n")
+            run_content.insert(1, f"#SBATCH --reservation=changroup_standingres\n")
 
         # convert to absolute path
         python_path  = [src_path / 'fftisdf-main', src_path / 'libdmet2-main']
@@ -85,6 +84,7 @@ if __name__ == "__main__":
     parser.add_argument("--method", type=str, default="krhf")
     parser.add_argument("--ntasks", type=int, default=1)
     parser.add_argument("--time", type=str, default="20:00:00")
+    parser.add_argument("--cpus-per-task", type=int, default=4)
     args = parser.parse_args()
     kwargs = args.__dict__
     for k, v in kwargs.items():

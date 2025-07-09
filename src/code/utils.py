@@ -25,7 +25,8 @@ def parse_basis(cell: gto.Cell, basis_name: Optional[str] = None):
     basis_file = basis_path / ("%s.dat" % basis_name)
     assert basis_file.exists(), f"Path {basis_file} not found"
     
-    uniq_atoms = {a[0] for a in cell._atom}
+    uniq_atoms = {a[0] for a in cell.format_atom(cell.atom, unit="Bohr")}
+
     basis = {}
     for atom_symbol in uniq_atoms:
         from pyscf.gto.basis.parse_nwchem import load
@@ -39,6 +40,9 @@ def build_cell(config: dict):
 
     pwd = pathlib.Path(__file__).parent
     poscar_path = pwd / f"../../data/vasp/{name}.vasp"
+    poscar_path = poscar_path.resolve()
+    poscar_path = poscar_path.absolute()
+    print(f"Poscar path: {poscar_path}")
     assert poscar_path.exists(), f"Path {poscar_path} not found"
 
     from libdmet.utils.iotools import read_poscar
@@ -46,7 +50,6 @@ def build_cell(config: dict):
     cell.basis = parse_basis(cell, config["basis"])
     cell.pseudo = "gth-hf-rev"
     cell.ke_cutoff = None
-    cell.exp_to_discard = 0.1
     cell.max_memory = MAX_MEMORY
     cell.build(dump_input=False)
     config["cell"] = cell
@@ -86,7 +89,6 @@ def build_density_fitting(config: dict):
 
         from pyscf.pbc.df import GDF
         df_obj = GDF(cell, kpts)
-        df_obj.exxdiv = None
 
         if df_to_read is not None:
             assert os.path.exists(df_to_read)
@@ -106,7 +108,6 @@ def build_density_fitting(config: dict):
 
         from pyscf.pbc.df import RSDF
         df_obj = RSDF(cell, kpts)
-        df_obj.exxdiv = None
 
         if df_to_read is not None:
             assert os.path.exists(df_to_read)
@@ -130,7 +131,6 @@ def build_density_fitting(config: dict):
         cell.build(dump_input=False)
 
         df_obj = FFTDF(cell, kpts)
-        df_obj.exxdiv = None
         print(f"ke_cutoff = {cell.ke_cutoff}, mesh = {df_obj.mesh}")
 
         if df_to_read is not None:
@@ -146,11 +146,8 @@ def build_density_fitting(config: dict):
         cell.build(dump_input=False)
 
         df_obj = fft.ISDF(cell, kpts)
-        df_obj.exxdiv = None
         print(f"ke_cutoff = {cell.ke_cutoff}, mesh = {df_obj.mesh}")
 
-        df_obj.tol = 1e-8
-        df_obj.wrap_around = False
         df_obj.verbose = 5
         df_obj._isdf_to_save = os.path.join(TMPDIR, "isdf.h5")
 
@@ -217,7 +214,7 @@ def build_mean_field(config: dict):
     mf = pyscf.pbc.scf.KRHF(cell, kpts)
     mf.verbose = 5
     mf.conv_tol = 1e-6
-    mf.exxdiv = None
+    mf.exxdiv = "ewald"
     if is_unrestricted:
         mf = mf.to_uhf()
 

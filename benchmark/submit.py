@@ -7,18 +7,26 @@ from pathlib import Path
 
 def loop():
     basis = 'cc-pvdz'
-    # df_method = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0']
-    df_method = ['fftdf-120', 'fftdf-140', 'fftdf-160']
+    # df_method  = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0', 'gdf-1.8', 'gdf-1.6', 'gdf-1.4', 'gdf-1.2']
+    # df_method += ['fftdf-20', 'fftdf-40', 'fftdf-60', 'fftdf-80', 'fftdf-100', 'fftdf-120', 'fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
+    df_method = ['5', '10', '15', '20', '25', '30']
 
     configs = [{'basis': basis, 'density-fitting-method': d} for d in df_method]
     for config in configs:
         yield config
 
-def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00'):
+def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task=4):
     base_dir = Path(__file__).parent
 
     for config in loop():
         print(f"Setting up benchmark directory: {config}")
+
+        if cell == 'diamond':
+            config['density-fitting-method'] = "fftisdf-60-" + config['density-fitting-method']
+        elif cell == 'co2':
+            config['density-fitting-method'] = "fftisdf-140-" + config['density-fitting-method']
+        else:
+            raise ValueError(f"Cell {cell} not supported")
 
         dir_path = base_dir / config['density-fitting-method']
         dir_path.mkdir(parents=True, exist_ok=False)
@@ -40,13 +48,13 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00'):
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=20gb\n")
-            run_content.insert(1, f"#SBATCH --cpus-per-task=4\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=8gb\n")
+            run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")
             # run_content.insert(1, f"#SBATCH --qos=debug\n")
             # run_content.insert(1, f"#SBATCH --constraint=icelake\n")
-            # run_content.insert(1, f"#SBATCH --reservation=changroup_standingres\n")
+            run_content.insert(1, f"#SBATCH --reservation=changroup_standingres\n")
 
         # convert to absolute path
         python_path  = [src_path / 'fftisdf-main', src_path / 'libdmet2-main']

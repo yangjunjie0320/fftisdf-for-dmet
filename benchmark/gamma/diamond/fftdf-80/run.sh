@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --qos=debug
+#SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=diamond-fftdf-80
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem-per-cpu=20gb
+#SBATCH --mem-per-cpu=8gb
 #SBATCH --time=00:30:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
