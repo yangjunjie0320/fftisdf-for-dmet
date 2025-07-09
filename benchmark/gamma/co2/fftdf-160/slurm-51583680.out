@@ -1,0 +1,227 @@
+SLURMD_NODENAME = hpc-92-16
+Start time = Tue Jul  8 11:08:51 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 4
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 81920
+TMPDIR = /resnick/scratch/yangjunjie//co2-fftdf-160/51583680/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//co2-fftdf-160/51583680/
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/gamma/co2/fftdf-160/main.py with:
+name: co2
+basis: cc-pvdz
+density_fitting_method: fftdf-160
+is_unrestricted: False
+init_guess_method: minao
+xc: None
+df_to_read: None
+kmesh: 1-1-1
+
+
+Using FFTDF, method = fftdf-160
+ke_cutoff = 160.0, mesh = [63 63 63]
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 C 2s            1.93240
+pop of  0 C 3s            0.00000
+pop of  0 C 2px           0.74077
+pop of  0 C 2py           0.74077
+pop of  0 C 2pz           0.74077
+pop of  0 C 3px           0.00000
+pop of  0 C 3py           0.00000
+pop of  0 C 3pz           0.00000
+pop of  0 C 3dxy          0.00000
+pop of  0 C 3dyz          0.00000
+pop of  0 C 3dz^2         0.00000
+pop of  0 C 3dxz          0.00000
+pop of  0 C 3dx2-y2       0.00000
+pop of  1 C 2s            1.93240
+pop of  1 C 3s            0.00000
+pop of  1 C 2px           0.74077
+pop of  1 C 2py           0.74077
+pop of  1 C 2pz           0.74077
+pop of  1 C 3px           0.00000
+pop of  1 C 3py           0.00000
+pop of  1 C 3pz           0.00000
+pop of  1 C 3dxy          0.00000
+pop of  1 C 3dyz          0.00000
+pop of  1 C 3dz^2         0.00000
+pop of  1 C 3dxz          0.00000
+pop of  1 C 3dx2-y2       0.00000
+pop of  2 C 2s            1.93240
+pop of  2 C 3s            0.00000
+pop of  2 C 2px           0.74077
+pop of  2 C 2py           0.74077
+pop of  2 C 2pz           0.74077
+pop of  2 C 3px           0.00000
+pop of  2 C 3py           0.00000
+pop of  2 C 3pz           0.00000
+pop of  2 C 3dxy          0.00000
+pop of  2 C 3dyz          0.00000
+pop of  2 C 3dz^2         0.00000
+pop of  2 C 3dxz          0.00000
+pop of  2 C 3dx2-y2       0.00000
+pop of  3 C 2s            1.93240
+pop of  3 C 3s            0.00000
+pop of  3 C 2px           0.74077
+pop of  3 C 2py           0.74077
+pop of  3 C 2pz           0.74077
+pop of  3 C 3px           0.00000
+pop of  3 C 3py           0.00000
+pop of  3 C 3pz           0.00000
+pop of  3 C 3dxy          0.00000
+pop of  3 C 3dyz          0.00000
+pop of  3 C 3dz^2         0.00000
+pop of  3 C 3dxz          0.00000
+pop of  3 C 3dx2-y2       0.00000
+pop of  4 O 2s            1.92764
+pop of  4 O 3s            0.00000
+pop of  4 O 2px           1.33143
+pop of  4 O 2py           1.33143
+pop of  4 O 2pz           1.33143
+pop of  4 O 3px           0.00000
+pop of  4 O 3py           0.00000
+pop of  4 O 3pz           0.00000
+pop of  4 O 3dxy          0.00000
+pop of  4 O 3dyz          0.00000
+pop of  4 O 3dz^2         0.00000
+pop of  4 O 3dxz          0.00000
+pop of  4 O 3dx2-y2       0.00000
+pop of  5 O 2s            1.92764
+pop of  5 O 3s            0.00000
+pop of  5 O 2px           1.33143
+pop of  5 O 2py           1.33143
+pop of  5 O 2pz           1.33143
+pop of  5 O 3px           0.00000
+pop of  5 O 3py           0.00000
+pop of  5 O 3pz           0.00000
+pop of  5 O 3dxy          0.00000
+pop of  5 O 3dyz          0.00000
+pop of  5 O 3dz^2         0.00000
+pop of  5 O 3dxz          0.00000
+pop of  5 O 3dx2-y2       0.00000
+pop of  6 O 2s            1.92764
+pop of  6 O 3s            0.00000
+pop of  6 O 2px           1.33143
+pop of  6 O 2py           1.33143
+pop of  6 O 2pz           1.33143
+pop of  6 O 3px           0.00000
+pop of  6 O 3py           0.00000
+pop of  6 O 3pz           0.00000
+pop of  6 O 3dxy          0.00000
+pop of  6 O 3dyz          0.00000
+pop of  6 O 3dz^2         0.00000
+pop of  6 O 3dxz          0.00000
+pop of  6 O 3dx2-y2       0.00000
+pop of  7 O 2s            1.92764
+pop of  7 O 3s            0.00000
+pop of  7 O 2px           1.33143
+pop of  7 O 2py           1.33143
+pop of  7 O 2pz           1.33143
+pop of  7 O 3px           0.00000
+pop of  7 O 3py           0.00000
+pop of  7 O 3pz           0.00000
+pop of  7 O 3dxy          0.00000
+pop of  7 O 3dyz          0.00000
+pop of  7 O 3dz^2         0.00000
+pop of  7 O 3dxz          0.00000
+pop of  7 O 3dx2-y2       0.00000
+pop of  8 O 2s            1.92764
+pop of  8 O 3s            0.00000
+pop of  8 O 2px           1.33143
+pop of  8 O 2py           1.33143
+pop of  8 O 2pz           1.33143
+pop of  8 O 3px           0.00000
+pop of  8 O 3py           0.00000
+pop of  8 O 3pz           0.00000
+pop of  8 O 3dxy          0.00000
+pop of  8 O 3dyz          0.00000
+pop of  8 O 3dz^2         0.00000
+pop of  8 O 3dxz          0.00000
+pop of  8 O 3dx2-y2       0.00000
+pop of  9 O 2s            1.92764
+pop of  9 O 3s            0.00000
+pop of  9 O 2px           1.33143
+pop of  9 O 2py           1.33143
+pop of  9 O 2pz           1.33143
+pop of  9 O 3px           0.00000
+pop of  9 O 3py           0.00000
+pop of  9 O 3pz           0.00000
+pop of  9 O 3dxy          0.00000
+pop of  9 O 3dyz          0.00000
+pop of  9 O 3dz^2         0.00000
+pop of  9 O 3dxz          0.00000
+pop of  9 O 3dx2-y2       0.00000
+pop of  10 O 2s           1.92764
+pop of  10 O 3s           0.00000
+pop of  10 O 2px          1.33143
+pop of  10 O 2py          1.33143
+pop of  10 O 2pz          1.33143
+pop of  10 O 3px          0.00000
+pop of  10 O 3py          0.00000
+pop of  10 O 3pz          0.00000
+pop of  10 O 3dxy         0.00000
+pop of  10 O 3dyz         0.00000
+pop of  10 O 3dz^2        0.00000
+pop of  10 O 3dxz         0.00000
+pop of  10 O 3dx2-y2      0.00000
+pop of  11 O 2s           1.92764
+pop of  11 O 3s           0.00000
+pop of  11 O 2px          1.33143
+pop of  11 O 2py          1.33143
+pop of  11 O 2pz          1.33143
+pop of  11 O 3px          0.00000
+pop of  11 O 3py          0.00000
+pop of  11 O 3pz          0.00000
+pop of  11 O 3dxy         0.00000
+pop of  11 O 3dyz         0.00000
+pop of  11 O 3dz^2        0.00000
+pop of  11 O 3dxz         0.00000
+pop of  11 O 3dx2-y2      0.00000
+ ** Mulliken atomic charges  **
+charge of    0C =     -0.15471
+charge of    1C =     -0.15471
+charge of    2C =     -0.15471
+charge of    3C =     -0.15471
+charge of    4O =      0.07808
+charge of    5O =      0.07808
+charge of    6O =      0.07808
+charge of    7O =      0.07808
+charge of    8O =      0.07808
+charge of    9O =      0.07808
+charge of   10O =      0.07808
+charge of   11O =      0.07808
+
+WARN: ke_cutoff/mesh (160 / [63 63 63]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 2.4 Eh.
+Recommended ke_cutoff/mesh are 1047.9 / [157 157 157].
+
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/co2-fftdf-160/51583680/tmpy75soozl
+max_memory 81920 MB (current use 138 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 1
+kpts = [[0. 0. 0.]]
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.2669689130053178
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -8.54300521617
+DF object = <pyscf.pbc.df.fft.FFTDF object at 0x7f3a2f7dd8a0>
+Set gradient conv threshold to 0.001
