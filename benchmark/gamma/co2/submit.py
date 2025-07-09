@@ -7,8 +7,9 @@ from pathlib import Path
 
 def loop():
     basis = 'cc-pvdz'
-    df_method  = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0', 'gdf-1.8', 'gdf-1.6', 'gdf-1.4', 'gdf-1.2']
-    df_method += ['fftdf-20', 'fftdf-40', 'fftdf-60', 'fftdf-80', 'fftdf-100', 'fftdf-120', 'fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
+    # df_method  = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0', 'gdf-1.8', 'gdf-1.6', 'gdf-1.4', 'gdf-1.2']
+    # df_method += ['fftdf-20', 'fftdf-40', 'fftdf-60', 'fftdf-80', 'fftdf-100', 'fftdf-120', 'fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
+    df_method = ['6', '7', '8', '9'] # '10', '15', '20', '25', '30']
 
     configs = [{'basis': basis, 'density-fitting-method': d} for d in df_method]
     for config in configs:
@@ -19,6 +20,15 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
     for config in loop():
         print(f"Setting up benchmark directory: {config}")
+
+        if cell == 'diamond':
+            c = config['density-fitting-method']
+            config['density-fitting-method'] = "fftisdf-60-" + c
+        elif cell == 'co2':
+            c = config['density-fitting-method']
+            config['density-fitting-method'] = "fftisdf-140-" + c
+        else:
+            raise ValueError(f"Cell {cell} not supported")
 
         dir_path = base_dir / config['density-fitting-method']
         dir_path.mkdir(parents=True, exist_ok=False)

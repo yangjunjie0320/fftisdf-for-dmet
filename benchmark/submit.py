@@ -7,28 +7,33 @@ from pathlib import Path
 
 def loop():
     basis = 'cc-pvdz'
-    # df_method  = ['gdf-3.0', 'gdf-2.8', 'gdf-2.6', 'gdf-2.4', 'gdf-2.2', 'gdf-2.0', 'gdf-1.8', 'gdf-1.6', 'gdf-1.4', 'gdf-1.2']
-    # df_method += ['fftdf-20', 'fftdf-40', 'fftdf-60', 'fftdf-80', 'fftdf-100', 'fftdf-120', 'fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
-    df_method = ['5', '10', '15', '20', '25', '30']
+    df_method = ['fftisdf', 'gdf', 'fftdf', 'rsdf']
+    kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3']
+    kmesh += ['3-3-4', '3-4-4', '4-4-4', '4-4-5', '4-5-5', '5-5-5']
+    kmesh += ['5-5-6', '5-6-6', '6-6-6']
 
-    configs = [{'basis': basis, 'density-fitting-method': d} for d in df_method]
+    from itertools import product
+    configs = [{'basis': basis, 'density-fitting-method': d, 'kmesh': k} for d, k in product(df_method, kmesh)]
     for config in configs:
         yield config
 
 def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task=4):
     base_dir = Path(__file__).parent
 
+    parameters = {
+        'diamond': {
+            'fftisdf': 'fftisdf-60-8',
+            'fftdf': 'fftdf-60',
+            'gdf': 'gdf-2.0',
+            'rsdf': 'rsdf-2.0',
+        }
+    }
+
     for config in loop():
+        config['density-fitting-method'] = parameters[cell][config['density-fitting-method']]
+
         print(f"Setting up benchmark directory: {config}")
-
-        if cell == 'diamond':
-            config['density-fitting-method'] = "fftisdf-60-" + config['density-fitting-method']
-        elif cell == 'co2':
-            config['density-fitting-method'] = "fftisdf-140-" + config['density-fitting-method']
-        else:
-            raise ValueError(f"Cell {cell} not supported")
-
-        dir_path = base_dir / config['density-fitting-method']
+        dir_path = base_dir / config['kmesh'] / config['density-fitting-method']
         dir_path.mkdir(parents=True, exist_ok=False)
 
         config['name'] = cell
@@ -88,13 +93,16 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cell", type=str, default="diamond")
-    parser.add_argument("--method", type=str, default="krhf")
     parser.add_argument("--ntasks", type=int, default=1)
-    parser.add_argument("--time", type=str, default="20:00:00")
+    parser.add_argument("--time", type=str, default="00:30:00")
     parser.add_argument("--cpus-per-task", type=int, default=4)
     args = parser.parse_args()
     kwargs = args.__dict__
+
+    pwd = Path(__file__).parent
+    kwargs['cell'] = pwd.parent.name
+    kwargs['method'] = pwd.name
+
     for k, v in kwargs.items():
         print(f"{k}: {v}")
     print()

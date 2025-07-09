@@ -1,0 +1,402 @@
+SLURMD_NODENAME = hpc-19-32
+Start time = Wed Jul  9 02:01:23 PM PDT 2025
+/central/home/junjiey/anaconda3/bin/activate
+OMP_NUM_THREADS = 32
+MKL_NUM_THREADS = 1
+OPENBLAS_NUM_THREADS = 1
+PYSCF_MAX_MEMORY = 262144
+TMPDIR = /resnick/scratch/yangjunjie//cco-fftdf-60/51614072/
+PYSCF_TMPDIR = /resnick/scratch/yangjunjie//cco-fftdf-60/51614072/
+WARNING!
+  Very diffused basis functions are found in the basis set. They may lead to severe
+  linear dependence and numerical instability.  You can set  cell.exp_to_discard=0.1
+  to remove the diffused Gaussians whose exponents are less than 0.1.
+
+WARNING!
+  Very diffused basis functions are found in the basis set. They may lead to severe
+  linear dependence and numerical instability.  You can set  cell.exp_to_discard=0.1
+  to remove the diffused Gaussians whose exponents are less than 0.1.
+
+
+Running /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/gamma/cco/fftdf-60/main.py with:
+name: cco
+basis: cc-pvdz
+density_fitting_method: fftdf-60
+is_unrestricted: False
+init_guess_method: minao
+xc: None
+df_to_read: None
+kmesh: 1-1-1
+
+
+Poscar path: /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/data/vasp/cco.vasp
+Loading basis for Cu1 from /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/../../data/basis/cc-pvdz.dat
+Loading basis for Cu2 from /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/../../data/basis/cc-pvdz.dat
+Loading basis for Ca from /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/../../data/basis/cc-pvdz.dat
+Loading basis for O from /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/../../data/basis/cc-pvdz.dat
+Using FFTDF, method = fftdf-60
+ke_cutoff = 60.0, mesh = [53 53 23]
+Big error detected in the electron number of initial guess density matrix (Ne/cell = 171.383)!
+  This can cause huge error in Fock matrix and lead to instability in SCF for low-dimensional systems.
+  DM is normalized wrt the number of electrons 164.0
+ ** Mulliken pop on meta-lowdin orthogonal AOs **
+ ** Mulliken pop  **
+pop of  0 Cu1 3s          2.10892
+pop of  0 Cu1 4s          1.20988
+pop of  0 Cu1 5s          0.00390
+pop of  0 Cu1 3px         1.92893
+pop of  0 Cu1 3py         1.92891
+pop of  0 Cu1 3pz         1.91442
+pop of  0 Cu1 4px         0.00071
+pop of  0 Cu1 4py         0.00029
+pop of  0 Cu1 4pz         0.00007
+pop of  0 Cu1 5px         0.00732
+pop of  0 Cu1 5py         0.00640
+pop of  0 Cu1 5pz         0.00137
+pop of  0 Cu1 3dxy        1.91375
+pop of  0 Cu1 3dyz        1.91380
+pop of  0 Cu1 3dz^2       1.91361
+pop of  0 Cu1 3dxz        1.91380
+pop of  0 Cu1 3dx2-y2     1.91333
+pop of  0 Cu1 4dxy        0.00138
+pop of  0 Cu1 4dyz        0.00054
+pop of  0 Cu1 4dz^2       0.00036
+pop of  0 Cu1 4dxz        0.00052
+pop of  0 Cu1 4dx2-y2     0.00008
+pop of  0 Cu1 4f-3        0.00000
+pop of  0 Cu1 4f-2        0.00001
+pop of  0 Cu1 4f-1        0.00001
+pop of  0 Cu1 4f+0        0.00000
+pop of  0 Cu1 4f+1        0.00000
+pop of  0 Cu1 4f+2        0.00000
+pop of  0 Cu1 4f+3        0.00001
+pop of  1 Cu1 3s          2.10837
+pop of  1 Cu1 4s          1.20209
+pop of  1 Cu1 5s          0.00390
+pop of  1 Cu1 3px         1.92919
+pop of  1 Cu1 3py         1.92918
+pop of  1 Cu1 3pz         1.91442
+pop of  1 Cu1 4px         0.00067
+pop of  1 Cu1 4py         0.00026
+pop of  1 Cu1 4pz         0.00009
+pop of  1 Cu1 5px         0.00719
+pop of  1 Cu1 5py         0.00597
+pop of  1 Cu1 5pz         0.00137
+pop of  1 Cu1 3dxy        1.91377
+pop of  1 Cu1 3dyz        1.91380
+pop of  1 Cu1 3dz^2       1.91361
+pop of  1 Cu1 3dxz        1.91380
+pop of  1 Cu1 3dx2-y2     1.91333
+pop of  1 Cu1 4dxy        0.00127
+pop of  1 Cu1 4dyz        0.00061
+pop of  1 Cu1 4dz^2       0.00036
+pop of  1 Cu1 4dxz        0.00060
+pop of  1 Cu1 4dx2-y2     0.00008
+pop of  1 Cu1 4f-3        0.00000
+pop of  1 Cu1 4f-2        0.00002
+pop of  1 Cu1 4f-1        0.00000
+pop of  1 Cu1 4f+0        0.00000
+pop of  1 Cu1 4f+1        0.00000
+pop of  1 Cu1 4f+2        0.00000
+pop of  1 Cu1 4f+3        0.00001
+pop of  2 Cu2 3s          2.10967
+pop of  2 Cu2 4s          1.21766
+pop of  2 Cu2 5s          0.00392
+pop of  2 Cu2 3px         1.92871
+pop of  2 Cu2 3py         1.92915
+pop of  2 Cu2 3pz         1.91442
+pop of  2 Cu2 4px         0.00072
+pop of  2 Cu2 4py         0.00025
+pop of  2 Cu2 4pz         0.00007
+pop of  2 Cu2 5px         0.00763
+pop of  2 Cu2 5py         0.00591
+pop of  2 Cu2 5pz         0.00137
+pop of  2 Cu2 3dxy        1.91376
+pop of  2 Cu2 3dyz        1.91380
+pop of  2 Cu2 3dz^2       1.91361
+pop of  2 Cu2 3dxz        1.91380
+pop of  2 Cu2 3dx2-y2     1.91333
+pop of  2 Cu2 4dxy        0.00132
+pop of  2 Cu2 4dyz        0.00059
+pop of  2 Cu2 4dz^2       0.00035
+pop of  2 Cu2 4dxz        0.00054
+pop of  2 Cu2 4dx2-y2     0.00010
+pop of  2 Cu2 4f-3        0.00000
+pop of  2 Cu2 4f-2        0.00002
+pop of  2 Cu2 4f-1        0.00000
+pop of  2 Cu2 4f+0        0.00000
+pop of  2 Cu2 4f+1        0.00000
+pop of  2 Cu2 4f+2        0.00000
+pop of  2 Cu2 4f+3        0.00001
+pop of  3 Cu2 3s          2.10960
+pop of  3 Cu2 4s          1.21739
+pop of  3 Cu2 5s          0.00392
+pop of  3 Cu2 3px         1.92906
+pop of  3 Cu2 3py         1.92876
+pop of  3 Cu2 3pz         1.91442
+pop of  3 Cu2 4px         0.00066
+pop of  3 Cu2 4py         0.00030
+pop of  3 Cu2 4pz         0.00008
+pop of  3 Cu2 5px         0.00722
+pop of  3 Cu2 5py         0.00645
+pop of  3 Cu2 5pz         0.00138
+pop of  3 Cu2 3dxy        1.91376
+pop of  3 Cu2 3dyz        1.91380
+pop of  3 Cu2 3dz^2       1.91361
+pop of  3 Cu2 3dxz        1.91380
+pop of  3 Cu2 3dx2-y2     1.91333
+pop of  3 Cu2 4dxy        0.00139
+pop of  3 Cu2 4dyz        0.00053
+pop of  3 Cu2 4dz^2       0.00035
+pop of  3 Cu2 4dxz        0.00061
+pop of  3 Cu2 4dx2-y2     0.00010
+pop of  3 Cu2 4f-3        0.00000
+pop of  3 Cu2 4f-2        0.00002
+pop of  3 Cu2 4f-1        0.00000
+pop of  3 Cu2 4f+0        0.00000
+pop of  3 Cu2 4f+1        0.00000
+pop of  3 Cu2 4f+2        0.00000
+pop of  3 Cu2 4f+3        0.00001
+pop of  4 O 2s            1.89064
+pop of  4 O 3s            0.00008
+pop of  4 O 2px           1.27594
+pop of  4 O 2py           1.27058
+pop of  4 O 2pz           1.20632
+pop of  4 O 3px           0.00009
+pop of  4 O 3py           0.00025
+pop of  4 O 3pz           0.00478
+pop of  4 O 3dxy          0.00001
+pop of  4 O 3dyz          0.00000
+pop of  4 O 3dz^2         0.00000
+pop of  4 O 3dxz          0.00072
+pop of  4 O 3dx2-y2       0.00000
+pop of  5 O 2s            1.90521
+pop of  5 O 3s            0.00273
+pop of  5 O 2px           1.26711
+pop of  5 O 2py           1.30936
+pop of  5 O 2pz           1.20638
+pop of  5 O 3px           0.00002
+pop of  5 O 3py           0.01244
+pop of  5 O 3pz           0.00494
+pop of  5 O 3dxy          0.00000
+pop of  5 O 3dyz          0.00071
+pop of  5 O 3dz^2         0.00008
+pop of  5 O 3dxz          0.00000
+pop of  5 O 3dx2-y2       0.00031
+pop of  6 O 2s            1.88517
+pop of  6 O 3s            0.00012
+pop of  6 O 2px           1.28130
+pop of  6 O 2py           1.27053
+pop of  6 O 2pz           1.20637
+pop of  6 O 3px           0.00007
+pop of  6 O 3py           0.00026
+pop of  6 O 3pz           0.00494
+pop of  6 O 3dxy          0.00001
+pop of  6 O 3dyz          0.00000
+pop of  6 O 3dz^2         0.00000
+pop of  6 O 3dxz          0.00071
+pop of  6 O 3dx2-y2       0.00001
+pop of  7 O 2s            1.91119
+pop of  7 O 3s            0.00271
+pop of  7 O 2px           1.26712
+pop of  7 O 2py           1.30305
+pop of  7 O 2pz           1.20632
+pop of  7 O 3px           0.00003
+pop of  7 O 3py           0.01271
+pop of  7 O 3pz           0.00478
+pop of  7 O 3dxy          0.00000
+pop of  7 O 3dyz          0.00072
+pop of  7 O 3dz^2         0.00008
+pop of  7 O 3dxz          0.00000
+pop of  7 O 3dx2-y2       0.00031
+pop of  8 O 2s            1.90613
+pop of  8 O 3s            0.00297
+pop of  8 O 2px           1.26710
+pop of  8 O 2py           1.30579
+pop of  8 O 2pz           1.20629
+pop of  8 O 3px           0.00005
+pop of  8 O 3py           0.01239
+pop of  8 O 3pz           0.00474
+pop of  8 O 3dxy          0.00000
+pop of  8 O 3dyz          0.00073
+pop of  8 O 3dz^2         0.00008
+pop of  8 O 3dxz          0.00000
+pop of  8 O 3dx2-y2       0.00033
+pop of  9 O 2s            1.88654
+pop of  9 O 3s            0.00004
+pop of  9 O 2px           1.27824
+pop of  9 O 2py           1.27055
+pop of  9 O 2pz           1.20631
+pop of  9 O 3px           0.00005
+pop of  9 O 3py           0.00024
+pop of  9 O 3pz           0.00479
+pop of  9 O 3dxy          0.00001
+pop of  9 O 3dyz          0.00000
+pop of  9 O 3dz^2         0.00000
+pop of  9 O 3dxz          0.00073
+pop of  9 O 3dx2-y2       0.00000
+pop of  10 O 2s           1.90903
+pop of  10 O 3s           0.00290
+pop of  10 O 2px          1.26713
+pop of  10 O 2py          1.30500
+pop of  10 O 2pz          1.20630
+pop of  10 O 3px          0.00002
+pop of  10 O 3py          0.01235
+pop of  10 O 3pz          0.00477
+pop of  10 O 3dxy         0.00000
+pop of  10 O 3dyz         0.00072
+pop of  10 O 3dz^2        0.00007
+pop of  10 O 3dxz         0.00000
+pop of  10 O 3dx2-y2      0.00033
+pop of  11 O 2s           1.88821
+pop of  11 O 3s           0.00007
+pop of  11 O 2px          1.27721
+pop of  11 O 2py          1.27062
+pop of  11 O 2pz          1.20630
+pop of  11 O 3px          0.00001
+pop of  11 O 3py          0.00025
+pop of  11 O 3pz          0.00469
+pop of  11 O 3dxy         0.00002
+pop of  11 O 3dyz         0.00000
+pop of  11 O 3dz^2        0.00000
+pop of  11 O 3dxz         0.00073
+pop of  11 O 3dx2-y2      0.00000
+pop of  12 Ca 3s          2.27858
+pop of  12 Ca 4s          3.50021
+pop of  12 Ca 5s          0.00003
+pop of  12 Ca 3px         1.54386
+pop of  12 Ca 3py         1.60335
+pop of  12 Ca 3pz         1.80511
+pop of  12 Ca 4px         0.09588
+pop of  12 Ca 4py         0.09555
+pop of  12 Ca 4pz         0.00003
+pop of  12 Ca 5px         0.04021
+pop of  12 Ca 5py         0.00316
+pop of  12 Ca 5pz         0.00003
+pop of  12 Ca 3dxy        0.00000
+pop of  12 Ca 3dyz        0.00000
+pop of  12 Ca 3dz^2       0.00001
+pop of  12 Ca 3dxz        0.00000
+pop of  12 Ca 3dx2-y2     0.00001
+pop of  12 Ca 4dxy        0.00002
+pop of  12 Ca 4dyz        0.00000
+pop of  12 Ca 4dz^2       0.00006
+pop of  12 Ca 4dxz        0.00000
+pop of  12 Ca 4dx2-y2     0.00016
+pop of  13 Ca 3s          2.24854
+pop of  13 Ca 4s          3.50365
+pop of  13 Ca 5s          0.00017
+pop of  13 Ca 3px         1.54967
+pop of  13 Ca 3py         1.60024
+pop of  13 Ca 3pz         1.81194
+pop of  13 Ca 4px         0.09456
+pop of  13 Ca 4py         0.09465
+pop of  13 Ca 4pz         0.00034
+pop of  13 Ca 5px         0.04416
+pop of  13 Ca 5py         0.00309
+pop of  13 Ca 5pz         0.00008
+pop of  13 Ca 3dxy        0.00000
+pop of  13 Ca 3dyz        0.00001
+pop of  13 Ca 3dz^2       0.00002
+pop of  13 Ca 3dxz        0.00001
+pop of  13 Ca 3dx2-y2     0.00002
+pop of  13 Ca 4dxy        0.00001
+pop of  13 Ca 4dyz        0.00001
+pop of  13 Ca 4dz^2       0.00007
+pop of  13 Ca 4dxz        0.00001
+pop of  13 Ca 4dx2-y2     0.00027
+pop of  14 Ca 3s          2.26555
+pop of  14 Ca 4s          3.50318
+pop of  14 Ca 5s          0.00012
+pop of  14 Ca 3px         1.54413
+pop of  14 Ca 3py         1.60199
+pop of  14 Ca 3pz         1.80821
+pop of  14 Ca 4px         0.09554
+pop of  14 Ca 4py         0.09507
+pop of  14 Ca 4pz         0.00014
+pop of  14 Ca 5px         0.04056
+pop of  14 Ca 5py         0.00313
+pop of  14 Ca 5pz         0.00007
+pop of  14 Ca 3dxy        0.00000
+pop of  14 Ca 3dyz        0.00000
+pop of  14 Ca 3dz^2       0.00001
+pop of  14 Ca 3dxz        0.00000
+pop of  14 Ca 3dx2-y2     0.00002
+pop of  14 Ca 4dxy        0.00001
+pop of  14 Ca 4dyz        0.00000
+pop of  14 Ca 4dz^2       0.00006
+pop of  14 Ca 4dxz        0.00001
+pop of  14 Ca 4dx2-y2     0.00012
+pop of  15 Ca 3s          2.26495
+pop of  15 Ca 4s          3.50501
+pop of  15 Ca 5s          0.00013
+pop of  15 Ca 3px         1.54505
+pop of  15 Ca 3py         1.60200
+pop of  15 Ca 3pz         1.80575
+pop of  15 Ca 4px         0.09615
+pop of  15 Ca 4py         0.09507
+pop of  15 Ca 4pz         0.00003
+pop of  15 Ca 5px         0.04107
+pop of  15 Ca 5py         0.00313
+pop of  15 Ca 5pz         0.00002
+pop of  15 Ca 3dxy        0.00000
+pop of  15 Ca 3dyz        0.00000
+pop of  15 Ca 3dz^2       0.00002
+pop of  15 Ca 3dxz        0.00000
+pop of  15 Ca 3dx2-y2     0.00002
+pop of  15 Ca 4dxy        0.00001
+pop of  15 Ca 4dyz        0.00001
+pop of  15 Ca 4dz^2       0.00007
+pop of  15 Ca 4dxz        0.00000
+pop of  15 Ca 4dx2-y2     0.00012
+ ** Mulliken atomic charges  **
+charge of    0Cu1 =      0.31768
+charge of    1Cu1 =      0.32603
+charge of    2Cu2 =      0.30929
+charge of    3Cu2 =      0.30943
+charge of    4O =      0.35057
+charge of    5O =      0.29071
+charge of    6O =      0.35051
+charge of    7O =      0.29098
+charge of    8O =      0.29341
+charge of    9O =      0.35249
+charge of   10O =      0.29136
+charge of   11O =      0.35188
+charge of   12Ca =     -0.96626
+charge of   13Ca =     -0.95154
+charge of   14Ca =     -0.95792
+charge of   15Ca =     -0.95861
+
+WARN: ke_cutoff/mesh (60 / [53 53 23]) is not enough for FFTDF to get integral accuracy 1e-08.
+Coulomb integral error is ~ 5.3e+03 Eh.
+Recommended ke_cutoff/mesh are 1200.94 / [229 229  95].
+
+
+
+******** <class 'pyscf.pbc.scf.khf.KRHF'> ********
+method = KRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-06
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /resnick/scratch/yangjunjie/cco-fftdf-60/51614072/tmp21ko6ilv
+max_memory 262144 MB (current use 336 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 1
+kpts = [[0. 0. 0.]]
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.1799679777103284
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -14.7573741722
+DF object = <pyscf.pbc.df.fft.FFTDF object at 0x7f4dd936dab0>
+Set gradient conv threshold to 0.001
+slurmstepd: error: *** JOB 51614072 ON hpc-19-32 CANCELLED AT 2025-07-09T14:01:53 ***
