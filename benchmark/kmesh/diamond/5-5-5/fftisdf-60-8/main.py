@@ -13,7 +13,7 @@ def main(config: dict):
     nkpt = nimg = len(kpts)
 
     dm0 = config["dm0"]
-    nao = dm0.shape[0]
+    nao = cell.nao_nr()
     natm = cell.natm
 
     log = open("out.log", "w")
