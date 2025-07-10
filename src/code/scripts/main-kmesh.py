@@ -70,6 +70,7 @@ def main(config: dict):
     cc_obj = KCCSD(scf_obj)
     cc_obj.verbose = 10
     eris = cc_obj.ao2mo()
+    cc_obj.conv_tol = 1e-6
     cc_obj.kernel(eris=eris)
     ene_kccsd = cc_obj.e_tot
     ene_corr_kccsd = cc_obj.e_corr
