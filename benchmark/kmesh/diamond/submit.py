@@ -10,7 +10,8 @@ def loop():
     df_method = ['fftisdf', 'gdf', 'fftdf', 'rsdf']
     kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3']
     kmesh += ['3-3-4', '3-4-4', '4-4-4', '4-4-5', '4-5-5', '5-5-5']
-    kmesh += ['5-5-6', '5-6-6', '6-6-6']
+    kmesh += ['5-5-6', '5-6-6', '6-6-6', '6-6-8', '6-8-8', '8-8-8']
+    kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
     from itertools import product
     configs = [{'basis': basis, 'density-fitting-method': d, 'kmesh': k} for d, k in product(df_method, kmesh)]
