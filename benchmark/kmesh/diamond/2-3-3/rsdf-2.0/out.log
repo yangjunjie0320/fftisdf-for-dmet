@@ -1,0 +1,17 @@
+method = rsdf-2.0
+basis = cc-pvdz
+natm = 2
+nkpt = 18
+nao = 18
+time_build_df =  10.16
+naux = 168
+time_krks =   9.46
+ene_krks = -11.34046546
+time_krhf =  28.91
+ene_krhf = -11.02146876
+time_kmp2 =   2.91
+ene_kmp2 = -11.27376689
+ene_corr_kmp2 =  -0.25229814
+time_kccsd =  3312.48
+ene_kccsd = -11.27631374
+ene_corr_kccsd =  -0.25484498

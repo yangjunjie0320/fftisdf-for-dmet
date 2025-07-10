@@ -1,7 +1,7 @@
 method="kmesh"
 mkdir -p $method; cd $method
 
-for cell in diamond; do
+for cell in diamond co2; do
     mkdir -p $cell
 
     cd $cell; cp ../../submit.py .

@@ -26,6 +26,13 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
             'fftdf': 'fftdf-60',
             'gdf': 'gdf-2.0',
             'rsdf': 'rsdf-2.0',
+        },
+
+        'co2': {
+            'fftisdf': 'fftisdf-140-10',
+            'fftdf': 'fftdf-140',
+            'gdf': 'gdf-2.0',
+            'rsdf': 'rsdf-2.0',
         }
     }
 

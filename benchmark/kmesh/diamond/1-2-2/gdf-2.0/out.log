@@ -1,0 +1,17 @@
+method = gdf-2.0
+basis = cc-pvdz
+natm = 2
+nkpt = 4
+nao = 4
+time_build_df =   3.08
+naux = 168
+time_krks =   4.60
+ene_krks = -11.09562455
+time_krhf =   2.44
+ene_krhf = -10.82924854
+time_kmp2 =   0.09
+ene_kmp2 = -11.05827288
+ene_corr_kmp2 =  -0.22902434
+time_kccsd =  20.32
+ene_kccsd = -11.07565358
+ene_corr_kccsd =  -0.24640504
