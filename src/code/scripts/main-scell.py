@@ -8,6 +8,9 @@ def main(config: dict):
     build(config)
 
     cell = config["scell"]
+    cell.verbose = 5
+    cell.build(dump_input=False)
+
     df_obj = config["df"]
     kpts = config["kpts"]
     nkpt = nimg = len(kpts)
@@ -42,6 +45,7 @@ def main(config: dict):
     scf_obj = pyscf.pbc.dft.RKS(cell)
     scf_obj.xc = "pbe"
     scf_obj.exxdiv = "ewald"
+    scf_obj.verbose = 4
     ene_krks = scf_obj.kernel()
     log.write("time_krks = % 6.2f\n" % (time.time() - t0))
     log.write("ene_krks = % 12.8f\n" % ene_krks)
@@ -49,7 +53,9 @@ def main(config: dict):
 
     t0 = time.time()
     scf_obj = config["mf"]
+    scf_obj = pyscf.pbc.scf.RHF(cell)
     scf_obj.exxdiv = "ewald"
+    scf_obj.verbose = 4
     ene_krhf = scf_obj.kernel()
     log.write("time_krhf = % 6.2f\n" % (time.time() - t0))
     log.write("ene_krhf = % 12.8f\n" % ene_krhf)

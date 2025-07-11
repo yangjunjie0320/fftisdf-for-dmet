@@ -1,7 +1,7 @@
 method="scell"
 mkdir -p $method; cd $method
 
-for cell in diamond co2; do
+for cell in diamond; do
     mkdir -p $cell
 
     cd $cell; cp ../../submit.py .
