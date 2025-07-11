@@ -42,7 +42,7 @@ def main(config: dict):
     scf_obj = pyscf.pbc.dft.RKS(cell)
     scf_obj.xc = "pbe"
     scf_obj.exxdiv = "ewald"
-    ene_krks = scf_obj.kernel()
+    ene_krks = scf_obj.kernel(dm0)
     log.write("time_krks = % 6.2f\n" % (time.time() - t0))
     log.write("ene_krks = % 12.8f\n" % ene_krks)
     log.flush()
@@ -50,7 +50,7 @@ def main(config: dict):
     t0 = time.time()
     scf_obj = config["mf"]
     scf_obj.exxdiv = "ewald"
-    ene_krhf = scf_obj.kernel()
+    ene_krhf = scf_obj.kernel(dm0)
     log.write("time_krhf = % 6.2f\n" % (time.time() - t0))
     log.write("ene_krhf = % 12.8f\n" % ene_krhf)
     log.flush()

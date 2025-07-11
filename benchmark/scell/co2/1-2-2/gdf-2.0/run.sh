@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --reservation=changroup_standingres
-#SBATCH --job-name=diamond-fftisdf-60-8
+#SBATCH --job-name=co2-gdf-2.0
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=8gb
-#SBATCH --time=20:00:00
+#SBATCH --time=10:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
@@ -17,8 +17,8 @@ readlink -f $HOME/anaconda3/bin/activate
 source $HOME/anaconda3/bin/activate fftisdf
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK;
-export MKL_NUM_THREADS=4;
-export OPENBLAS_NUM_THREADS=4;
+export MKL_NUM_THREADS=1;
+export OPENBLAS_NUM_THREADS=1;
 export PYSCF_MAX_MEMORY=$((SLURM_MEM_PER_CPU * SLURM_CPUS_PER_TASK))
 
 echo OMP_NUM_THREADS = $OMP_NUM_THREADS
@@ -38,6 +38,6 @@ export PYTHONPATH=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
-cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-kmesh.py main.py
-python -u main.py --basis=cc-pvdz --density-fitting-method=fftisdf-60-8 --kmesh=10-10-10 --name=diamond --init-guess-method=minao
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-scell.py main.py
+python main.py --basis=cc-pvdz --density-fitting-method=gdf-2.0 --kmesh=1-2-2 --name=co2 --init-guess-method=minao
 echo "End time = $(date)"
