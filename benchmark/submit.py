@@ -8,7 +8,7 @@ from pathlib import Path
 def loop():
     basis = 'cc-pvdz'
     # df_method = ['fftisdf', 'gdf', 'fftdf', 'rsdf']
-    df_method = ['gdf', 'fftdf']
+    df_method = ['fftdf']
     kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3']
     kmesh += ['3-3-4', '3-4-4', '4-4-4', '4-4-5', '4-5-5', '5-5-5']
     kmesh += ['5-5-6', '5-6-6', '6-6-6']
