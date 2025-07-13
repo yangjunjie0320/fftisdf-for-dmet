@@ -2,7 +2,7 @@
 #SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=diamond-fftisdf-60-8
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=64
 #SBATCH --mem-per-cpu=8gb
 #SBATCH --time=20:00:00
 
