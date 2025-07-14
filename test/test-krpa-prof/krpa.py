@@ -5,14 +5,14 @@ import numpy, scipy
 
 import pyscf
 from pyscf import lib
-from pyscf.lib.logger import new_logger
-from pyscf.lib.logger import process_clock, perf_counter
-
 from pyscf.pbc import gto, scf, df
 from pyscf.gw.gw_ac import _get_scaled_legendre_roots
 
 import fft
 
+from line_profiler import profile
+
+@profile
 def krpa_pol_with_isdf(mp_obj, nw=20):
     fswap = getattr(mp_obj, '_fswap', None)
     if fswap is None:
@@ -80,8 +80,9 @@ def krpa_pol_with_isdf(mp_obj, nw=20):
             pol_f_q = None
     return polw_kpt
 
+@profile
 def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
-
+    from lib.logger import new_logger, perf_timer, proc_timer
     log = new_logger(mp_obj, 5)
 
     fswap = getattr(mp_obj, '_fswap', None)
@@ -119,22 +120,20 @@ def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
     kscaled -= kscaled[0]
 
     e_corr = 0.0
-    
-    for q, kq in enumerate(kpts):
-        t0 = (process_clock(), perf_counter())
-        coul_q = coul_kpt[q]
+    for ifreq, (freq, weig) in enumerate(zip(*_get_scaled_legendre_roots(nw))):
+        for q, kq in enumerate(kpts):
+            t0 = (proc_timer(), perf_timer())
 
-        for ifreq, (freq, weig) in enumerate(zip(*_get_scaled_legendre_roots(nw))):
+            coul_q = coul_kpt[q]
             polw_q = polw_kpt[ifreq, q]
             pq = lib.dot(coul_q, polw_q.T)
 
             dq = numpy.linalg.det(numpy.eye(nip) - pq)
             e_corr_wq = numpy.log(dq) + numpy.trace(pq)
             e_corr += e_corr_wq.real * weig / 2 / numpy.pi / nkpt
-            polw_q = None
 
-        coul_q = None
-        log.timer("RPA q = %d" % q, *t0)
+            polw_q = coul_q = None
+            log.timer("ifreq = %d, q = %d" % (ifreq, q), *t0)
 
     fswap.close()
     return e_corr
@@ -171,7 +170,6 @@ if __name__ == "__main__":
 
     from pyscf.pbc import mp
     kmp = mp.KMP2(kmf)
-
     polw_kpt = krpa_pol_with_isdf(kmp, nw=20)
     e_corr_krpa = krpa_corr_energy_with_isdf(kmp, nw=20, polw_kpt=polw_kpt)
     print("e_corr_krpa = % 12.8f" % e_corr_krpa)

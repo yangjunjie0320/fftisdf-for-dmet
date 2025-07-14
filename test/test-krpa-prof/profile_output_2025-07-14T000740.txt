@@ -1,0 +1,136 @@
+Timer unit: 1e-09 s
+
+Total time: 2.90571 s
+File: /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-krpa-prof/krpa.py
+Function: krpa_corr_energy_with_isdf at line 83
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    83                                           @profile
+    84                                           def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
+    85         1       8504.0   8504.0      0.0      fswap = getattr(mp_obj, '_fswap', None)
+    86         1        345.0    345.0      0.0      assert fswap is not None
+    87                                               
+    88         1       6886.0   6886.0      0.0      kmf_obj = mp_obj._scf
+    89         1       9008.0   9008.0      0.0      cell = kmf_obj.cell
+    90         1      81974.0  81974.0      0.0      nao = cell.nao_nr()
+    91         1      24560.0  24560.0      0.0      kpts = kmf_obj.kpts
+    92         1        867.0    867.0      0.0      nkpt = len(kpts)
+    93                                           
+    94         1        642.0    642.0      0.0      kconserv3 = kmf_obj.with_df.kconserv3
+    95         1        346.0    346.0      0.0      kconserv2 = kmf_obj.with_df.kconserv2
+    96                                           
+    97         1      61614.0  61614.0      0.0      e_kpt = numpy.array(kmf_obj.mo_energy)
+    98         1     200946.0 200946.0      0.0      c_kpt = numpy.array(kmf_obj.mo_coeff)
+    99         1      45032.0  45032.0      0.0      n_kpt = numpy.array(kmf_obj.mo_occ)
+   100         1     995241.0 995241.0      0.0      nmo = mp_obj.nmo
+   101         1     725200.0 725200.0      0.0      nocc = mp_obj.nocc
+   102         1        562.0    562.0      0.0      nvir = nmo - nocc
+   103         1        490.0    490.0      0.0      nov = nocc * nvir
+   104         1       1724.0   1724.0      0.0      assert e_kpt.shape == (nkpt, nmo)
+   105         1        804.0    804.0      0.0      assert c_kpt.shape == (nkpt, nao, nmo)
+   106         1        576.0    576.0      0.0      assert n_kpt.shape == (nkpt, nmo)
+   107                                           
+   108         1       1444.0   1444.0      0.0      df_obj = kmf_obj.with_df
+   109         1       5220.0   5220.0      0.0      assert isinstance(df_obj, fft.ISDF)
+   110         1      10048.0  10048.0      0.0      inpv_kpt = df_obj.inpv_kpt
+   111         1       3746.0   3746.0      0.0      coul_kpt = df_obj.coul_kpt
+   112         1        602.0    602.0      0.0      nip = inpv_kpt.shape[1]
+   113         1        476.0    476.0      0.0      assert inpv_kpt.shape == (nkpt, nip, nao)
+   114         1        414.0    414.0      0.0      assert coul_kpt.shape == (nkpt, nip, nip)
+   115                                           
+   116         1     110466.0 110466.0      0.0      kscaled = cell.get_scaled_kpts(kpts)
+   117         1      14358.0  14358.0      0.0      kscaled -= kscaled[0]
+   118                                           
+   119         1        252.0    252.0      0.0      e_corr = 0.0
+   120        21    1147467.0  54641.3      0.0      for ifreq, (freq, weig) in enumerate(zip(*_get_scaled_legendre_roots(nw))):
+   121      1300    2464433.0   1895.7      0.1          for q, kq in enumerate(kpts):
+   122      1280    1488046.0   1162.5      0.1              coul_q = coul_kpt[q]
+   123      1280  571798207.0 446717.3     19.7              polw_q = polw_kpt[ifreq, q]
+   124      1280  719883523.0 562409.0     24.8              pq = lib.dot(coul_q, polw_q.T)
+   125                                           
+   126      1280 1404897582.0    1e+06     48.3              dq = numpy.linalg.det(numpy.eye(nip) - pq)
+   127      1280   33630500.0  26273.8      1.2              e_corr_wq = numpy.log(dq) + numpy.trace(pq)
+   128      1280    4400162.0   3437.6      0.2              e_corr += e_corr_wq.real * weig / 2 / numpy.pi / nkpt
+   129                                           
+   130      1280    1628281.0   1272.1      0.1              polw_q = coul_q = None
+   131                                           
+   132         1  162063422.0    2e+08      5.6      fswap.close()
+   133         1        473.0    473.0      0.0      return e_corr
+
+Total time: 87.8141 s
+File: /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-krpa-prof/krpa.py
+Function: krpa_pol_with_isdf at line 15
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    15                                           @profile
+    16                                           def krpa_pol_with_isdf(mp_obj, nw=20):
+    17         1       3029.0   3029.0      0.0      fswap = getattr(mp_obj, '_fswap', None)
+    18         1        485.0    485.0      0.0      if fswap is None:
+    19         1    9502713.0    1e+07      0.0          fswap = lib.H5TmpFile()
+    20         1       1309.0   1309.0      0.0          mp_obj._fswap = fswap
+    21                                               
+    22         1        589.0    589.0      0.0      assert fswap is not None
+    23                                               
+    24         1        735.0    735.0      0.0      kmf_obj = mp_obj._scf
+    25         1       2871.0   2871.0      0.0      cell = kmf_obj.cell
+    26         1      80543.0  80543.0      0.0      nao = cell.nao_nr()
+    27         1       5614.0   5614.0      0.0      kpts = kmf_obj.kpts
+    28         1       1173.0   1173.0      0.0      nkpt = len(kpts)
+    29                                           
+    30         1       8024.0   8024.0      0.0      from pyscf.pbc.lib.kpts_helper import get_kconserv
+    31         1  748942278.0    7e+08      0.9      kconserv3 = get_kconserv(cell, kpts)
+    32         1       6856.0   6856.0      0.0      kconserv2 = kconserv3[:, :, 0].T
+    33                                           
+    34         1      81417.0  81417.0      0.0      e_kpt = numpy.array(kmf_obj.mo_energy)
+    35         1     239230.0 239230.0      0.0      c_kpt = numpy.array(kmf_obj.mo_coeff)
+    36         1      89756.0  89756.0      0.0      n_kpt = numpy.array(kmf_obj.mo_occ)
+    37         1    1074269.0    1e+06      0.0      nmo = mp_obj.nmo
+    38         1     846545.0 846545.0      0.0      nocc = mp_obj.nocc
+    39         1        529.0    529.0      0.0      nvir = nmo - nocc
+    40         1        531.0    531.0      0.0      nov = nocc * nvir
+    41                                           
+    42         1       2895.0   2895.0      0.0      assert e_kpt.shape == (nkpt, nmo)
+    43         1        944.0    944.0      0.0      assert c_kpt.shape == (nkpt, nao, nmo)
+    44         1        657.0    657.0      0.0      assert n_kpt.shape == (nkpt, nmo)
+    45                                           
+    46         1       2061.0   2061.0      0.0      df_obj = kmf_obj.with_df
+    47         1       2407.0   2407.0      0.0      assert isinstance(df_obj, fft.ISDF)
+    48         1       4853.0   4853.0      0.0      inpv_kpt = df_obj.inpv_kpt
+    49         1       2586.0   2586.0      0.0      coul_kpt = df_obj.coul_kpt
+    50         1       1019.0   1019.0      0.0      nip = inpv_kpt.shape[1]
+    51         1        609.0    609.0      0.0      assert inpv_kpt.shape == (nkpt, nip, nao)
+    52         1        492.0    492.0      0.0      assert coul_kpt.shape == (nkpt, nip, nip)
+    53                                           
+    54         1    5680028.0    6e+06      0.0      xo_kpt = [numpy.dot(inpv_kpt[k], c_kpt[k, :, :nocc]) for k in range(nkpt)]
+    55         1     421511.0 421511.0      0.0      xo_kpt = numpy.array(xo_kpt).reshape(nkpt, nip, nocc)
+    56         1    4133247.0    4e+06      0.0      xv_kpt = [numpy.dot(inpv_kpt[k], c_kpt[k, :, nocc:]) for k in range(nkpt)]
+    57         1     867498.0 867498.0      0.0      xv_kpt = numpy.array(xv_kpt).reshape(nkpt, nip, nvir)
+    58                                           
+    59         1     364561.0 364561.0      0.0      polw_kpt = fswap.create_dataset('polw_kpt', (nw, nkpt, nip, nip), dtype=numpy.complex128)
+    60                                           
+    61        21    1216774.0  57941.6      0.0      for ifreq, (freq, weig) in enumerate(zip(*_get_scaled_legendre_roots(nw))):
+    62      1300     547723.0    421.3      0.0          for q in range(nkpt):
+    63      1280   24267262.0  18958.8      0.0              pol_f_q = numpy.zeros((nip, nip), dtype=numpy.complex128)
+    64   5244160 1710048056.0    326.1      1.9              for (ki, ka) in product(range(nkpt), repeat=2):
+    65   5242880 3553517572.0    677.8      4.0                  if not kconserv2[ki, ka] == q:
+    66   5160960 1182861991.0    229.2      1.3                      continue
+    67                                           
+    68     81920  752687957.0   9188.1      0.9                  eov = e_kpt[ki, :nocc, None] - e_kpt[ka, None, nocc:]
+    69     81920  574681143.0   7015.2      0.7                  dov = eov / (freq ** 2 + eov ** 2)
+    70     81920  177959474.0   2172.4      0.2                  dov = dov.reshape(nov)
+    71                                                           
+    72     81920  447321131.0   5460.5      0.5                  xi = xo_kpt[ki].conj().reshape(nip, nocc, 1)
+    73     81920   93886292.0   1146.1      0.1                  xa = xv_kpt[ka].reshape(nip, 1, nvir)
+    74     81920 7828001737.0  95556.7      8.9                  rov = xi * xa
+    75     81920   85024159.0   1037.9      0.1                  rov = rov.reshape(nip, nov)
+    76                                                           
+    77     81920 2962094384.0  36158.4      3.4                  lov = rov * dov
+    78     81920        7e+10 815789.1     76.1                  pol_f_q += lib.dot(lov, rov.conj().T) * 4 / nkpt
+    79      1280  815508493.0 637116.0      0.9              polw_kpt[ifreq, q] = pol_f_q
+    80      1280    2686852.0   2099.1      0.0              pol_f_q = None
+    81         1        186.0    186.0      0.0      return polw_kpt
+
+  2.91 seconds - /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-krpa-prof/krpa.py:83 - krpa_corr_energy_with_isdf
+ 87.81 seconds - /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-krpa-prof/krpa.py:15 - krpa_pol_with_isdf

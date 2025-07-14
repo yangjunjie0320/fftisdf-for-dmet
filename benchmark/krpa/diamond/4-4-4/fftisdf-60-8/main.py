@@ -1,7 +1,7 @@
 import os, sys, numpy, time
 
-import pyscf, libdmet, fft
-import libdmet.basis.trans_2e
+import pyscf, fft
+from pyscf import lib
 
 def main(config: dict):
     from utils import build
@@ -49,17 +49,19 @@ def main(config: dict):
     from pyscf.pbc.mp import KMP2
     mp_obj = KMP2(scf_obj)
     mp_obj.verbose = 10
-    
+
     from krpa import krpa_pol_with_isdf, krpa_corr_energy_with_isdf
     t0 = time.time()
-    polw_kpt = krpa_pol_with_isdf(mp_obj, nw=20)
+    nw = 40
+    polw_kpt = krpa_pol_with_isdf(mp_obj, nw=nw)
     log.write("time_polw_kpt = % 6.2f\n" % (time.time() - t0))
     log.flush()
 
     t0 = time.time()
-    e_corr_krpa = krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=polw_kpt)
+    e_corr_krpa = krpa_corr_energy_with_isdf(mp_obj, nw=nw, polw_kpt=polw_kpt)
     log.write("time_krpa = % 6.2f\n" % (time.time() - t0))
-    log.write("ene_krpa = % 12.8f\n" % e_corr_krpa)
+    log.write("ene_krpa = % 12.8f\n" % (e_corr_krpa + ene_krhf))
+    log.write("corr_krpa = % 12.8f\n" % e_corr_krpa)
     log.flush()
 
 if __name__ == "__main__":

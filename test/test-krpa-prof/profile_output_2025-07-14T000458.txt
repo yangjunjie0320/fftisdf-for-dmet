@@ -1,0 +1,78 @@
+Timer unit: 1e-09 s
+
+Total time: 4.149e-06 s
+File: /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-krpa-prof/krpa.py
+Function: krpa_pol_with_isdf at line 15
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    15                                           @profile
+    16                                           def krpa_pol_with_isdf(mp_obj, nw=20):
+    17         1       4149.0   4149.0    100.0      print("mp_obj._fswap = %s" % mp_obj._fswap)
+    18                                           
+    19                                               kmf_obj = mp_obj._scf
+    20                                               cell = kmf_obj.cell
+    21                                               nao = cell.nao_nr()
+    22                                               kpts = kmf_obj.kpts
+    23                                               nkpt = len(kpts)
+    24                                           
+    25                                               from pyscf.pbc.lib.kpts_helper import get_kconserv
+    26                                               kconserv3 = get_kconserv(cell, kpts)
+    27                                               kconserv2 = kconserv3[:, :, 0].T
+    28                                           
+    29                                               e_kpt = numpy.array(kmf_obj.mo_energy)
+    30                                               c_kpt = numpy.array(kmf_obj.mo_coeff)
+    31                                               n_kpt = numpy.array(kmf_obj.mo_occ)
+    32                                               nmo = mp_obj.nmo
+    33                                               nocc = mp_obj.nocc
+    34                                               nvir = nmo - nocc
+    35                                               nov = nocc * nvir
+    36                                           
+    37                                               assert e_kpt.shape == (nkpt, nmo)
+    38                                               assert c_kpt.shape == (nkpt, nao, nmo)
+    39                                               assert n_kpt.shape == (nkpt, nmo)
+    40                                           
+    41                                               df_obj = kmf_obj.with_df
+    42                                               assert isinstance(df_obj, fft.ISDF)
+    43                                               inpv_kpt = df_obj.inpv_kpt
+    44                                               coul_kpt = df_obj.coul_kpt
+    45                                               nip = inpv_kpt.shape[1]
+    46                                               assert inpv_kpt.shape == (nkpt, nip, nao)
+    47                                               assert coul_kpt.shape == (nkpt, nip, nip)
+    48                                           
+    49                                               xo_kpt = [numpy.dot(inpv_kpt[k], c_kpt[k, :, :nocc]) for k in range(nkpt)]
+    50                                               xo_kpt = numpy.array(xo_kpt).reshape(nkpt, nip, nocc)
+    51                                               xv_kpt = [numpy.dot(inpv_kpt[k], c_kpt[k, :, nocc:]) for k in range(nkpt)]
+    52                                               xv_kpt = numpy.array(xv_kpt).reshape(nkpt, nip, nvir)
+    53                                           
+    54                                               fswap = getattr(mp_obj, '_fswap', None)
+    55                                               if fswap is None:
+    56                                                   fswap = lib.H5TmpFile()
+    57                                                   mp_obj._fswap = fswap
+    58                                               
+    59                                               assert fswap is not None
+    60                                               polw_kpt = fswap.create_dataset('polw_kpt', (nw, nkpt, nip, nip), dtype=numpy.complex128)
+    61                                           
+    62                                               for ifreq, (freq, weig) in enumerate(zip(*_get_scaled_legendre_roots(nw))):
+    63                                                   for q in range(nkpt):
+    64                                                       pol_f_q = numpy.zeros((nip, nip), dtype=numpy.complex128)
+    65                                                       for (ki, ka) in product(range(nkpt), repeat=2):
+    66                                                           if not kconserv2[ki, ka] == q:
+    67                                                               continue
+    68                                           
+    69                                                           eov = e_kpt[ki, :nocc, None] - e_kpt[ka, None, nocc:]
+    70                                                           dov = eov / (freq ** 2 + eov ** 2)
+    71                                                           dov = dov.reshape(nov)
+    72                                                           
+    73                                                           xi = xo_kpt[ki].conj().reshape(nip, nocc, 1)
+    74                                                           xa = xv_kpt[ka].reshape(nip, 1, nvir)
+    75                                                           rov = xi * xa
+    76                                                           rov = rov.reshape(nip, nov)
+    77                                                           
+    78                                                           lov = rov * dov
+    79                                                           pol_f_q += lib.dot(lov, rov.conj().T) * 4 / nkpt
+    80                                                       polw_kpt[ifreq, q] = pol_f_q
+    81                                                       pol_f_q = None
+    82                                               return polw_kpt
+
+  0.00 seconds - /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-krpa-prof/krpa.py:15 - krpa_pol_with_isdf
