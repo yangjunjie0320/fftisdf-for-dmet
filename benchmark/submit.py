@@ -11,7 +11,8 @@ def loop():
     df_method = ['fftisdf']
     kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3']
     kmesh += ['3-3-4', '3-4-4', '4-4-4', '4-4-5', '4-5-5', '5-5-5']
-    kmesh += ['5-5-6', '5-6-6', '6-6-6']
+    kmesh += ['5-5-6', '5-6-6', '6-6-6', '6-6-8', '6-8-8', '8-8-8']
+    kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
     from itertools import product
     configs = [{'basis': basis, 'density-fitting-method': d, 'kmesh': k} for d, k in product(df_method, kmesh)]
@@ -65,8 +66,6 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")
-            run_content.insert(1, f"#SBATCH --qos=debug\n")
-            # run_content.insert(1, f"#SBATCH --constraint=icelake\n")
             run_content.insert(1, f"#SBATCH --reservation=changroup_standingres\n")
 
         # convert to absolute path
