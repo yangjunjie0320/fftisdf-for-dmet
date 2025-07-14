@@ -72,9 +72,8 @@ def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
     kpts = kmf_obj.kpts
     nkpt = len(kpts)
 
-    from pyscf.pbc.lib.kpts_helper import get_kconserv
-    kconserv3 = get_kconserv(cell, kpts)
-    kconserv2 = kconserv3[:, :, 0].T
+    kconserv3 = kmf_obj.with_df.kconserv3
+    kconserv2 = kmf_obj.with_df.kconserv2
 
     e_kpt = numpy.array(kmf_obj.mo_energy)
     c_kpt = numpy.array(kmf_obj.mo_coeff)
@@ -98,8 +97,6 @@ def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
     kscaled = cell.get_scaled_kpts(kpts)
     kscaled -= kscaled[0]    
 
-    if polw_kpt is None:
-        polw_kpt = krpa_pol_with_isdf(mp_obj, nw)
     assert polw_kpt.shape == (nw, nkpt, nip, nip)
 
     e_corr = 0.0
