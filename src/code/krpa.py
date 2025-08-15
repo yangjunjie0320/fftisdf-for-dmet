@@ -10,6 +10,7 @@ from pyscf.lib.logger import process_clock, perf_counter
 
 from pyscf.pbc import gto, scf, df
 from pyscf.gw.gw_ac import _get_scaled_legendre_roots
+from pyscf.gw.rpa import _get_clenshaw_curtis_roots
 
 import fft
 
@@ -139,6 +140,77 @@ def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
     fswap.close()
     return e_corr
 
+def kmp2_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
+    log = new_logger(mp_obj, 5)
+
+    fswap = getattr(mp_obj, '_fswap', None)
+    assert fswap is not None
+    
+    kmf_obj = mp_obj._scf
+    cell = kmf_obj.cell
+    nao = cell.nao_nr()
+    kpts = kmf_obj.kpts
+    nkpt = len(kpts)
+
+    kconserv3 = kmf_obj.with_df.kconserv3
+    kconserv2 = kmf_obj.with_df.kconserv2
+
+    e_kpt = numpy.array(kmf_obj.mo_energy)
+    c_kpt = numpy.array(kmf_obj.mo_coeff)
+    n_kpt = numpy.array(kmf_obj.mo_occ)
+    nmo = mp_obj.nmo
+    nocc = mp_obj.nocc
+    nvir = nmo - nocc
+    nov = nocc * nvir
+    assert e_kpt.shape == (nkpt, nmo)
+    assert c_kpt.shape == (nkpt, nao, nmo)
+    assert n_kpt.shape == (nkpt, nmo)
+
+    df_obj = kmf_obj.with_df
+    assert isinstance(df_obj, fft.ISDF)
+    inpv_kpt = df_obj.inpv_kpt
+    coul_kpt = df_obj.coul_kpt
+    nip = inpv_kpt.shape[1]
+    assert inpv_kpt.shape == (nkpt, nip, nao)
+    assert coul_kpt.shape == (nkpt, nip, nip)
+
+    kscaled = cell.get_scaled_kpts(kpts)
+    kscaled -= kscaled[0]
+
+    x, w = _get_clenshaw_curtis_roots(nw)
+    gw_kpt = [w ** 0.25 * numpy.exp(e_kpt[k][:, None] * x) for k in range(nkpt)]
+    gw_kpt = numpy.array(gw_kpt).reshape(nkpt, nmo, nw)
+    go_kpt = gw_kpt[:, :nocc, :]
+    gv_kpt = gw_kpt[:, nocc:, :]
+
+    xo_kpt = [numpy.dot(inpv_kpt[k], c_kpt[k, :, :nocc]) for k in range(nkpt)]
+    xo_kpt = numpy.array(xo_kpt).reshape(nkpt, nip, nocc)
+    xv_kpt = [numpy.dot(inpv_kpt[k], c_kpt[k, :, nocc:]) for k in range(nkpt)]
+    xv_kpt = numpy.array(xv_kpt).reshape(nkpt, nip, nvir)
+
+    e_corr = 0.0
+    for iw in range(nw):
+        tow_kpt = numpy.einsum("kIi,ki,kKi->kIK", xo_kpt, go_kpt[:, :, iw], xo_kpt.conj(), optimize=True)
+        tvw_kpt = numpy.einsum("kIa,ka,kKa->kIK", xv_kpt, gv_kpt[:, :, iw], xv_kpt.conj(), optimize=True)
+
+        from fft.isdf import get_phase_factor, spc_to_kpt, kpt_to_spc
+        phase = get_phase_factor(kscaled, kpts)
+        tow_kpt = spc_to_kpt(tow_kpt, phase)
+        tvw_kpt = spc_to_kpt(tvw_kpt, phase)
+
+        tow_spc = kpt_to_spc(tow_kpt, phase)
+        tvw_spc = kpt_to_spc(tvw_kpt, phase)
+
+        tw_spc = tow_spc * tvw_spc
+        tw_kpt = spc_to_kpt(tw_spc, phase)
+        tw_kpt = tw_kpt.conj() * numpy.sqrt(nkpt)
+
+        j_kpt = [lib.dot(coul_kpt[k].conj().T, tw_kpt[k]) for k in range(nkpt)]
+        e_corr -= numpy.sum([j_kpt[k].T * j_kpt[k] for k in range(nkpt)]).real / (nkpt ** 3)
+
+    fswap.close()
+    return e_corr
+
 if __name__ == "__main__":
     kmesh = [1, 1, 3]
     basis = 'gth-dzvp'
@@ -155,7 +227,7 @@ if __name__ == "__main__":
     '''
     cell.unit = 'angstrom'
     cell.max_memory = 2000
-    cell.ke_cutoff = 100.0
+    cell.ke_cutoff = 50.0
     cell.verbose = 0
     cell.pseudo = 'gth-pbe'
     cell.basis = basis
@@ -175,3 +247,6 @@ if __name__ == "__main__":
     polw_kpt = krpa_pol_with_isdf(kmp, nw=20)
     e_corr_krpa = krpa_corr_energy_with_isdf(kmp, nw=20, polw_kpt=polw_kpt)
     print("e_corr_krpa = % 12.8f" % e_corr_krpa)
+
+    e_corr_kmp2 = kmp2_corr_energy_with_isdf(kmp, nw=20, polw_kpt=polw_kpt)
+    print("e_corr_kmp2 = % 12.8f" % e_corr_kmp2)
