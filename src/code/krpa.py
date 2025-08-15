@@ -140,7 +140,10 @@ def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
     fswap.close()
     return e_corr
 
-def kmp2_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
+from line_profiler import profile
+
+@profile
+def kmp2_corr_energy_with_isdf(mp_obj, nw=20, sos_factor=1.3):
     log = new_logger(mp_obj, 5)
 
     fswap = getattr(mp_obj, '_fswap', None)
@@ -178,37 +181,44 @@ def kmp2_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
     kscaled -= kscaled[0]
 
     x, w = _get_clenshaw_curtis_roots(nw)
-    gw_kpt = [w ** 0.25 * numpy.exp(e_kpt[k][:, None] * x) for k in range(nkpt)]
-    gw_kpt = numpy.array(gw_kpt).reshape(nkpt, nmo, nw)
-    go_kpt = gw_kpt[:, :nocc, :]
-    gv_kpt = gw_kpt[:, nocc:, :]
+    go_kpt = [w ** 0.25 * numpy.exp(e_kpt[k][:nocc, None] * x) for k in range(nkpt)]
+    gv_kpt = [w ** 0.25 * numpy.exp(-e_kpt[k][nocc:, None] * x) for k in range(nkpt)]
+    go_kpt = numpy.array(go_kpt).reshape(nkpt, nocc, nw)
+    gv_kpt = numpy.array(gv_kpt).reshape(nkpt, nvir, nw)
 
     xo_kpt = [numpy.dot(inpv_kpt[k], c_kpt[k, :, :nocc]) for k in range(nkpt)]
     xo_kpt = numpy.array(xo_kpt).reshape(nkpt, nip, nocc)
     xv_kpt = [numpy.dot(inpv_kpt[k], c_kpt[k, :, nocc:]) for k in range(nkpt)]
     xv_kpt = numpy.array(xv_kpt).reshape(nkpt, nip, nvir)
 
-    e_corr = 0.0
+    from fft.isdf import get_phase_factor, spc_to_kpt, kpt_to_spc
+    phase = get_phase_factor(cell, kpts)
+
+    e_corr_os = 0.0
     for iw in range(nw):
-        tow_kpt = numpy.einsum("kIi,ki,kKi->kIK", xo_kpt, go_kpt[:, :, iw], xo_kpt.conj(), optimize=True)
-        tvw_kpt = numpy.einsum("kIa,ka,kKa->kIK", xv_kpt, gv_kpt[:, :, iw], xv_kpt.conj(), optimize=True)
-
-        from fft.isdf import get_phase_factor, spc_to_kpt, kpt_to_spc
-        phase = get_phase_factor(kscaled, kpts)
-        tow_kpt = spc_to_kpt(tow_kpt, phase)
-        tvw_kpt = spc_to_kpt(tvw_kpt, phase)
-
-        tow_spc = kpt_to_spc(tow_kpt, phase)
-        tvw_spc = kpt_to_spc(tvw_kpt, phase)
+        t0 = (process_clock(), perf_counter())
+        # tow_kpt = numpy.einsum("kIi,ki,kKi->kIK", xo_kpt, go_kpt[:, :, iw], xo_kpt.conj(), optimize=True)
+        # tvw_kpt = numpy.einsum("kIa,ka,kKa->kIK", xv_kpt, gv_kpt[:, :, iw], xv_kpt.conj(), optimize=True)
+        tow_kpt = [lib.dot(x, g[:, None] * x.T.conj()) for x, g in zip(xo_kpt, go_kpt[:, :, iw])]
+        tvw_kpt = [lib.dot(x, g[:, None] * x.T.conj()) for x, g in zip(xv_kpt, gv_kpt[:, :, iw])]
+        tow_spc = kpt_to_spc(numpy.asarray(tow_kpt), phase)
+        tvw_spc = kpt_to_spc(numpy.asarray(tvw_kpt), phase)
+        tow_kpt = tvw_kpt = None
 
         tw_spc = tow_spc * tvw_spc
         tw_kpt = spc_to_kpt(tw_spc, phase)
         tw_kpt = tw_kpt.conj() * numpy.sqrt(nkpt)
+        tw_spc = tow_spc = tvw_spc = None
 
         j_kpt = [lib.dot(coul_kpt[k].conj().T, tw_kpt[k]) for k in range(nkpt)]
-        e_corr -= numpy.sum([j_kpt[k].T * j_kpt[k] for k in range(nkpt)]).real / (nkpt ** 3)
+        e_corr_os -= numpy.sum([j.T * j for j in j_kpt]).real / (nkpt ** 3)
+
+        log.timer("KMP2 iw = %d" % iw, *t0)
+    e_corr = e_corr_os * sos_factor
 
     fswap.close()
+    log.info("e_corr_os  = % 12.8f" % e_corr_os)
+    log.info("e_corr_sos = % 12.8f" % e_corr)
     return e_corr
 
 if __name__ == "__main__":
@@ -216,37 +226,43 @@ if __name__ == "__main__":
     basis = 'gth-dzvp'
 
     cell = gto.Cell()
-    cell.atom = '''
-    C 1.337625 1.337625 1.337625
-    C 2.229375 2.229375 2.229375
+    cell.atom='''
+    C 0.000000000000   0.000000000000   0.000000000000
+    C 1.685068664391   1.685068664391   1.685068664391
     '''
-    cell.a = '''
-    0.000000     1.783500     1.783500
-    1.783500     0.000000     1.783500
-    1.783500     1.783500     0.000000
-    '''
-    cell.unit = 'angstrom'
-    cell.max_memory = 2000
-    cell.ke_cutoff = 50.0
-    cell.verbose = 0
+    cell.basis = 'gth-dzvp'
     cell.pseudo = 'gth-pbe'
-    cell.basis = basis
-    cell.build()
+    cell.a = '''
+    0.000000000, 3.370137329, 3.370137329
+    3.370137329, 0.000000000, 3.370137329
+    3.370137329, 3.370137329, 0.000000000'''
+    cell.unit = 'B'
+    cell.verbose = 5
+    cell.ke_cutoff = 50
+    cell.exp_to_discard = 0.1
+    cell.build(dump_input=False)
 
     kpts = cell.make_kpts(kmesh)
 
     kmf = scf.KRHF(cell, kpts)
     kmf.with_df = fft.ISDF(cell, kpts)
-    kmf.with_df.build(cisdf=10.0)
-    kmf.verbose = 5
-    kmf.kernel()
+    kmf.with_df.build(cisdf=20.0)
+    kmf.exxdiv = None
+    kmf.verbose = 0
+    ehf = kmf.kernel()
+    print("ehf = % 12.8f" % ehf)
 
     from pyscf.pbc import mp
     kmp = mp.KMP2(kmf)
+    kmp.kernel()
+    ene_corr_kmp2 = kmp.e_corr
+    ene_corr_os = kmp.e_corr_os
+    print("ene_corr_kmp2 = % 12.8f" % ene_corr_kmp2)
+    print("ene_corr_os   = % 12.8f" % ene_corr_os)
 
     polw_kpt = krpa_pol_with_isdf(kmp, nw=20)
     e_corr_krpa = krpa_corr_energy_with_isdf(kmp, nw=20, polw_kpt=polw_kpt)
     print("e_corr_krpa = % 12.8f" % e_corr_krpa)
 
-    e_corr_kmp2 = kmp2_corr_energy_with_isdf(kmp, nw=20, polw_kpt=polw_kpt)
+    e_corr_kmp2 = kmp2_corr_energy_with_isdf(kmp, nw=41)
     print("e_corr_kmp2 = % 12.8f" % e_corr_kmp2)
