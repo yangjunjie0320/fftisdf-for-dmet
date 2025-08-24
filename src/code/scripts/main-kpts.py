@@ -37,16 +37,6 @@ def main(config: dict):
         log.write("naux = %d\n" % naux)
 
     t0 = time.time()
-    scf_obj = pyscf.pbc.dft.KRKS(cell, kpts)
-    scf_obj.xc = "pbe"
-    scf_obj.exxdiv = "ewald"
-    scf_obj.with_df = df_obj
-    ene_krks = scf_obj.kernel(dm0)
-    log.write("time_krks = % 6.2f\n" % (time.time() - t0))
-    log.write("ene_krks = % 12.8f\n" % ene_krks)
-    log.flush()
-
-    t0 = time.time()
     scf_obj = config["mf"]
     scf_obj.exxdiv = "ewald"
     scf_obj.with_df = df_obj
@@ -55,28 +45,49 @@ def main(config: dict):
     log.write("ene_krhf = % 12.8f\n" % ene_krhf)
     log.flush()
 
-    t0 = time.time()
-    from pyscf.pbc.mp import KMP2
-    mp_obj = KMP2(scf_obj)
-    mp_obj.verbose = 10
-    mp_obj.kernel()
-    log.write("time_kmp2 = % 6.2f\n" % (time.time() - t0))
-    log.write("ene_kmp2 = % 12.8f\n" % mp_obj.e_tot)
-    log.write("ene_corr_kmp2 = % 12.8f\n" % mp_obj.e_corr)
-    log.flush()
-        
-    t0 = time.time()
-    from pyscf.pbc.cc import KCCSD
-    cc_obj = KCCSD(scf_obj)
-    cc_obj.verbose = 10
-    eris = cc_obj.ao2mo()
-    cc_obj.kernel(eris=eris)
-    ene_kccsd = cc_obj.e_tot
-    ene_corr_kccsd = cc_obj.e_corr
-    log.write("time_kccsd = % 6.2f\n" % (time.time() - t0))
-    log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
-    log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
-    log.flush()
+    if config["density_fitting_method"] == "fftisdf":
+        # run sos-kmp2 and krpa
+        from krpa import krpa_pol_with_isdf, krpa_corr_energy_with_isdf
+        from krpa import kmp2_corr_energy_with_isdf
+
+        for nw in [20, 25, 30, 35, 40]:
+            kmp2 = pyscf.pbc.mp.KMP2(scf_obj)
+            kmp2.verbose = 5
+
+            polw_kpt = krpa_pol_with_isdf(kmp2, nw=nw)
+
+            t0 = time.time()
+            e_corr_krpa = krpa_corr_energy_with_isdf(kmp2, nw=nw, polw_kpt=polw_kpt)
+            ene_krpa = e_corr_krpa + ene_krhf
+            log.write("time_krpa_nw%d = % 6.2f\n" % (nw, time.time() - t0))
+            log.write("ene_krpa_nw%d = % 12.8f\n" % (nw, ene_krpa))
+            log.write("ene_corr_krpa_nw%d = % 12.8f\n" % (nw, e_corr_krpa))
+            log.flush()
+
+            t0 = time.time()
+            e_os = kmp2_corr_energy_with_isdf(kmp2, nw=nw, sos_factor=1.0)
+            e_corr_kmp2 = e_os * 1.3
+            ene_kmp2 = e_corr_kmp2 + ene_krhf
+            log.write("time_kmp2_nw%d = % 6.2f\n" % (nw, time.time() - t0))
+            log.write("ene_kmp2_nw%d = % 12.8f\n" % (nw, ene_kmp2))
+            log.write("ene_corr_kmp2_nw%d = % 12.8f\n" % (nw, e_corr_kmp2))
+            log.write("ene_os_kmp2_nw%d = % 12.8f\n" % (nw, e_os))
+            log.flush()
+
+    elif config["density_fitting_method"] == "gdf":
+        from fcdmft.rpa.pbc.krpa import KRPA
+
+        for nw in [20, 25, 30, 35, 40]:
+            t0 = time.time()
+            krpa = KRPA(scf_obj)
+            krpa.verbose = 5
+            krpa.kernel(nw=nw)
+            log.write("time_krpa_nw%d = % 6.2f\n" % (nw, time.time() - t0))
+            ene_krpa = krpa.e_tot
+            e_corr_krpa = krpa.e_corr
+            log.write("ene_krpa_nw%d = % 12.8f\n" % (nw, ene_krpa))
+            log.write("ene_corr_krpa_nw%d = % 12.8f\n" % (nw, e_corr_krpa))
+            log.flush()
 
 if __name__ == "__main__":
     import argparse

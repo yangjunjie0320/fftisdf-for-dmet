@@ -8,11 +8,13 @@ from pathlib import Path
 def loop():
     basis = 'cc-pvdz'
     # df_method = ['fftisdf', 'gdf', 'fftdf', 'rsdf']
-    df_method = ['fftisdf']
-    kmesh = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3']
-    kmesh += ['3-3-4', '3-4-4', '4-4-4', '4-4-5', '4-5-5', '5-5-5']
-    kmesh += ['5-5-6', '5-6-6', '6-6-6', '6-6-8', '6-8-8', '8-8-8']
-    kmesh += ['8-8-10', '8-10-10', '10-10-10']
+    df_method  = ['fftdf-60', 'fftdf-80', 'fftdf-100', 'fftdf-120']
+    df_method += ['fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
+    df_method += ['gdf-2.0', 'rsdf-2.0']
+
+    kmesh  = ['1-1-2', '1-2-2', '2-2-2', '2-2-3', '2-3-3', '3-3-3', '3-3-4', '3-4-4', '4-4-4']
+    # kmesh += ['4-4-5', '4-5-5', '5-5-5', '5-5-6', '5-6-6', '6-6-6', '6-6-8', '6-8-8', '8-8-8']
+    # kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
     from itertools import product
     configs = [{'basis': basis, 'density-fitting-method': d, 'kmesh': k} for d, k in product(df_method, kmesh)]
@@ -22,24 +24,8 @@ def loop():
 def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task=4):
     base_dir = Path(__file__).parent
 
-    parameters = {
-        'diamond': {
-            'fftisdf': 'fftisdf-60-8',
-            'fftdf': 'fftdf-60',
-            'gdf': 'gdf-2.0',
-            'rsdf': 'rsdf-2.0',
-        },
-
-        'co2': {
-            'fftisdf': 'fftisdf-140-10',
-            'fftdf': 'fftdf-140',
-            'gdf': 'gdf-2.0',
-            'rsdf': 'rsdf-2.0',
-        }
-    }
-
     for config in loop():
-        config['density-fitting-method'] = parameters[cell][config['density-fitting-method']]
+        config['density-fitting-method'] = config['density-fitting-method']
 
         print(f"Setting up benchmark directory: {config}")
         dir_path = base_dir / config['kmesh'] / config['density-fitting-method']
@@ -70,6 +56,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         # convert to absolute path
         python_path  = [src_path / 'fftisdf-main', src_path / 'libdmet2-main']
+        python_path += [src_path / 'fcdmft-main']
         python_path += [src_path / 'pyscf-forge-lnocc', src_path / 'code']
 
         run_content.append(f"export PYTHONPATH={python_path[0]}\n")
