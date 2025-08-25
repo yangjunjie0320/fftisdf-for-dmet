@@ -1,0 +1,17 @@
+method = fftdf-120
+basis = cc-pvdz
+natm = 2
+nkpt = 1
+nao = 26
+time_build_df =   0.00
+naux = 31250
+time_krks =   1.00
+ene_krks = -10.26713269
+time_krhf =   1.25
+ene_krhf = -10.21699100
+time_kmp2 =   0.08
+ene_kmp2 = -10.38198724
+ene_corr_kmp2 =  -0.16499624
+ene_corr_os =  -0.13621413
+ene_kccsd = -10.44236331
+ene_corr_kccsd =  -0.22537230
