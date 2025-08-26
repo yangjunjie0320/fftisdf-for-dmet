@@ -83,6 +83,8 @@ def build_density_fitting(config: dict):
     df_to_read = None if df_to_read == "None" else df_to_read
 
     df_obj = None
+    df_path = None
+    
     if "gdf" in method:
         print("Using GDF, method = %s" % method)
         method = method.split("-")
@@ -101,6 +103,8 @@ def build_density_fitting(config: dict):
             df_obj.auxbasis = aug_etb(cell, beta=beta)
         else:
             print("Using default settings for GDF")
+
+        df_path = df_obj._cderi
     
     elif "rsdf" in method:
         print("Using RSDF, method = %s" % method)
@@ -112,7 +116,7 @@ def build_density_fitting(config: dict):
         if df_to_read is not None:
             assert os.path.exists(df_to_read)
             df_obj._cderi = df_to_read
-        
+
         if len(method) == 2:
             beta = float(method[1])
             print(f"Using beta = {beta}")
@@ -120,6 +124,8 @@ def build_density_fitting(config: dict):
             df_obj.auxbasis = aug_etb(cell, beta=beta)
         else:
             print("Using default settings for GDF")
+
+        df_path = df_obj._cderi
 
     elif "fftdf" in method:
         print("Using FFTDF, method = %s" % method)
@@ -160,8 +166,16 @@ def build_density_fitting(config: dict):
         df_obj.build = lambda *args, **kwargs: build_isdf_obj(cisdf=cisdf)
         
         print(f"Using ke_cutoff = {cell.ke_cutoff}, cisdf = {cisdf}")
+        df_path = df_obj._isdf
 
     config["df"] = df_obj
+
+    if df_path is not None:
+        print(f"DF path = {df_path}")
+        assert os.path.exists(df_path)
+        df_size_in_gb = float(os.path.getsize(df_path))
+        df_size_in_gb = df_size_in_gb / (1024 ** 3)
+        config["df_size_in_gb"] = df_size_in_gb
 
 def get_init_guess(config: dict):
     name: str = config["name"]
