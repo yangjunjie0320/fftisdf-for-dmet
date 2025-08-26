@@ -1,4 +1,4 @@
-method="ref-kpts"
+method="krhf-dmet"
 mkdir -p $method; cd $method
 
 for cell in diamond co2; do
