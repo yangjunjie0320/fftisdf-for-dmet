@@ -12,21 +12,22 @@ def loop(cell='diamond'):
     df_method = ['gdf-2.0', 'rsdf-2.0']
     
     if cell == 'diamond':
-        df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100', 'fftdf-120', 'fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
-        df_method += ['fftisdf-60-8', 'fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16', 'fftisdf-60-18', 'fftisdf-60-20']
-        df_method += ['fftisdf-80-8', 'fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16', 'fftisdf-80-18', 'fftisdf-80-20']
-        df_method += ['fftisdf-100-8', 'fftisdf-100-10', 'fftisdf-100-12', 'fftisdf-100-14', 'fftisdf-100-16', 'fftisdf-100-18', 'fftisdf-100-20']
+        df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
+        df_method += ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
+        df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
     
     elif cell == 'co2':
-        df_method += ['fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
-        df_method += ['fftisdf-120-8', 'fftisdf-120-10', 'fftisdf-120-12', 'fftisdf-120-14', 'fftisdf-120-16', 'fftisdf-120-18', 'fftisdf-120-20']
-        df_method += ['fftisdf-140-8', 'fftisdf-140-10', 'fftisdf-140-12', 'fftisdf-140-14', 'fftisdf-140-16', 'fftisdf-140-18', 'fftisdf-140-20']
-        df_method += ['fftisdf-160-8', 'fftisdf-160-10', 'fftisdf-160-12', 'fftisdf-160-14', 'fftisdf-160-16', 'fftisdf-160-18', 'fftisdf-160-20']
-        df_method += ['fftisdf-180-8', 'fftisdf-180-10', 'fftisdf-180-12', 'fftisdf-180-14', 'fftisdf-180-16', 'fftisdf-180-18', 'fftisdf-180-20']
+        df_method += ['fftdf-140', 'fftdf-160', 'fftdf-180']
+        df_method += ['fftisdf-140-10', 'fftisdf-140-12', 'fftisdf-140-14', 'fftisdf-140-16']
+        df_method += ['fftisdf-160-10', 'fftisdf-160-12', 'fftisdf-160-14', 'fftisdf-160-16']
 
     kmesh  = ['1-1-1', '1-1-2', '1-2-2', '2-2-2']
     kmesh += ['2-2-3', '2-3-3', '3-3-3']
     kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    kmesh += ['4-4-5', '4-5-5', '5-5-5']
+    kmesh += ['5-5-6', '5-6-6', '6-6-6']
+    kmesh += ['6-6-7', '6-7-7', '7-7-7']
+    kmesh += ['7-7-8', '7-8-8', '8-8-8']
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d} for k, d in product(kmesh, df_method)]

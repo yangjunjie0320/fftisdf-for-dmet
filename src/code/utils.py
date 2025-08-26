@@ -166,16 +166,10 @@ def build_density_fitting(config: dict):
         df_obj.build = lambda *args, **kwargs: build_isdf_obj(cisdf=cisdf)
         
         print(f"Using ke_cutoff = {cell.ke_cutoff}, cisdf = {cisdf}")
-        df_path = df_obj._isdf
+        df_path = df_obj._isdf_to_save
 
     config["df"] = df_obj
-
-    if df_path is not None:
-        print(f"DF path = {df_path}")
-        assert os.path.exists(df_path)
-        df_size_in_gb = float(os.path.getsize(df_path))
-        df_size_in_gb = df_size_in_gb / (1024 ** 3)
-        config["df_size_in_gb"] = df_size_in_gb
+    config["df_path"] = df_path
 
 def get_init_guess(config: dict):
     name: str = config["name"]
