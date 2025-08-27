@@ -83,7 +83,8 @@ def build_density_fitting(config: dict):
     df_to_read = None if df_to_read == "None" else df_to_read
 
     df_obj = None
-    df_path = None
+    df_path = os.path.join(TMPDIR, "df.h5")
+    print("DF path:", df_path)
     
     if "gdf" in method:
         print("Using GDF, method = %s" % method)
@@ -91,6 +92,7 @@ def build_density_fitting(config: dict):
 
         from pyscf.pbc.df import GDF
         df_obj = GDF(cell, kpts)
+        df_obj._cderi_to_save = df_path
 
         if df_to_read is not None:
             assert os.path.exists(df_to_read)
@@ -103,8 +105,6 @@ def build_density_fitting(config: dict):
             df_obj.auxbasis = aug_etb(cell, beta=beta)
         else:
             print("Using default settings for GDF")
-
-        df_path = df_obj._cderi
     
     elif "rsdf" in method:
         print("Using RSDF, method = %s" % method)
@@ -112,6 +112,7 @@ def build_density_fitting(config: dict):
 
         from pyscf.pbc.df import RSDF
         df_obj = RSDF(cell, kpts)
+        df_obj._cderi_to_save = df_path
 
         if df_to_read is not None:
             assert os.path.exists(df_to_read)
@@ -124,8 +125,6 @@ def build_density_fitting(config: dict):
             df_obj.auxbasis = aug_etb(cell, beta=beta)
         else:
             print("Using default settings for GDF")
-
-        df_path = df_obj._cderi
 
     elif "fftdf" in method:
         print("Using FFTDF, method = %s" % method)
@@ -155,7 +154,7 @@ def build_density_fitting(config: dict):
         print(f"ke_cutoff = {cell.ke_cutoff}, mesh = {df_obj.mesh}")
 
         df_obj.verbose = 5
-        df_obj._isdf_to_save = os.path.join(TMPDIR, "isdf.h5")
+        df_obj._isdf_to_save = df_path
 
         if df_to_read is not None:
             print(f"Reading FFTISDF from {df_to_read}")
@@ -166,8 +165,8 @@ def build_density_fitting(config: dict):
         df_obj.build = lambda *args, **kwargs: build_isdf_obj(cisdf=cisdf)
         
         print(f"Using ke_cutoff = {cell.ke_cutoff}, cisdf = {cisdf}")
-        df_path = df_obj._isdf_to_save
-
+    
+    df_obj.verbose = 5
     config["df"] = df_obj
     config["df_path"] = df_path
 

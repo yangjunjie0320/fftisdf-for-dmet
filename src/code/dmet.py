@@ -207,7 +207,11 @@ def get_emb_eri_fftisdf_v2(
 
 get_emb_eri_fftisdf = get_emb_eri_fftisdf_v2
 
-def build_dmet(mf, latt, is_unrestricted):
+def build_dmet(config):
+    mf = config["mf"]
+    latt = config["lattice"]
+    is_unrestricted = config["is_unrestricted"]
+
     from libdmet.lo.make_lo import get_iao
     res = get_iao(mf, minao="scf", full_return=True)
     c_ao_lo_k = res[0]
@@ -234,4 +238,5 @@ def build_dmet(mf, latt, is_unrestricted):
     emb.fit_method = 'CG'
     emb.fit_kwargs = {"test_grad": False}
     emb.max_cycle = 1
-    return emb
+
+    config["emb"] = emb
