@@ -183,8 +183,8 @@ def get_init_guess(config: dict):
     beta_ix = []
 
     if "nio-afm" in name.lower():
-        alph_label = ["0 Ni 3dz2", "0 Ni 3dx2-y2"]
-        beta_label = ["1 Ni 3dz2", "1 Ni 3dx2-y2"]
+        alph_label = ["0 Ni 3dz\^2", "0 Ni 3dx2-y2"]
+        beta_label = ["1 Ni 3dz\^2", "1 Ni 3dx2-y2"]
 
         alph_ix = cell.search_ao_label(alph_label)
         beta_ix = cell.search_ao_label(beta_label)
@@ -222,6 +222,7 @@ def build_mean_field(config: dict):
     mf.verbose = 5
     mf.conv_tol = 1e-6
     mf.exxdiv = "ewald"
+    mf.chkfile = "scf.chk"
     if is_unrestricted:
         mf = mf.to_uhf()
 
