@@ -10,8 +10,11 @@ def loop(cell='diamond'):
     pseudo = 'gth-hf-rev'
 
     assert cell == 'diamond'
-    df_method = ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
-    df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
+    # df_method = ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
+    # df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
+    
+    df_method  = ['gdf-2.0', 'rsdf-2.0']
+    df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
 
     # kmesh  = ['1-1-1', '1-1-2', '1-2-2', '2-2-2']
     # kmesh += ['2-2-3', '2-3-3', '3-3-3']
@@ -44,7 +47,8 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         config['name'] = cell
         config['is-unrestricted'] = False
-        config['init-guess-method'] = 'minao'
+        # config['init-guess-method'] = 'minao'
+        config['init-guess-method'] = 'chk'
 
         base = Path(__file__).parent
         run_content = None
@@ -96,6 +100,12 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         # run the run.sh
         os.chdir(dir_path)
+        chk_path = dir_path / '../fftisdf-80-16/scf.chk'
+        chk_path = chk_path.resolve()
+        chk_path = chk_path.absolute()
+        assert chk_path.exists(), f"Checkpoint file not found: {chk_path}"
+        run_content.append(f"cp {chk_path} scf.chk\n")
+
         subprocess.run(["sbatch", "run.sh"])
         os.chdir(Path(__file__).parent)
         print(f"Submitted job for {dir_path}\n")
