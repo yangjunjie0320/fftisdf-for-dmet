@@ -1,6 +1,8 @@
 import os, sys, numpy, time
 import pyscf, libdmet, fft
 
+from line_profiler import profile
+@profile
 def main(config: dict):
     from utils import build
     build(config)
