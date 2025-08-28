@@ -55,6 +55,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         assert src_path.exists(), f"Path {src_path} not found"
         
         job_name = cell + '-' + config['density-fitting-method']
+        job_name += '-' + 'kmesh-' + config['kmesh']
 
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
