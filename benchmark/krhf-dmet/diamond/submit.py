@@ -24,7 +24,7 @@ def loop(cell='diamond'):
     kmesh  = ['6-6-6']
     kmesh += ['6-6-7', '6-7-7', '7-7-7']
     kmesh += ['7-7-8', '7-8-8', '8-8-8']
-    kmesh += ['8-8-10', '8-10-10', '10-10-10']
+    kmesh += ['8-8-10'] # , '8-10-10', '10-10-10']
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d} for k, d in product(kmesh, df_method)]
@@ -104,7 +104,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         chk_path = chk_path.resolve()
         chk_path = chk_path.absolute()
         assert chk_path.exists(), f"Checkpoint file not found: {chk_path}"
-        run_content.append(f"cp {chk_path} scf.chk\n")
+        subprocess.run(["cp", chk_path, "scf.chk"])
 
         subprocess.run(["sbatch", "run.sh"])
         os.chdir(Path(__file__).parent)
