@@ -39,7 +39,9 @@ class _KLNODFINCOREERIS(pyscf.pbc.lno.klno._KLNODFINCOREERIS_REAL):
         ovov = []
         for ix, cx in enumerate(self._ovov):
             is_capital = kind[ix].upper() == kind[ix]
-            ovov.append(cx @ u if is_capital else cx)
+            cc = cx @ u if is_capital else cx
+            cc = numpy.array(cc)
+            ovov.append(cc)
         
         shape = [cx.shape[-1] for cx in ovov]
         eris_ovov = df_obj.ao2mo_spc(ovov, kpts=kpts)

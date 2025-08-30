@@ -1,4 +1,4 @@
-method="krhf-dmet"
+method="klno"
 mkdir -p $method; cd $method
 
 for cell in diamond; do
