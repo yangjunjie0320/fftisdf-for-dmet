@@ -7,27 +7,43 @@ def main(config: dict):
     from utils import build
     build(config)
 
-    table = {}
+    cell = config["cell"]
     df_obj = config["df"]
-    t0 = time.time()
-    df_obj.build()
-    table["time_build_df"] = time.time() - t0
-
-    scf_obj = config["mf"]
-    dm0 = config["dm0"]
-    scf_obj.exxdiv = "ewald"
-    scf_obj.with_df = df_obj
-    ene_kscf = scf_obj.kernel(dm0)
-    nao = scf_obj.cell.nao_nr()
-    scf_obj.analyze()
-
-    kpts = scf_obj.kpts
+    kpts = config["kpts"]
     nkpt = nimg = len(kpts)
 
+    dm0 = config["dm0"]
+    nao = cell.nao_nr()
+    natm = cell.natm
+
+    log = open("out.log", "w")
+    log.write("method = %s\n" % config["density_fitting_method"])
+    log.write("basis = %s\n" % config["basis"])
+    log.write("natm = %d\n" % natm)
+    log.write("nkpt = %d\n" % nkpt)
+    log.write("nao = %d\n" % nao)
+    log.flush()
+
     t0 = time.time()
-    dm0 = scf_obj.make_rdm1()
-    vj, vk = scf_obj.get_jk(dm_kpts=dm0, hermi=1, with_j=False, with_k=True)
-    table["time_get_vk"] = time.time() - t0
+    df_obj.build()
+    log.write("time_build_df = % 6.2f\n" % (time.time() - t0))
+
+    naux = None
+    if isinstance(df_obj, fft.ISDF):
+        naux = df_obj.inpv_kpt.shape[1]
+    else:
+        naux = df_obj.get_naoaux()
+    if naux is not None:
+        log.write("naux = %d\n" % naux)
+
+    t0 = time.time()
+    scf_obj = config["mf"]
+    scf_obj.exxdiv = "ewald"
+    scf_obj.with_df = df_obj
+    ene_krhf = scf_obj.kernel(dm0)
+    log.write("time_krhf = % 6.2f\n" % (time.time() - t0))
+    log.write("ene_krhf = % 12.8f\n" % ene_krhf)
+    log.flush()
 
     t0 = time.time()
     from pyscf.pbc.lno.tools import k2s_scf
@@ -64,37 +80,19 @@ def main(config: dict):
     klno_obj.kernel()
     table["time_klno"] = time.time() - t0
 
-    # ene_klno_mp2 = klno_obj.e_tot_pt2 / nimg
-    # ene_klno_ccsd = klno_obj.e_tot / nimg
     ene_corr_klno_mp2 = klno_obj.e_corr_pt2
     ene_corr_klno_ccsd = klno_obj.e_corr
-    ene_klno_mp2 = ene_corr_klno_mp2 + ene_kscf
-    ene_klno_ccsd = ene_corr_klno_ccsd + ene_kscf
-    
-    naux = None
-    if isinstance(df_obj, fft.ISDF):
-        naux = df_obj.inpv_kpt.shape[1]
-    else:
-        naux = df_obj.get_naoaux()
+    ene_corr_pt2_os = klno_obj.e_corr_pt2_os
+    ene_klno_mp2 = ene_corr_klno_mp2 + ene_krhf
+    ene_klno_ccsd = ene_corr_klno_ccsd + ene_krhf
 
-    with open("out.log", "w") as f:
-        f.write("method = %s\n" % config["density_fitting_method"])
-        f.write("basis = %s\n" % config["basis"])
-        f.write("nao = %d\n" % nao)
-        f.write("natm = %d\n" % scf_obj.cell.natm)
-        if naux is not None:
-            f.write("naux = %d\n" % naux)
-        f.write("lno_thresh = %6.2e\n" % config["lno_thresh"])
-        f.write("nkpt = %d\n" % nkpt)
-        f.write("kmesh = %s\n" % config["kmesh"])
-        f.write("ene_krhf = % 12.8f\n" % ene_kscf)
-        f.write("ene_klno_mp2 = % 12.8f\n" % ene_klno_mp2)
-        f.write("ene_klno_ccsd = % 12.8f\n" % ene_klno_ccsd)
-        f.write("ene_corr_klno_mp2 = % 12.8f\n" % ene_corr_klno_mp2)
-        f.write("ene_corr_klno_ccsd = % 12.8f\n" % ene_corr_klno_ccsd)
+    log.write("ene_klno_mp2 = % 12.8f\n" % ene_klno_mp2)
+    log.write("ene_klno_ccsd = % 12.8f\n" % ene_klno_ccsd)
+    log.write("ene_klno_corr_mp2 = % 12.8f\n" % ene_corr_klno_mp2)
+    log.write("ene_klno_corr_ccsd = % 12.8f\n" % ene_corr_klno_ccsd)
+    log.write("ene_klno_corr_os = % 12.8f\n" % ene_corr_pt2_os)
+    log.flush()
 
-        for k, v in table.items():
-            f.write("%s = % 6.2f\n" % (k, max(v, 0.01)))
 
 if __name__ == "__main__":
     import argparse
