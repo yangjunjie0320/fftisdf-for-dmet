@@ -1,9 +1,8 @@
 #!/bin/bash
-#SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=diamond-fftisdf-60-10-kmesh-6-6-6
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=10gb
+#SBATCH --mem-per-cpu=6gb
 #SBATCH --time=20:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
@@ -40,6 +39,5 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-krhf-dmet.py main.py
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=6-6-6 --density-fitting-method=fftisdf-60-10 --name=diamond --init-guess-method=minao \
---kconserv-to-read="/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk"
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=6-6-6 --density-fitting-method=fftisdf-60-10 --name=diamond --init-guess-method=minao
 echo "End time = $(date)"

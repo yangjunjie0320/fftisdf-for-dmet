@@ -10,21 +10,21 @@ def loop(cell='diamond'):
     pseudo = 'gth-hf-rev'
 
     assert cell == 'diamond'
-    # df_method = ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
-    # df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
+    df_method  = ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16', 'fftisdf-60-18', 'fftisdf-60-20']
+    df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16', 'fftisdf-80-18', 'fftisdf-80-20']
+    df_method += ['fftisdf-100-10', 'fftisdf-100-12', 'fftisdf-100-14', 'fftisdf-100-16', 'fftisdf-100-18', 'fftisdf-100-20']
     
-    df_method  = ['gdf-2.0', 'rsdf-2.0']
-    df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
+    # df_method  = ['gdf-2.0', 'rsdf-2.0']
+    # df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
 
-    # kmesh  = ['1-1-1', '1-1-2', '1-2-2', '2-2-2']
-    # kmesh += ['2-2-3', '2-3-3', '3-3-3']
-    # kmesh += ['3-3-4', '3-4-4', '4-4-4']
-    # kmesh += ['4-4-5', '4-5-5', '5-5-5']
-    # kmesh += ['5-5-6', '5-6-6', ]
-    kmesh  = ['6-6-6']
+    kmesh  = ['1-1-2', '1-2-2', '2-2-2']
+    kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    kmesh += ['4-4-5', '4-5-5', '5-5-5']
+    kmesh += ['5-5-6', '5-6-6', '6-6-6']
     kmesh += ['6-6-7', '6-7-7', '7-7-7']
     kmesh += ['7-7-8', '7-8-8', '8-8-8']
-    kmesh += ['8-8-10'] # , '8-10-10', '10-10-10']
+    # kmesh += ['8-8-10'] # , '8-10-10', '10-10-10']
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d} for k, d in product(kmesh, df_method)]
@@ -47,8 +47,8 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         config['name'] = cell
         config['is-unrestricted'] = False
-        # config['init-guess-method'] = 'minao'
-        config['init-guess-method'] = 'chk'
+        config['init-guess-method'] = 'minao'
+        # config['init-guess-method'] = 'chk'
 
         base = Path(__file__).parent
         run_content = None
@@ -64,7 +64,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=10gb\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=6gb\n")
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")
@@ -100,11 +100,11 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         # run the run.sh
         os.chdir(dir_path)
-        chk_path = dir_path / '../fftisdf-80-16/scf.chk'
-        chk_path = chk_path.resolve()
-        chk_path = chk_path.absolute()
-        assert chk_path.exists(), f"Checkpoint file not found: {chk_path}"
-        subprocess.run(["cp", chk_path, "scf.chk"])
+        # chk_path = dir_path / '../gdf-2.0/scf.chk'
+        # chk_path = chk_path.resolve()
+        # chk_path = chk_path.absolute()
+        # assert chk_path.exists(), f"Checkpoint file not found: {chk_path}"
+        # subprocess.run(["cp", chk_path, "scf.chk"])
 
         subprocess.run(["sbatch", "run.sh"])
         os.chdir(Path(__file__).parent)
