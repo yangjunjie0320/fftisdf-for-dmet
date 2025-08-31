@@ -13,24 +13,19 @@ def loop(cell='diamond'):
     # df_method.append('rsdf-2.0')
     # df_method.append('gdf-2.0')
     
-    if cell == 'diamond':
-        # df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
-        df_method += ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
-        df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
-    
-    elif cell == 'co2':
-        df_method += ['fftdf-140', 'fftdf-160', 'fftdf-180']
-        df_method += ['fftisdf-140-10', 'fftisdf-140-12', 'fftisdf-140-14', 'fftisdf-140-16']
-        df_method += ['fftisdf-160-10', 'fftisdf-160-12', 'fftisdf-160-14', 'fftisdf-160-16']
+    assert cell == 'diamond'
+    df_method  = ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16', 'fftisdf-60-18', 'fftisdf-60-20']
+    df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16', 'fftisdf-80-18', 'fftisdf-80-20']
+    df_method += ['fftisdf-100-10', 'fftisdf-100-12', 'fftisdf-100-14', 'fftisdf-100-16', 'fftisdf-100-18', 'fftisdf-100-20']
 
-    kmesh  = ['1-1-2', '1-2-2', '2-2-2']
+    kmesh = []
+    kmesh += ['1-1-2', '1-2-2', '2-2-2']
     kmesh += ['2-2-3', '2-3-3', '3-3-3']
     kmesh += ['3-3-4', '3-4-4', '4-4-4']
     kmesh += ['4-4-5', '4-5-5', '5-5-5']
     kmesh += ['5-5-6', '5-6-6', '6-6-6']
     kmesh += ['6-6-7', '6-7-7', '7-7-7']
     kmesh += ['7-7-8', '7-8-8', '8-8-8']
-    kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
     lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
 
@@ -63,6 +58,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         config['init-guess-method'] = 'chk'
         config['lno-thresh'] = config['lno-thresh']
         config['df-to-read'] = './tmp/df.h5'
+        config['kconserv-to-read'] = "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk"
 
         base = Path(__file__).parent
         run_content = None
@@ -79,7 +75,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=10gb\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=6gb\n")
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")

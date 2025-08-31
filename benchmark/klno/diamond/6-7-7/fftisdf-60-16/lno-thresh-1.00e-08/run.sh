@@ -1,10 +1,9 @@
 #!/bin/bash
-#SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=diamond-fftisdf-60-16-kmesh-6-7-7-lno-thresh-1.00e-08
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=10gb
-#SBATCH --time=20:00:00
+#SBATCH --mem-per-cpu=6gb
+#SBATCH --time=04:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
@@ -44,5 +43,5 @@ cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/m
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/diamond/6-7-7/fftisdf-60-16/scf.chk scf.chk
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/diamond/6-7-7/fftisdf-60-16/tmp/df.h5 tmp/df.h5
 
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=6-7-7 --density-fitting-method=fftisdf-60-16 --lno-thresh=1e-08 --name=diamond --init-guess-method=chk --df-to-read=./tmp/df.h5
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=6-7-7 --density-fitting-method=fftisdf-60-16 --lno-thresh=1e-08 --name=diamond --init-guess-method=chk --df-to-read=./tmp/df.h5 --kconserv-to-read=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk
 echo "End time = $(date)"

@@ -16,15 +16,16 @@ def loop(cell='diamond'):
     
     # df_method  = ['gdf-2.0', 'rsdf-2.0']
     # df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
-
-    kmesh  = ['1-1-2', '1-2-2', '2-2-2']
+    
+    kmesh  = []
+    kmesh += ['1-1-2', '1-2-2', '2-2-2']
     kmesh += ['2-2-3', '2-3-3', '3-3-3']
     kmesh += ['3-3-4', '3-4-4', '4-4-4']
     kmesh += ['4-4-5', '4-5-5', '5-5-5']
     kmesh += ['5-5-6', '5-6-6', '6-6-6']
     kmesh += ['6-6-7', '6-7-7', '7-7-7']
     kmesh += ['7-7-8', '7-8-8', '8-8-8']
-    # kmesh += ['8-8-10'] # , '8-10-10', '10-10-10']
+    kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d} for k, d in product(kmesh, df_method)]
@@ -47,7 +48,8 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         config['name'] = cell
         config['is-unrestricted'] = False
-        config['init-guess-method'] = 'minao'
+        config['init-guess-method'] = 'minao' # "chk"
+        config['kconserv-to-read'] = "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk"
         # config['init-guess-method'] = 'chk'
 
         base = Path(__file__).parent
