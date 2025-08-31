@@ -1,0 +1,15 @@
+method = fftisdf-100-12
+basis = cc-pvdz
+natm = 2
+nkpt = 8
+nao = 26
+time_build_df =  12.88
+df_size_in_gb =  1.26e-02
+naux = 312
+time_krhf =   0.94
+ene_krhf = -10.95732309
+time_get_j =   0.05
+time_get_k =   0.04
+time_get_eri =   0.12
+time_dmet =   5.52
+ene_dmet = -11.12020624
