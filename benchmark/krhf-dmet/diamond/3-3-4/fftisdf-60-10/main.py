@@ -46,8 +46,7 @@ def main():
     scf_obj = config["mf"]
     scf_obj.exxdiv = "ewald"
     scf_obj.with_df = df_obj
-
-    dm0 = scf_obj.make_rdm1()
+    
     t0 = time.time()
     vjk = scf_obj.get_jk(dm_kpts=dm0, hermi=1, with_j=True, with_k=False)
     log.write("time_get_j = % 6.2f\n" % (time.time() - t0))
@@ -60,6 +59,7 @@ def main():
 
     t0 = time.time()
     ene_krhf = scf_obj.kernel(dm0)
+    dm0 = scf_obj.make_rdm1()
     log.write("time_krhf = % 6.2f\n" % (time.time() - t0))
     log.write("ene_krhf = % 12.8f\n" % ene_krhf)
     log.flush()
