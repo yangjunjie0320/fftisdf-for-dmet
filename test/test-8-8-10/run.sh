@@ -1,8 +1,9 @@
 #!/bin/bash
-#SBATCH --reservation=changroup_standingres
-#SBATCH --job-name=diamond-fftisdf-60-12-kmesh-8-8-10
+#SBATCH --reservation=changroup-h100-node-1
+#SBATCH --partition=gpu
+#SBATCH --job-name=gen-kconserve
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=128
 #SBATCH --mem-per-cpu=10gb
 #SBATCH --time=20:00:00
 
@@ -17,8 +18,8 @@ readlink -f $HOME/anaconda3/bin/activate
 source $HOME/anaconda3/bin/activate fftisdf
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK;
-export MKL_NUM_THREADS=1;
-export OPENBLAS_NUM_THREADS=1;
+export MKL_NUM_THREADS=4;
+export OPENBLAS_NUM_THREADS=4;
 export PYSCF_MAX_MEMORY=$((SLURM_MEM_PER_CPU * SLURM_CPUS_PER_TASK))
 
 echo OMP_NUM_THREADS = $OMP_NUM_THREADS
@@ -40,5 +41,5 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 # cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-krhf-dmet.py main.py
-LINE_PROFILE=1 python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=8-8-10 --density-fitting-method=fftisdf-60-12 --name=diamond --init-guess-method=chk
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=1-1-1 --density-fitting-method=fftisdf-60-12 --name=diamond --init-guess-method=chk
 echo "End time = $(date)"

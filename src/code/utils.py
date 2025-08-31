@@ -14,6 +14,31 @@ MAX_MEMORY = os.environ.get("PYSCF_MAX_MEMORY", 2000)
 MAX_MEMORY = int(MAX_MEMORY)
 assert MAX_MEMORY > 0
 
+def load_kconserv(path, kmesh, kpts):
+    assert len(kmesh) == 3
+    kw_mesh = f"{kmesh[0]}-{kmesh[1]}-{kmesh[2]}"
+
+    nkpt = len(kpts)
+    assert numpy.prod(kmesh) == nkpt
+
+    kconserv3 = None
+    kconserv2 = None
+    with h5py.File(path, "r") as f:
+        d = f[kw_mesh]
+        if numpy.allclose(kpts, d["kpts"]):
+            kconserv3 = d["kconserv3"][()]
+            kconserv2 = d["kconserv2"][()]
+
+    if kconserv3 is None or kconserv2 is None:
+        print(f"reading kconserv from {path} for kmesh {kmesh} failed")
+    
+    else:
+        print(f"successfully read kconserv from {path} for kmesh {kmesh}")
+        print(f"kconserv3.shape = {kconserv3.shape}")
+        print(f"kconserv2.shape = {kconserv2.shape}")
+    
+    return kconserv3, kconserv2
+
 def parse_basis(cell: gto.Cell, basis_name: Optional[str] = None):
     if basis_name is None:
         basis_name = "cc-pvdz"
@@ -81,6 +106,9 @@ def build_density_fitting(config: dict):
     method = config["density_fitting_method"].lower()
     df_to_read = config["df_to_read"]
     df_to_read = None if df_to_read == "None" else df_to_read
+
+    kconserv_to_read = config["kconserv_to_read"]
+    kconserv_to_read = None if kconserv_to_read == "None" else kconserv_to_read
 
     df_obj = None
     df_path = os.path.join(TMPDIR, "df.h5")
@@ -160,6 +188,14 @@ def build_density_fitting(config: dict):
             print(f"Reading FFTISDF from {df_to_read}")
             df_obj._isdf = df_to_read
         
+        if kconserv_to_read is not None:
+            print(f"Reading kconserv from {kconserv_to_read}")
+            kmesh = config["kmesh"]
+            kpts = config["kpts"]
+            k3, k2 = load_kconserv(kconserv_to_read, kmesh, kpts)
+            df_obj._kconserv3 = k3
+            df_obj._kconserv2 = k2
+        
         cisdf = float(method[2])
         build_isdf_obj = df_obj.build
         df_obj.build = lambda *args, **kwargs: build_isdf_obj(cisdf=cisdf)
@@ -232,10 +268,27 @@ def build_mean_field(config: dict):
     config["mf"] = mf
     get_init_guess(config)
 
-def build(config):
-    # for cases it is a argparse.Namespace
-    if not isinstance(config, dict):
-        config = config.__dict__
+def build():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--name", type=str, required=True)
+    parser.add_argument("--xc", type=str, default=None)
+    parser.add_argument("--kmesh", type=str, required=True)
+    parser.add_argument("--basis", type=str, required=True)
+    parser.add_argument("--pseudo", type=str, required=True)
+    parser.add_argument("--lno-thresh", type=float, default=3e-5)
+    parser.add_argument("--density-fitting-method", type=str, required=True)
+    parser.add_argument("--is-unrestricted", action="store_true")
+    parser.add_argument("--init-guess-method", type=str, default="minao")
+    parser.add_argument("--df-to-read", type=str, default=None)
+    parser.add_argument("--kconserv-to-read", type=str, default=None)
+    args = parser.parse_args()
+
+    print("\nRunning %s with:" % (__file__))
+    config = args.__dict__
+    for k, v in config.items():
+        print(f"{k}: {v}")
+    print("\n")
     
     build_cell(config)
     build_density_fitting(config)

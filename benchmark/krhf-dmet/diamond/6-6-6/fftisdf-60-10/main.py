@@ -1,9 +1,9 @@
 import os, sys, numpy, time
 import pyscf, libdmet, fft
 
-def main(config: dict):
+def main():
     from utils import build
-    build(config)
+    config = build()
 
     cell = config["cell"]
     df_obj = config["df"]
@@ -96,23 +96,4 @@ def main(config: dict):
 
 
 if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--name", type=str, required=True)
-    parser.add_argument("--xc", type=str, default=None)
-    parser.add_argument("--kmesh", type=str, required=True)
-    parser.add_argument("--basis", type=str, required=True)
-    parser.add_argument("--pseudo", type=str, required=True)
-    parser.add_argument("--lno-thresh", type=float, default=3e-5)
-    parser.add_argument("--density-fitting-method", type=str, required=True)
-    parser.add_argument("--is-unrestricted", action="store_true")
-    parser.add_argument("--init-guess-method", type=str, default="minao")
-    parser.add_argument("--df-to-read", type=str, default=None)
-    
-    print("\nRunning %s with:" % (__file__))
-    config = parser.parse_args().__dict__
-    for k, v in config.items():
-        print(f"{k}: {v}")
-    print("\n")
-
-    main(config)
+    main()

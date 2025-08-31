@@ -1,101 +1,55 @@
 import os, sys, numpy, time
-import pyscf, libdmet, fft
+import pyscf, libdmet, fft, utils
 
-from line_profiler import profile
-@profile
 def main(config: dict):
     from utils import build
     build(config)
-
+    
     cell = config["cell"]
-    df_obj = config["df"]
-    kpts = config["kpts"]
-    nkpt = nimg = len(kpts)
+    kmesh  = ['1-1-1', '1-1-2', '1-2-2', '2-2-2']
+    kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    kmesh += ['4-4-5', '4-5-5', '5-5-5']
+    kmesh += ['5-5-6', '5-6-6', ]
+    kmesh += ['6-6-6']
+    kmesh += ['6-6-7', '6-7-7', '7-7-7']
+    kmesh += ['7-7-8', '7-8-8', '8-8-8']
+    kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
-    dm0 = config["dm0"]
-    nao = cell.nao_nr()
-    natm = cell.natm
-
-    log = open("out.log", "w")
-    log.write("method = %s\n" % config["density_fitting_method"])
-    log.write("basis = %s\n" % config["basis"])
-    log.write("natm = %d\n" % natm)
-    log.write("nkpt = %d\n" % nkpt)
-    log.write("nao = %d\n" % nao)
-    log.flush()
-
-    t0 = time.time()
-    df_obj.build()
-    log.write("time_build_df = % 6.2f\n" % (time.time() - t0))
-
-    df_path = config["df_path"]
-    if os.path.exists(df_path):
-        df_size_in_byte = float(os.path.getsize(df_path))
-        df_size_in_giga = df_size_in_byte / (1024 ** 3)
-        print("df_size_in_byte = % 6.2e" % df_size_in_byte)
-        print("df_size_in_giga = % 6.2e" % df_size_in_giga)
-
-        log.write("df_size_in_gb = % 6.2e\n" % df_size_in_giga)
-
-    naux = None
-    if isinstance(df_obj, fft.ISDF):
-        naux = df_obj.inpv_kpt.shape[1]
-    else:
-        naux = df_obj.get_naoaux()
-    if naux is not None:
-        log.write("naux = %d\n" % naux)
-
-    t0 = time.time()
-    scf_obj = config["mf"]
-    scf_obj.exxdiv = "ewald"
-    scf_obj.with_df = df_obj
-    ene_krhf = scf_obj.kernel(dm0)
-    log.write("time_krhf = % 6.2f\n" % (time.time() - t0))
-    log.write("ene_krhf = % 12.8f\n" % ene_krhf)
-    log.flush()
-
-    dm0 = scf_obj.make_rdm1()
-    t0 = time.time()
-    vjk = scf_obj.get_jk(dm_kpts=dm0, hermi=1, with_j=True, with_k=False)
-    log.write("time_get_j = % 6.2f\n" % (time.time() - t0))
-    log.flush()
-
-    t0 = time.time()
-    vjk = scf_obj.get_jk(dm_kpts=dm0, hermi=1, with_j=False, with_k=True)
-    log.write("time_get_k = % 6.2f\n" % (time.time() - t0))
-    log.flush()
-    
-    import dmet
-    from dmet import build_dmet
-    from dmet import get_emb_eri_fftisdf
-    get_emb_eri_old = libdmet.basis.trans_2e.get_emb_eri    
-
-    def get_emb_eri(*args, **kwargs):
-        df_obj = args[0]
-        eri_emb = None
-
+    from pyscf.lib.chkfile import dump
+    for km in kmesh:
+        m = [int(i) for i in km.split("-")]
+        kpts = cell.make_kpts(m, wrap_around=True)
+        nk = len(kpts)
+        
         t0 = time.time()
-        if isinstance(df_obj, fft.ISDF):
-            kwargs.pop('use_mpi')
-            eri_emb = get_emb_eri_fftisdf(*args, **kwargs)
-        else:
-            eri_emb = get_emb_eri_old(*args, **kwargs)
+        from fft.isdf import get_kconserv
+        kconserv = get_kconserv(cell, kpts)
+        t1 = time.time()
+        dt = (t1 - t0) / 3600
+        print("nk = %4d, time_get_kconserv = % 8.2e h" % (nk, dt), flush=True)
+        
+        path = f"{config['name']}-kconserv-wrap-around-1.chk"
+        dump(path, km + "/kpts", kpts)
+        dump(path, km + "/kconserv3", kconserv)
+        dump(path, km + "/kconserv2", kconserv[:, :, 0].T)
 
-        log.write("time_get_eri = % 6.2f\n" % (time.time() - t0))
-        assert eri_emb is not None
-        return eri_emb
-    libdmet.basis.trans_2e.get_emb_eri = get_emb_eri
-    
-    build_dmet(config)
-
-    emb = config["emb"]
-    emb.kernel()
-    ene_dmet = emb.e_tot
-    
-    log.write("time_dmet = % 6.2f\n" % (time.time() - t0))
-    log.write("ene_dmet = % 12.8f\n" % ene_dmet)
-    log.flush()
-
+    for km in kmesh:
+        m = [int(i) for i in km.split("-")]
+        kpts = cell.make_kpts(m, wrap_around=False)
+        nk = len(kpts)
+        
+        t0 = time.time()
+        from fft.isdf import get_kconserv
+        kconserv = get_kconserv(cell, kpts)
+        t1 = time.time()
+        dt = (t1 - t0) / 3600
+        print("nk = %4d, time_get_kconserv = % 8.2e h" % (nk, dt), flush=True)
+        
+        path = f"{config['name']}-kconserv-wrap-around-0.chk"
+        dump(path, km + "/kpts", kpts)
+        dump(path, km + "/kconserv3", kconserv)
+        dump(path, km + "/kconserv2", kconserv[:, :, 0].T)
 
 if __name__ == "__main__":
     import argparse
@@ -110,6 +64,7 @@ if __name__ == "__main__":
     parser.add_argument("--is-unrestricted", action="store_true")
     parser.add_argument("--init-guess-method", type=str, default="minao")
     parser.add_argument("--df-to-read", type=str, default=None)
+    parser.add_argument("--kconserv-to-read", type=str, default=None)
     
     print("\nRunning %s with:" % (__file__))
     config = parser.parse_args().__dict__

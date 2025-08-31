@@ -40,5 +40,5 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-krhf-dmet.py main.py
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=10-10-10 --density-fitting-method=fftisdf-80-14 --name=diamond --init-guess-method=minao
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=10-10-10 --density-fitting-method=fftisdf-80-14 --name=diamond --init-guess-method=chk
 echo "End time = $(date)"
