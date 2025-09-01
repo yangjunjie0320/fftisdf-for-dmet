@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=diamond-fftisdf-100-16-kmesh-7-7-7-lno-thresh-1.00e-05
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=64
 #SBATCH --mem-per-cpu=6gb
-#SBATCH --time=04:00:00
+#SBATCH --time=20:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
