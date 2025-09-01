@@ -1,0 +1,15 @@
+method = fftisdf-100-10
+basis = cc-pvdz
+natm = 2
+nkpt = 343
+nao = 26
+time_build_df =   0.38
+naux = 260
+time_krhf =  11.25
+ene_krhf = -11.02719661
+time_klno =  4128.16
+ene_klno_mp2 = -11.23599535
+ene_klno_ccsd = -11.25085725
+ene_klno_corr_mp2 =  -0.20879873
+ene_klno_corr_ccsd =  -0.22366064
+ene_klno_corr_os =  -0.15430584
