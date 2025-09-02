@@ -27,7 +27,7 @@ def loop(cell='diamond'):
         df_method += ['fftisdf-160-8', 'fftisdf-160-10', 'fftisdf-160-12', 'fftisdf-160-14', 'fftisdf-160-16', 'fftisdf-160-18', 'fftisdf-160-20']
         df_method += ['fftisdf-180-8', 'fftisdf-180-10', 'fftisdf-180-12', 'fftisdf-180-14', 'fftisdf-180-16', 'fftisdf-180-18', 'fftisdf-180-20']
 
-    kmesh  = ['1-1-1', '1-1-2', '1-2-2', '2-2-2']
+    kmesh  = ['1-1-2', '1-2-2', '2-2-2']
     kmesh += ['2-2-3', '2-3-3', '3-3-3']
     kmesh += ['3-3-4', '3-4-4', '4-4-4']
 
@@ -44,7 +44,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         print(f"Setting up benchmark directory: {config}")
         dir_path = base_dir / config['kmesh'] / config['density-fitting-method'] 
-        dir_path = dir_path / ("lno-thresh-%6.2e" % config['lno-thresh'])
+        # dir_path = dir_path / ("lno-thresh-%6.2e" % config['lno-thresh'])
         if dir_path.exists():
             print(f"Directory {dir_path} already exists, deleting")
             shutil.rmtree(dir_path)
@@ -58,7 +58,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         config['name'] = cell
         config['is-unrestricted'] = False
         config['init-guess-method'] = 'chk'
-        config['lno-thresh'] = config['lno-thresh']
+        # config['lno-thresh'] = config['lno-thresh']
         config['df-to-read'] = './tmp/df.h5'
         config['kconserv-to-read'] = "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk"
 
@@ -72,7 +72,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         
         job_name = cell + '-' + config['density-fitting-method']
         job_name += '-' + 'kmesh-' + config['kmesh']
-        job_name += '-' + 'lno-thresh-%6.2e' % config['lno-thresh']
+        # job_name += '-' + 'lno-thresh-%6.2e' % config['lno-thresh']
 
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()

@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --reservation=changroup_standingres
-#SBATCH --job-name=diamond-fftisdf-60-10
+#SBATCH --job-name=diamond-fftisdf-60-10-kmesh-3-4-4
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=10gb
-#SBATCH --time=10:00:00
+#SBATCH --cpus-per-task=16
+#SBATCH --mem-per-cpu=6gb
+#SBATCH --time=01:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
@@ -39,6 +39,10 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fcdmft-main
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
+
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-ref-kpts.py main.py
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=3-4-4 --density-fitting-method=fftisdf-60-10 --name=diamond --init-guess-method=minao
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/diamond/3-4-4/fftisdf-60-10/scf.chk scf.chk
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/diamond/3-4-4/fftisdf-60-10/tmp/df.h5 tmp/df.h5
+
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=3-4-4 --density-fitting-method=fftisdf-60-10 --name=diamond --init-guess-method=chk --df-to-read=./tmp/df.h5 --kconserv-to-read=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk
 echo "End time = $(date)"

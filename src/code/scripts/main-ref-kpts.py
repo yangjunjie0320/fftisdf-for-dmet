@@ -66,16 +66,16 @@ def main(config: dict):
     log.write("ene_corr_os = % 12.8f\n" % mp_obj.e_corr_os)
     log.flush()
 
-    # from pyscf.pbc.cc import KCCSD
-    # cc_obj = KCCSD(scf_obj)
-    # cc_obj.verbose = 10
-    # eris = cc_obj.ao2mo()
-    # cc_obj.kernel(eris=eris)
-    # ene_kccsd = cc_obj.e_tot
-    # ene_corr_kccsd = cc_obj.e_corr
-    # log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
-    # log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
-    # log.flush()
+    from pyscf.pbc.cc import KCCSD
+    cc_obj = KCCSD(scf_obj)
+    cc_obj.verbose = 10
+    eris = cc_obj.ao2mo()
+    cc_obj.kernel(eris=eris)
+    ene_kccsd = cc_obj.e_tot
+    ene_corr_kccsd = cc_obj.e_corr
+    log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
+    log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
+    log.flush()
 
 if __name__ == "__main__":
     import argparse
