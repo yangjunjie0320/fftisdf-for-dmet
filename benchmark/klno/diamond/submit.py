@@ -14,18 +14,18 @@ def loop(cell='diamond'):
     # df_method.append('gdf-2.0')
     
     assert cell == 'diamond'
-    df_method  = ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16', 'fftisdf-60-18', 'fftisdf-60-20']
-    df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16', 'fftisdf-80-18', 'fftisdf-80-20']
-    df_method += ['fftisdf-100-10', 'fftisdf-100-12', 'fftisdf-100-14', 'fftisdf-100-16', 'fftisdf-100-18', 'fftisdf-100-20']
+    df_method += ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
+    df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
 
     kmesh = []
-    # kmesh += ['1-1-2', '1-2-2', '2-2-2']
+    # kmesh  = ['1-1-2', '1-2-2', '2-2-2']
     # kmesh += ['2-2-3', '2-3-3', '3-3-3']
     # kmesh += ['3-3-4', '3-4-4', '4-4-4']
     # kmesh += ['4-4-5', '4-5-5', '5-5-5']
     # kmesh += ['5-5-6', '5-6-6', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
-    kmesh += ['7-7-7', '7-7-8', '7-8-8', '8-8-8']
+    kmesh += ['7-8-8', '8-8-8']
+    # kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
     lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
 
@@ -126,7 +126,7 @@ if __name__ == "__main__":
     parser.add_argument("--cpus-per-task", type=int, default=4)
 
     # reservation is a string, default to None
-    parser.add_argument("--reservation", type=str, default=None)
+    parser.add_argument("--reservation", type=str, default="changroup_standingres")
     args = parser.parse_args()
     kwargs = args.__dict__
 

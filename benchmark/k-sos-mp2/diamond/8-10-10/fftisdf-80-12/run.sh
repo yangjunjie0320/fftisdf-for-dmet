@@ -1,4 +1,5 @@
 #!/bin/bash
+#SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=diamond-fftisdf-80-12-kmesh-8-10-10
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=64
