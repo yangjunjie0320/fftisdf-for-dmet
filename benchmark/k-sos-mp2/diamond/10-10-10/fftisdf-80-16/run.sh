@@ -1,10 +1,9 @@
 #!/bin/bash
-#SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=diamond-fftisdf-80-16-kmesh-10-10-10
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=64
 #SBATCH --mem-per-cpu=6gb
-#SBATCH --time=04:00:00
+#SBATCH --time=20:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"

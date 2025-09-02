@@ -13,24 +13,18 @@ def loop(cell='diamond'):
     # df_method.append('rsdf-2.0')
     # df_method.append('gdf-2.0')
     
-    if cell == 'diamond':
-        # df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
-        df_method += ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
-        df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
-    
-    elif cell == 'co2':
-        df_method += ['fftdf-140', 'fftdf-160', 'fftdf-180']
-        df_method += ['fftisdf-140-10', 'fftisdf-140-12', 'fftisdf-140-14', 'fftisdf-140-16']
-        df_method += ['fftisdf-160-10', 'fftisdf-160-12', 'fftisdf-160-14', 'fftisdf-160-16']
+    assert cell == 'diamond'
+    df_method += ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
+    df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
 
     kmesh = []
     # kmesh  = ['1-1-2', '1-2-2', '2-2-2']
     # kmesh += ['2-2-3', '2-3-3', '3-3-3']
     # kmesh += ['3-3-4', '3-4-4', '4-4-4']
-    kmesh += ['4-4-5', '4-5-5', '5-5-5']
-    kmesh += ['5-5-6', '5-6-6', '6-6-6']
-    kmesh += ['6-6-7', '6-7-7', '7-7-7']
-    kmesh += ['7-7-8', '7-8-8', '8-8-8']
+    # kmesh += ['4-4-5', '4-5-5', '5-5-5']
+    # kmesh += ['5-5-6', '5-6-6', '6-6-6']
+    # kmesh += ['6-6-7', '6-7-7', '7-7-7']
+    # kmesh += ['7-7-8', '7-8-8', '8-8-8']
     kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
     from itertools import product
