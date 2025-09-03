@@ -128,7 +128,7 @@ if __name__ == "__main__":
     parser.add_argument("--cpus-per-task", type=int, default=4)
 
     # reservation is a string, default to None
-    parser.add_argument("--reservation", type=str, default=None)
+    parser.add_argument("--reservation", type=str, default="changroup_standingres")
     args = parser.parse_args()
     kwargs = args.__dict__
 
