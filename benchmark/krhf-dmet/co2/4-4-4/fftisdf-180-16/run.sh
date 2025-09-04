@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --reservation=changroup_standingres
-#SBATCH --job-name=co2-rsdf-2.0-kmesh-1-1-2
+#SBATCH --job-name=co2-fftisdf-180-16-kmesh-4-4-4
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=6gb
@@ -41,5 +41,5 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-krhf-dmet.py main.py
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=1-1-2 --density-fitting-method=rsdf-2.0 --name=co2 --init-guess-method=minao
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=4-4-4 --density-fitting-method=fftisdf-180-16 --name=co2 --init-guess-method=minao
 echo "End time = $(date)"
