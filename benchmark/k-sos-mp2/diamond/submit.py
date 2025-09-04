@@ -25,7 +25,7 @@ def loop(cell='diamond'):
     # kmesh += ['5-5-6', '5-6-6', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
     # kmesh += ['7-7-8', '7-8-8', '8-8-8']
-    kmesh += ['8-8-10', '8-10-10', '10-10-10']
+    kmesh += ['10-10-10']
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d} for k, d in product(kmesh, df_method)]
@@ -53,7 +53,9 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         config['name'] = cell
         config['is-unrestricted'] = False
         config['init-guess-method'] = 'chk'
+        # config['lno-thresh'] = config['lno-thresh']
         config['df-to-read'] = './tmp/df.h5'
+        config['kconserv-to-read'] = "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk"
 
         base = Path(__file__).parent
         run_content = None
