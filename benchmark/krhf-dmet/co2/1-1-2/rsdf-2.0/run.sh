@@ -34,12 +34,12 @@ mkdir -p $TMPDIR
 echo TMPDIR       = $TMPDIR
 echo PYSCF_TMPDIR = $PYSCF_TMPDIR
 ln -s $PYSCF_TMPDIR tmp
-export PYTHONPATH=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fftisdf-main
-export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/libdmet2-main
-export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fcdmft-main
-export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
-export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
+export PYTHONPATH=/Users/yangjunjie/work/fftisdf-for-dmet/fftisdf-with-dmet-main/src/fftisdf-main
+export PYTHONPATH=$PYTHONPATH:/Users/yangjunjie/work/fftisdf-for-dmet/fftisdf-with-dmet-main/src/libdmet2-main
+export PYTHONPATH=$PYTHONPATH:/Users/yangjunjie/work/fftisdf-for-dmet/fftisdf-with-dmet-main/src/fcdmft-main
+export PYTHONPATH=$PYTHONPATH:/Users/yangjunjie/work/fftisdf-for-dmet/fftisdf-with-dmet-main/src/pyscf-forge-lnocc
+export PYTHONPATH=$PYTHONPATH:/Users/yangjunjie/work/fftisdf-for-dmet/fftisdf-with-dmet-main/src/code
 
-cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-krhf-dmet.py main.py
+cp /Users/yangjunjie/work/fftisdf-for-dmet/fftisdf-with-dmet-main/src/code/scripts/main-krhf-dmet.py main.py
 python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=1-1-2 --density-fitting-method=rsdf-2.0 --name=co2 --init-guess-method=minao
 echo "End time = $(date)"
