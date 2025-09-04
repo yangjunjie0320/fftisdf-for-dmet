@@ -36,7 +36,7 @@ def main():
     if naux is not None:
         log.write("naux = %d\n" % naux)
     log.flush()
-    assert 1 == 2
+    
 
     t0 = time.time()
     scf_obj = config["mf"]
@@ -46,6 +46,26 @@ def main():
     log.write("time_krhf = % 6.2f\n" % (time.time() - t0))
     log.write("ene_krhf = % 12.8f\n" % ene_krhf)
     log.flush()
+
+    def get_kconserv_new(*args, **kwargs):
+        print("args = ", args)
+        print("kwargs = ", kwargs)
+        assert isinstance(df_obj, fft.ISDF)
+        assert df_obj._kconserv3 is not None
+        res = df_obj.kconserv3
+        return res
+    pyscf.pbc.lib.kpts_helper.get_kconserv = get_kconserv_new
+
+    from pyscf.pbc.lib import kpts_helper
+    kpts_helper_old = kpts_helper.KptsHelper
+    def kpts_helper_new(*args, **kwargs):
+        print("args = ", args)
+        print("kwargs = ", kwargs)
+        kwargs["init_symm_map"] = False
+        res = kpts_helper_old(*args, **kwargs)
+        print("res = ", res)
+        return res
+    kpts_helper.KptsHelper = kpts_helper_new
 
     mp = pyscf.pbc.mp.KMP2(scf_obj)
     mp.verbose = 10

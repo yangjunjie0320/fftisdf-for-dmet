@@ -139,9 +139,6 @@ def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
     fswap.close()
     return e_corr
 
-from line_profiler import profile
-
-@profile
 def kmp2_corr_energy_with_isdf(mp_obj, nw=20, sos_factor=1.3):
     log = new_logger(mp_obj, mp_obj.verbose)
     

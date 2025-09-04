@@ -2,7 +2,7 @@
 #SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=diamond-fftisdf-60-14-kmesh-10-10-10
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=128
 #SBATCH --mem-per-cpu=6gb
 #SBATCH --time=8:00:00
 
@@ -44,5 +44,6 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/diamond/10-10-10/fftisdf-60-14/scf.chk scf.chk
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/diamond/10-10-10/fftisdf-60-14/tmp/df.h5 tmp/df.h5
 
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=10-10-10 --density-fitting-method=fftisdf-60-14 --name=diamond --init-guess-method=chk --df-to-read=./tmp/df.h5 --kconserv-to-read=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk
+echo "Start Running main.py = $(date)"
+python -u main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=10-10-10 --density-fitting-method=fftisdf-60-14 --name=diamond --init-guess-method=chk --df-to-read=./tmp/df.h5 --kconserv-to-read=/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk
 echo "End time = $(date)"

@@ -15,6 +15,7 @@ MAX_MEMORY = int(MAX_MEMORY)
 assert MAX_MEMORY > 0
 
 def load_kconserv(path, kmesh, kpts):
+    print("Loading kconserv")
     assert len(kmesh) == 3
     kw_mesh = f"{kmesh[0]}-{kmesh[1]}-{kmesh[2]}"
 
@@ -40,6 +41,7 @@ def load_kconserv(path, kmesh, kpts):
     return kconserv3, kconserv2
 
 def parse_basis(cell: gto.Cell, basis_name: Optional[str] = None):
+    print("Parsing basis")
     if basis_name is None:
         basis_name = "cc-pvdz"
     
@@ -61,6 +63,7 @@ def parse_basis(cell: gto.Cell, basis_name: Optional[str] = None):
     return basis
 
 def build_cell(config: dict):
+    print("Building cell")
     name: str = config["name"].lower()
 
     pwd = pathlib.Path(__file__).parent
@@ -98,6 +101,7 @@ def build_cell(config: dict):
     config["scell"] = scell
 
 def build_density_fitting(config: dict):
+    print("Building density fitting")
     cell: gto.Cell = config["cell"]
     scell: gto.Cell = config["scell"]
     latt: Lattice = config["lattice"]
@@ -207,6 +211,7 @@ def build_density_fitting(config: dict):
     config["df_path"] = df_path
 
 def get_init_guess(config: dict):
+    print("Getting initial guess")
     name: str = config["name"]
     mf: pyscf.pbc.scf.kscf.KSCF = config["mf"]
     cell: gto.Cell = config["cell"]
@@ -231,8 +236,11 @@ def get_init_guess(config: dict):
     nkpt = len(kpts)
 
     init_guess_method = config["init_guess_method"]
+    print(f"Using init guess method: {init_guess_method}")
+
     dm0 = mf.get_init_guess(key=init_guess_method)
     dm0 = dm0.reshape(spin, nkpt, nao, nao)
+    print(f"dm0.shape = {dm0.shape}")
 
     if is_spin_polarized:
         assert is_unrestricted
@@ -242,12 +250,13 @@ def get_init_guess(config: dict):
         print(f"Beta label: {beta_label}, Index: {beta_ix}")
         dm0[0, :, beta_ix, beta_ix] *= 0.0
         dm0[1, :, alph_ix, alph_ix] *= 0.0
+        mf.mulliken_meta(cell, dm0)
     
     dm0 = dm0[0] if spin == 1 else dm0
-    mf.mulliken_meta(cell, dm0)
     config["dm0"] = dm0
 
 def build_mean_field(config: dict):
+    print("Building mean field")
     xc = config["xc"]
     is_unrestricted = config["is_unrestricted"]
 
