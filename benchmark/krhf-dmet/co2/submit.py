@@ -20,9 +20,10 @@ def loop(cell='diamond'):
     
     elif cell == 'co2':
         # df_method += ['fftdf-140', 'fftdf-160', 'fftdf-180']
-        df_method += ['fftisdf-140-14', 'fftisdf-140-16', 'fftisdf-140-18', 'fftisdf-140-20']
-        df_method += ['fftisdf-160-14', 'fftisdf-160-16', 'fftisdf-160-18', 'fftisdf-160-20']
-        df_method += ['fftisdf-180-14', 'fftisdf-180-16', 'fftisdf-180-18', 'fftisdf-180-20']
+        # df_method += ['fftisdf-140-14', 'fftisdf-140-16', 'fftisdf-140-18', 'fftisdf-140-20']
+        # df_method += ['fftisdf-160-14', 'fftisdf-160-16', 'fftisdf-160-18', 'fftisdf-160-20']
+        # df_method += ['fftisdf-180-14', 'fftisdf-180-16', 'fftisdf-180-18', 'fftisdf-180-20']
+        df_method += ['fftisdf-140-14']
 
     kmesh = []
     kmesh  = ['1-1-2', '1-2-2', '2-2-2']
@@ -48,6 +49,20 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         print(f"Setting up benchmark directory: {config}")
         dir_path = base_dir / config['kmesh'] / config['density-fitting-method'] 
         if dir_path.exists():
+            # check if the calculation is finished
+            # read out.log and find if "ene_dmet" is printed
+            out_log_path = dir_path / 'out.log'
+            is_finished = os.path.exists(out_log_path)
+            if is_finished:
+                lines = None
+                with open(out_log_path, 'r') as f:
+                    lines = f.read()
+                is_finished = "ene_dmet" in lines
+
+            if is_finished:
+                print(f"Calculation is finished, skipping {dir_path}")
+                continue
+
             print(f"Directory {dir_path} already exists, deleting")
             shutil.rmtree(dir_path)
         dir_path.mkdir(parents=True, exist_ok=False)
