@@ -41,5 +41,8 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-k-sos-mp2.py main.py
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/co2/1-2-2/fftisdf-140-14/scf.chk scf.chk
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/co2/1-2-2/fftisdf-140-14/tmp/df.h5 tmp/df.h5
+
 python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=1-2-2 --density-fitting-method=fftisdf-140-14 --name=co2 --init-guess-method=chk --df-to-read=./tmp/df.h5
 echo "End time = $(date)"

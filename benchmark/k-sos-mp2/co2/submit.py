@@ -100,8 +100,8 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         assert main_path.exists(), f"Main script not found: {main_path}"
 
         run_content.append(f"\ncp {main_path} main.py\n")
-        # run_content.append(f"cp {ref_path / 'scf.chk'} scf.chk\n")
-        # run_content.append(f"cp {ref_path / 'tmp' / 'df.h5'} tmp/df.h5\n\n")
+        run_content.append(f"cp {ref_path / 'scf.chk'} scf.chk\n")
+        run_content.append(f"cp {ref_path / 'tmp' / 'df.h5'} tmp/df.h5\n\n")
 
         is_unrestricted = config.pop('is-unrestricted')
         cmd = "python main.py %s" % " ".join([f"--{k}={v}" for k, v in config.items()])
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     parser.add_argument("--cpus-per-task", type=int, default=4)
 
     # reservation is a string, default to None
-    parser.add_argument("--reservation", type=str, default=None)
+    parser.add_argument("--reservation", type=str, default="changroup_standingres")
     args = parser.parse_args()
     kwargs = args.__dict__
 
