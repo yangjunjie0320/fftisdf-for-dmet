@@ -14,8 +14,9 @@ def loop(cell='diamond'):
     # df_method.append('gdf-2.0')
     
     assert cell == 'diamond'
-    df_method += ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
-    df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
+    df_method += ['fftisdf-60-14']
+    # df_method += ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
+    # df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
 
     kmesh = []
     # kmesh  = ['1-1-2', '1-2-2', '2-2-2']
@@ -24,8 +25,9 @@ def loop(cell='diamond'):
     # kmesh += ['4-4-5', '4-5-5', '5-5-5']
     # kmesh += ['5-5-6', '5-6-6', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
-    kmesh += ['7-8-8', '8-8-8']
+    # kmesh += ['7-8-8', '8-8-8']
     # kmesh += ['8-8-10', '8-10-10', '10-10-10']
+    kmesh += ['10-10-10']
 
     lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
 
