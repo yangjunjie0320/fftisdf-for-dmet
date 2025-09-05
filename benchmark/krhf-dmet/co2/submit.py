@@ -10,8 +10,8 @@ def loop(cell='diamond'):
     pseudo = 'gth-hf-rev'
 
     df_method = []
-    df_method.append('rsdf-2.0')
-    df_method.append('gdf-2.0')
+    # df_method.append('rsdf-2.0')
+    # df_method.append('gdf-2.0')
     
     if cell == 'diamond':
         # df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
