@@ -1,4 +1,4 @@
-method="krhf-dmet"
+method="k-sos-mp2"
 mkdir -p $method; cd $method
 
 for cell in co2; do
