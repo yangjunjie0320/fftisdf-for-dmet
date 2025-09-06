@@ -1,4 +1,4 @@
-method="k-sos-mp2"
+method="klno"
 mkdir -p $method; cd $method
 
 for cell in co2; do

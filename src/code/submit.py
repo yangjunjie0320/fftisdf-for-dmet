@@ -20,9 +20,9 @@ def loop(cell='diamond'):
     
     elif cell == 'co2':
         # df_method += ['fftdf-140', 'fftdf-160', 'fftdf-180']
-        df_method += ['fftisdf-140-14', 'fftisdf-140-16']
-        df_method += ['fftisdf-160-14', 'fftisdf-160-16']
-        df_method += ['fftisdf-180-14', 'fftisdf-180-16']
+        df_method += ['fftisdf-140-14'] # , 'fftisdf-140-16']
+        # df_method += ['fftisdf-160-14', 'fftisdf-160-16']
+        # df_method += ['fftisdf-180-14', 'fftisdf-180-16']
 
     kmesh = []
     kmesh  = ['1-1-2', '1-2-2', '2-2-2']
