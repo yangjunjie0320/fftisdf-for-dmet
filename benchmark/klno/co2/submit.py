@@ -25,17 +25,21 @@ def loop(cell='diamond'):
         # df_method += ['fftisdf-180-14', 'fftisdf-180-16']
 
     kmesh = []
-    kmesh  = ['1-1-2', '1-2-2', '2-2-2']
-    kmesh += ['2-2-3', '2-3-3', '3-3-3']
-    kmesh += ['3-3-4', '3-4-4', '4-4-4']
-    # kmesh += ['4-4-5', '4-5-5', '5-5-5']
-    # kmesh += ['5-5-6', '5-6-6', '6-6-6']
+    # kmesh  = ['1-1-2', '1-2-2', '2-2-2']
+    # kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    # kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    kmesh += ['4-4-5', '4-5-5', '5-5-5']
+    kmesh += ['5-5-6', '5-6-6', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
     # kmesh += ['7-7-8', '7-8-8', '8-8-8']
     # kmesh += ['8-8-10', '8-10-10', '10-10-10']
 
+    lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
+    lno_thresh += [5e-9, 2e-9, 1e-9, 5e-10, 2e-10, 1e-10]
+
     from itertools import product
-    configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d} for k, d in product(kmesh, df_method)]
+    configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d, 'lno-thresh': l} for k, d, l in product(kmesh, df_method, lno_thresh)]
+    
     for config in configs:
         yield config
 
@@ -47,6 +51,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         print(f"Setting up benchmark directory: {config}")
         dir_path = base_dir / config['kmesh'] / config['density-fitting-method'] 
+        dir_path = dir_path / ("lno-thresh-%6.2e" % config['lno-thresh'])
         if dir_path.exists():
             print(f"Directory {dir_path} already exists, deleting")
             shutil.rmtree(dir_path)
@@ -60,7 +65,9 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         config['name'] = cell
         config['is-unrestricted'] = False
         config['init-guess-method'] = 'chk'
+        config['lno-thresh'] = config['lno-thresh']
         config['df-to-read'] = './tmp/df.h5'
+        # config['kconserv-to-read'] = "/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/test/test-8-8-10/diamond-kconserv-wrap-around-1.chk"
 
         base = Path(__file__).parent
         run_content = None
@@ -72,6 +79,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         
         job_name = cell + '-' + config['density-fitting-method']
         job_name += '-' + 'kmesh-' + config['kmesh']
+        job_name += '-' + 'lno-thresh-%6.2e' % config['lno-thresh']
 
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
