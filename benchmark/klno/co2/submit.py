@@ -25,6 +25,7 @@ def loop(cell='diamond'):
         # df_method += ['fftisdf-180-14', 'fftisdf-180-16']
 
     kmesh = []
+    kmesh += ['1-1-1']
     # kmesh  = ['1-1-2', '1-2-2', '2-2-2']
     # kmesh += ['2-2-3', '2-3-3', '3-3-3']
     # kmesh += ['3-3-4', '3-4-4', '4-4-4']
@@ -33,10 +34,10 @@ def loop(cell='diamond'):
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
     # kmesh += ['7-7-8', '7-8-8', '8-8-8']
     # kmesh += ['8-8-10', '8-10-10', '10-10-10']
-    kmesh += ['5-5-5', '6-6-6']
+    # kmesh += ['5-5-5', '6-6-6']
 
     lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
-    # lno_thresh += [5e-9, 2e-9, 1e-9, 5e-10, 2e-10, 1e-10]
+    lno_thresh += [5e-9, 2e-9, 1e-9, 5e-10, 2e-10, 1e-10]
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d, 'lno-thresh': l} for k, d, l in product(kmesh, df_method, lno_thresh)]
@@ -85,7 +86,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=10gb\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=25gb\n")
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")

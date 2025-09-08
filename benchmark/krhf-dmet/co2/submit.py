@@ -26,11 +26,12 @@ def loop(cell='diamond'):
         df_method += ['fftisdf-140-14']
 
     kmesh = []
-    kmesh  = ['1-1-2', '1-2-2', '2-2-2']
-    kmesh += ['2-2-3', '2-3-3', '3-3-3']
-    kmesh += ['3-3-4', '3-4-4', '4-4-4']
-    kmesh += ['4-4-5', '4-5-5', '5-5-5']
-    kmesh += ['5-5-6', '5-6-6', '6-6-6']
+    kmesh += ['1-1-1']
+    # kmesh  = ['1-1-2', '1-2-2', '2-2-2']
+    # kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    # kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    # kmesh += ['4-4-5', '4-5-5', '5-5-5']
+    # kmesh += ['5-5-6', '5-6-6', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
     # kmesh += ['7-7-8', '7-8-8', '8-8-8']
     # kmesh += ['8-8-10', '8-10-10', '10-10-10']
@@ -142,7 +143,7 @@ if __name__ == "__main__":
     parser.add_argument("--cpus-per-task", type=int, default=4)
 
     # reservation is a string, default to None
-    parser.add_argument("--reservation", type=str, default=None)
+    parser.add_argument("--reservation", type=str, default="changroup_standingres")
     args = parser.parse_args()
     kwargs = args.__dict__
 
