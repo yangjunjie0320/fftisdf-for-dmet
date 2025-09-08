@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=10gb
-#SBATCH --time=10:00:00
+#SBATCH --time=40:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
@@ -39,6 +39,12 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fcdmft-main
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
+
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-ref-kpts.py main.py
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=2-3-3 --density-fitting-method=fftisdf-140-14 --name=co2 --init-guess-method=minao
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/co2/2-3-3/fftisdf-140-14/scf.chk scf.chk
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/krhf-dmet/co2/2-3-3/fftisdf-140-14/tmp/df.h5 tmp/df.h5
+
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=2-3-3 --density-fitting-method=fftisdf-140-14 --name=co2 --init-guess-method=chk --df-to-read=./tmp/df.h5
+
+rm tmp; rm -rf $PYSCF_TMPDIR
 echo "End time = $(date)"
