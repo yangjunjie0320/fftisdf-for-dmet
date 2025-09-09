@@ -36,8 +36,9 @@ def loop(cell='diamond'):
     # kmesh += ['8-8-10', '8-10-10', '10-10-10']
     # kmesh += ['5-5-5', '6-6-6']
 
-    lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
-    lno_thresh += [5e-9, 2e-9, 1e-9, 5e-10, 2e-10, 1e-10]
+    # lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
+    # lno_thresh += [5e-9, 2e-9, 1e-9, 5e-10, 2e-10, 1e-10]
+    lno_thresh = [1e-12, 1e-14, 1e-16, 1e-18, 1e-20]
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d, 'lno-thresh': l} for k, d, l in product(kmesh, df_method, lno_thresh)]
