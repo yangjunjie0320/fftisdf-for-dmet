@@ -38,7 +38,8 @@ def loop(cell='diamond'):
 
     # lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
     # lno_thresh += [5e-9, 2e-9, 1e-9, 5e-10, 2e-10, 1e-10]
-    lno_thresh = [1e-12, 1e-14, 1e-16, 1e-18, 1e-20]
+    # lno_thresh = [1e-12, 1e-14, 1e-16, 1e-18, 1e-20]
+    lno_thresh = [2e-12, 5e-12, 1e-11, 2e-11, 5e-11]
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d, 'lno-thresh': l} for k, d, l in product(kmesh, df_method, lno_thresh)]
@@ -138,7 +139,7 @@ if __name__ == "__main__":
     parser.add_argument("--cpus-per-task", type=int, default=4)
 
     # reservation is a string, default to None
-    parser.add_argument("--reservation", type=str, default=None)
+    parser.add_argument("--reservation", type=str, default="changroup_standingres")
     args = parser.parse_args()
     kwargs = args.__dict__
 
