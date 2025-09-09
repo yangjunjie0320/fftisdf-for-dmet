@@ -70,7 +70,10 @@ def main():
     cc_obj = KCCSD(scf_obj)
     cc_obj.verbose = 10
     eris = cc_obj.ao2mo()
-    cc_obj.kernel(eris=eris)
+    t1, t2 = cc_obj.get_init_guess(eris)
+    t1 = numpy.asarray(t1, dtype=numpy.complex128)
+    t2 = numpy.asarray(t2, dtype=numpy.complex128)
+    cc_obj.kernel(t1=t1, t2=t2, eris=eris)
     ene_kccsd = cc_obj.e_tot
     ene_corr_kccsd = cc_obj.e_corr
     log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
