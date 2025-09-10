@@ -1,7 +1,7 @@
-method="klno"
+method="ref-kpts"
 mkdir -p $method; cd $method
 
-for cell in co2; do
+for cell in nio-afm; do
     mkdir -p $cell
 
     cd $cell; cp /home/junjiey/work/fftisdf-for-dmet/src/code/submit.py .

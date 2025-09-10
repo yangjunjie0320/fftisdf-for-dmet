@@ -29,9 +29,12 @@ def loop(cell='diamond'):
         # df_method += ['fftisdf-160-14', 'fftisdf-160-16']
         # df_method += ['fftisdf-180-14', 'fftisdf-180-16']
 
-    elif cell == "nio":
+    elif cell == "nio-afm":
         df_method += ['fftdf-100', 'fftdf-140', 'fftdf-180']
         df_method += ['fftdf-220', 'fftdf-260', 'fftdf-300']
+
+    else:
+        raise RuntimeError(f"Cell {cell} not supported")
 
     kmesh = []
     kmesh  = ['1-1-2', '1-2-2', '2-2-2']
@@ -61,15 +64,15 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
             shutil.rmtree(dir_path)
         dir_path.mkdir(parents=True, exist_ok=False)
 
-        ref_path = base_dir / ".." / ".." / 'krhf-dmet' / cell / config['kmesh'] / config['density-fitting-method']
-        ref_path = ref_path.resolve()
-        ref_path = ref_path.absolute()
-        assert ref_path.exists(), f"Reference path {ref_path} not found"
+        # ref_path = base_dir / ".." / ".." / 'krhf-dmet' / cell / config['kmesh'] / config['density-fitting-method']
+        # ref_path = ref_path.resolve()
+        # ref_path = ref_path.absolute()
+        # assert ref_path.exists(), f"Reference path {ref_path} not found"
 
         config['name'] = cell
-        config['is-unrestricted'] = False
-        config['init-guess-method'] = 'chk'
-        config['df-to-read'] = './tmp/df.h5'
+        config['is-unrestricted'] = ("afm" in cell.lower())
+        # config['init-guess-method'] = 'chk'
+        # config['df-to-read'] = './tmp/df.h5'
 
         base = Path(__file__).parent
         run_content = None
@@ -109,8 +112,8 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         assert main_path.exists(), f"Main script not found: {main_path}"
 
         run_content.append(f"\ncp {main_path} main.py\n")
-        run_content.append(f"cp {ref_path / 'scf.chk'} scf.chk\n")
-        run_content.append(f"cp {ref_path / 'tmp' / 'df.h5'} tmp/df.h5\n\n")
+        # run_content.append(f"cp {ref_path / 'scf.chk'} scf.chk\n")
+        # run_content.append(f"cp {ref_path / 'tmp' / 'df.h5'} tmp/df.h5\n\n")
 
         is_unrestricted = config.pop('is-unrestricted')
         cmd = "python main.py %s" % " ".join([f"--{k}={v}" for k, v in config.items()])
