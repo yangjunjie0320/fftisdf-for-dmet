@@ -11,7 +11,12 @@ def loop(cell='diamond'):
 
     df_method = []
     # df_method.append('rsdf-2.0')
-    # df_method.append('gdf-2.0')
+    df_method.append('gdf-2.0')
+    df_method.append('gdf-1.8')
+    df_method.append('gdf-1.6')
+    df_method.append('gdf-1.4')
+    df_method.append('gdf-1.2')
+    df_method.append('gdf-1.1')
     
     if cell == 'diamond':
         # df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
@@ -23,6 +28,10 @@ def loop(cell='diamond'):
         df_method += ['fftisdf-140-14'] # , 'fftisdf-140-16']
         # df_method += ['fftisdf-160-14', 'fftisdf-160-16']
         # df_method += ['fftisdf-180-14', 'fftisdf-180-16']
+
+    elif cell == "nio":
+        df_method += ['fftdf-100', 'fftdf-140', 'fftdf-180']
+        df_method += ['fftdf-220', 'fftdf-260', 'fftdf-300']
 
     kmesh = []
     kmesh  = ['1-1-2', '1-2-2', '2-2-2']
@@ -125,9 +134,7 @@ if __name__ == "__main__":
     parser.add_argument("--ntasks", type=int, default=1)
     parser.add_argument("--time", type=str, default="00:30:00")
     parser.add_argument("--cpus-per-task", type=int, default=4)
-
-    # reservation is a string, default to None
-    parser.add_argument("--reservation", type=str, default=None)
+    parser.add_argument("--reservation", type=str, default="changroup_standingres")
     args = parser.parse_args()
     kwargs = args.__dict__
 

@@ -59,23 +59,23 @@ def main():
     from pyscf.pbc.mp import KMP2
     mp_obj = KMP2(scf_obj)
     mp_obj.verbose = 10
-    mp_obj.kernel()
+    mp_obj.kernel(with_t2=False)
     log.write("time_kmp2 = % 6.2f\n" % (time.time() - t0))
     log.write("ene_kmp2 = % 12.8f\n" % mp_obj.e_tot)
     log.write("ene_corr_kmp2 = % 12.8f\n" % mp_obj.e_corr)
     log.write("ene_corr_os = % 12.8f\n" % mp_obj.e_corr_os)
     log.flush()
 
-    from pyscf.pbc.cc import KCCSD
-    cc_obj = KCCSD(scf_obj)
-    cc_obj.verbose = 10
-    eris = cc_obj.ao2mo()
-    cc_obj.kernel(eris=eris)
-    ene_kccsd = cc_obj.e_tot
-    ene_corr_kccsd = cc_obj.e_corr
-    log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
-    log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
-    log.flush()
+    # from pyscf.pbc.cc import KCCSD
+    # cc_obj = KCCSD(scf_obj)
+    # cc_obj.verbose = 10
+    # eris = cc_obj.ao2mo()
+    # cc_obj.kernel(eris=eris)
+    # ene_kccsd = cc_obj.e_tot
+    # ene_corr_kccsd = cc_obj.e_corr
+    # log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
+    # log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
+    # log.flush()
 
 if __name__ == "__main__":
     main()
