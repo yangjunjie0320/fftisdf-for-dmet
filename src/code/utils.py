@@ -224,9 +224,8 @@ def get_init_guess(config: dict):
     beta_ix = []
 
     if "nio-afm" in name.lower():
-        alph_label = ["0 Ni 3dz\^2", "0 Ni 3dx2-y2"]
-        beta_label = ["1 Ni 3dz\^2", "1 Ni 3dx2-y2"]
-
+        alph_label = ["Ni1 3dz\^2", "Ni1 3dx2-y2"]
+        beta_label = ["Ni2 3dz\^2", "Ni2 3dx2-y2"]
         alph_ix = cell.search_ao_label(alph_label)
         beta_ix = cell.search_ao_label(beta_label)
 
@@ -277,24 +276,26 @@ def build_mean_field(config: dict):
     config["mf"] = mf
     get_init_guess(config)
 
-def build():
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--name", type=str, required=True)
-    parser.add_argument("--xc", type=str, default=None)
-    parser.add_argument("--kmesh", type=str, required=True)
-    parser.add_argument("--basis", type=str, required=True)
-    parser.add_argument("--pseudo", type=str, required=True)
-    parser.add_argument("--lno-thresh", type=float, default=3e-5)
-    parser.add_argument("--density-fitting-method", type=str, required=True)
-    parser.add_argument("--is-unrestricted", action="store_true")
-    parser.add_argument("--init-guess-method", type=str, default="minao")
-    parser.add_argument("--df-to-read", type=str, default=None)
-    parser.add_argument("--kconserv-to-read", type=str, default=None)
-    args = parser.parse_args()
+def build(config: dict | None = None):
+    if config is None:
+        import argparse
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--name", type=str, default=None)
+        parser.add_argument("--xc", type=str, default=None)
+        parser.add_argument("--kmesh", type=str, default=None)
+        parser.add_argument("--basis", type=str, default=None)
+        parser.add_argument("--pseudo", type=str, default=None)
+        parser.add_argument("--lno-thresh", type=float, default=3e-5)
+        parser.add_argument("--density-fitting-method", type=str, default=None)
+        parser.add_argument("--is-unrestricted", action="store_true", default=False)
+        parser.add_argument("--init-guess-method", type=str, default="minao")
+        parser.add_argument("--df-to-read", type=str, default=None)
+        parser.add_argument("--kconserv-to-read", type=str, default=None)
+        args = parser.parse_args()
+        config = args.__dict__
 
+    assert isinstance(config, dict)
     print("\nRunning %s with:" % (__file__))
-    config = args.__dict__
     for k, v in config.items():
         print(f"{k}: {v}")
     print("\n")
@@ -318,6 +319,7 @@ if __name__ == "__main__":
         "init_guess_method": "minao",
         "df_to_read": None,
         "xc": None, "is_unrestricted": False,
+        "kconserv_to_read": None,
     }
     build(config)
 
@@ -330,6 +332,7 @@ if __name__ == "__main__":
         "df_to_read": None,
         "xc": None,
         "is_unrestricted": False,
+        "kconserv_to_read": None,
     }
     build(config)
 
@@ -342,18 +345,19 @@ if __name__ == "__main__":
         "df_to_read": None,
         "xc": None,
         "is_unrestricted": False,
+        "kconserv_to_read": None,
     }
-
     build(config)
 
     config = {
-        "name": "nh3",
+        "name": "nio-afm",
         "kmesh": "1-1-1",
         "basis": "cc-pvdz",
         "density_fitting_method": "gdf-2.0",
         "init_guess_method": "minao",
         "df_to_read": None,
         "xc": None,
-        "is_unrestricted": False,
+        "is_unrestricted": True,
+        "kconserv_to_read": None,
     }
     build(config)
