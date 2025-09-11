@@ -10,7 +10,12 @@ def loop(cell='diamond'):
     pseudo = 'gth-hf-rev'
 
     df_method = []
-    # df_method.append('gdf-2.0')
+    df_method.append('gdf-1.2')
+    df_method.append('gdf-1.4')
+    df_method.append('gdf-1.6')
+    df_method.append('gdf-1.8')
+    df_method.append('gdf-2.0')
+    df_method.append('gdf-2.2')
     
     if cell == 'diamond':
         # df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
@@ -24,10 +29,13 @@ def loop(cell='diamond'):
         # df_method += ['fftisdf-180-14', 'fftisdf-180-16']
 
     elif cell == "nio-afm":
-        df_method += ['fftisdf-180-12', 'fftisdf-180-14', 'fftisdf-180-16', 'fftisdf-180-18', 'fftisdf-180-20']
-        df_method += ['fftisdf-200-12', 'fftisdf-200-14', 'fftisdf-200-16', 'fftisdf-200-18', 'fftisdf-200-20']
-        df_method += ['fftisdf-220-12', 'fftisdf-220-14', 'fftisdf-220-16', 'fftisdf-220-18', 'fftisdf-220-20']
-        # df_method += ['fftdf-180', 'fftdf-200', 'fftdf-220']
+        # df_method += ['fftisdf-180-12', 'fftisdf-180-14', 'fftisdf-180-16', 'fftisdf-180-18', 'fftisdf-180-20']
+        # df_method += ['fftisdf-200-12', 'fftisdf-200-14', 'fftisdf-200-16', 'fftisdf-200-18', 'fftisdf-200-20']
+        # df_method += ['fftisdf-220-12', 'fftisdf-220-14', 'fftisdf-220-16', 'fftisdf-220-18', 'fftisdf-220-20']
+        df_method += ["fftisdf-180-24", "fftisdf-180-28", "fftisdf-180-32", "fftisdf-180-36", "fftisdf-180-40"]
+        df_method += ["fftisdf-200-24", "fftisdf-200-28", "fftisdf-200-32", "fftisdf-200-36", "fftisdf-200-40"]
+        df_method += ["fftisdf-220-24", "fftisdf-220-28", "fftisdf-220-32", "fftisdf-220-36", "fftisdf-220-40"]
+        df_method += ["fftdf-180", "fftdf-200", "fftdf-220"]
 
     else:
         raise RuntimeError(f"Cell {cell} not supported")
@@ -60,14 +68,14 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
             shutil.rmtree(dir_path)
         dir_path.mkdir(parents=True, exist_ok=False)
 
-        # ref_path = base_dir / ".." / ".." / 'krhf-dmet' / cell / config['kmesh'] / config['density-fitting-method']
-        # ref_path = ref_path.resolve()
-        # ref_path = ref_path.absolute()
-        # assert ref_path.exists(), f"Reference path {ref_path} not found"
+        ref_path = base_dir / ".." / ".." / 'kuhf-dmet' / cell / config['kmesh'] / 'fftisdf-200-20'
+        ref_path = ref_path.resolve()
+        ref_path = ref_path.absolute()
+        assert ref_path.exists(), f"Reference path {ref_path} not found"
 
         config['name'] = cell
         config['is-unrestricted'] = ("afm" in cell.lower())
-        # config['init-guess-method'] = 'chk'
+        config['init-guess-method'] = 'chk'
         # config['df-to-read'] = './tmp/df.h5'
 
         base = Path(__file__).parent
@@ -108,7 +116,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         assert main_path.exists(), f"Main script not found: {main_path}"
 
         run_content.append(f"\ncp {main_path} main.py\n")
-        # run_content.append(f"cp {ref_path / 'scf.chk'} scf.chk\n")
+        run_content.append(f"cp {ref_path / 'scf.chk'} scf.chk\n")
         # run_content.append(f"cp {ref_path / 'tmp' / 'df.h5'} tmp/df.h5\n\n")
 
         is_unrestricted = config.pop('is-unrestricted')
