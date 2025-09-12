@@ -229,13 +229,21 @@ def get_init_guess(config: dict):
         alph_ix = cell.search_ao_label(alph_label)
         beta_ix = cell.search_ao_label(beta_label)
 
+    if "cco-afm" in name.lower():
+        alph_label = ["Cu1 3dz\^2", "Cu1 3dx2-y2"]
+        beta_label = ["Cu2 3dz\^2", "Cu2 3dx2-y2"]
+        alph_ix = cell.search_ao_label(alph_label)
+        beta_ix = cell.search_ao_label(beta_label)
+
     spin = 2 if is_unrestricted else 1
     is_spin_polarized = len(alph_label) > 0 or len(beta_label) > 0
     nao = mf.cell.nao_nr()
     nkpt = len(kpts)
 
     init_guess_method = config["init_guess_method"]
-    print(f"Using init guess method: {init_guess_method}")
+    is_spin_polarized = is_spin_polarized and (not init_guess_method == "chk")
+    print(f"is_spin_polarized = {is_spin_polarized}")
+    print(f"init_guess_method = {init_guess_method}")
 
     dm0 = mf.get_init_guess(key=init_guess_method)
     dm0 = dm0.reshape(spin, nkpt, nao, nao)

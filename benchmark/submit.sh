@@ -1,7 +1,7 @@
 method="kuhf-dmet"
 mkdir -p $method; cd $method
 
-for cell in nio-afm; do
+for cell in cco-afm; do
     mkdir -p $cell
 
     cd $cell; cp /home/junjiey/work/fftisdf-for-dmet/src/code/submit.py .
