@@ -48,18 +48,15 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         out_log = dir_path / 'out.log'
 
         if dir_path.exists():
-            assert out_log.exists(), f"Out log {out_log} not found"
-
             print(f"Directory {dir_path} already exists")
-            content = None
-            with open(out_log, 'r') as f:
-                content = f.read()
+            content = "" if not out_log.exists() else open(out_log, 'r').read()
 
             is_finished = "e_tot_klno_ccsd_t" in content
             if not is_finished:
                 print(f"Calculation is not finished, deleting {dir_path}")
                 shutil.rmtree(dir_path)
-            else:
+            
+            if is_finished:
                 print(f"Calculation is finished, skipping {dir_path}")
                 continue
 
@@ -92,7 +89,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=25gb\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=8gb\n")
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")

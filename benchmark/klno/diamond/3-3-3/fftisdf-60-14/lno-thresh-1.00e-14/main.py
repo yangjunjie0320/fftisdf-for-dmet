@@ -79,6 +79,8 @@ def main():
     klno_obj.lno_thresh = [gamma * lno_thresh, lno_thresh]
     klno_obj.verbose = 5
     klno_obj.verbose_imp = 5
+    klno_obj._max_las_size_ccsd = 400
+    klno_obj._max_las_size_ccsd_t = 400
     klno_obj.ccsd_t = True
     klno_obj.kernel()
     log.write("time_klno = % 6.2f\n" % (time.time() - t0))
