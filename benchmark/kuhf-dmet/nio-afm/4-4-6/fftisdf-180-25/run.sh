@@ -41,5 +41,5 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-kuhf-dmet.py main.py
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=4-4-6 --density-fitting-method=fftisdf-180-25 --name=nio-afm --init-guess-method=chk --is-unrestricted
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=4-4-6 --density-fitting-method=fftisdf-180-25 --name=nio-afm --init-guess-method=minao --is-unrestricted
 echo "End time = $(date)"

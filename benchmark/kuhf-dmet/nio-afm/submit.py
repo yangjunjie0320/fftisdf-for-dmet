@@ -20,9 +20,9 @@ def loop(cell='diamond'):
     df_method += ["fftisdf-180-25"]
 
     kmesh = []
-    kmesh += ['1-1-2', '1-2-2', '2-2-2']
-    kmesh += ['2-2-3', '2-3-3', '3-3-3']
-    kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    # kmesh += ['1-1-2', '1-2-2', '2-2-2']
+    # kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    # kmesh += ['3-3-4', '3-4-4', '4-4-4']
     kmesh += ['4-4-6', '4-6-6', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
     # kmesh += ['7-7-8', '7-8-8', '8-8-8']
@@ -46,14 +46,14 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
             shutil.rmtree(dir_path)
         dir_path.mkdir(parents=True, exist_ok=False)
 
-        # ref_path = base_dir / ".." / ".." / 'kuhf-dmet' / cell / config['kmesh'] / 'fftisdf-200-20'
+        # ref_path = base_dir / ".." / ".." / 'kuhf-dmet' / cell / config['kmesh'] / 'fftisdf-180-24'
         # ref_path = ref_path.resolve()
         # ref_path = ref_path.absolute()
         # assert ref_path.exists(), f"Reference path {ref_path} not found"
 
         config['name'] = cell
         config['is-unrestricted'] = ("afm" in cell.lower())
-        config['init-guess-method'] = 'chk'
+        config['init-guess-method'] = 'minao'
         # config['df-to-read'] = './tmp/df.h5'
 
         base = Path(__file__).parent

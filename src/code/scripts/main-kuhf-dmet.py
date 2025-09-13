@@ -58,10 +58,11 @@ def main():
     log.flush()
 
     t0 = time.time()
-    ene_krhf = scf_obj.kernel(dm0)
+    ene_kuhf = scf_obj.kernel(dm0)
     dm0 = scf_obj.make_rdm1()
-    log.write("time_krhf = % 6.2f\n" % (time.time() - t0))
-    log.write("ene_krhf = % 12.8f\n" % ene_krhf)
+    scf_obj.analyze()
+    log.write("time_kuhf = % 6.2f\n" % (time.time() - t0))
+    log.write("ene_kuhf = % 12.8f\n" % ene_kuhf)
     log.flush()
     
     import dmet

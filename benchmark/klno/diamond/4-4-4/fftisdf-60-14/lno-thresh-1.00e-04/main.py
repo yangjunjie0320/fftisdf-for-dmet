@@ -79,20 +79,25 @@ def main():
     klno_obj.lno_thresh = [gamma * lno_thresh, lno_thresh]
     klno_obj.verbose = 5
     klno_obj.verbose_imp = 5
+    klno_obj.ccsd_t = True
     klno_obj.kernel()
     log.write("time_klno = % 6.2f\n" % (time.time() - t0))
 
-    ene_corr_klno_mp2 = klno_obj.e_corr_pt2
-    ene_corr_klno_ccsd = klno_obj.e_corr
-    ene_corr_pt2_os = klno_obj.e_corr_pt2_os
-    ene_klno_mp2 = ene_corr_klno_mp2 + ene_krhf
-    ene_klno_ccsd = ene_corr_klno_ccsd + ene_krhf
+    e_corr_klno_mp2 = klno_obj.e_corr_pt2
+    e_corr_klno_ccsd = klno_obj.e_corr
+    e_corr_pt2_os = klno_obj.e_corr_pt2_os
+    e_corr_ccsd_t = klno_obj.e_corr_ccsd_t
+    e_tot_klno_mp2 = e_corr_klno_mp2 + ene_krhf
+    e_tot_klno_ccsd = e_corr_klno_ccsd + ene_krhf
+    e_tot_klno_ccsd_t = e_corr_ccsd_t + ene_krhf
 
-    log.write("ene_klno_mp2 = % 12.8f\n" % ene_klno_mp2)
-    log.write("ene_klno_ccsd = % 12.8f\n" % ene_klno_ccsd)
-    log.write("ene_klno_corr_mp2 = % 12.8f\n" % ene_corr_klno_mp2)
-    log.write("ene_klno_corr_ccsd = % 12.8f\n" % ene_corr_klno_ccsd)
-    log.write("ene_klno_corr_os = % 12.8f\n" % ene_corr_pt2_os)
+    log.write("e_tot_klno_mp2 = % 12.8f\n" % e_tot_klno_mp2)
+    log.write("e_tot_klno_ccsd = % 12.8f\n" % e_tot_klno_ccsd)
+    log.write("e_tot_klno_ccsd_t = % 12.8f\n" % e_tot_klno_ccsd_t)
+    log.write("e_corr_klno_corr_mp2 = % 12.8f\n" % e_corr_klno_mp2)
+    log.write("e_corr_klno_corr_ccsd = % 12.8f\n" % e_corr_klno_ccsd)
+    log.write("e_corr_klno_corr_ccsd_t = % 12.8f\n" % e_corr_ccsd_t)
+    log.write("e_corr_klno_corr_os = % 12.8f\n" % e_corr_pt2_os)
     log.flush()
 
 

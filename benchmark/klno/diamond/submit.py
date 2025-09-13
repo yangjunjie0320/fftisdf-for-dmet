@@ -19,17 +19,17 @@ def loop(cell='diamond'):
     # df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
 
     kmesh = []
-    # kmesh  = ['1-1-2', '1-2-2', '2-2-2']
-    # kmesh += ['2-2-3', '2-3-3', '3-3-3']
-    # kmesh += ['3-3-4', '3-4-4', '4-4-4']
-    # kmesh += ['4-4-5', '4-5-5', '5-5-5']
-    # kmesh += ['5-5-6', '5-6-6', '6-6-6']
-    # kmesh += ['6-6-7', '6-7-7', '7-7-7']
-    # kmesh += ['7-8-8', '8-8-8']
+    kmesh  = ['1-1-2', '1-2-2', '2-2-2']
+    kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    kmesh += ['4-4-5', '4-5-5', '5-5-5']
+    kmesh += ['5-5-6', '5-6-6', '6-6-6']
+    kmesh += ['6-6-7', '6-7-7', '7-7-7']
+    kmesh += ['7-7-8', '7-8-8', '8-8-8']
     # kmesh += ['8-8-10', '8-10-10', '10-10-10']
-    kmesh += ['10-10-10']
+    # kmesh += ['10-10-10']
 
-    lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8]
+    lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7, 1e-8, 1e-10, 1e-12, 1e-14]
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d, 'lno-thresh': l} for k, d, l in product(kmesh, df_method, lno_thresh)]
@@ -45,9 +45,24 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         print(f"Setting up benchmark directory: {config}")
         dir_path = base_dir / config['kmesh'] / config['density-fitting-method'] 
         dir_path = dir_path / ("lno-thresh-%6.2e" % config['lno-thresh'])
+        out_log = dir_path / 'out.log'
+
         if dir_path.exists():
-            print(f"Directory {dir_path} already exists, deleting")
-            shutil.rmtree(dir_path)
+            assert out_log.exists(), f"Out log {out_log} not found"
+
+            print(f"Directory {dir_path} already exists")
+            content = None
+            with open(out_log, 'r') as f:
+                content = f.read()
+
+            is_finished = "e_tot_klno_ccsd_t" in content
+            if not is_finished:
+                print(f"Calculation is not finished, deleting {dir_path}")
+                shutil.rmtree(dir_path)
+            else:
+                print(f"Calculation is finished, skipping {dir_path}")
+                continue
+
         dir_path.mkdir(parents=True, exist_ok=False)
 
         ref_path = base_dir / ".." / ".." / 'krhf-dmet' / cell / config['kmesh'] / config['density-fitting-method']
@@ -77,7 +92,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=6gb\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=25gb\n")
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")

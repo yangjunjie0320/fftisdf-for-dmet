@@ -10,34 +10,25 @@ def loop(cell='diamond'):
     pseudo = 'gth-hf-rev'
 
     df_method = []
+    df_method.append('gdf-1.1')
+    df_method.append('gdf-1.2')
+    df_method.append('gdf-1.4')
+    df_method.append('gdf-1.6')
+    df_method.append('gdf-1.8')
     df_method.append('gdf-2.0')
     
-    if cell == 'diamond':
-        # df_method += ['fftdf-60', 'fftdf-80', 'fftdf-100']
-        df_method += ['fftisdf-60-10', 'fftisdf-60-12', 'fftisdf-60-14', 'fftisdf-60-16']
-        df_method += ['fftisdf-80-10', 'fftisdf-80-12', 'fftisdf-80-14', 'fftisdf-80-16']
-    
-    elif cell == 'co2':
-        # df_method += ['fftdf-140', 'fftdf-160', 'fftdf-180']
-        df_method += ['fftisdf-140-14'] # , 'fftisdf-140-16']
-        # df_method += ['fftisdf-160-14', 'fftisdf-160-16']
-        # df_method += ['fftisdf-180-14', 'fftisdf-180-16']
-
-    elif cell == "nio-afm":
-        df_method += ['fftisdf-180-12', 'fftisdf-180-14', 'fftisdf-180-16', 'fftisdf-180-18', 'fftisdf-180-20']
-        df_method += ['fftisdf-200-12', 'fftisdf-200-14', 'fftisdf-200-16', 'fftisdf-200-18', 'fftisdf-200-20']
-        df_method += ['fftisdf-220-12', 'fftisdf-220-14', 'fftisdf-220-16', 'fftisdf-220-18', 'fftisdf-220-20']
-        # df_method += ['fftdf-180', 'fftdf-200', 'fftdf-220']
-
-    elif cell == "cco-afm":
-        df_method += ['fftdf-120', 'fftdf-140', 'fftdf-160', 'fftdf-180', 'fftdf-200']
-        df_method += ['fftdf-240', 'fftdf-260', 'fftdf-280', 'fftdf-300']
-
-    else:
-        raise RuntimeError(f"Cell {cell} not supported")
+    assert cell == "cco-afm"
+    df_method += ["fftdf-120"]
+    df_method += ["fftdf-160"]
+    df_method += ["fftdf-200"]
+    df_method += ["fftdf-240"]
+    df_method += ["fftdf-260"]
+    df_method += ["fftdf-280"]
+    df_method += ["fftdf-300"]
 
     kmesh = []
-    kmesh += ['1-1-2', '1-2-2', '2-2-2']
+    kmesh += ['1-1-1'] 
+    # , '1-2-2', '2-2-2']
     # kmesh += ['2-2-3', '2-3-3', '3-3-3']
     # kmesh += ['3-3-4', '3-4-4', '4-4-4']
     # kmesh += ['4-4-5', '4-5-5', '5-5-5']

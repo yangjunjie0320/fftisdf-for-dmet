@@ -41,5 +41,6 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-kuhf-dmet.py main.py
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/kuhf-dmet/nio-afm/2-2-2/fftisdf-180-24/scf.chk scf.chk
 python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=2-2-2 --density-fitting-method=fftisdf-180-25 --name=nio-afm --init-guess-method=chk --is-unrestricted
 echo "End time = $(date)"
