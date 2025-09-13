@@ -4,6 +4,7 @@ import subprocess
 import time
 import argparse
 from pathlib import Path
+import glob
 
 def loop(cell='diamond'):
     basis = 'cc-pvdz'
@@ -20,10 +21,10 @@ def loop(cell='diamond'):
     df_method += ["fftisdf-180-25"]
 
     kmesh = []
-    # kmesh += ['1-1-2', '1-2-2', '2-2-2']
-    # kmesh += ['2-2-3', '2-3-3', '3-3-3']
-    # kmesh += ['3-3-4', '3-4-4', '4-4-4']
-    kmesh += ['4-4-6', '4-6-6', '6-6-6']
+    kmesh += ['1-1-2', '1-2-2', '2-2-2']
+    kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    kmesh += ['4-4-6'] # , '4-6-6', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
     # kmesh += ['7-7-8', '7-8-8', '8-8-8']
     # kmesh += ['8-8-10', '8-10-10', '10-10-10']
@@ -41,10 +42,44 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         print(f"Setting up benchmark directory: {config}")
         dir_path = base_dir / config['kmesh'] / config['density-fitting-method'] 
-        if dir_path.exists():
-            print(f"Directory {dir_path} already exists, deleting")
-            shutil.rmtree(dir_path)
-        dir_path.mkdir(parents=True, exist_ok=False)
+        assert dir_path.exists(), f"Directory {dir_path} not found"
+        print(f"Directory {dir_path} found")
+        is_out_log_exist = os.path.exists(dir_path / 'out.log')
+        assert is_out_log_exist
+
+        # search for slurm log
+        import glob
+        slurm_log_list = glob.glob(str(dir_path / 'slurm-*'))
+        assert len(slurm_log_list) == 1
+        slurm_log_file = slurm_log_list[0]
+        print(f"slurm_log_files: {slurm_log_file}")
+        
+        lines = None
+        with open(slurm_log_file, 'r') as f:
+            lines = f.read()
+        is_dmet_converged = "DMET converged after" in lines
+        if is_dmet_converged:
+            print(f"DMET converged, skipping {dir_path}")
+            continue
+
+        # clean up the directory
+        files_to_be_removed = dir_path.glob(str(dir_path / '*.h5'))
+        files_to_be_removed += dir_path.glob(str(dir_path / '*.json'))
+        files_to_be_removed += dir_path.glob(str(dir_path / 'slurm-*'))
+        for f in files_to_be_removed:
+            print(f"Removing {f}")
+            os.remove(f)
+
+        os.chdir(dir_path)
+        tmp_real_path = os.path.realpath('tmp')
+        df_h5_path = os.path.join(tmp_real_path, 'df.h5')
+        assert os.path.exists(df_h5_path)
+        os.system("rm tmp")
+
+        # if dir_path.exists():
+        #     print(f"Directory {dir_path} already exists, deleting")
+        #     shutil.rmtree(dir_path)
+        # dir_path.mkdir(parents=True, exist_ok=False)
 
         # ref_path = base_dir / ".." / ".." / 'kuhf-dmet' / cell / config['kmesh'] / 'fftisdf-180-24'
         # ref_path = ref_path.resolve()
@@ -53,8 +88,8 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         config['name'] = cell
         config['is-unrestricted'] = ("afm" in cell.lower())
-        config['init-guess-method'] = 'minao'
-        # config['df-to-read'] = './tmp/df.h5'
+        config['init-guess-method'] = 'chk'
+        config['df-to-read'] = df_h5_path
 
         base = Path(__file__).parent
         run_content = None

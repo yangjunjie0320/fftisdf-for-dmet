@@ -80,5 +80,9 @@ def main():
     log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
     log.flush()
 
+    ene_corr_kccsd_t = cc_obj.ccsd_t(eris=eris)
+    log.write("ene_corr_kccsd_t = % 12.8f\n" % ene_corr_kccsd_t)
+    log.flush()
+
 if __name__ == "__main__":
     main()
