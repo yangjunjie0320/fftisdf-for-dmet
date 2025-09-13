@@ -63,14 +63,15 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
             continue
 
         # clean up the directory
-        files_to_be_removed = dir_path.glob(str(dir_path / '*.h5'))
-        files_to_be_removed += dir_path.glob(str(dir_path / '*.json'))
-        files_to_be_removed += dir_path.glob(str(dir_path / 'slurm-*'))
+        os.chdir(dir_path)
+        files_to_be_removed  = list(dir_path.glob(str('./*.h5')))
+        files_to_be_removed += list(dir_path.glob(str('./*.json')))
+        files_to_be_removed += list(dir_path.glob(str('./slurm-*')))
         for f in files_to_be_removed:
             print(f"Removing {f}")
             os.remove(f)
 
-        os.chdir(dir_path)
+        
         tmp_real_path = os.path.realpath('tmp')
         df_h5_path = os.path.join(tmp_real_path, 'df.h5')
         assert os.path.exists(df_h5_path)
