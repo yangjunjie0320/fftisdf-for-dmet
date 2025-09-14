@@ -3,7 +3,7 @@
 #SBATCH --job-name=co2-fftisdf-140-14-kmesh-4-4-4-lno-thresh-1.00e-04
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=6gb
+#SBATCH --mem-per-cpu=25gb
 #SBATCH --time=20:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"

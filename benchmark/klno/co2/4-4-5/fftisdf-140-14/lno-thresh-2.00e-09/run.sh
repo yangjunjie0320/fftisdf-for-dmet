@@ -3,8 +3,8 @@
 #SBATCH --job-name=co2-fftisdf-140-14-kmesh-4-4-5-lno-thresh-2.00e-09
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=10gb
-#SBATCH --time=48:00:00
+#SBATCH --mem-per-cpu=25gb
+#SBATCH --time=20:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
