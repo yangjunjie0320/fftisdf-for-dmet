@@ -1,11 +1,11 @@
 method="kuhf-dmet"
 mkdir -p $method; cd $method
 
-for cell in cco-afm; do
+for cell in nio-fm; do
     mkdir -p $cell
 
     cd $cell; cp /home/junjiey/work/fftisdf-for-dmet/src/code/submit.py .
-    python submit.py --time="08:00:00" --cpus-per-task="32" \
+    python submit.py --time="04:00:00" --cpus-per-task="32" \
     --reservation="changroup_standingres"
 
     cd ..

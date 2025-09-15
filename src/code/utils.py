@@ -79,10 +79,14 @@ def build_cell(config: dict):
     cell.pseudo = "gth-hf-rev"
     cell.ke_cutoff = None
     cell.max_memory = MAX_MEMORY
-    cell.build(dump_input=False)
-    config["cell"] = cell
 
     kmesh = [int(i) for i in config["kmesh"].split("-")]
+    nkpt = numpy.prod(kmesh)
+    if "nio-fm" in name.lower():
+        cell.spin = 4 * nkpt
+
+    cell.build(dump_input=False)
+    config["cell"] = cell
 
     import libdmet
     from libdmet.system.lattice import Lattice
@@ -229,6 +233,12 @@ def get_init_guess(config: dict):
         alph_ix = cell.search_ao_label(alph_label)
         beta_ix = cell.search_ao_label(beta_label)
 
+    if "nio-fm" in name.lower():
+        alph_label = ["Ni1 3dz\^2", "Ni1 3dx2-y2", "Ni2 3dz\^2", "Ni2 3dx2-y2"]
+        beta_label = []
+        alph_ix = cell.search_ao_label(alph_label)
+        beta_ix = cell.search_ao_label(beta_label)
+
     if "cco-afm" in name.lower():
         alph_label = ["Cu1 3dz\^2", "Cu1 3dx2-y2"]
         beta_label = ["Cu2 3dz\^2", "Cu2 3dx2-y2"]
@@ -255,8 +265,10 @@ def get_init_guess(config: dict):
         print("Preparing initial guess for spin polarized calculation")
         print(f"Alph label: {alph_label}, Index: {alph_ix}")
         print(f"Beta label: {beta_label}, Index: {beta_ix}")
+        dm0[0, :, alph_ix, alph_ix] *= 1.0
         dm0[0, :, beta_ix, beta_ix] *= 0.0
         dm0[1, :, alph_ix, alph_ix] *= 0.0
+        dm0[1, :, beta_ix, beta_ix] *= 1.0
         mf.mulliken_meta(cell, dm0)
     
     dm0 = dm0[0] if spin == 1 else dm0
@@ -273,6 +285,7 @@ def build_mean_field(config: dict):
     mf = pyscf.pbc.scf.KRHF(cell, kpts)
     mf.verbose = 5
     mf.conv_tol = 1e-6
+    mf.max_cycle = 200
     mf.exxdiv = "ewald"
     mf.chkfile = "scf.chk"
     if is_unrestricted:
