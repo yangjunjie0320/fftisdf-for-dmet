@@ -1,21 +1,24 @@
-nk =   2,  ene_krhf = -10.57682410, ene_sos_mp2 = -10.79326588, ene_mp2 = -10.79444797, ene_ccsd = -10.82239475
-nk =   4,  ene_krhf = -10.82926354, ene_sos_mp2 = -11.05036103, ene_mp2 = -11.05737409, ene_ccsd = -11.07757830
-nk =   8,  ene_krhf = -10.95722433, ene_sos_mp2 = -11.17958906, ene_mp2 = -11.18984248, ene_ccsd = -11.20866367
-nk =  18,  ene_krhf = -11.02151491, ene_sos_mp2 = -11.25340190, ene_mp2 = -11.27117904, ene_ccsd = -11.28352051
-nk =  27,  ene_krhf = -11.02227872, ene_sos_mp2 = -11.25604321, ene_mp2 = -11.27435564, ene_ccsd = -11.28617184
-nk =  36,  ene_krhf = -11.02794901, ene_sos_mp2 = -11.26467121, ene_mp2 = -11.28490444, ene_ccsd = -11.29482566
-nk =  48,  ene_krhf = -11.03012751, ene_sos_mp2 = -11.26858440, ene_mp2 = -11.28989990, ene_ccsd = -11.29878902
-nk =  64,  ene_krhf = -11.02874276, ene_sos_mp2 = -11.26788283, ene_mp2 = -11.28943564, ene_ccsd = -11.29807703
-nk = 100,  ene_krhf = -11.02918477, ene_sos_mp2 = -11.27042144, ene_mp2 = -11.29291282, ene_ccsd = -11.30062989
-nk = 125,  ene_krhf = -11.02832098, ene_sos_mp2 = -11.26987896, ene_mp2 = -11.29245991, ene_ccsd = -11.30007734
-nk = 150,  ene_krhf = -11.02814471, ene_sos_mp2 = -11.27026685, ene_mp2 = -11.29305826, ene_ccsd = -11.30045866
-nk = 180,  ene_krhf = -11.02783412, ene_sos_mp2 = -11.27029569, ene_mp2 = -11.29321813, ene_ccsd = -11.30048458
-nk = 216,  ene_krhf = -11.02738350, ene_sos_mp2 = -11.26998096, ene_mp2 = -11.29294013, ene_ccsd = -11.30015017
-nk = 294,  ene_krhf = -11.02692286, ene_sos_mp2 = -11.26996030, ene_mp2 = -11.29304807, ene_ccsd = -11.30013073
-nk = 343,  ene_krhf = -11.02670439, ene_sos_mp2 = -11.26981393, ene_mp2 = -11.29292248, ene_ccsd = -11.29997256
-nk = 392,  ene_krhf = -11.02652810, ene_sos_mp2 = -11.26977764, ene_mp2 = -11.29292043, ene_ccsd = -11.29993668
-nk = 448,  ene_krhf = -11.02638285, ene_sos_mp2 = -11.26971944, ene_mp2 = -11.29288333, ene_ccsd = -11.29987669
-nk = 512,  ene_krhf = -11.02626624, ene_sos_mp2 = -11.26964054, ene_mp2 = -11.29281523, ene_ccsd = -11.29978964
-nk = 640,  ene_krhf = -11.02607973, ene_sos_mp2 = -11.26956267, ene_mp2 =          nan, ene_ccsd =          nan
-nk = 800,  ene_krhf = -11.02592838, ene_sos_mp2 = -11.26948907, ene_mp2 =          nan, ene_ccsd =          nan
-nk = 1000, ene_krhf = -11.02580714, ene_sos_mp2 = -11.26941940, ene_mp2 =          nan, ene_ccsd =          nan
+nk =    2, ene_krhf = -10.57682410, ene_sos_mp2 = -10.79326588, ene_mp2 = -10.79447736, ene_ccsd = -10.82233978, ene_ccsd_t = -10.83176806
+nk =    4, ene_krhf = -10.82926354, ene_sos_mp2 = -11.05036103, ene_mp2 = -11.05831548, ene_ccsd = -11.07575006, ene_ccsd_t = -11.08617015
+nk =    8, ene_krhf = -10.95722433, ene_sos_mp2 = -11.17958906, ene_mp2 = -11.19198167, ene_ccsd = -11.20465634, ene_ccsd_t = -11.21554575
+nk =   12, ene_krhf = -10.99956058, ene_sos_mp2 = -11.22787028, ene_mp2 = -11.24397339, ene_ccsd = -11.25539156, ene_ccsd_t = -11.26606734
+nk =   18, ene_krhf = -11.02151491, ene_sos_mp2 = -11.25340190, ene_mp2 = -11.27047886, ene_ccsd = -11.28290776, ene_ccsd_t = -11.29260498
+nk =   27, ene_krhf = -11.02227872, ene_sos_mp2 = -11.25604321, ene_mp2 = -11.27366813, ene_ccsd = -11.28550495, ene_ccsd_t = -11.29517368
+nk =   36, ene_krhf = -11.02794901, ene_sos_mp2 = -11.26467121, ene_mp2 = -11.28405596, ene_ccsd = -11.29421058, ene_ccsd_t = -11.30422366
+nk =   48, ene_krhf = -11.03012751, ene_sos_mp2 = -11.26858440, ene_mp2 = -11.28898300, ene_ccsd = -11.29816196, ene_ccsd_t = -11.30835709
+nk =   64, ene_krhf = -11.02874276, ene_sos_mp2 = -11.26788283, ene_mp2 = -11.28848031, ene_ccsd = -11.29742321, ene_ccsd_t = -11.30764950
+nk =   80, ene_krhf = -11.02925795, ene_sos_mp2 = -11.26970470, ene_mp2 = -11.29088377, ene_ccsd = -11.29926541, ene_ccsd_t = -11.30964263
+nk =  100, ene_krhf = -11.02918477, ene_sos_mp2 = -11.27042144, ene_mp2 = -11.29192104, ene_ccsd = -11.29997589, ene_ccsd_t = -11.31043816
+nk =  125, ene_krhf = -11.02832098, ene_sos_mp2 = -11.26987896, ene_mp2 = -11.29145706, ene_ccsd = -11.29941478, ene_ccsd_t = -11.30989644
+nk =  150, ene_krhf = -11.02814471, ene_sos_mp2 = -11.27026685, ene_mp2 = -11.29205007, ene_ccsd = -11.29979801, ene_ccsd_t = -11.31034734
+nk =  180, ene_krhf = -11.02783412, ene_sos_mp2 = -11.27029569, ene_mp2 = -11.29220465, ene_ccsd = -11.29982282, ene_ccsd_t = -11.31040956
+nk =  216, ene_krhf = -11.02738350, ene_sos_mp2 = -11.26998096, ene_mp2 = -11.29192759, ene_ccsd = -11.29948878, ene_ccsd_t = -11.31009214
+nk =  252, ene_krhf = -11.02717299, ene_sos_mp2 = -11.27004094, ene_mp2 = -11.29206246, ene_ccsd = -11.29954617, ene_ccsd_t = -11.31017804
+nk =  294, ene_krhf = -11.02692286, ene_sos_mp2 = -11.26996030, ene_mp2 = -11.29202787, ene_ccsd = -11.29946547, ene_ccsd_t = -11.31011098
+nk =  343, ene_krhf = -11.02670439, ene_sos_mp2 = -11.26981393, ene_mp2 = -11.29190214, ene_ccsd = -11.29930737, ene_ccsd_t = -11.30996254
+nk =  392, ene_krhf = -11.02652810, ene_sos_mp2 = -11.26977764, ene_mp2 = -11.29189790, ene_ccsd = -11.29927030, ene_ccsd_t = -11.30993885
+nk =  448, ene_krhf = -11.02638285, ene_sos_mp2 = -11.26971944, ene_mp2 = -11.29185935, ene_ccsd = -11.29920919, ene_ccsd_t = -11.30988525
+nk =  512, ene_krhf = -11.02626624, ene_sos_mp2 = -11.26964054, ene_mp2 = -11.29179133, ene_ccsd = -11.29912235, ene_ccsd_t = -11.30980396
+nk =  640, ene_krhf = -11.02607973, ene_sos_mp2 = -11.26956267, ene_mp2 =          nan, ene_ccsd =          nan, ene_ccsd_t =          nan
+nk =  800, ene_krhf = -11.02592838, ene_sos_mp2 = -11.26948907, ene_mp2 =          nan, ene_ccsd =          nan, ene_ccsd_t =          nan
+nk = 1000, ene_krhf = -11.02580714, ene_sos_mp2 = -11.26941940, ene_mp2 =          nan, ene_ccsd =          nan, ene_ccsd_t =          nan
