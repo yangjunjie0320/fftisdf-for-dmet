@@ -1,11 +1,10 @@
 #!/bin/bash
-#SBATCH --partition=gpu
-#SBATCH --reservation=changroup-h100-node-1
+#SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=co2-fftisdf-140-14-kmesh-1-1-1-lno-thresh-1.00e-20
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=6gb
-#SBATCH --time=08:00:00
+#SBATCH --time=20:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"

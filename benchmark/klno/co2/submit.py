@@ -17,11 +17,11 @@ def loop(cell='diamond'):
     df_method += ['fftisdf-140-14']
 
     kmesh = []
-    # kmesh += ['1-1-1']
-    kmesh += ['1-1-2', '1-2-2', '2-2-2']
-    kmesh += ['2-2-3', '2-3-3', '3-3-3']
-    kmesh += ['3-3-4', '3-4-4', '4-4-4']
-    kmesh += ['4-4-5', '4-5-5']
+    kmesh += ['1-1-1']
+    # kmesh += ['1-1-2', '1-2-2', '2-2-2']
+    # kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    # kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    # kmesh += ['4-4-5', '4-5-5']
     # kmesh += ['5-5-5', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
     # kmesh += ['7-7-8', '7-8-8', '8-8-8']
@@ -32,8 +32,11 @@ def loop(cell='diamond'):
     lno_thresh += [1e-8, 2e-8, 5e-8]
     lno_thresh += [1e-9, 2e-9, 5e-9]
     lno_thresh += [1e-10, 2e-10, 5e-10]
-    # lno_thresh = [1e-12, 1e-14, 1e-16, 1e-18, 1e-20]
-    # lno_thresh = [2e-12, 5e-12, 1e-11, 2e-11, 5e-11]
+    lno_thresh += [1e-12, 2e-12, 5e-12]
+    lno_thresh += [1e-14, 2e-14, 5e-14]
+    lno_thresh += [1e-16, 2e-16, 5e-16]
+    lno_thresh += [1e-18, 2e-18, 5e-18]
+    lno_thresh += [1e-20, 2e-20, 5e-20]
 
     from itertools import product
     configs = [{'basis': basis, 'pseudo': pseudo, 'kmesh': k, 'density-fitting-method': d, 'lno-thresh': l} for k, d, l in product(kmesh, df_method, lno_thresh)]
@@ -82,7 +85,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=25gb\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=6gb\n")
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")
