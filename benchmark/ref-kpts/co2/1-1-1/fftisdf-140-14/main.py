@@ -66,22 +66,38 @@ def main():
     log.write("ene_corr_os = % 12.8f\n" % mp_obj.e_corr_os)
     log.flush()
 
-    from pyscf.pbc.cc import KCCSD
-    cc_obj = KCCSD(scf_obj)
-    cc_obj.verbose = 10
+    # from pyscf.pbc.cc import KCCSD
+    # cc_obj = KCCSD(scf_obj)
+    # cc_obj.verbose = 10
+    # eris = cc_obj.ao2mo()
+    # t1, t2 = cc_obj.get_init_guess(eris)
+    # t1 = numpy.asarray(t1, dtype=numpy.complex128)
+    # t2 = numpy.asarray(t2, dtype=numpy.complex128)
+    # cc_obj.kernel(t1=t1, t2=t2, eris=eris)
+    # ene_kccsd = cc_obj.e_tot
+    # ene_corr_kccsd = cc_obj.e_corr
+    # log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
+    # log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
+    # log.flush()
+
+    # ene_corr_kccsd_t = cc_obj.ccsd_t(eris=eris)
+    # log.write("ene_corr_kccsd_t = % 12.8f\n" % ene_corr_kccsd_t)
+    # log.flush()
+
+    from pyscf.pbc.tools import k2gamma
+    mfg_obj = k2gamma.k2gamma(scf_obj)
+    print(type(mfg_obj))
+
+    cc_obj = mfg_obj.CCSD()
+    cc_obj.verbose = 5
     eris = cc_obj.ao2mo()
-    t1, t2 = cc_obj.get_init_guess(eris)
-    t1 = numpy.asarray(t1, dtype=numpy.complex128)
-    t2 = numpy.asarray(t2, dtype=numpy.complex128)
-    cc_obj.kernel(t1=t1, t2=t2, eris=eris)
-    ene_kccsd = cc_obj.e_tot
-    ene_corr_kccsd = cc_obj.e_corr
-    log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
-    log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
+    cc_obj.kernel(eris=eris)
+    log.write("ene_ccsd = % 12.8f\n" % cc_obj.e_tot)
+    log.write("ene_corr_ccsd = % 12.8f\n" % cc_obj.e_corr)
     log.flush()
 
-    ene_corr_kccsd_t = cc_obj.ccsd_t(eris=eris)
-    log.write("ene_corr_kccsd_t = % 12.8f\n" % ene_corr_kccsd_t)
+    ene_corr_ccsd_t = cc_obj.ccsd_t(eris=eris)
+    log.write("ene_corr_ccsd_t = % 12.8f\n" % ene_corr_ccsd_t)
     log.flush()
 
 if __name__ == "__main__":
