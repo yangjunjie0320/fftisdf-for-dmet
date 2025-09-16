@@ -66,39 +66,63 @@ def main():
     log.write("ene_corr_os = % 12.8f\n" % mp_obj.e_corr_os)
     log.flush()
 
-    # from pyscf.pbc.cc import KCCSD
-    # cc_obj = KCCSD(scf_obj)
-    # cc_obj.verbose = 10
-    # eris = cc_obj.ao2mo()
-    # t1, t2 = cc_obj.get_init_guess(eris)
-    # t1 = numpy.asarray(t1, dtype=numpy.complex128)
-    # t2 = numpy.asarray(t2, dtype=numpy.complex128)
-    # cc_obj.kernel(t1=t1, t2=t2, eris=eris)
-    # ene_kccsd = cc_obj.e_tot
-    # ene_corr_kccsd = cc_obj.e_corr
-    # log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
-    # log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
-    # log.flush()
+    from pyscf.pbc.cc import KCCSD
+    cc_obj = KCCSD(scf_obj)
+    cc_obj.verbose = 10
+
+    c = numpy.asarray(cc_obj.mo_coeff, dtype=numpy.complex128)
+    eris = cc_obj.ao2mo(c)
+
+    import os
+    from pyscf.lib import chkfile
+    if os.path.exists("t1_and_t2.chk"):
+        print(f"load t1 and t2 from t1_and_t2.chk")
+        t1 = chkfile.load("t1_and_t2.chk", "t1")
+        t2 = chkfile.load("t1_and_t2.chk", "t2")
+    else:
+        print(f"get t1 and t2 from cc_obj")
+        t1, t2 = cc_obj.get_init_guess(eris)
+
+    t1 = numpy.asarray(t1, dtype=numpy.complex128)
+    t2 = numpy.asarray(t2, dtype=numpy.complex128)
+    cc_obj.kernel(t1=t1, t2=t2, eris=eris)
+
+    t1 = cc_obj.t1
+    t2 = cc_obj.t2
+    print(f"t1.shape = {t1.shape}, t1.dtype = {t1.dtype}")
+    print(f"t2.shape = {t2.shape}, t2.dtype = {t2.dtype}")
+    print(f"save t1 and t2 to t1_and_t2.chk")
+    chkfile.save("t1_and_t2.chk", "t1", t1)
+    chkfile.save("t1_and_t2.chk", "t2", t2)
+
+    ene_kccsd = cc_obj.e_tot
+    ene_corr_kccsd = cc_obj.e_corr
+    log.write("ene_kccsd = % 12.8f\n" % ene_kccsd)
+    log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
+
+    log.flush()
 
     # ene_corr_kccsd_t = cc_obj.ccsd_t(eris=eris)
-    # log.write("ene_corr_kccsd_t = % 12.8f\n" % ene_corr_kccsd_t)
+    from pyscf.pbc.cc import kccsd_t_rhf, kccsd_t_rhf_slow
+    ene_corr_kccsd_t = kccsd_t_rhf_slow.kernel(cc_obj, eris=eris, t1=t1, t2=t2)
+    log.write("ene_corr_kccsd_t = % 12.8f\n" % ene_corr_kccsd_t)
+    log.flush()
+
+    # from pyscf.pbc.tools import k2gamma
+    # mfg_obj = k2gamma.k2gamma(scf_obj)
+    # mfg_obj.with_df = scf_obj.with_df
+
+    # cc_obj = mfg_obj.CCSD()
+    # cc_obj.verbose = 5
+    # eris = cc_obj.ao2mo()
+    # cc_obj.kernel(eris=eris)
+    # log.write("ene_ccsd = % 12.8f\n" % cc_obj.e_tot)
+    # log.write("ene_corr_ccsd = % 12.8f\n" % cc_obj.e_corr)
     # log.flush()
 
-    from pyscf.pbc.tools import k2gamma
-    mfg_obj = k2gamma.k2gamma(scf_obj)
-    print(type(mfg_obj))
-
-    cc_obj = mfg_obj.CCSD()
-    cc_obj.verbose = 5
-    eris = cc_obj.ao2mo()
-    cc_obj.kernel(eris=eris)
-    log.write("ene_ccsd = % 12.8f\n" % cc_obj.e_tot)
-    log.write("ene_corr_ccsd = % 12.8f\n" % cc_obj.e_corr)
-    log.flush()
-
-    ene_corr_ccsd_t = cc_obj.ccsd_t(eris=eris)
-    log.write("ene_corr_ccsd_t = % 12.8f\n" % ene_corr_ccsd_t)
-    log.flush()
+    # ene_corr_ccsd_t = cc_obj.ccsd_t(eris=eris)
+    # log.write("ene_corr_ccsd_t = % 12.8f\n" % ene_corr_ccsd_t)
+    # log.flush()
 
 if __name__ == "__main__":
     main()
