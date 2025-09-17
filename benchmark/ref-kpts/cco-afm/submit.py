@@ -19,12 +19,12 @@ def loop(cell='diamond'):
     
     assert cell == "cco-afm"
     df_method += ["fftisdf-140-20", "fftisdf-140-25", "fftisdf-140-30", "fftisdf-140-35", "fftisdf-140-40"]
-    df_method += ["fftisdf-160-24", "fftisdf-160-28", "fftisdf-160-32", "fftisdf-160-36", "fftisdf-160-40"]
-    df_method += ["fftisdf-180-24", "fftisdf-180-28", "fftisdf-180-32", "fftisdf-180-36", "fftisdf-180-40"]
+    df_method += ["fftisdf-160-20", "fftisdf-160-25", "fftisdf-160-30", "fftisdf-160-35", "fftisdf-160-40"]
+    df_method += ["fftisdf-180-20", "fftisdf-180-25", "fftisdf-180-30", "fftisdf-180-35", "fftisdf-180-40"]
 
     kmesh = []
     kmesh += ['1-1-1', '1-1-2', '1-2-2', '2-2-2']
-    kmesh += ['2-2-4'] # , '2-4-4', '4-4-4']
+    # kmesh += ['2-2-4'] # , '2-4-4', '4-4-4']
     # kmesh += ['2-2-3', '2-3-3', '3-3-3']
     # kmesh += ['3-3-4', '3-4-4', '4-4-4']
     # kmesh += ['4-4-5', '4-5-5', '5-5-5']
