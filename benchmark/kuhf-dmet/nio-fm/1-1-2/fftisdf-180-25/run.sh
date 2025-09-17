@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=6gb
-#SBATCH --time=04:00:00
+#SBATCH --time=20:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
 echo "Start time = $(date)"
@@ -41,7 +41,5 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 
 cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-kuhf-dmet.py main.py
-cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/benchmark/kuhf-dmet/nio-afm/1-1-2/fftisdf-180-25/tmp/df.h5 tmp/df.h5
-
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=1-1-2 --density-fitting-method=fftisdf-180-25 --name=nio-fm --df-to-read=./tmp/df.h5 --is-unrestricted
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=1-1-2 --density-fitting-method=fftisdf-180-25 --name=nio-fm --df-to-read=/resnick/scratch/yangjunjie/nio-afm-fftisdf-180-24-kmesh-1-1-2/53639073/df.h5 --is-unrestricted
 echo "End time = $(date)"
