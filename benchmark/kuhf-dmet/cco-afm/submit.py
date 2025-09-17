@@ -10,7 +10,7 @@ def loop(cell='diamond'):
     pseudo = 'gth-hf-rev'
 
     df_method = []
-    df_method.append('gdf-1.1')
+    # df_method.append('gdf-1.1')
     df_method.append('gdf-1.2')
     df_method.append('gdf-1.4')
     df_method.append('gdf-1.6')
@@ -28,8 +28,8 @@ def loop(cell='diamond'):
 
     kmesh = []
     kmesh += ['1-1-1'] 
-    # , '1-2-2', '2-2-2']
-    # kmesh += ['2-2-3', '2-3-3', '3-3-3']
+    kmesh += ['1-1-2', '1-2-2', '2-2-2']
+    kmesh += ['2-2-3', '2-3-3', '3-3-3']
     # kmesh += ['3-3-4', '3-4-4', '4-4-4']
     # kmesh += ['4-4-5', '4-5-5', '5-5-5']
     # kmesh += ['5-5-6', '5-6-6', '6-6-6']

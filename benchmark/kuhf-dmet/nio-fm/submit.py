@@ -15,7 +15,7 @@ def loop(cell='diamond'):
     # df_method.append('gdf-1.4')
     # df_method.append('gdf-1.6')
     # df_method.append('gdf-1.8')
-    df_method.append('gdf-2.0')
+    # df_method.append('gdf-2.0')
     
     assert cell == "nio-fm"
     df_method += ["fftisdf-180-25"]
@@ -42,41 +42,40 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
 
         print(f"Setting up benchmark directory: {config}")
         dir_path = base_dir / config['kmesh'] / config['density-fitting-method'] 
-        os.makedirs(dir_path, exist_ok=False)
-        # assert dir_path.exists(), f"Directory {dir_path} not found"
-        # print(f"Directory {dir_path} found")
-        # is_out_log_exist = os.path.exists(dir_path / 'out.log')
-        # assert is_out_log_exist
+        # os.makedirs(dir_path, exist_ok=False)
+        assert dir_path.exists(), f"Directory {dir_path} not found"
+        print(f"Directory {dir_path} found")
+        is_out_log_exist = os.path.exists(dir_path / 'out.log')
+        assert is_out_log_exist
 
         # # search for slurm log
-        # import glob
-        # slurm_log_list = glob.glob(str(dir_path / 'slurm-*'))
-        # assert len(slurm_log_list) == 1
-        # slurm_log_file = slurm_log_list[0]
-        # print(f"slurm_log_files: {slurm_log_file}")
+        import glob
+        slurm_log_list = glob.glob(str(dir_path / 'slurm-*'))
+        assert len(slurm_log_list) == 1
+        slurm_log_file = slurm_log_list[0]
+        print(f"slurm_log_files: {slurm_log_file}")
         
-        # lines = None
-        # with open(slurm_log_file, 'r') as f:
-        #     lines = f.read()
-        # is_dmet_converged = "DMET converged after" in lines
-        # if is_dmet_converged:
-        #     print(f"DMET converged, skipping {dir_path}")
-        #     continue
+        lines = None
+        with open(slurm_log_file, 'r') as f:
+            lines = f.read()
+        is_dmet_converged = "DMET converged after" in lines
+        if is_dmet_converged:
+            print(f"DMET converged, skipping {dir_path}")
+            continue
 
-        # # clean up the directory
-        # os.chdir(dir_path)
-        # files_to_be_removed  = list(dir_path.glob(str('./*.h5')))
-        # files_to_be_removed += list(dir_path.glob(str('./*.json')))
-        # files_to_be_removed += list(dir_path.glob(str('./slurm-*')))
-        # for f in files_to_be_removed:
-        #     print(f"Removing {f}")
-        #     os.remove(f)
-
+        # clean up the directory
+        os.chdir(dir_path)
+        files_to_be_removed  = list(dir_path.glob(str('./*.h5')))
+        files_to_be_removed += list(dir_path.glob(str('./*.json')))
+        files_to_be_removed += list(dir_path.glob(str('./slurm-*')))
+        for f in files_to_be_removed:
+            print(f"Removing {f}")
+            os.remove(f)
         
         # tmp_real_path = os.path.realpath('tmp')
         # df_h5_path = os.path.join(tmp_real_path, 'df.h5')
         # assert os.path.exists(df_h5_path)
-        # os.system("rm tmp")
+        os.system("rm tmp")
 
         # if dir_path.exists():
         #     print(f"Directory {dir_path} already exists, deleting")
@@ -89,10 +88,11 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         assert ref_path.exists(), f"Reference path {ref_path} not found"
 
         df_h5_path = ref_path / 'tmp' / 'df.h5'
+        assert os.path.exists(df_h5_path)
 
         config['name'] = cell
         config['is-unrestricted'] = ("afm" in cell.lower() or "fm" in cell.lower())
-        # config['init-guess-method'] = 'chk'
+        config['init-guess-method'] = 'chk'
         config['df-to-read'] = os.path.realpath(df_h5_path)
 
         base = Path(__file__).parent
