@@ -10,17 +10,19 @@ def loop(cell='diamond'):
     pseudo = 'gth-hf-rev'
 
     df_method = []
-    df_method.append('gdf-1.1')
-    df_method.append('gdf-1.2')
-    df_method.append('gdf-1.4')
-    df_method.append('gdf-1.6')
-    df_method.append('gdf-1.8')
-    df_method.append('gdf-2.0')
+    # df_method.append('gdf-1.1')
+    # df_method.append('gdf-1.2')
+    # df_method.append('gdf-1.4')
+    # df_method.append('gdf-1.6')
+    # df_method.append('gdf-1.8')
+    # df_method.append('gdf-2.0')
     
     assert cell == "cco-afm"
-    df_method += ["fftisdf-140-15", "fftisdf-140-20", "fftisdf-140-25", "fftisdf-140-30"]
-    df_method += ["fftisdf-160-15", "fftisdf-160-20", "fftisdf-160-25", "fftisdf-160-30"]
-    df_method += ["fftisdf-180-15", "fftisdf-180-20", "fftisdf-180-25", "fftisdf-180-30"]
+    # df_method += ["fftisdf-140-15", "fftisdf-140-20", "fftisdf-140-25", "fftisdf-140-30"]
+    # df_method += ["fftisdf-160-15", "fftisdf-160-20", "fftisdf-160-25", "fftisdf-160-30"]
+    # df_method += ["fftisdf-180-15", "fftisdf-180-20", "fftisdf-180-25", "fftisdf-180-30"]
+    df_method += ["fftisdf-200-15", "fftisdf-200-20", "fftisdf-200-25", "fftisdf-200-30"]
+    df_method += ["fftisdf-140-35", "fftisdf-160-35", "fftisdf-180-35", "fftisdf-200-35"]
 
     kmesh = []
     kmesh += ['1-1-1', '1-1-2', '1-2-2', '2-2-2']

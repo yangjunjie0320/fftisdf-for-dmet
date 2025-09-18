@@ -29,10 +29,8 @@ def loop(cell='diamond'):
     # kmesh += ['8-8-10', '8-10-10', '10-10-10']
     # kmesh += ['5-5-5', '6-6-6']
 
-    lno_thresh = [1e-4, 1e-5, 1e-6, 1e-7]
-    lno_thresh += [1e-8, 2e-8, 5e-8]
-    lno_thresh += [1e-9, 2e-9, 5e-9]
-    lno_thresh += [1e-10, 2e-10, 5e-10]
+    lno_thresh = [1e-6, 1e-7]
+    lno_thresh += [1e-8, 1e-9, 1e-10]
     # lno_thresh += [1e-12, 2e-12, 5e-12]
     # lno_thresh += [1e-14, 2e-14, 5e-14]
     # lno_thresh += [1e-16, 2e-16, 5e-16]
