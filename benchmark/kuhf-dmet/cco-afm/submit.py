@@ -12,25 +12,19 @@ def loop(cell='diamond'):
     df_method = []
     # df_method.append('gdf-1.1')
     df_method.append('gdf-1.2')
-    df_method.append('gdf-1.4')
-    df_method.append('gdf-1.6')
-    df_method.append('gdf-1.8')
-    df_method.append('gdf-2.0')
+    # df_method.append('gdf-1.4')
+    # df_method.append('gdf-1.6')
+    # df_method.append('gdf-1.8')
+    # df_method.append('gdf-2.0')
     
     assert cell == "cco-afm"
-    df_method += ["fftdf-120"]
-    df_method += ["fftdf-160"]
-    df_method += ["fftdf-200"]
-    df_method += ["fftdf-240"]
-    df_method += ["fftdf-260"]
-    df_method += ["fftdf-280"]
-    df_method += ["fftdf-300"]
+    df_method += ["fftisdf-180-25"]
 
     kmesh = []
-    kmesh += ['1-1-1'] 
-    kmesh += ['1-1-2', '1-2-2', '2-2-2']
-    kmesh += ['2-2-3', '2-3-3', '3-3-3']
-    # kmesh += ['3-3-4', '3-4-4', '4-4-4']
+    # kmesh += ['1-1-1']
+    kmesh += ['2-1-1', '2-2-1', '2-2-2']
+    kmesh += ['3-2-2', '3-3-2', '3-3-3']
+    kmesh += ['4-3-3', '4-4-3', '4-4-4']
     # kmesh += ['4-4-5', '4-5-5', '5-5-5']
     # kmesh += ['5-5-6', '5-6-6', '6-6-6']
     # kmesh += ['6-6-7', '6-7-7', '7-7-7']
@@ -79,7 +73,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=6gb\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=10gb\n")
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")
