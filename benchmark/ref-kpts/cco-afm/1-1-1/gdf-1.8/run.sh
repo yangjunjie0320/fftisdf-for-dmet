@@ -3,7 +3,7 @@
 #SBATCH --job-name=cco-afm-gdf-1.8-kmesh-1-1-1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=6gb
+#SBATCH --mem-per-cpu=10gb
 #SBATCH --time=20:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"

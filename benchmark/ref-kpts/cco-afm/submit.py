@@ -18,9 +18,9 @@ def loop(cell='diamond'):
     df_method.append('gdf-2.0')
     
     assert cell == "cco-afm"
-    df_method += ["fftisdf-140-20", "fftisdf-140-25", "fftisdf-140-30", "fftisdf-140-35", "fftisdf-140-40"]
-    df_method += ["fftisdf-160-20", "fftisdf-160-25", "fftisdf-160-30", "fftisdf-160-35", "fftisdf-160-40"]
-    df_method += ["fftisdf-180-20", "fftisdf-180-25", "fftisdf-180-30", "fftisdf-180-35", "fftisdf-180-40"]
+    df_method += ["fftisdf-140-15", "fftisdf-140-20", "fftisdf-140-25", "fftisdf-140-30"]
+    df_method += ["fftisdf-160-15", "fftisdf-160-20", "fftisdf-160-25", "fftisdf-160-30"]
+    df_method += ["fftisdf-180-15", "fftisdf-180-20", "fftisdf-180-25", "fftisdf-180-30"]
 
     kmesh = []
     kmesh += ['1-1-1', '1-1-2', '1-2-2', '2-2-2']
@@ -75,7 +75,7 @@ def main(cell='diamond', method='krhf', ntasks=1, time='00:30:00', cpus_per_task
         with open(src_path / 'code/scripts/run.sh', 'r') as f:
             run_content = f.readlines()
             run_content.insert(1, f"#SBATCH --time={time}\n")
-            run_content.insert(1, f"#SBATCH --mem-per-cpu=6gb\n")
+            run_content.insert(1, f"#SBATCH --mem-per-cpu=10gb\n")
             run_content.insert(1, f"#SBATCH --cpus-per-task={cpus_per_task}\n")
             run_content.insert(1, f"#SBATCH --ntasks={ntasks}\n")
             run_content.insert(1, f"#SBATCH --job-name={job_name}\n")

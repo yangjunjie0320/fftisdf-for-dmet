@@ -1,5 +1,6 @@
 #!/bin/bash
-#SBATCH --reservation=changroup_standingres
+#SBATCH --reservation=changroup-h100-node-1
+#SBATCH --partition=gpu
 #SBATCH --job-name=nio-afm-fftisdf-180-25-kmesh-6-6-6
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
