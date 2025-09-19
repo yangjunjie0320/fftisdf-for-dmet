@@ -216,6 +216,9 @@ def build_dmet(config):
     res = get_iao(mf, minao="scf", full_return=True)
     c_ao_lo_k = res[0]
     idx_val, idx_vir  = res[2:]
+    if "cco" in config["name"].lower():
+        pass
+
     latt.build(idx_val=idx_val, idx_virt=idx_vir)
 
     from libdmet.solver import cc_solver, fci_solver 
