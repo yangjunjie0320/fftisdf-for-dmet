@@ -2,8 +2,8 @@
 #SBATCH --reservation=changroup_standingres
 #SBATCH --job-name=co2-fftisdf-140-14-kmesh-5-5-5-lno-thresh-1.00e-09
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=10gb
+#SBATCH --cpus-per-task=64
+#SBATCH --mem-per-cpu=6gb
 #SBATCH --time=80:00:00
 
 echo "SLURMD_NODENAME = $SLURMD_NODENAME"
