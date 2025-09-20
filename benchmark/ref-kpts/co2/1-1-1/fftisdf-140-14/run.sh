@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --reservation=changroup_standingres
+#SBATCH --reservation=changroup-h100-node-1
 #SBATCH --job-name=co2-fftisdf-140-14
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=128
 #SBATCH --mem-per-cpu=10gb
 #SBATCH --time=10:00:00
 

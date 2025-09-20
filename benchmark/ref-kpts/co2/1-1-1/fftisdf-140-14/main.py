@@ -101,10 +101,18 @@ def main():
     log.write("ene_corr_kccsd = % 12.8f\n" % ene_corr_kccsd)
 
     log.flush()
+    
+    from pyscf.pbc.cc import KGCCSD
+    cc_obj = KGCCSD(scf_obj)
+    cc_obj.verbose = 10
 
-    # ene_corr_kccsd_t = cc_obj.ccsd_t(eris=eris)
-    from pyscf.pbc.cc import kccsd_t_rhf, kccsd_t_rhf_slow
-    ene_corr_kccsd_t = kccsd_t_rhf_slow.kernel(cc_obj, eris=eris, t1=t1, t2=t2)
+    c = numpy.asarray(cc_obj.mo_coeff, dtype=numpy.complex128)
+    eris = cc_obj.ao2mo(c)
+    cc_obj.kernel()
+
+    ene_corr_kccsd_t = cc_obj.ccsd_t(eris=eris)
+    from pyscf.pbc.cc import kccsd_t, kccsd_t_rhf, kccsd_t_rhf_slow
+    ene_corr_kccsd_t = kccsd_t.kernel(cc_obj, eris=eris, t1=t1, t2=t2)
     log.write("ene_corr_kccsd_t = % 12.8f\n" % ene_corr_kccsd_t)
     log.flush()
 

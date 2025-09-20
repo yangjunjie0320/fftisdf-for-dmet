@@ -39,6 +39,6 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/fcdmft-main
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
-cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-ref-kpts.py main.py
+# cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-ref-kpts.py main.py
 python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=1-1-1 --density-fitting-method=fftisdf-180-14 --name=co2 --init-guess-method=minao
 echo "End time = $(date)"
