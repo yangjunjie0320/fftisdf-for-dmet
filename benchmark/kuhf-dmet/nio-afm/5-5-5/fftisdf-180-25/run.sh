@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --reservation=changroup_standingres
-#SBATCH --job-name=nio-afm-fftisdf-180-25-kmesh-4-6-6
+#SBATCH --job-name=nio-afm-fftisdf-180-25-kmesh-5-5-5
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=6gb
@@ -40,6 +40,6 @@ export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/pyscf-forge-lnocc
 export PYTHONPATH=$PYTHONPATH:/resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code
 
-# cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-kuhf-dmet.py main.py
-python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=4-6-6 --density-fitting-method=fftisdf-180-25 --name=nio-afm --is-unrestricted --init-guess-method=chk  --df-to-read=df.h5
+cp /resnick/groups/changroup/members/junjiey/fftisdf-for-dmet/src/code/scripts/main-kuhf-dmet.py main.py
+python main.py --basis=cc-pvdz --pseudo=gth-hf-rev --kmesh=5-5-5 --density-fitting-method=fftisdf-180-25 --name=nio-afm --is-unrestricted
 echo "End time = $(date)"

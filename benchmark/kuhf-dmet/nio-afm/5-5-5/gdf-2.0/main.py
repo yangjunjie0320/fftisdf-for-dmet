@@ -74,14 +74,14 @@ def main():
         df_obj = args[0]
         eri_emb = None
 
-        t0 = time.time()
+        # t0 = time.time()
         if isinstance(df_obj, fft.ISDF):
             kwargs.pop('use_mpi')
             eri_emb = get_emb_eri_fftisdf(*args, **kwargs)
         else:
             eri_emb = get_emb_eri_old(*args, **kwargs)
 
-        log.write("time_get_eri = % 6.2f\n" % (time.time() - t0))
+        # log.write("time_get_eri = % 6.2f\n" % (time.time() - t0))
         assert eri_emb is not None
         return eri_emb
     libdmet.basis.trans_2e.get_emb_eri = get_emb_eri
@@ -89,7 +89,6 @@ def main():
     build_dmet(config)
 
     emb = config["emb"]
-    emb.restart_file = "fdmet.h5"
     emb.max_cycle = 200
     emb.kernel()
     ene_dmet = emb.e_tot
