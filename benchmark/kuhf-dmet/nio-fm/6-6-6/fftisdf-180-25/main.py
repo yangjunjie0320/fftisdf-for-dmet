@@ -89,6 +89,7 @@ def main():
     build_dmet(config)
 
     emb = config["emb"]
+    emb.restart_file = "fdmet.h5"
     emb.max_cycle = 200
     emb.kernel()
     ene_dmet = emb.e_tot
