@@ -222,7 +222,7 @@ def build_dmet(config):
     latt.build(idx_val=idx_val, idx_virt=idx_vir)
 
     from libdmet.solver import cc_solver, fci_solver 
-    beta = 1000.0
+    beta = config.get("dmet-beta", 1000.0)
     kwargs = {
         "restricted": (not is_unrestricted),
         "restart": False, "tol": 1e-6,
@@ -236,10 +236,10 @@ def build_dmet(config):
     if is_unrestricted:
         emb = udmet.UDMET(latt, mf, solver, c_ao_lo_k, **kwargs)
 
-    emb.dump_flags()  # Print settings information
     emb.beta = beta
     emb.fit_method = 'CG'
     emb.fit_kwargs = {"test_grad": False}
-    emb.max_cycle = 1
+    emb.max_cycle = 200
+    emb.dump_flags()  # Print settings information
 
     config["emb"] = emb

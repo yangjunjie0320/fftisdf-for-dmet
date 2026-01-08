@@ -312,6 +312,7 @@ def build(config: dict | None = None):
         parser.add_argument("--init-guess-method", type=str, default="minao")
         parser.add_argument("--df-to-read", type=str, default=None)
         parser.add_argument("--kconserv-to-read", type=str, default=None)
+        parser.add_argument("--dmet-beta", type=float, default=1000.0)
         args = parser.parse_args()
         config = args.__dict__
 
