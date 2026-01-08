@@ -121,10 +121,9 @@ def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
     e_corr = 0.0
     
     for q, kq in enumerate(kpts):
-        t0 = (process_clock(), perf_counter())
         coul_q = coul_kpt[q]
-
         for ifreq, (freq, weig) in enumerate(zip(*_get_scaled_legendre_roots(nw))):
+            t0 = (process_clock(), perf_counter())
             polw_q = polw_kpt[ifreq, q]
             pq = lib.dot(coul_q, polw_q.T)
 
@@ -132,9 +131,8 @@ def krpa_corr_energy_with_isdf(mp_obj, nw=20, polw_kpt=None):
             e_corr_wq = numpy.log(dq) + numpy.trace(pq)
             e_corr += e_corr_wq.real * weig / 2 / numpy.pi / nkpt
             polw_q = None
-
+            log.timer("ifreq = %d, q = %d" % (ifreq, q), *t0)
         coul_q = None
-        log.timer("RPA q = %d" % q, *t0)
 
     fswap.close()
     return e_corr
